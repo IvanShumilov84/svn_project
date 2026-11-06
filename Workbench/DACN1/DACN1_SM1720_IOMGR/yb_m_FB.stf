@@ -1,0 +1,10 @@
+FUNCTION_BLOCK yb_m_FB
+
+
+	IF slope <> 0.0 THEN 
+
+		x_out := (y_in - offset) / slope;
+
+	END_IF; 
+
+END_FUNCTION_BLOCK

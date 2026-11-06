@@ -1,0 +1,549 @@
+FUNCTION_BLOCK ECS_PW100_FB
+(************************************************************************************************************************************************
+	Name :		 ECS_PW100_FB									
+														
+	Description :	PW100 Family Engine Control System
+
+	Dependacy : 	EEC based on EEC Control Unit PWC38224 revF
+			
+************************************************************************************************************************************************)	
+
+(*****************************************         PW100 EEC   ******************************************)
+
+
+(* PW100 EEC initialisation *)
+	IF EEC_initialisation = FALSE THEN
+		user_eec_power		:= FALSE;
+		man_eec_switch		:= FALSE;
+		mfc_hot			:= FALSE;
+		manual_feather		:= FALSE;
+		AF_enable		:= FALSE;
+		user_af_test		:= FALSE;
+		arm_prop		:= FALSE;
+		user_os_test		:= FALSE;
+		user_lru		:= FALSE;
+		emergency_approach	:= FALSE;
+		max_cont		:= TRUE;
+		trim_test_run		:= FALSE;
+		engine_trim		:= FALSE;
+		uptrim_to_opp		:= FALSE;
+		cancel_npt_gov_fokker	:= FALSE;
+		cancel_npt_gov_bae	:= FALSE;
+		user_reduce_power	:= FALSE;
+		bleed_valve_override	:= FALSE;
+		user_bleed_switch1	:= FALSE;
+		user_bleed_switch2	:= FALSE;
+		user_LRU		:= FALSE;
+		uptrim_from_opp		:= FALSE;
+		fail_fixed_ind		:= FALSE;
+		user_inhibit_reset	:= FALSE;
+		uptrim_nc_eec		:= TRUE;
+		ap_nc			:= TRUE;
+		user_test_trim_1	:= FALSE;
+		gnd_test_pw120		:= TRUE;
+		inhibit_reset		:= TRUE;
+		manual_sol		:= TRUE;
+		enrichment_relay_lo	:= TRUE;
+		pw119_pw120_switch	:= FALSE;
+		EEC_initialisation 	:= TRUE;
+		Auto_ign_ind		:= FALSE;
+		User_pw127e 		:= FALSE;
+		Pw127e			:= FALSE;
+	END_IF;
+
+
+
+(* Power Toggle Switch and Power Light *)
+IF pw100_interlock = TRUE THEN
+	proper_harness		:= TRUE;
+ELSE
+	proper_harness		:= FALSE;
+END_IF;
+
+(* No Proper harness on PW100 PWC EEC Cable *)
+(*IF user_eec_power = TRUE AND proper_harness = TRUE THEN *)
+IF user_eec_power = TRUE THEN 
+	eec_power		:= TRUE;
+	afu_power		:= TRUE;
+	ecu_power		:= TRUE;
+	scu_power		:= TRUE;
+ELSE
+	eec_power		:= FALSE;
+	eec_power		:= FALSE;
+	afu_power		:= FALSE;
+	ecu_power		:= FALSE;
+	scu_power		:= FALSE;
+	user_eec_power		:= FALSE;
+END_IF;
+
+(*All function available only if the power is on*)
+IF user_eec_power = TRUE THEN
+	(* Auto Feather A/F test button switch *)
+	IF user_af_test = TRUE THEN
+		af_test			:= TRUE;
+		aft_scu			:= TRUE;
+	ELSE
+		af_test			:= FALSE;
+		aft_scu			:= FALSE;
+	END_IF;
+
+
+	(* Auto Feather A/F enable button switch *)
+	IF af_enable = TRUE THEN
+		afe_loc_scu		:= TRUE;
+		afe_opp_scu		:= TRUE;
+		hi_torque_scu_output	:= TRUE;
+		af_enable_loc		:= TRUE;
+		af_enable_opp		:= TRUE;
+		hi_torque_opp		:= TRUE;
+	ELSE
+		afe_loc_scu		:= FALSE;
+		afe_opp_scu		:= FALSE;
+		hi_torque_scu_output	:= FALSE;
+		af_enable_loc		:= FALSE;
+		af_enable_opp		:= FALSE;
+		hi_torque_opp		:= FALSE;
+	END_IF;
+
+
+	(* Manual Feather button switch and ENG feather light *)
+	(*IF manual_feather = TRUE OR GOV_ANG.value < 35.0 THEN *) 		(* Update for ATI Project *)
+	IF manual_feather = TRUE OR CLA_35 = TRUE THEN
+		engine_feathered		:= TRUE;
+		cancel_fuel_cla		:= TRUE;
+		feather_disc		:= TRUE;
+	(* ELSIF manual_feather = FALSE AND GOV_ANG.value >= 35.0 THEN *)	(* Update for ATI Project *)
+	ELSIF manual_feather = FALSE AND CLA_35 = FALSE THEN
+		IF af_relay = FALSE AND af_relay_pw126 = FALSE THEN
+			engine_feathered	:= FALSE;
+		END_IF;
+		IF af_relay = FALSE AND af_relay_pw126 = FALSE AND cancel_npt_gov_fokker = FALSE THEN
+			feather_disc	:= FALSE;
+		END_IF;
+	END_IF;
+
+
+	(* Auto Feather enable loc EEC *)
+	IF (AFU_EEC = FALSE AND af_relay = TRUE) OR (AFU_EEC = TRUE AND af_relay_pw126 = TRUE) THEN 
+		engine_feathered		:= TRUE;
+		feather_disc		:= TRUE;
+	END_IF;
+	(* NOTE: engine_feathered and feather_disc will turn false according to logic already *)
+	(* included under Manual Feather button switch and ENG feather light *)
+
+
+	(* Cancel NPT Gov Fokker *)
+	IF Cancel_NPT_Gov_Fokker = TRUE THEN
+		feather_disc		:= TRUE;
+	END_IF;
+	(* NOTE: engine_feathered and feather_disc will turn false according to logic already *)
+	(* included under Manual Feather button switch and ENG feather light *)
+
+
+	(* Cancel NPT Gov BAE *)
+	IF cancel_NPT_Gov_BAE = TRUE THEN
+		cancel_fuel_disc		:= TRUE;
+	ELSE
+		cancel_fuel_disc		:= FALSE;
+	END_IF;
+
+
+	(* EEC / ECS Fault Lught *)
+	IF eec_fault_lamp = TRUE OR eec_fault_latch = TRUE THEN
+		eec_ecs_fault		:= TRUE;
+	ELSIF	eec_fault_lamp = FALSE AND eec_fault_latch = FALSE THEN
+		eec_ecs_fault		:= FALSE;
+	END_IF;
+
+
+	(* Uptrim from OPP *)
+	IF uptrim_from_opp = TRUE THEN
+		uptrim_nc_eec		:= FALSE;
+		uptrim_no_pw115_pw120	:= TRUE;
+	ELSE	
+		uptrim_nc_eec		:= TRUE;
+		uptrim_no_pw115_pw120	:= FALSE;
+	END_IF;
+
+
+	(* Engine Trim *)
+	IF engine_trim = TRUE THEN
+		engine_trim_disc		:= TRUE;
+	ELSE
+		engine_trim_disc		:= FALSE;
+	END_IF;
+
+
+	(* Arm Prop *)
+	IF arm_prop = TRUE THEN
+		ap_nc			:= FALSE;
+		ap_no			:= TRUE;
+	ELSE
+		ap_nc			:= TRUE;
+		ap_no			:= FALSE;
+	END_IF;
+
+
+	(* Bleed Valve Override *)
+	IF bleed_valve_override = TRUE THEN
+		bleed_valve		:= TRUE;
+	ELSE
+		bleed_valve		:= FALSE;
+	END_IF;
+
+
+	(* Bleed 1 *)
+	IF user_bleed_switch1 = TRUE THEN
+		bleed_switch1		:= TRUE;
+	ELSE
+		bleed_switch1		:= FALSE;
+	END_IF;
+
+
+	(* Bleed 2 *)
+	IF user_bleed_switch2 = TRUE THEN
+		bleed_switch2		:= TRUE;
+	ELSE
+		bleed_switch2		:= FALSE;
+	END_IF;
+
+
+	(* Test Trim 1 to 8 *)
+	IF trim_test_run = TRUE THEN
+		gnd_test_pw124		:= TRUE;
+		gnd_test_pw120		:= FALSE;
+		IF user_test_trim_1 = TRUE THEN
+			test_trim_1	:= FALSE;
+			test_trim_2	:= FALSE;
+			test_trim_3	:= FALSE;
+		ELSIF user_test_trim_2 = TRUE THEN
+			test_trim_1	:= TRUE;
+			test_trim_2	:= FALSE;
+			test_trim_3	:= FALSE;
+		ELSIF user_test_trim_3 = TRUE THEN
+			test_trim_1	:= FALSE;
+			test_trim_2	:= TRUE;
+			test_trim_3	:= FALSE;
+		ELSIF user_test_trim_4 = TRUE THEN
+			test_trim_1	:= TRUE;
+			test_trim_2	:= TRUE;
+			test_trim_3	:= FALSE;
+		ELSIF user_test_trim_5 = TRUE THEN
+			test_trim_1	:= FALSE;
+			test_trim_2	:= FALSE;
+			test_trim_3	:= TRUE;
+		ELSIF user_test_trim_6 = TRUE THEN
+			test_trim_1	:= TRUE;
+			test_trim_2	:= FALSE;
+			test_trim_3	:= TRUE;
+		ELSIF user_test_trim_7 = TRUE THEN
+			test_trim_1	:= FALSE;
+			test_trim_2	:= TRUE;
+			test_trim_3	:= TRUE;
+		ELSIF user_test_trim_8 = TRUE THEN
+			test_trim_1	:= TRUE;
+			test_trim_2	:= TRUE;
+			test_trim_3	:= TRUE;
+		END_IF;
+	ELSE
+		gnd_test_pw124	:= FALSE;
+		gnd_test_pw120	:= TRUE;
+		test_trim_1	:= FALSE;
+		test_trim_2	:= FALSE;
+		test_trim_3	:= FALSE;
+		user_test_trim_1 	:= FALSE;
+		user_test_trim_2 	:= FALSE;
+		user_test_trim_3 	:= FALSE;
+		user_test_trim_4 	:= FALSE;
+		user_test_trim_5	:= FALSE;
+		user_test_trim_6 	:= FALSE;
+		user_test_trim_7 	:= FALSE;
+		user_test_trim_8 	:= FALSE;
+	END_IF;
+
+
+	(* Engine rating *)
+	IF alt_take_off_nb = FALSE AND alt_take_off_wb = FALSE AND climb_cruise = FALSE AND alt_take_off = FALSE AND max_cruise = FALSE AND max_climb = FALSE AND max_cont = 	FALSE AND mcr = FALSE AND mcl = FALSE AND mct = FALSE AND ATO = FALSE AND ga = FALSE THEN
+		max_cont 	:= TRUE;
+		bit1		:= FALSE;
+		bit2 		:= FALSE;
+		bit3 		:= FALSE;
+	END_IF;
+
+
+	IF max_cont = TRUE THEN
+		bit1		:= FALSE;
+		bit2		:= FALSE;
+		bit3		:= FALSE;
+	ELSIF	max_climb = TRUE THEN
+		bit1		:= FALSE;
+		bit2		:= TRUE;
+		bit3		:= FALSE;
+	ELSIF max_cruise = TRUE THEN
+		bit1		:= TRUE;
+		bit2		:= FALSE;
+		bit3		:= FALSE;
+	ELSIF	alt_take_off = TRUE THEN
+		bit1		:= TRUE;
+		bit2		:= TRUE;
+		bit3		:= FALSE;
+	ELSIF	climb_cruise = TRUE THEN
+		bit1		:= FALSE;
+		bit2		:= TRUE;
+		bit3		:= FALSE;
+	ELSIF	alt_take_off_wb = TRUE THEN
+		bit1		:= FALSE;
+		bit2		:= FALSE;
+		bit3		:= FALSE;
+	ELSIF alt_take_off_nb = TRUE THEN
+		bit1		:= TRUE;
+		bit2		:= FALSE;
+		bit3		:= FALSE;
+	ELSIF ga = TRUE THEN
+		bit1		:= TRUE;
+		bit2		:= TRUE;
+		bit3		:= FALSE;
+	ELSIF ato = TRUE THEN
+		bit1		:= TRUE;
+		bit2		:= TRUE;
+		bit3		:= TRUE;
+	ELSIF mct = TRUE THEN
+		bit1		:= FALSE;
+		bit2		:= FALSE;
+		bit3		:= FALSE;
+	ELSIF mcr = TRUE THEN
+		bit1		:= FALSE;
+		bit2		:= TRUE;
+		bit3		:= FALSE;
+	ELSIF mcl = TRUE THEN
+		bit1		:= TRUE;
+		bit2		:= FALSE;
+		bit3		:= FALSE;
+	END_IF;
+
+
+	(* LRU Selector *)
+	IF user_lru = TRUE THEN
+		lru		:= TRUE;
+	ELSE
+		lru		:= FALSE;
+	END_IF;
+
+
+	(* Reduce Power *)
+	IF user_reduce_power = TRUE THEN
+		REDUCE_POWER		:= TRUE;
+	ELSE
+		REDUCE_POWER		:= FALSE;
+	END_IF;
+
+
+	(* Emergency Approach / Impending Stall *)
+	IF emergency_approach = TRUE THEN
+		emergency 		:= TRUE;
+	ELSE
+		emergency 		:= FALSE;
+	END_IF;
+
+
+	(* Manual Reversion / Fail Fixed *)
+	IF fail_fixed = TRUE THEN
+		enrichment_relay_hi	:= TRUE;
+		fail_fixed_ind		:= FALSE;
+	ELSE
+		enrichment_relay_hi	:= FALSE;
+		fail_fixed_ind		:= TRUE;
+	END_IF;	
+	
+
+	(* O/S test *)
+	IF user_OS_test = TRUE THEN
+		os_test			:= TRUE;
+	ELSE
+		os_test			:= FALSE;
+	END_IF;
+
+
+	(* EEC / AFU selector  used for Lo Torque, A/F Fault, Uptrim to OPP, Hi Torque to OPP and A/F Enable *)
+	IF AFU_EEC = TRUE THEN
+		AFU_ON			:= TRUE;
+	ELSE
+		AFU_ON			:= FALSE;
+	END_IF;
+
+
+	(* Low Torque light *)
+	IF (AFU_EEC = FALSE AND low_torque_eec = TRUE)
+	OR (AFU_EEC = TRUE and low_torque_afu = TRUE)
+	OR (low_torque_scu = TRUE) THEN
+		low_torque_ind		:= TRUE;
+	ELSIF (AFU_EEC = FALSE AND low_torque_eec = FALSE)
+	OR (AFU_EEC = TRUE and low_torque_afu = FALSE)
+	OR (low_torque_scu = FALSE) THEN
+		low_torque_ind		:= FALSE;
+	END_IF;
+
+
+	(* A/F Armed Light *)
+	IF (AFU_EEC = FALSE AND af_fault_eec = TRUE)
+	OR (AFU_EEC = TRUE AND af_eec_pw126 = TRUE)
+	OR (af_armed_scu = TRUE) THEN
+		af_armed_ind		:= TRUE;
+	ELSIF (AFU_EEC = FALSE AND af_fault_eec = FALSE)
+	OR (AFU_EEC = TRUE AND af_eec_pw126 = FALSE)
+	OR (af_armed_scu = FALSE) THEN
+		af_armed_ind		:= FALSE;
+	END_IF;
+
+
+	(* Uptrim to OPP *)
+	IF (AFU_EEC = FALSE AND uptrim_eec = TRUE)
+	OR (AFU_EEC = TRUE AND uptrim_pw126 = TRUE)
+	OR (uptrim_scu = TRUE) THEN
+		uptrim_to_opp		:= TRUE;
+	ELSIF (AFU_EEC = FALSE AND uptrim_eec = FALSE)
+	OR (AFU_EEC = TRUE AND uptrim_pw126 = FALSE)
+	OR (uptrim_scu = FALSE) THEN
+		uptrim_to_opp		:= FALSE;
+	END_IF;
+
+
+	(* Hi Torque to OPP light *)
+	IF (AFU_EEC = FALSE AND hi_torque = TRUE)
+	OR (AFU_EEC = FALSE AND hi_torque_scu = TRUE) THEN
+		hi_torque_ind		:= TRUE;
+		torque_wrap		:= TRUE;
+	ELSIF (AFU_EEC = TRUE AND hi_torque_afu = TRUE) THEN
+		hi_torque_ind		:= TRUE;
+		torque_wrap		:= FALSE;
+	ELSIF (AFU_EEC = FALSE AND hi_torque = FALSE)
+	OR (AFU_EEC = FALSE AND hi_torque_scu = FALSE)
+	OR (AFU_EEC = TRUE AND hi_torque_afu = FALSE) THEN
+		hi_torque_ind		:= FALSE;
+		torque_wrap		:= FALSE;
+	END_IF;
+
+
+	(* EEC / MAN selector *)
+	IF man_eec_switch = TRUE AND user_inhibit_reset = FALSE THEN
+		inhibit_reset		:= FALSE;
+	ELSIF man_eec_switch = FALSE THEN
+		inhibit_reset		:= TRUE;
+	END_IF;
+
+
+	(* Inhibit Reset *)
+	IF user_inhibit_reset = TRUE THEN
+		inhibit_reset		:= TRUE;
+		torque_inhibit		:= TRUE;
+	ELSIF user_inhibit_reset = FALSE THEN
+		torque_inhibit		:= FALSE;
+		IF man_eec_switch = TRUE THEN
+			inhibit_reset	:= FALSE;
+		END_IF;
+	END_IF;
+
+
+	(* MFC Hot / Cold *)
+	IF man_eec_switch = FALSE AND mfc_hot = FALSE THEN
+		manual_sol		:= TRUE;
+	ELSIF man_eec_switch = FALSE AND mfc_hot = TRUE THEN
+		manual_sol		:= FALSE;
+	ELSIF man_eec_switch = TRUE AND mfc_hot = FALSE THEN
+		manual_sol		:= FALSE;
+	ELSIF man_eec_switch = TRUE AND mfc_hot = TRUE THEN
+		manual_sol		:= TRUE;
+	END_IF;
+
+
+	(* Uptrim Enable light *)
+	(*IF (pw119_pw120_switch = FALSE AND FCU_ANG.value >= 70.0)
+	OR (pw119_pw120_switch = TRUE AND GOV_ANG.value >= 92.0) THEN *)	(* Update for ATI Project *)
+	IF (pw119_pw120_switch = FALSE AND PLA_70 = TRUE)
+	OR (pw119_pw120_switch = TRUE AND CLA_92 = TRUE) THEN
+		uptrim_enable		:= TRUE;
+		enrichment_relay_lo	:= FALSE;
+	ELSE
+		uptrim_enable		:= FALSE;
+		enrichment_relay_lo	:= TRUE;
+	END_IF;
+
+	(* Auto Ignition light *)
+	IF auto_ign = TRUE THEN
+		auto_ign_ind 		:= TRUE;
+		auto_ignition		:= TRUE;
+	ELSE
+		auto_ign_ind	 	:= FALSE;
+		auto_ignition		:= FALSE;
+	END_IF;
+
+	(* PW127e toggle switch *)
+	IF user_pw127e = TRUE THEN
+		pw127e 			:= TRUE;
+	ELSE
+		pw127e			:= FALSE;
+	END_IF;
+
+ELSE
+	(*Disable all action done by user because the EEC Power is off*)
+	man_eec_switch		:= TRUE;
+	mfc_hot			:= FALSE;
+	manual_feather		:= FALSE;
+	AF_enable		:= FALSE;
+	user_af_test		:= FALSE;
+	arm_prop			:= FALSE;
+	user_os_test		:= FALSE;
+	user_lru			:= FALSE;
+	emergency_approach	:= FALSE;
+	max_cont			:= TRUE;
+	alt_take_off_nb		:= FALSE;
+	alt_take_off_wb		:= FALSE;
+	climb_cruise		:= FALSE;
+	alt_take_off		:= FALSE;
+	max_cruise		:= FALSE;
+	max_climb		:= FALSE;
+	mcr			:= FALSE;
+	mcl			:= FALSE;
+	mct			:= FALSE;
+	ato			:= FALSE;
+	ga			:= FALSE;
+	trim_test_run		:= FALSE;
+	user_test_trim_1		:= FALSE;
+	user_test_trim_2		:= FALSE;
+	user_test_trim_3		:= FALSE;
+	user_test_trim_4		:= FALSE;
+	user_test_trim_5		:= FALSE;
+	user_test_trim_6		:= FALSE;
+	user_test_trim_7		:= FALSE;
+	user_test_trim_8		:= FALSE;
+	engine_trim		:= FALSE;
+	uptrim_to_opp		:= FALSE;
+	cancel_npt_gov_fokker	:= FALSE;
+	cancel_npt_gov_bae	:= FALSE;
+	user_reduce_power	:= FALSE;
+	bleed_valve_override	:= FALSE;
+	user_bleed_switch1	:= FALSE;
+	user_bleed_switch2	:= FALSE;
+	user_LRU		:= FALSE;
+	uptrim_from_opp		:= FALSE;
+	fail_fixed_ind		:= FALSE;
+	user_inhibit_reset		:= FALSE;
+	pw119_pw120_switch	:= FALSE;
+	auto_ign_ind 		:= FALSE;
+	user_pw127e 		:= FALSE;
+	pw127e			:= FALSE;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

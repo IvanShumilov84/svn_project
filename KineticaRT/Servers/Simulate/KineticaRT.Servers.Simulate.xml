@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Servers.Simulate</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Servers.Simulate.CommonEventPool">
+            <summary>
+            Class containing the EventPool object shared by most simulate components.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Simulate.CommonEventPool.Pool">
+            <summary>
+            EventPool object shared by most simulate components.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Simulate.EventPool">
+            <summary>
+            Generates Update events at the rate of the KineticaRT.Services.FastUpdater object.
+            Used to synchronise all objects sharing the same EventPool.
+            Provides a value which increases with time.
+            </summary>
+            <remarks>Use the SystemEventPool property of this class to synchronise your own objects with the standard wave simulators.</remarks>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.EventPool.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.EventPool.SystemEventPool">
+            <summary>Gets the EventPool object used to synchronise all the standard wave generators.</summary>
+            <value>The standard EventPool object.</value>
+        </member>
+        <member name="E:KineticaRT.Servers.Simulate.EventPool.Update">
+            <summary>
+            Occurs when it is time for an update.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Simulate.EventPool.UpdateEventHandler">
+            <summary>
+            Represents the method that will handle the Update event.
+            </summary>
+            <param name="Value">The number of seconds since the EventPool was created.</param>
+        </member>
+        <member name="T:KineticaRT.Servers.Simulate.Noise">
+            <summary>
+            Generates simulated noise.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.Noise.#ctor">
+            <summary> 
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.Noise.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.Noise.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.Noise.update_proc(System.Double)">
+            <summary>
+            Called from EventPool Worker thread. Updates the value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.Noise.Connect">
+            <summary>
+            Starts noise generation.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.Noise.Disconnect">
+            <summary>
+            Stops noise generation.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.Noise.Minimum">
+            <summary>Gets or sets the minimum value of the noise.</summary>
+            <value>Minimum value of the noise.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.Noise.Maximum">
+            <summary>Gets or sets the maximum value of the noise.</summary>
+            <value>Maximum value of the noise.</value>
+        </member>
+        <member name="T:KineticaRT.Servers.Simulate.SawToothWave">
+            <summary>
+            Generates a simulated sawtooth shaped wave
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SawToothWave.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SawToothWave.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SawToothWave.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SawToothWave.update_proc(System.Double)">
+            <summary>
+            Called from EventPool Worker thread. Updates the value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SawToothWave.Connect">
+            <summary>
+            Starts sawtooth wave generation.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SawToothWave.Disconnect">
+            <summary>
+            Stops sawtooth wave generation.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SawToothWave.Minimum">
+            <summary>Gets or sets the minimum value of the sawtooth wave.</summary>
+            <value>Minimum value of the sawtooth wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SawToothWave.Maximum">
+            <summary>Gets or sets the maximum value of the sawtooth wave.</summary>
+            <value>Maximum value of the sawtooth wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SawToothWave.Period">
+            <summary>Gets or sets the period of the sawtooth wave.</summary>
+            <value>Period of the sawtooth wave in seconds.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SawToothWave.Phase">
+            <summary>Gets or sets the phase of the sawtooth wave relative to other waves.</summary>
+            <value>Phase of this sawtooth wave relative to other waves as a fraction.</value>
+        </member>
+        <member name="T:KineticaRT.Servers.Simulate.SineArray">
+            <summary>
+            Generates an array of simulated sine waves.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineArray.#ctor">
+            <summary>
+            Initialises an instance of the class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineArray.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineArray.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineArray.update_proc(System.Double)">
+            <summary>
+            Called from EventPool Worker thread. Updates the value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineArray.Connect">
+            <summary>
+            Starts generating sine waves.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineArray.Disconnect">
+            <summary>
+            Stops genrating sine waves
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineArray.Minimum">
+            <summary>Gets or sets the minimum value of the sine wave.</summary>
+            <value>Minimum value of the sine wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineArray.Maximum">
+            <summary>Gets or sets the maximum value of the sine wave.</summary>
+            <value>Maximum value of the sine wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineArray.Period">
+            <summary>Gets or sets the period of the sine wave.</summary>
+            <value>Period of the sine wave in seconds.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineArray.NoOfElements">
+            <summary>Gets or sets the number of elements to be placed in the array.</summary>
+            <value>Number of elements in the array.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineArray.Phase">
+            <summary>Gets or sets the phase of the sinewave relative to other waves.</summary>
+            <value>Phase of this sine wave relative to other waves as a fraction.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineArray.PhaseOffset">
+            <summary>Gets or sets the phase offset of consecutive elements in the array.</summary>
+            <value>Phase offset of consecutive elements in the array.</value>
+        </member>
+        <member name="T:KineticaRT.Servers.Simulate.SineWave">
+            <summary>
+            Generates a simulated sine wave.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineWave.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineWave.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineWave.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineWave.update_proc(System.Double)">
+            <summary>
+            Called from EventPool Worker thread. Updates the value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineWave.Connect">
+            <summary>
+            Starts sine wave generation.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.SineWave.Disconnect">
+            <summary>
+            Stops sine wave generation.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineWave.Minimum">
+            <summary>Gets or sets the minimum value of the sine wave.</summary>
+            <value>Minimum value of the sine wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineWave.Maximum">
+            <summary>Gets or sets the maximum value of the sine wave.</summary>
+            <value>Maximum value of the sine wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineWave.Period">
+            <summary>Gets or sets the period of the sine wave.</summary>
+            <value>Period of the sine wave in seconds.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.SineWave.Phase">
+            <summary>Gets or sets the phase of the sinewave relative to other waves.</summary>
+            <value>Phase of this sine wave relative to other waves as a fraction.</value>
+        </member>
+        <member name="T:KineticaRT.Servers.Simulate.TriangleWave">
+            <summary>
+            Generates a simulated Triangle shaped wave
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.TriangleWave.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.TriangleWave.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.TriangleWave.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.TriangleWave.update_proc(System.Double)">
+            <summary>
+            Called from EventPool Worker thread. Updates the value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.TriangleWave.Connect">
+            <summary>
+            Starts Triangle wave generation.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Simulate.TriangleWave.Disconnect">
+            <summary>
+            Stops Triangle wave generation.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.TriangleWave.Minimum">
+            <summary>Gets or sets the minimum value of the Triangle wave.</summary>
+            <value>Minimum value of the Triangle wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.TriangleWave.Maximum">
+            <summary>Gets or sets the maximum value of the Triangle wave.</summary>
+            <value>Maximum value of the Triangle wave.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.TriangleWave.Period">
+            <summary>Gets or sets the period of the Triangle wave.</summary>
+            <value>Period of the Triangle wave in seconds.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Simulate.TriangleWave.Phase">
+            <summary>Gets or sets the phase of the Triangle wave relative to other waves.</summary>
+            <value>Phase of this Triangle wave relative to other waves.</value>
+        </member>
+    </members>
+</doc>

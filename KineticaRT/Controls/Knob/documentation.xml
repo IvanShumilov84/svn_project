@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Knob</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.Knob">
+            <summary>
+            KineticaRT Knob Control 
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Knob.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.#ctor">
+            <summary>
+            Initialises a new instance of the Knob class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.ResetScale">
+            <summary>
+            Reset the Scale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.ResetKnobColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.ResetIndicatorColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.SetFormat">
+            <summary>
+            Sets up the tool tip and scale range based on the Source channel
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.OnMouseEnter(System.EventArgs)">
+            <summary>
+            MouseEnter Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.OnMouseLeave(System.EventArgs)">
+            <summary>
+            MouseLeave Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Knob.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the knob's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.DestinationChannel">
+            <summary>
+            Gets or sets the object that is the Destination for the knob's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.Source">
+            <summary>
+            Gets or sets the name of the object to be the Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.Destination">
+            <summary>
+            Gets or sets the name of the object to be the Destination
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.Value">
+            <summary>
+            Gets or sets the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.Scale">
+            <summary>
+            Gets the Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.UpdateOnDrag">
+            <summary>
+            Gets or sets whether the Value updates during a drag, or only when the drag is completed
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.AutoReturn">
+            <summary>
+            Gets or sets whether the knob reverts to its DefaultValue after a drag
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.DefaultValue">
+            <summary>
+            Gets or sets the Default Value
+            </summary>
+            <remarks>This is the value to which the knob will revert after a Drag if AutoReturn is true</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.KnobColor">
+            <summary>
+            Gets or sets the Color of the Knob
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.IndicatorColor">
+            <summary>
+            Gets or sets the Color of the Indicator mark
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.Radius">
+            <summary>
+            Gets or sets the radius of the Knob as a proportion of the radius of the Control (0..1)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Knob gets its ToolTip, Minimum and Maximum
+            from its Source channel
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Knob.InputEnabled">
+            <summary>
+            Gets or sets whether user input is Enabled
+            </summary>
+            <remarks>This differs from Enabled by not preventing drag and drop or tooltips</remarks>
+        </member>
+    </members>
+</doc>

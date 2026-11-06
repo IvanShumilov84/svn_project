@@ -1,0 +1,121 @@
+FUNCTION_BLOCK open_OMNIBUSBOX_FB
+(************************************************************************************************************************************************
+	Name :		open_OMNIBUSBOX_FB									
+														
+	Description :	Setup OmnibusBox. 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/09	Danny Lepage	First Release
+
+************************************************************************************************************************************************)	
+
+status	:= OPENING;
+err_code	:= OK;
+XMLError	:= False;
+
+XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+IF hCfgSettings <> 0 THEN
+
+	FOR i:= 9 TO 12 BY 1 DO
+
+		XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + UUT_INFO.Family +'.OMNIBUSBOX_CHANNEL_' + ANY_TO_STRING(i), 'CELBTI_CHCFG429_LOWSPEED');
+		XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + UUT_INFO.Model  +'.OMNIBUSBOX_CHANNEL_' + ANY_TO_STRING(i), XMLCFGSETTINGS_GETSTRINGVALUE.VALUE);
+
+		CHANNEL_SPEED[i] := XMLCFGSETTINGS_GETSTRINGVALUE.VALUE;
+
+		IF ( (CHANNEL_SPEED[i] <> 'CELBTI_CHCFG429_HIGHSPEED') AND (CHANNEL_SPEED[i] <> 'CELBTI_CHCFG429_LOWSPEED')) THEN
+	
+			err_code := ERROR_ON_OPENING;
+			dummy := LOG_MSG('ErrLog', 'DACN1_OMNIBUSBOX_IOMgr: ERROR Channel ' + ANY_TO_STRING(i) + 'invalid speed:' + CHANNEL_SPEED[i] );
+		END_IF;
+
+	END_FOR;
+	
+	XMLCFGSETTINGS_CLOSE(hCfgSettings);
+	hCfgSettings := 0;
+
+ELSE
+	err_code := ERROR_ON_OPENING;
+	dummy := LOG_MSG('ErrLog', 'DACN1_OMNIBUSBOX_IOMgr: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+END_IF;
+
+
+
+IF ((err_code = OK) AND (First_Time_Open = TRUE)) THEN
+	
+	FOR i:= 9 TO 12 BY 1 DO
+
+		IF (CHANNEL_SPEED[i] = 'CELBTI_CHCFG429_HIGHSPEED') THEN
+			boxDescriptor[1].core[1].channel[i].ctrlFlags := OR_MASK(boxDescriptor[1].core[1].channel[i].ctrlFlags, CELBTI_CHCFG429_HIGHSPEED);
+
+		ELSIF (CHANNEL_SPEED[i] = 'CELBTI_CHCFG429_LOWSPEED') THEN
+			boxDescriptor[1].core[1].channel[i].ctrlFlags := AND_MASK(boxDescriptor[1].core[1].channel[i].ctrlFlags, NOT_MASK(CELBTI_CHCFG429_HIGHSPEED));
+
+		END_IF;
+
+	END_FOR;
+
+	IF (In_OMNIBUSBOX_IOMgr.Mode = RUN_FOR_TRUE) THEN
+
+		FOR i:= 1 TO numberOfBox BY 1 DO
+
+			CELBTI_CARDOPEN(boxDescriptor[i].cardNumber);
+			err_code := CELBTI_CARDOPEN.ERR_CODE;
+
+			IF (err_code <> OK) THEN
+
+				FOR j:= 1 TO i-1 DO
+
+					CELBTI_CARDCLOSE(boxDescriptor[j].hCard);
+					boxDescriptor[j].hCard := 0;
+
+				END_FOR;
+			ELSE
+
+				boxDescriptor[i].hCard := CELBTI_CARDOPEN.hCard;
+				FOR j:= 1 TO CELBTI_MAXCORES DO
+					boxDescriptor[i].core[j].hCore := 0;
+				END_FOR;
+
+			END_IF;
+
+		END_FOR;
+
+	ELSE
+		err_code := OK;
+	END_IF;
+
+	First_Time_Open  := FALSE;
+	First_Time_Close := TRUE;
+END_IF;
+
+IF (err_code <> OK) THEN
+	status := ERROR_ON_OPENING;
+ELSE
+	status := OPENED;
+END_IF;
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

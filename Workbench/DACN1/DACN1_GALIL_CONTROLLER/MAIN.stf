@@ -1,0 +1,82 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+	IF (First_Time_Trough  = TRUE) THEN 
+		First_Time_Trough	:= FALSE;
+		Out_GALIL_Controller.status	:= IDLING;
+	END_IF; 
+
+	CASE  In_GALIL_Controller.command OF
+	OPEN:
+		IF ((Out_GALIL_Controller.status = CLOSED) OR (Out_GALIL_Controller.status = IDLING)) THEN  
+			open_GALIL();
+	
+			Out_GALIL_Controller.status		:= open_GALIL.status;	
+			Out_GALIL_Controller.err_code		:= open_GALIL.err_code;	
+			Out_GALIL_Controller.previous_index 	:= In_GALIL_Controller.current_index; (*ft 20070605*)
+
+		END_IF; 
+
+	LOAD:
+		IF ((Out_GALIL_Controller.status = OPENED) OR (Out_GALIL_Controller.status = LOADING)) THEN 
+			load_GALIL();
+
+			Out_GALIL_Controller.status	:= load_GALIL.status;	
+			Out_GALIL_Controller.err_code	:= load_GALIL.err_code;	
+		END_IF; 
+
+	INITIALIZE:
+		IF (Out_GALIL_Controller.status = LOADED) THEN 
+			initialize_GALIL();
+
+			Out_GALIL_Controller.status	:= initialize_GALIL.status;	
+			Out_GALIL_Controller.err_code	:= initialize_GALIL.err_code;	
+		END_IF; 
+
+	RUN:
+		IF  ((Out_GALIL_Controller.status =  INITIALIZED)  OR (Out_GALIL_Controller.status = RUNNING)) THEN 
+			run_GALIL();
+
+			Out_GALIL_Controller.status	:= run_GALIL.status;	
+			Out_GALIL_Controller.err_code	:= run_GALIL.err_code;	
+		END_IF; 
+	 
+	CLOSE:
+		IF  (Out_GALIL_Controller.status <> CLOSED) THEN 
+			close_GALIL();
+
+			Out_GALIL_Controller.status	:= close_GALIL.status;	
+			Out_GALIL_Controller.err_code	:= close_GALIL.err_code;	
+		END_IF; 
+
+	IDLE:
+		Out_GALIL_Controller.status := IDLING;	
+	END_CASE; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_PROGRAM

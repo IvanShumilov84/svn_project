@@ -1,0 +1,43 @@
+FUNCTION_BLOCK load_GALIL_FB
+(************************************************************************************************************************************************
+	Name :		load_GALIL_FB									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+	err_code := OK;
+	status := LOADING;
+
+	(* Log message every 15 minutes. 900 000 ms *)
+	IF  (mod_rest = 0) THEN
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: RUNNING');
+	END_IF;
+
+	mod_rest := MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+
+	IF (err_code <> OK) THEN 
+		status := ERROR_ON_LOADING;
+
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: ERROR ON LOADING');
+
+	ELSE 
+		status := LOADED;
+
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: LOADED');
+
+		mod_rest := 0;
+	END_IF; 	
+
+
+
+
+END_FUNCTION_BLOCK

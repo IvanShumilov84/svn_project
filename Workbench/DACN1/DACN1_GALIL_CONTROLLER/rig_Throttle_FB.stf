@@ -1,0 +1,385 @@
+FUNCTION_BLOCK RIG_THROTTLE_FB
+(************************************************************************************************************************************************
+	Name :		rig_Throttle_FB									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         				First Release
+	1.1		2003/06/19	N.Sangiovanni	Initialize actuator_position_demand to 0
+	2.0		2006/11/13	Danny Lepage	Adapt to GALIL
+
+************************************************************************************************************************************************)	
+
+IF ( User_Rig.Clear_demand = TRUE ) THEN
+	localReset := TRUE;
+END_IF;
+
+IF ( ( reset = TRUE ) OR ( localReset = TRUE ) ) THEN
+
+	localReset 		:= FALSE;
+	computeDone		:= FALSE;
+	disengaged		:= FALSE;
+	firstTimeEngaged 	:= TRUE;
+	
+	storeMinAngleDone	:= FALSE;
+	storeMaxAngleDone	:= FALSE;
+	storeMinStopDone	:= FALSE;
+	storeMaxStopDone	:= FALSE;
+	storeABPositionDone	:= FALSE;
+
+	MaxStopDone		:= FALSE; (*ft*)
+	MinStopDone		:= FALSE; (*ft*)
+	MaxAngleDone		:= FALSE; (*ft*)
+	MinAngleDone		:= FALSE; (*ft*)
+	RiggingComputeDone 	:= FALSE; (*ft*)
+	ABStopDone		:= FALSE; (*ft*)	
+
+	riggingDone		:= FALSE;
+	DoneRigging 		:= FALSE;
+	
+	MinLeverPosition 	:= 0.0;
+	MinActuatorPosition 	:= 0.0;
+	MaxLeverPosition 	:= 0.0;
+	MaxActuatorPosition 	:= 0.0;
+	MinRigPosition 		:= 0.0;			
+	MaxRigPosition 		:= 0.0;
+
+	(* Stop motor controller *)
+	STOP_RIG_CONTROLLER_GALIL( ihdmc );
+	err_code := STOP_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+END_IF;
+
+IF ( RiggingDone = FALSE ) THEN
+
+	GET_THROTTLE_POSITION_GALIL( ihdmc ); (* Returned Value in VOLTS *)
+	LeverPositionRealTime 	:= GET_THROTTLE_POSITION_GALIL.POSITION;			
+
+	IF  ( User_Rig.Engage_demand = TRUE ) THEN
+ 
+		IF ( firstTimeEngaged = TRUE ) THEN
+
+
+			CtrlSlope := MinSlope;
+			SET_CONTROLLER_SLOPE_GALIL( ihdmc,CtrlSlope );
+			CtrlOffset := 0.0;
+       	         	SET_CONTROLLER_OFFSET_GALIL( ihdmc,CtrlOffset );
+		
+
+
+                  	(* Set where in its program, the Galil servo motor controller will start *) 
+			line_nb := 0;
+			
+                 	firstTimeEngaged := FALSE;
+
+
+		ELSE
+			GET_THROTTLE_POSITION_GALIL( ihdmc );
+			LeverPos := GET_THROTTLE_POSITION_GALIL.POSITION;
+
+			line_nb := 53;
+		END_IF;
+
+		IF ( engaged = FALSE) THEN
+			(* Start motor controller *)
+			START_RIG_CONTROLLER_GALIL( ihdmc, line_nb );
+			err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+			engaged		:= TRUE;
+			disengaged	:= FALSE;
+		END_IF;
+
+	ELSE
+
+		IF ( Disengaged = FALSE ) THEN
+			GET_THROTTLE_POSITION_GALIL( ihdmc ); (* Returned Value in VOLTS *)
+			LastLeverPos := GET_THROTTLE_POSITION_GALIL.POSITION;
+
+			(* Stop motor controller *)
+			STOP_RIG_CONTROLLER_GALIL( ihdmc );
+			err_code := STOP_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+			(* Save last motor position *)
+			START_RIG_CONTROLLER_GALIL( ihdmc, 59 );
+			err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+			Disengaged 	:= TRUE;
+			engaged 	:= FALSE ;
+		END_IF;
+
+	END_IF;
+
+	IF ( ( User_Rig.Store_Min_Angle = TRUE ) AND ( StoreMinAngleDone = FALSE ) ) THEN
+
+		GET_THROTTLE_POSITION_GALIL( ihdmc ); (* Returned Value in VOLTS *)
+		GET_CONTROLLER_POSITION_GALIL( ihdmc );
+
+		MinRigPosition 		:= User_Rig.Min_Rig_Pos;
+		MinLeverPosition 	:= GET_THROTTLE_POSITION_GALIL.POSITION;
+		MinActuatorPosition 	:= GET_CONTROLLER_POSITION_GALIL.POSITION;
+
+		(* CHECK DIFFERENCES BETWEEN MAX AND MIN TO AVOID MISTAKE FROM OPERATOR *)
+
+		IF StoreMaxAngleDone = TRUE THEN 
+			IF (ABS(User_Rig.Min_Rig_Pos - User_Rig.Max_Rig_Pos) > 20.0) AND (ABS(MinLeverPosition - MaxLeverPosition) > 1.0) THEN
+				StoreMinAngleDone	:= TRUE;
+			END_IF;
+		ELSE
+			StoreMinAngleDone	:= TRUE;
+		END_IF;
+	
+		MinAngleDone		:= TRUE;
+
+	END_IF;
+
+	IF ( ( User_Rig.Store_Max_Angle = TRUE ) AND ( StoreMaxAngleDone = FALSE ) ) THEN
+		
+		GET_THROTTLE_POSITION_GALIL( ihdmc ); (* Returned Value in VOLTS *)
+		GET_CONTROLLER_POSITION_GALIL( ihdmc );
+
+		MaxRigPosition 		:= User_Rig.Max_Rig_Pos;
+		MaxLeverPosition 	:= GET_THROTTLE_POSITION_GALIL.POSITION;
+		MaxActuatorPosition 	:= GET_CONTROLLER_POSITION_GALIL.POSITION;
+
+		(* CHECK DIFFERENCE BETWEEN MAX AND MIN TO AVOID MISTAKE FROM OPERATOR *)
+
+		IF StoreMinAngleDone = TRUE THEN
+			IF (ABS(User_Rig.Min_Rig_Pos - User_Rig.Max_Rig_Pos) > 20.0) AND (ABS(MinLeverPosition - MaxLeverPosition) > 1.0) THEN
+				StoreMaxAngleDone	:= TRUE;
+			END_IF;
+		ELSE
+			StoreMaxAngleDone	:= TRUE;
+		END_IF;
+
+		MaxAngleDone		:= TRUE;
+	END_IF;
+
+	IF ( ( User_Rig.Compute_demand = TRUE ) AND ( ComputeDone = FALSE ) AND ( StoreMinAngleDone = TRUE ) AND ( StoreMaxAngleDone = TRUE ) ) THEN
+
+		Compute_mx_b(MaxActuatorPosition, MinActuatorPosition, MaxLeverPosition, MinLeverPosition);
+		CtrlSlope  := Compute_mx_b.Slope ;
+		CtrlOffset := Compute_mx_b.Offset ;
+
+		(* Slope and offset for TLA *)
+		Compute_mx_b(MaxActuatorPosition, MinActuatorPosition, MaxRigPosition, MinRigPosition);
+		Deg_Slope := Compute_mx_b.Slope ;
+		Deg_Offset := Compute_mx_b.Offset ;
+
+		(* AVOID SENDING 0.0 slope 
+		IF ( Deg_Slope = 0.0 ) THEN
+			Deg_Slope := 0.01;
+		END_IF; *)
+ 
+		(*
+		 * Prevent race condition while updating slope / offset in controller
+		 * by jumping execution to #BUSYWAIT section of controller
+		 * application.
+		 *)
+		START_RIG_CONTROLLER_GALIL( ihdmc, 70 );
+		err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+		SET_DEG_SLOPE_GALIL( ihdmc, Deg_Slope) ;
+		err_code  := SET_DEG_SLOPE_GALIL.ERR_CODE;
+		SET_DEG_OFFSET_GALIL( ihdmc, Deg_Offset) ;
+		err_code := SET_DEG_OFFSET_GALIL.ERR_CODE;
+
+		(* AVOID SENDING 0.0 SLOPE 		
+		IF ( CtrlSlope = 0.0) THEN
+			CtrlSlope := 0.01;
+		END_IF; *)
+				
+		SET_CONTROLLER_SLOPE_GALIL( ihdmc, CtrlSlope);
+		err_code := SET_CONTROLLER_SLOPE_GALIL.ERR_CODE;
+		SET_CONTROLLER_OFFSET_GALIL( ihdmc , CtrlOffset);
+		err_code := SET_CONTROLLER_OFFSET_GALIL.ERR_CODE;
+
+		START_RIG_CONTROLLER_GALIL( ihdmc, 56 );
+		err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+		ComputeDone		:= TRUE;
+		RiggingComputeDone 	:= TRUE;
+	END_IF;
+
+	IF ( ( User_Rig.StoreMinStop_demand = TRUE ) AND ( ComputeDone = TRUE ) AND ( StoreMinStopDone = FALSE ) ) THEN
+
+		STOP_RIG_CONTROLLER_GALIL( ihdmc );
+
+		START_RIG_CONTROLLER_GALIL( ihdmc, 79 );
+		err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+		StoreMinStopDone := TRUE;
+		MinStopDone := TRUE;
+	END_IF;
+
+	IF ( ( User_Rig.StoreMaxStop_demand = TRUE ) AND ( ComputeDone = TRUE ) AND ( StoreMaxStopDone = FALSE ) ) THEN
+
+		STOP_RIG_CONTROLLER_GALIL( ihdmc );
+
+		START_RIG_CONTROLLER_GALIL( ihdmc, 84 );
+		err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+		StoreMaxStopDone := TRUE;
+		MaxStopDone := TRUE;
+	END_IF;
+	
+	IF ( ( User_Rig.StoreABPosition_demand = TRUE ) AND ( ComputeDone = TRUE ) AND (StoreABPositionDone = FALSE ) ) THEN
+
+		STOP_RIG_CONTROLLER_GALIL( ihdmc );
+
+		START_RIG_CONTROLLER_GALIL( ihdmc, 89 );
+
+		err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+		storeABPositionDone := TRUE;
+		ABStopDone:= TRUE;
+	END_IF;
+	
+	
+	IF UUT_Info.Model = 'ATAR 09C' THEN
+		RiggingDone := ( ComputeDone AND StoreMinStopDone AND StoreMaxStopDone );
+	ELSE
+		RiggingDone := ( ComputeDone AND StoreMinStopDone AND StoreMaxStopDone AND StoreABPositionDone );
+	END_IF;
+	
+
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

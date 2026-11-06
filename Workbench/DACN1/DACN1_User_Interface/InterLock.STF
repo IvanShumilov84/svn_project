@@ -1,0 +1,20 @@
+PROGRAM INTERLOCK
+
+
+IF ((TM_out_Calib_Calcul = 0) AND (TM_Calib_Calcul = 444 ))  THEN
+
+	TM_out_tm_calib.coeffs[1] := TM_Out_coeffs[1] ;
+	TM_out_tm_calib.coeffs[2] := TM_Out_coeffs[2] ;
+
+	TM_Calib_Calcul := TM_out_Calib_Calcul ;
+END_IF; 
+
+
+
+
+
+
+
+
+
+END_PROGRAM

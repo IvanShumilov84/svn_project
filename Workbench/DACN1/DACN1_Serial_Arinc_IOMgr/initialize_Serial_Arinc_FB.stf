@@ -1,0 +1,82 @@
+FUNCTION_BLOCK initialize_Serial_Arinc_FB
+(************************************************************************************************************************************************
+	Name :		initialize_Serial_Arinc_FB									
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/13		N. Sangiovanni	First Release
+
+************************************************************************************************************************************************)	
+
+	(* Request the first scan and prepare the next scan *)
+	status := INITIALIZING;
+	err_code := OK;
+
+
+	FOR i := 1 TO 35 BY 1 DO
+		Temp_Serial_Arinc[i].description 	:= '';
+		Temp_Serial_Arinc[i].value 		:= 0.0;
+		Temp_Serial_Arinc[i].unit		:= '';
+		Temp_Serial_Arinc[i].discrete	:= '';
+	END_FOR;
+
+
+	IF (		(UUT_Info.Model 	= 	'CTS800-4K')
+		OR	(UUT_Info.Model	=	'BLC SYSTEM')) THEN
+		Send_String	:= 'SEND';
+		Send_String	:= INSERT(Send_String, CHAR(13), MLEN(Send_String) + 1);
+
+		Nbr_Send_String	:= 5;
+
+	ELSIF(	(UUT_Info.Model	=	'GTCP131-9A')
+		OR	(UUT_Info.Model	=	'GTCP131-9B')
+		OR	(UUT_Info.Model	=	'GTCP331-350C')
+		OR	(UUT_Info.Model	=	'GTCP331-500B')) THEN
+		Send_String	:= 'SEND';
+		Send_String	:= INSERT(Send_String, CHAR(13), MLEN(Send_String) + 1);
+		Send_String	:= INSERT(Send_String, CHAR(10), MLEN(Send_String) + 1);
+
+		Nbr_Send_String	:= 6;
+	ELSE
+		(*
+		 * APS2X00 and APS32X0 are not using Serial ARINC
+		 *)
+		Send_String	:= '';
+		Nbr_Send_String	:= 0;
+	END_IF;
+
+
+	IF First_Time THEN
+		IF (Nbr_Send_String > 0) THEN
+			WRITE_SER_STRING(fd, Send_String) ;
+		END_IF;
+
+		First_Time	:= FALSE;
+	END_IF;
+
+
+	IF (err_code <> OK) THEN 
+		status := ERROR_ON_INITIALIZING;
+	ELSE 
+		status := INITIALIZED;
+	END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

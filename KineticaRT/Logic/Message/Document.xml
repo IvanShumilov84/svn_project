@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Message</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Logic.Message.Message">
+            <summary>
+            A single message.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Recorder">
+            <summary>
+            Records events.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.Connect">
+            <summary>
+            KineticaRT.Object method for connecting objects together.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.Disconnect">
+            <summary>
+            KineticaRT.Object method for disconnecting objects from each other.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.Source">
+            <summary>
+            Name of Channel to be recorded.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.Destination">
+            <summary>
+            Name of destination Channel for recorded messages.
+            Eg. a TextLog channel.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.SourceText">
+            <summary>
+            Source text for recorded message.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.Priority">
+            <summary>
+            Priority of recorded message.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.TextLog">
+            <summary>
+            Logs messages into a text file.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.Connect">
+            <summary>
+            KineticaRT.Object method for connecting objects together.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.Disconnect">
+            <summary>
+            KineticaRT.Object method for disconnecting objects from each other.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.TextLog.Source">
+            <summary>
+            Name of Channel to be logged.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.TextLog.FilePath">
+            <summary>
+            Path and name of file to log to.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.XmlLog">
+            <summary>
+            Logs messages into a text file.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.XmlLog.Connect">
+            <summary>
+            KineticaRT.Object method for connecting objects together.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.XmlLog.Disconnect">
+            <summary>
+            KineticaRT.Object method for disconnecting objects from each other.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.XmlLog.Source">
+            <summary>
+            Name of Channel to be logged.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.XmlLog.FilePath">
+            <summary>
+            Path and name of file to log to.
+            </summary>
+        </member>
+    </members>
+</doc>

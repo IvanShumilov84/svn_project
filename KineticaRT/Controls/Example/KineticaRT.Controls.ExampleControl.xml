@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Example</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.ExampleControl">
+            <summary>
+            KineticaRT Display Control.
+            Displays a string or numeric value as text
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ExampleControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.#ctor">
+            <summary>
+            Initialises a new instance of the Display class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.SetWindowRegion">
+            <summary>
+            Sets the controls window to the relevant size and shape
+            Call when shape changes, or control resizes
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.OnResize(System.EventArgs)">
+            <summary>
+            Resize Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.OnFontChanged(System.EventArgs)">
+            <summary>
+            FontChanged Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>NumericVariable
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExampleControl.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.BorderStyle">
+            <summary>
+            Gets or Sets the style of the Control's Border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.Cursor">
+            <summary>
+            Gets or sets the Cursor that appears when the mouse passes over the control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the display's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.DestinationChannel">
+            <summary>
+            Gets or sets the object that is the Destination for the display's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.Source">
+            <summary>
+            Gets or sets the name of the object to be the Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.Destination">
+            <summary>
+            Gets or sets the name of object to be the Destination
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.Value">
+            <summary>
+            Gets the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Display gets its ToolTip, Minimum and Maximum
+            from the its Source channel
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ExampleControl.Format">
+            <summary>
+            Gets or sets the text format of the value from a Source.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Overview - KineticaRT Studio</title>
+		<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+		<link href="Manual.css" rel="Stylesheet">
+	</head>
+	<body>
+		<H2>Overview</H2>
+		<P>
+            The PDA version of KineticaRT Studio is a significantly cut down version of the
+            full KineticaRT Studio for PCs which is designed to run on Microsofts .Net Compact
+            Framework which is used on PDAs,&nbsp; mobile phones etc.</P>
+        <p>
+            There are two versions, a development version for configuration of the screens etc.
+            and a runtime
+            version for normal use.&nbsp; The development version only runs on devices with
+            the full Microsoft .Net Framework such as a normal PC.&nbsp; The runtime version
+            runs on devices with the Microsoft .Net Compact Framework such as PDAs and mobile phones, it can also be run on a normal PC as long as the Microsoft .Net Compact
+            Framework is installed.</p>
+        <p>
+            The PDA version obtains its Channels via an internet/intranet connection to a KineticaRT
+            Exchange web server, it has a single built in exchange client for the communication.&nbsp;
+            An exchange server will need to be run on a standard version of KineticaRT Studio to provide the actual channels to the web server.
+            No actual channels are created on the PDA device itself.&nbsp;
+        </p>
+        <p>
+            The graphical
+			facilities on the Microsoft .Net Compact Framework for PDAs are significantly
+            restricted and so the Compact version of KineticaRT Studio also has sigificantly
+            restricted graphics, as a result it is not possible to use display pages developed
+            for the full version, seperate pages must be created using the PDA development version
+            using the cut down, Compact versions of the normal display controls.&nbsp; Not all
+            controls are available.</p>
+        <h3>Setup</h3>
+        <h4>Runtime</h4>
+        <p>
+            The runtime can be installed on the PDA by copying it's folder to the PDAs storage
+            device, it is run by opening the [application].exe file.&nbsp; The device needs
+            to have the Microsoft Compact Framework 2 installed and a network connection to
+            the Exchange web server, communication to the web server can be tested using Internet
+            Explorer, once IE can connect then the application can connect. It is also necessary
+            to set the following two lines in the [application].exe.config file:</p>
+        <ul>
+        <li>&lt;add key="ServerUrl" value="http://192.168.0.1/KineticaRT/service.asmx"&gt;&lt;/add&gt;</li>
+            <li>&lt;add key="SystemName" value="PDA"&gt;&lt;/add&gt; </li>
+        </ul>
+        <p>
+            ServerUrl should be set to the web address of the exchange server.</p>
+        <p>
+            SystemName should be set to the SystemName of the channel group to be accessed on
+            the exchange server.</p>
+        <h4>Configuration</h4>
+        <p>
+            For the configuration version, the folder needs to be copied to a PC able to run
+            both the standard Microsoft .Net Framework 2 and the .Net Compact Framework 2, and can be run by opening the [application].exe
+            file.&nbsp; Again it will need a connection to the webserver and the two lines in
+            the [application].exe.config file set as described for the runtime if the channels
+            are to be seen working.</p>
+        <h3>Configuration</h3>
+        <p>
+            Configuration is much the same as on the full version except that the display controls
+            have less properties and that it is not necessary to configure any channels or sequences.&nbsp;
+            See the manual for the full version for more detail.</p>
+        
+        <H3>
+            Swapping from Configuration to Runtime</h3>
+        <p>
+            When the Configuration version is saved, both configuration (Normal .Net Framework)
+            and runtime files (.Net Compact Framework) are written to the configuration project folder.  The runtime files can then be copied into a runtime folder, runtime files are distinguished from configuration files by having "Compact." automatically added to the start of their filename.  It is only the dll versions of the panel files that need to be copied from configuration to runtime as the channel list is set by the
+            server and there are no window, sequence or channel files. The list of tabs (panels) to be displayed is configured by setting the "TabList" channel to that list.
+        </p>
+        
+        <h3>
+            Channels</h3>
+        <p>
+            The Explorer view for the PDA version will show an Exchange Client "_Client" plus
+            the
+            list of channels provided by the Exchange server running on the PC.&nbsp;
+        </p>
+        <p>
+            Note: it may be necessary to "Disable Explorer" and then "Enable Explorer" from
+            the project menu to see the channels.</p>
+        <p>
+            There are some channels included which have special purposes:</p>
+        <p>
+            "Tab" - this is the index of the current tab being displayed on the device, changing
+            the value will change the displayed tab, the tab may also be changed by the user
+            if the tabs are left visible.&nbsp; This is intended for control of whats displayed
+            from a sequence.</p>
+        <p>
+            "TabList" - this is a list of tabs available to be selected, it may be changed for example
+            depending on operator level to give some operators extra facilities.</p>
+        <p>
+            &nbsp;</p>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

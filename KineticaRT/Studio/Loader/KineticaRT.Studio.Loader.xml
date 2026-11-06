@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Studio.Loader</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Studio.DirectoryLoader">
+            <summary>
+            Loads objects from XML files in a specific directory
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.DirectoryLoader.#ctor(System.Int32)">
+            <summary>
+            Initialises a new instance of the DirectoryLoader class
+            </summary>
+            <param name="Index">Integer that uniquely identifies this object</param>
+        </member>
+        <member name="M:KineticaRT.Studio.DirectoryLoader.Load(KineticaRT.Collection,KineticaRT.Studio.Loader.Translation[],System.Xml.XmlElement)">
+            <summary>
+            Loads the directory
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Studio.DirectoryLoader.Progress">
+            <summary>
+            Progress event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.DirectoryLoader.DirectoryPath">
+            <summary>
+            Gets or sets the path of the Directory that this object loads
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.FileLoader">
+            <summary>
+            Loads objects from XML files in a specific directory
+            Only loads KineticaRT.Object types
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initialises a new instance of the DirectoryLoader class
+            </summary>
+            <param name="Name">Name of file (no path)</param>
+            <param name="DirIndex">Integer that uniquely identifies the directory holding this</param>
+            <param name="Index">Integer that uniquely identifies this object within its directory</param>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.Load(KineticaRT.Collection,KineticaRT.Studio.Loader.Translation[],System.String)">
+            <summary>
+            Loads the file. Does not create the objects
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.CreateObjects(KineticaRT.Collection,KineticaRT.Studio.Loader.Translation[],System.Xml.XmlElement)">
+            <summary>
+            Actually creates the objects
+            </summary>
+            <param name="Collection">Collection in which to put the objects</param>
+            <param name="Translations">How to translate old-style objects</param>
+            <param name="PersistenceRoot">Root node of persistence file</param>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.Clear(KineticaRT.Collection)">
+            <summary>
+            Removes objects created by this file from Collection
+            </summary>
+            <param name="Collection">Collection containing objects</param>
+        </member>
+        <member name="E:KineticaRT.Studio.FileLoader.Progress">
+            <summary>
+            Progress event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.FileLoader.FileName">
+            <summary>
+            Gets the File name that this object loads (no path)
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.Formatter">
+            <summary>
+            Specialist seialization formatter for Deserializing KineticaRT Xml strings.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.#ctor(KineticaRT.Studio.Loader.Translation[])">
+            <summary>
+            Creates a new instance of the Formatter class, with the given Translations
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.Serialize(System.IO.Stream,System.Object)">
+            <summary>
+            Serialize - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteArray(System.Object,System.String,System.Type)">
+            <summary>
+            WriteArray - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteBoolean(System.Boolean,System.String)">
+            <summary>
+            WriteBoolean - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteByte(System.Byte,System.String)">
+            <summary>
+            WriteByte - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteChar(System.Char,System.String)">
+            <summary>
+            WriteChar - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteDateTime(System.DateTime,System.String)">
+            <summary>
+            WriteDateTime - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteDecimal(System.Decimal,System.String)">
+            <summary>
+            WriteDecimal - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteDouble(System.Double,System.String)">
+            <summary>
+            WriteDouble - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteInt16(System.Int16,System.String)">
+            <summary>
+            WriteInt16 - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteInt32(System.Int32,System.String)">
+            <summary>
+            WriteInt32 - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteInt64(System.Int64,System.String)">
+            <summary>
+            WriteInt64 - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteObjectRef(System.Object,System.String,System.Type)">
+            <summary>
+            WriteObjectRef - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteSByte(System.SByte,System.String)">
+            <summary>
+            WriteSByte - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteSingle(System.Single,System.String)">
+            <summary>
+            WriteSingle - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteTimeSpan(System.TimeSpan,System.String)">
+            <summary>
+            WriteTimeSpan - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteUInt16(System.UInt16,System.String)">
+            <summary>
+            WriteUInt16 - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteUInt32(System.UInt32,System.String)">
+            <summary>
+            WriteUInt32 - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteUInt64(System.UInt64,System.String)">
+            <summary>
+            WriteUInt64 - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.WriteValueType(System.Object,System.String,System.Type)">
+            <summary>
+            WriteValueType - not implemented
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Formatter.Deserialize(System.IO.Stream)">
+            <summary>
+            Deserializes the data on the provided stream and reconstitutes the graph of objects
+            </summary>
+            <remarks>
+            'strm1' should contain the xml for a single object and its children, in
+            the KRT V5 format. The Translations provided when the Formatter was
+            created will be used to work out which DotNet objects to create.
+            Uses ObjectManager and FormatterServices to help.
+            </remarks>
+            <param name="strm1">The stream containing the data to deserialize</param>
+            <returns>The top object of the deserialized graph</returns>
+        </member>
+        <member name="P:KineticaRT.Studio.Formatter.Binder">
+            <summary>
+            Binder property - ignored by this formatter.
+            </summary>
+            <remarks>
+            As the Binder, Context and SurrogateSelector properties are ignored,
+            this formatter does not honour Surrogates
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Studio.Formatter.Context">
+            <summary>
+            Context property - ignored by this formatter.
+            </summary>
+            <remarks>
+            As the Binder, Context and SurrogateSelector properties are ignored,
+            this formatter does not honour Surrogates
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Studio.Formatter.SurrogateSelector">
+            <summary>
+            SurrogateSelector property - ignored by this formatter.
+            </summary>
+            <remarks>
+            As the Binder, Context and SurrogateSelector properties are ignored,
+            this formatter does not honour Surrogates
+            </remarks>
+        </member>
+        <member name="T:KineticaRT.Studio.Loader">
+            <summary>
+            Loads objects from XML files
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.#ctor">
+            <summary>
+            Initialises a new instance of the Loader class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.BeginInit">
+            <summary>
+            Initialization is beginning
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.EndInit">
+            <summary>
+            Initialization is complete
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Studio.Loader.Progress">
+            <summary>
+            Progress event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.BaseDirectory">
+            <summary>
+            Base Directory Path, to which all other Directories are appended
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.Directories">
+            <summary>
+            Array of Directories to load. Names or partial paths get appended to the BaseDirectory.
+            </summary>
+            <remarks>
+            Ensure Collection, TranslatorFile and PersistenceFile are set before this
+            property, as first time it is set loading is initiated automatically. Subsequently
+            the 'LoadAvailable' channel is set, and loading occurs when the 'LoadNow' channel
+            becomes true.
+            To replace a directory (eg Run2 instead of Run1) without causing
+            a complete reload, ensure that equivalent directories are in the same
+            order as for the original load.
+            When this property is set, the 'LoadAvailable' channel in the Collection
+            becomes true. Note that simply changing the value of one of the strings
+            without calling the property's 'set' method will not cause 'LoadAvailable'
+            to be updated
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.Collection">
+            <summary>
+            Collection object in which to put loaded objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.TranslatorFile">
+            <summary>
+            Path and name of Translator file
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.PersistenceFile">
+            <summary>
+            Path and name of Persistence file
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.Loader.ProgressEventHandler">
+            <summary>
+            Handler for Progress event
+            </summary>
+        </member>
+    </members>
+</doc>

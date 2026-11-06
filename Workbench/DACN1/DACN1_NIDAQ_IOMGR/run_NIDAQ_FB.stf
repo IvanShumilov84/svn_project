@@ -1,0 +1,496 @@
+FUNCTION_BLOCK run_NIDAQ_FB
+(*********************************************************************************************************************************************************
+
+    Name :        run_NIDAQ_FB                                    
+                                                        
+    Description :    Data Acquisition routine on National A/D Card
+
+    Dependacy : 
+
+                    HYSTORY
+    Rev        Date        Name            Description
+                (YYYY/MM/DD)
+
+    1.0        2008/01/28    D.Lepage        First Release based on run_SCU_FB
+
+************************************************************************************************************************************************************)    
+err_code := OK;
+status := RUNNING;
+(* CODE FROM 05288  Log message every 15 minutes. 900 000 ms *)
+IF  (modulo_rest = 0) THEN
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: RUNNING');
+END_IF;
+modulo_rest  := MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+
+
+IF OS_BOARD_IS_ENABLED THEN
+      OS_BOARD_ENGINESELECT(OS_BOARD_ENGINE_CFG_NO);
+
+	CASE OS_TRIP_IND_BINDING_SOURCE OF
+		BINDING_DACN1_SERIAL_IOMGR_DIN:
+			OS_TRIP_IND := DACN1_SERIAL_IOMGR_DIN[OS_TRIP_IND_INDEX];
+
+		BINDING_DACN1_NIDAQ_IOMGR_DIN:
+			OS_TRIP_IND := DIN[OS_TRIP_IND_INDEX];
+
+		ELSE
+			err_code := -2;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: OS_TRIP_IND_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+	END_CASE;
+
+	OS_BOARD_CAL_START_TIMER(TRUE, OS_BOARD_CAL_START_DELAY);
+
+	IF (OS_BOARD_CAL_START_TIMER.Q) THEN
+
+		OS_BOARD_N1( OS_BOARD_N1_BOARD_ENABLE,
+			 OS_BOARD_N1_BOARD_OSC_DOUT_INDEX,
+			 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.FOUT,
+			 OS_BOARD_N1_BOARD_FOUT_INDEX,
+			 OS_BOARD_N1_BOARD_VREF_VOUT_INDEX,
+			 OS_BOARD_CAL_STEP_DELAY,
+			 OS_TRIP_IND,
+			 OS_BOARD_MASTER_RESET_DOUT_INDEX,
+			 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.CAL_VOUT_MIN,
+			 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.CAL_VOUT_MAX,
+			 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.CAL_VOUT_STEP,
+			 FALSE);
+
+		OS_BOARD_N1_BOARD_CAL_DONE := OS_BOARD_N1.CAL_DONE;
+
+		OS_BOARD_N2(OS_BOARD_N2_BOARD_ENABLE AND OS_BOARD_N1_BOARD_CAL_DONE,
+			OS_BOARD_N2_BOARD_OSC_DOUT_INDEX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.FOUT,
+			OS_BOARD_N2_BOARD_FOUT_INDEX,
+			OS_BOARD_N2_BOARD_VREF_VOUT_INDEX,
+			OS_BOARD_CAL_STEP_DELAY,
+			OS_TRIP_IND,
+			OS_BOARD_MASTER_RESET_DOUT_INDEX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.CAL_VOUT_MIN,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.CAL_VOUT_MAX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.CAL_VOUT_STEP,
+			FALSE);
+
+		OS_BOARD_N2_BOARD_CAL_DONE := OS_BOARD_N2.CAL_DONE;
+
+		OS_BOARD_N3( OS_BOARD_N3_BOARD_ENABLE AND OS_BOARD_N2_BOARD_CAL_DONE,
+			OS_BOARD_N3_BOARD_OSC_DOUT_INDEX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.FOUT,
+			OS_BOARD_N3_BOARD_FOUT_INDEX,
+			OS_BOARD_N3_BOARD_VREF_VOUT_INDEX,
+			OS_BOARD_CAL_STEP_DELAY,
+			OS_TRIP_IND,
+			OS_BOARD_MASTER_RESET_DOUT_INDEX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.CAL_VOUT_MIN,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.CAL_VOUT_MAX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.CAL_VOUT_STEP,
+			FALSE);
+
+		OS_BOARD_N3_BOARD_CAL_DONE := OS_BOARD_N3.CAL_DONE;
+
+		OS_BOARD_N4(OS_BOARD_N4_BOARD_ENABLE AND OS_BOARD_N3_BOARD_CAL_DONE,
+			OS_BOARD_N4_BOARD_OSC_DOUT_INDEX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.FOUT,
+			OS_BOARD_N4_BOARD_FOUT_INDEX,
+			OS_BOARD_N4_BOARD_VREF_VOUT_INDEX,
+			OS_BOARD_CAL_STEP_DELAY,
+			OS_TRIP_IND,
+			OS_BOARD_MASTER_RESET_DOUT_INDEX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.CAL_VOUT_MIN,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.CAL_VOUT_MAX,
+			OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.CAL_VOUT_STEP,
+			FALSE);
+
+		OS_BOARD_N4_BOARD_CAL_DONE := OS_BOARD_N4.CAL_DONE;
+
+	END_IF;
+	OS_BOARD_CAL_DONE := (OS_BOARD_N1_BOARD_CAL_DONE OR NOT OS_BOARD_N1_BOARD_ENABLE) AND 
+					(OS_BOARD_N2_BOARD_CAL_DONE OR NOT OS_BOARD_N2_BOARD_ENABLE) AND 
+					(OS_BOARD_N3_BOARD_CAL_DONE OR NOT OS_BOARD_N3_BOARD_ENABLE) AND 
+					(OS_BOARD_N4_BOARD_CAL_DONE OR NOT OS_BOARD_N4_BOARD_ENABLE);
+	OS_BOARD_CAL_SUCCESS := (NOT OS_BOARD_N1.CAL_FAILED) AND 
+					(NOT OS_BOARD_N2.CAL_FAILED) AND 
+					(NOT OS_BOARD_N3.CAL_FAILED) AND 
+					(NOT OS_BOARD_N4.CAL_FAILED) ;
+
+ELSE
+	OS_BOARD_CAL_SUCCESS := TRUE;
+	OS_BOARD_CAL_DONE := TRUE;
+END_IF;
+
+(* Read the current scan which was requested on the previous cycle    *)
+FOR i := 1 TO MAX_NIDAQ DO
+
+	IF ( NIDaqDevices[i].deviceHandle <> -1 ) THEN
+
+		(* 6225 has analog inputs, ACCES IO doesnt *)
+		IF (NIDaqDevices[i].FieldEquipment = 'SCU') OR (NIDaqDevices[i].FieldEquipment = 'PCI-6225')  THEN
+
+			NIDaqAIReadValues( NIDaqDevices[i].deviceHandle );
+        		err_code := NIDaqAIReadValues.errcode;
+
+        		IF ( err_code = OK ) THEN
+
+      	      	Vai := NIDaqAIReadValues.values;
+	
+      	      	FOR j := 0 TO ( NIDAQ_NUMBER_AI - 1 ) DO
+	
+	                	NIDaqDevices[i].Vai[j] := Vai[j];
+
+            		END_FOR;
+
+            		(* Request the next scan which will be read on the next cycle *)
+            		NIDaqAIArmStart( NIDaqDevices[i].deviceHandle );
+
+            		err_code := NIDaqAIArmStart.errcode;
+
+        		END_IF;
+			
+		END_IF;
+
+        IF ( err_code = OK ) THEN
+
+            NIDaqDIORead( NIDaqDevices[i].deviceHandle );
+
+            err_code := NIDaqDIORead.errcode;
+
+            IF (err_code = OK) THEN
+
+                (* port1Data and port2Data are 8 bits (SINT). Only lower 8 bits of DINT are valid. *)
+                pack_data0 := NIDaqDIORead.port0Data;
+                pack_data1 := NIDaqDIORead.port1Data; 
+                pack_data2 := NIDaqDIORead.port2Data;
+
+                (* unpack the data to an array *)
+                bit_position := 1;
+
+                FOR j := 0 TO 7 DO
+             
+                    NIDaqDevices[i].DIO_INPortValues[j] := AND_MASK( pack_data0, bit_position ); 
+
+                    bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+                END_FOR;
+
+                (* we have 24 value to pack in 3 word of 8 bits, second word *)
+                bit_position := 1;
+
+                FOR j := 8 TO 15 DO
+
+                    NIDaqDevices[i].DIO_INPortValues[j] := AND_MASK( ANY_TO_DINT( pack_data1 ), bit_position ); 
+
+                    bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+                END_FOR;
+
+                (* we have 24 value to pack in 3 word of 8 bits, third word *)
+                bit_position := 1;
+
+	          IF NIDaqDevices[i].deviceHandle = 0 THEN
+
+                	FOR j := 16 TO 23 DO
+
+                    NIDaqDevices[i].DIO_INPortValues[j] := AND_MASK( ANY_TO_DINT( pack_data2 ), bit_position ); 
+
+                    bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+                	END_FOR;
+
+		    END_IF;
+
+			  
+            END_IF;
+
+        END_IF;
+
+        IF ( err_code <> OK ) THEN
+
+            EXIT;
+
+        END_IF;
+
+    END_IF;
+END_FOR;
+
+
+IF(In_NIDAQ_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+	(* Process the current scan *)
+	IF (err_code = OK ) THEN
+ 
+    	FOR index := 1 TO number_of_variables BY 1 DO
+        
+        	CASE FV[index].FV_type OF
+
+            	FV_F : 
+
+                	PROC_RFV(rdata_base, FV[index].data_handle, NIDaqDevices[FV[index].device_index].Vai[FV[index].channel]);
+
+	                IF UUT_Info.Family = 'APS2X00' Or UUT_Info.Family = 'APS32X0' THEN 
+
+				(* ECB_POWER  ****************************)
+				CASE 	ANY_TO_DINT ( ECB_POWER_CMD_BINDING_SOURCE ) OF
+					BINDING_DACN1_SERIAL_IOMGR_DOUT:
+					ECB_POWER_CMD	:= DACN1_SERIAL_IOMGR_DOUT[ ECB_POWER_CMD_INDEX ];
+				ELSE
+					err_code := -2;
+					dummy    := LOG_MSG('ErrLog', 'RUN_DACN1_NIDAQ_IOMGR: ECB_POWER_CMD_BINDING_SOURCE NOT SUPPORTED');
+					RETURN;
+
+				END_CASE;
+
+    	                (* The FADEC and ECB performs a speed test when they are powered up *)
+        	            (* So in the 5 second following the power on, the speed is going to it's maximum for one seconds *)
+			
+	                    PowerOn_Latch(ECB_POWER_CMD, NOT ECB_POWER_CMD);  (* Starts when PowerOn is applied to the FADEC or ECB. Resets when Power Off. *)
+
+ 
+			    		IF PowerOn_Latch.Q1 = TRUE THEN
+							PowerOn_Timer(TRUE, t#15s);
+		    			ELSE
+							PowerOn_Timer(FALSE, t#15s);
+		    			END_IF;
+ 
+	                    ECB_PowerOn_Inhibit := NOT ECB_POWER_CMD Or (ANY_TO_REAL(PowerOn_Timer.ET) / 1000.0) > 10.0;
+                  
+    	                    IF ECB_PowerOn_Inhibit THEN
+			                F[FV[index].FV_index].value      := PROC_RFV.VALUE;
+        			        F[FV[index].FV_index].mean_value := PROC_RFV.MEAN_VALUE;
+                	    END_IF;
+                    
+
+	                ELSE
+    	                    F[FV[index].FV_index].value      := PROC_RFV.VALUE;
+        	            F[FV[index].FV_index].mean_value := PROC_RFV.MEAN_VALUE;
+            	    END_IF;
+
+	            FV_P :  
+
+    	            PROC_RFV(rdata_base, FV[index].data_handle, NIDaqDevices[FV[index].device_index].Vai[FV[index].channel]);
+	
+    	            P[FV[index].FV_index].value      := PROC_RFV.VALUE;
+        	        P[FV[index].FV_index].mean_value := PROC_RFV.MEAN_VALUE;
+
+            	FV_VIB :  
+
+                	PROC_RFV(rdata_base, FV[index].data_handle, NIDaqDevices[FV[index].device_index].Vai[FV[index].channel]);
+
+	                VIB[FV[index].FV_index].value      := PROC_RFV.VALUE;
+    	            VIB[FV[index].FV_index].mean_value := PROC_RFV.MEAN_VALUE;
+        	   
+            	FV_VIN :  
+
+	                PROC_RFV(rdata_base, FV[index].data_handle, NIDaqDevices[FV[index].device_index].Vai[FV[index].channel]);
+	
+    	            VIN[FV[index].FV_index].value      := PROC_RFV.VALUE;
+        	        VIN[FV[index].FV_index].mean_value := PROC_RFV.MEAN_VALUE;
+
+	            FV_VOUT :
+	
+    	            NIDaqDevices[FV[index].device_index].Vao[FV[index].channel] := VOUT[FV[index].FV_index];
+
+        	    FV_DIN :
+
+            	    index_DIO := (FV[index].channel + 1) * (FV[index].bit + 1) -1;(* 0 to...*)
+
+	                DIN[FV[index].FV_index] := ANY_TO_BOOL( NIDaqDevices[FV[index].device_index].DIO_INPortValues[index_DIO]);
+
+
+    	        FV_DOUT :
+              
+    	            index_DIO := (FV[index].channel + 1) * (FV[index].bit + 1) -1;(* 0 to...*)
+	
+    	            NIDaqDevices[FV[index].device_index].DIO_OUTPortValues[index_DIO] := ANY_TO_DINT( DOUT[FV[index].FV_index] );
+
+        	END_CASE;
+
+	    END_FOR;
+
+	END_IF;
+ 
+END_IF;
+
+(* Write the current scan *)
+FOR i:= 1 TO MAX_NIDAQ DO
+
+    IF ( NIDaqDevices[i].deviceHandle <> -1 ) THEN
+
+        Vao := NIDaqDevices[i].Vao;
+
+        NIDaqAOWriteValues( NIDaqDevices[i].deviceHandle, Vao );
+
+        (* we have 24 value to pack in 3 word of 8 bits, first word *)
+        pack_data0   := 0;
+        pack_data1   := 0;
+        pack_data2   := 0;
+        bit_position := 1;
+
+        FOR j := 0 TO 7 DO
+
+           IF ( NIDaqDevices[i].DIO_OUTPortValues[j] = 1 ) THEN (* since we initialize to 0, we care only about the 1 *)
+
+                   pack_data0 :=  pack_data0 + bit_position;                  
+
+               END_IF; 
+
+               bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+            END_FOR;
+
+            (* we have 24 value to pack in 3 word of 8 bits, second word *)
+            bit_position := 1;
+
+            FOR j := 8 TO 15 DO
+
+               IF ( NIDaqDevices[i].DIO_OUTPortValues[j] = 1 ) THEN (* since we initialize to 0, we care only about the 1 *)
+
+                   pack_data1 :=  pack_data1 + ANY_TO_SINT( bit_position );                  
+
+               END_IF; 
+
+               bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+            END_FOR;
+
+            (* we have 24 value to pack in 3 word of 8 bits, third word *)
+            bit_position := 1;
+
+		(* 6225 has 3 ports of DIO for a total of 24, ACCES IO has 2 ports of DIO for a total of 16 so pack_data2 must be zero *)
+		IF (NIDaqDevices[i].FieldEquipment = 'SCU') OR (NIDaqDevices[i].FieldEquipment = 'PCI-6225')  THEN
+
+	            FOR j := 16 TO 23 DO
+
+      	         IF ( NIDaqDevices[i].DIO_OUTPortValues[j] = 1 ) THEN (* since we initialize to 0, we care only about the 1 *)
+
+            	       pack_data2 :=  pack_data2 + ANY_TO_SINT( bit_position );                  
+
+               	   END_IF; 
+
+               	   bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+			END_FOR;
+
+		ELSE
+
+			pack_data2 := 0;
+
+		END_IF;
+
+        (* The command on the destination board are inverted, to have a 1 we have to output a 0
+        pack_data0 := NOT_MASK(pack_data0);
+        pack_data1 := ANY_TO_SINT(NOT_MASK(ANY_TO_DINT(pack_data1)));
+        pack_data2 := ANY_TO_SINT(NOT_MASK(ANY_TO_DINT(pack_data2))); *)
+
+        (* In fact, when i pressed a DOUT in order to have TRUE, i had 0 volts in output on the SCB68.... PPB 20130805*)
+	  (* All the DOUTS where initialized to 5 Volts when False ! *)
+        pack_data0 := pack_data0;
+        pack_data1 := ANY_TO_SINT(ANY_TO_DINT(pack_data1));
+        pack_data2 := ANY_TO_SINT(ANY_TO_DINT(pack_data2));
+
+ 
+        NIDaqDIOWrite( NIDaqDevices[i].deviceHandle, pack_data0, pack_data1, pack_data2 );
+
+    END_IF;
+
+END_FOR;
+
+
+	(* Adding Configurable Frequency Generator based on a value specified in the configuration file or based on another frequency with a defined coefficient *)
+
+	IF ( NIDaqDevices[1].deviceHandle <> -1 ) AND FREQUENCY_GENERATOR_ENABLED THEN
+
+		IF (FREQUENCY_GENERATOR_SOURCE_TYPE = 'FIXED') AND (NIDaqCTRFreqGenFixedActivated = FALSE) AND (EEC_ARM = TRUE) THEN
+
+			NIDaqCTRFreqGen(NIDaqDevices[1].deviceHandle, ANY_TO_SINT(FREQUENCY_GENERATOR_OUTPUT_INDEX), 1, ANY_TO_REAL(FREQUENCY_GENERATOR_FREQUENCY));
+			NIDaqCTRFreqGenFixedActivated := TRUE;
+
+		ELSIF (FREQUENCY_GENERATOR_SOURCE_TYPE = 'FIXED') AND (NIDaqCTRFreqGenFixedActivated = TRUE) AND (EEC_ARM = FALSE) THEN
+
+			NIDaqCTRFreqGen(NIDaqDevices[1].deviceHandle, ANY_TO_SINT(FREQUENCY_GENERATOR_OUTPUT_INDEX), 0, 0.0);
+			NIDaqCTRFreqGenFixedActivated := FALSE;
+
+		ELSIF FREQUENCY_GENERATOR_SOURCE_TYPE = 'FREQUENCY' THEN
+
+			NIDaqCTRFreqGenFrequencyActivated := NIDaqCTRFreqGenFrequencyActivated +1;
+			
+			IF NIDaqCTRFreqGenFrequencyActivated > 2 THEN (* The value is not required to get out on every iteration, the filter can be easily change *)
+					
+				FREQUENCY_OUT_VALUE := ANY_TO_REAL(F[FREQUENCY_GENERATOR_SOURCE_INDEX].mean_value * FREQUENCY_GENERATOR_SOURCE_COEFFICIENT);
+
+				IF FREQUENCY_OUT_VALUE  < 70.0 THEN  (* below this value we get the following message on the QNX in text mode MseriesCTRFreqGen(): Cannot change rate twice in a row before generation of at least one cycle of intermediate frequency *)
+					FREQUENCY_OUT_VALUE := 70.0;  
+				END_IF;
+
+				NIDaqCTRFreqGen(NIDaqDevices[1].deviceHandle, ANY_TO_SINT(FREQUENCY_GENERATOR_OUTPUT_INDEX), 1, FREQUENCY_OUT_VALUE);
+
+				NIDaqCTRFreqGenFrequencyActivated := 0;
+
+			END_IF;
+				
+
+		ELSIF FREQUENCY_GENERATOR_SOURCE_TYPE = 'DYNAMIC' THEN
+			NIDaqCTRFreqGen(NIDaqDevices[1].deviceHandle, ANY_TO_SINT(FREQUENCY_GENERATOR_OUTPUT_INDEX), 1, ANY_TO_REAL(FREQUENCY_GENERATOR_FREQUENCY));
+	  	END_IF;
+
+	END_IF;
+	
+	
+IF (err_code <> OK ) THEN 
+    status   := ERROR_ON_RUNNING;
+    dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON RUNNING');
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

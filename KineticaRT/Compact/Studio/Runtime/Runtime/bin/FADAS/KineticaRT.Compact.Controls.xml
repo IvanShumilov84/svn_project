@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Compact.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Compact.Controls.Control">
+            <summary>
+            Defines the base class for KineticaRT Controls, which are components with visual representation
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.slowPool">
+            <summary>
+            Event pool that updates slowly (600 ms interval)
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.fastPool">
+            <summary>
+            Event pool that updates rapidly (50 ms interval)
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.pool">
+            <summary>
+            Event pool currently in use
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.needFullRedraw">
+            <summary>
+            True if the next repaint needs to be complete.
+            False if only certain parts need redrawing.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.resized">
+            <summary>
+            True if control has resized since it was last drawn
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.backBrush">
+            <summary>
+            Brush used for drawing the background
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.borderWidth">
+            <summary>
+            Current value of BorderWidth property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.borderColor">
+            <summary>
+            Current value of BorderColor property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.displayRect">
+            <summary>
+            Current value of DisplayRectangle property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.cornerRadius">
+            <summary>
+            Current value of CornerRadius property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.toolTipText">
+            <summary>
+            Current value of ToolTipText property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Control.updateSpeed">
+            <summary>
+            Current value of UpdateSpeed property
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.#ctor">
+            <summary>
+            Initialises a new instance of the Control class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.ResetBorderColor">
+            <summary>
+            Resets the color to its default state
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.AddToQueue(System.Boolean)">
+            <summary>
+            Add the Control to the EventPool Update event list,
+            to ensure it redraws
+            </summary>
+            <param name="FullRedraw">True if next repaint should be complete rather than partial</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.AddToQueue(System.Drawing.Region)">
+            <summary>
+            Add the Control to the EventPool Update event list,
+            </summary>
+            <param name="region">The screen region that needs to be redrawn.</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.AddToQueue(System.Drawing.Rectangle)">
+            <summary>
+            Add the Control to the EventPool Update event list,
+            </summary>
+            <param name="rect">The screen rectangle that needs to be redrawn.</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.AddToQueueImmediate(System.Drawing.Rectangle)">
+            <summary>
+            Add the Control to the EventPool Update event list,
+            </summary>
+            <param name="rect">The screen rectangle that needs to be redrawn.</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.UpdateProc">
+            <summary>
+            Callback from EventPool Update event
+            Sets off the drawing
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.InvokePerformLayout">
+            <summary>
+            Causes the PerformLayout method to be invoked at the end of the current update or the next update if not currently in an update.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.ScaleX(System.Double)">
+            <summary>
+            Converts a fraction of the Control's width into a pixel position
+            using the current DisplayRectangle
+            </summary>
+            <param name="Fraction">Fraction to convert</param>
+            <returns>Pixel position</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.ScaleY(System.Double)">
+            <summary>
+            Converts a fraction of the Control's height into a pixel position
+            using the current DisplayRectangle
+            </summary>
+            <param name="Fraction">Fraction to convert</param>
+            <returns>Pixel position</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.BorderWidthPixels(System.Drawing.Rectangle)">
+            <summary>
+            Converts BorderWidth property to a number of pixels in the given rectangle
+            Ignores current border Type
+            </summary>
+            <param name="Rect">Rectangle in which border will be</param>
+            <returns>Width in Pixels of border</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.OnResize(System.EventArgs)">
+            <summary>
+            Resize Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.UnscaleAngle(System.Double)">
+            <summary>
+            Given an angle in a rectangle, returns the equivalent angle for a square.
+            Used by input objects with circular scales
+            </summary>
+            <param name="inAngle">Angle in DisplayRectangle</param>
+            <returns>Equivalent angle in a square</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.OnPropertyChanged(System.String)">
+            <summary>
+            The named property has changed: generate the PropertyChanged event
+            </summary>
+            <param name="propertyName">Name of property that has changed</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.OnObjectSearch(System.String)">
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.FindObject(System.String)">
+            <summary>
+            Looks for the named object
+            </summary>
+            <param name="objectName">Name of Object to find</param>
+            <returns>Always returns null</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.SearchObject(System.String)">
+            <summary>
+            Returns the named sibling object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.Connect2">
+            <summary>
+            Connects this object to others, Stage 2.
+            </summary>
+            <remarks>This will be called after all objects have recieved a Connect call.</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Control.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.Controls">
+            <summary>
+            Controls collection - inherited from System.Windows.Forms.Control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.DataBindings">
+            <summary>
+            Gets the data bindings for the control.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.Tag">
+            <summary>
+            Gets or sets the object that contains data about the control.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.Name">
+            <summary>
+            Gets or sets the name of the control.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.AutoScroll">
+            <summary>
+            AutoScroll property - inherited from System.Windows.Forms.ScrollableControl: not implemented
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.AutoScrollMargin">
+            <summary>
+            AutoScrollMargin property - inherited from System.Windows.Forms.ScrollableControl: not implemented
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.BackColor">
+            <summary>
+            BackColor property.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.BorderColor">
+            <summary>
+            Gets or Sets the Color of the Control's Border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.BorderWidth">
+            <summary>
+            Gets or Sets the width of the Control's Border
+            </summary>
+            <remarks>
+            Values between 0 and 0.5 represent a proportion of the width of the Control.
+            Values greater than or equal to 1 represent the number of pixels
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Control.UpdateSpeed">
+            <summary>
+            Gets or Sets whether the rate at which the Control redraws
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.Control.PropertyChanged">
+            <summary>
+            Standard Event generated whenever a property (including the Value) is changed
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.Control.ObjectSearch">
+            <summary>
+            Event for requests to find an object by name.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.Control.UpdateProcHandler">
+            <summary>
+            Event Handler delegate for the UpdateProc
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Label.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Label.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Label.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.EventPool">
+            <summary>
+            Generates an Update event for Controls to update themselves.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.EventPool.UpdateRate">
+            <summary>
+            Rate at which the event pool triggers (ms)
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.EventPool.#ctor(System.UInt32)">
+            <summary>
+            Initialises a new instance of the EventPool class
+            </summary>
+            <param name="newUpdateRate">Rate at which the Event Pool will trigger</param>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.EventPool.UpdateEvent">
+            <summary>
+            Event generated whenever UpdateRate ms have passed
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.EventPool.UpdateEventHandler">
+            <summary>
+            Event Handler delegate for the UpdateEvent
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.DisplayUpdateMode">
+            <summary>
+            Indicates the type of display update required by a DisplayUpdateEvent.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.DisplayUpdateMode.Update">
+            <summary>
+            Indicates that the display needs updating, but the background does not need to be redrawn.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.DisplayUpdateMode.Redraw">
+            <summary>
+            Indicates that the background must be redrawn as it has been uncovered by something in the foreground.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.DisplayUpdateEventHandler">
+            <summary>
+            Indicates that a display update is required.
+            Used by display elements on a control, eg the trace objects on an X-Y graph.
+            </summary>
+            <param name="source">The object generating the event.</param>
+            <param name="type">The type of update required.</param>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.ValueChangedEventHandler">
+            <summary>
+            Value Changed event generated by some objects.
+            </summary>
+            <remarks>Most objects simply use the PropertyChanged event rather than this one.</remarks>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.FillStyles">
+            <summary>
+            Enumeration of Fill styles used by objects such as Sliders and Dials.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FillStyles.Solid">
+            <summary>
+            Solid Fill: all in a single color
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FillStyles.Segmented">
+            <summary>
+            Segmented Fill: up to the first threshold, the fill is in the defined FillColor,
+            then up to the next threshold it is the Threshold Color, etc
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FillStyles.Permanent">
+            <summary>
+            Permanent Fill: as Solid Fill, but the entire range of the control has fill
+            drawn on it, not just as far as the current value
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FillStyles.SegmentedFromMinimum">
+            <summary>
+            Segmented Fill but with fill starting at the minimum value. 
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.ScaleOrientations">
+            <summary>
+            Enumeration of the possible orientations for a scale
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.ScaleOrientations.Horizontal">
+            <summary>
+            Horizontal: Left to right or Right to left
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.ScaleOrientations.Vertical">
+            <summary>
+            Vertical: Bottom to top or Top to bottom
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.ScaleOrientations.Circular">
+            <summary>
+            Circular: Clockwise or Anti-Clockwise
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.TextOrientations">
+            <summary>
+            Enumeration of possible orientations of Text strings
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.TextOrientations.Right">
+            <summary>
+            Towards the Right (normal text)
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.TextOrientations.Down">
+            <summary>
+            Downwards
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.TextOrientations.Left">
+            <summary>
+            Towards the left (upside down)
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.TextOrientations.Up">
+            <summary>
+            Upwards
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.UpdateSpeeds">
+            <summary>
+            Enumeration of available speeds at which controls redraw themselves
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.UpdateSpeeds.Slow">
+            <summary>
+            Slow (600 ms)
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.UpdateSpeeds.Fast">
+            <summary>
+            Fast (50 ms)
+            </summary>
+        </member>
+    </members>
+</doc>

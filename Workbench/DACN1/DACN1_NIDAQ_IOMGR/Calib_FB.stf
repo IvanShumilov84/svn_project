@@ -1,0 +1,53 @@
+FUNCTION_BLOCK Calib_FB
+(* AR 021010 CALIB BEGIN *)
+
+IF Reset THEN
+	Last_Calib_Index := 0;
+	Last_Calib_Prefix := ' ';
+ELSE
+
+
+	IF In_TM_Calib.Prefix = 'VIN' THEN
+	      OS_BOARD_ENGINE_CFG_NO := 32;
+		Cal_Raw :=VIN[In_TM_Calib.Index].mean_value;
+	ELSIF In_TM_Calib.Prefix= 'VIB' THEN
+	      OS_BOARD_ENGINE_CFG_NO := 32;
+		Cal_Raw:= VIB[In_TM_Calib.Index].mean_value;
+	ELSIF In_TM_Calib.Prefix= 'P' THEN
+	      OS_BOARD_ENGINE_CFG_NO := 32;
+		Cal_Raw:= P[In_TM_Calib.Index].mean_value;
+	ELSE
+		IF In_TM_Calib.Prefix= 'F' THEN
+			IF OS_BOARD_IS_ENABLED THEN
+				IF (Last_Calib_Prefix <> In_TM_Calib.Prefix OR Last_Calib_Index <> In_TM_Calib.Index) THEN
+					OS_BOARD_GET_CHANNEL_ENGINE_CFG_NO(In_TM_Calib.Prefix + ANY_TO_STRING(In_TM_Calib.Index));
+					OS_BOARD_ENGINE_CFG_NO := OS_BOARD_GET_CHANNEL_ENGINE_CFG_NO.EngineCfgNo;
+				END_IF;
+			END_IF;
+			Cal_Raw:= F[In_TM_Calib.Index].mean_value;
+		ELSE
+	            OS_BOARD_ENGINE_CFG_NO := 32;
+			Cal_Raw:= 123456.789;	
+		END_IF;
+	END_IF;
+	Last_Calib_Index := In_TM_Calib.Index;
+	Last_Calib_Prefix := In_TM_Calib.Prefix;
+END_IF;
+
+sub_status := CALIBRATING;
+
+(*CALIB END*)
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

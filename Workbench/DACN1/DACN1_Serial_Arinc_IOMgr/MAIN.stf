@@ -1,0 +1,70 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN									
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/13		N. Sangiovanni	First Release
+
+************************************************************************************************************************************************)	
+
+	CASE  In_Serial_Arinc_IOMgr.command OF
+	OPEN:
+		IF ((Out_Serial_Arinc_IOMgr.status = IDLING) OR (Out_Serial_Arinc_IOMgr.status = OPENING)) THEN  
+
+			open_Serial_Arinc(UUT_Info);
+	
+			Out_Serial_Arinc_IOMgr.status		:= open_Serial_Arinc.status;	
+			Out_Serial_Arinc_IOMgr.err_code		:= open_Serial_Arinc.err_code;	
+		END_IF; 
+
+	LOAD:
+		IF ((Out_Serial_Arinc_IOMgr.status = OPENED) OR (Out_Serial_Arinc_IOMgr.status = LOADING)) THEN 
+			load_Serial_Arinc(UUT_Info);
+
+			Out_Serial_Arinc_IOMgr.status		:= load_Serial_Arinc.status;	
+			Out_Serial_Arinc_IOMgr.err_code		:= load_Serial_Arinc.err_code;	
+		END_IF; 
+
+	INITIALIZE:
+		IF (Out_Serial_Arinc_IOMgr.status = LOADED) THEN 
+			initialize_Serial_Arinc(UUT_Info);
+
+			Out_Serial_Arinc_IOMgr.status		:= initialize_Serial_Arinc.status;	
+			Out_Serial_Arinc_IOMgr.err_code		:= initialize_Serial_Arinc.err_code;	
+		END_IF; 
+
+	RUN:
+		IF  ((Out_Serial_Arinc_IOMgr.status =  INITIALIZED)  OR (Out_Serial_Arinc_IOMgr.status = RUNNING) OR (Out_Serial_Arinc_IOMgr.status = ERROR_ON_RUNNING) ) THEN 
+			run_Serial_Arinc(UUT_Info);
+
+			Out_Serial_Arinc_IOMgr.status		:= run_Serial_Arinc.status;	
+			Out_Serial_Arinc_IOMgr.err_code		:= run_Serial_Arinc.err_code;	
+		END_IF; 
+	 
+	CLOSE:
+		IF  (Out_Serial_Arinc_IOMgr.status <> CLOSED) THEN 
+			close_Serial_Arinc(UUT_Info);
+
+			Out_Serial_Arinc_IOMgr.status		:= close_Serial_Arinc.status;	
+			Out_Serial_Arinc_IOMgr.err_code		:= close_Serial_Arinc.err_code;	
+		END_IF; 
+
+	IDLE:
+		Out_Serial_Arinc_IOMgr.status := IDLING;
+	END_CASE; 
+
+
+
+
+
+
+
+
+END_PROGRAM

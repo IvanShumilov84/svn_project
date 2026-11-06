@@ -1,0 +1,14 @@
+obj\Release\ResolveAssemblyReference.cache
+bin\Release\KineticaRT.Compact.Servers.Exchange.dll
+bin\Release\KineticaRT.Compact.Servers.Exchange.pdb
+bin\Release\KineticaRT.Compact.dll
+bin\Release\KineticaRT.Compact.pdb
+obj\Release\KineticaRT.Compact.Servers.Exchange.dll
+obj\Release\KineticaRT.Compact.Servers.Exchange.pdb
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\KineticaRT.Compact.Servers.Exchange.dll
+bin\Debug\KineticaRT.Compact.Servers.Exchange.pdb
+bin\Debug\KineticaRT.Compact.dll
+bin\Debug\KineticaRT.Compact.pdb
+obj\Debug\KineticaRT.Compact.Servers.Exchange.dll
+obj\Debug\KineticaRT.Compact.Servers.Exchange.pdb

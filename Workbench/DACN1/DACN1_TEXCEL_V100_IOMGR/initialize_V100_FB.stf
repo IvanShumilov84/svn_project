@@ -1,0 +1,101 @@
+FUNCTION_BLOCK initialize_V100_FB
+(*
+	Request the first scan and prepare the next scan
+*)
+err_code 	:= OK;
+status := INITIALIZING;
+
+(* 2011/06/02 MISSING INIT OF SUBSTATUS *)
+
+Out_Texcel_V100_IOMGR.sub_status := 0;
+
+current_scan := 1;
+
+next_scan := current_scan + 1;
+
+(* send the first request *)
+
+IF(In_Texcel_V100_IOMgr.mode = RUN_FOR_TRUE) AND ( Error_on_Open = FALSE ) THEN
+
+	REQUEST_V100_VALUES( fd );
+
+	IF REQUEST_V100_VALUES.ERR_CODE = -1 THEN
+		Error_Comm := TRUE ;
+	END_IF ;
+
+END_IF; 
+
+(* Initialize the User selection for the first run *)
+
+IF (UUT_Info.Model = 'PW123AF') THEN
+	User_Speed_demand := 1200.0;
+	User_Speed_Mode_ON := TRUE;
+	User_Pos_Mode_ON := FALSE;
+	User_Torque_Mode_ON := FALSE;
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+ELSIF (UUT_Info.Model = 'PT6A-68') THEN
+	User_Speed_demand := 1995.0;
+	User_Speed_Mode_ON := TRUE;
+	User_Pos_Mode_ON := FALSE;
+	User_Torque_Mode_ON := FALSE;
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+ELSIF UUT_Info.Model = 'PT6T-3B' OR (UUT_Info.Model = 'PT6T-6_SIKOR') OR (UUT_Info.Model = 'PT6T-6_BELL') OR (UUT_Info.Model = 'PT6T-6B') THEN 
+	User_Speed_demand := 6600.0;
+	User_Speed_Mode_ON := TRUE;
+	User_Pos_Mode_ON := FALSE;
+	User_Torque_Mode_ON := FALSE;
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+ELSIF	(UUT_Info.Model = 'T56-A-14') OR (UUT_Info.Model = 'T56-A-15LFE') OR (UUT_Info.Model = 'T56-A-15GFE') THEN
+ (* Question est-ce la vitesse du Dyno^ pcq le max sur le dyno indique  1250 rpm *)
+	User_Speed_demand := 1020.0;
+	User_Speed_Mode_ON := TRUE;
+	User_Pos_Mode_ON := FALSE;
+	User_Torque_Mode_ON := FALSE;
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 5.0;
+	User_Inlet_Preset := FALSE;
+ELSE
+	User_Pos_demand := 0.0;
+	User_Pos_Mode_ON := TRUE;
+	User_Speed_Mode_ON := FALSE;
+	User_Torque_Mode_ON := FALSE;
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+END_IF;
+
+
+(*wait_for_IOMgr(FALSE, t#10s);*)
+
+First_Time_Run := TRUE;
+
+err_code := OK;
+
+IF (status = INITIALIZING) THEN 
+	status := INITIALIZED;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

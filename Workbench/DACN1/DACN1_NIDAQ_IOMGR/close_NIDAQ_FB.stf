@@ -1,0 +1,109 @@
+FUNCTION_BLOCK close_NIDAQ_FB
+(********************************************************************************************************************************************************
+
+	Name :		close_NIDAQ_FB									
+														
+	Description :	Data Acquisition routine on National A/D Card
+
+	Dependacy : 
+
+					HYSTORY
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0		2008/01/28	D.Lepage		First Release based on close_SCU_FB
+
+********************************************************************************************************************************************************)
+
+status := CLOSING;
+err_code := OK;
+
+IF (First_Time_Close = TRUE) THEN 
+
+      dummy := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: CLOSING');
+
+	(* New addition, related with Engine Lamp on front of SCU Panel *)
+	(* Wihttout this code, the last engine lamp stays ON when we close the DAS *)
+	FOR i:= 1 TO MAX_NIDAQ DO
+		IF ( NIDaqDevices[i].deviceHandle <> -1 ) THEN
+
+        		(* we have 24 value to pack in 3 word of 8 bits, first word *)
+        		pack_data0   := 0;
+        		pack_data1   := 0;
+        		pack_data2   := 0;
+
+        		NIDaqDIOWrite( NIDaqDevices[i].deviceHandle, pack_data0, pack_data1, pack_data2 );
+
+            END_IF; 
+
+      END_FOR;
+
+	(* Frequency Generator : we reset the requency to zero if we were generating a value *)
+
+	IF FREQUENCY_GENERATOR_ENABLED THEN
+
+		NIDaqCTRFreqGen(NIDaqDevices[1].deviceHandle, ANY_TO_SINT(FREQUENCY_GENERATOR_OUTPUT_INDEX), 0, ANY_TO_REAL(0.0));
+		NIDaqCTRFreqGenFixedActivated := FALSE;
+	END_IF;
+
+
+	NIDaqClose();
+	err_code := NIDaqClose.ERRCODE;
+
+	wait_for_File_Closed(FALSE, t#8s);
+
+	IF (hdle_bool_data <> 0) THEN
+		CLOSE_BOOL_DATA( hdle_bool_data );
+		hdle_bool_data := 0;
+	END_IF;
+
+	IF (hdle_real_data <> 0) THEN
+		CLOSE_REAL_DATA ( hdle_real_data );
+		hdle_real_data := 0;
+	END_IF;
+
+	IF (rdata_base <> 0) THEN
+		CLOSE_RDATA(rdata_base);
+		rdata_base := 0;
+	END_IF;
+
+	First_Time_Open := TRUE;
+
+	err_code := CLOSE_RDATA.ERR_CODE;
+
+	Out_NIDAQ_IOMgr.previous_index := 0;
+
+	First_Time_Close := FALSE;
+
+END_IF; 
+
+wait_for_File_Closed(TRUE, t#8s);
+
+IF (wait_for_File_Closed.Q = TRUE) THEN 
+
+	status	:= CLOSED;
+	dummy	:= LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: CLOSED');
+
+END_IF; 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

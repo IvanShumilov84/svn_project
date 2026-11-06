@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>PT6T-3DF</Model>
+    <SN>TH0383</SN>
+    <TESTDATE>2008/02/25</TESTDATE>
+  </Engine>
+  <ChannelMap>
+	<Channel>
+      <Parameter>BARO</Parameter>
+      <Name>P_BARO_INHGA</Name>
+      <FVName>P29</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[29].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>TF_PORT</Parameter> <!-- PORT -->
+      <Name>T_FUEL_PORT_DEGF</Name>
+	  <FVName>T42</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[41].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>FUELFLOW_PORT</Parameter>
+      <Name>FUELFLOW_PORT_HZ</Name>
+      <FVName>F8</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[7].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>DYNO_TQ</Parameter>
+      <Name>DYNO_TORQUE_LBSFT</Name>
+	  <FVName>DYNO_TORQUE_LBSFT_OPC</FVName>
+      <Units>LBSFT</Units>
+      <ItemID>dacn1.dacn1_texcel_vx100_iomgr.read_vx100_general_parameters.torque</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>ENG_TQ_PORT</Parameter>
+      <Name>ENGINE_TORQUE_PORT_PSIG</Name>
+      <Units>PSIG</Units>
+      <FVName>P18</FVName>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[17].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T5A_PORT</Parameter>
+      <Name>T_T5_PORT_DEGF</Name>
+      <Units>DEGF</Units>
+	  <FVName>T39</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[38].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>P3_PORT</Parameter>
+	  <Name>P_PS3_PORT_INHGA</Name>
+	  <FVName>P4</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>NG_PORT</Parameter>
+      <Name>NG_PORT_HZ</Name>
+      <FVName>F5</FVName>
+      <Units>HZ</Units>
+	  <Slope>3.0220634</Slope> <!-- 12600.0Hz @38078.0RPM -->
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>NF_PORT</Parameter>
+      <Name>NF_PORT_HZ</Name>
+      <FVName>F3</FVName>
+      <Units>HZ</Units>
+      <Slope>2.6069841</Slope> <!-- 12600.0Hz @32848.0RPM -->
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[1].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T1.1_PORT</Parameter>
+      <Name>T_T1_1_PORT_DEGF</Name>
+      <FVName>T1</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[1].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T1.2_PORT</Parameter>
+      <Name>T_T1_2_PORT_DEGF</Name>
+      <FVName>T2</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[2].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T1.3_PORT</Parameter>
+      <Name>T_T1_3_PORT_DEGF</Name>
+      <FVName>T3</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[3].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T1.4_PORT</Parameter>
+      <Name>T_T1_4_PORT_DEGF</Name>
+      <FVName>T4</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[4].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T7.1_PORT</Parameter>
+      <Name>T_T7_1_PORT_DEGF</Name>
+      <FVName>T25</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[21].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T7.2_PORT</Parameter>
+      <Name>T_T7_2_PORT_DEGF</Name>
+      <FVName>T26</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[22].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T7.3_PORT</Parameter>
+      <Name>T_T7_3_PORT_DEGF</Name>
+      <FVName>T27</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[23].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T7.4_PORT</Parameter>
+      <Name>T_T7_4_PORT_DEGF</Name>
+      <FVName>T28</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[24].mean_value</ItemID>
+    </Channel> -->
+  </ChannelMap>
+  <Conditions>
+<Condition>
+<NO>1</NO>
+<Description>COND 0001</Description>
+    <Parameters>
+		<Parameter><Name>BARO</Name><Value>29.76724</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>TF_PORT</Name><Value>52.78329</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>FUELFLOW_PORT</Name><Value>143.609</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>DYNO_TQ</Name><Value>455.71957</Value><Units>LBSFT</Units></Parameter>
+		<Parameter><Name>ENG_TQ_PORT</Name><Value>33.123</Value><Units>PSIG</Units></Parameter>
+		<Parameter><Name>T5A_PORT</Name><Value>1336.73535</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>P3_PORT</Name><Value>173.60399</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>NG_PORT</Name><Value>34465.64062</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>NF_PORT</Name><Value>33004.62891</Value><Units>HZ</Units></Parameter>
+		
+		<Parameter><Name>T1.1_PORT</Name><Value>69.94244</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.2_PORT</Name><Value>68.32578</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.3_PORT</Name><Value>70.43778</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.4_PORT</Name><Value>66.73721</Value><Units>DEGF</Units></Parameter>
+		
+		<Parameter><Name>T7.1_PORT</Name><Value>992.38116</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.2_PORT</Name><Value>1009.18750</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.3_PORT</Name><Value>1030.35632</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.4_PORT</Name><Value>1026.73315</Value><Units>DEGF</Units></Parameter>
+    </Parameters>
+</Condition>
+<Condition>
+<NO>2</NO>
+<Description>COND 0002</Description>
+    <Parameters>
+		<Parameter><Name>BARO</Name><Value>29.77499</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>TF_PORT</Name><Value>52.49520</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>FUELFLOW_PORT</Name><Value>155.507</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>DYNO_TQ</Name><Value>517.79865</Value><Units>LBSFT</Units></Parameter>
+		<Parameter><Name>ENG_TQ_PORT</Name><Value>37.522</Value><Units>PSIG</Units></Parameter>
+		<Parameter><Name>T5A_PORT</Name><Value>1382.31873</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>P3_PORT</Name><Value>183.60765</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>NG_PORT</Name><Value>35108.04688</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>NF_PORT</Name><Value>33003.80078</Value><Units>HZ</Units></Parameter>
+		
+		<Parameter><Name>T1.1_PORT</Name><Value>67.17345</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.2_PORT</Name><Value>65.18216</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.3_PORT</Name><Value>67.57091</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.4_PORT</Name><Value>64.81122</Value><Units>DEGF</Units></Parameter>
+		
+		<Parameter><Name>T7.1_PORT</Name><Value>1016.20679</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.2_PORT</Name><Value>1038.20789</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.3_PORT</Name><Value>1052.65784</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.4_PORT</Name><Value>1044.68713</Value><Units>DEGF</Units></Parameter>
+    </Parameters>
+</Condition>
+<Condition>
+<NO>3</NO>
+<Description>COND 0003</Description>
+    <Parameters>
+		<Parameter><Name>BARO</Name><Value>29.78232</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>TF_PORT</Name><Value>52.24587</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>FUELFLOW_PORT</Name><Value>171.944</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>DYNO_TQ</Name><Value>599.54181</Value><Units>LBSFT</Units></Parameter>
+		<Parameter><Name>ENG_TQ_PORT</Name><Value>43.022</Value><Units>PSIG</Units></Parameter>
+		<Parameter><Name>T5A_PORT</Name><Value>1447.23657</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>P3_PORT</Name><Value>195.93204</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>NG_PORT</Name><Value>35979.48047</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>NF_PORT</Name><Value>33005.50391</Value><Units>HZ</Units></Parameter>
+		
+		<Parameter><Name>T1.1_PORT</Name><Value>65.45053</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.2_PORT</Name><Value>63.21141</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.3_PORT</Name><Value>65.82861</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.4_PORT</Name><Value>63.40181</Value><Units>DEGF</Units></Parameter>
+		
+		<Parameter><Name>T7.1_PORT</Name><Value>1058.81470</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.2_PORT</Name><Value>1078.94226</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.3_PORT</Name><Value>1084.99646</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.4_PORT</Name><Value>1073.05078</Value><Units>DEGF</Units></Parameter>
+    </Parameters>
+</Condition>
+<Condition>
+<NO>4</NO>
+<Description>COND 0004</Description>
+    <Parameters>
+		<Parameter><Name>BARO</Name><Value>29.78688</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>TF_PORT</Name><Value>52.22884</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>FUELFLOW_PORT</Name><Value>189.526</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>DYNO_TQ</Name><Value>680.78284</Value><Units>LBSFT</Units></Parameter>
+		<Parameter><Name>ENG_TQ_PORT</Name><Value>48.5</Value><Units>PSIG</Units></Parameter>
+		<Parameter><Name>T5A_PORT</Name><Value>1528.38171</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>P3_PORT</Name><Value>207.64951</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>NG_PORT</Name><Value>36890.96094</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>NF_PORT</Name><Value>33002.35938</Value><Units>HZ</Units></Parameter>
+		
+		<Parameter><Name>T1.1_PORT</Name><Value>64.58022</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.2_PORT</Name><Value>62.90384</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.3_PORT</Name><Value>65.45809</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.4_PORT</Name><Value>62.98507</Value><Units>DEGF</Units></Parameter>
+		
+		<Parameter><Name>T7.1_PORT</Name><Value>1105.97107</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.2_PORT</Name><Value>1130.16809</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.3_PORT</Name><Value>1129.33350</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.4_PORT</Name><Value>1111.26392</Value><Units>DEGF</Units></Parameter>
+    </Parameters>
+</Condition>
+<Condition>
+<NO>5</NO>
+<Description>COND 0005</Description>
+    <Parameters>
+		<Parameter><Name>BARO</Name><Value>29.78891</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>TF_PORT</Name><Value>51.85818</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>FUELFLOW_PORT</Name><Value>210.520</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>DYNO_TQ</Name><Value>767.86914</Value><Units>LBSFT</Units></Parameter>
+		<Parameter><Name>ENG_TQ_PORT</Name><Value>54.656</Value><Units>PSIG</Units></Parameter>
+		<Parameter><Name>T5A_PORT</Name><Value>1627.84644</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>P3_PORT</Name><Value>219.56146</Value><Units>INHG</Units></Parameter>
+		<Parameter><Name>NG_PORT</Name><Value>37894.17969</Value><Units>HZ</Units></Parameter>
+		<Parameter><Name>NF_PORT</Name><Value>33003.21875</Value><Units>HZ</Units></Parameter>
+		
+		<Parameter><Name>T1.1_PORT</Name><Value>64.74127</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.2_PORT</Name><Value>62.66953</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.3_PORT</Name><Value>65.53014</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T1.4_PORT</Name><Value>62.64607</Value><Units>DEGF</Units></Parameter>
+		
+		<Parameter><Name>T7.1_PORT</Name><Value>1167.02271</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.2_PORT</Name><Value>1196.50244</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.3_PORT</Name><Value>1190.93506</Value><Units>DEGF</Units></Parameter>
+		<Parameter><Name>T7.4_PORT</Name><Value>1170.75269</Value><Units>DEGF</Units></Parameter>
+    </Parameters>
+</Condition>
+</Conditions>
+</Performance>

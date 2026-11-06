@@ -1,0 +1,52 @@
+FUNCTION_BLOCK xfer_Rdata_FB
+(************************************************************************************************************************************************
+	Name :		xfer_RData_FB									
+														
+	Description :	Transfer to RDATA selected IO for Archiving 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2003/05/22		N. Sangiovanni		First Release
+
+************************************************************************************************************************************************)	
+
+	status := 1;
+
+	FV_EXTRACT(INSERT(ANY_TO_STRING(IO_Index), IO_Prefix, 1));
+
+(* TODO: Fv Size ici est pas *)
+	FOR idx := 1 to 50 DO	(* Same as FV Size *)
+		FOR index := 1 TO 16 DO
+			IF FV[idx].FV_type = FV_EXTRACT.FV_TYPE AND FV[idx].FV_type_index[index] = FV_EXTRACT.FV_INDEX THEN
+				Update_RData(	rdata_base,
+						FV[idx].data_handle[index],
+						IO_Acq_ON			);
+
+				status := 0;
+	
+				idx 	:= 570;
+				index 	:= 16;
+			END_IF;
+		END_FOR;
+	END_FOR;
+
+	(* TODO: réactiver ce bout de code si on décide d'utiliser ce function block *)
+	(* TODO: Ici c,est du nouveau code a tester, que se passe-t-il si on a sub_status a *)
+
+	(*IF status = 1 THEN *)
+			(*status := RData_Update_Failed;*)(* Signal that coefficient were not found *)
+	(*END_IF;*)
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

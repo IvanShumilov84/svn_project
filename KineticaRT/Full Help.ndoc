@@ -1,0 +1,70 @@
+<project SchemaVersion="1.3">
+    <assemblies>
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\bin\Release\KineticaRT.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\bin\Release\KineticaRT.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\bin\Release\KineticaRT.Controls.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\bin\Release\KineticaRT.Controls.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Bargraph\bin\Release\KineticaRT.Controls.Bargraph.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Bargraph\bin\Release\KineticaRT.Controls.Bargraph.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Button\bin\Release\KineticaRT.Controls.Button.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Button\bin\Release\KineticaRT.Controls.Button.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Dial\bin\Release\KineticaRT.Controls.Dial.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Dial\bin\Release\KineticaRT.Controls.Dial.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Display\bin\Release\KineticaRT.Controls.Display.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Display\bin\Release\KineticaRT.Controls.Display.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Frame\bin\Release\KineticaRT.Controls.Frame.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Frame\bin\Release\KineticaRT.Controls.Frame.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Indicator\bin\Release\KineticaRT.Controls.Indicator.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Indicator\bin\Release\KineticaRT.Controls.Indicator.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Knob\bin\Release\KineticaRT.Controls.Knob.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Knob\bin\Release\KineticaRT.Controls.Knob.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Picture\bin\Release\KineticaRT.Controls.Picture.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Picture\bin\Release\KineticaRT.Controls.Picture.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Slider\bin\Release\KineticaRT.Controls.Slider.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Slider\bin\Release\KineticaRT.Controls.Slider.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Trend\bin\Release\KineticaRT.Controls.Trend.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\Trend\bin\Release\KineticaRT.Controls.Trend.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\XYGraph\bin\Release\KineticaRT.Controls.XYGraph.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Controls\XYGraph\bin\Release\KineticaRT.Controls.XYGraph.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Channels\bin\Release\KineticaRT.Logic.Channels.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Channels\bin\Release\KineticaRT.Logic.Channels.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Expressions\bin\Release\KineticaRT.Logic.Expressions.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Expressions\bin\Release\KineticaRT.Logic.Expressions.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Filters\bin\Release\KineticaRT.Logic.Filters.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Filters\bin\Release\KineticaRT.Logic.Filters.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Message\bin\Release\KineticaRT.Logic.Message.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Logic\Message\bin\Release\KineticaRT.Logic.Message.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Servers\OpcClient\bin\Release\KineticaRT.Servers.OpcClient.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Servers\OpcClient\bin\Release\KineticaRT.Servers.OpcClient.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Servers\Simulate\bin\Release\KineticaRT.Servers.Simulate.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Servers\Simulate\bin\Release\KineticaRT.Servers.Simulate.xml" />
+        <assembly location="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Sequence\bin\Release\KineticaRT.Sequence.dll" documentation="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio Projects\KineticaRT\KineticaRT\Sequence\bin\Release\KineticaRT.Sequence.xml" />
+    </assemblies>
+    <namespaces>
+        <namespace name="KineticaRT">The KineticaRT namespace contains fundamental classes and base classes for use in the KineticaRT System. </namespace>
+        <namespace name="KineticaRT.Logic.Expressions">The KineticaRT.Logic.Expressions namespace contains objects for evaluating text based expressions involving KineticaRT channels.</namespace>
+        <namespace name="KineticaRT.Logic.Filters">The KineticaRT.Logic.Filters namespace contains objects for filtering the values of KineticaRT channels in realtime.</namespace>
+    </namespaces>
+    <documenters>
+        <documenter name="JavaDoc">
+            <property name="OutputDirectory" value=".\docs\JavaDoc\" />
+        </documenter>
+        <documenter name="LaTeX">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="TextFileFullName" value="Documentation.tex" />
+            <property name="TexFileBaseName" value="Documentation" />
+            <property name="LatexCompiler" value="latex" />
+            <property name="TexFileFullPath" value=".\doc\Documentation.tex" />
+        </documenter>
+        <documenter name="LinearHtml">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="Title" value="An NDoc Documented Class Library" />
+        </documenter>
+        <documenter name="MSDN">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="HtmlHelpName" value="KineticaRT" />
+            <property name="Title" value="KineticaRT" />
+            <property name="ShowVisualBasic" value="True" />
+            <property name="SdkLinksOnWeb" value="True" />
+            <property name="RootPageFileName" value="Overview.htm" />
+            <property name="FooterHtml" value="&lt;a target=&quot;_blank&quot; title=&quot;Click for Evaluation&quot; href=&quot;http://www.kineticart.co.uk/KineticaRTStudioEvaluation.asp&quot;&gt;&lt;img align=&quot;right&quot; src=&quot;StudioWideButton.gif&quot;/&gt;&lt;/a&gt;%ASSEMBLY_NAME% [%ASSEMBLY_VERSION%]" />
+            <property name="FilesToInclude" value="StudioWideButton.gif" />
+            <property name="AssemblyVersionInfo" value="AssemblyVersion" />
+            <property name="CopyrightText" value="Copyright KineticaRT Ltd 2003.  All rights reserved." />
+            <property name="CopyrightHref" value="http:\\www.kineticart.co.uk" />
+        </documenter>
+        <documenter name="MSDN 2003">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="Title" value="An NDoc Documented Class Library" />
+        </documenter>
+        <documenter name="VS.NET 2003">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="HtmlHelpName" value="Documentation" />
+            <property name="Title" value="An NDoc documented library" />
+        </documenter>
+        <documenter name="XML">
+            <property name="OutputFile" value=".\doc\doc.xml" />
+        </documenter>
+    </documenters>
+</project>

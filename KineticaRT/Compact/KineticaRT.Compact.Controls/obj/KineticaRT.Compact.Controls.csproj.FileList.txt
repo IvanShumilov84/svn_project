@@ -1,0 +1,5 @@
+bin\Debug\KineticaRT.Compact.Controls.dll
+bin\Debug\KineticaRT.Compact.Controls.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\KineticaRT.Compact.Controls.dll
+obj\Debug\KineticaRT.Compact.Controls.pdb

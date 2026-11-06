@@ -1,0 +1,136 @@
+FUNCTION_BLOCK initialize_UUT_Ctrl_FB
+(************************************************************************************************************************************************
+	Name :		initialize_UUT_Ctrl_FB									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+	status 		:= INITIALIZING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: INITIALIZING');
+	err_code 	:= OK;
+
+	IF (err_code <> OK) THEN 
+		status	:= ERROR_ON_INITIALIZING;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: ERROR ON INITIALIZING');
+	ELSE
+
+		(* Primax's rectifier seems to be initialized at enabled even though it's initial values is 0*)
+		(* Forcing On/Off to make sure memory is correctly initialied *)
+
+		ET_50PCT	:= 0.0;
+		ET_50PCT_Latch(FALSE,TRUE);	(*Reset Latch*)
+		ET_50PCT_Timer(FALSE, t#300s);(*Reset Timer*)
+
+		ET_LOAD	:= 0.0;
+		ET_LOAD_Latch(FALSE,TRUE);	(*Reset Latch*)
+		ET_LOAD_Timer(FALSE, t#300s);	(*Reset Timer*)
+
+		ET_RD		:= 0.0;
+		ET_RD_Latch(FALSE,TRUE);	(*Reset Latch*)
+		ET_RD_Timer(FALSE, t#300s);	(*Reset Timer*)
+
+		ET_RTL	:= 0.0;
+		ET_RTL_Latch(FALSE,TRUE);	(*Reset Latch*)
+		ET_RTL_Timer(FALSE, t#300s);	(*Reset Timer*)
+
+		ET_RUN	:= 0.0;
+		ET_RUN_Latch(FALSE,TRUE);	(*Reset Latch*)
+		ET_RUN_Timer(FALSE, t#300s);	(*Reset Timer*)
+
+		Accel_Init := FALSE;
+
+		Start_Acceleration_Latch(FALSE,TRUE); (*Reset Latch*)
+		Acceleration_Timer(FALSE, t#300s);    (*Reset Timer*)
+
+		PowerOn_Latch(FALSE,TRUE);	(*Reset Latch*)
+		PowerOn_Timer(FALSE, t#15s);	(*Reset Timer*)
+
+
+	FOR i:= 1 TO 4 BY 1 DO
+
+		UUT_Trip_F[i].Trip_High		:= TRUE;
+		UUT_Trip_F[i].Trip_Source 	:= 0.0;
+
+		UUT_Trip_N[i].Trip_High		:= TRUE;
+		UUT_Trip_N[i].Trip_Source 	:= 0.0;
+
+		UUT_Trip_P[i].Trip_High		:= TRUE;
+		UUT_Trip_P[i].Trip_Source 	:= 0.0;
+
+		UUT_Trip_V[i].Trip_High		:= TRUE;
+		UUT_Trip_V[i].Trip_Source 	:= 0.0;
+
+		UUT_Trip_I[i].Trip_High		:= TRUE;
+		UUT_Trip_I[i].Trip_Source 	:= 0.0;
+
+		UUT_Trip_VIB[i].Trip_High	:= TRUE;
+		UUT_Trip_VIB[i].Trip_Source 	:= 0.0;
+
+		UUT_Trip_T[i].Trip_High		:= TRUE;
+		UUT_Trip_T[i].Trip_Source 	:= 0.0;
+
+		UUT_Trip_Q[i].Trip_High		:= TRUE;
+		UUT_Trip_Q[i].Trip_Source 	:= 0.0;
+
+	END_FOR;
+
+	(* Init value to 0.0*)
+
+	EGT_Limit	:=	0.0;
+	EGTP_Limit	:=	0.0;
+	EGTS_Limit	:=	0.0;
+	T7P_Limit 	:=	0.0;
+	T7S_Limit	:=	0.0;
+
+		status 	:= INITIALIZED;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: INITIALIZED');
+	END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

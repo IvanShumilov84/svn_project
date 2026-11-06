@@ -1,0 +1,122 @@
+FUNCTION_BLOCK get_port_number_FB
+(************************************************************************************************************************************************
+	Name :		get_port_number_FB									
+														
+	Description :	Associate port number to a port name 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	        					First Release
+
+************************************************************************************************************************************************)	
+(* Map name and port number *)
+
+	(*IF (port_name = '/dev/bh1') THEN 
+		port_number := 1;
+	ELSIF  (port_name = '/dev/bh2') THEN
+		port_number := 2; 
+	ELSIF  (port_name = '/dev/bh3') THEN
+		port_number := 3; 
+	ELSIF  (port_name = '/dev/bh4') THEN
+		port_number := 4; 
+	ELSIF  (port_name = '/dev/bh5') THEN
+		port_number := 5; 
+	ELSIF  (port_name = '/dev/bh6') THEN
+		port_number := 6; 
+	ELSIF  (port_name = '/dev/bh7') THEN
+		port_number := 7; 
+	ELSIF  (port_name = '/dev/bh8') THEN
+		port_number := 8; 
+	ELSIF  (port_name = '/dev/bh9') THEN
+		port_number := 9; 
+	ELSIF  (port_name = '/dev/bh10') THEN
+		port_number := 10; 
+	ELSIF  (port_name = '/dev/bh11') THEN
+		port_number := 11; 
+	ELSIF  (port_name = '/dev/bh12') THEN
+		port_number :=12; 
+	ELSIF  (port_name = '/dev/bh13') THEN
+		port_number := 13; 
+	ELSIF  (port_name = '/dev/bh14') THEN
+		port_number := 14; 
+	ELSIF  (port_name = '/dev/bh15') THEN
+		port_number := 15; 
+	ELSIF  (port_name = '/dev/bh16') THEN
+		port_number := 16; 
+	ELSIF  (port_name = '/dev/ser1') THEN
+		port_number := 17; 
+	ELSIF  (port_name = '/dev/ser2') THEN
+		port_number := 18; 
+	ELSIF  (port_name = '/dev/ser3') THEN
+		port_number := 19; 
+	ELSIF  (port_name = '/dev/ser4') THEN
+		port_number := 20; 
+	ELSIF  (port_name = '/dev/ser5') THEN
+		port_number := 21; 
+	ELSIF  (port_name = '/dev/ser6') THEN
+		port_number := 22; 
+	ELSIF  (port_name = '/dev/ser7') THEN
+		port_number := 23; 
+	ELSIF  (port_name = '/dev/ser8') THEN
+		port_number := 24; 
+	ELSIF  (port_name = '/dev/ser9') THEN
+		port_number := 25; 
+	ELSIF  (port_name = '/dev/ser10') THEN
+		port_number := 26; 
+	ELSIF  (port_name = '/dev/ser11') THEN
+		port_number := 27; 
+	ELSIF  (port_name = '/dev/ser12') THEN
+		port_number := 28; 
+	ELSIF  (port_name = '/dev/ser13') THEN
+		port_number := 29; 
+	ELSIF  (port_name = '/dev/ser14') THEN
+		port_number := 30; 
+	END_IF; *)
+
+	IF (port_name = '/dev/ser1') THEN 
+		port_number := 1;
+	ELSIF  (port_name = '/dev/ser2') THEN
+		port_number := 2; 
+	ELSIF  (port_name = '/dev/ser3') THEN
+		port_number := 3; 
+	ELSIF  (port_name = '/dev/ser4') THEN
+		port_number := 4; 
+	ELSIF  (port_name = '/dev/ser5') THEN
+		port_number := 5; 
+	ELSIF  (port_name = '/dev/ser6') THEN
+		port_number := 6; 
+	ELSIF  (port_name = '/dev/ser7') THEN
+		port_number := 7; 
+	ELSIF  (port_name = '/dev/ser8') THEN
+		port_number := 8; 
+	ELSIF  (port_name = '/dev/ser9') THEN
+		port_number := 9; 
+	ELSIF  (port_name = '/dev/ser10') THEN
+		port_number := 10; 
+	ELSIF  (port_name = '/dev/ser11') THEN
+		port_number := 11; 
+	ELSIF  (port_name = '/dev/ser12') THEN
+		port_number :=12; 
+	ELSIF  (port_name = '/dev/ser13') THEN
+		port_number := 13; 
+	ELSIF  (port_name = '/dev/ser14') THEN
+		port_number := 14; 
+	ELSIF  (port_name = '/dev/ser15') THEN
+		port_number := 15; 
+	ELSIF  (port_name = '/dev/ser16') THEN
+		port_number := 16; 
+	ELSIF  (port_name = '/dev/ser17') THEN
+		port_number := 17; 
+	ELSIF  (port_name = '/dev/ser18') THEN
+		port_number := 18; 
+	END_IF;
+
+
+
+
+
+END_FUNCTION_BLOCK

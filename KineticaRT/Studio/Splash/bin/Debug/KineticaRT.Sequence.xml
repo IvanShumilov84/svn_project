@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Sequence</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Sequence.Sequence">
+            <summary>
+            KineticaRT Sequence class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.OnPropertyChanged(System.String)">
+            <summary>
+            Fires the PropertyChanged event.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.Connect">
+            <summary>
+            Connects this object to others.
+            </summary> 
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.Connect2">
+            <summary>
+            Connects this object to others, stage 2.
+            </summary>
+            <remarks>This will be called after all objects have recieved a Connect call.</remarks>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.OnObjectSearch(System.String)">
+            <summary>
+            Fires an object search event to the parent object.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.GetChannel(System.String)">
+            <summary>
+            Returns the named channel or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.GetObject(System.String)">
+            <summary>
+            Returns the named object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.FindObject(System.String)">
+            <summary>
+            Returns the named object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.SearchObject(System.String)">
+            <summary>
+            Returns the named sibling object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.StartThread(System.Threading.ThreadStart)">
+            <summary>
+            Starts a new thread.
+            </summary>
+            <param name="ThreadMethod"></param>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.Value(System.Double)">
+            <summary>
+            Creates a new KineticaRT Value object with the given value.
+            </summary>
+            <param name="value">The value to use.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.Wait(KineticaRT.Channels.Channel)">
+            <summary>
+            Waits for a channel to be set true.
+            </summary>
+            <param name="condition">Channel to wait for.</param>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.Wait(System.String)">
+            <summary>
+            Waits for an expression to become true.
+            </summary>
+            <param name="condition">Expression to wait for.</param>
+        </member>
+        <member name="M:KineticaRT.Sequence.Sequence.Wait(System.Int32)">
+            <summary>
+            Waits for a period in milliseconds.
+            </summary>
+            <param name="milliseconds">Number of milliseconds to wait for.</param>
+        </member>
+        <member name="P:KineticaRT.Sequence.Sequence.Name">
+            <summary>
+            Gets or sets the sequences name.
+            </summary>
+            <value>The sequences name.</value>
+        </member>
+        <member name="E:KineticaRT.Sequence.Sequence.PropertyChanged">
+            <summary>
+            Event which fires when the value of the objects property has changed.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Sequence.Sequence.ObjectSearch">
+            <summary>
+            Event handler for requests from the objects children to find another object for them by name.
+            </summary>
+        </member>
+    </members>
+</doc>

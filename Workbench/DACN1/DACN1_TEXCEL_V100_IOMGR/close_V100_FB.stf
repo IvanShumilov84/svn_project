@@ -1,0 +1,52 @@
+FUNCTION_BLOCK close_V100_FB
+
+status := CLOSING;
+err_code 	:= OK;
+
+IF(In_Texcel_V100_IOMgr.mode = RUN_FOR_TRUE) THEN
+
+	CLOSE_SER_PORT(fd);
+
+	err_code := CLOSE_SER_PORT.ERR_CODE;
+
+	First_Time_Open := TRUE;
+	First_Time_Set := TRUE;
+
+END_IF; 
+
+(*IF ((err_code <> OK) AND (status = CLOSING)) THEN 
+	status := ERROR_ON_CLOSING;
+END_IF; *)
+
+Out_Texcel_V100_IOMgr.previous_index := 0;
+
+err_code := OK;
+
+IF ((err_code = OK) AND (status = CLOSING)) THEN 
+	status := CLOSED;
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

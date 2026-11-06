@@ -1,0 +1,37 @@
+<project SchemaVersion="1.3">
+    <assemblies>
+        <assembly location=".\bin\Release\KineticaRT.Logic.Message.dll" documentation=".\bin\Release\KineticaRT.Logic.Message.xml" />
+        <assembly location=".\bin\Release\KineticaRT.dll" documentation=".\bin\Release\KineticaRT.xml" />
+        <assembly location=".\bin\Release\KineticaRT.Controls.dll" documentation=".\bin\Release\KineticaRT.Controls.xml" />
+    </assemblies>
+    <namespaces>
+        <namespace name="KineticaRT">The KineticaRT namespace contains fundamental classes and base classes for use in the KineticaRT System.</namespace>
+    </namespaces>
+    <documenters>
+        <documenter name="MSDN 2003">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="HtmlHelpName" value="Documentation" />
+            <property name="Title" value="An NDoc Documented Class Library" />
+        </documenter>
+        <documenter name="Intellisense">
+            <property name="OutputDirectory" value=".\intellisense\" />
+        </documenter>
+        <documenter name="JavaDoc">
+            <property name="OutputDirectory" value=".\docs\JavaDoc\" />
+        </documenter>
+        <documenter name="MSDN">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="HtmlHelpName" value="KineticaRT.Logic.Message" />
+            <property name="Title" value="KineticaRT.Logic.Message" />
+            <property name="ShowVisualBasic" value="True" />
+            <property name="RootPageFileName" value="Overview.htm" />
+            <property name="AssemblyVersionInfo" value="AssemblyVersion" />
+            <property name="CopyrightText" value="Copyright KineticaRT Ltd 2003.  All rights reserved." />
+            <property name="CopyrightHref" value="http:\\www.kineticart.co.uk" />
+            <property name="SdkDocVersion" value="SDK_v1_0" />
+        </documenter>
+        <documenter name="XML">
+            <property name="OutputFile" value=".\doc\doc.xml" />
+        </documenter>
+    </documenters>
+</project>

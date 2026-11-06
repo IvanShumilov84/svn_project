@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Button</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.ButtonStyles">
+            <summary>
+            Enumeration of possible button styles
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonStyles.Button">
+            <summary>
+            Standard button style
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonStyles.CheckBox">
+            <summary>
+            Checkbox style
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonStyles.RadioButton">
+            <summary>
+            Radio Button style
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.ButtonStates">
+            <summary>
+            Enumeration of possible Button states
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonStates.Pressed">
+            <summary>
+            Pressed / Checked state
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonStates.Unpressed">
+            <summary>
+            Unpressed / Unchecked state
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonStates.Invalid">
+            <summary>
+            Invalid state
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.ButtonReturnTypes">
+            <summary>
+            Enumeration of possible button return types
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonReturnTypes.Normal">
+            <summary>
+            Button stays pressed until clicked on again
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonReturnTypes.Sticky">
+            <summary>
+            Button stays pressed until released by something like an Interlock.
+            Sticky buttons cannot be released by clicking
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonReturnTypes.AutoReturn">
+            <summary>
+            Button is Pressed for only as long as it is held down during a click,
+            then it reverts to Unpressed
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.IButton">
+            <summary>
+            Interface used by the KineticaRT.Controls.Button.Interlock 
+            to enable different types of button to be connected together.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.IButton.SetButtonState(System.Boolean)">
+            <summary>Sets the value of the button to true/on/pressed or false/off/unpressed</summary>
+            <param name="Pressed">True to set the Value to Pressed; False to set the Value to Unpressed</param>
+            <remarks>This allows buttons to have different value types and still be able to be interlocked</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.IButton.Name">
+            <summary>Gets the name of this button.</summary>
+            <value>A string representing the name of the button.</value>
+        </member>
+        <member name="E:KineticaRT.Controls.IButton.ValueChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Button">
+            <summary>
+            KineticaRT Button Control. Also provides checkbox and radio button functionality.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Button.boundsRect">
+            <summary>
+            Bounding rectangle for the Button Text (or picture)
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Button.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.#ctor">
+            <summary>
+            Initialises a new instance of the Button class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.BasicRepainting(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Basic setup and background drawing
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.DrawText(System.Drawing.Graphics)">
+            <summary>
+            Draws the button text at the required orientation
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.DrawBox(System.Drawing.Graphics)">
+            <summary>
+            Draws the box for checkbox/radio button styles
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.SetLook">
+            <summary>
+            Sets the Button's appearance
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.SetFormat">
+            <summary>
+            Sets up the tool tip and text based on the Source channel
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.OnPictureMouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Handles a MouseDown event from a child Picture control.
+            </summary>
+            <param name="sender">Object that generated the Event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.HandleMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Deals with a mouse down event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.SetButtonState(System.Boolean)">
+            <summary>Sets the value of the button to Pressed or Unpressed</summary>
+            <param name="Pressed">True to set the Value to Pressed; False to set the Value to Unpressed</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.OnValueChanged">
+            <summary>
+            Raises the ValueChanged event
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Button.KineticaRT#Controls#IButton#get_Name">
+            <summary>
+            KineticaRT Button Control. Also provides checkbox and radio button functionality.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.Style">
+            <summary>
+            Gets or sets the style of the Button
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.BoxOnLeft">
+            <summary>
+            Gets or sets whether the box in Radio button and Checkbox styles is on the left
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.Text">
+            <summary>
+            Gets or sets the Text displayed by the button
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.Orientation">
+            <summary>
+            Gets or sets the orientation of the Text
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.Value">
+            <summary>
+            Gets or sets the current value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.State">
+            <summary>
+            Gets the state of the Button represented by the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the Button's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.DestinationChannel">
+            <summary>
+            Gets or sets the object that is the Destination for the Button's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.Source">
+            <summary>
+            Gets or sets the name of the object to be the Button's Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.Destination">
+            <summary>
+            Gets or sets the name of the object to be the Button's Destination
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.Type">
+            <summary>
+            Gets or sets the return type
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Button gets its ToolTip and Text
+            from the its Source channel
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Button.InputEnabled">
+            <summary>
+            Gets or sets whether Input is Enabled
+            </summary>
+            <remarks>This differs from Enabled by not preventing drag and drop or tooltips</remarks>
+        </member>
+        <member name="E:KineticaRT.Controls.Button.ValueChanged">
+            <summary>
+            Event generated when the Value changes
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.ButtonInterlock">
+            <summary>
+            ButtonInterlock Class. Links a collection of Button controls,
+            only allowing a maximum of one to be 'on' at once.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ButtonInterlock.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.#ctor">
+            <summary>
+            Initialises a new instance of the ButtonInterlock class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initialises a new instance of the ButtonInterlock class with the specified Container
+            </summary>
+            <param name="container">Container</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Add(KineticaRT.Controls.IButton)">
+            <summary>
+            Add a button
+            </summary>
+            <param name="newButton">Button to be added</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Add(System.String)">
+            <summary>
+            Add a button by name
+            </summary>
+            <param name="buttonName">Name of Button to add</param>
+            <remarks>If a button of the given name can be found it is connected immediately</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Clear">
+            <summary>
+            Remove all buttons from the interlock.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Contains(KineticaRT.Controls.IButton)">
+            <summary>
+            Tests to see if the given button is in the List
+            </summary>
+            <param name="testButton">Button to check</param>
+            <returns>True if Button is in the list</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Contains(System.String)">
+            <summary>
+            Tests to see if the named button is in the List.
+            Only checks buttons set by name
+            </summary>
+            <param name="testName">Button name to test</param>
+            <returns>True if the name is in the list</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Remove(KineticaRT.Controls.IButton)">
+            <summary>
+            Removes the given button from the List
+            </summary>
+            <param name="byeByeButton">Button to remove</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Remove(System.String)">
+            <summary>
+            Removes the named button from the List
+            </summary>
+            <param name="byeByeName">Name of Button to remove</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.OnObjectSearch(System.String)">
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.FindObject(System.String)">
+            <summary>
+            Looks for the named object
+            </summary>
+            <param name="ObjectName">Name of Object to find</param>
+            <returns>Always returns null</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+            <remarks>Any buttons added by name are sought and connected to if possible</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.ButtonInterlock.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ButtonInterlock.NamedButtons">
+            <summary>
+            Gets or sets an array of text names of buttons for this object to interlock
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Controls.ButtonInterlock.PropertyChanged">
+            <summary>
+            Event which fires when the value of a property has changed.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Controls.ButtonInterlock.ObjectSearch">
+            <summary>
+            Event for requests to find an object by name.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.PictureButton">
+            <summary>
+            KineticaRT PictureButton Control. 
+            Provides all the functionality of a standard KineticaRT Button,
+            with the extra capability of Pictures.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PictureButton.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.#ctor">
+            <summary>
+            Initialises a new instance of the Button class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.SetLook">
+            <summary>
+            Sets the Button's appearance and Picture visibility
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.OnPictureMouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Handles a MouseDown event from a child Picture control.
+            </summary>
+            <param name="sender">Object that generated the Event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PictureButton.KineticaRT#Controls#IButton#get_Name">
+            <summary>
+            KineticaRT PictureButton Control. 
+            Provides all the functionality of a standard KineticaRT Button,
+            with the extra capability of Pictures.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.BorderStyle">
+            <summary>
+            Gets or Sets the style of the Control's Border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.BorderWidth">
+            <summary>
+            Gets or Sets the width of the Control's Border
+            </summary>
+            <remarks>
+            Values between 0 and 0.5 represent a proportion of the width of the Control.
+            Values greater than or equal to 1 represent the number of pixels
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.Picture">
+            <summary>
+            Gets the Picture shown in unpressed state
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.DownPicture">
+            <summary>
+            Gets the Picture shown in pressed state
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.DisabledPicture">
+            <summary>
+            Gets the Picture shown when button is disabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.PictureEnabled">
+            <summary>
+            Gets or sets whether to show the unpressed state picture
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.DownPictureEnabled">
+            <summary>
+            Gets or sets whether to show the pressed state picture
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.DisabledPictureEnabled">
+            <summary>
+            Gets or sets whether to show the disabled state picture
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PictureButton.ToolTipText">
+            <summary>
+            Gets or Sets the Tool Tip Text that appears when hovering over the control
+            </summary>
+            <remarks>
+            This Tool Tip is also applied to the Button's Picture objects.
+            To override this behaviour and make the Pictures have a different tool tip,
+            ensure that the Picture's ToolTipText property is set after this property.</remarks>
+        </member>
+    </members>
+</doc>

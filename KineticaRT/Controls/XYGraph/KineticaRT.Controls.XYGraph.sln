@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KineticaRT.Controls.XYGraph", "KineticaRT.Controls.XYGraph.csproj", "{3C67995F-C505-4C5A-BAA6-5E71094D58C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XYGraphDemo", "..\..\Examples\XYGraphDemo\XYGraphDemo.csproj", "{A544F764-FD63-451D-A217-F3E4083746B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KineticaRT.Controls", "..\KineticaRT.Controls.csproj", "{0753E173-B6A0-4724-BD16-DB25B9A194A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KineticaRT", "..\..\KineticaRT.csproj", "{F4AD27C5-4183-4D56-8CBA-56CC3947732A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CEL_Release|Any CPU = CEL_Release|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Demonstration|Any CPU = Demonstration|Any CPU
+		Release|Any CPU = Release|Any CPU
+		VitalLink|Any CPU = VitalLink|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.CEL_Release|Any CPU.ActiveCfg = CEL_Release|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.CEL_Release|Any CPU.Build.0 = CEL_Release|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.Demonstration|Any CPU.ActiveCfg = Demonstration|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.Demonstration|Any CPU.Build.0 = Demonstration|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.VitalLink|Any CPU.ActiveCfg = VitalLink|Any CPU
+		{3C67995F-C505-4C5A-BAA6-5E71094D58C5}.VitalLink|Any CPU.Build.0 = VitalLink|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.CEL_Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.CEL_Release|Any CPU.Build.0 = Release|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.Demonstration|Any CPU.ActiveCfg = Debug|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.Demonstration|Any CPU.Build.0 = Debug|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.VitalLink|Any CPU.ActiveCfg = Release|Any CPU
+		{A544F764-FD63-451D-A217-F3E4083746B0}.VitalLink|Any CPU.Build.0 = Release|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.CEL_Release|Any CPU.ActiveCfg = CEL_Release|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.CEL_Release|Any CPU.Build.0 = CEL_Release|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.Demonstration|Any CPU.ActiveCfg = Demonstration|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.Demonstration|Any CPU.Build.0 = Demonstration|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.VitalLink|Any CPU.ActiveCfg = VitalLink|Any CPU
+		{0753E173-B6A0-4724-BD16-DB25B9A194A6}.VitalLink|Any CPU.Build.0 = VitalLink|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.CEL_Release|Any CPU.ActiveCfg = CEL_Release|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.CEL_Release|Any CPU.Build.0 = CEL_Release|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.Demonstration|Any CPU.ActiveCfg = Demonstration|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.Demonstration|Any CPU.Build.0 = Demonstration|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.VitalLink|Any CPU.ActiveCfg = VitalLink|Any CPU
+		{F4AD27C5-4183-4D56-8CBA-56CC3947732A}.VitalLink|Any CPU.Build.0 = VitalLink|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

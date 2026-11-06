@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Using Buttons</title>
+		<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+		<link href="Manual.css" rel="Stylesheet">
+	</head>
+	<body>
+		<H2>Using Buttons</H2>
+		<P>There are two common reasons for using a button control within a KineticaRT 
+			based application:</P>
+		<OL>
+			<LI>
+			To set the value of a channel.
+			<LI>
+				To execute an action using an Event Handler.
+			</LI>
+		</OL>
+		<P>In the second case it is normally best to also set the value of a channel and 
+			use the change of value of the channel to trigger the Event Handler since this:</P>
+		<OL>
+			<LI>
+			Allows the same action to be triggered from several control 
+			screens/tabs/windows under the control of a single control sequence or event 
+			handler. This removes the need to replicate code and faults while making it 
+			easy to place duplicate controls in convenient places for the user.
+			<LI>
+			Allows the same action to be triggered from several computers under the control 
+			of a single control sequence or event handler. This gives protection from 
+			several operators trying to control one system simultaneously.
+			<LI>
+			Allows the control sequences to continue executing correctly even if the user 
+			interface is not running, has been closed or has several instances running 
+			simultaneously.
+			<LI>
+			Allows code to be located centrally rather than scattered throughout the user 
+			interface files.
+			<LI>
+				Allows end users to copy sections of the user interface without having to copy 
+				the code which implements them and provide synchronization.
+			</LI>
+		</OL>
+		<P>See <a href="UsingEventHandlers.htm">Event Handlers</a> for information on
+        implementing an event handler.</P>
+		<P>In some circumstances it may be necessary to place code within a window/tab, 
+			normally because of a requirement to set individual properties on a control, 
+			call methods on a control or handle an interaction between several controls on 
+			the same window. This is generally a programming task for a developer rather 
+			than an end user. There are two ways to handle it:</P>
+		<OL>
+			<LI>
+			Use Visual Studio to write a new User Control containing the required 
+			control(s) and the required code. End users can then drop the new control onto 
+			the windows without having to worry about programming issues.
+			<LI>
+				Add code to the window. Controls within windows/tabs/frames are stored in panel 
+				files. These are executable dll files. When a panel file is saved, C# code is 
+				generated and compiled into the executable dll. User code can be added to these 
+				panel files in the same way that code can be added to a new (wizard generated) 
+				control within Visual studio.<BR>
+				<B>Note:</B> At the moment, C# source files “.cs” files are generated when the 
+				panel is saved, these may be modified but will be <U>overwritten</U> if the 
+				panel file is saved again. If they are modified then the .dll file should be 
+				deleted, this will cause a recompilation when next loaded.
+			</LI>
+		</OL>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

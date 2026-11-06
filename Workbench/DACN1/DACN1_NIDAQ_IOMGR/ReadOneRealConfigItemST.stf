@@ -1,0 +1,23 @@
+FUNCTION ReadOneRealConfigItemST
+(************************************************************************************************************************************************
+
+	Function ReadOneRealConfigItem									
+														
+************************************************************************************************************************************************)	
+
+
+	XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, ItemName, DefaultValue);
+
+	ReadOneRealConfigItemST := ANY_TO_REAL(XMLCFGSETTINGS_GETSTRINGVALUE.VALUE);
+
+	IF XMLCFGSETTINGS_GETSTRINGVALUE.ERR_CODE <> 0 THEN
+
+		XMLError := True;
+		dummy := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR:WARNING:' + ItemName);
+
+	END_IF;
+
+
+
+
+END_FUNCTION

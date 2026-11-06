@@ -1,0 +1,190 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN									
+														
+	Description :	 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+	IF (First_Time_Trough = TRUE) THEN 
+		First_Time_Trough	:= FALSE;
+		In_Test_Mgr.command	:= IDLE;
+		Out_Test_Mgr.status	:= IDLING;
+	END_IF; 
+
+	
+	CASE  In_Test_Mgr.command OF
+
+	OPEN:
+		IF ((Out_Test_Mgr.status = CLOSED) OR (Out_Test_Mgr.status = OPENING) OR (Out_Test_Mgr.status = IDLING) OR (Out_Test_Mgr.status = ERROR_ON_OPENING) ) THEN  
+
+			open_Test_Session( );
+
+			Out_Test_Mgr.status		:= open_Test_Session.status;				
+			Out_Test_Mgr.err_code	:= open_Test_Session.err_code;		
+	
+			IF(Out_Test_Mgr.status = ERROR_ON_OPENING) THEN 
+				(* In_Test_Mgr.command := CLOSE; *)
+				In_Test_Mgr_Command_Close  := TRUE;
+			END_IF; 
+
+		END_IF; 
+
+	LOAD:
+
+		IF ((Out_Test_Mgr.status = OPENED) OR (Out_Test_Mgr.status = LOADING)) THEN  
+
+			load_Test_Session( );
+
+			Out_Test_Mgr.status		:= load_Test_Session.status;				
+			Out_Test_Mgr.err_code	:= load_Test_Session.err_code;		
+
+			IF(Out_Test_Mgr.status = ERROR_ON_LOADING) THEN 
+				(* In_Test_Mgr.command := CLOSE; *)
+				In_Test_Mgr_Command_Close := TRUE;
+			END_IF; 
+		END_IF; 
+
+	INITIALIZE:
+
+		IF ((Out_Test_Mgr.status =  LOADED) OR (Out_Test_Mgr.status =  INITIALIZING)) THEN  
+
+			initialize_Test_Session( );
+
+			Out_Test_Mgr.status		:= initialize_Test_Session.status;				
+			Out_Test_Mgr.err_code	:= initialize_Test_Session.err_code;		
+
+			IF (Out_Test_Mgr.status = ERROR_ON_INITIALIZING) THEN 
+				(* In_Test_Mgr.command := CLOSE; *)
+				In_Test_Mgr_Command_Close := TRUE;
+			END_IF;
+
+		END_IF; 
+		Timer_BeforeClosing(FALSE, t#5s); (* reset *)
+
+
+	RUN:
+	(* new code speed selection calibration 030115 *)
+        IF ((Out_Test_Mgr.status =  INITIALIZED) OR (Out_Test_Mgr.status = RUNNING) OR (Out_Test_Mgr.status = ERROR_ON_RUNNING) ) THEN  
+
+           	run_Test_Session( );
+
+			Out_Test_Mgr.status     := run_Test_Session.status ;            
+			Out_Test_Mgr.err_code   := run_Test_Session.err_code ;  
+
+                                              
+			CASE (In_Test_Mgr.sub_command) OF                       
+				XFER_COEFF:
+					xfer_coefficients();
+					Out_Test_Mgr.sub_status 	:= xfer_coefficients.sub_status;
+				CALIB:
+					Cal_Sub_Command();
+					Out_Test_Mgr.sub_status 	:= Cal_sub_command.sub_status;
+					Out_Test_Mgr.Cal_Raw 		:= Cal_sub_command.Cal_Raw;
+			ELSE
+					Out_Test_Mgr.Cal_Raw := 0.0;
+			END_CASE;
+
+
+		END_IF; 
+		
+
+
+	CLOSE:
+
+		Timer_BeforeClosing_Value := ANY_TO_REAL(Timer_BeforeClosing.ET)/1000.0;
+
+		IF Timer_BeforeClosing_Value = 5.0 THEN
+
+			IF (Out_Test_Mgr.status <> CLOSED) THEN 
+
+				close_Test_Session( );
+
+				Out_Test_Mgr.err_code	:= close_Test_Session.err_code;
+				Out_Test_Mgr.status		:= close_Test_Session.status;
+
+				In_Test_Mgr.current_index				:= 0;
+				Out_Test_Mgr.previous_index				:= 0;
+				Out_DACN1_Serial_IOMgr.current_index	:= 0;	
+
+				IF (Out_Test_Mgr.status = CLOSED) THEN
+
+					(* In_Test_Mgr.command		:= IDLE; *)
+					In_Test_Mgr_InterLock 		:= TRUE;
+					In_Test_Mgr_Command_Close 	:= FALSE;
+					Out_Test_Mgr.status			:= IDLING;
+					Out_Test_Mgr.sub_status 	:= IDLING ;
+				END_IF; 
+		
+			END_IF; 
+
+		ELSE
+			Timer_BeforeClosing(TRUE, t#5s);
+			(***********************)
+			(* On reste en RUNNING jusqua ce que le timer de 5 SEC laissant le temps au HMI de bien finaliser les moteurs et de les remettre dans le bon ETAT (DIO)*)
+			(***********************)
+
+ 			IF ((Out_Test_Mgr.status =  INITIALIZED) OR (Out_Test_Mgr.status = RUNNING) OR (Out_Test_Mgr.status = ERROR_ON_RUNNING) ) THEN  
+
+           		run_Test_Session( );
+
+				Out_Test_Mgr.status     := run_Test_Session.status ;            
+				Out_Test_Mgr.err_code   := run_Test_Session.err_code ;  
+
+                                              
+				CASE (In_Test_Mgr.sub_command) OF                       
+					XFER_COEFF:
+						xfer_coefficients();
+						Out_Test_Mgr.sub_status 	:= xfer_coefficients.sub_status;
+					CALIB:
+						Cal_Sub_Command();
+						Out_Test_Mgr.sub_status 	:= Cal_sub_command.sub_status;
+						Out_Test_Mgr.Cal_Raw 		:= Cal_sub_command.Cal_Raw;
+				ELSE
+						Out_Test_Mgr.Cal_Raw := 0.0;
+				END_CASE;
+
+
+			END_IF; 
+
+		END_IF;
+
+
+
+
+
+	IDLE:
+
+		Out_Test_Mgr.status := IDLING;
+		In_Test_Mgr_InterLock	:= FALSE;
+
+	END_CASE; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_PROGRAM

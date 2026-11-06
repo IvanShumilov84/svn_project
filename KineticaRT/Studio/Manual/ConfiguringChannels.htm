@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Channels - KineticaRT Studio</title>
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+		<meta content="FrontPage.Editor.Document" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<link href="Manual.css" rel="Stylesheet">
+	</head>
+	<body>
+		<H2>Channels</H2>
+		<P>A channel is a KineticaRT&nbsp;object which has a name and a value.&nbsp; There 
+			are various types of channel including:</P>
+		<UL>
+			<LI>
+			Text channels
+			<LI>
+			Numeric Channels which have Minimum, Maximum, Units etc. properties.
+			<LI>
+			OPC Item channels which collect and send their values from and to OPC servers.
+			<LI>
+			Expressions which calculate their value from the value of other channels.
+			<LI>
+				etc.</LI></UL>
+		<P>The lists of channels used in a KineticaRT Studio project are stored in channel 
+			files.&nbsp; There can be any number of channel files in a project.&nbsp; The 
+			channel files to be used in the project are configured from the main menu / 
+			Channels menu.&nbsp; See <A href="ConfiguringProjects.htm">Configuring Projects</A>
+			for more details.</P>
+		<P>Once a channel file is included in the project then the channels in that file 
+			can be viewed in the channel <STRONG>Explorer </STRONG>window:</P>
+		<P><img src="Explorer.gif" width="622" height="336"></P>
+		<P>Each channels file is shown in the tree view on the left&nbsp;side of the window 
+			with each of its channels shown underneath when expanded.</P>
+		<P>When a channel is selected from the tree, its properties are shown in the right 
+			hand property display.&nbsp; An explanation of the selected property is shown 
+			at the bottom right.</P>
+		<P>Most of the properties can be modified by typing the new values into the 
+			property display.&nbsp; To make the changes persistent, you must save the 
+			channel file containing the changed channel; this can be done either from the 
+			main menu / Channels&nbsp;or from the right click menu on the channel file in 
+			the explorer tree.</P>
+		<H3>The Explorer Menu</H3>
+		<P>The explorer menu can be displayed by right clicking on the channel tree in the 
+			explorer window.&nbsp; It has the following menu options:
+		</P>
+		<UL>
+			<LI>
+			Show Properties
+			<LI>
+			Connect
+			<LI>
+			Disconnect
+			<LI>
+			Add
+			<LI>
+			Copy
+			<LI>
+			Paste
+			<LI>
+			Delete
+			<LI>
+				Always on Top</LI></UL>
+		<H3>ShowProperties</H3>
+		<P>This option controls whether the properties area is shown in the explorer 
+			window.</P>
+		<H3>Connect</H3>
+		<P>This connects the selected channel or, if a channel file is selected then all 
+			channels in that file are connected.</P>
+		<P>For example, if an OpcClient channel is connected, it will start receiving data 
+			from the OPC Server.</P>
+		<H3>Disconnect</H3>
+		<P>This disconnects the selected channel or, if a channel file is selected then all 
+			channels in that file are disconnected.</P>
+		<P>For example, if an OpcClient channel is disconnected, it will stop receiving 
+			data from the OPC Server and disconnect the link to the server.</P>
+		<H3>Add</H3>
+		<P>This will add a channel to the selected channel file.</P>
+		<P>The list of channels which can be added is configured in the Project File.</P>
+		<P>The channel file must be saved for this change to be persistent.</P>
+		<H3>Copy</H3>
+		<P>This will copy the selected channel to the clipboard.</P>
+		<H3>Paste</H3>
+		<P>If a channel has been copied to the clipboard then this will paste a copy of the 
+			channel into the selected channel file.</P>
+		<P>The channel file must be saved for this change to be persistent.</P>
+		<H3>Delete</H3>
+		<P>This deletes the selected channel.</P>
+		<P>The channel file must be saved for this change to be persistent.</P>
+		<H3>Always on Top</H3>
+		<P>This controls whether the explorer window is always displayed on top of other 
+			windows or not.</P>
+		<P>&nbsp;</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

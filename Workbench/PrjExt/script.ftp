@@ -1,0 +1,9 @@
+prompt
+open 192.168.2.200
+Virgo2000
+v2000
+lcd "C:\My Projects\CELDAS 200\Workbench"
+cd /usr/v2000/app
+bin
+mput DACN1_*
+bye

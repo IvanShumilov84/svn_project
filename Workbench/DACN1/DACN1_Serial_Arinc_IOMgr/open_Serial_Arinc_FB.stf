@@ -1,0 +1,67 @@
+FUNCTION_BLOCK open_Serial_Arinc_FB
+(************************************************************************************************************************************************
+	Name :		open_Serial_Arinc_FB									
+														
+	Description :	Open Serial Arinc Function Block							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/13		N. Sangiovanni	First Release
+
+************************************************************************************************************************************************)	
+
+	status 	:= OPENING;
+	err_code 	:= OK;
+	XMLError	:= False;
+
+	First_Time	:= TRUE;
+
+	IF(In_Serial_Arinc_IOMgr.mode = RUN_FOR_TRUE) THEN
+		
+		XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+		hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+		IF hCfgSettings <> 0 THEN
+
+			SERIAL_PORT_NUMBER := ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_ARINC_IOMGR.SERIAL_PORT_NUMBER', '0');
+
+	    		FOR i:= 1 TO SERIAL_PORT_NUMBER BY 1 DO
+				SERIAL_PORT_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_ARINC_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_INDEX', '0');
+				SERIAL_PORT_NAME		:= ReadOneStringConfigItemST(  'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_ARINC_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_NAME', '0');
+				SERIAL_PORT_BAUD_RATE		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_ARINC_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_BAUD_RATE', '0');
+				SERIAL_PORT_DATA_BITS		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_ARINC_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_DATA_BITS', '0');
+				SERIAL_PORT_STOP_BITS		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_ARINC_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_STOP_BITS', '0');
+				SERIAL_PORT_PARITY		:= ReadOneStringConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_ARINC_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_PARITY', '0');
+
+	
+				OPEN_SER_PORT(SERIAL_PORT_NAME, SERIAL_PORT_BAUD_RATE, SERIAL_PORT_DATA_BITS, SERIAL_PORT_STOP_BITS, SERIAL_PORT_PARITY, RAW_PORT);
+				fd := OPEN_SER_PORT.FD;
+		    END_FOR;
+
+		ELSE
+
+			err_code := ERROR_ON_OPENING;
+			dummy := LOG_MSG('ErrLog', 'DACN1_SERIAL_ARINC_IOMGR: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+		END_IF; 
+
+	END_IF;
+
+
+	IF (err_code <> OK) THEN 
+		status := ERROR_ON_OPENING;	
+	ELSE
+		status := OPENED;
+	END_IF; 
+
+
+
+
+
+
+END_FUNCTION_BLOCK

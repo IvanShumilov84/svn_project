@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>PW127E</Model>
+    <SN>RC9999</SN>
+    <TESTDATE>12/05/2015</TESTDATE>
+  </Engine>
+  <ChannelMap>
+    <!-- <Channel>  Omnibus doit etre configuré dans le testsession
+      <Parameter>FADEC_VECTOR_SELECTED</Parameter>
+      <Name>UART_NORM_DISC2_CHA</Name>
+      <FVName>User_Int_Uart_CHA_31</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[31].engunit</ItemID>
+      <Units></Units>
+    </Channel> -->
+    <Channel>
+      <Parameter>NH</Parameter>
+      <Name>NH_RPM</Name>
+      <FVName>F1</FVName>
+      <Units>HZ</Units>
+      <!-- 18990.0Hz @33300.0RPM -->
+      <Slope>1.7535</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[1].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>NL</Parameter>
+      <Name>NL_RPM</Name>
+      <FVName>F2</FVName>
+      <Units>HZ</Units>
+      <!-- 9233.0Hz @27700.0RPM -->
+      <Slope>3.000108</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>NPT</Parameter>
+      <Name>NPT_RPM</Name>
+      <FVName>F3</FVName>
+      <Units>HZ</Units>
+      <!-- 2700.0Hz @20000.0RPM -->
+      <Slope>7.353</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[3].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>FM1</Parameter>
+      <Name>WF1_PPH</Name>
+      <FVName>FM1_WF_PPH_OPC</FVName>
+      <Units>PPH</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_mass_fuel_flow.pv</ItemID>
+    </Channel>
+   
+    <Channel>
+      <Parameter>SG</Parameter>
+      <Name>SG</Name>
+      <FVName>FM1_SG_OPC</FVName>
+      <Units>None</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_sg_fuel.pv</ItemID>
+    </Channel>
+    
+   
+    <!-- <Channel> TSG is passed by UserInput
+    <Parameter>TSG</Parameter>
+      <Name>T_FUEL_DEGF</Name>
+      <FVName>T14</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[14].mean_value</ItemID>
+    </Channel> -->
+    <Channel>
+      <Parameter>TMEEC</Parameter>
+      <Name>A429IN_Q_CHA</Name>
+      <FVName>User_Int_A429IN_CHA_24</FVName>
+      <!-- 26113.0Hz @100.0% -->
+      <Slope>105.045</Slope>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[8].engunit</ItemID>
+      <Units>LBSFT</Units>
+    </Channel>
+    <!-- <Channel>
+      <Parameter>ITT</Parameter>
+      <Name>A429IN_ITT_CHA</Name>
+      <FVName>User_Int_A429IN_CHA_7</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[7].engunit</ItemID>
+      <Units>DEGC</Units>
+    </Channel> -->
+    
+    <Channel>
+      <Parameter>DYNO_TQ</Parameter>
+      <Name>DYNO_TORQUE_LBSFT</Name>
+	  <FVName>DYNO_TORQUE_LBSFT_OPC</FVName>
+      <Units>LBSFT</Units>
+	  <ItemID>dacn1.dacn1_texcel_vx100_iomgr.dyno_tr_lbsft</ItemID>
+	</Channel>
+	<!-- <Channel>
+      <Parameter>HPITM</Parameter>
+      <Name>UART_HPITM_CHA</Name>
+      <FVName>User_Int_Uart_CHA_18</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[18].engunit</ItemID>
+      <Units>MA</Units>
+    </Channel> -->
+	
+	<Channel>
+      <Parameter>TQ_AFU_REF1</Parameter>
+      <Name>TORQUE_REF1</Name>
+	  <FVName>VIN7</FVName>
+      <Units>AMP</Units>
+	  <ItemID>dacn1.dacn1_nidaq_iomgr.vin[7].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+      <Parameter>TQ_AFU_REF2</Parameter>
+      <Name>TORQUE_REF2</Name>
+	  <FVName>VIN6</FVName>
+      <Units>AMP</Units>
+	  <ItemID>dacn1.dacn1_nidaq_iomgr.vin[6].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+      <Parameter>RH</Parameter>
+      <Name>PERF_DEW_PT_RELATIVE_HUMIDITY</Name>
+	  <FVName>VIN11</FVName>
+      <Units>NONE</Units>
+	  <ItemID>dacn1.dacn1_nidaq_iomgr.vin[11].mean_value</ItemID>
+	</Channel>
+        
+    <!-- <Channel>
+      <Parameter>EGT</Parameter>
+      <Name>UART_T6_CHA</Name>
+      <FVName>User_Int_Uart_CHA_25</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[25].engunit</ItemID>
+      <Units>DEGC</Units>
+    </Channel> -->
+	<Channel>
+      <Parameter>BARO</Parameter>
+      <Name>P_BARO_PSIA</Name>
+      <FVName>P4</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[4].mean_value</ItemID>
+    </Channel>
+	
+	<Channel>	
+      <Parameter>P1T</Parameter>
+      <Name>P_P1T1_PSIA</Name>
+      <FVName>P5</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[5].mean_value</ItemID>
+    </Channel>
+	
+	<Channel>	
+      <Parameter>PFUEL</Parameter>
+      <Name>P_FUEL_PSIA</Name>
+      <FVName>P8</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[8].mean_value</ItemID>
+    </Channel>
+	
+	<Channel>
+      <Parameter>P25</Parameter>
+      <Name>P_P25_PSIA</Name>
+      <FVName>P3</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P3S</Parameter>
+      <Name>P_PS3_PSIA</Name>
+      <FVName>P1</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[1].mean_value</ItemID>
+    </Channel>
+   	
+	 <Channel>
+      <Parameter>P8S</Parameter>
+      <Name>P_PS8_PSIA</Name>
+      <FVName>P6</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[6].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>PRGB</Parameter>
+      <Name>P_RGB_PSIG</Name>
+      <FVName>P7</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[7].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>PAGB</Parameter>
+      <Name>P_RGB_PSIG</Name>
+      <FVName>P11</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[11].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>MOP</Parameter>
+      <Name>P_MOP_PSID</Name>
+      <FVName>P9</FVName>
+      <Units>PSID</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[9].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>PB1</Parameter>
+      <Name>P_PB1_PSIA</Name>
+      <FVName>P2</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[2].mean_value</ItemID>
+    </Channel>
+	<!-- <Channel>
+      <Parameter>PB2</Parameter>
+      <Name>P_PB2_PSIA</Name>
+      <FVName>??</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[??].mean_value</ItemID>
+    </Channel> -->
+	<!-- <Channel>
+      <Parameter>LPBOV</Parameter>
+      <Name>UART_LPBOV_CHA</Name>
+      <FVName>User_Int_Uart_CHA_16</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[16].engunit</ItemID>
+      <Units></Units>
+    </Channel> -->
+	
+	<Channel>
+      <Parameter>TB1</Parameter>
+      <Name>T_TB1_DEGF</Name>
+      <FVName>T6</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[6].mean_value</ItemID>
+    </Channel>
+	
+	 <Channel>
+      <Parameter>TF1</Parameter> 
+      <Name>T_FUEL_FM1_DEGF</Name>
+      <FVName>FM1_T_FUEL_DEGF_OPC</FVName>
+      <Units>DEGF</Units>
+	  <ItemID>dacn1.dacn1_uut_controller.fm_t_fuel.pv</ItemID> 
+    </Channel> 
+	<Channel> 
+      <Parameter>TF2</Parameter> 
+      <Name>T_FUEL_DEGF</Name>
+	  <FVName>T_FUEL_DEGF</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[7].mean_value</ItemID>
+    </Channel>
+	
+	<Channel>
+      <Parameter>MOT</Parameter>
+      <Name>T_MOT_DEGF</Name>
+      <FVName>T9</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[9].mean_value</ItemID>
+    </Channel>
+        
+    <Channel>
+      <Parameter>T1.1</Parameter>
+      <Name>T_T1_1_DEGF</Name>
+      <FVName>T1</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[1].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T1.2</Parameter>
+      <Name>T_T1_2_DEGF</Name>
+      <FVName>T2</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[2].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T1.3</Parameter>
+      <Name>T_T1_3_DEGF</Name>
+      <FVName>T3</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[3].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T1.4</Parameter>
+      <Name>T_T1_4_DEGF</Name>
+      <FVName>T4</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[4].mean_value</ItemID>
+    </Channel>
+	    
+    <Channel>
+      <Parameter>TT3</Parameter>
+      <Name>T_T3_DEGF</Name>
+      <FVName>T17</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[17].mean_value</ItemID>
+    </Channel>
+       
+    <Channel>
+      <Parameter>T6H</Parameter>
+      <Name>T_T6H_DEGF</Name>
+      <FVName>T21</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[21].mean_value</ItemID>
+    </Channel>
+	
+    
+    <Channel>
+      <Parameter>T8.1</Parameter>
+      <Name>T_T8_1_DEGF</Name>
+      <FVName>T25</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[25].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T8.2</Parameter>
+      <Name>T_T8_2_DEGF</Name>
+      <FVName>T26</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[26].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T8.3</Parameter>
+      <Name>T_T8_3_DEGF</Name>
+      <FVName>T27</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[27].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T8.4</Parameter>
+      <Name>T_T8_4_DEGF</Name>
+      <FVName>T28</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[28].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T8.5</Parameter>
+      <Name>T_T8_5_DEGF</Name>
+      <FVName>T29</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[29].mean_value</ItemID>
+    </Channel>
+	<Channel>
+      <Parameter>T8.6</Parameter>
+      <Name>T_T8_6_DEGF</Name>
+      <FVName>T30</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[30].mean_value</ItemID>
+    </Channel>
+	     
+  </ChannelMap>
+  <Conditions>
+
+<Condition>
+<NO>1</NO>
+<Description>COND 0001</Description>
+  <Parameters>
+<!-- <Parameter><Name>FADEC_SELECTED</Name><Value>32</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>NH</Name><Value>31198.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NL</Name><Value>25355.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>20438.0</Value><Units>RPM</Units></Parameter>
+
+<Parameter><Name>FM1</Name><Value>873.6</Value><Units>PPH</Units></Parameter>
+<!-- <Parameter><Name>F5_RAW</Name><Value>1245.63820</Value><Units>Hz</Units></Parameter> -->
+<Parameter><Name>MOP</Name><Value>68.71</Value><Units>PSID</Units></Parameter> <!-- +Baro -->
+<Parameter><Name>P1T</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+
+<!-- <Parameter><Name>TSG</Name><Value>62.38310</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>SG</Name><Value>0.780</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>RH</Name><Value>50</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>TMEEC</Name><Value>6113.198</Value><Units>LBSFT</Units></Parameter>
+<!-- <Parameter><Name>ITT</Name><Value>1726.32776</Value><Units>DEGF</Units></Parameter> -->
+
+<Parameter><Name>DYNO_TQ</Name><Value>6187.987</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF1</Name><Value>0.3</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF2</Name><Value>0.17093</Value><Units>AMP</Units></Parameter>
+
+<!-- <Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter> -->
+<Parameter><Name>P25</Name><Value>60.59</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>1.94</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>66.43</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.64</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>EGT</Name><Value>1507.24011</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>PB1</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>PB2</Name><Value>-0.02</Value><Units>PSIG</Units></Parameter> -->
+<Parameter><Name>P8S</Name><Value>14.65</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PFUEL</Name><Value>14.65</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>158.73</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>LPBOV</Name><Value>-1.08422</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>TT3</Name><Value>739.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T6H</Name><Value>1255.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF1</Name><Value>89.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF2</Name><Value>89.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TB1</Name><Value>212.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>188.9</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T1.1</Name><Value>87.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.2</Name><Value>87.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.3</Name><Value>87.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.4</Name><Value>88.7</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T8.1</Name><Value>1022.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.2</Name><Value>1014.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.3</Name><Value>1016.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.4</Name><Value>1009.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.5</Name><Value>1004.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.6</Name><Value>1010.0</Value><Units>DEGF</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>2</NO>
+<Description>COND 0002</Description>
+  <Parameters>
+<!-- <Parameter><Name>FADEC_SELECTED</Name><Value>32</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>NH</Name><Value>32568.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NL</Name><Value>26886.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>20444.0</Value><Units>RPM</Units></Parameter>
+
+<Parameter><Name>FM1</Name><Value>1137.9</Value><Units>PPH</Units></Parameter>
+<!-- <Parameter><Name>F5_RAW</Name><Value>1245.63820</Value><Units>Hz</Units></Parameter> -->
+<Parameter><Name>MOP</Name><Value>69.14</Value><Units>PSID</Units></Parameter> <!-- +Baro -->
+<Parameter><Name>P1T</Name><Value>14.60</Value><Units>PSIA</Units></Parameter>
+
+<!-- <Parameter><Name>TSG</Name><Value>62.38310</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>SG</Name><Value>0.780</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>RH</Name><Value>23</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>TMEEC</Name><Value>9313.758</Value><Units>LBSFT</Units></Parameter>
+<!-- <Parameter><Name>ITT</Name><Value>1726.32776</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>DYNO_TQ</Name><Value>9360.443</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF1</Name><Value>0.2</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF2</Name><Value>0.17368</Value><Units>AMP</Units></Parameter>
+
+<!-- <Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter> -->
+
+<Parameter><Name>P25</Name><Value>68.95</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>2.50</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>66.43</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.63</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>EGT</Name><Value>1507.24011</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>PB1</Name><Value>14.61</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>PB2</Name><Value>-0.02</Value><Units>PSIG</Units></Parameter> -->
+<Parameter><Name>P8S</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PFUEL</Name><Value>14.63</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>190.01</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>LPBOV</Name><Value>-1.08422</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>TT3</Name><Value>809.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T6H</Name><Value>1397.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF1</Name><Value>90.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF2</Name><Value>90.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TB1</Name><Value>160.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>190.1</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T1.1</Name><Value>87.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.2</Name><Value>87.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.3</Name><Value>87.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.4</Name><Value>88.9</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T8.1</Name><Value>1094.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.2</Name><Value>1072.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.3</Name><Value>1071.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.4</Name><Value>1074.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.5</Name><Value>1072.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.6</Name><Value>1083.8</Value><Units>DEGF</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>3</NO>
+<Description>COND 0003</Description>
+  <Parameters>
+<!-- <Parameter><Name>FADEC_SELECTED</Name><Value>32</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>NH</Name><Value>32828.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NL</Name><Value>27177.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>20442.0</Value><Units>RPM</Units></Parameter>
+
+<Parameter><Name>FM1</Name><Value>1195.1</Value><Units>PPH</Units></Parameter>
+<!-- <Parameter><Name>F5_RAW</Name><Value>1245.63820</Value><Units>Hz</Units></Parameter> -->
+<Parameter><Name>MOP</Name><Value>69.35</Value><Units>PSID</Units></Parameter> <!-- +Baro -->
+<Parameter><Name>P1T</Name><Value>14.60</Value><Units>PSIA</Units></Parameter>
+
+<!-- <Parameter><Name>TSG</Name><Value>62.38310</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>SG</Name><Value>0.780</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>RH</Name><Value>43</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>TMEEC</Name><Value>10021.191</Value><Units>LBSFT</Units></Parameter>
+<!-- <Parameter><Name>ITT</Name><Value>1726.32776</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>DYNO_TQ</Name><Value>10060.568</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF1</Name><Value>0.2</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF2</Name><Value>0.18680</Value><Units>AMP</Units></Parameter>
+
+<!-- <Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter> -->
+
+<Parameter><Name>P25</Name><Value>70.6</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>2.62</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>68.88</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>EGT</Name><Value>1507.24011</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>PB1</Name><Value>14.61</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>PB2</Name><Value>-0.02</Value><Units>PSIG</Units></Parameter> -->
+<Parameter><Name>P8S</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PFUEL</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>196.47</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>LPBOV</Name><Value>-1.08422</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>TT3</Name><Value>823.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T6H</Name><Value>1427.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF1</Name><Value>92.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF2</Name><Value>92.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TB1</Name><Value>141.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>190.2</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T1.1</Name><Value>86.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.2</Name><Value>87.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.3</Name><Value>86.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.4</Name><Value>87.5</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T8.1</Name><Value>1109.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.2</Name><Value>1088.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.3</Name><Value>1087.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.4</Name><Value>1090.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.5</Name><Value>1087.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.6</Name><Value>1105.0</Value><Units>DEGF</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>4</NO>
+<Description>COND 0004</Description>
+  <Parameters>
+<!-- <Parameter><Name>FADEC_SELECTED</Name><Value>32</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>NH</Name><Value>33503.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NL</Name><Value>27917.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>20442.0</Value><Units>RPM</Units></Parameter>
+
+<Parameter><Name>FM1</Name><Value>1344.2</Value><Units>PPH</Units></Parameter>
+<!-- <Parameter><Name>F5_RAW</Name><Value>1245.63820</Value><Units>Hz</Units></Parameter> -->
+<Parameter><Name>MOP</Name><Value>67.82</Value><Units>PSID</Units></Parameter> <!-- +Baro -->
+<Parameter><Name>P1T</Name><Value>14.59</Value><Units>PSIA</Units></Parameter>
+
+<!-- <Parameter><Name>TSG</Name><Value>62.38310</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>SG</Name><Value>0.780</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>RH</Name><Value>99</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>TMEEC</Name><Value>11804.095</Value><Units>LBSFT</Units></Parameter>
+<!-- <Parameter><Name>ITT</Name><Value>1726.32776</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>DYNO_TQ</Name><Value>11823.938</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF1</Name><Value>0.1</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF2</Name><Value>0.11014</Value><Units>AMP</Units></Parameter>
+
+<!-- <Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter> -->
+
+<Parameter><Name>P25</Name><Value>74.51</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>2.72</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>70.33</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>EGT</Name><Value>1507.24011</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>PB1</Name><Value>14.60</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>PB2</Name><Value>-0.02</Value><Units>PSIG</Units></Parameter> -->
+<Parameter><Name>P8S</Name><Value>14.61</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PFUEL</Name><Value>14.62</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>212.33</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>LPBOV</Name><Value>-1.08422</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>TT3</Name><Value>858.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T6H</Name><Value>1503.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF1</Name><Value>95.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF2</Name><Value>95.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TB1</Name><Value>202.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>189.8</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T1.1</Name><Value>86.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.2</Name><Value>86.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.3</Name><Value>86.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.4</Name><Value>87.3</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T8.1</Name><Value>1149.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.2</Name><Value>1124.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.3</Name><Value>1132.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.4</Name><Value>1134.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.5</Name><Value>1126.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.6</Name><Value>1148.3</Value><Units>DEGF</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>5</NO>
+<Description>COND 0005</Description>
+  <Parameters>
+<!-- <Parameter><Name>FADEC_SELECTED</Name><Value>32</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>NH</Name><Value>32897.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NL</Name><Value>27312.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>20412.0</Value><Units>RPM</Units></Parameter>
+
+<Parameter><Name>FM1</Name><Value>1253.7</Value><Units>PPH</Units></Parameter>
+<!-- <Parameter><Name>F5_RAW</Name><Value>1245.63820</Value><Units>Hz</Units></Parameter> -->
+<Parameter><Name>MOP</Name><Value>69.05</Value><Units>PSID</Units></Parameter> <!-- +Baro -->
+<Parameter><Name>P1T</Name><Value>14.56</Value><Units>PSIA</Units></Parameter>
+
+<!-- <Parameter><Name>TSG</Name><Value>62.38310</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>SG</Name><Value>0.780</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>RH</Name><Value>75</Value><Units>None</Units></Parameter>
+
+<Parameter><Name>TMEEC</Name><Value>10548.843</Value><Units>LBSFT</Units></Parameter>
+<!-- <Parameter><Name>ITT</Name><Value>1726.32776</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>DYNO_TQ</Name><Value>10535.706</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF1</Name><Value>0.15</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>TQ_AFU_REF2</Name><Value>0.14762</Value><Units>AMP</Units></Parameter>
+
+<!-- <Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter> -->
+
+<Parameter><Name>P25</Name><Value>71.75</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>2.72</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>70.04</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.59</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>EGT</Name><Value>1507.24011</Value><Units>DEGF</Units></Parameter> -->
+<Parameter><Name>PB1</Name><Value>14.57</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>PB2</Name><Value>-0.02</Value><Units>PSIG</Units></Parameter> -->
+<Parameter><Name>P8S</Name><Value>14.59</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PFUEL</Name><Value>14.59</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>200.60</Value><Units>PSIA</Units></Parameter>
+<!-- <Parameter><Name>LPBOV</Name><Value>-1.08422</Value><Units></Units></Parameter> -->
+
+<Parameter><Name>TT3</Name><Value>821.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T6H</Name><Value>1443.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF1</Name><Value>92.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TF2</Name><Value>92.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TB1</Name><Value>139.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>190.3</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T1.1</Name><Value>82.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.2</Name><Value>83.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.3</Name><Value>83.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T1.4</Name><Value>83.8</Value><Units>DEGF</Units></Parameter>
+
+<Parameter><Name>T8.1</Name><Value>1107.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.2</Name><Value>1093.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.3</Name><Value>1096.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.4</Name><Value>1094.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.5</Name><Value>1107.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T8.6</Name><Value>1094.8</Value><Units>DEGF</Units></Parameter>
+  </Parameters>
+</Condition>
+
+</Conditions>
+</Performance>

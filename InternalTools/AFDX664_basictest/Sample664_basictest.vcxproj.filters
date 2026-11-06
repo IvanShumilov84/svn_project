@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Config">
+      <UniqueIdentifier>{b6626e34-a6cf-4fbb-bc47-4bc5532005f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{8f5146b8-ff6b-465d-87a0-8969076434de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{39f9aec6-30d2-458c-a927-0d2b54297fd2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Convert_AR664_cfg.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Sample664_helper.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Convert_AR664_cfg.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample664_basictest.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Sample664_helper.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

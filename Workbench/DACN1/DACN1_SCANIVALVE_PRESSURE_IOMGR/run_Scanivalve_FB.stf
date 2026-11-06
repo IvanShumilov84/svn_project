@@ -1,0 +1,160 @@
+FUNCTION_BLOCK run_Scanivalve_FB
+(************************************************************************************************************************************************
+	Name :		run_Scanivalve_IOMgr_FB									
+														
+	Description :	Run loop of the scanivalve IO System 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset		First Release
+	2.0	         2001/07/15		P.Dextraze, M.Morisset	Add Bit Packed DIN Process 
+	2.1	         2001/09/05		M.Morisset		Add Specific IO Mapping 
+	2.2	         2001/11/05		P.Dextraze		Add PROC_RFV CALL
+	2.3	         2002/08/23		S.Lepage		Adapt for Greece
+	2.4	         2003/05/22		N. Sangiovanni		Modification Archiving
+	3.0	         2004/12/08		N. Sangiovanni		Adapt for CELDAS200 Generation
+
+************************************************************************************************************************************************)	
+
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_PRESSURE_IOMGR: RUNNING');*)
+	err_code 	:= OK;
+
+
+(* Read the current scan *)
+	(* FOR i := 1 TO Number_of_Scanivalve DO	 *)
+
+		CASE  Scanivalve_Structure[i].Status OF
+	
+		OPEN, CLOSE:
+			SCANIVALVE_OPEN(Scanivalve_Structure[i].IPAddress);
+
+			Scanivalve_Structure[i].Sock 		:= SCANIVALVE_OPEN.SOCK;
+			Scanivalve_Structure[i].err_code 	:= SCANIVALVE_OPEN.ERR_CODE;
+
+			IF (ScaniValve_Structure[i].err_code <> OK) THEN
+				Scanivalve_Structure[i].Sock 	:= -1;
+				Scanivalve_Structure[i].Status	:= OPEN;
+			ELSE
+				Scanivalve_Structure[i].Status	:= LOAD;
+			END_IF;
+
+			err_code	:= ScaniValve_Structure[i].err_code; 
+		LOAD:
+			SCANIVALVE_LOAD(Scanivalve_Structure[i].Sock, Scanivalve_Structure[i].Model);
+
+			Scanivalve_Structure[i].Filename	:= SCANIVALVE_LOAD.FILENAME;
+			Scanivalve_Structure[i].err_code 	:= SCANIVALVE_LOAD.ERR_CODE;
+
+			IF (ScaniValve_Structure[i].err_code <> OK) THEN
+				Scanivalve_Structure[i].Sock 	:= -1;
+				Scanivalve_Structure[i].Status	:= LOAD;
+			ELSE
+				Scanivalve_Structure[i].Status	:= INITIALIZE;
+			END_IF;
+
+			err_code	:= ScaniValve_Structure[i].err_code;
+		INITIALIZE:
+			SCANIVALVE_INIT(Scanivalve_Structure[i].Sock, Scanivalve_Structure[i].Model, Scanivalve_Structure[i].Eng_Unit);
+
+			Scanivalve_Structure[i].err_code 	:= SCANIVALVE_INIT.ERR_CODE;
+
+			IF (Scanivalve_Structure[i].err_code <> OK) THEN
+				Scanivalve_Structure[i].Sock 	:= -1;
+				Scanivalve_Structure[i].Status	:= INITIALIZE;
+			ELSE
+				Scanivalve_Structure[i].Status	:= RUN;
+			END_IF;
+
+			err_code	:= ScaniValve_Structure[i].err_code;
+		RUN:
+
+			IF In_Scanivalve_Pressure_IOMgr.mode = RUN_FOR_TRUE THEN
+
+				Count_Speed[i]	:= Count_Speed[i] + 1;
+	
+				IF Count_Speed[i] >= (Scanivalve_Structure[i].Set_Speed / ANY_TO_DINT( __SYSVA_TCYCYCTIME )) THEN
+					Count_Speed[i]	:= 0; 
+
+
+					SCANIVALVE_READ(Scanivalve_Structure[i].Sock, Scanivalve_Structure[i].Model);
+
+					Scanivalve_Pressures			:= SCANIVALVE_READ.PRESSURES;
+					Scanivalve_Temperatures 		:= SCANIVALVE_READ.TEMPERATURES; 
+					ScaniValve_Structure[i].err_code 	:= SCANIVALVE_READ.ERR_CODE;
+	
+					IF SCANIVALVE_READ.CLOSEFLAG = 1 THEN
+						Scanivalve_Structure[i].Status	:= CLOSE;
+					ELSE
+						Scanivalve_Structure[i].Status	:= RUN;
+
+						IF Scanivalve_Structure[i].err_code = OK THEN
+							FOR index := 1 TO 64 DO
+								Scanivalve_Structure[i].Pressures[index]	:= Scanivalve_Pressures[index];
+								Scanivalve_Structure[i].Temperatures[index]	:= Scanivalve_Temperatures[index]; 
+							END_FOR;
+						END_IF;
+					END_IF;
+	
+					err_code	:= ScaniValve_Structure[i].err_code;
+				END_IF;
+
+			END_IF;
+		END_CASE;
+	(* END_FOR; *)
+
+(* Process the current scan *)
+IF In_Scanivalve_Pressure_IOMgr.mode = RUN_FOR_TRUE THEN
+
+		FOR index := 1 TO number_of_variables BY 1 DO
+
+				IF  ((FV[index].level_handle = Scanivalve_Structure[i].IPAddress) AND ((Scanivalve_Structure[i].Model = SCANIVALVE_DSA3207) OR (Scanivalve_Structure[i].Model = SCANIVALVE_DSA3218))) THEN
+					IF (ScaniValve_Structure[i].err_code = OK) THEN
+						PROC_RFV(rdata_base, FV[index].data_handle, Scanivalve_Structure[i].Pressures[FV[index].channel]);
+						IF ((ScaniValve_Structure[i].err_code = OK) AND (Scanivalve_Structure[i].Status = RUN)) THEN
+
+							CASE (FV[index].FV_type) OF   
+							FV_P:
+								P[FV[index].FV_index].value 			:= PROC_RFV.VALUE;
+								P[FV[index].FV_index].mean_value 		:= PROC_RFV.MEAN_VALUE;
+							END_CASE; 
+						ELSE
+							(* Force value to -9999.99 for bad ScaniValvle *)
+							CASE (FV[index].FV_type) OF   
+							FV_P:
+								P[FV[index].FV_index].value 		:= -9999.99;
+								P[FV[index].FV_index].mean_value 	:= -9999.99;
+							END_CASE; 
+
+					
+						END_IF;
+					END_IF;
+				END_IF;
+
+		END_FOR;
+END_IF;
+
+
+
+(* Log administration *)
+	IF Update_RDATA_Flag = TRUE THEN
+		xfer_RData();
+		
+		Update_RDATA_Flag	:= FALSE;
+	END_IF;
+	
+i	:=	i + 1;
+
+(* Scanning One Scanivalve at the time per cycle instead of all *)
+IF (i > Number_of_Scanivalve) then
+
+	i := 1;
+END_IF;
+
+
+
+END_FUNCTION_BLOCK

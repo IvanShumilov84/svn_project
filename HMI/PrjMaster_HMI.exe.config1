@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<configuration>
+
+	<configSections>
+		<sectionGroup name="EntitySpaces" type="EntitySpaces.Interfaces.esConfigSettings, EntitySpaces.Core">
+			<section name="connectionInfo" type="EntitySpaces.Interfaces.esConfigSettings, EntitySpaces.Interfaces" allowLocation="true" allowDefinition="Everywhere" restartOnExternalChanges="true"/>
+		</sectionGroup>
+		<section name="engineConfigurationSection" type="StudioDemonstration.EngineConfigurationSection, ConfigurationSettings, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+		<section name="reportConfigurationSection" type="StudioDemonstration.ReportConfigurationSection, ConfigurationSettings, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+		<section name="databaseConfigurationSection" type="StudioDemonstration.DatabaseConfigurationSection, ConfigurationSettings, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+		<section name="projectConfigurationSection" type="StudioDemonstration.ProjectConfigurationSection, ConfigurationSettings, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+	</configSections>
+	
+	<EntitySpaces>
+		<connectionInfo default="ACCESSDynamic">
+			<connections>
+				<add name="SqlDevServer" providerMetadataKey="esDefault" sqlAccessType="DynamicSQL" provider="EntitySpaces.SqlClientProvider" providerClass="DataProvider" connectionString="User ID=sa; . . . " databaseVersion="2005" />
+				<add name="ACCESSDynamic"
+					providerMetadataKey="esDefault"
+					sqlAccessType="DynamicSQL"
+					provider="EntitySpaces.MSAccessProvider"
+					providerClass="DataProvider"
+					connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\My Projects\CELDAS 200\Workbench\TestSession.mdb;Jet OLEDB:System database=C:\My Projects\CELDAS 200\Workbench\Secured.mdw;User Id=Administrator;Password=CEL9994"/>
+			</connections>
+		</connectionInfo>
+	</EntitySpaces>
+
+  
+  
+	<engineConfigurationSection>
+		<engineInformation engineModel="GTCP131-9A" ductDiameter="7.98"
+			ductDiameterUnit="Inch" orificeDiameter="3.245" orificeDiameterUnit="Inch" />
+		<engineInformation engineModel="GTCP131-9B" ductDiameter="7.98"
+			ductDiameterUnit="Inch" orificeDiameter="3.245" orificeDiameterUnit="Inch" />
+	</engineConfigurationSection>
+
+	
+	<reportConfigurationSection>
+		<reportInformation calibrationReportOutputDirectory="C:\Calibration Reports\"
+			calibrationReportTemplateFile="GMF_Report_Calibration.xlsx" checkReportOutputDirectory="C:\Check Reports\"
+			checkReportTemplateFile="GMF_Report_Check.xlsx" />
+	</reportConfigurationSection>
+ 
+ 
+	<databaseConfigurationSection>
+		<databaseInformation path="C:\My Projects\CELDAS 200\Workbench\"
+			databaseFilename="TestSession.mdb" workGroupFilename="Secured.mdw"
+			userId="Administrator" exportCsvBatchFile="C:\My Projects\CELDAS 200\Workbench\PrjExt\export.bat" />
+	</databaseConfigurationSection>
+	
+	
+	<projectConfigurationSection>
+		<projectInformation name="CEL Master Project" number="YY79" />
+	</projectConfigurationSection>
+ <system.diagnostics>
+		<switches>
+			<add name="Studio" value="1"/>
+			<add name="KineticaRT.Channels" value="1"/>
+			<add name="KineticaRT.Servers.Logger" value="4"/>
+			<add name="KineticaRT.Servers.OpcClient" value="1"/>
+			<add name="KineticaRT.Servers.SmartDrive" value="1"/>
+			<add name="KineticaRT.Controls.Button" value="1"/>
+			<add name="KineticaRT.Studio.Controls.Button" value="1"/>
+		</switches>
+	</system.diagnostics>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/></startup></configuration>

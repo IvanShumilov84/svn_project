@@ -1,0 +1,216 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Splash.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Splash.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Explorer.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Application.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Tab.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.Frame.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Frame.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Sequence.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Explorer.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Tab.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.Frame.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Frame.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Sequence.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Properties.Resources.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Properties.Resources.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.XML
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Logic.Expressions.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Application.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Properties.Resources.resources
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.resources
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Properties.Resources.resources
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.resources
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Splash.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Splash.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Explorer.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Application.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Tab.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.Frame.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Frame.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Sequence.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Explorer.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Logic.Expressions.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Tab.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.Frame.pdb
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Frame.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Sequence.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Application.xml
+C:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.dll
+C:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.XML
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Splash.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Splash.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Explorer.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Application.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Tab.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.Frame.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Frame.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Sequence.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Explorer.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Logic.Expressions.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Tab.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Compact.Controls.Frame.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Controls.Frame.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Sequence.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Release\KineticaRT.Studio.Application.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Properties.Resources.resources
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.resources
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Release\KineticaRT.Studio.Splash.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.XML
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Splash.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Explorer.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Logic.Expressions.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Tab.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Compact.Controls.Frame.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Controls.Frame.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Sequence.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.pdb
+D:\KineticaRT\KineticaRT\Studio\Splash\bin\Debug\KineticaRT.Studio.Application.xml
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Properties.Resources.resources
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.resources
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.dll
+D:\KineticaRT\KineticaRT\Studio\Splash\obj\Debug\KineticaRT.Studio.Splash.pdb

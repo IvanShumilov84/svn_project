@@ -1,0 +1,306 @@
+FUNCTION_BLOCK run_OMNIBUSBOX_FB
+(************************************************************************************************************************************************
+	Name :		run_OMNIBUSBOX_FB									
+														
+	Description :	Run loop of the OMNIBUSBOX System 							      
+
+
+	Dependacy : 	
+
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/09	Danny Lepage		First Release
+
+************************************************************************************************************************************************)
+
+err_code := OK;
+status   := RUNNING;
+(* CODE FROM 05288  Log message every 15 minutes. 900 000 ms *)
+(*IF  (modulo_rest = 0) THEN
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_OMNIBUSBOX_IOMGR: RUNNING');
+END_IF;
+
+modulo_rest  := MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+*)
+err_code := OK;
+
+
+
+
+IF (In_OMNIBUSBOX_IOMgr.mode = RUN_FOR_TRUE) THEN
+
+	(*
+	 * Read ARINC Parameters
+	 *)
+
+	IF (err_code = OK) THEN
+		ProcessAllArinc();
+	END_IF;
+
+(* TEST SPEED*)
+	IF (err_code = OK) THEN
+		FOR i:= 1 TO A429InCHACounter DO
+			CASE A429IN_CHA[i].Format OF
+
+			ARINC_BNR,ARINC_BCD:
+				CELBTI_A429MsgReadEngUnitValue( A429IN_CHA[i].hMsg );
+
+				err_code := CELBTI_A429MsgReadEngUnitValue.err_code;
+				IF (err_code = OK) THEN
+					A429IN_CHA[i].engUnit := CELBTI_A429MsgReadEngUnitValue.engUnit;
+					A429IN_CHA[i].SM      := CELBTI_A429MsgReadEngUnitValue.SM;
+					A429IN_CHA[i].tagTime := CELBTI_A429MsgReadEngUnitValue.tagTime;
+				ELSE
+					EXIT;
+				END_IF;				
+			ARINC_DISCRETE,ARINC_PW100LRUCODE:
+				CELBTI_A429MsgReadData( A429IN_CHA[i].hMsg );
+
+				err_code := CELBTI_A429MsgReadData.err_code;
+				IF (err_code = OK) THEN
+					A429IN_CHA[i].data    := CELBTI_A429MsgReadData.data;
+					A429IN_CHA[i].engUnit := ANY_TO_REAL(A429IN_CHA[i].data);
+					A429IN_CHA[i].SM      := CELBTI_A429MsgReadData.SM;
+					A429IN_CHA[i].tagTime := CELBTI_A429MsgReadData.tagTime;
+				ELSE
+					EXIT;
+				END_IF;
+			END_CASE;
+		END_FOR;
+	END_IF;
+
+	IF (err_code = OK) THEN
+		FOR i:= 1 TO A429InCHBCounter DO
+			CASE A429IN_CHB[i].Format OF
+
+			ARINC_BNR,ARINC_BCD:
+				CELBTI_A429MsgReadEngUnitValue( A429IN_CHB[i].hMsg );
+
+				err_code := CELBTI_A429MsgReadEngUnitValue.err_code;
+				IF (err_code = OK) THEN
+					A429IN_CHB[i].engUnit := CELBTI_A429MsgReadEngUnitValue.engUnit;
+					A429IN_CHB[i].SM      := CELBTI_A429MsgReadEngUnitValue.SM;
+					A429IN_CHB[i].tagTime := CELBTI_A429MsgReadEngUnitValue.tagTime;
+				ELSE
+					EXIT;
+				END_IF;				
+			ARINC_DISCRETE:
+				CELBTI_A429MsgReadData( A429IN_CHB[i].hMsg );
+
+				err_code := CELBTI_A429MsgReadData.err_code;
+				IF (err_code = OK) THEN
+					A429IN_CHB[i].data    := CELBTI_A429MsgReadData.data;
+					A429IN_CHB[i].engUnit := ANY_TO_REAL(A429IN_CHB[i].data);
+					A429IN_CHB[i].SM      := CELBTI_A429MsgReadData.SM;
+					A429IN_CHB[i].tagTime := CELBTI_A429MsgReadData.tagTime;
+				ELSE
+					EXIT;
+				END_IF;
+			END_CASE;
+		END_FOR;
+	END_IF;
+(*TEST SPEED *)
+	(*
+	 * Read UART Parameters
+	 *)
+
+	IF (err_code = OK) THEN
+		ScanAllUart();
+		err_code := ScanAllUart.err_code;
+	END_IF;
+
+	IF (err_code = OK) THEN
+		FOR i:= 1 TO UartCHACounter DO
+
+			CASE UART_CHA[i].dataType OF
+
+			CELBTI_UARTDATATYPE_32BIT_DISCRETE,CELBTI_UARTDATATYPE_32BIT_INTEGER:
+				CELBTI_UartMsgReadData( UART_CHA[i].hMsg );
+
+				err_code := CELBTI_UartMsgReadData.err_code;
+				IF (err_code = OK) THEN
+					UART_CHA[i].data := CELBTI_UartMsgReadData.data;
+				ELSE
+					EXIT;
+				END_IF;				
+			CELBTI_UARTDATATYPE_REAL,CELBTI_UARTDATATYPE_INTEGER,CELBTI_UARTDATATYPE_DISCRETE :
+				CELBTI_UartMsgReadEngUnitValue( UART_CHA[i].hMsg );
+
+				err_code := CELBTI_UartMsgReadEngUnitValue.err_code;
+				IF (err_code = OK) THEN
+					UART_CHA[i].engUnit := CELBTI_UartMsgReadEngUnitValue.engUnit;
+				ELSE
+					EXIT;
+				END_IF;
+			END_CASE;
+	
+
+		END_FOR;
+	END_IF;
+
+	IF (err_code = OK) THEN
+		FOR i:= 1 TO UartCHBCounter DO
+			CASE UART_CHB[i].dataType OF
+			CELBTI_UARTDATATYPE_32BIT_DISCRETE,CELBTI_UARTDATATYPE_32BIT_INTEGER:
+				CELBTI_UartMsgReadData( UART_CHB[i].hMsg );
+				err_code := CELBTI_UartMsgReadData.err_code;
+				IF (err_code = OK) THEN
+					UART_CHB[i].data := CELBTI_UartMsgReadData.data;;
+				ELSE
+					EXIT;
+				END_IF;				
+			CELBTI_UARTDATATYPE_REAL,CELBTI_UARTDATATYPE_INTEGER,CELBTI_UARTDATATYPE_DISCRETE:
+				CELBTI_UartMsgReadEngUnitValue( UART_CHB[i].hMsg );
+				err_code := CELBTI_UartMsgReadEngUnitValue.err_code;
+				IF (err_code = OK) THEN
+					UART_CHB[i].engUnit := CELBTI_UartMsgReadEngUnitValue.engUnit;
+				ELSE
+					EXIT;
+				END_IF;
+			END_CASE;
+		END_FOR;
+	END_IF;
+
+	Set_DAS_Parameter();
+
+	(*
+	 * Transmit ARINC Parameters
+	 *)
+(* TEST SPEED*)
+	IF (err_code = OK) THEN
+		FOR i:= 1 TO MAX(A429OutCHACounter, A429OutCHBCounter) DO
+			(*
+			 * Send parameter in Parallel on A/B
+			 *)
+
+			IF (i <= A429OutCHACounter) THEN
+				IF (A429OUT_CHA[i].override = FALSE) THEN
+					IF ((LEFT(A429OUT_CHA[i].defaultValue, 1) = '%') AND (RIGHT(A429OUT_CHA[i].defaultValue,1) = '%')) THEN
+
+						Get_DAS_Parameter(A429OUT_CHA[i].defaultValue);
+
+						IF (Get_DAS_Parameter.err_code = 0) THEN
+							A429OUT_CHA[i].engUnit := Get_DAS_Parameter.realValue;
+							A429OUT_CHA[i].data    := Get_DAS_Parameter.intValue;
+						ELSE
+							err_code := Get_DAS_Parameter.err_code;
+							EXIT;
+						END_IF;
+					ELSIF (A429OUT_CHA[i].defaultValue <> '') THEN
+						A429OUT_CHA[i].engUnit := ANY_TO_REAL(A429OUT_CHA[i].defaultValue);
+						A429OUT_CHA[i].data    := ANY_TO_DINT(A429OUT_CHA[i].defaultValue);
+					END_IF;
+				END_IF;
+
+				CASE A429OUT_CHA[i].Format OF
+
+				ARINC_BNR,ARINC_BCD:
+
+					(* 
+						Attention la variable A429OUT_CHA ne doit pas etre ecrasé par un BINDING IN d'une autre ressource vers l'OMNIBUSBOX. 
+						La var Handle est ecrit par la ressource OMNIBUSBOX et est utilisé pour transmettre certains parametre comme ECS_DEMAND,VARISPEED.
+						et le binding rend la var Handle readonly, ce qui retourne des erreurs de communication
+					*)
+
+					IF (UUT_Info.Model = 'GTCP131-9B' AND ECS_Enable = FALSE) THEN
+
+						CELBTI_A429MsgWriteEngUnitValue( A429OUT_CHA[i].hMsg, 30.1, 2);
+
+						err_code := CELBTI_A429MsgWriteEngUnitValue.err_code;
+
+						IF (err_code <> OK) THEN
+							EXIT;
+						END_IF;
+
+					ELSE
+						CELBTI_A429MsgWriteEngUnitValue( A429OUT_CHA[i].hMsg, A429OUT_CHA[i].engUnit, A429OUT_CHA[i].SM );
+
+						err_code := CELBTI_A429MsgWriteEngUnitValue.err_code;
+
+						IF (err_code <> OK) THEN
+							EXIT;
+						END_IF;
+
+					END_IF;
+
+				ARINC_DISCRETE:
+					CELBTI_A429MsgWriteData( A429OUT_CHA[i].hMsg, A429OUT_CHA[i].data, A429OUT_CHA[i].SM );
+
+					err_code := CELBTI_A429MsgWriteData.err_code;
+					IF (err_code <> OK) THEN
+						EXIT;	
+					END_IF;
+				END_CASE;
+			END_IF;
+
+			IF (i <= A429OutCHBCounter) THEN
+				IF (A429OUT_CHB[i].override = FALSE) THEN
+					IF ((LEFT(A429OUT_CHB[i].defaultValue, 1) = '%') AND (RIGHT(A429OUT_CHB[i].defaultValue,1) = '%')) THEN
+
+						Get_DAS_Parameter(A429OUT_CHB[i].defaultValue);
+
+						IF (Get_DAS_Parameter.err_code = 0) THEN
+							A429OUT_CHB[i].engUnit := Get_DAS_Parameter.realValue;
+							A429OUT_CHB[i].data    := Get_DAS_Parameter.intValue;
+						ELSE
+							err_code := Get_DAS_Parameter.err_code;
+							EXIT;
+						END_IF;
+					ELSIF (A429OUT_CHB[i].defaultValue <> '') THEN
+						A429OUT_CHB[i].engUnit := ANY_TO_REAL(A429OUT_CHB[i].defaultValue);
+						A429OUT_CHB[i].data    := ANY_TO_DINT(A429OUT_CHB[i].defaultValue);
+					END_IF;
+				END_IF;
+
+				CASE A429OUT_CHB[i].Format OF
+
+				ARINC_BNR,ARINC_BCD:
+					CELBTI_A429MsgWriteEngUnitValue( A429OUT_CHB[i].hMsg, A429OUT_CHB[i].engUnit, A429OUT_CHB[i].SM );
+
+					err_code := CELBTI_A429MsgWriteEngUnitValue.err_code;
+					IF (err_code <> OK) THEN
+						EXIT;
+					END_IF;
+				ARINC_DISCRETE:
+					CELBTI_A429MsgWriteData( A429OUT_CHB[i].hMsg, A429OUT_CHB[i].data, A429OUT_CHB[i].SM );
+
+					err_code := CELBTI_A429MsgWriteData.err_code;
+					IF (err_code <> OK) THEN
+						EXIT;	
+					END_IF;
+				END_CASE;
+			END_IF;
+		END_FOR;
+	END_IF; (* err_code = OK *)
+(*TEST SPEED *)
+END_IF; (* In_OMNIBUSBOX_IOMgr.mode = RUN_FOR_TRUE *)
+
+IF (err_code <> OK) THEN
+	status := ERROR_ON_RUNNING;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

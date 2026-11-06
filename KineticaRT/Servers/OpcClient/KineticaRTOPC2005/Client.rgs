@@ -1,0 +1,26 @@
+HKCR
+{
+	KineticaRTOPC.Client.1 = s 'Client Class'
+	{
+		CLSID = s '{0225BC86-34E7-4D03-BA27-87D6A87FB59A}'
+	}
+	KineticaRTOPC.Client = s 'Client Class'
+	{
+		CLSID = s '{0225BC86-34E7-4D03-BA27-87D6A87FB59A}'
+		CurVer = s 'KineticaRTOPC.Client.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0225BC86-34E7-4D03-BA27-87D6A87FB59A} = s 'Client Class'
+		{
+			ProgID = s 'KineticaRTOPC.Client.1'
+			VersionIndependentProgID = s 'KineticaRTOPC.Client'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{B80EAF9C-0979-4063-A7DD-D264402B2125}'
+		}
+	}
+}

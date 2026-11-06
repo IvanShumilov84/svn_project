@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>KineticaRT Logger</title>
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+		<meta content="FrontPage.Editor.Document" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<LINK href="Manual.css" rel="Stylesheet"></head>
+	<body>
+		<h2>KineticaRT Logger</h2>
+		<H3>Features</H3>
+		<P>The KineticaRT Logging components provide logging of data from KineticaRT 
+			channels and replay of the data via KineticaRT logging channels.</P>
+		<P>The KineticaRT&nbsp;Logging components &nbsp;consists of:</P>
+		<H4>CsvFile Component</H4>
+		<P>This component writes and reads data in CSV (Comma Separated File) format.
+		</P>
+		<P>CSV format is useful for importing into spreadsheet applications such as 
+			Microsoft Excel.&nbsp;
+		</P>
+		<P>The CsvFile Component has the following properties:</P>
+		<UL>
+			<LI>
+			Filename -&nbsp;The name of the file to be written to (in quotes) or the name 
+			of a text channel containing the name of the file to be written to.
+			<LI>
+			MaxFileSize - The maximum number of MBytes to be written to the file.
+			<LI>
+			Pause - The name of a Boolean channel which triggers the pause state.
+			<LI>
+			Play - The name of a Boolean channel which triggers the&nbsp;play state.
+			<LI>
+			PlaySpeed - Controls the rate of playback - 1 = real time.
+			<LI>
+			Record - The name of a Boolean channel which triggers the record state.
+			<LI>
+			RecordSpeed - Controls the recording rate&nbsp;in Hz (number of samples per 
+			second).
+			<LI>
+			Step - The name of a Boolean channel which triggers the&nbsp;step state.
+			<LI>
+			Stop - The name of a Boolean channel which triggers the&nbsp;stop state.
+			<LI>
+			Time - Date and time of the current sample when recording or replaying.
+			<LI>
+				Value - Indicates the current state of the component. Eg "Recording".</LI></UL>
+		<H4>NumericChannel Component</H4>
+		<P>During recording the Logger.NumericChannel component connects to a 
+			standard&nbsp;NumericChannel component named in the Source property and records 
+			the value of that channel.&nbsp; The recorded value is passed to the logger 
+			component named in the Logger property (eg CsvFile component)&nbsp;for writing 
+			to file.</P>
+		<P>During replay the Logger.NumericChannel component takes the replayed 
+			value.&nbsp; The standard NumericChannel component it is linked to will be 
+			unaffected by the replayed value.</P>
+		<P>If display components are linked to the Logger.NumericChannel component then 
+			during replay they will display the replayed value and they will display the 
+			live value at all other times.&nbsp; If the display components are linked to 
+			the standard NumericChannel component they will display the live value at all 
+			times.&nbsp;</P>
+		<P>Most of the properties&nbsp;of the&nbsp;Logger.NumericChannel component will 
+			reflect the properties of the channel it is linked to.</P>
+		<P>The following properties are specific to the Logger.NumericChannel component:</P>
+		<UL>
+			<LI>
+			Enabled - Enables/disables recording of data for this channel.
+			<LI>
+			Index - Controls the ordering within the recorded data.
+			<LI>
+			Logger - Specifies which Logger component to use for logging/replay of data.
+			<LI>
+				Source - Specifies which channel to log.</LI></UL>
+		<H4>NumericThresholdChannel Component</H4>
+		<P>This is similar to the NumericChannel component but includes the extra 
+			properties available on a NumericThreshold channel.</P>
+		<H4>BooleanChannel Component</H4>
+		<P>This is similar to the NumericChannel component but has the properties available 
+			on a&nbsp;Boolean channel.</P>
+		<H4>TextChannel Component</H4>
+		<P>This is similar to the NumericChannel component but&nbsp;has the&nbsp;properties 
+			available on a&nbsp;Text channel.</P>
+		<H3>Configuration</H3>
+		<P>For each CSV file to be recorded, a CsvFile component will be required.&nbsp; 
+			For each channel to be recorded in the file, a Logger Channel component will be 
+			required.&nbsp;&nbsp;The logger channel needs to be&nbsp;connected to the 
+			channel to be logged using its Source property and to the CsvFile component 
+			using the Logger property.</P>
+		<P>Standard Boolean Channels will also be required to control Pause, Play, Record, 
+			Step and Stop.&nbsp; The CsvFile component links to these.&nbsp; They can be 
+			set by buttons on the screen, event or threshold channels in the channel list, 
+			from sequences or from a combination of places.</P>
+		<H4>Index property</H4>
+		<P>The index property of a channel indicates the position of the channel within the 
+			file.</P>
+		<P>An index value of zero indicates that the channel will be ignored.</P>
+		<P>An negative index value indicates that the channel will appear in the file 
+			header.&nbsp; There will be a single value recorded which will be the value of 
+			the channel when the recording is started.&nbsp; Channels with indexes closest 
+			to zero will appear first in the file.</P>
+		<P>Positive index values indicate that a value for the channel will appear on each 
+			line of the file following the header.&nbsp; Channels with indexes closest to 
+			zero will appear first.</P>
+		<H4>Play, Record, Pause, Step and Stop&nbsp;properties</H4>
+		<P>
+		These properties should all be set to the names of channels containing Boolean 
+		values.
+		<P>
+		Only one of these channels should be set at any time.&nbsp; Setting any of 
+		these channels will clear (set to false) all the others.
+		<P>
+		The Stop channel will be set and the&nbsp;Play channel cleared when 
+		the&nbsp;end of the log file is reached during playback.
+		<P>The Stop channel will be set and the&nbsp;Record channel cleared if the 
+			MaxFileSize value is reached during recording.</P>
+		<H4>MaxFileSize property</H4>
+		<P>
+		This sets a limit to the size of the files written to disk in order to avoid 
+		running out of disk space.&nbsp;&nbsp; The recording will stop before this 
+		number of MBytes has been written.
+		<P>This property can be set to 0 to indicate no limit.
+			<H3>Error Handling</H3>
+		<P>
+		The current state of the CsvFile component is held in&nbsp;its Value 
+		property&nbsp;and can be displayed by attaching the component to a 
+		KineticaRT.Controls.Display component. If any file format or access errors 
+		occur during recording or playback then it will return to the "Stopped" state.
+		<P>
+		To help in diagnosing errors, Trace messages&nbsp;can be&nbsp;output to the 
+		diagnostics window / logfile / debugger.&nbsp; Trace level&nbsp;2 (Warning) 
+		gives all file access error and warning messages. &nbsp;Level 3 (Info) also 
+		reports MaxFileSize reached etc.&nbsp;&nbsp;Detailed operational information is 
+		given at trace level&nbsp;4 (Verbose).&nbsp;
+		<P>
+		To enable display of these trace messages the following line will need to be 
+		included in the switches section of the application.config file.&nbsp; Note 
+		that the&nbsp; level 4 (Verbose) will affect performance during logging / 
+		playback.
+		<P>&lt;add name="KineticaRT.Servers.Logger" value="2"&gt;
+			<H3>Performance</H3>
+		<P>
+		Since neither Windows nor .Net provide "Real Time" deterministic performance, 
+		the accurate timing of samples during recording is impossible to guarantee and 
+		will depend on processor/disk usage by other components and applications as 
+		well as hardware performance.
+		<P>
+		The maximum logging rate is 100Hz but it should be expected that some samples 
+		will be delayed slightly or even missed at this rate.&nbsp; In a typical system 
+		20Hz can be achieved fairly reliably&nbsp;although there is still the 
+		possiblity of interruptions due to other applications or by user interaction.
+		<P>
+			<DIV class="footer">
+				KineticaRT Studio User Manual Version 1.2<BR>
+				Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+				rights reserved.
+			</DIV>
+	</body>
+</html>

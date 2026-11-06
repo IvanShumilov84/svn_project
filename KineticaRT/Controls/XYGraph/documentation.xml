@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.XYGraph</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.XYGraph">
+            <summary>
+            The KineticaRT XYGraph Control displays a number of Traces
+            whose x and y values change over time.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.XYGraph.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.#ctor">
+            <summary>
+            Creates a new instance of the XYGraph class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            Called from OnPaint and the Control's event pool Update
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse up event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYGraph.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.BorderStyle">
+            <summary>
+            Gets or Sets the style of the Control's Border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.BorderWidth">
+            <summary>
+            Gets or Sets the width of the Control's Border
+            </summary>
+            <remarks>
+            Values between 0 and 0.5 represent a proportion of the width of the Control.
+            Values greater than or equal to 1 represent the number of pixels
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.ScaleWidthIsPercent">
+            <summary>
+            Gets or sets whether the ScaleWidth property refers to pixels or a percentage of the total width of the Control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.ScaleWidth">
+            <summary>
+            Gets or sets the width of the Scale objects in pixels or as a percent depending on ScaleWidthIsPercent
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.LeftScale">
+            <summary>
+            Gets the Left hand Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.RightScale">
+            <summary>
+            Gets the Right hand Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.TopScale">
+            <summary>
+            Gets the Top Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.BottomScale">
+            <summary>
+            Gets the Bottom Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.HorizontalGridColor">
+            <summary>
+            Gets or sets the color of the Horizontal grid lines
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.VerticalGridColor">
+            <summary>
+            Gets or sets the color of the Vertical grid lines
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.HorizontalGridEnabled">
+            <summary>
+            Gets or sets whether the Horizontal grid is enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.VerticalGridEnabled">
+            <summary>
+            Gets or sets whether the Vertical grid is enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYGraph.Traces">
+            <summary>
+            Gets or sets the Collection of XYTrace objects
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.XYGraph.Grid">
+            <summary>
+            XYGraph Grid class
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.PenStyles">
+            <summary>
+            Enumeration of possible pen styles (shapes)
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.Dot">
+            <summary>
+            Pen in the shape of a Small Dot
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.Plus">
+            <summary>
+            Pen in the shape of a Plus sign
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.Circle">
+            <summary>
+            Pen in the shape of a Filled Circle
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.OpenCircle">
+            <summary>
+            Pen in the shape of an Unfilled Circle pen
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.Cross">
+            <summary>
+            Pen in the shape of a Cross
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.Man">
+            <summary>
+            Pen in the shape of a Man
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.Square">
+            <summary>
+            Pen in the shape of a Square with a central dot
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PenStyles.Diamond">
+            <summary>
+            Pen in the shape of a Diamond with a central dot
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.XRangeSources">
+            <summary>
+            Enumeration of possible sources of Minimum and Maximum values for the XValue of an XYTrace
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.XRangeSources.Self">
+            <summary>
+            The XYTrace's own XMinimum and XMaximum properties are used
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.XRangeSources.Source">
+            <summary>
+            If the XYTrace's XSource is an INumericChannel then its XMinimum and
+            XMaximum are used, otherwise the XYTrace's own values are used
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.XRangeSources.TopScale">
+            <summary>
+            The range of the parent Control's TopScale is used.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.XRangeSources.BottomScale">
+            <summary>
+            The range of the parent Control's BottomScale is used.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.YRangeSources">
+            <summary>
+            Enumeration of possible sources of Minimum and Maximum values for the YValue of an XYTrace
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.YRangeSources.Self">
+            <summary>
+            The XYTrace's own YMinimum and YMaximum properties are used
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.YRangeSources.Source">
+            <summary>
+            If the XYTrace's YSource is an INumericChannel then its Minimum and 
+            Maximum are used, otherwise the XYTrace's own values are used
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.YRangeSources.LeftScale">
+            <summary>
+            The range of the parent Control's LeftScale is used.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.YRangeSources.RightScale">
+            <summary>
+            The range of the parent Control's RightScale is used.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.XYTraceCollection">
+            <summary>
+            Collection of XYTrace objects designed for use with an XYGraph
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.#ctor">
+            <summary>
+            Initialises a new instance of the XYTraceCollection class with one trace
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.#ctor(KineticaRT.Controls.XYTrace[])">
+            <summary>
+            Initialises a new instance of the XYTraceCollection class containing the specified trace objects
+            </summary>
+            <param name="traces">Array of XYTrace objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.AddTrace(System.Drawing.Color)">
+            <summary>
+            Adds a new XYTrace of the specified color
+            </summary>
+            <param name="LineColor">Color of new XYTrace</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.AddRange(KineticaRT.Controls.XYTrace[])">
+            <summary>
+            Adds an array of XYTrace objects to the collection
+            </summary>
+            <param name="newXYTraces">Array of XYTraces to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.StoreTrace(KineticaRT.Controls.XYTrace)">
+            <summary>
+            Copies the values in the given XYTrace into a Storage Trace,
+            which remains permanently displayed as a reference
+            </summary>
+            <param name="Trace">XYTrace to store</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.StoreTrace(System.Int32)">
+            <summary>
+            Copies the values in the given XYTrace into a Storage Trace,
+            which remains permanently displayed as a reference
+            </summary>
+            <param name="Index">Zero-based index of XYTrace to store</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.Draw(System.Drawing.Graphics,System.Drawing.Color)">
+            <summary>
+            Draw all the XYTraces in the collection
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="BackColor">XYGraph background color</param>
+            <returns>True if some drawing done</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.DrawPens(System.Drawing.Graphics)">
+            <summary>
+            Draws the pens on the traces
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.Erase(System.Drawing.Graphics,System.Boolean,System.Boolean,System.Drawing.Color)">
+            <summary>
+            Erase all the out of date XYTraces in the collection
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="ErasePens">True to erase out of date Pens</param>
+            <param name="EraseTraces">True to erase out of date line segments</param>
+            <param name="BackColor">XYGraph background color</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.Update(System.Int32,System.Drawing.Rectangle,KineticaRT.Controls.Scale[],System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Causes the traces to update their values and recalculate points etc
+            </summary>
+            <param name="CurrentTime">Now</param>
+            <param name="PaperRect">Where drawing is allowed</param>
+            <param name="Scales">Array of parent control's scales used for range calculation</param>
+            <param name="EraseTraces">returned as True to force trace lines to be erased</param>
+            <param name="DrawTraces">returned as True to force trace lines to be drawn</param>
+            <param name="ErasePens">returned as True to force pens to be erased</param>
+            <param name="DrawPens">returned as True to force pens to be drawn</param>
+            <param name="RefreshGraph">returned as True to force the whole graph to be redrawn</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.Recalculate">
+            <summary>
+            Recalculates the traces
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTraceCollection.ProgressDisplayInfo(System.Boolean)">
+            <summary>
+            Reset the display info in the traces
+            </summary>
+            <param name="MakeNextCurrent">True to move 'next' to 'current'. False to move 'current' to 'last'</param>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTraceCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the XYTrace object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.XYTrace">
+            <summary>
+            XYTrace object designed for use on an XYGraph.
+            Displays the values over time of two source channels.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.#ctor">
+            <summary>
+            Initialises a new instance of the XYTrace class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.#ctor(System.Drawing.Color)">
+            <summary>
+            Initialises a new instance of the XYTrace class with the specified Color
+            </summary>
+            <param name="LineColor">Color of XYTrace line</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.SetMark">
+            <summary>
+            Leaves a Mark at the current position of the Trace
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.CopyToStorage(KineticaRT.Controls.XYTrace@)">
+            <summary>
+            Returns a copy of this XYTrace to be kept as a reference
+            </summary>
+            <param name="Copy">(out) Copied trace</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.SetStorage">
+            <summary>
+            Sets the trace up to be a storage trace
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.Draw(System.Drawing.Graphics,System.Drawing.Color)">
+            <summary>
+            Draw the Trace line and marks
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="BackColor">XYGraph background color</param>
+            <returns>True if done some drawing</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.Erase(System.Drawing.Graphics,System.Boolean,System.Boolean,System.Drawing.Color)">
+            <summary>
+            Erase all the out of date parts of the XYTrace
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="ErasePens">True to erase out of date Pens</param>
+            <param name="EraseTraces">True to erase out of date line segments</param>
+            <param name="BackColor">XYGraph background color</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.DrawPen(System.Drawing.Graphics)">
+            <summary>
+            Draws the Trace pen
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.Clear(System.Boolean)">
+            <summary>
+            Clears the trace data
+            </summary>
+            <param name="Hard">If True, clears marks as well</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.Update(System.Int32,System.Drawing.Rectangle,KineticaRT.Controls.Scale[],System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Updates the trace value and recalculates points etc
+            </summary>
+            <param name="CurrentTime">Now</param>
+            <param name="PaperRect">Where drawing is allowed</param>
+            <param name="Scales">Array of parent control's scales used for range calculation</param>
+            <param name="EraseTraces">returned as True to force trace lines to be erased</param>
+            <param name="DrawTraces">returned as True to force trace lines to be drawn</param>
+            <param name="ErasePens">returned as True to force pens to be erased</param>
+            <param name="DrawPens">returned as True to force pens to be drawn</param>
+            <param name="RefreshGraph">returned as True to force the whole graph to be redrawn</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.Recalculate">
+            <summary>
+            Recalculates the trace
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.ProgressDisplayInfo(System.Boolean)">
+            <summary>
+            Reset the display info in the trace
+            </summary>
+            <param name="MakeNextCurrent">True to move 'next' to 'current'. False to move 'current' to 'last'</param>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.XYTrace.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.LineColor">
+            <summary>
+            Gets or sets the color of the Trace Line
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.PenColor">
+            <summary>
+            Gets or sets the color of the Trace Pen
+            </summary>
+            <remarks>The pen is the shape that is displayed at the front (ie current value) of the Trace line</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.Enabled">
+            <summary>
+            Gets or sets whether the Trace is enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.XValue">
+            <summary>
+            Gets pr sets the current X Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.XSourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the Trace's X Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.XSource">
+            <summary>
+            Gets or sets the name of the object to be the X Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.XMaximum">
+            <summary>
+            Gets or sets the Maximum X value displayed on the Graph
+            </summary>
+            <remarks>Whether this value is used depends on the setting of XRangeSource</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.XMinimum">
+            <summary>
+            Gets or sets the Minimum X value displayed on the Graph
+            </summary>
+            <remarks>Whether this value is used depends on the setting of XRangeSource</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.XRangeSource">
+            <summary>
+            Gets or sets the source of the Minimum and Maximum X values displayed
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.YValue">
+            <summary>
+            Gets or sets the current Y Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.YSourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the Trace's Y Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.YSource">
+            <summary>
+            Gets or sets the name of the object to be the Y Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.YMaximum">
+            <summary>
+            Gets or sets the Maximum Y value displayed on the Graph
+            </summary>
+            <remarks>Whether this value is used depends on the setting of YRangeSource</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.YMinimum">
+            <summary>
+            Gets or sets the Minimum Y value displayed on the Graph
+            </summary>
+            <remarks>Whether this value is used depends on the setting of YRangeSource</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.YRangeSource">
+            <summary>
+            Gets or sets the source of the Minimum and Maximum Y values displayed
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.Width">
+            <summary>
+            Gets or sets the width of the Trace line in pixels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.PersistTime">
+            <summary>
+            Gets or sets the time that Trace line remains visible in milliseconds.
+            </summary>
+            <remarks>'0' means that the line remains permanently visible.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.PenStyle">
+             <summary>
+             Gets or sets the style of the Trace Pen
+             </summary>
+            <remarks>The pen is the shape that is displayed at the front (ie current value) of the Trace line</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.MarkStyle">
+            <summary>
+            Gets or sets the style of the Trace Marks
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.Fade">
+            <summary>
+            Gets or sets whether the line fades out gradually or just disappears
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.LineVisible">
+            <summary>
+            Gets or sets whether the Trace line is shown
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.PenVisible">
+             <summary>
+             Gets or sets whether the pen is shown
+             </summary>
+            <remarks>The pen is the shape that is displayed at the front (ie current value) of the Trace line</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.XYTrace.ShowMarks">
+            <summary>
+            Gets or sets whether the marks are shown
+            </summary>
+        </member>
+    </members>
+</doc>

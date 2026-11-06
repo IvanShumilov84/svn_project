@@ -1,0 +1,591 @@
+FUNCTION_BLOCK run_VX100_FB
+
+(*
+	Read the current scan
+*)
+
+err_code 	:= OK;
+status := RUNNING;
+
+IF First_Time_Run = TRUE THEN 
+	select_model_setup (TRUE, UUT_Info.model);
+	 First_Time_Run := FALSE;
+END_IF; 
+
+IF(In_Texcel_VX100_IOMgr.mode = RUN_FOR_TRUE )THEN
+
+	select_model_setup (FALSE, UUT_Info.model);
+
+END_IF;
+
+IF(select_model_setup.status = TRUE) THEN 
+
+
+	(* Process User Interface *)
+
+	IF  (inlet_valve_mode = DYNO_INLET_VALVE_MAN_MODE) THEN 
+
+		IF UUT_Info.Model = 'MAKILA 1A1' THEN 
+
+			IF (User_Inlet_Valve_Manual = TRUE) THEN
+				inlet_valve_demand := User_Inlet_Valve_Demand;
+				User_Inlet_Preset := False;
+			ELSIF (User_Inlet_Preset = TRUE) THEN
+				inlet_valve_demand := 18.0;
+				User_Inlet_Valve_Manual := FALSE;
+			ELSE
+				IF (Dyno_TR_lbsft <= 150.0) THEN 
+					inlet_valve_demand := 5.0;
+				ELSIF (Dyno_TR_lbsft > 150.0) THEN
+					inlet_valve_demand := ((1.0 / 20.0) * Dyno_TR_lbsft - 2.5);
+				END_IF;
+			END_IF;
+
+
+		ELSIF  UUT_Info.Model = 'T53-L-13B' THEN 
+
+			IF (User_Inlet_Valve_Manual = TRUE) THEN
+				inlet_valve_demand := User_Inlet_Valve_Demand;
+				User_Inlet_Preset := False;
+			ELSIF (User_Inlet_Preset = TRUE) THEN
+				inlet_valve_demand := 28.0;
+				User_Inlet_Valve_Manual := FALSE;
+			ELSE
+				IF (Dyno_TR_lbsft <= 200.0) THEN 
+					inlet_valve_demand := 5.0;
+				ELSIF ( (Dyno_TR_lbsft > 200.0) AND (Dyno_TR_lbsft <= 400.0) ) THEN 
+					inlet_valve_demand := 8.0;
+				ELSIF ( (Dyno_TR_lbsft > 400.0) AND (Dyno_TR_lbsft <= 500.0) ) THEN
+					inlet_valve_demand := 16.0;
+				ELSIF ( (Dyno_TR_lbsft > 500.0) AND (Dyno_TR_lbsft <= 600.0) ) THEN
+					inlet_valve_demand := 20.0;
+				ELSIF ( (Dyno_TR_lbsft > 600.0) AND (Dyno_TR_lbsft <= 700.0) ) THEN
+					inlet_valve_demand := 25.0;
+				ELSIF ( (Dyno_TR_lbsft > 700.0) AND (Dyno_TR_lbsft <= 1000.0) ) THEN
+					inlet_valve_demand := 28.0;
+				ELSIF (Dyno_TR_lbsft > 1000.0) THEN
+					inlet_valve_demand := 30.0;
+				END_IF;
+			END_IF;
+
+
+		ELSIF  UUT_Info.Model = 'T55-L-712SSB' THEN 
+
+			IF (User_Inlet_Valve_Manual = TRUE) THEN
+				inlet_valve_demand := User_Inlet_Valve_Demand;
+				User_Inlet_Preset := False;
+			ELSIF (User_Inlet_Preset = TRUE) THEN
+				inlet_valve_demand := 10.0;
+				User_Inlet_Valve_Manual := FALSE;
+			ELSE
+				IF (Dyno_speed <= 4500.0) THEN 
+					inlet_valve_demand := 30.0;
+				ELSE
+					inlet_valve_demand := 98.0;
+				END_IF;
+			END_IF;
+
+
+		ELSIF  UUT_Info.Model = 'T55-L-714A' THEN 
+
+			IF (User_Inlet_Valve_Manual = TRUE) THEN
+				inlet_valve_demand := User_Inlet_Valve_Demand;
+				User_Inlet_Preset := False;
+			ELSIF (User_Inlet_Preset = TRUE) THEN
+				inlet_valve_demand := 10.0;
+				User_Inlet_Valve_Manual := FALSE;
+			ELSE
+				IF (Dyno_speed <= 4500.0) THEN 
+					inlet_valve_demand := 30.0;
+				ELSE
+					inlet_valve_demand := 98.0;
+				END_IF;
+			END_IF;
+
+		END_IF; 
+
+	END_IF; 
+
+IF (user_inlet_valve_manual = TRUE) THEN
+
+	inlet_valve_mode := 0;
+
+	IF (Dyno_Inlet_Vlv_Manual_Init = TRUE) THEN
+
+		inlet_valve_demand := Dyno_Inlet_Vlv_Pos;
+		user_inlet_valve_demand := Dyno_Inlet_Vlv_Pos;
+		Dyno_Inlet_Vlv_Manual_Init := FALSE;
+
+	END_IF;
+
+	inlet_valve_demand := user_inlet_valve_demand; 
+
+ELSIF (user_inlet_valve_manual = FALSE) THEN
+
+	inlet_valve_mode := 1;
+	Dyno_Inlet_Vlv_Manual_Init := TRUE;
+
+END_IF;
+
+IF (inlet_valve_mode = 0) THEN 
+
+	IF (User_Inlet_Up_Pos = TRUE) THEN 
+
+		UserInletUpDelay( TRUE, t#250ms );
+
+		IF ( UserInletUpDelay.Q ) THEN
+
+			user_inlet_valve_demand := user_inlet_valve_demand + 1.0;		
+
+			IF (user_inlet_valve_demand >= 100.0) THEN 
+				user_inlet_valve_demand := 100.0;
+			END_IF; 
+
+			User_inlet_Up_Pos := FALSE ;
+
+			UserinletUpDelay( FALSE, t#250ms );
+		END_IF;
+	END_IF; 
+
+	IF (User_inlet_Down_Pos = TRUE) THEN 
+
+		UserinletDownDelay( TRUE, t#250ms );
+
+		IF ( UserinletDownDelay.Q ) THEN
+
+			user_inlet_valve_demand := user_inlet_valve_demand - 1.0;		
+
+			IF (user_inlet_valve_demand <= 0.0) THEN 
+				user_inlet_valve_demand := 0.0;
+			END_IF; 
+
+			User_inlet_Down_Pos := FALSE ;
+
+			UserinletDownDelay( FALSE, t#250ms );
+		END_IF;
+	END_IF; 
+
+END_IF; 
+
+
+	IF (User_Torque_Mode_ON Or User_Speed_Mode_ON Or User_Pos_Mode_ON Or User_PowLaw_Mode_ON ) THEN
+
+		UserModeDelay(TRUE, T#250ms);
+
+		IF ( UserModeDelay.Q ) THEN
+
+			IF (User_Torque_Mode_ON = TRUE) THEN 
+
+				demand_mode		:= DYNO_TORQUE_MODE;
+				demand_value	:= User_Torque_demand; 
+				User_Torque_Ind	:= TRUE;
+				User_Speed_Ind	:= FALSE;
+				User_Pos_Ind	:= FALSE;
+				User_PowLaw_Ind	:= FALSE;
+				User_Pos_Beep_Ind	:= FALSE;
+				User_Pos_Beep_ON	:= FALSE;
+			END_IF; 
+
+			IF (User_Speed_Mode_ON = TRUE) THEN 
+
+				demand_mode		:= DYNO_SPEED_MODE;
+				demand_value	:= User_Speed_demand; 
+				User_Torque_Ind	:= FALSE;
+				User_Speed_Ind	:= TRUE;
+				User_Pos_Ind	:= FALSE;
+				User_PowLaw_Ind	:= FALSE;
+				User_Pos_Beep_Ind	:= FALSE;
+				User_Pos_Beep_ON	:= FALSE;
+			END_IF; 
+
+			IF (User_Pos_Mode_ON = TRUE) THEN 
+
+				demand_mode		:= DYNO_POS_MODE;
+				demand_value	:= User_Pos_demand; 
+				User_Torque_Ind	:= FALSE;
+				User_Speed_Ind	:= FALSE;
+				User_Pos_Ind	:= TRUE;
+				User_PowLaw_Ind	:= FALSE;
+				User_Pos_Beep_Ind	:= FALSE;
+				User_Pos_Beep_ON	:= FALSE;
+			END_IF;
+
+			IF (User_PowLaw_Mode_ON = TRUE ) THEN
+
+				demand_mode		:= DYNO_POWER_LAW_MODE;
+				demand_value	:= User_PowLaw_demand;
+				User_Torque_Ind	:= FALSE;
+				User_Speed_Ind	:= FALSE;
+				User_Pos_Ind	:= FALSE;
+				User_PowLaw_Ind	:= TRUE;
+				User_Pos_Beep_Ind	:= FALSE;
+				User_Pos_Beep_ON	:= FALSE;			
+			END_IF;
+
+			User_Pos_Mode_ON		:= FALSE;
+			User_Speed_Mode_ON	:= FALSE;
+			User_Torque_Mode_ON	:= FALSE;
+			User_PowLaw_Mode_ON	:= FALSE;
+
+			UserModeDelay(FALSE, T#250ms);
+
+		END_IF;
+	END_IF;
+
+
+(* Beep Up/Down Position Mode *)
+	IF (User_Pos_Ind = TRUE) THEN 
+
+		IF (User_BeepUp_Pos = TRUE) THEN 
+
+			UserBeepUpDelay( TRUE, t#250ms );
+
+			IF ( UserBeepUpDelay.Q ) THEN
+
+				User_Pos_demand := User_Pos_Demand + 1.0;		
+
+				IF (User_Pos_demand >= 100.0) THEN 
+					User_Pos_demand := 100.0;
+				END_IF; 
+
+				User_BeepUp_Pos := FALSE ;
+
+				UserBeepUpDelay( FALSE, t#250ms );
+			END_IF;
+		END_IF; 
+
+		IF (User_BeepDown_Pos = TRUE) THEN 
+
+			UserBeepDownDelay( TRUE, t#250ms );
+
+			IF ( UserBeepDownDelay.Q ) THEN
+
+				User_Pos_demand := User_Pos_Demand - 1.0;		
+
+				IF (User_Pos_demand <= 0.0) THEN 
+					User_Pos_demand := 0.0;
+				END_IF; 
+
+				User_BeepDown_Pos := FALSE ;
+
+				UserBeepDownDelay( FALSE, t#250ms );
+			END_IF;
+		END_IF; 
+
+		demand_mode := DYNO_POS_MODE;
+
+		demand_value := User_Pos_demand; 
+
+	END_IF; 
+
+
+(* Beep Up/Down Speed Mode *)
+	IF (User_Speed_Ind = TRUE) THEN 
+
+		IF (User_BeepUp_Speed = TRUE) THEN 
+
+			UserBeepUpDelay( TRUE, t#250ms );
+
+			IF ( UserBeepUpDelay.Q ) THEN
+
+				User_Speed_demand := User_Speed_Demand + 1.0;		
+
+				User_BeepUp_Speed := FALSE ;
+
+				UserBeepUpDelay( FALSE, t#250ms );
+			END_IF;
+		END_IF; 
+
+		IF (User_BeepDown_Speed = TRUE) THEN 
+
+			UserBeepDownDelay( TRUE, t#250ms );
+
+			IF ( UserBeepDownDelay.Q ) THEN
+
+				User_Speed_demand := User_Speed_Demand - 1.0;		
+
+				IF (User_Speed_demand <= 0.0) THEN 
+					User_Speed_demand := 0.0;
+				END_IF; 
+
+				User_BeepDown_Speed := FALSE ;
+
+				UserBeepDownDelay( FALSE, t#250ms );
+			END_IF;
+		END_IF; 
+
+		demand_mode := DYNO_SPEED_MODE;
+
+		demand_value := User_Speed_demand; 
+
+	END_IF; 
+
+
+
+	IF ( User_Torque_Ind = FALSE Or VX100AutoMode = FALSE ) THEN 
+
+		User_Torque_demand := Dyno_TR_lbsft;
+
+		IF ( User_Torque_Ind = TRUE AND VX100AutoMode = FALSE ) THEN
+			demand_mode		:= DYNO_TORQUE_MODE;
+			demand_value	:= User_Torque_demand;
+			prev_demand_mode	:= -1;
+		END_IF;
+	END_IF; 
+
+	IF ( User_Speed_Ind = FALSE Or VX100AutoMode = FALSE ) THEN 
+
+		User_Speed_demand := Dyno_Speed;
+
+		IF ( User_Speed_Ind = TRUE AND VX100AutoMode = FALSE ) THEN
+			demand_mode		:= DYNO_SPEED_MODE;
+			demand_value	:= User_Speed_demand;
+			prev_demand_mode	:= -1;
+		END_IF;
+	END_IF; 
+
+	IF ( User_Pos_Ind = FALSE Or VX100AutoMode = FALSE )  THEN 
+
+		User_Pos_demand := Dyno_Outlet_Vlv_Pos;
+
+		IF ( User_Pos_Ind  = TRUE AND VX100AutoMode = FALSE ) THEN
+			demand_mode		:= DYNO_POS_MODE;
+			demand_value	:= User_Pos_demand;
+			prev_demand_mode	:= -1;
+		END_IF;
+	END_IF; 
+
+	IF ( User_PowLaw_Ind = TRUE AND VX100AutoMode = FALSE ) THEN
+		demand_mode			:= DYNO_POWER_LAW_MODE;
+		demand_value		:= User_PowLaw_demand;
+		prev_demand_mode		:= -1;
+	END_IF;
+
+
+
+
+	IF(In_Texcel_VX100_IOMgr.mode = RUN_FOR_TRUE )THEN
+
+		IF( Error_on_Open = FALSE ) AND ( Error_Comm = FALSE ) THEN 
+
+			CASE  (current_scan) OF
+
+				1:
+					READ_VX100_CHANNELS_VALUES( fd );
+					IF READ_VX100_CHANNELS_VALUES.ERR_CODE = -1 THEN
+						CLOSE_SER_PORT(fd);
+						fd		:= -1;
+						Error_Comm 	:= TRUE ;
+					END_IF ;
+
+				2:
+					(* Nothing to read for setting the dyno demand *)
+
+				3:
+					READ_VX100_GENERAL_PARAMETERS( fd );
+					IF READ_VX100_GENERAL_PARAMETERS.ERR_CODE = -1 THEN
+						CLOSE_SER_PORT(fd);
+						fd		:= -1;
+						Error_Comm	:= TRUE;
+					END_IF;
+
+			END_CASE; 	
+
+			IF Error_Comm = FALSE THEN
+
+				(* Request the next scan *)
+
+				CASE  (next_scan) OF
+
+					1:
+						REQUEST_VX100_VALUES( fd );
+						IF REQUEST_VX100_VALUES.ERR_CODE = -1 THEN
+							CLOSE_SER_PORT(fd);
+							fd		:= -1;
+							Error_Comm	:= TRUE ;
+						END_IF ;
+		
+					2:
+						IF (		VX100AutoMode
+							AND ( demand_mode <> prev_demand_mode OR demand_value <> prev_demand_value OR demand_ramp <> prev_demand_ramp OR
+								inlet_valve_mode <> prev_inlet_valve_mode OR inlet_valve_demand <> prev_inlet_valve_demand OR inlet_demand_ramp <> prev_inlet_demand_ramp ) ) THEN
+							
+							IF UUT_Info.Family <> 'T700' THEN (* For the T700 family, slider mode is used *)
+								SET_VX100_DYNO_DEMANDS(fd, demand_mode, demand_value, demand_ramp, inlet_valve_mode, inlet_valve_demand,inlet_demand_ramp);
+								IF SET_VX100_DYNO_DEMANDS.ERR_CODE = -1 THEN
+									CLOSE_SER_PORT(fd);
+									fd		:= -1;
+									Error_Comm	:= TRUE ;
+								ELSE
+									prev_demand_mode		:= demand_mode;
+									prev_demand_value		:= demand_value;
+									prev_demand_ramp		:= demand_ramp;
+									prev_inlet_valve_mode	:= inlet_valve_mode;
+									prev_inlet_valve_demand	:= inlet_valve_demand;
+									prev_inlet_demand_ramp	:= inlet_demand_ramp;
+								END_IF ;
+							END_IF ;
+						END_IF;
+	
+					3:
+						REQUEST_VX100_GENERAL_PARAMETERS( fd );
+						IF REQUEST_VX100_GENERAL_PARAMETERS.ERR_CODE = -1 THEN
+							CLOSE_SER_PORT(fd);
+							fd		:= -1;
+							Error_Comm	:= TRUE ;
+						END_IF ;
+						
+				END_CASE; 	
+
+				(* Process the current scan *)
+				IF Error_Comm = FALSE THEN
+					CASE  (current_scan) OF
+	
+						1:
+			
+							v100_channels_values 	:= READ_VX100_CHANNELS_VALUES.VALUES;
+	
+							VX100AutoMode		:= (READ_VX100_CHANNELS_VALUES.Mode = 1);
+							Dyno_Speed			:=  v100_channels_values[1];		(*Dynamometer Speed in RPM*)
+							Dyno_Outlet_Vlv_Pos	:=  v100_channels_values[2];		(*Outlet Valve Position in %*)
+							Dyno_Inlet_Vlv_Pos	:=  v100_channels_values[3];		(*Inlet Valve Position in %*)
+							Dyno_TR_lbsft		:=  v100_channels_values[4];		(*Dynamometer Torque lbs-ft*) 
+							T_bearing1			:=  v100_channels_values[5];		(*Bearing No.1 Temp in DegC*)
+							T_bearing2			:=  v100_channels_values[6];		(*Bearing No.2 Temp in DegC*)
+							T_HS150_1_Brg1		:=  v100_channels_values[5];		(*Bearing No.1 Dyno 1Temp in DegC*)
+							T_HS150_1_Brg2		:=  v100_channels_values[6];		(*Bearing No.2 Dyno 1Temp in DegC*)
+							T_HS150_2_Brg1		:=  v100_channels_values[7];		(*Bearing No.1 Dyno 2Temp in DegC*)
+							T_HS150_2_Brg2		:=  v100_channels_values[8];		(*Bearing No.2 Dyno 2Temp in DegC*)
+							T_F359_Brg1			:=  v100_channels_values[5];		(*Water Inlet Dyno 1Temp in DegC*)
+							T_F359_Brg2			:=  v100_channels_values[6];		(*Water Outlet Dyno 1Temp in DegC*)
+							T_HS150_1_Winlet	:=  v100_channels_values[9];		(*Water Inlet Dyno 1Temp in DegC*)
+							T_HS150_1_Woutlet	:=  v100_channels_values[10];		(*Water Outlet Dyno 1Temp in DegC*)
+							T_waterin			:=  v100_channels_values[9];		(*Water Inlet Temp in DegC*)
+							T_waterout			:=  v100_channels_values[10];		(*Water Outlet Temp in DegC*)
+							T_HS150_2_Woutlet	:=  v100_channels_values[11];		(*Water Outlet Dyno 1Temp in DegC*)
+							T_F359_Winlet		:=  v100_channels_values[9];		(*Water Inlet Dyno 1Temp in DegC*)
+							T_F359_Woutlet		:=  v100_channels_values[10];		(*Water Outlet Dyno 1Temp in DegC*)
+							Dyno_BSHP			:=  v100_channels_values[15];		(*Engine Power in Bhp*)
+							p_waterin_barg		:=  v100_channels_values[13];		(*Dynamometer Inlet Pressure in BarG*) 
+
+						2:
+	
+							(* Nothing to process for setting the dyno demand *)	
+
+						3:
+	
+							VX100AutoMode		:= (READ_VX100_GENERAL_PARAMETERS.Mode = 1);
+							Dyno_Speed			:=  READ_VX100_GENERAL_PARAMETERS.speed;
+							Dyno_TR_lbsft		:=  READ_VX100_GENERAL_PARAMETERS.torque;
+	
+							IF ( 	(READ_VX100_GENERAL_PARAMETERS.modelNo < 0) OR
+								(READ_VX100_GENERAL_PARAMETERS.modelNo > 8) 	) THEN
+								VX100Model := '';
+							ELSE
+								VX100Model := VX100_MODEL_STRINGS[READ_VX100_GENERAL_PARAMETERS.modelNo];
+							END_IF;
+					END_CASE;
+				END_IF;
+			END_IF ;
+		END_IF; 
+	END_IF;
+
+(* NEW FOR ERROR COMMUNICATION RESTART *)
+
+	IF ( Error_Comm = TRUE ) THEN 
+
+		OPEN_VX100( VX100_IP_ADDRESS, VX100_IP_PORT );
+
+		IF OPEN_VX100.ERR_CODE = 0 THEN
+
+			fd		:= OPEN_VX100.SOCK;
+			Error_Comm	:= FALSE;
+
+			current_scan	:= 2;
+			next_scan		:= 3;
+		END_IF;
+	ELSE
+
+		(* Prepare the next scan *)
+	
+		IF (current_scan = 3) THEN 
+			current_scan := 1;
+		ELSE
+			current_scan := current_scan + 1;
+		END_IF;     
+
+		IF (next_scan = 3) THEN 
+			next_scan := 1;
+		ELSE
+			next_scan := next_scan + 1;
+		END_IF;     
+
+	END_IF ;
+END_IF;	(* Goes with the automatic loading *)
+
+err_code := OK;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,72 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.Display.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.Display.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.Display.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.Display.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.Display.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.Display.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.xml
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.resources
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.Display.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.Display.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.resources
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.Display.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.Display.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.Controls.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Compact\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.resources
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Compact\KineticaRT.Compact.Controls.Display.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.Display.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.Display.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.Controls.xml
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\bin\Debug\KineticaRT.Compact.xml
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.resources
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Display\obj\Debug\KineticaRT.Compact.Controls.Display.pdb

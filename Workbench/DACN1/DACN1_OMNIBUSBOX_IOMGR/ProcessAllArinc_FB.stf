@@ -1,0 +1,37 @@
+FUNCTION_BLOCK PROCESSALLARINC_FB
+(************************************************************************************************************************************************
+	Name :		ProcessAllArinc_FB									
+														
+	Description :	Process Arinc Messages from all the core of the OmniBusBox system.
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2006/08/03	Danny Lepage	First Release
+
+************************************************************************************************************************************************)
+
+err_code := OK;
+
+FOR i:= 1 TO numberOfBox by 1 DO
+	FOR j:= 1 TO CELBTI_MAXCORES DO
+		IF (boxDescriptor[i].core[j].hCore <> 0) THEN
+
+			CELBTI_A429ProcessMessages(boxDescriptor[i].core[j].hCore);
+			err_code := CELBTI_UARTScanList.ERR_CODE;
+		END_IF;
+		IF (err_code <> OK) THEN
+			j := CELBTI_MAXCORES;
+		END_IF;
+	END_FOR;
+	IF (err_code <> OK) THEN
+		i := numberOfBox;
+	END_IF;
+END_FOR;
+
+
+
+END_FUNCTION_BLOCK

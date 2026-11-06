@@ -1,0 +1,104 @@
+FUNCTION_BLOCK open_UUT_Ctrl_GTCP331_200_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_GTCP331_200_FB									
+														
+************************************************************************************************************************************************)	
+
+
+IF (UUT_Info.Family = 'GTCP331-200')  THEN
+
+	ETC_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_BINDING_SOURCE', '0'));
+
+	ETC_NUMBER_PROBE := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_NUMBER_PROBE', '2');
+
+	ETC_ENGINE_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX1', '0');
+	ETC_ENGINE_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX2', '0');
+	ETC_ENGINE_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX3', '0');
+	ETC_ENGINE_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX4', '0');
+	ETC_ENGINE_PROBE_INDEX[5] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX5', '0');
+	ETC_ENGINE_PROBE_INDEX[6] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX6', '0');
+	ETC_ENGINE_PROBE_INDEX[7] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX7', '0');
+	ETC_ENGINE_PROBE_INDEX[8] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX8', '0');
+	ETC_ENGINE_PROBE_INDEX[9] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX9', '0');
+	ETC_ENGINE_PROBE_INDEX[10] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.ETC_PROBE_INDEX10', '0');
+	
+	N1_95_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP331-200.N1_95_BINDING_SOURCE', '0'));
+	N1_95_INDEX := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200.N1_95_INDEX', '0');
+
+END_IF;
+
+IF (UUT_Info.Model = 'GTCP331-200') THEN
+
+	EGT1_VS_N1_X[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEX1_CONSTANT', '0');
+	EGT1_VS_N1_X[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEX2_CONSTANT', '0');
+	EGT1_VS_N1_X[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEX3_CONSTANT', '0');
+	EGT1_VS_N1_X[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEX4_CONSTANT', '0');
+
+	EGT1_VS_N1_Y[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEY1_CONSTANT', '0');
+	EGT1_VS_N1_Y[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEY2_CONSTANT', '0');
+	EGT1_VS_N1_Y[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEY3_CONSTANT', '0');
+	EGT1_VS_N1_Y[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT1_VS_N1_TABLEY4_CONSTANT', '0');
+
+	EGT2_VS_N1_X[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEX1_CONSTANT', '0');
+	EGT2_VS_N1_X[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEX2_CONSTANT', '0');
+	EGT2_VS_N1_X[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEX3_CONSTANT', '0');
+	EGT2_VS_N1_X[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEX4_CONSTANT', '0');
+
+	EGT2_VS_N1_Y[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEY1_CONSTANT', '0');
+	EGT2_VS_N1_Y[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEY2_CONSTANT', '0');
+	EGT2_VS_N1_Y[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEY3_CONSTANT', '0');
+	EGT2_VS_N1_Y[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.EGT2_VS_N1_TABLEY4_CONSTANT', '0');
+
+	N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.N1_BINDING_SOURCE', '0'));
+	N1_100_RPM := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.N1_100_RPM_CONSTANT', '0');
+	N1_INDEX := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.N1_INDEX', '0');
+	N1_100_FREQ := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.N1_100_FREQ_CONSTANT', '0');
+
+ELSIF (UUT_Info.Model = 'GTCP331-250') THEN
+
+	EGT1_VS_N1_X[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEX1_CONSTANT', '0');
+	EGT1_VS_N1_X[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEX2_CONSTANT', '0');
+	EGT1_VS_N1_X[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEX3_CONSTANT', '0');
+	EGT1_VS_N1_X[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEX4_CONSTANT', '0');
+
+	EGT1_VS_N1_Y[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEY1_CONSTANT', '0');
+	EGT1_VS_N1_Y[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEY2_CONSTANT', '0');
+	EGT1_VS_N1_Y[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEY3_CONSTANT', '0');
+	EGT1_VS_N1_Y[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT1_VS_N1_TABLEY4_CONSTANT', '0');
+
+	EGT2_VS_N1_X[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEX1_CONSTANT', '0');
+	EGT2_VS_N1_X[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEX2_CONSTANT', '0');
+	EGT2_VS_N1_X[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEX3_CONSTANT', '0');
+	EGT2_VS_N1_X[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEX4_CONSTANT', '0');
+
+	EGT2_VS_N1_Y[1] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEY1_CONSTANT', '0');
+	EGT2_VS_N1_Y[2] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEY2_CONSTANT', '0');
+	EGT2_VS_N1_Y[3] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEY3_CONSTANT', '0');
+	EGT2_VS_N1_Y[4] := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.EGT2_VS_N1_TABLEY4_CONSTANT', '0');
+
+	N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP331-250.N1_BINDING_SOURCE', '0'));
+	N1_100_RPM := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.N1_100_RPM_CONSTANT', '0');
+	N1_INDEX := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-250.N1_INDEX', '0');
+	N1_100_FREQ := ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP331-250.N1_100_FREQ_CONSTANT', '0');
+
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Dial</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.Dial">
+            <summary>
+            KineticaRT Dial control
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.DialBase">
+            <summary>
+            Basic functionality of a Dial control
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.bmpBackground">
+            <summary>
+            Bitmap in which the basic dial gets drawn
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.propertyHdlr">
+            <summary>
+            Event handler for PropertyChanged events from child objects
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.searchHdlr">
+            <summary>
+            Event handler for ObjectSearch events from child objects
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.scale">
+            <summary>
+            Current value of Scale property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.textPosition">
+            <summary>
+            Current value of TextPosition property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.topText">
+            <summary>
+            Current value of TopText property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.bottomText">
+            <summary>
+            Current value of BottomText property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.useSourceFormat">
+            <summary>
+            Currect value of the UseSourceFormat property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialBase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.#ctor">
+            <summary>
+            Initialises a new instance of the DialBase class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.ResetScale">
+            <summary>
+            Reset the Scale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.DrawText(System.Drawing.Graphics)">
+            <summary>
+            Draw the Top and Bottom text onto the Dial
+            </summary>
+            <param name="g">Graphics object in which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.PositionToFraction(System.Int64,System.Int64)">
+            <summary>
+            Converts a Mouse Position into a fraction of the way round the Dial
+            </summary>
+            <param name="XPos">X co-ordinate of mouse position</param>
+            <param name="YPos">Y co-ordinate of mouse position</param>
+            <returns>Fraction equivalent to given position</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.PositionToFractionRange(System.Int64,System.Int64,System.Boolean,System.Double@,System.Double@)">
+            <summary>
+            Converts a Mouse Position into a fraction of the way round the Dial
+            Also returns a range within +/- 5 degrees of that fraction if requested
+            </summary>
+            <param name="XPos">X co-ordinate of mouse position</param>
+            <param name="YPos">Y co-ordinate of mouse position</param>
+            <param name="Range">If true, MinFrac and MaxFrac are calculated</param>
+            <param name="MinFrac">Fraction at a position 5 degrees less than given point</param>
+            <param name="MaxFrac">Fraction at a position 5 degrees more than given point</param>
+            <returns>Value equivalent to given position</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.SetFormat(KineticaRT.Controls.DialNeedle)">
+            <summary>
+            Sets up the text, tool tip and scale range based on the given Needle's Source
+            </summary>
+            <param name="Needle">Needle whose Source information is used</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialBase.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialBase.Scale">
+            <summary>
+            Gets the Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialBase.TopText">
+            <summary>
+            Gets or sets the Text shown above the centre of the Dial
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialBase.BottomText">
+            <summary>
+            Gets or sets the Text shown below the centre of the Dial
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialBase.TextPosition">
+            <summary>
+            Gets or sets the position of text from the Dial's centre as a proportion of the Dial's radius (0..1)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialBase.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Dial gets its ToolTip, TopText, BottomText, Minimum and Maximum
+            from the Source of it's primary Needle
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Dial.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.#ctor">
+            <summary>
+            Initialises a new instance of the Dial class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.ResetNeedle">
+            <summary>
+            Reset the Needle to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Dial.Needle">
+            <summary>
+            Gets or sets the Needle object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Dial.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Dial gets its ToolTip, TopText, BottomText, Minimum and Maximum
+            from the Source of the Needle
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Dial.LicenseProvider">
+            <summary>
+            Implements a license provider for the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Dial.LicenseProvider.GetLicense(System.ComponentModel.LicenseContext,System.Type,System.Object,System.Boolean)">
+            <summary>
+            Gets a license for an instance or type of component, when given a context and whether the denial of a license throws an exception
+            </summary>
+            <param name="context">A LicenseContext that specifies where you can use the licensed object</param>
+            <param name="type">A Type that represents the component requesting the license</param>
+            <param name="instance">An object that is requesting the license</param>
+            <param name="allowExceptions">true if a LicenseException should be thrown when the component cannot be granted a license; otherwise, false</param>
+            <returns>A valid License</returns>
+        </member>
+        <member name="T:KineticaRT.Controls.DialMultiNeedle">
+            <summary>
+            KineticaRT Multiple Needle Dial control
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialMultiNeedle.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.#ctor">
+            <summary>
+            Initialises a new instance of the DialMultiNeedle class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.ResetNeedles">
+            <summary>
+            Reset the Needle Collection to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.OnDragOver(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragOver event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialMultiNeedle.Needles">
+            <summary>
+            Gets or sets a Collection of Needle objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialMultiNeedle.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Dial gets its ToolTip, TopText, BottomText, Minimum and Maximum
+            from the Source of the first Needle in the collection
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.DialMultiNeedle.LicenseProvider">
+            <summary>
+            Implements a license provider for the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialMultiNeedle.LicenseProvider.GetLicense(System.ComponentModel.LicenseContext,System.Type,System.Object,System.Boolean)">
+            <summary>
+            Gets a license for an instance or type of component, when given a context and whether the denial of a license throws an exception
+            </summary>
+            <param name="context">A LicenseContext that specifies where you can use the licensed object</param>
+            <param name="type">A Type that represents the component requesting the license</param>
+            <param name="instance">An object that is requesting the license</param>
+            <param name="allowExceptions">true if a LicenseException should be thrown when the component cannot be granted a license; otherwise, false</param>
+            <returns>A valid License</returns>
+        </member>
+        <member name="T:KineticaRT.Controls.DialNeedleStyles">
+            <summary>
+            Enumeration of possible Needle Styles for a Dial
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialNeedleStyles.ThinLine">
+            <summary>
+            Thin Line (one pixel), with central round hub
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialNeedleStyles.ThickLine">
+            <summary>
+            Thick Line (3 pixels), with central round hub
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.DialNeedleStyles.Shaded">
+            <summary>
+            Kite-shaped shaded needle
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.DialNeedleCollection">
+            <summary>
+            Collection of DialNeedle objects
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.#ctor">
+            <summary>
+            Initialises a new instance of the DialNeedleCollection class with a single needle
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.#ctor(KineticaRT.Controls.DialNeedle[])">
+            <summary>
+            Initialises a new instance of the DialNeedleCollection class containing the specified needle objects
+            </summary>
+            <param name="needles">Array of DialNeedle objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.AddNeedle">
+            <summary>
+            Adds a new DialNeedle object to the collection
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.AddRange(KineticaRT.Controls.DialNeedle[])">
+            <summary>
+            Adds and array of needles to the collection
+            </summary>
+            <param name="newNeedles">Array of needles to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.Draw(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draw all the needles in the collection
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.DrawFill(System.Drawing.Graphics,System.Drawing.Rectangle,KineticaRT.Controls.Scale,System.Drawing.Brush)">
+            <summary>
+            Draw all the Needles' Fills
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+            <param name="Scale">Scale object whose Thresholds may be used</param>
+            <param name="BackBrush">Brush for control's background</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.CheckForCapture(System.Double,System.Double,System.Int32,System.Int32,KineticaRT.Controls.Scale,System.Int32@)">
+            <summary>
+            Tests if a given position or fraction range is close enoughto the position
+            of any of the Needles in the collection to start a mouse drag
+            </summary>
+            <param name="MinFrac">Minimum fraction of range to check</param>
+            <param name="MaxFrac">Maximum fraction of range to check</param>
+            <param name="XPos">X Position of point to check (shaded needles only)</param>
+            <param name="YPos">Y Position of point to check (shaded needles only)</param>
+            <param name="Scale">Scale object to use for converting fractions to values if RangeSource is NeedleRangeSources.Scale</param>
+            <param name="CaptureIndex">Index of needle to capture, or -1 if none are close enough</param>
+            <returns>True if click is close enough to capture a Needle</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedleCollection.CalculatePosition(System.Drawing.Rectangle,KineticaRT.Controls.Scale,System.Boolean@)">
+            <summary>
+            Recalculates the position of each Needle
+            </summary>
+            <param name="DrawRect">Rectangle in which to position the Needles</param>
+            <param name="Scale">Scale object related to the Control</param>
+            <param name="DrawAll">(out) True if a full redraw (needle and fill) will be required</param>
+            <returns>True if any needles have moved and hence need redrawing</returns>
+        </member>
+        <member name="P:KineticaRT.Controls.DialNeedleCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the DialNeedle object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.DialNeedle">
+            <summary>
+            Needle object for use with a Dial
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedle.#ctor">
+            <summary>
+            Initialises a new instance of the DialNeedle class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedle.CheckForCapture(System.Double,System.Double,System.Int32,System.Int32,KineticaRT.Controls.Scale)">
+            <summary>
+            Tests if a given position or fraction range is close enough
+            to the needle's position to start a mouse drag
+            </summary>
+            <param name="MinFrac">Minimum fraction of range to check</param>
+            <param name="MaxFrac">Maximum fraction of range to check</param>
+            <param name="XPos">X Position of point to check (shaded needles only)</param>
+            <param name="YPos">Y Position of point to check (shaded needles only)</param>
+            <param name="Scale">Scale object to use for converting fractions to values if RangeSource is NeedleRangeSources.Scale</param>
+            <returns>True if click is close enough to capture the Needle</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedle.CalculatePosition(System.Drawing.Rectangle,KineticaRT.Controls.Scale)">
+            <summary>
+            Recalculates the position of the Needle
+            </summary>
+            <param name="DrawRect">Rectangle in which to position the Needle</param>
+            <param name="objScale">Scale object related to the Control</param>
+            <returns>True if Needle has changed angle since last redraw</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedle.Draw(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draw the needle
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.DialNeedle.DrawFill(System.Drawing.Graphics,System.Drawing.Rectangle,KineticaRT.Controls.Scale,System.Boolean,System.Drawing.Brush)">
+            <summary>
+            Draw the Needle's Fill
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+            <param name="ScaleObj">Scale object whose Thresholds may be used</param>
+            <param name="MultipleNeedles">True if more than one needle exists on the control</param>
+            <param name="BackBrush">Brush for control's background</param>
+        </member>
+        <member name="P:KineticaRT.Controls.DialNeedle.Style">
+            <summary>
+            Gets or sets the Style of the Needle
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialNeedle.Width">
+            <summary>
+            Gets or sets the width of the Needle (hub width for line needles), as a proportion of the radius of the Dial (0..1)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.DialNeedle.Length">
+            <summary>
+            Gets or sets the Length of the Needle as a proportion of the radius of the Dial (0..1)
+            </summary>
+        </member>
+    </members>
+</doc>

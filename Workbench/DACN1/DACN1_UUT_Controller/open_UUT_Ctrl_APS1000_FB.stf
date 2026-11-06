@@ -1,0 +1,94 @@
+FUNCTION_BLOCK open_UUT_Ctrl_APS1000_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_APS1000_FB									
+														
+************************************************************************************************************************************************)	
+
+
+IF (UUT_Info.Model = 'APS1000-C2') OR (UUT_Info.Model = 'APS1000-C3') OR (UUT_Info.Model = 'APS1000-C7')  THEN
+
+	ETC_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_BINDING_SOURCE', '0'));
+
+	ETC_NUMBER_PROBE := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_NUMBER_PROBE', '1');
+
+	ETC_ENGINE_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX1', '0');
+	ETC_ENGINE_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX2', '0');
+	ETC_ENGINE_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX3', '0');
+	ETC_ENGINE_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX4', '0');
+	ETC_ENGINE_PROBE_INDEX[5] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX5', '0');
+	ETC_ENGINE_PROBE_INDEX[6] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX6', '0');
+	ETC_ENGINE_PROBE_INDEX[7] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX7', '0');
+	ETC_ENGINE_PROBE_INDEX[8] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX8', '0');
+	ETC_ENGINE_PROBE_INDEX[9] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX9', '0');
+	ETC_ENGINE_PROBE_INDEX[10] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ETC_PROBE_INDEX10', '0');
+
+	EGT_TRIP_START := ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.EGT_TRIP_START', '0');
+	EGT_TRIP_STEADY:= ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.EGT_TRIP_STEADY', '0');
+
+	N1_95_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.N1_95_BINDING_SOURCE', '0'));
+	N1_95_INDEX := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.N1_95_INDEX', '0');
+
+	N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.N1_BINDING_SOURCE', '0'));
+	N1_INDEX := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.N1_INDEX', '0');
+	N1_100_RPM := ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.N1_100_RPM_CONSTANT', '0');
+	N1_100_FREQ := ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.N1_100_FREQ_CONSTANT', '0');
+
+	OVERTEMP_DISABLE_BINDING_SOURCE := ConvertBindingSourceStringToDint( ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.OVERTEMP_DISABLE_BINDING_SOURCE', '0'));
+	OVERTEMP_DISABLE_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.APS1000-C2-C3-C7.OVERTEMP_DISABLE_INDEX', '0');
+
+	(* ECB_POWER_CMD *)
+	ECB_POWER_CMD_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ECB_POWER_CMD_BINDING_SOURCE', '0'));
+	ECB_POWER_CMD_INDEX		:=  ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C2-C3-C7.ECB_POWER_CMD_INDEX', '0');
+
+ELSIF (UUT_Info.Model = 'APS1000-C12') THEN
+
+	ETC_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_BINDING_SOURCE', '0'));
+
+	ETC_NUMBER_PROBE := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_NUMBER_PROBE', '2');
+
+	ETC_ENGINE_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX1', '0');
+	ETC_ENGINE_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX2', '0');
+	ETC_ENGINE_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX3', '0');
+	ETC_ENGINE_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX4', '0');
+	ETC_ENGINE_PROBE_INDEX[5] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX5', '0');
+	ETC_ENGINE_PROBE_INDEX[6] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX6', '0');
+	ETC_ENGINE_PROBE_INDEX[7] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX7', '0');
+	ETC_ENGINE_PROBE_INDEX[8] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX8', '0');
+	ETC_ENGINE_PROBE_INDEX[9] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX9', '0');
+	ETC_ENGINE_PROBE_INDEX[10] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ETC_PROBE_INDEX10', '0');
+	
+	EGT_TRIP_START := ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C12.EGT_TRIP_START', '0');
+	EGT_TRIP_STEADY:= ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C12.EGT_TRIP_STEADY', '0');
+
+	N1_95_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C12.N1_95_BINDING_SOURCE', '0'));
+	N1_95_INDEX := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.N1_95_INDEX', '0');
+
+	N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C12.N1_BINDING_SOURCE', '0'));
+	N1_INDEX := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.N1_INDEX', '0');
+	N1_100_RPM := ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C12.N1_100_RPM_CONSTANT', '0');
+	N1_100_FREQ := ReadOneRealConfigItemST( 'ConfigurationSettings.APS1000-C12.N1_100_FREQ_CONSTANT', '0');
+
+	OVERTEMP_DISABLE_BINDING_SOURCE := ConvertBindingSourceStringToDint( ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C12.OVERTEMP_DISABLE_BINDING_SOURCE', '0'));
+	OVERTEMP_DISABLE_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.APS1000-C12.OVERTEMP_DISABLE_INDEX', '0');
+
+	(* ECB_POWER_CMD *)
+	ECB_POWER_CMD_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS1000-C12.ECB_POWER_CMD_BINDING_SOURCE', '0'));
+	ECB_POWER_CMD_INDEX		:=  ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS1000-C12.ECB_POWER_CMD_INDEX', '0');
+
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

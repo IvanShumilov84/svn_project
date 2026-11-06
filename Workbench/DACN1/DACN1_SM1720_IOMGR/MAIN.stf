@@ -1,0 +1,72 @@
+PROGRAM MAIN
+
+IF (First_Time_Trough = TRUE) THEN 
+
+	First_Time_Trough		:= FALSE;
+	Out_SM1720_IOMgr.status	:= IDLING;
+
+END_IF; 
+
+CASE  In_SM1720_IOMgr.command OF
+	
+	OPEN:
+		IF ((Out_SM1720_IOMgr.status = CLOSED) OR (Out_SM1720_IOMgr.status = IDLING)) THEN  
+
+			open_SM1720_IOMgr(UUT_Info);
+	
+			Out_SM1720_IOMgr.status		:= open_SM1720_IOMgr.status;	
+			Out_SM1720_IOMgr.err_code		:= open_SM1720_IOMgr.err_code;	
+			rdata_base			:= open_SM1720_IOMgr.rdata_base_handle;
+			Out_SM1720_IOMgr.previous_index	:= In_SM1720_IOMgr.current_index;
+
+		END_IF; 
+
+	LOAD:
+		IF ((Out_SM1720_IOMgr.status = OPENED) OR (Out_SM1720_IOMgr.status = LOADING)) THEN 
+
+			load_SM1720_IOMgr(UUT_Info, In_rdata_user);
+
+			Out_SM1720_IOMgr.status	:= load_SM1720_IOMgr.status;	
+			Out_SM1720_IOMgr.err_code	:= load_SM1720_IOMgr.err_code;	
+
+		END_IF; 
+
+	INITIALIZE:
+		IF (Out_SM1720_IOMgr.status = LOADED) THEN 
+
+			initialize_SM1720_IOMgr(UUT_Info);
+
+			Out_SM1720_IOMgr.status	:= initialize_SM1720_IOMgr.status;	
+			Out_SM1720_IOMgr.err_code	:= initialize_SM1720_IOMgr.err_code;	
+
+		END_IF; 
+
+	RUN:
+		IF  ((Out_SM1720_IOMgr.status =  INITIALIZED) OR (Out_SM1720_IOMgr.status = RUNNING)) THEN
+
+			run_SM1720_IOMgr(UUT_Info);
+
+			Out_SM1720_IOMgr.status	:= run_SM1720_IOMgr.status;	
+			Out_SM1720_IOMgr.err_code	:= run_SM1720_IOMgr.err_code;	
+
+		END_IF; 
+	 
+	CLOSE:
+		IF  (Out_SM1720_IOMgr.status <> CLOSED) THEN 
+
+			close_SM1720_IOMgr(UUT_Info);
+
+			Out_SM1720_IOMgr.status	:= close_SM1720_IOMgr.status;	
+			Out_SM1720_IOMgr.err_code	:= close_SM1720_IOMgr.err_code;	
+
+		END_IF; 
+
+	IDLE:
+
+		Out_SM1720_IOMgr.status := IDLING;
+
+END_CASE; 
+
+
+
+END_PROGRAM

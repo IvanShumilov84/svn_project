@@ -1,0 +1,584 @@
+FUNCTION_BLOCK run_Serial_FB
+(************************************************************************************************************************************************
+    Name :        run_Serial_IOMgr_FB                                    
+                                                        
+    Description :    Run loop of the distributed IO System                                   
+
+    Dependacy :     
+                    HYSTORY
+
+    Rev        Date        Name            Description
+                (YYYY/MM/DD)
+
+    1.0             2001/05/12        M.Morisset        First Release
+    2.0             2001/07/15        P.Dextraze, M.Morisset    Add Bit Packed DIN Process 
+    3.0             2001/09/05        M.Morisset        Add Specific IO Mapping 
+    4.0             2001/11/05        P.Dextraze        Add PROC_RFV CALL
+    5.0             2002/08/23        S.Lepage            Adapt for Greece
+    6.0             2003/05/22        N. Sangiovanni        Modification Archiving
+    7.0         2007/11/01        N. Sangiovanni        Change Readings of module 9B serie 5000
+
+
+************************************************************************************************************************************************)    
+
+	status    := RUNNING;
+	err_code  := OK;
+
+	(* CODE FROM 05288  Log message every 15 minutes. 900 000 ms *)
+	IF  (modulo_rest_15min = 0) THEN
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: RUNNING');
+	END_IF;
+	modulo_rest_15min  := MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 );
+
+	TIMER_REFRESH_ERROR(TRUE, t#5s);
+	
+
+
+	(*************************)
+	(* Read the current scan *)
+	(*************************)
+
+
+    IF(In_Serial_IOMgr.mode = RUN_FOR_TRUE) THEN 
+
+		FOR i:= 1 TO MAX_PORTS BY 1 DO
+
+        	IF(ser_ports[i].fd <> SPARE AND ser_ports[i].port_disable <> true) THEN  
+
+            	IF ser_ports[i].current_channel <> SPARE THEN
+    
+                	ser_ports[i].current_FV_index := ser_ports[i].FV_index[ ser_ports[i].current_channel];
+        
+	                IF ser_ports[i].current_FV_index <> SPARE THEN
+
+    	                ser_ports[i].current_FV_type := FV[ser_ports[i].current_FV_index].FV_type;
+
+        	            FOR l_idx := 1 TO 64 DO
+            	            ser_ports[i].current_type_index[l_idx] := FV[ser_ports[i].current_FV_index].FV_type_index[l_idx];
+                	    END_FOR ;
+
+                    	(* LINE BELOW IS IN COMMENT IN POLAND 10718, NEED TO FIGURE OUT and is not in Singapour project either*)
+						(*ser_ports[i].current_data_handle := FV[ser_ports[i].current_FV_index].data_handle;*)
+
+						CASE (ser_ports[i].current_FV_type) OF   
+
+							FV_DIN:
+
+            		            READ_SER_BOOL(ser_ports[i].fd); 
+                    		    ser_ports[i].error := READ_SER_BOOL.ERR_CODE ;
+		                        
+								IF ser_ports[i].error = 0 THEN
+        		                    ser_ports[i].dvalue := AND_MASK( NOT_MASK( READ_SER_BOOL.VALUE ) , 16#0000FFFF ) ; 
+                		            GOOD_COUNT := GOOD_COUNT + 1.0;
+		                        ELSE                                                                                                     
+        	        	            (* Added the following line code to fix a DIN shadow pattern of a non-responding puck *)
+            		                ser_ports[i].dvalue := 0; 
+                        		    BAD_COUNT := BAD_COUNT + 1.0;
+		                        END_IF;
+
+        	            
+							FV_DIN64:
+
+								READ_SER_BOOL64(ser_ports[i].fd); 
+		                        ser_ports[i].error := READ_SER_BOOL64.ERR_CODE ;
+                        
+        		                IF ser_ports[i].error = 0 THEN
+                		            NOT_MASK_LWORD(READ_SER_BOOL64.VALUE);
+                        		    AND_MASK_LWORD( NOT_MASK_LWORD.Q, 16#FFFFFFFFFFFFFFFF );
+
+		                            ser_ports[i].lvalue := AND_MASK_LWORD.Q;
+        		                ELSE
+									dummy   := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: error reading FV_DIN64');
+                		            ser_ports[i].lvalue := 0; 
+                        		END_IF;                                                                                                    
+
+                    
+
+							FV_DOUT:
+
+								READ_SER_FLOAT(ser_ports[i].fd);
+								(* For DOUT the function READ_SER_FLOAT always return -1 because she's not 
+						   		   compatible with DOUT that return a star for acknoledge *)
+								ser_ports[i].error := 0;
+
+
+                    		FV_DOUT64:						
+
+								(* On the SCM9B-H1770, when we have DIN and DOUT on the same serial port, the DIN does not work *)
+                        		(* It seems to be related that the card does not send the ack * after the command *)
+                        		READ_SER_FLOAT(ser_ports[i].fd);
+
+                        		(* READ_SER_FLOAT always return -1 because it is not compatible with the return of a star for acknoledge *)
+								ser_ports[i].error := 0;
+                    		
+
+							FV_IOUT:
+								(* 10726:  Note si le projet contient des puck D4262 il faut que le temps de cycle de la ressource soit minimum 30ms
+										sinon, les D4262 causent des timeout.  *)
+
+								(* Read the device answer ACK * to a IOUT command to clear the FIFO Bug trouve en installation 00937 Grece *)
+								READ_SER_STRING(ser_ports[i].fd);
+
+								ser_ports[i].error := 0;
+
+								FOR k:= 1 TO 5 BY 1 DO
+									IF(IOUT[k] < IOUT_MinValue[k])THEN
+										IOUT[k] := IOUT_MinValue[k];
+									END_IF;
+								END_FOR;
+
+					
+							FV_VOUT:
+
+								(* Read the device answer ACK * to a DOUT command to clear the FIFO *)
+								READ_SER_STRING(ser_ports[i].fd);
+								ser_ports[i].error := 0;
+
+							FV_P: 
+
+								IF ser_ports[i].deviceid[ser_ports[i].current_channel] = 'CPT6000' THEN
+									(* The digital pressure transducer Mensor returns its physical id and the pressure => "1   14.6923" *)
+									READ_SER_MENSER_PRESSURE(ser_ports[i].fd);
+
+									ser_ports[i].error := READ_SER_MENSER_PRESSURE.ERR_CODE ;  
+            
+									IF ser_ports[i].error = 0 THEN
+										IF ser_ports[i].current_channel = READ_SER_MENSER_PRESSURE.ID THEN
+											ser_ports[i].rvalue := READ_SER_MENSER_PRESSURE.VALUE;
+										ELSE
+											ser_ports[i].rvalue := 99.99;
+										END_IF;
+											ELSE
+										ser_ports[i].rvalue := 0.0; 
+									END_IF;
+								END_IF;
+
+							FV_T:
+
+								(*Si ce projet contient un 1 puck RTD, 1 channel not used.  Reactiver ce bout de code et setter le ? qui pointe sur la puck p
+								parce que les RTD sont pas bompatible en read block de 4 *)
+								IF ser_ports[i].deviceid[ser_ports[i].current_channel] = 'SCM9B-1412' THEN 
+
+									READ_SER_FLOAT(ser_ports[i].fd);
+									ser_ports[i].error := READ_SER_FLOAT.ERR_CODE ;  
+			
+									IF ser_ports[i].error = 0 THEN
+										ser_ports[i].rvalue := READ_SER_FLOAT.VALUE;
+									END_IF;
+
+								ELSE
+
+									(* FV_T use RB (Read Block) only for temperature 53XX module BUT NOT COMPATIBLE WITH MODULE RTD SCM9B-1432! *)
+		   	                   		READ_SERIAL_FLOAT(ser_ports[i].fd);
+    	                    		ser_ports[i].error := READ_SERIAL_FLOAT.ERR_CODE ;  
+
+        	                		IF ser_ports[i].error = -1 THEN
+	
+    	                        		index := ser_ports[i].current_FV_index; 
+        	                    		FV[index].nb_errors :=     FV[index].nb_errors + 1;
+
+            	                		IF FV[index].nb_errors > 5 THEN
+                	                		ser_ports[i].error := 0;
+
+                    	            		ser_ports[i].rvalues_array[1] := 99999.99;
+                        	        		ser_ports[i].rvalues_array[2] := 99999.99;
+                            	    		ser_ports[i].rvalues_array[3] := 99999.99;
+                                			ser_ports[i].rvalues_array[4] := 99999.99;
+
+										
+											(*DUMMY TO BREAKPOINT AND UNDERSTAND *)
+											(*IF ser_ports[i].rvalues_array[1] = 99999.99 THEN
+												ser_ports[i].rvalues_array[1] := 99999.99;
+											END_IF;*)
+							
+        	                    		END_IF;
+	
+									ELSIF ser_ports[i].error = 0 THEN
+	
+    	                        		index := ser_ports[i].current_FV_index; 
+	    	                        	FV[index].nb_errors :=     0;
+	
+    			                        Serial_Values    := READ_SERIAL_FLOAT.VALUES;
+	
+        	    		                ser_ports[i].rvalues_array[1] := Serial_Values[1];
+    		                	        ser_ports[i].rvalues_array[2] := Serial_Values[2];
+	        	                	    ser_ports[i].rvalues_array[3] := Serial_Values[3];
+                	            		ser_ports[i].rvalues_array[4] := Serial_Values[4];
+
+        		    	            END_IF;
+
+							END_IF;
+
+
+
+                    		ELSE (* CASE *)
+
+								(*Note: Lecture des puck 1 port a la fois et non en block de 4 *)
+
+                        		READ_SER_FLOAT(ser_ports[i].fd);
+                        		ser_ports[i].error := READ_SER_FLOAT.ERR_CODE ;  
+            
+                       			IF ser_ports[i].error = 0 THEN
+                            		ser_ports[i].rvalue := READ_SER_FLOAT.VALUE;
+                        		ELSE
+									ser_ports[i].error := -2;
+									(*ser_ports[i].rvalue := 8888.88;*)
+									ser_ports[i].rvalue := 0.0; (* Pour les pressures Heise on s'organise pour avoir 0.0 lors d<un mauvais scan *)
+
+								END_IF;
+
+
+		              	END_CASE;                                                                                    
+
+		 			END_IF; 
+
+					(* Display each minutes the serials errors: DACN1_SERIAL_IOMGR: READ ERROR ON /dev/ser3 REQ.SENT $1RS*)
+					IF ( UUT_Info.Model = 'SYSTEM CHECK' OR DEBUG_MODE = TRUE) THEN
+						IF TIMER_REFRESH_ERROR.Q = TRUE THEN
+							IF ser_ports[i].error < 0 THEN
+								TIMER_REFRESH_ERROR(FALSE, t#5s);(*Reset Timer*)
+								err_message := 'DACN1_SERIAL_IOMGR: READ_REQUEST ERROR ON ' + ser_ports[i].port_description + ' REQ.SENT: ' + FV[ser_ports[i].current_FV_index].request;
+								dummy   := LOG_MSG('ErrLog', err_message );
+							ELSE
+								err_message := ' ';
+							END_IF;
+						END_IF;
+					END_IF;
+      	 		END_IF;
+	  		END_IF;
+		END_FOR;                                                                                                                                      
+	END_IF; 
+
+
+
+
+	(*************************)
+	(* Request the next scan *)
+	(*************************)
+
+	FOR i:= 1 TO MAX_PORTS BY 1 DO  
+    	IF(ser_ports[i].fd <> SPARE AND ser_ports[i].port_disable <> true) THEN      
+            	
+			SEND_REQUEST(i);
+			
+			IF ( UUT_Info.Model = 'SYSTEM CHECK' OR DEBUG_MODE = TRUE) THEN
+				IF (SEND_REQUEST.ERR_CODE <> OK ) THEN 
+					err_code := SEND_REQUEST.ERR_CODE;
+					err_message := 'DACN1_SERIAL_IOMGR: SEND_REQUEST ERROR ON ' + ser_ports[i].port_description + ' REQ.SENT: ' + FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].request;
+					dummy   := LOG_MSG('ErrLog', err_message );
+				END_IF;
+			END_IF;
+       	END_IF; 
+    END_FOR;
+
+
+
+
+	(****************************)
+	(* Process the current scan *)
+	(****************************)
+
+    FOR i:= 1 TO MAX_PORTS BY 1 DO
+        IF(ser_ports[i].fd <> SPARE AND ser_ports[i].error = 0 AND ser_ports[i].port_disable <> true) THEN      
+
+            CASE (ser_ports[i].current_FV_type) OF   
+
+	            FV_F:
+
+	                index := ser_ports[i].current_FV_index ;
+
+    	            PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+	
+    	            F[ser_ports[i].current_type_index[1]].value         			:= PROC_RFV.VALUE;
+        	        F[ser_ports[i].current_type_index[1]].mean_value    			:= PROC_RFV.MEAN_VALUE;
+				(*	F[ser_ports[i].current_type_index[1]].qc 						:= PROC_RFV.QC;
+					F[ser_ports[i].current_type_index[1]].error 					:= PROC_RFV.ERR_CODE;
+					F[ser_ports[i].current_type_index[1]].time_stamp.sec 			:= PROC_RFV.SEC;
+					F[ser_ports[i].current_type_index[1]].time_stamp.Nsec 			:= PROC_RFV.NSEC;
+					F[ser_ports[i].current_type_index[1]].abs_min_value 			:= PROC_RFV.ABS_MIN_VALUE;
+					F[ser_ports[i].current_type_index[1]].abs_max_value 			:= PROC_RFV.ABS_MAX_VALUE;	*) 
+
+
+
+            	FV_P:
+
+                	index := ser_ports[i].current_FV_index ;
+
+	                PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+
+	                P[ser_ports[i].current_type_index[1]].value         			:= PROC_RFV.VALUE;
+    	            P[ser_ports[i].current_type_index[1]].mean_value    			:= PROC_RFV.MEAN_VALUE;
+				(*	P[ser_ports[i].current_type_index[1]].qc 						:= PROC_RFV.QC;
+					P[ser_ports[i].current_type_index[1]].error 					:= PROC_RFV.ERR_CODE;
+					P[ser_ports[i].current_type_index[1]].time_stamp.sec 			:= PROC_RFV.SEC;
+					P[ser_ports[i].current_type_index[1]].time_stamp.Nsec 			:= PROC_RFV.NSEC;
+					P[ser_ports[i].current_type_index[1]].abs_min_value 			:= PROC_RFV.ABS_MIN_VALUE;
+					P[ser_ports[i].current_type_index[1]].abs_max_value 			:= PROC_RFV.ABS_MAX_VALUE;*)
+
+        	    FV_R:
+
+            	    index := ser_ports[i].current_FV_index ;
+
+                	PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+
+	                RR[ser_ports[i].current_type_index[1]].value         			:= PROC_RFV.VALUE;
+    	            RR[ser_ports[i].current_type_index[1]].mean_value    			:= PROC_RFV.MEAN_VALUE;
+				(*	RR[ser_ports[i].current_type_index[1]].qc 						:= PROC_RFV.QC;
+					RR[ser_ports[i].current_type_index[1]].error 					:= PROC_RFV.ERR_CODE;
+					RR[ser_ports[i].current_type_index[1]].time_stamp.sec 			:= PROC_RFV.SEC;
+					RR[ser_ports[i].current_type_index[1]].time_stamp.Nsec 			:= PROC_RFV.NSEC;
+					RR[ser_ports[i].current_type_index[1]].abs_min_value 			:= PROC_RFV.ABS_MIN_VALUE;
+					RR[ser_ports[i].current_type_index[1]].abs_max_value 			:= PROC_RFV.ABS_MAX_VALUE;*)
+
+        	    FV_T:
+
+            	    index := ser_ports[i].current_FV_index;
+
+					(* Si ce projet contient un 1 puck RTD, 1 channel not used.  Reactiver ce bout de code et setter le ? qui pointe sur la puck p
+	 				   parce que les RTD sont pas bompatible en read block de 4 *)
+
+					T[ser_ports[i].current_type_index[1]].out_of_service 	:= T_OUT_OF_SERVICE[ser_ports[i].current_type_index[1]]; 		(* value from HMI by user *)
+
+					IF ser_ports[i].deviceid[ser_ports[i].current_channel] = 'SCM9B-1412' THEN
+						PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+	
+						T[ser_ports[i].current_type_index[1]].value 				:= PROC_RFV.VALUE;
+						T[ser_ports[i].current_type_index[1]].mean_value 			:= PROC_RFV.MEAN_VALUE;
+					(*	T[ser_ports[i].current_type_index[l_idx]].qc 				:= PROC_RFV.QC;
+						T[ser_ports[i].current_type_index[l_idx]].error 			:= PROC_RFV.ERR_CODE;
+						T[ser_ports[i].current_type_index[l_idx]].time_stamp.sec 	:= PROC_RFV.SEC;
+						T[ser_ports[i].current_type_index[l_idx]].time_stamp.Nsec 	:= PROC_RFV.NSEC;
+						T[ser_ports[i].current_type_index[l_idx]].abs_min_value 	:= PROC_RFV.ABS_MIN_VALUE;
+						T[ser_ports[i].current_type_index[l_idx]].abs_max_value 	:= PROC_RFV.ABS_MAX_VALUE;	*)
+
+					ELSE
+
+                		FOR l_idx := 1 TO 4 DO
+                    		IF FV[index].FV_Type_index[l_idx] > 0 THEN
+                        		PROC_RFV(rdata_base, FV[index].data_handle[l_idx], ser_ports[i].rvalues_array[l_idx]);
+
+	                        	T[ser_ports[i].current_type_index[l_idx]].value         	:= PROC_RFV.VALUE;
+	    	                    T[ser_ports[i].current_type_index[l_idx]].mean_value		:= PROC_RFV.MEAN_VALUE;
+							(*	T[ser_ports[i].current_type_index[l_idx]].qc 				:= PROC_RFV.QC;
+								T[ser_ports[i].current_type_index[l_idx]].error 			:= PROC_RFV.ERR_CODE;
+								T[ser_ports[i].current_type_index[l_idx]].time_stamp.sec 	:= PROC_RFV.SEC;
+								T[ser_ports[i].current_type_index[l_idx]].time_stamp.Nsec 	:= PROC_RFV.NSEC;
+								T[ser_ports[i].current_type_index[l_idx]].abs_min_value 	:= PROC_RFV.ABS_MIN_VALUE;
+								T[ser_ports[i].current_type_index[l_idx]].abs_max_value 	:= PROC_RFV.ABS_MAX_VALUE;	*)
+    	    	            END_IF;
+        	    	    END_FOR;
+					END_IF;
+
+            	FV_VIB:
+
+                	index := ser_ports[i].current_FV_index ;
+
+	                PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+
+    	            VIB[ser_ports[i].current_type_index[1]].value         			:= PROC_RFV.VALUE;
+        	        VIB[ser_ports[i].current_type_index[1]].mean_value    			:= PROC_RFV.MEAN_VALUE;
+				(*	VIB[ser_ports[i].current_type_index[1]].qc 						:= PROC_RFV.QC;
+					VIB[ser_ports[i].current_type_index[1]].error 					:= PROC_RFV.ERR_CODE;
+					VIB[ser_ports[i].current_type_index[1]].time_stamp.sec 			:= PROC_RFV.SEC;
+					VIB[ser_ports[i].current_type_index[1]].time_stamp.Nsec 		:= PROC_RFV.NSEC;
+					VIB[ser_ports[i].current_type_index[1]].abs_min_value 			:= PROC_RFV.ABS_MIN_VALUE;
+					VIB[ser_ports[i].current_type_index[1]].abs_max_value 			:= PROC_RFV.ABS_MAX_VALUE;	*)
+
+
+            	FV_VIN:
+    
+                	index := ser_ports[i].current_FV_index ;
+
+	                PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+
+    	            VIN[ser_ports[i].current_type_index[1]].value         			:= PROC_RFV.VALUE;
+        	        VIN[ser_ports[i].current_type_index[1]].mean_value    			:= PROC_RFV.MEAN_VALUE;
+				(*	VIN[ser_ports[i].current_type_index[1]].qc 						:= PROC_RFV.QC;
+					VIN[ser_ports[i].current_type_index[1]].error 					:= PROC_RFV.ERR_CODE;
+					VIN[ser_ports[i].current_type_index[1]].time_stamp.sec 			:= PROC_RFV.SEC;
+					VIN[ser_ports[i].current_type_index[1]].time_stamp.Nsec 		:= PROC_RFV.NSEC;
+					VIN[ser_ports[i].current_type_index[1]].abs_min_value 			:= PROC_RFV.ABS_MIN_VALUE;
+					VIN[ser_ports[i].current_type_index[1]].abs_max_value 			:= PROC_RFV.ABS_MAX_VALUE;	*)
+
+
+
+	            FV_Vls:
+    
+    	            index := ser_ports[i].current_FV_index ;
+
+        	        PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+
+            	    Vls[ser_ports[i].current_type_index[1]].value 					:= PROC_RFV.VALUE;
+                	Vls[ser_ports[i].current_type_index[1]].mean_value 				:= PROC_RFV.MEAN_VALUE;
+				(*	Vls[ser_ports[i].current_type_index[1]].qc 						:= PROC_RFV.QC;
+					Vls[ser_ports[i].current_type_index[1]].error 					:= PROC_RFV.ERR_CODE;
+					Vls[ser_ports[i].current_type_index[1]].time_stamp.sec 			:= PROC_RFV.SEC;
+					Vls[ser_ports[i].current_type_index[1]].time_stamp.Nsec 		:= PROC_RFV.NSEC;
+					Vls[ser_ports[i].current_type_index[1]].abs_min_value 			:= PROC_RFV.ABS_MIN_VALUE;
+					Vls[ser_ports[i].current_type_index[1]].abs_max_value 			:= PROC_RFV.ABS_MAX_VALUE;	*)
+
+
+	            FV_I:
+    
+    	            index := ser_ports[i].FV_index[ ser_ports[i].current_FV_index ] ;
+
+        	        PROC_RFV(rdata_base, FV[index].data_handle[1], ser_ports[i].rvalue);
+
+            	    II[ser_ports[i].current_type_index[1]].value 					:= PROC_RFV.VALUE;
+	                II[ser_ports[i].current_type_index[1]].mean_value 				:= PROC_RFV.MEAN_VALUE;
+				(*	II[ser_ports[i].current_type_index[1]].qc 						:= PROC_RFV.QC;
+					II[ser_ports[i].current_type_index[1]].error 					:= PROC_RFV.ERR_CODE;
+					II[ser_ports[i].current_type_index[1]].time_stamp.sec 			:= PROC_RFV.SEC;
+					II[ser_ports[i].current_type_index[1]].time_stamp.Nsec 			:= PROC_RFV.NSEC;
+					II[ser_ports[i].current_type_index[1]].abs_min_value 			:= PROC_RFV.ABS_MIN_VALUE;
+					II[ser_ports[i].current_type_index[1]].abs_max_value 			:= PROC_RFV.ABS_MAX_VALUE;	*)
+
+    	        FV_DIN:
+    
+        	        FOR l_idx := 1 TO 16 DO
+                    
+            	        IF ser_ports[i].current_type_index[l_idx] > 0 THEN
+                	        IF AND_MASK(ANY_TO_DINT(ser_ports[i].dvalue), (ANY_TO_DINT( EXPT ( 2.0, (l_idx - 1) ) ) ) ) > 0 THEN
+                    	        DIN[ser_ports[i].current_type_index[l_idx] ] := TRUE ;
+                        	ELSE
+                            	DIN[ser_ports[i].current_type_index[l_idx] ] := FALSE ;
+	                        END_IF;
+    	                END_IF;
+
+        	        END_FOR;
+
+	            FV_DIN64:
+
+    	            FOR l_idx := 1 TO 64 DO
+
+        	            IF ser_ports[i].current_type_index[l_idx] > 0 THEN
+
+            	            AND_MASK_LWORD ( ser_ports[i].lvalue, ANY_TO_LWORD( EXPT ( 2.0, (l_idx - 1) ) ) );
+
+                	        IF AND_MASK_LWORD.Q > 0 THEN
+                    	        DIN[ser_ports[i].current_type_index[l_idx] ] := TRUE ;
+	                        ELSE
+    	                        DIN[ser_ports[i].current_type_index[l_idx] ] := FALSE ;
+        	                END_IF;
+            	        END_IF;
+
+                	END_FOR;
+
+				ELSE(* CASE *)
+					(* Nothing *)
+            END_CASE; 
+
+        END_IF; 
+
+    END_FOR;
+
+
+
+	(**********************)
+	(* Log administration *)
+	(**********************)
+
+(* TODO: le falg Update_RDATA_Flag n'est jamais utilisé, donc le function block xfer_RData non plus ! As-ton besoin de le garder ?*)
+
+    IF Update_RDATA_Flag = TRUE THEN
+        xfer_RData();
+        
+        Update_RDATA_Flag    := FALSE;
+    END_IF;
+
+    
+
+	(*************************)
+	(* Prepare the next scan *)
+	(*************************)
+
+
+    FOR i:= 1 TO MAX_PORTS BY 1 DO     
+        IF(ser_ports[i].fd <> SPARE AND ser_ports[i].port_disable <> true) THEN      
+            ser_ports[i].next_channel := ser_ports[i].next_channel + 1;
+
+            IF (ser_ports[i].next_channel > ser_ports[i].nb_channels) THEN            
+                ser_ports[i].next_channel := 1;         
+            END_IF;
+
+            ser_ports[i].current_channel := ser_ports[i].current_channel + 1;  
+
+            IF (ser_ports[i].current_channel > ser_ports[i].nb_channels) THEN 
+                ser_ports[i].current_channel := 1 ;
+            END_IF; 
+    
+        END_IF; 
+
+    END_FOR;
+
+
+
+
+    IF (err_code <> OK ) THEN 
+        status     := ERROR_ON_RUNNING;
+        dummy     := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: ERROR ON RUNNING');
+    END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

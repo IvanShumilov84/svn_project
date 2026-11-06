@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Studio.Controls.Indicator</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Studio.Controls.Indicator">
+            <summary>
+            KineticaRT Studio Indicator control.
+            Displays a boolean Value from a source channel,
+            together with an optional description
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Studio.Controls.Indicator.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.#ctor">
+            <summary>
+            Initialises a new instance of the Indicator class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paint Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.UpdateLayout">
+            <summary>
+            Updates the layout of value, description and causes a repaint
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.NewToolTip(System.String)">
+            <summary>
+            A new tool tip is being set
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.OnSourcePropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            A property in the Source channel has changed
+            </summary>
+            <param name="Sender">Object generating the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.SourceChannel">
+            <summary>
+            Gets or sets the Source channel to which this object is connected
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.CustomDescription">
+            <summary>
+            Gets or sets a Custom Description
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.DescriptionSource">
+            <summary>
+            Gets or sets where to get the Description from
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.DescriptionAlignment">
+            <summary>
+            Gets or sets the Alignment of the description
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.Shape">
+            <summary>
+            Gets or sets the shape of the lamp
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.Raised">
+            <summary>
+            Gets or sets whether the lamp is raised or flat
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.OffColor">
+            <summary>
+            Gets or Sets the Off (false) Color of the lamp
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.OnColor">
+            <summary>
+            Gets or Sets the On (true) Color of the lamp
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.Indicator.DescriptionPosition">
+            <summary>
+            Gets or sets where the description is positioned
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.Controls.Indicator.LicenseProvider">
+            <summary>
+            Implements a license provider for the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.Indicator.LicenseProvider.GetLicense(System.ComponentModel.LicenseContext,System.Type,System.Object,System.Boolean)">
+            <summary>
+            Gets a license for an instance or type of component, when given a context and whether the denial of a license throws an exception
+            </summary>
+            <param name="context">A LicenseContext that specifies where you can use the licensed object</param>
+            <param name="type">A Type that represents the component requesting the license</param>
+            <param name="instance">An object that is requesting the license</param>
+            <param name="allowExceptions">true if a LicenseException should be thrown when the component cannot be granted a license; otherwise, false</param>
+            <returns>A valid License</returns>
+        </member>
+        <member name="T:KineticaRT.Studio.Controls.Indicator.DescriptionPositions">
+            <summary>
+            Enumeration of possible positions for the Description
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Studio.Controls.Indicator.DescriptionPositions.Left">
+            <summary>
+            To left of Lamp
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Studio.Controls.Indicator.DescriptionPositions.Right">
+            <summary>
+            To Right of Lamp
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Studio.Controls.Indicator.DescriptionPositions.On">
+            <summary>
+            On the Lamp
+            </summary>
+        </member>
+    </members>
+</doc>

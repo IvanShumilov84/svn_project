@@ -1,0 +1,223 @@
+FUNCTION_BLOCK open_VX100_FB
+(************************************************************************************************************************************************
+	Name :		open_V100_FB									
+														
+	Description :	Setup Froude Dynamometer V100 Channels. 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2002/08/23		S.Lepage		Adapt dyno settings for Greece
+
+************************************************************************************************************************************************)	
+
+(* Open TEXCEL V100 *)
+
+status := OPENING;
+err_code 	:= OK;
+XMLError	:= False;
+VX100_IP_ADDRESS	:= '192.168.2.235';
+VX100_IP_PORT	:= 2523;
+Error_on_Open := FALSE ;
+
+channel_no[1] := 28;		(*Dynamometer Speed in RPM*)
+
+channel_no[2] := 113;		(*Outlet Valve Position in %*)
+
+channel_no[3] := 111;		(*Inlet Valve Position in %*)
+
+channel_no[4] := 29;		(*Dynamometer Torque lbs-ft*)
+
+channel_no[5] := 89;	(*Bearing No.1 Dyno 1 Temp in DegC*)
+
+channel_no[6] := 90;	(*Bearing No.2 Dyno 1 Temp in DegC*)
+
+channel_no[7] := 89;	(*Bearing No.1 Dyno 2 Temp in DegC*)
+
+channel_no[8] := 90;	(*Bearing No.2 Dyno 2 Temp in DegC*)
+
+channel_no[9] := 91;	(*Water Inlet Dyno Temp in DegC*)
+
+channel_no[10] := 92;	(*Water Outlet Dyno 1 Temp in DegC*)
+
+channel_no[11] := 92;	(*Water Outlet Dyno 2 Temp in DegC*)
+
+channel_no[12] := 28;	(*Dynamometer Speed in RPM Analog*)
+
+channel_no[13] := 119;	(*Dynamometer Inlet Pressure in BarG*)
+
+channel_no[14] := 28;	(*Dynamometer Speed in RPM*)
+
+channel_no[15] := 30;	(*Engine Power in Bhp*)
+
+channel_no[16] := 28;	(*Dynamometer Speed in RPM*)
+
+channel_no[17] := 33;	(*Inlet Valve Demand in %*)
+
+channel_no[18] := 28;	(*Dynamometer Speed in RPM*)
+
+channel_no[19] := 28;	(*Dynamometer Speed in RPM*)
+
+channel_no[20] := 103;	(*Load Cell Exc. in Volts*)
+
+num_of_channels := 20;
+
+
+IF (First_Time_Open = TRUE) THEN 	
+	
+	IF(In_Texcel_VX100_IOMgr.mode = RUN_FOR_TRUE )THEN
+
+		OPEN_VX100(VX100_IP_ADDRESS, VX100_IP_PORT);
+
+		IF (OPEN_VX100.ERR_CODE = 0) THEN
+			fd			:= OPEN_VX100.SOCK;
+			Error_Comm		:= FALSE;
+			Error_On_Open	:= FALSE;
+
+		ELSE
+			fd 			:= -1;
+			Error_Comm		:= TRUE;
+			Error_On_Open	:= TRUE;
+		END_IF;
+
+		err_code := OPEN_VX100.ERR_CODE;
+
+		XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+		hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+		IF hCfgSettings <> 0 THEN
+
+
+			XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + UUT_INFO.Family  +'.DYNO_MODE', XMLCFGSETTINGS_GETSTRINGVALUE.VALUE);
+			DYNO_MODE 		:= XMLCFGSETTINGS_GETSTRINGVALUE.VALUE;
+
+			XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + UUT_INFO.Family  +'.DYNO_INITIAL_DEMAND', XMLCFGSETTINGS_GETSTRINGVALUE.VALUE);
+			DYNO_INITIAL_DEMAND 		:= ANY_TO_REAL(XMLCFGSETTINGS_GETSTRINGVALUE.VALUE);
+
+			XMLCFGSETTINGS_CLOSE(hCfgSettings);
+			hCfgSettings := 0;
+
+		ELSE
+			err_code := ERROR_ON_OPENING;
+			dummy := LOG_MSG('ErrLog', 'DACN1_VX100: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+		END_IF;
+
+
+
+	ELSE
+
+		(* DEFAULT CONFIG IN SIMULATION *)
+		DYNO_MODE			:= 'SPEED';
+		DYNO_INITIAL_DEMAND	:= 0.0;
+
+	END_IF;
+
+	First_Time_Open := FALSE ;
+
+END_IF; 
+
+
+inlet_demand_ramp := 5.0;
+
+IF UUT_Info.Model = 'MAKILA 1A1' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF  UUT_Info.Model = 'T53-L-13B' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF  UUT_Info.Model = 'T55-L-712SSB' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF  UUT_Info.Model = 'T55-L-714A' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF ( 	(UUT_Info.Model = 'PT6T-3')	OR
+		(UUT_Info.Model = 'PT6T-3B')	OR
+		(UUT_Info.Model = 'PT6T-3BE')	OR
+		(UUT_Info.Model = 'PT6T-3BG')	OR
+		(UUT_Info.Model = 'PT6T-3D')	OR
+		(UUT_Info.Model = 'PT6T-3DE')	OR
+		(UUT_Info.Model = 'PT6T-3DF')	OR
+		(UUT_Info.Model = 'PT6T-6_SIKOR')	OR
+		(UUT_Info.Model = 'PT6T-6_BELL')) THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_AUTO_MODE;
+	demand_ramp := 1.0;
+
+
+ELSE 
+
+	inlet_valve_mode := DYNO_INLET_VALVE_AUTO_MODE ;
+	inlet_valve_demand := 0.0;
+	demand_ramp := 1.0;
+
+END_IF; 
+
+prev_demand_mode		:= -1;
+prev_demand_value		:= -1.0;
+prev_demand_ramp		:= -1.0;
+prev_inlet_valve_mode	:= -1;
+prev_inlet_valve_demand	:= -1.0;
+prev_inlet_demand_ramp	:= -1.0;
+
+
+IF (err_code <> OK) Or (XMLError = True) THEN 
+		err_code	:= ERROR_ON_OPENING;
+		status 	:= ERROR_ON_OPENING;
+	dummy 	:= LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR: ERROR ON OPENING');
+ELSE
+	status	:= OPENED;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR: OPENED');
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

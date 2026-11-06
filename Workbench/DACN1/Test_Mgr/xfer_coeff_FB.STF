@@ -1,0 +1,88 @@
+FUNCTION_BLOCK xfer_coeff_FB
+(************************************************************************************************************************************************
+	Name :		xfer_coeff_FB									
+														
+	Description :	 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	          2002/11/06 	        Patrick Dextraze	First Release
+	2.0	          2002/10/16	        Nadia Sangiovanni	Change for new calibration
+
+************************************************************************************************************************************************)	
+
+	(* initialize output *)
+	sub_status := 0 ;
+
+(*TODO: Ici j'ai eu probleme pcq DACN1_NIDAQ_IOMgr_REAL au lieu de DACN1_NIDAQ_IOMGR_REAL, faudrait ameliorer ca ???? *)
+	IF (OUT_TM_Calib.Branch = 'DACN1_NIDAQ_IOMGR_REAL') THEN 
+
+		IF (Out_DACN1_NIDAQ_IOMgr.sub_command 		<> XFER_COEFF) THEN 
+			Out_DACN1_NIDAQ_IOMgr.sub_command 		:= XFER_COEFF;
+		END_IF; 
+		sub_status 	:= In_DACN1_NIDAQ_IOMgr.sub_status ;
+	ELSE
+	(* Stop Calibration of Current ressource when switching to an other one, This was causing Array out of bound per example for 
+		T if the size was different from the T in Serial or T in Nidaq *)
+
+		Out_DACN1_NIDAQ_IOMgr.sub_command 		:= SUB_IDLE; 	
+	END_IF; 
+
+
+	IF (OUT_TM_Calib.Branch = 'DACN1_SERIAL_IOMGR_REAL') THEN 
+
+		IF (Out_DACN1_Serial_IOMgr.sub_command		<> XFER_COEFF) THEN 
+			Out_DACN1_Serial_IOMgr.sub_command		:= XFER_COEFF;
+		END_IF; 
+		sub_status	:= In_DACN1_Serial_IOMgr.sub_status ;
+	ELSE
+	(* Stop Calibration of Current ressource when switching to an other one, This was causing Array out of bound per example for 
+		T if the size was different from the T in Serial or T in Nidaq *)
+		Out_DACN1_Serial_IOMgr.sub_command		:= SUB_IDLE;
+	END_IF; 
+
+	IF (OUT_TM_Calib.Branch = 'DACN1_POWERDNA_IOMGR_REAL_1' OR Out_TM_Calib.Branch = 'DACN1_POWERDNA_IOMGR_REAL_2') THEN 
+
+		IF (Out_DACN1_PowerDNA_IOMgr.sub_command	<> XFER_COEFF) THEN 
+			Out_DACN1_PowerDNA_IOMgr.sub_command	:= XFER_COEFF;
+		END_IF; 
+		sub_status	:= In_DACN1_PowerDNA_IOMgr.sub_status ;
+	ELSE
+	(* Stop Calibration of Current ressource when switching to an other one, This was causing Array out of bound per example for 
+		T if the size was different from the T in Serial or T in Nidaq *)
+		Out_DACN1_PowerDNA_IOMgr.sub_command	:= SUB_IDLE;
+	END_IF;
+
+
+	IF (Out_TM_Calib.Branch = 'DACN1_SCANIVALVE_IOMGR_REAL') THEN  
+		IF (Out_TM_Calib.Prefix = 'P') THEN
+			IF (Out_DACN1_Scanivalve_Pressure_IOMgr.sub_command 	<> XFER_COEFF) THEN 
+				Out_DACN1_Scanivalve_Pressure_IOMgr.sub_command 	:= XFER_COEFF;
+			END_IF; 
+			sub_status 	:= In_DACN1_Scanivalve_Pressure_IOMgr.sub_status ;
+		ELSE
+			IF (Out_DACN1_Scanivalve_Temperature_IOMgr.sub_command 	<> XFER_COEFF) THEN 
+				Out_DACN1_Scanivalve_Temperature_IOMgr.sub_command 	:= XFER_COEFF;
+			END_IF; 
+			sub_status 	:= In_DACN1_Scanivalve_Temperature_IOMgr.sub_status ;
+		END_IF;
+	ELSE
+	(* Stop Calibration of Current ressource when switching to an other one, This was causing Array out of bound per example for 
+		T if the size was different from the T in Serial or T in Nidaq *)
+		Out_DACN1_Scanivalve_Pressure_IOMgr.sub_command 	:= SUB_IDLE;
+	END_IF;
+(* TODO: COmpleter avec les autres ressources *)
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,166 @@
+FUNCTION_BLOCK load_ARINC429_FB
+(************************************************************************************************************************************************
+	Name :		load_ARINC429_FB									
+														
+	Description :	Load the ARINC429 Subsystem of the OmniBusBox system.
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/03/04	Danny Lepage	First Release
+
+************************************************************************************************************************************************)	
+err_code := OK;
+
+OPEN_ARINC429LABEL_DATA('/usr/v2000/app/DACN1_LABEL_ARINC429_CSV.csv');
+
+hdle_arinc429label_data := OPEN_ARINC429LABEL_DATA.HANDLE;
+err_code := OPEN_ARINC429LABEL_DATA.ERR_CODE;
+
+A429InCHACounter  := 0;
+A429InCHBCounter  := 0;
+A429OutCHACounter := 0;
+A429OutCHBCounter := 0;
+
+IF (err_code = OK) THEN
+
+	READ_ARINC429LABEL_DATA( hdle_arinc429label_data );
+
+	WHILE (READ_ARINC429LABEL_DATA.ERR_CODE = 18) DO
+
+		IF (READ_ARINC429LABEL_DATA.model = UUT_Info.Model) THEN
+
+			cardNumber    := READ_ARINC429LABEL_DATA.cardNumber;
+			coreNumber    := READ_ARINC429LABEL_DATA.coreNumber;
+			channelNumber := READ_ARINC429LABEL_DATA.channelNumber;
+			
+			IF (boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore = 0) THEN
+				CELBTI_COREOPEN(boxDescriptor[ANY_TO_DINT(cardNumber+1)].hCard, coreNumber);
+
+				IF (CELBTI_COREOPEN.ERR_CODE <> OK) THEN
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore := 0;
+					err_code := CELBTI_COREOPEN.ERR_CODE;
+
+					EXIT;
+				ELSE
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore := CELBTI_COREOPEN.hCore;
+				END_IF;
+			END_IF;
+
+			IF (boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].channel[ANY_TO_DINT(channelNumber+1)].isChannelUsed <> TRUE) THEN
+
+				CELBTI_A429ChConfig(boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore, channelNumber,
+						        boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].channel[ANY_TO_DINT(channelNumber+1)].ctrlFlags);
+
+				IF (CELBTI_A429ChConfig.ERR_CODE = OK) THEN
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].channel[ANY_TO_DINT(channelNumber+1)].isChannelUsed := TRUE;
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].channel[ANY_TO_DINT(channelNumber+1)].channelType := CELBTI_ChTypeA429;
+				ELSE
+					err_code := CELBTI_A429ChConfig.ERR_CODE;
+					EXIT;
+				END_IF;
+			END_IF;
+
+			currentHCore		:= boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore;
+			currentParameter	:= READ_ARINC429LABEL_DATA.parameter;
+			currentDescription	:= READ_ARINC429LABEL_DATA.description;
+			currentUnits		:= READ_ARINC429LABEL_DATA.units;
+			currentOctalLabel	:= READ_ARINC429LABEL_DATA.octalLabel;
+			currentLabel		:= ANY_TO_SINT(OctalLabelToDINT( currentOctalLabel ));
+			currentSDI		:= READ_ARINC429LABEL_DATA.sdi;
+			currentFormat		:= READ_ARINC429LABEL_DATA.format;
+			currentScalingFactor	:= READ_ARINC429LABEL_DATA.scalingFactor;
+			currentNbSigBits	:= READ_ARINC429LABEL_DATA.nbSigBits;
+			currentRXTX		:= READ_ARINC429LABEL_DATA.RXTX;
+			currentMinInterval	:= READ_ARINC429LABEL_DATA.minInterval;
+			currentMaxInterval	:= READ_ARINC429LABEL_DATA.maxInterval;
+			currentArincChannel	:= READ_ARINC429LABEL_DATA.arincChannel;
+			currentSM		:= READ_ARINC429LABEL_DATA.statusMatrix;
+			currentDefaultValue	:= READ_ARINC429LABEL_DATA.defaultValue;
+				
+			CASE (currentRXTX) OF
+
+			ARINC_RX:
+				CELBTI_A429RegisterReceiveMsg(currentHCore, channelNumber, currentLabel, currentSDI,
+							       currentFormat, currentScalingFactor, currentNbSigBits);
+				IF (CELBTI_A429RegisterReceiveMsg.ERR_CODE <> OK) THEN
+					err_code := CELBTI_A429RegisterReceiveMsg.ERR_CODE;
+
+					EXIT;
+				ELSE
+					CASE (currentArincChannel) OF
+					ARINC_CHA:
+						A429InCHACounter := A429InCHACounter + 1;
+						A429IN_CHA[A429InCHACounter].hMsg	 := CELBTI_A429RegisterReceiveMsg.hMsg;
+						A429IN_CHA[A429InCHACounter].label       := currentOctalLabel;
+						A429IN_CHA[A429InCHACounter].SDI         := currentSDI;
+						A429IN_CHA[A429InCHACounter].Format	 := currentFormat;
+						Record_Parameter_Index(currentDescription, A429InCHACounter);
+					ARINC_CHB:
+						A429InCHBCounter := A429InCHBCounter + 1;
+						A429IN_CHB[A429InCHBCounter].hMsg	 := CELBTI_A429RegisterReceiveMsg.hMsg;
+						A429IN_CHB[A429InCHBCounter].label       := currentOctalLabel;
+						A429IN_CHB[A429InCHBCounter].SDI         := currentSDI;
+						A429IN_CHB[A429InCHBCounter].Format	 := currentFormat;
+						Record_Parameter_Index(currentDescription, A429InCHBCounter);
+					END_CASE;
+				END_IF;
+			ARINC_TX:
+				CELBTI_A429RegisterTransmitMsg(currentHCore, channelNumber, currentLabel, currentSDI,
+								currentFormat, currentScalingFactor, currentNbSigBits,
+								currentMinInterval, currentMaxInterval);
+
+				IF (CELBTI_A429RegisterTransmitMsg.ERR_CODE <> OK) THEN
+					err_code := CELBTI_A429RegisterTransmitMsg.ERR_CODE;
+
+					EXIT;
+				ELSE
+					CASE (currentArincChannel) OF
+					ARINC_CHA:
+						A429OutCHACounter := A429OutCHACounter + 1;
+						A429OUT_CHA[A429OutCHACounter].hMsg	   	:= CELBTI_A429RegisterTransmitMsg.hMsg;
+						A429OUT_CHA[A429OutCHACounter].label	   	:= currentOctalLabel;
+						A429OUT_CHA[A429OutCHACounter].SDI	   	:= currentSDI;
+						A429OUT_CHA[A429OutCHACounter].Format	   	:= currentFormat;
+						A429OUT_CHA[A429OutCHACounter].SM          	:= currentSM;
+						A429OUT_CHA[A429OutCHACounter].defaultValue	:= currentDefaultValue;
+
+						IF ((currentDefaultValue <> '') AND 
+						    (LEFT(currentDefaultValue,1) <> '%') AND
+						    (RIGHT(currentDefaultValue,1) <> '%')) THEN
+							A429OUT_CHA[A429OutCHACounter].engUnit := ANY_TO_REAL(currentDefaultValue);
+							A429OUT_CHA[A429OutCHACounter].data    := ANY_TO_DINT(currentDefaultValue);
+						END_IF;
+					ARINC_CHB:
+						A429OutCHBCounter := A429OutCHBCounter + 1;
+						A429OUT_CHB[A429OutCHBCounter].hMsg	   	:= CELBTI_A429RegisterTransmitMsg.hMsg;
+						A429OUT_CHB[A429OutCHBCounter].label	   	:= currentOctalLabel;
+						A429OUT_CHB[A429OutCHBCounter].SDI	   	:= currentSDI;
+						A429OUT_CHB[A429OutCHBCounter].Format	   	:= currentFormat;
+						A429OUT_CHB[A429OutCHBCounter].SM          	:= currentSM;
+						A429OUT_CHB[A429OutCHBCounter].defaultValue	:= currentDefaultValue;
+
+						IF ((currentDefaultValue <> '') AND 
+						    (LEFT(currentDefaultValue,1) <> '%') AND
+						    (RIGHT(currentDefaultValue,1) <> '%')) THEN
+							A429OUT_CHB[A429OutCHBCounter].engUnit := ANY_TO_REAL(currentDefaultValue);
+							A429OUT_CHB[A429OutCHBCounter].data    := ANY_TO_DINT(currentDefaultValue);
+						END_IF;
+					END_CASE;
+				END_IF;
+			END_CASE;
+		END_IF;
+
+		READ_ARINC429LABEL_DATA( hdle_arinc429label_data );
+
+	END_WHILE;
+
+	CLOSE_ARINC429LABEL_DATA( hdle_arinc429label_data );
+END_IF;
+
+
+
+END_FUNCTION_BLOCK

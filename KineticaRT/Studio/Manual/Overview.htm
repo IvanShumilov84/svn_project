@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Overview - KineticaRT Studio</title>
+		<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+		<link href="Manual.css" rel="Stylesheet">
+	</head>
+	<body>
+		<H2>Overview</H2>
+		<P>A KineticaRT Studio application is located in a folder on your file 
+			system.&nbsp; The&nbsp;application can be installed simply by copying this 
+			folder onto the target machine.&nbsp; The application folder contains:</P>
+		<UL>
+			<LI>
+			An executable ".exe"&nbsp;file - the user opens this to start the application
+			<LI>
+			A number of executable ".dll" files - these contain the executable code for the 
+			application
+			<LI>
+			A project file - defines what to load and various project settings
+			<LI>
+			A number of window files which define the GUI display windows.
+			<LI>
+			A number of channel files which define data sources, processing components etc
+			<LI>
+			A number of sequence files with define the test sequences etc
+			<LI>
+				A number of panel files which define the GUI control panels displayed in 
+				windows.</LI></UL>
+		<H3>Application Structure</H3>
+		<center><img src="ApplicationStructure.gif" /></center>
+				
+		<H3>Executable .exe File</H3>
+		<img src="Application.gif" width="174" height="48">
+		<P>This is the file that the user opens to run the application.</P>
+		<P>You can also use a shortcut to this file to open the application.&nbsp; It is 
+			normal to place a shortcut in the Windows Start menu / Program Files 
+			directory&nbsp; (E.g. C:\Documents and Settings\All Users\Start 
+			Menu\Programs\YourCompany).</P>
+		<P>The file may be renamed if you wish to give your application a different 
+			name.&nbsp; The application will need to open a project (.ksp) file&nbsp;to 
+			obtain its configuration information; by default this has the same name as the 
+			.exe file so if you are renaming the .exe file then rename the .ksp file as 
+			well.</P>
+		<P>If you are using Visual Studio then you can replace this file by your own 
+			version which loads other software as well as the KineticaRT.Studio.Project.</P>
+		<H3>Executable .dll Files</H3>
+		<P>These contain the executable code for the KineticaRT Studio application and all 
+			its components.&nbsp; When you are installing your application these 
+			should&nbsp;be copied into the application directory.&nbsp; A few of these .dll 
+			files may require extra installation; for example the OpcClient has some COM 
+			dlls as well as the .NET dll since OPC is a COM protocol, the COM dlls will 
+			need to be registered with the Windows regsrvr32.exe.</P>
+		<H3>The Project File</H3>
+		<P>This contains some project settings and a list of other files to load as part of 
+			this project including window, channel and sequence files.</P>
+		<P>When you run the application it will load one project file which by default has 
+			the same name as the .exe file.</P>
+		<P>If you want to have more than one project, it is recommended that you copy the 
+			entire application folder and optionally rename the executable and project 
+			files in the copy.&nbsp; You may however just copy the project and .exe files 
+			and rename them thus sharing the same window, channel and sequence files 
+			between projects.</P>
+		<H3>Window Files</H3>
+		<P><IMG src="Window.gif" DESIGNTIMEDRAGDROP="87" width="269" height="162"></P>
+		<P>Each window file contains a definition of a window.&nbsp; This includes some 
+			window settings and a list&nbsp;of panels&nbsp;displayed in the&nbsp;window.</P>
+		<H3>Channel&nbsp;Files</H3>
+		<P>Each channel file contains a list of channels to be included in the project.</P>
+		<P>Some examples of channels:</P>
+		<UL>
+			<LI>
+			Text Variables
+			<LI>
+			Numeric Variables
+			<LI>
+			Numeric Constants
+			<LI>
+			Expressions
+			<LI>
+			Filters
+			<LI>
+			Thresholds
+			<LI>
+				OPC Items (Send and&nbsp;receive&nbsp;data to&nbsp;and&nbsp;from&nbsp;OPC 
+				servers)</LI></UL>
+		<H3>Sequence&nbsp;Files</H3>
+		<P>Each sequence file contains a single sequence.</P>
+		<P>Sequences are either C# or Visual Basic source code files which KineticaRT 
+			Studio compiles into&nbsp;.dll executable files which it then loads and 
+			executes.</P>
+		<P>The sequences are genuine .NET executables which have access to the full .NET 
+			facilities so anything is possible.&nbsp; Since they are compiled, they will 
+			execute as fast as any other .NET executable so performance should not be a 
+			problem.</P>
+		<P>In addition to the standard .NET facilities, some features have been added to 
+			simplify the writing of test sequences. For example the wait function allows 
+			you to pause the sequence until one of the channels defined in the channel 
+			files meets a condition.</P>
+		<P>E.g. (in C# format):</P>
+		<code>StartEngine () ;<br>
+			<br>
+			// Allow engine to settle before starting test<br>
+			Wait ("EngineStarted") ;<br>
+			DesiredEngineSpeed = 800 ;<br>
+			Wait ("EngineSpeed &lt; 850") ;<br>
+			<br>
+			// Do tests<br>
+			StartIdleTest () ; </code>
+		<H3>Panel Files</H3>
+		<P>Each panel file defines part of a window and may be used in more than one 
+			window.
+		</P>
+		<P>One use for panel files is to define the contents of a tab on a window.</P>
+		<P>The following example is set up for use with two monitors. There are two 
+			windows, one for each monitor. There is a main (control) panel on the right 
+			monitor and two display panels on the left monitor.&nbsp; The display panels 
+			are replicated in the right window so that you can&nbsp;select any combination 
+			of two display panels to view at once.</P>
+		<P><IMG src="TwoWindows.gif" width="619" height="236"></P>
+		<P>A panel can contain sub-panels for if you wish to share a part of a panel with 
+			other panels.</P>
+		<P>The panel files are stored as .dll files containing executable code and should 
+			not be edited.&nbsp; When the panel files are saved, a C# (.cs) source 
+			code&nbsp;version of the&nbsp;file is also saved.&nbsp; It is not recommended 
+			that you modify the .cs file since your changes may be lost the next time the 
+			panel is saved.&nbsp; Both the .dll and .cs files can be used in your own 
+			Visual Studio applications if you wish (A design time license&nbsp;would 
+			be&nbsp;required for all KineticaRT components used).</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

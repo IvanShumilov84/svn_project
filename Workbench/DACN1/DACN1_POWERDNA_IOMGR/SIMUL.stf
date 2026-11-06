@@ -1,0 +1,37 @@
+PROGRAM SIMUL
+IF SIMUL_MODE = TRUE OR SIMULATION_DATA = TRUE  THEN
+	Count_Set_Speed := Count_Set_Speed + 1;
+
+
+	(*
+	 * 20 Update/sec = 20Hz = 50ms/update
+	 *)
+	IF Count_Set_Speed >= ( 50 / (ANY_TO_DINT( __SYSVA_TCYCYCTIME )+1) ) THEN
+	
+		FOR index := 1 TO 50 BY 1 DO
+			IF P[index].value 	> 10000.0 THEN
+				P[index].value		:= 0.0;
+				P[index].mean_value	:= 0.0;
+			END_IF;				
+			P[index].value		:= P[index].value + 0.50;
+			P[index].mean_value	:= P[index].mean_value + 0.50;
+		END_FOR;
+
+		FOR index := 1 TO 50 BY 1 DO
+			IF T[index].value 	> 10000.0 THEN
+				T[index].value		:= 0.0;
+				T[index].mean_value	:= 0.0;
+			END_IF;	
+			T[index].value		:= T[index].value + 0.50;
+			T[index].mean_value	:= T[index].mean_value + 0.50;
+		END_FOR;
+	
+		Count_Set_Speed := 0;
+	END_IF;
+END_IF;
+
+
+
+
+
+END_PROGRAM

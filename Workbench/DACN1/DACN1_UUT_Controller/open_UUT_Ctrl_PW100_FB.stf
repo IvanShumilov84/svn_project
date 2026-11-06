@@ -1,0 +1,96 @@
+FUNCTION_BLOCK open_UUT_Ctrl_PW100_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_PW100_FB									
+														
+	Description :	Code for importing Speed,INLET, EGT and InterTurbine static Data, for PW100 Engines to the Workbench at Opening.
+    
+
+	Dependacy : 	
+
+					HISTORY
+	Rev			Date			Name			Description
+		     		(YYYY/MM/DD)
+
+	1.0	         	2015/09/ 		?.....		First Release
+	2.0	         	2015/09/23		A. Armand		Added :  Engine Model handling, and Probes number for Project 14086
+	2.1	         	2015/09/23		A. Armand		Update :  T5 probes renamed to T6 for Project 14086
+	
+************************************************************************************************************************************************)	
+
+		(* Parameters are retrieved from XML(.cfg) file by engine model *)
+		Prefix_String :=  'ConfigurationSettings.' + UUT_INFO.Model + '.';
+
+
+		(* SPEED *)
+		NL_INDEX 			:= ReadOneIntegerConfigItemST(Prefix_String + 'NL_INDEX', '0');
+		NL_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'NL_BINDING_SOURCE', '0'));
+		NL_100_RPM 			:= ReadOneRealConfigItemST( Prefix_String + 'NL_100_RPM_CONSTANT', '0');
+		NL_100_FREQ 		:= ReadOneRealConfigItemST( Prefix_String + 'NL_100_FREQ_CONSTANT', '0');
+
+		NH_INDEX 			:= ReadOneIntegerConfigItemST( Prefix_String + 'NH_INDEX', '0');
+		NH_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'NH_BINDING_SOURCE', '0'));
+		NH_100_RPM 			:= ReadOneRealConfigItemST( Prefix_String + 'NH_100_RPM_CONSTANT', '0');
+		NH_100_FREQ 		:= ReadOneRealConfigItemST( Prefix_String + 'NH_100_FREQ_CONSTANT', '0');
+
+		NPT_INDEX 			:= ReadOneIntegerConfigItemST( Prefix_String + 'NPT_INDEX', '0');
+		NPT_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'NPT_BINDING_SOURCE', '0'));
+		NPT_100_RPM 		:= ReadOneRealConfigItemST( Prefix_String + 'NPT_100_RPM_CONSTANT', '0');
+		NPT_100_FREQ 		:= ReadOneRealConfigItemST( Prefix_String + 'NPT_100_FREQ_CONSTANT', '0');
+
+
+		
+		(* T_INLET *)
+		T_T1_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_T1_PROBE_BINDING_SOURCE', '0'));
+		T_T1_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( Prefix_String + 'T_T1_NUMBER_PROBE', '0');
+
+		
+		FOR i:=1 TO T_T1_NUMBER_PROBE BY 1 DO
+			
+			T_T1_PROBE_INDEX[i] 	:= ReadOneIntegerConfigItemST( Prefix_String + 'T_T1_PROBE_INDEX' + ANY_TO_STRING(i), '0');
+
+		END_FOR;
+
+		
+
+		(* TT3 *)
+		T_T3_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_T3_PROBE_BINDING_SOURCE', '0'));
+		T_T3_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( Prefix_String + 'T_T3_NUMBER_PROBE', '0');
+
+		T_T3_PROBE_INDEX[1] 		:= ReadOneIntegerConfigItemST( Prefix_String + 'T_T3_PROBE_INDEX1', '0');
+
+
+		(* T_EGT *)
+		T_T8_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_T8_PROBE_BINDING_SOURCE', '0'));
+		T_T8_NUMBER_PROBE   		:= ReadOneIntegerConfigItemST( Prefix_String + 'T_T8_NUMBER_PROBE', '0');
+
+		FOR i:=1 TO T_T8_NUMBER_PROBE BY 1 DO
+			
+			T_T8_PROBE_INDEX[i] 	:= ReadOneIntegerConfigItemST( Prefix_String + 'T_T8_PROBE_INDEX' + ANY_TO_STRING(i), '0');
+
+		END_FOR;
+
+		
+		(* ITT ARINC INDEX *)
+		(*ITT_ARINC_INDEX 		:= ReadOneIntegerConfigItemST( Prefix_String + 'ITT_ARINC_INDEX', '0'); *)
+		T_T6_INDEX 				:= ReadOneIntegerConfigItemST( Prefix_String + 'T_T6_INDEX', '0');
+
+		T6_TRIP_START_TRIMMED		:= ReadOneRealConfigItemST( Prefix_String + 'T6_TRIP_START_TRIMMED', '0');
+		T6_TRIP_START_UNTRIMMED		:= ReadOneRealConfigItemST( Prefix_String + 'T6_TRIP_START_UNTRIMMED', '0');
+		T6_TRIP_SS_TRIMMED		:= ReadOneRealConfigItemST( Prefix_String + 'T6_TRIP_SS_TRIMMED', '0');
+		T6_TRIP_SS_UNTRIMMED		:= ReadOneRealConfigItemST( Prefix_String + 'T6_TRIP_SS_UNTRIMMED', '0');
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

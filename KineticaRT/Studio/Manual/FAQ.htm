@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:o>
+	<head>
+		<title>Frequently Asked Questions - KineticaRT Studio</title>
+		<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+		<LINK href="Manual.css" rel="Stylesheet"></head>
+	<body>
+		<H2>Frequently Asked Questions</H2>
+		<H3>Configuration</H3>
+		<OL class="QuestionAnswer">
+			<LI class="QuestionAnswer">
+				<STRONG>Why does the screen display sometimes pause for a brief period? </STRONG>
+			The most common cause is that the operating system is displaying a menu or 
+			tooltip and has paused all screen updates while performing a "Transition 
+			Effect".&nbsp; You can disable "Transition Effect"s in the Windows Control 
+			Panel / Display / Appearance / Effects... / Use transition effects.&nbsp; This 
+			will cure this cause of the&nbsp;problem.
+			<LI class="QuestionAnswer">
+				<STRONG>Why does my control not set the value of the channel it is connected to? </STRONG>
+			The most common reason is that it is setting the value of something else with 
+			the same name.&nbsp; For example if your control has the same name as your 
+			channel, the control will connect to itself since it is more local to itself 
+			than to the channel.&nbsp; You can prefix the channels by their collection 
+			names to avoid this problem.&nbsp; E.g. "MyChannels.MyChannel".
+			<LI class="QuestionAnswer">
+				<B>What is the difference between a Channel and Variable types</B>?<BR>
+			The Channel classes are simple classes suitable for use as base classes for all 
+			other channels.&nbsp; The Variable classes are based on the Channel classes and 
+			have extra functionality, mainly the ability to save and restore their values 
+			in configuration files.
+			<LI class="QuestionAnswer">
+				<B>How do you set a Constant channel</B>?<BR>
+			Constant channels are constant and cannot be set.&nbsp; Their value is defined 
+			when they are created.&nbsp; If they are created from a KineticaRT Studio 
+			channel file then the value is obtained from the channel file and can only be 
+			modified by editing the channel file, “.ksc”, before the constant is 
+			created.&nbsp; Currently there is no&nbsp;editor available although it is 
+			possible to use&nbsp;notepad or Visual Studio.
+			<LI class="QuestionAnswer">
+				<B>Can I undo property changes in the Frame Editor?<BR>
+				</B>
+			Unfortunately any property changes made from the property editor cannot be 
+			undone.&nbsp; Microsoft Visual Studio has the same problem.&nbsp;
+			<LI class="QuestionAnswer">
+				<B>Why can't I drop channels onto my control?</B><BR>
+				You can drop channels from the Explorer window and from the channel list but 
+				only when not in edit mode at the moment.<BR>
+			You may need to enable drag and drop, “AllowDrop= True”,on the display control, 
+			some controls have it disabled by default.
+			<LI class="QuestionAnswer">
+				<B>Drop Always seems to set source, is there any way to drop onto destination?<BR>
+				</B>
+			This is&nbsp;dependent on the component.&nbsp; The KineticaRT.Studio button 
+			sets both source and destination.
+			<LI class="QuestionAnswer">
+				<B>What is the difference between Source and SourceChannel</B>?<BR>
+				The Source property should be set to the name of a channel (a string) and the 
+				control will do a search for the channel.&nbsp;<BR>
+			The SourceChannel property should be set to a reference to a channel 
+			object.&nbsp;&nbsp;This is not normally used within KineticaRT 
+			Studio.&nbsp;&nbsp;
+			<LI class="QuestionAnswer">
+				<B>Can you use third party controls within KineticaRT Studio<BR>
+				</B>Yes as long as they are .Net compatible.&nbsp;
+				<BR>
+				Note: There is limited support for designers within KineticaRT Studio so not 
+				all controls will be fully usable without some form of wrapper.&nbsp; You are 
+				likely to want some form of wrapper anyway so that your customers can just drop 
+				them on the screen and have them connected and working without having to add 
+				code.&nbsp;&nbsp;Visual Studio can be used to write the wrappers.<BR>
+			Note: ActiveX controls can normally be used as well but a simple Visual Studio 
+			wrapper will almost certainly be required.&nbsp; Use .Net versions if there is 
+			a choice.
+			<LI class="QuestionAnswer">
+				<B>Cannot edit sequences with Notepad.<BR>
+				</B>Sometimes&nbsp;sequences have been edited with an editor that doesn’t 
+				include linefeed characters.&nbsp; If you put them back in then notepad can be 
+				used.&nbsp;
+			</LI>
+		</OL>
+		<H3>Licensing</H3>
+		<OL class="QuestionAnswer">
+			<LI class="QuestionAnswer">
+				<B>Does KineticaRT Studio include KineticaRT Components?</B><BR>
+				A KineticaRT Studio license will allow use of all KineticaRT components used by 
+				KineticaRT Studio components.&nbsp; E.g. the KineticaRT dial is used by the 
+				KineticaRT Studio dial component and is included in a KineticaRT Studio 
+				license.</LI></OL>
+		<H3>Notes</H3>
+		<OL>
+			<LI>
+			If you have a slow onboard graphics card then edit mode can be very slow.&nbsp; 
+			We use Matrox G550 dual head (monitor) graphics cards, often with one 
+			KineticaRT Studio window on each monitor; these graphics cards are reasonably 
+			cheap and worth having.
+			<LI>
+			The .Net Framework must be installed in order to run the KineticaRT 
+			Studio.&nbsp; This can be obtained from Microsoft via Windows Update or from 
+			the KineticaRT web site.&nbsp; No other software is required. No installation 
+			is required.
+			<LI>
+				KineticaRT Studio is not designed to compete with tools such as Visual 
+				Studio.&nbsp; It is designed to work with them during development while 
+				allowing end users to configure their systems without needing or understanding 
+				such tools.&nbsp; During development some things are best done in Visual 
+				Studio, others are best done in KineticaRT Studio.&nbsp; In a simple system 
+				Visual Studio is not required.
+			</LI>
+		</OL>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

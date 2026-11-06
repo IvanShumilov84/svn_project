@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>KineticaRT OPC Client</title>
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+		<meta content="FrontPage.Editor.Document" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<LINK href="Manual.css" rel="Stylesheet"></head>
+	<body>
+		<h2>KineticaRT OPC Client</h2>
+		<H3>Features</H3>
+		<P>The KineticaRT OPC Client component provides a connection to any OPC DA 2.0 
+			compatible OPC servers.</P>
+		<P>There are thousands of OPC servers available from many different suppliers. 
+			These servers allow access to data from many sources including equipment 
+			containing Plant Floor data such as PLC devices and Analog IO cards.</P>
+		<P>The KineticaRT OPC Client consists of three separate components which
+        correspond to the components of the OPC specifications:</P>
+		<H4>Client Component</H4>
+		<P>This component makes the connection to the OPC server.&nbsp;
+		</P>
+		<P>It requires the name of the OPC server.</P>
+		<H4>Group Component</H4>
+		<P>This connects to a client (above) and sets up a group of channels.&nbsp; Each 
+			group then has its own update rate and DeadBand properties.</P>
+		<H4>Item Component</H4>
+		<P>This is an individual channel containing a value.&nbsp; It must be connected to a 
+			group (above) and requires the ItemID property to be set to the name of the 
+			channel as known by the OPC Server.</P>
+		<P>You can connect display components such as the Dial directly to the item 
+			components.</P>
+		<P>There are actually two types of item.&nbsp; The "Item" has properties
+        associated with a numerical channel such as Minimum and Maximum which are required for a 
+			Dial to scale itself.&nbsp; The "TextItem" has properties associated
+        with text 
+			(string) channels.</P>
+		<H3>Configuration</H3>
+		<P>The OPC Client will always connect to the server using an Async connection so 
+			that the server will only send updated channel values as required instead of 
+			having to continuously poll for new values.&nbsp; If you are connecting to a 
+			server on a remote machine (across&nbsp;a network) then the server must be 
+			registered as a COM server in the registry on the local machine and Windows 
+			security must be configured to allow the connection and to allow the remote 
+			server to make the asynchronous calls back to the local machine.</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

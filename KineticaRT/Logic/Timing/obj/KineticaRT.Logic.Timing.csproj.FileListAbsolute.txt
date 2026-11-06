@@ -1,0 +1,59 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.FaultStrings.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.Logic.Timing.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.Logic.Timing.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.FaultStrings.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.pdb
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.dll
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.pdb
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.dll
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.pdb
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.xml
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.FaultStrings.resources
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.dll
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.pdb
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.FaultStrings.resources
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.pdb
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.Logic.Timing.dll
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.Logic.Timing.pdb
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.dll
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.xml
+C:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.dll
+C:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.XML
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.dll
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.pdb
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.dll
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.pdb
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.xml
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.FaultStrings.resources
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.dll
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Debug\KineticaRT.Logic.Timing.pdb
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.Logic.Timing.dll
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.Logic.Timing.pdb
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.dll
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Release\KineticaRT.xml
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.FaultStrings.resources
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.dll
+D:\KineticaRT\KineticaRT\Logic\Timing\obj\Release\KineticaRT.Logic.Timing.pdb
+D:\KineticaRT\KineticaRT\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.XML

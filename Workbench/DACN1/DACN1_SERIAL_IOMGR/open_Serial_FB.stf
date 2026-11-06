@@ -1,0 +1,176 @@
+FUNCTION_BLOCK open_Serial_FB
+(************************************************************************************************************************************************
+    Name :        open_Serial_IOMgr_FB                                    
+                                                        
+    Description :    Open all serial port of networked system, rdata, CSV Files and Archiving Files.                                   
+
+    Dependacy :     
+                    HYSTORY
+
+    Rev        Date        Name        Description
+                (YYYY/MM/DD)
+
+    1.0             2001/05/12        M.Morisset    First Release
+    2.0             2001/11/05        P.Dextraze    Add OPEN_RDATA CALL 
+    3.0             2004/12/09        N. Sangiovanni    Adapt for CELDAS200 Generation
+
+************************************************************************************************************************************************)    
+
+(* Open all serial port based on the type of networked device *)
+
+    status   := OPENING;
+    dummy    := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: OPENING');
+    err_code := OK;
+	
+    FOR i:= 1 TO MAX_PORTS BY 1 DO 
+    
+        ser_ports[i].fd          := SPARE;
+        ser_ports[i].nb_channels := 0;
+
+		FOR index := 1 TO 64 DO
+			FV[i].FV_Type_index[index] 	:= 0;
+			FV[i].Data_handle[index] 	:= 0;
+		END_FOR;
+
+    END_FOR;
+
+	IF(In_Serial_IOMgr.mode = RUN_FOR_TRUE) THEN 
+
+		XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+		hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+		IF hCfgSettings <> 0 THEN
+
+			SERIAL_PORT_NUMBER := ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_IOMGR.SERIAL_PORT_NUMBER', '0');
+
+	    		FOR i:= 1 TO SERIAL_PORT_NUMBER BY 1 DO
+				SERIAL_PORT_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_INDEX', '0');
+				SERIAL_PORT_NAME		:= ReadOneStringConfigItemST(  'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_NAME', '0');
+				SERIAL_PORT_BAUD_RATE	:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_BAUD_RATE', '0');
+				SERIAL_PORT_DATA_BITS	:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_DATA_BITS', '0');
+				SERIAL_PORT_STOP_BITS	:= ReadOneIntegerConfigItemST(  'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_STOP_BITS', '0');
+				SERIAL_PORT_PARITY		:= ReadOneStringConfigItemST( 'ConfigurationSettings.RESSOURCE.DACN1_SERIAL_IOMGR.SERIAL_PORT_' + ANY_TO_STRING(i) +'_PARITY', '0');
+
+	
+				OPEN_SER_PORT(SERIAL_PORT_NAME, SERIAL_PORT_BAUD_RATE, SERIAL_PORT_DATA_BITS, SERIAL_PORT_STOP_BITS, SERIAL_PORT_PARITY, RAW_PORT);
+				ser_ports[SERIAL_PORT_INDEX].fd 			:= OPEN_SER_PORT.FD; 
+				ser_ports[SERIAL_PORT_INDEX].port_disable 	:= disable_serial_port[SERIAL_PORT_INDEX];
+				ser_ports[SERIAL_PORT_INDEX].port_description 	:= SERIAL_PORT_NAME;
+
+		    END_FOR;
+
+		ELSE
+
+			err_code := ERROR_ON_OPENING;
+			dummy := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+		END_IF; 
+	
+    END_IF;
+
+
+    OPEN_RDATA(400);
+    err_code   := OPEN_RDATA.ERR_CODE;
+    rdata_base := OPEN_RDATA.BASE_HANDLE;
+    
+    
+	hdle_bool_data := -1;
+	hdle_real_data := -1;
+
+
+	IF err_code = OK THEN
+
+        OPEN_BOOL_DATA( '/usr/v2000/app/DACN1_BOOL_SERIAL_CSV.csv' );
+
+        hdle_bool_data := OPEN_BOOL_DATA.handle ;
+        err_code       := OPEN_BOOL_DATA.errcode;
+
+    END_IF;
+
+
+    IF err_code = OK THEN
+
+        OPEN_REAL_DATA( '/usr/v2000/app/DACN1_REAL_SERIAL_CSV.csv' );
+
+        hdle_real_data := OPEN_REAL_DATA.handle ;
+        err_code       := OPEN_REAL_DATA.errcode;
+
+    END_IF;
+        
+
+    First_Time_Close := TRUE;
+
+    IF (err_code <> OK) THEN 
+
+        status := ERROR_ON_OPENING;
+        dummy  := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: ERROR ON OPENING'); 
+   
+    ELSE
+
+        status := OPENED;
+        dummy  := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: OPENED');
+
+    END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

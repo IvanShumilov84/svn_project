@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Performance>
+
+  <Engine>
+    <Model>PW306A ANC</Model>
+    <SN>XX1000</SN>
+    <TESTDATE>22/07/2015</TESTDATE>
+  </Engine>
+
+  <ChannelMap>
+    <Channel>
+      <Parameter>SG</Parameter>    <Name>SG_FUEL_SAMPLE</Name>      <FVName>VIN7</FVName>      <Units>None</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[7].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIF</Parameter>      <Name>FUEL_TEMP_DEGF</Name>      <FVName>T51</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.t[51].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>N1_RPM</Parameter>      <Name>N1_HZ</Name>      <FVName>F1</FVName>      <Units>HZ</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.f[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>N2_RPM</Parameter>      <Name>N2_HZ</Name>      <FVName>F2</FVName>      <Units>HZ</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>FN</Parameter>      <Name>TRUST_FRAME_LBF</Name>      <FVName>VIN6</FVName>      <Units>LBF</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[6].mean_value</ItemID>
+    </Channel>
+    <!--This signal WF2 requires to be changed directly using IsaGraf not working with CELTestPerf-->
+    <Channel>
+      <Parameter>WF2</Parameter>      <Name>FUEL_MASS_FLOW</Name>      <FVName>F5</FVName>      <Units>PPH</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.f[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PSN</Parameter>      <Name>BARO_PRESSURE_PSIA</Name>      <FVName>P1</FVName>      <Units>PSIA</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.p[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>VIGV_CHA</Parameter>      <Name>VARIABLE_INLET_GUIDE_VANE_ARINC_CHA</Name>      <FVName>UART_IGV_CHA</FVName>      <Units>Deg</Units>      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[16].engunit</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>VIGV_CHB</Parameter>      <Name>VARIABLE_INLET_GUIDE_VANE_ARINC_CHB</Name>      <FVName>UART_IGV_CHB</FVName>      <Units>Deg</Units>      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_chb[16].engunit</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P1A-1</Parameter>      <Name>BELMOUTH_1_PSIA</Name>      <FVName>P4</FVName>      <Units>PSIA</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.p[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P1A-2</Parameter>      <Name>BELMOUTH_2_PSIA</Name>      <FVName>P5</FVName>      <Units>PSIA</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.p[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PS3</Parameter>      <Name>COMPRESSOR_PRESSURE_PSIA</Name>      <FVName>P3</FVName>      <Units>PSIA</Units>      <ItemID>dacn1.dacn1_nidaq_iomgr.p[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T45_CHA</Parameter>      <Name>T45_CHA_DEGC</Name>      <FVName>ARINC_T45_CHA</FVName>      <Units>DegC</Units>      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[3].engunit</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T45_CHB</Parameter>      <Name>T45_CHB_DEGC</Name>      <FVName>ARINC_T45_CHB</FVName>      <Units>DegC</Units>      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_chb[3].engunit</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-1</Parameter>      <Name>Tt6-1_DEGF</Name>      <FVName>T1</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-2</Parameter>      <Name>Tt6-2_DEGF</Name>      <FVName>T2</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-3</Parameter>      <Name>Tt6-3_DEGF</Name>      <FVName>T3</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-4</Parameter>      <Name>Tt6-4_DEGF</Name>      <FVName>T4</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-5</Parameter>      <Name>Tt6-5_DEGF</Name>      <FVName>T5</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-6</Parameter>      <Name>Tt6-6_DEGF</Name>      <FVName>T6</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[6].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-7</Parameter>      <Name>Tt6-7_DEGF</Name>      <FVName>T7</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[7].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-8</Parameter>      <Name>Tt6-8_DEGF</Name>      <FVName>T8</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[8].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-9</Parameter>      <Name>Tt6-9_DEGF</Name>      <FVName>T9</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[9].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-10</Parameter>      <Name>Tt6-10_DEGF</Name>      <FVName>T10</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[10].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-11</Parameter>      <Name>Tt6-11_DEGF</Name>      <FVName>T11</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[11].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-12</Parameter>      <Name>Tt6-12_DEGF</Name>      <FVName>T12</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[12].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-13</Parameter>      <Name>Tt6-13_DEGF</Name>      <FVName>T13</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[13].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-14</Parameter>      <Name>Tt6-14_DEGF</Name>      <FVName>T14</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[14].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-15</Parameter>      <Name>Tt6-15_DEGF</Name>      <FVName>T15</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[15].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-16</Parameter>      <Name>Tt6-16_DEGF</Name>      <FVName>T16</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[16].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-17</Parameter>      <Name>Tt6-17_DEGF</Name>      <FVName>T17</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[17].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-18</Parameter>      <Name>Tt6-18_DEGF</Name>      <FVName>T18</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[18].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-19</Parameter>      <Name>Tt6-19_DEGF</Name>      <FVName>T19</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[19].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-20</Parameter>      <Name>Tt6-20_DEGF</Name>      <FVName>T20</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[20].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-21</Parameter>      <Name>Tt6-21_DEGF</Name>      <FVName>T21</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[21].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-22</Parameter>      <Name>Tt6-22_DEGF</Name>      <FVName>T22</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[22].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-23</Parameter>      <Name>Tt6-23_DEGF</Name>      <FVName>T23</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[23].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-24</Parameter>      <Name>Tt6-24_DEGF</Name>      <FVName>T24</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[24].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-1</Parameter>      <Name>Tt1-1_DEGF</Name>      <FVName>T34</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[34].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-2</Parameter>      <Name>Tt1-2_DEGF</Name>      <FVName>T35</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[35].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-3</Parameter>      <Name>Tt1-3_DEGF</Name>      <FVName>T36</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[36].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-4</Parameter>      <Name>Tt1-4_DEGF</Name>      <FVName>T37</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[37].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-5</Parameter>      <Name>Tt1-5_DEGF</Name>      <FVName>T38</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[38].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-6</Parameter>      <Name>Tt1-6_DEGF</Name>      <FVName>T39</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[39].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-7</Parameter>      <Name>Tt1-7_DEGF</Name>      <FVName>T40</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[40].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-8</Parameter>      <Name>Tt1-8_DEGF</Name>      <FVName>T41</FVName>      <Units>DegF</Units>      <ItemID>dacn1.dacn1_powerdna_iomgr.t[41].mean_value</ItemID>
+    </Channel>
+    
+    <!--This does not work with DIN or DOUT check CELTestPerf\Data\GTCP131-9A  GTCP131-9A_PERF_TEST - 12917 Revima.xml -->
+    <Channel>
+      <Parameter>IN23</Parameter>      <Name>DIN23_BOOL</Name>      <FVName>DIN23</FVName>      <ItemID>dacn1.dacn1_serial_iomgr.din[23]</ItemID>
+    </Channel>
+    
+  </ChannelMap>
+
+  <Conditions>
+
+    <Condition>
+      <NO>1</NO>
+      <Description>TEST 0001</Description>
+      <Parameters>
+        <Parameter>
+          <Name>SG</Name>          <Value>0.781</Value>          <Units>None</Units>
+        </Parameter>
+        <Parameter>
+          <Name>TIF</Name>          <Value>104.0000</Value>          <Units>DegF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N1_RPM</Name>          <Value>4262.2176</Value>          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N2_RPM</Name>          <Value>7582.5927</Value>          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>FN</Name>          <Value>3938.5000</Value>          <Units>LBF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>WF2</Name>          <Value>1654.74</Value>          <Units>PPH</Units>
+        </Parameter>
+        <Parameter>
+          <Name>PSN</Name>          <Value>14.3657</Value>          <Units>PSIA</Units>
+        </Parameter>
+        <Parameter>
+          <Name>VIGV_CHA</Name>          <Value>40.1800</Value>          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>VIGV_CHB</Name>          <Value>40.1800</Value>          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-1</Name>          <Value>14.3538</Value>          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-2</Name>          <Value>14.3538</Value>          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>PS3</Name>          <Value>217.9627</Value>          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHA</Name>          <Value>702.1888</Value>          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHB</Name>          <Value>702.1888</Value>          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-1</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-2</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-3</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-4</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-5</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-6</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-7</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-8</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-9</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-10</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-11</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-12</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-13</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-14</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-15</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-16</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-17</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-18</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-19</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-20</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-21</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-22</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-23</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-24</Name>          <Value>1049.9900</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-1</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-2</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-3</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-4</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-5</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-6</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-7</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-8</Name>          <Value>97.2400</Value>          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>IN23</Name>          <Value>True</Value>                
+        </Parameter>
+        
+      </Parameters>
+    </Condition>
+
+  </Conditions>
+
+
+</Performance>

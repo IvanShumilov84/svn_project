@@ -1,0 +1,17 @@
+FUNCTION_BLOCK compute_mx_b_FB
+
+
+	delta_x := x2 - x1;
+
+	IF (delta_x <> 0.0) THEN 
+
+		slope := (y2 - y1) / (x2 - x1);
+
+		offset := y1 - (slope * x1);
+
+	END_IF; 
+
+
+
+
+END_FUNCTION_BLOCK

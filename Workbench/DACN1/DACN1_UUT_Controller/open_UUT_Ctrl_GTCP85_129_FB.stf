@@ -1,0 +1,113 @@
+FUNCTION_BLOCK open_UUT_Ctrl_GTCP85_129_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_GTCP85-129_FB									
+														
+************************************************************************************************************************************************)	
+	IF (err_code <> OK) THEN 
+		status	:= ERROR_ON_OPENING;
+		dummy	:= LOG_MSG('ErrLog', 'open_UUT_Ctrl_GTCP85-129_FB: ERROR ON OPENING');		
+	ELSE
+
+
+		(* NG Speed *)
+		N1_BINDING_SOURCE 		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.N1_BINDING_SOURCE', '0'));
+		N1_INDEX 				:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.N1_INDEX', '0');
+
+		N1_100_RPM 				:= ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP85-129.N1_100_RPM_CONSTANT', '0');
+		N1_100_FREQ 			:= ReadOneRealConfigItemST( 'ConfigurationSettings.GTCP85-129.N1_100_FREQ_CONSTANT', '0');
+
+		(* T_OIL *) (* ft TODO est-ce que c'est a remettre custom par moteur ou par famille pcq on a 2 I/O un sensor et l' autre bulb*)
+		T_OIL_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.T_OIL_PROBE_BINDING_SOURCE', '0'));
+		T_OIL_PROBE_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.T_OIL_PROBE_INDEX', '0');
+		T_OIL_BULB_USED               := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.T_OIL_BULB_USED', '0');
+
+		(* P_OIL *)
+		P_OIL_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.P_OIL_PROBE_BINDING_SOURCE', '0'));
+		P_OIL_PROBE_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.P_OIL_PROBE_INDEX', '0');
+
+		(* RTL *)
+		RTL_DIN_BINDING_SOURCE		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.RTL_DIN_BINDING_SOURCE', '0'));
+		RTL_DIN_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.RTL_DIN_INDEX', '0');
+
+		(* VIB_TURBINE *)
+		VIB_TURBINE_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.VIB_TURBINE_BINDING_SOURCE', '0'));
+		VIB_TURBINE_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.VIB_TURBINE_INDEX', '0');
+
+		(* VIB_GEARBOX *)
+		VIB_GEARBOX_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.VIB_GEARBOX_BINDING_SOURCE', '0'));
+		VIB_GEARBOX_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.VIB_GEARBOX_INDEX', '0');
+
+		(* Starter Contactor Request *)
+		STARTER_REQUEST_IND_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.STARTER_REQUEST_IND_BINDING_SOURCE', '0'));
+		STARTER_REQUEST_IND_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.STARTER_REQUEST_IND_INDEX', '0');
+
+		(* T_INLET *)
+		T_INLET_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.T_INLET_PROBE_BINDING_SOURCE', '0'));
+		T_INLET_NUMBER_PROBE 	      := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.T_INLET_NUMBER_PROBE', '0');
+
+	FOR i:= 1 TO T_INLET_NUMBER_PROBE BY 1 DO
+		T_INLET_PROBE_INDEX[i]        := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.T_INLET_PROBE_INDEX'+ ANY_TO_STRING(i), '0');
+	END_FOR;
+
+
+	(*****************************)
+	(* SECTION CUSTOM PAR MOTEUR *)
+	(*****************************)
+
+
+		T_EGT_TRIP_TYPE			:=  ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.' +  UUT_Info.Model + '.T_EGT_TRIP_TYPE' , '0');
+		LOW_OIL_PRESSURE_INDEX		:=  ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.LOW_OIL_PRESSURE_INDEX' , '0');
+		
+		(* T_ETC *)
+		ETC_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.GTCP85-129.' +  UUT_Info.Model + '.ETC_PROBE_BINDING_SOURCE', '0'));
+		ETC_NUMBER_PROBE			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.' +  UUT_Info.Model + '.ETC_NUMBER_PROBE', '0');
+	FOR i:= 1 TO ETC_NUMBER_PROBE BY 1 DO
+		ETC_ENGINE_PROBE_INDEX[i]     := ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP85-129.' +  UUT_Info.Model + '.ETC_PROBE_INDEX'+ ANY_TO_STRING(i), '0');
+	END_FOR;
+
+
+
+		VibGearboxMax_Value     := 0.0;
+		VibTurbineMax_Value     := 0.0;
+
+
+	END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,144 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Studio.Application.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Studio.Application.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Button.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Display.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Frame.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Indicator.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Servers.Exchange.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Logic.Channels.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Servers.Exchange.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Button.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Display.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Indicator.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Frame.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.About.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.ChannelSelectorEditorControl.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.Configurer.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.EditName.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.EditWindowProperties.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.ExplorerForm.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.Project.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.SequenceSetup.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.Compact.Splash.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.StudioExplorer.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Window.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Studio.Application.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Studio.Application.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Button.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Display.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Frame.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Indicator.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Servers.Exchange.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Logic.Channels.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Servers.Exchange.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.xml
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.xml
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Button.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.xml
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.xml
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Display.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.xml
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Indicator.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Frame.pdb
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.About.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.ChannelSelectorEditorControl.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.Configurer.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.EditName.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.EditWindowProperties.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.ExplorerForm.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.Project.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.SequenceSetup.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.Compact.Splash.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.StudioExplorer.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Window.resources
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.dll
+C:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Studio.Application.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Studio.Application.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Button.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Display.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Frame.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Indicator.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Servers.Exchange.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Logic.Channels.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Servers.Exchange.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.xml
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Explorer.xml
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Button.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Frame.xml
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.xml
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Display.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Controls.Tab.xml
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Indicator.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\bin\Compact\KineticaRT.Compact.Controls.Frame.pdb
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.About.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.ChannelSelectorEditorControl.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.Configurer.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.EditName.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.EditWindowProperties.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.ExplorerForm.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.Project.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.SequenceSetup.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Studio.Application.Compact.Splash.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.StudioExplorer.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Window.resources
+D:\KineticaRT\KineticaRT\Compact\Studio\Application\obj\Compact\KineticaRT.Compact.Studio.Application.csproj.GenerateResource.Cache

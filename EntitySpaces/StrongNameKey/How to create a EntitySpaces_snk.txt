@@ -1,0 +1,10 @@
+Procedure: 
+
+	To create a strong name key file
+
+
+    Click Start, point to Programs, point to Microsoft Visual Studio 2012, point to Visual Studio Tools, and then click Visual Studio 2012 Command Prompt.
+
+    At the command prompt, type cd "C:\My Projects\CELDAS 200\EntitySpaces\StrongNameKey" and press ENTER.
+
+    At the command prompt, type sn -k EntitySpaces.snk, and then press ENTER 

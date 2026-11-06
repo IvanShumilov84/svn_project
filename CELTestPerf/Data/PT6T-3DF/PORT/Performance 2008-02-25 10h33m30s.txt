@@ -1,0 +1,46 @@
+ PWC - PT6 ENGINE PERFORMANCE PROGRAM VERSION 1.2.0 JANUARY, 2005
+ ----------------------------------------------------------------
+ TEST DATE    TEST TIME      TEST CELL      TEST TYPE      WORK ORDER
+ 2008/02/25   10:33          HELI-ONE       Overhaul               
+ ENG S/N  BUILD  COND  TSG (F)   SG     SG BASE   LHV (Btu/lb )
+ TH0383      1      4    66.     0.815  0.791     18500.
+ 1ST STAGE VANE AREA  2ND STAGE VANE AREA  COLD HARNESS RESIS. (ohms)
+   6.61                11.80                     0.00
+ REMARK:                                                   
+ Left (Port) side of twin
+ Exhaust stub part number: NOT_RECORDED        
+
+ NG       NF
+  36126.   32999.
+ BARO (in.Hga) PSN   (in.Hgg) P3 (in.Hga)
+  30.30          0.00          200.90
+ TEMPERATURE TRIM DELTA (F)
+     0.
+ WF1 (lb/h)  WF2 (lb/h)   TF1 (F)   TF2 (F)    ITT (F)
+  454.2       454.2         49.4      49.4     1432.8
+
+ DYNO TQ (lbf-ft)  ENG TQ (lbf-ft)
+  607.668           593.987
+
+ T1 (F)     :   61.7   59.2   61.9   63.5
+ T1 AVG     :   61.6
+
+ T7 (F) PORT: 1073.2 1098.4 1077.9 1059.6
+ T7     STBD:
+ T7 AVG     : 1077.3
+
+
+    PT6T-3DF               TWIN ENGINE RESULTS, LEFT SIDE
+
+      DYNAMOMETER        TORQUE METER
+     SHPN    SFC(CA)    SHPN    SFC(CA)        WF(NCA)     W1N
+    752.32    0.620    735.39    0.634         466.3        6.4273
+
+     N1N     P3N        T5DN         T5AN      T7N
+   36036.8    97.45     1839.        1883.     1529.4
+
+
+        T7: AVG. = 1077.3, SPRD. =    38.8
+
+ RECOMMENDED ITT    TRIM   141. DEG F
+

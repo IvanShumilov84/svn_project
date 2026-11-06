@@ -1,0 +1,88 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN									
+														
+	Description :	Main loop of the OmnibusBox System 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/09	D.Lepage		First Release
+
+************************************************************************************************************************************************)	
+
+	IF (First_Time_Trough = TRUE) THEN 
+		First_Time_Trough := FALSE;
+		In_OMNIBUSBOX_IOMgr.command := IDLE;
+		Out_OMNIBUSBOX_IOMgr.status := IDLING;
+		First_Time_Open := TRUE; 	
+	END_IF; 
+
+	
+	CASE (In_OMNIBUSBOX_IOMgr.command) OF
+	OPEN:
+
+		IF ((Out_OMNIBUSBOX_IOMgr.status = OPENING) OR (Out_OMNIBUSBOX_IOMgr.status = IDLING)) THEN  
+
+			open_OMNIBUSBOX_IOMgr();
+	
+			Out_OMNIBUSBOX_IOMgr.err_code	:= open_OMNIBUSBOX_IOMgr.err_code;	
+			Out_OMNIBUSBOX_IOMgr.status	:= open_OMNIBUSBOX_IOMgr.status;	
+
+		END_IF; 
+
+	LOAD:
+
+		IF ((Out_OMNIBUSBOX_IOMgr.status = OPENED) OR (Out_OMNIBUSBOX_IOMgr.status =  LOADING)) THEN 
+
+			load_OMNIBUSBOX_IOMgr( );
+
+			Out_OMNIBUSBOX_IOMgr.status	:= load_OMNIBUSBOX_IOMgr.status;	
+			Out_OMNIBUSBOX_IOMgr.err_code	:= load_OMNIBUSBOX_IOMgr.err_code;	
+
+		END_IF; 
+
+	INITIALIZE:
+
+		IF (Out_OMNIBUSBOX_IOMgr.status = LOADED) THEN 
+
+			initialize_OMNIBUSBOX_IOMgr( );
+
+			Out_OMNIBUSBOX_IOMgr.status	:= initialize_OMNIBUSBOX_IOMgr.status;	
+			Out_OMNIBUSBOX_IOMgr.err_code	:= initialize_OMNIBUSBOX_IOMgr.err_code;	
+
+		END_IF; 
+
+
+	RUN:
+		IF  ((Out_OMNIBUSBOX_IOMgr.status =  INITIALIZED) OR (Out_OMNIBUSBOX_IOMgr.status = RUNNING) OR (Out_OMNIBUSBOX_IOMgr.status = ERROR_ON_RUNNING) ) THEN 
+                         run_OMNIBUSBOX_IOMgr( );
+
+                         Out_OMNIBUSBOX_IOMgr.status    := run_OMNIBUSBOX_IOMgr.status;        
+                         Out_OMNIBUSBOX_IOMgr.err_code 	:= run_OMNIBUSBOX_IOMgr.err_code;      
+                                              
+                END_IF;
+
+	CLOSE:
+
+		IF  (Out_OMNIBUSBOX_IOMgr.status <> CLOSED) THEN 
+
+			close_OMNIBUSBOX_IOMgr( );
+
+			Out_OMNIBUSBOX_IOMgr.status	:= close_OMNIBUSBOX_IOMgr.status;	
+			Out_OMNIBUSBOX_IOMgr.err_code	:= close_OMNIBUSBOX_IOMgr.err_code;	
+
+		END_IF; 
+
+	IDLE:
+
+		Out_OMNIBUSBOX_IOMgr.status := IDLING;
+
+	END_CASE;
+
+
+
+END_PROGRAM

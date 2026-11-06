@@ -1,0 +1,4 @@
+<Window BackColor="Black" Font="Microsoft Sans Serif, 8.25pt" ForeColor="SteelBlue" RightToLeft="0" AllowDrop="true" TabIndex="0" BorderColor="LightSteelBlue" BorderStyle="1" BorderWidth="0.1" Name="tab" Shape="0" ToolTipText="" UpdateSpeed="1" HorizontalGrid.Size="2" HorizontalGrid.Spacing="2" VerticalGrid.Size="2" VerticalGrid.Spacing="2" TitleEnabled="false" Title="Auto-Diagnostic" WindowState="0" Left="100" Top="100" Width="1000" Height="900" CurrentPanelIndex="0">
+  <Panel File="Diagnostic\Diagnostic_Screen.dll" Text="APS3200 Diagnostic" />
+</Window>
+

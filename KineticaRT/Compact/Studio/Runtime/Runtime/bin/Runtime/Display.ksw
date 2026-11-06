@@ -1,0 +1,6 @@
+<Window BackColor="Control" Font="Arial, 8.25pt" ForeColor="SteelBlue" RightToLeft="0" AllowDrop="true" TabIndex="0" BorderColor="LightSteelBlue" BorderStyle="1" BorderWidth="0.1" Name="tab" Shape="0" ToolTipText="" UpdateSpeed="1" HorizontalGrid.Enabled="false" HorizontalGrid.Size="8" HorizontalGrid.Spacing="2" VerticalGrid.Enabled="false" VerticalGrid.Size="8" VerticalGrid.Spacing="2" Compact="true" Title="Display" WindowState="0" Left="1297" Top="776" Width="256" Height="327" CurrentPanelIndex="3" Source="Client.Tab">
+  <Panel File="Home.dll" Text="Home" />
+  <Panel File="Display.dll" Text="Display" />
+  <Panel File="Indicator.dll" Text="Indicator" />
+  <Panel File="Button.dll" Text="Button" />
+</Window>

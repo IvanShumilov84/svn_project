@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Windows - KineticaRT Studio</title>
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+		<meta content="FrontPage.Editor.Document" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<LINK href="Manual.css" rel="Stylesheet"></head>
+	<body>
+		<H2>Windows</H2>
+		<H3>Introduction</H3>
+		<P>KineticaRT Studio windows can be added, created and removed from the main menu / 
+			Window menu, see&nbsp;<A href="ConfiguringProjects.htm">Configuring Projects</A>
+		, and provide a place to display data and accept user input.
+		<P><IMG src="TwoWindows.gif" width="619" height="236"></P>
+		<P>There can be any number of windows in a KineticaRT Project.&nbsp; A typical 
+			project would have one window for each monitor on your computer as shown above.</P>
+		<P>Each window contains a number of panels, these typically have a tab displayed at 
+			the top as in the above example allowing the user to switch between the panels. 
+			A panel can be displayed in multiple windows.</P>
+		<P>See <A href="ConfiguringPanels.htm">Configuring Panels</A>&nbsp;for details on 
+			how to display controls in the panels.</P>
+		<H3>Configuring Windows</H3>
+		<P>Having added a window to the project, it can be configured by right clicking on 
+			the display (panel) area of the window and selecting <STRONG>Enter Edit Mode,</STRONG>
+			then right clicking again and selecting <STRONG>Advanced&nbsp;Properties.&nbsp;</STRONG>
+			The rest of the options on the right click menu are for configuring the panel.</P>
+		<P>The properties on the <STRONG>Advance Properties</STRONG> display are all either 
+			for the window or default values for all panels in the window.</P>
+		<P><IMG src="AdvancedProperties.gif" width="473" height="489"></P>
+		<P>Most of the window properties can be left at their default values, the following 
+			properties are the most useful:</P>
+		<UL>
+			<LI>
+			Panels
+			<LI>
+			TitleEnabled
+			<LI>
+			BackColor
+			<LI>
+			ForeColor
+			<LI>
+				Font</LI></UL>
+		<P>After changing any of these properties, the window file should be saved if you 
+			want the change to be persisted.</P>
+		<H3>Panels Property</H3>
+		<P>This property contains the collection of panels in the window.&nbsp; Click on 
+			the "..." button to enter the <STRONG>Panel Collection Editor:</STRONG></P>
+		<P><IMG src="PanelCollectionEditor.gif" width="480" height="330"></P>
+		<UL>
+			<LI>
+				The <STRONG>Add</STRONG>
+			button will add a panel to the window.
+			<LI>
+				The <STRONG>remove</STRONG>
+			button removes a panel from the window (without deleting the panel file).
+			<LI>
+				The <STRONG>up</STRONG>/<STRONG>down</STRONG>
+			arrow buttons rearrange the order of the panels (tabs) within the window.
+			<LI>
+				The <STRONG>DllName</STRONG> property is the name of the file used to store the 
+				selected panel.&nbsp; This must be set before you can use the panels right 
+				click <STRONG>Save</STRONG>
+			menu.&nbsp; This name must not contain any spaces.
+			<LI>
+				The <STRONG>Panel </STRONG>property gives access to all of the selected panels 
+				properties, these are also available from the panels right click <STRONG>Properties </STRONG>
+			menu.
+			<LI>
+				The <STRONG>Text </STRONG>property specifies the text to appear on the 
+				selection tab at the top of the selected panel.</LI></UL>
+		<P><FONT color="#000066">Remember to save the window from the main menu / Window menu 
+				after adding or configuring a panel.</FONT></P>
+		<H3>TitleEnabled Property</H3>
+		<P>This controls whether the tabs are displayed at the top of the panels.&nbsp; If 
+			this is set to <STRONG>False</STRONG> then the user can not change panels using 
+			the tabs but they can be still be selected from sequences (e.g. either 
+			automatically or on a button press).
+		</P>
+		<H3>BackColor / ForeColor / Font Properties</H3>
+		<P>These set the default colors / font for all the panels in the window.&nbsp;
+		</P>
+		<P>Setting these values instead of setting the same properties on each control 
+			makes it far easier to change the color scheme / font for the application in 
+			future.</P>
+		<H5>Note</H5>
+		<P>Some of these properties are currently not saved when saving the window 
+			file.&nbsp; This will be fixed in the next version.</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

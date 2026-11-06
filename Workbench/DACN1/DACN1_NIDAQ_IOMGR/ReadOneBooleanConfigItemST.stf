@@ -1,0 +1,22 @@
+FUNCTION ReadOneBooleanConfigItemST
+(************************************************************************************************************************************************
+
+	Function ReadOneBooleanConfigItem									
+														
+************************************************************************************************************************************************)	
+
+
+	XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, ItemName, DefaultValue);
+
+	ReadOneBooleanConfigItemST := ANY_TO_BOOL(XMLCFGSETTINGS_GETSTRINGVALUE.VALUE);
+
+	IF XMLCFGSETTINGS_GETSTRINGVALUE.ERR_CODE <> 0 THEN
+
+		XMLError := True;
+		dummy := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMgr:WARNING:' + ItemName);
+
+	END_IF;
+
+
+
+END_FUNCTION

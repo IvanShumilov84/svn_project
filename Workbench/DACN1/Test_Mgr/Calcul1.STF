@@ -1,0 +1,53 @@
+FUNCTION CALCUL1
+(************************************************************************************************************************************************
+	Name :		Calcul1									
+														
+	Description :	 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+	S_xi := 0.0 ;
+	S_yi := 0.0 ;
+	S_xi2 := 0.0 ;
+	S_yi2 := 0.0 ;
+	S_xiyi := 0.0 ;
+
+
+	(* Verify minimum Point used : 2 *)
+	IF Pused > 1 THEN
+		FOR i_cal := 1 TO Pused BY 1 DO
+			S_xi := S_xi + Px[i_cal] ;
+			S_yi := S_yi + Py[i_cal] ;
+			S_xi2 := S_xi2 + Px[i_cal] * Px[i_cal] ;
+			S_yi2 := S_yi2 + Py[i_cal] * Py[i_cal] ;
+			S_xiyi := S_xiyi + Px[i_cal] * Py[i_cal];
+		END_FOR;
+
+		Den_Cal := (ANY_TO_REAL(Pused) * S_xi2) - (S_xi * S_xi) ;
+	
+		IF Den_Cal <> 0.0 THEN
+(*			Out_TM_Calib.coeffs[1] := ((S_xi2 * S_yi) - (S_xi * S_xiyi)) / Den_Cal ;
+			Out_TM_Calib.coeffs[2] := ((ANY_TO_REAL(Pused) * S_xiyi) - (S_xi * S_yi)) / Den_Cal ; *)
+			Out_coeffs[1] := ((S_xi2 * S_yi) - (S_xi * S_xiyi)) / Den_Cal ;
+			Out_coeffs[2] := ((ANY_TO_REAL(Pused) * S_xiyi) - (S_xi * S_yi)) / Den_Cal ;
+ 
+			Calcul1 := 0 ;
+		ELSE
+			Calcul1 := -1 ;
+		END_IF ;
+	ELSE
+		Calcul1 := -1 ;
+	END_IF ;
+
+
+
+
+END_FUNCTION

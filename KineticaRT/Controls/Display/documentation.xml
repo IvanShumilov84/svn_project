@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Display</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.Display">
+            <summary>
+            KineticaRT Display Control.
+            Displays a string or numeric value as text
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Display.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.#ctor">
+            <summary>
+            Initialises a new instance of the Display class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.ResetPercentBarColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.SetWindowRegion">
+            <summary>
+            Sets the controls window to the relevant size and shape
+            Call when shape changes, or control resizes
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnResize(System.EventArgs)">
+            <summary>
+            Resize Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnFontChanged(System.EventArgs)">
+            <summary>
+            FontChanged Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnBackColorChanged(System.EventArgs)">
+            <summary>
+            BackColorChanged Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnForeColorChanged(System.EventArgs)">
+            <summary>
+            ForeColorChanged Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnGotFocus(System.EventArgs)">
+            <summary>
+            GotFocus Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnRightToLeftChanged(System.EventArgs)">
+            <summary>
+            RightToLeft changed event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Display.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.BorderStyle">
+            <summary>
+            Gets or Sets the style of the Control's Border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Cursor">
+            <summary>
+            Gets or sets the Cursor that appears when the mouse passes over the control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Text">
+            <summary>
+            Gets or sets the text corresponding to the currect Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the display's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.DestinationChannel">
+            <summary>
+            Gets or sets the object that is the Destination for the display's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Source">
+            <summary>
+            Gets or sets the name of the object to be the Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Destination">
+            <summary>
+            Gets or sets the name of object to be the Destination
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Value">
+            <summary>
+            Gets or sets the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.TextAlign">
+            <summary>
+            Gets or sets the Horizontal and Vertical alignment of the text
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.SpinButtonsEnabled">
+            <summary>
+            Gets or sets whether Spin Buttons are enabled
+            </summary>
+            <remarks>Spin buttons are used to increment and decrement numeric values</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.SpinIncrement">
+            <summary>
+            Gets or sets the amount by which the Spin Buttons increment or decrement the value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Minimum">
+            <summary>
+            Gets or sets the Minimum numeric value
+            </summary>
+            <remarks>This value is only used to restrict user input. It does not restrict values from a Source channel</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Maximum">
+            <summary>
+            Gets r sets the Maximum numeric value
+            </summary>
+            <remarks>This value is only used to restrict user input. It does not restrict values from a Source channel</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.PercentBarEnabled">
+            <summary>
+            Gets or sets whether the Percent Bar is enabled
+            </summary>
+            <remarks>
+            The Percent bar is only displayed if the Minimum and Maximum value 
+            are not infinite. In this case the bar will show the current value as
+            a percentage of the full range allowed.
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.PercentBarColor">
+            <summary>
+            Gets or sets the Color of the Percent bar
+            </summary>
+            <remarks>
+            The Percent bar is only displayed if the Minimum and Maximum value 
+            are not infinite. In this case the bar will show the current value as
+            a percentage of the full range allowed.
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.NumericOnly">
+            <summary>
+            Gets or sets whether to restrict user input to valid numeric values
+            </summary>
+            <remarks>Doesn't restrict values from Source channels</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Orientation">
+            <summary>
+            Gets or sets the orientation of the Text
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Display gets its ToolTip, Minimum and Maximum
+            from the its Source channel
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.InputEnabled">
+            <summary>
+            Gets or sets whether user input is Enabled
+            </summary>
+            <remarks>This differs from Enabled by not preventing drag and drop or tooltips</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Display.Format">
+            <summary>
+            Gets or sets the text format of the value from a Source.
+            If specified (ie non-blank string), overrides the format of the Source
+            </summary>
+        </member>
+    </members>
+</doc>

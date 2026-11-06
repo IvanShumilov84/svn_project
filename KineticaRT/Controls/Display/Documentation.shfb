@@ -1,0 +1,54 @@
+﻿<project schemaVersion="1.6.0.2">
+    <assemblies>
+        <assembly assemblyPath=".\bin\Debug\KineticaRT.Controls.Display.dll" xmlCommentsPath=".\bin\Debug\KineticaRT.Controls.Display.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\Debug\KineticaRT.Controls.dll" xmlCommentsPath=".\bin\Debug\KineticaRT.Controls.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\Debug\KineticaRT.dll" xmlCommentsPath=".\bin\Debug\KineticaRT.xml" commentsOnly="False" />
+        <assembly assemblyPath="" xmlCommentsPath="..\..\NamespaceSummary.xml" commentsOnly="True" />
+    </assemblies>
+    <additionalContent>
+        <contentItem sourcePath=".\Overview.htm" destPath="" excludeItems="False" />
+        <contentItem sourcePath=".\arrow.gif" destPath="" excludeItems="False" />
+        <contentItem sourcePath=".\backtotop.gif" destPath="" excludeItems="False" />
+        <contentItem sourcePath=".\divider.gif" destPath="" excludeItems="False" />
+        <contentItem sourcePath=".\DividerLine.gif" destPath="" excludeItems="False" />
+        <contentItem sourcePath=".\overview.gif" destPath="" excludeItems="False" />
+        <contentItem sourcePath=".\overviewtitle.gif" destPath="" excludeItems="False" />
+    </additionalContent>
+    <ProjectSummary />
+    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, Namespace</MissingTags>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
+    <HtmlHelp1xCompilerPath path="" />
+    <HtmlHelp2xCompilerPath path="" />
+    <OutputPath>.\Doc\</OutputPath>
+    <SandcastlePath path="" />
+    <WorkingPath path="" />
+    <CleanIntermediates>True</CleanIntermediates>
+    <KeepLogFile>True</KeepLogFile>
+    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
+    <PurgeDuplicateTopics>True</PurgeDuplicateTopics>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <FrameworkVersion>2.0.50727</FrameworkVersion>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <Preliminary>False</Preliminary>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle />
+    <HelpTitle>KineticaRT.Controls.Display</HelpTitle>
+    <HtmlHelpName>KineticaRT.Controls.Display</HtmlHelpName>
+    <Language>en-US</Language>
+    <CopyrightHref />
+    <CopyrightText>Copyright KineticaRT Ltd 2008</CopyrightText>
+    <FeedbackEMailAddress />
+    <HeaderText />
+    <FooterText>KineticaRT Components for Microsoft .Net Windows Forms.</FooterText>
+    <ProjectLinkType>Local</ProjectLinkType>
+    <SdkLinkType>Msdn</SdkLinkType>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <PresentationStyle>Prototype</PresentationStyle>
+    <NamingMethod>MemberName</NamingMethod>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <ShowFeedbackControl>False</ShowFeedbackControl>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <ContentSiteMap path="" />
+    <TopicFileTransform path="" />
+</project>

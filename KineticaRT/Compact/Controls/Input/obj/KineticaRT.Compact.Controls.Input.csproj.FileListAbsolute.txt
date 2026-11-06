@@ -1,0 +1,72 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.Input.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.Input.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.Input.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.Input.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.Input.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.Input.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.xml
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.resources
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.Input.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.Input.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.resources
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.dll
+C:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.Input.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.Input.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.Controls.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Release\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.resources
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Release\KineticaRT.Compact.Controls.Input.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.Input.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.Input.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.Controls.xml
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\bin\Debug\KineticaRT.Compact.xml
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.resources
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.dll
+D:\KineticaRT\KineticaRT\Compact\Controls\Input\obj\Debug\KineticaRT.Compact.Controls.Input.pdb

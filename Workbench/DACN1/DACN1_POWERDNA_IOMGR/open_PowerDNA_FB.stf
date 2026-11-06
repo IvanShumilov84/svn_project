@@ -1,0 +1,222 @@
+FUNCTION_BLOCK open_PowerDNA_FB
+(************************************************************************************************************************************************
+        Name :                open_PowerDNA_FB                                                                        
+                                                                                                                
+        Description :        Open PowerDNA connection
+
+        Dependacy :         
+                                        HYSTORY
+
+        Rev                Date                Name                Description
+                        (YYYY/MM/DD)
+
+        1.0                 2009/01/16                P.Dextraze & J.Hamelin         First Release
+        
+************************************************************************************************************************************************)        
+
+	status                  := OPENING;
+    err_code                := OK;
+    dummy                   := LOG_MSG('ErrLog','DACN1_PowerDNA_IOMGR: OPENING');
+    First_Time_Close        := TRUE;
+    rdata_base              := 0;
+
+    (* Initialization of IPAddress of PowerDNA *)
+    (* The NUMBER_OF_POWERDNAS is 1 for this project, this is corresponding number 
+       of black communication box into the Temperature box *)
+
+
+	(* Certanes Fan Cell ont des StrongBack permettant de switcher le hardware rapidement  (2 PDNA)
+	Alors il peut exister 2 CSV different pour les m[eme IO.  La facon de savoir lequel csv il faut utiliser
+	est deduit en interrogeant le PDNA et son IONAme 			
+	ATTENTION CETTE FONCTIONNALITE SE REPERCUTE AUSSI DANS LA SEQUENCE DE CALIBRATION *)
+
+	PowerDNA_Structure[1].IPaddress := '192.168.2.225';  
+    PowerDNA_Structure[2].IPaddress := '192.168.2.226';
+    PowerDNA_Structure[3].IPaddress := '192.168.2.227';
+    PowerDNA_Structure[4].IPaddress := '192.168.2.228';
+
+    (* Initialization of handle and status of PowerDNAs *)
+	(****************************************************)
+	(****************************************************)
+	(****************************************************)
+	number_of_powerdnas := 1;
+	(****************************************************)
+	(****************************************************)
+	(****************************************************)
+
+
+	FOR i:= 1 TO number_of_powerdnas DO
+
+ 		PowerDNA_Structure[i].handle := 0;
+	    PowerDNA_Structure[i].status := OPENING;
+      	PowerDNA_Structure[i].rate   := 30;
+		PowerDNA_Structure[i].number_of_layers := 0;
+
+
+	END_FOR;
+
+    (* Loads the socket libraries and initializes table structures *)        
+		
+	IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN
+        
+        POWERDNA_INIT();
+
+        IF (POWERDNA_INIT.ERR_CODE = OK ) THEN        
+
+            (* Open Connection to PowerDNAs *)
+                        
+			FOR i := 1 TO number_of_powerdnas DO
+
+                POWERDNA_OPEN(PowerDNA_Structure[i].IPaddress);
+
+                PowerDNA_Structure[i].handle   := POWERDNA_OPEN.HANDLE;  
+                PowerDNA_Structure[i].err_code := POWERDNA_OPEN.ERR_CODE;
+				
+                IF (PowerDNA_Structure[i].err_code <> OK) THEN
+
+					(* ATTENTION: En configuration 2 strongback: lors du switch des powerdna QNX garde dans sa table de mapping la MAC Address en cache 
+						Utiliser la command QNX arp -an pour lister la table de mac addr. en cache et faire la commande arp -d *)
+
+
+					POWERDNA_CLOSE(PowerDNA_Structure[i].handle);
+ 
+					IF (POWERDNA_CLOSE.ERR_CODE <> 0) THEN
+
+						err_code := POWERDNA_CLOSE.ERR_CODE ;
+	
+					END_IF;
+
+                    PowerDNA_Structure[i].handle := -1;
+					PowerDNA_Structure[i].number_of_layers := 0;
+
+			
+                END_IF;
+
+            END_FOR;                        
+
+         ELSE 
+
+               err_code := POWERDNA_INIT.ERR_CODE;                
+
+         END_IF; 
+
+	END_IF;
+
+	(* RData Open IF no error_code *)
+
+    IF err_code = OK THEN
+
+    	OPEN_RDATA(150);
+
+        err_code   := OPEN_RDATA.ERR_CODE;
+                
+        IF err_code = OK THEN
+
+        	rdata_base := OPEN_RDATA.BASE_HANDLE;
+
+		END_IF;
+
+	END_IF;
+
+
+    IF (err_code <> OK) THEN 
+
+    	status := ERROR_ON_OPENING;        
+        dummy  := LOG_MSG('ErrLog', 'DACN1_PowerDNA_IOMGR: ERROR_ON_OPENING');
+
+	ELSE
+        status := OPENED;
+    	dummy  := LOG_MSG('ErrLog', 'DACN1_PowerDNA_IOMGR: OPENED');
+
+        FOR i:= 1 TO NUMBER_OF_POWERDNAS DO
+
+        	PowerDNA_Structure[i].status := OPENED;
+
+		END_FOR;
+
+	END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

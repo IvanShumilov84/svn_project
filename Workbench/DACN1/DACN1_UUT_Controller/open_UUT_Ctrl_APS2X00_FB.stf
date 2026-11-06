@@ -1,0 +1,91 @@
+FUNCTION_BLOCK open_UUT_Ctrl_APS2X00_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_APS2X00_FB									
+														
+************************************************************************************************************************************************)	
+
+
+		(* SPEED *)
+
+		T_EGT_TRIP_TYPE	:=  ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_EGT_TRIP_TYPE' , '0');
+
+		IF (UUT_Info.Model = 'APS2300') THEN
+
+
+		NG_INDEX 			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2300.NG_INDEX', '0');
+
+
+		ELSIF (UUT_Info.Model = 'APS2600A') THEN
+
+
+		NG_INDEX 			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2600A.NG_INDEX', '0');
+
+		END_IF;
+
+
+		NG_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.NG_BINDING_SOURCE', '0'));
+		NG_100_RPM 			:= ReadOneRealConfigItemST( 'ConfigurationSettings.APS2X00.NG_100_RPM_CONSTANT', '0');
+		NG_100_FREQ 		:= ReadOneRealConfigItemST( 'ConfigurationSettings.APS2X00.NG_100_FREQ_CONSTANT', '0');
+
+
+		(* T_EGT_P *)
+		T_EGT_P_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.T_EGT_P_PROBE_BINDING_SOURCE', '0'));
+		T_EGT_P_ENGINE_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_EGT_P_PROBE_INDEX1', '0');
+		T_EGT_P_ENGINE_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_EGT_P_PROBE_INDEX2', '0');
+
+		(* T_INLET *)
+		T_INLET_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_PROBE_BINDING_SOURCE', '0'));
+		T_INLET_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_NUMBER_PROBE', '0');
+
+		T_INLET_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_PROBE_INDEX1', '0');
+		T_INLET_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_PROBE_INDEX2', '0');
+		T_INLET_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_PROBE_INDEX3', '0');
+		T_INLET_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_PROBE_INDEX4', '0');
+		T_INLET_PROBE_INDEX[5] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_PROBE_INDEX5', '0');
+		T_INLET_PROBE_INDEX[6] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_INLET_PROBE_INDEX6', '0');
+	
+		(* T_OIL *)
+		T_OIL_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.T_OIL_PROBE_BINDING_SOURCE', '0'));
+		T_OIL_PROBE_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.T_OIL_PROBE_INDEX', '0');
+
+
+		(* P_OIL *)
+		P_OIL_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.P_OIL_PROBE_BINDING_SOURCE', '0'));
+		P_OIL_PROBE_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.P_OIL_PROBE_INDEX', '0');
+
+
+		(* VIB_TURBINE *)
+		VIB_TURBINE_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.VIB_TURBINE_BINDING_SOURCE', '0'));
+		VIB_TURBINE_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.VIB_TURBINE_INDEX', '0');
+
+		(* VIB_GEARBOX *)
+		VIB_GEARBOX_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.VIB_GEARBOX_BINDING_SOURCE', '0'));
+		VIB_GEARBOX_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.VIB_GEARBOX_INDEX', '0');
+
+		(* RTL_ELECTRICAL *)
+		RTL_ELECTRICAL_DIN_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.APS2X00.RTL_ELECTRICAL_DIN_BINDING_SOURCE', '0'));
+		RTL_ELECTRICAL_DIN_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.RTL_ELECTRICAL_DIN_INDEX', '0');
+
+
+		(* EGT TRIP *)
+		EGT_TRIP_START := ReadOneRealConfigItemST( 'ConfigurationSettings.APS2X00.EGT_TRIP_START', '0');
+		EGT_TRIP_STEADY:= ReadOneRealConfigItemST( 'ConfigurationSettings.APS2X00.EGT_TRIP_STEADY', '0');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

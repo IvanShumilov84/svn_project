@@ -1,0 +1,141 @@
+FUNCTION_BLOCK OS_Board_Load_Cfg_FB
+
+	XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+	hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+	IF hCfgSettings <> 0 THEN
+		
+		OS_BOARD_IS_ENABLED := ReadOneBooleanConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.IS_ENABLED', 'false');
+
+		IF OS_BOARD_IS_ENABLED THEN
+
+			OS_TRIP_IND_BINDING_SOURCE := ConvertBindingSourceStringToDint(ReadOneStringConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.OS_TRIP_IND_BINDING_SOURCE', 'DACN1_NIDAQ_IOMGR_DIN'));
+			OS_TRIP_IND_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.OS_TRIP_IND_INDEX', '507');
+
+			OS_BOARD_ENGINE_SELECT_BIT0_DOUT_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.ENGINE_SELECT_BIT0_DOUT_INDEX', '501');
+			OS_BOARD_ENGINE_SELECT_BIT1_DOUT_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.ENGINE_SELECT_BIT1_DOUT_INDEX', '502');
+			OS_BOARD_ENGINE_SELECT_BIT2_DOUT_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.ENGINE_SELECT_BIT2_DOUT_INDEX', '503');
+			OS_BOARD_ENGINE_SELECT_BIT3_DOUT_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.ENGINE_SELECT_BIT3_DOUT_INDEX', '504');
+			OS_BOARD_ENGINE_SELECT_BIT4_DOUT_INDEX := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.ENGINE_SELECT_BIT4_DOUT_INDEX', '505');
+			OS_BOARD_MASTER_RESET_DOUT_INDEX	   := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.MASTER_RESET_DOUT_INDEX',       '508');
+
+			OS_BOARD_CAL_STEP_DELAY			:= ReadOneTimeConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.CAL_STEP_DELAY_SEC', '0.04');
+			OS_BOARD_N1_BOARD_OSC_DOUT_INDEX    := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N1_BOARD_OSC_DOUT_INDEX', '601');
+			OS_BOARD_N1_BOARD_DIV1_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N1_BOARD_DIV1_DOUT_INDEX','609');
+			OS_BOARD_N1_BOARD_DIV2_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N1_BOARD_DIV2_DOUT_INDEX','610');
+			OS_BOARD_N1_BOARD_VREF_VOUT_INDEX   := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N1_BOARD_VREF_VOUT_INDEX','11');
+			OS_BOARD_N1_BOARD_FOUT_INDEX		:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N1_BOARD_FOUT_INDEX', '0');
+			
+			OS_BOARD_N2_BOARD_OSC_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N2_BOARD_OSC_DOUT_INDEX', '602');
+			OS_BOARD_N2_BOARD_DIV1_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N2_BOARD_DIV1_DOUT_INDEX','611');
+			OS_BOARD_N2_BOARD_DIV2_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N2_BOARD_DIV2_DOUT_INDEX','612');
+			OS_BOARD_N2_BOARD_VREF_VOUT_INDEX   := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N2_BOARD_VREF_VOUT_INDEX','11');
+			OS_BOARD_N2_BOARD_FOUT_INDEX		:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N2_BOARD_FOUT_INDEX', '1');
+
+			OS_BOARD_N3_BOARD_OSC_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N3_BOARD_OSC_DOUT_INDEX', '603');
+			OS_BOARD_N3_BOARD_DIV1_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N3_BOARD_DIV1_DOUT_INDEX','613');
+			OS_BOARD_N3_BOARD_DIV2_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N3_BOARD_DIV2_DOUT_INDEX','614');
+			OS_BOARD_N3_BOARD_VREF_VOUT_INDEX   := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N3_BOARD_VREF_VOUT_INDEX','11');
+			OS_BOARD_N3_BOARD_FOUT_INDEX		:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N3_BOARD_FOUT_INDEX', '2');
+
+			OS_BOARD_N4_BOARD_OSC_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N4_BOARD_OSC_DOUT_INDEX', '604');
+			OS_BOARD_N4_BOARD_DIV1_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N4_BOARD_DIV1_DOUT_INDEX','615');
+			OS_BOARD_N4_BOARD_DIV2_DOUT_INDEX	:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N4_BOARD_DIV2_DOUT_INDEX','616');
+			OS_BOARD_N4_BOARD_VREF_VOUT_INDEX   := ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N4_BOARD_VREF_VOUT_INDEX','11');
+			OS_BOARD_N4_BOARD_FOUT_INDEX		:= ReadOneIntegerConfigItemST('ConfigurationSettings.OVERSPEED_BOARD.N4_BOARD_FOUT_INDEX', '3');
+
+			EngineModelKey := 'ConfigurationSettings.OVERSPEED_BOARD.' + Model;
+
+			IF Model = 'DAS CALIBRATION' THEN
+
+				OS_BOARD_ENGINE_CFG_NO := 32;
+
+			ELSE
+
+				OS_BOARD_ENGINE_CFG_NO := ReadOneIntegerConfigItemST(EngineModelKey + '.ENGINE_CFG_NO', '32');
+
+			END_IF;
+
+
+			FOR i := 1 TO OS_BOARD_MAX_ENGINE_CFGS DO
+				EngineCfgKey := 'ConfigurationSettings.OVERSPEED_BOARD.ENGINE_CFG_' + ANY_TO_STRING(i);
+
+				OS_BOARD_ENGINE_CFGS[i].N1_BOARD.ENABLE := ReadOneBooleanConfigItemST(EngineCfgKey + '.N1_BOARD.ENABLE', 'false');
+				(* Defaults Dividers to true so that unused speed channel doesn't trip the overspeed *)
+				OS_BOARD_ENGINE_CFGS[i].N1_BOARD.DIV1_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N1_BOARD.DIV1_ONOFF','true');
+				OS_BOARD_ENGINE_CFGS[i].N1_BOARD.DIV2_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N1_BOARD.DIV2_ONOFF', 'true');
+				OS_BOARD_ENGINE_CFGS[i].N1_BOARD.FOUT := ReadOneIntegerConfigItemST(EngineCfgKey + '.N1_BOARD.FOUT', '0');
+				OS_BOARD_ENGINE_CFGS[i].N1_BOARD.CAL_VOUT_MAX := ReadOneRealConfigItemST(EngineCfgKey + '.N1_BOARD.CAL_VOUT_MAX', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N1_BOARD.CAL_VOUT_MIN := ReadOneRealConfigItemST(EngineCfgKey + '.N1_BOARD.CAL_VOUT_MIN', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N1_BOARD.CAL_VOUT_STEP := ReadOneRealConfigItemST(EngineCfgKey + '.N1_BOARD.CAL_VOUT_STEP', '0.002');
+
+				OS_BOARD_ENGINE_CFGS[i].N2_BOARD.ENABLE := ReadOneBooleanConfigItemST(EngineCfgKey + '.N2_BOARD.ENABLE', 'false');
+				(* Defaults Dividers to true so that unused speed channel doesn't trip the overspeed *)
+				OS_BOARD_ENGINE_CFGS[i].N2_BOARD.DIV1_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N2_BOARD.DIV1_ONOFF', 'true');
+				OS_BOARD_ENGINE_CFGS[i].N2_BOARD.DIV2_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N2_BOARD.DIV2_ONOFF', 'true');
+				OS_BOARD_ENGINE_CFGS[i].N2_BOARD.FOUT := ReadOneIntegerConfigItemST(EngineCfgKey + '.N2_BOARD.FOUT', '0');
+				OS_BOARD_ENGINE_CFGS[i].N2_BOARD.CAL_VOUT_MAX := ReadOneRealConfigItemST(EngineCfgKey + '.N2_BOARD.CAL_VOUT_MAX', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N2_BOARD.CAL_VOUT_MIN := ReadOneRealConfigItemST(EngineCfgKey + '.N2_BOARD.CAL_VOUT_MIN', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N2_BOARD.CAL_VOUT_STEP := ReadOneRealConfigItemST(EngineCfgKey + '.N2_BOARD.CAL_VOUT_STEP', '0.002');
+				
+				OS_BOARD_ENGINE_CFGS[i].N3_BOARD.ENABLE := ReadOneBooleanConfigItemST(EngineCfgKey + '.N3_BOARD.ENABLE', 'false');
+				(* Defaults Dividers to true so that unused speed channel doesn't trip the overspeed *)
+				OS_BOARD_ENGINE_CFGS[i].N3_BOARD.DIV1_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N3_BOARD.DIV1_ONOFF', 'true');
+				OS_BOARD_ENGINE_CFGS[i].N3_BOARD.DIV2_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N3_BOARD.DIV2_ONOFF', 'true');
+				OS_BOARD_ENGINE_CFGS[i].N3_BOARD.FOUT := ReadOneIntegerConfigItemST(EngineCfgKey + '.N3_BOARD.FOUT', '0');
+				OS_BOARD_ENGINE_CFGS[i].N3_BOARD.CAL_VOUT_MAX := ReadOneRealConfigItemST(EngineCfgKey + '.N3_BOARD.CAL_VOUT_MAX', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N3_BOARD.CAL_VOUT_MIN := ReadOneRealConfigItemST(EngineCfgKey + '.N3_BOARD.CAL_VOUT_MIN', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N3_BOARD.CAL_VOUT_STEP := ReadOneRealConfigItemST(EngineCfgKey + '.N3_BOARD.CAL_VOUT_STEP', '0.002');
+
+				OS_BOARD_ENGINE_CFGS[i].N4_BOARD.ENABLE := ReadOneBooleanConfigItemST(EngineCfgKey + '.N4_BOARD.ENABLE', 'false');
+				(* Defaults Dividers to true so that unused speed channel doesn't trip the overspeed *)
+				OS_BOARD_ENGINE_CFGS[i].N4_BOARD.DIV1_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N4_BOARD.DIV1_ONOFF', 'true');
+				OS_BOARD_ENGINE_CFGS[i].N4_BOARD.DIV2_ONOFF := ReadOneBooleanConfigItemST(EngineCfgKey + '.N4_BOARD.DIV2_ONOFF', 'true');
+				OS_BOARD_ENGINE_CFGS[i].N4_BOARD.FOUT := ReadOneIntegerConfigItemST(EngineCfgKey + '.N4_BOARD.FOUT', '0');
+				OS_BOARD_ENGINE_CFGS[i].N4_BOARD.CAL_VOUT_MAX := ReadOneRealConfigItemST(EngineCfgKey + '.N4_BOARD.CAL_VOUT_MAX', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N4_BOARD.CAL_VOUT_MIN := ReadOneRealConfigItemST(EngineCfgKey + '.N4_BOARD.CAL_VOUT_MIN', '9.8');
+				OS_BOARD_ENGINE_CFGS[i].N4_BOARD.CAL_VOUT_STEP := ReadOneRealConfigItemST(EngineCfgKey + '.N4_BOARD.CAL_VOUT_STEP', '0.002');
+
+			END_FOR;
+
+		END_IF;
+
+		XMLCFGSETTINGS_CLOSE(hCfgSettings);
+
+		hCfgSettings := 0;
+
+	ELSE
+		err_code := ERROR_ON_OPENING;
+		dummy := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMgr: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+	END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

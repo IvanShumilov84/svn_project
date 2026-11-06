@@ -1,0 +1,31 @@
+[MAIN]
+NET=1
+CONF=1
+RES=15
+
+
+[NET]
+N1=ETCP_1, ETCP
+
+
+[CONF]
+C1=DACN1, 1
+I1=1, 192.168.2.200
+
+
+[RES]
+R1=9, DACN1_User_Interface, 1
+R2=1, Test_Mgr, 1
+R3=6, DACN1_UUT_Controller, 1
+R4=3, DACN1_Serial_IOMgr, 1
+R5=2, DACN1_NIDAQ_IOMgr, 1
+R6=4, DACN1_Omnibusbox_IOMgr, 1
+R7=12, DACN1_SM1720_IOMgr, 1
+R8=5, DACN1_PowerDNA_IOMgr, 1
+R9=18, DACN1_Scanivalve_Temp_IOMgr, 1
+R10=19, DACN1_Scanivalve_Pressure_IOMgr, 1
+R11=17, DACN1_Galil_Controller, 1
+R12=8, DACN1_Serial_Arinc_IOMgr, 1
+R13=10, DACN1_Texcel_VX100_IOMgr, 1
+R14=11, DACN1_Texcel_V100_IOMgr, 1
+R15=14, DACN1_AFDX_IOMgr, 1

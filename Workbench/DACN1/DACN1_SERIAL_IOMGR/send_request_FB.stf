@@ -1,0 +1,122 @@
+FUNCTION_BLOCK send_request_FB
+(************************************************************************************************************************************************
+	Name :		send_request_FB									
+														
+	Description :	Depends on the FV, send the correct request on serial port 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+	IF(ser_ports[i].fd <> SPARE) THEN 
+		IF ser_ports[i].FV_index[ser_ports[i].next_channel] <> SPARE THEN
+ 	
+			CASE (FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].FV_type) OF
+			
+			FV_IOUT:
+				BUILD_AO_REQUEST(  FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].request
+						     , IOUT[FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].FV_type_index[1]] );	
+			
+				ao_buffer := BUILD_AO_REQUEST.REQUEST_OUT;					
+
+				WRITE_SER_STRING(ser_ports[i].fd, ao_buffer); 								
+
+				iout_ao_buffer := ao_buffer;
+		
+			FV_VOUT:
+			
+				BUILD_AO_REQUEST(  FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].request
+						     , VOUT[FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].FV_type_index[1]]);		
+				
+				ao_buffer := BUILD_AO_REQUEST.REQUEST_OUT;					
+
+				WRITE_SER_STRING(ser_ports[i].fd, ao_buffer); 
+
+			FV_DOUT:
+				FOR l_idx := 1 TO 16 DO
+					IF FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].FV_type_index[l_idx] > 0 THEN
+						bit16[l_idx] := DOUT[FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].FV_type_index[l_idx]] ;
+					ELSE
+						bit16[l_idx] := FALSE ;
+					END_IF;
+	
+				END_FOR;
+
+	
+				Pack16Bool_1(	bit16[1] ,
+						bit16[2] ,
+						bit16[3] ,
+						bit16[4] ,
+						bit16[5] ,
+						bit16[6] ,
+						bit16[7] ,
+						bit16[8] ,
+						bit16[9] ,
+						bit16[10] ,
+						bit16[11] ,
+						bit16[12] ,
+						bit16[13] ,
+						bit16[14] ,
+						bit16[15] ,
+						bit16[16] ,
+						FALSE ) ;
+			
+				buffer := INSERT (FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].request, Pack16Bool_1.Val_Hex,5 ) ;
+				buffer := INSERT(buffer,END_buffer,9) ; 
+				WRITE_SER_STRING(ser_ports[i].fd,buffer) ;
+				
+			FV_DOUT64:
+				FOR l_idx := 1 TO 64 DO
+					IF FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].FV_type_index[l_idx] > 0 THEN
+						bit64[l_idx-1] := DOUT[FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].FV_type_index[l_idx]] ;
+					ELSE
+						bit64[l_idx-1] := FALSE ;
+					END_IF;
+	
+				END_FOR;
+
+	
+				Pack64Bool_1(	bit64, FALSE ) ;
+			
+				buffer := INSERT (FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].request, Pack64Bool_1.Val_Hex,5 ) ;
+				buffer := INSERT(buffer,END_buffer,21) ; 
+				WRITE_SER_STRING(ser_ports[i].fd,buffer) ;
+		
+			ELSE
+	
+				WRITE_SER_STRING(ser_ports[i].fd, FV[ser_ports[i].FV_index[ser_ports[i].next_channel]].request);
+	
+			END_CASE; 
+		END_IF;
+	END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

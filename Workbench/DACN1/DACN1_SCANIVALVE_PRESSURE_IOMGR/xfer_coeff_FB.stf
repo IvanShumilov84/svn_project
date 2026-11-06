@@ -1,0 +1,42 @@
+FUNCTION_BLOCK XFER_COEFF_FB
+(************************************************************************************************************************************************
+	Name :		xfer_coeff_FB									
+														
+	Description :	Transfer to RDATA calibration coefficient 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+	2.0	         2002/10/16	          N. Sangiovanni	Calibration update 
+
+************************************************************************************************************************************************)	
+
+	sub_status := 0;
+
+	FV_EXTRACT(INSERT(ANY_TO_STRING(In_TM_Calib.Index), In_TM_Calib.Prefix, 1));
+
+	FOR idx := 1 to 100 DO	(* Same as FV Size *)
+		IF FV[idx].FV_type = FV_EXTRACT.FV_TYPE AND FV[idx].FV_index = FV_EXTRACT.FV_INDEX THEN
+			Write_Coeff(	rdata_base,
+					FV[idx].data_handle,
+					In_TM_Calib.degree,
+					In_TM_Calib.coeffs[1],
+					In_TM_Calib.coeffs[2],
+					In_TM_Calib.coeffs[3],
+					In_TM_Calib.coeffs[4],
+					In_TM_Calib.coeffs[5],
+					In_TM_Calib.coeffs[6]	);
+
+			sub_status := COEFF_XFERED;
+
+			idx := 100;
+		END_IF;
+	END_FOR;
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,3 @@
+<Window BackColor="Control" Font="Microsoft Sans Serif, 8.25pt" ForeColor="SteelBlue" RightToLeft="0" TabIndex="0" BorderColor="LightSteelBlue" BorderStyle="1" BorderWidth="0.1" Name="tab" Shape="0" ToolTipText="" UpdateSpeed="1" HorizontalGrid.Size="8" HorizontalGrid.Spacing="2" VerticalGrid.Size="8" VerticalGrid.Spacing="2" TitleEnabled="false" Title="Manual Air Control" WindowState="0" Left="1666" Top="282" Width="379" Height="372" CurrentPanelIndex="0">
+  <Panel File="AirStart_Control_Panel.dll" Text="Air Start Control" />
+</Window>

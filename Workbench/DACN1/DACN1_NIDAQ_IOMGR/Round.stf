@@ -1,0 +1,17 @@
+FUNCTION Round
+(*
+ * Round a number to NoDigits
+ *
+ * Rounding a real to the nearest integer can be done like this: TRUNC(real + 0.5)
+ * Which is the equivalent of TRUNC((real + 0.5)*1.0) / 1.0
+ *
+ * Rounding a real to the nearest tenth i.e. round to 1st digit can be done like this: TRUNC((real + 0.05) * 10.0) / 10.0
+ * Which is the equivalent of TRUNC( (real + (0.5/POW(10.0,1.0))) * POW(10.0, 1.0)) / POW(10.0, 1.0)
+ *
+ * Thus, rounding a real to the nearest nth digit can be done like this: TRUNC( (real + (0.5/POW(10.0, n))) * POW(10.0, n)) / POW(10.0, 1.0)
+ *)
+
+
+
+Round := TRUNC( (Number + (0.5/POW(10.0, ANY_TO_REAL(NoDigits)))) * POW(10.0, ANY_TO_REAL(NoDigits)) ) / POW(10.0, ANY_TO_REAL(NoDigits));
+END_FUNCTION

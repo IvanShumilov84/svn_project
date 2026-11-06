@@ -1,0 +1,21 @@
+FUNCTION ReadOneStringConfigItemST
+(************************************************************************************************************************************************
+
+	Function ReadOneRealConfigItem									
+														
+************************************************************************************************************************************************)	
+
+
+	XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, ItemName, DefaultValue);
+
+	ReadOneStringConfigItemST := ANY_TO_STRING(XMLCFGSETTINGS_GETSTRINGVALUE.VALUE);
+
+	IF XMLCFGSETTINGS_GETSTRINGVALUE.ERR_CODE <> 0 THEN
+
+		XMLError := True;
+		dummy := LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER:ERROR:' + ItemName);
+
+	END_IF;
+
+
+END_FUNCTION

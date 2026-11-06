@@ -1,0 +1,74 @@
+PROGRAM SIMUL
+IF SIMUL_MODE = TRUE OR SIMULATION_DATA = TRUE THEN
+	Count_Set_Speed := Count_Set_Speed + 1;
+
+
+	(*
+	 * 20 Update/sec = 20Hz = 50ms/update
+	 *)
+	IF Count_Set_Speed >= ( 50 / (ANY_TO_DINT( __SYSVA_TCYCYCTIME )+1) ) THEN
+	
+		FOR index := 1 TO 50 BY 1 DO (* 20 max pour eviter out of range non-verifie *)
+			(* Frequency *)
+			IF index <= 20 THEN
+				IF F[index].value 	> 20000.0 THEN
+					F[index].value		:= 0.0;
+					F[index].mean_value	:= 0.0;
+				END_IF;				
+				F[index].value		:= F[index].value + 5.0;
+				F[index].mean_value	:= F[index].mean_value + 5.0;
+			END_IF;
+			
+			
+			(* Pressure *)
+			IF P[index].value 	> 100.0 THEN
+				P[index].value		:= 0.0;
+				P[index].mean_value	:= 0.0;
+			END_IF;				
+			P[index].value		:= P[index].value + 0.50;
+			P[index].mean_value	:= P[index].mean_value + 0.50;
+
+
+			(* Temperature *)
+			(*IF T[index].value 	> 100.0 THEN
+				T[index].value		:= 0.0;
+				T[index].mean_value	:= 0.0;
+			END_IF;	
+			T[index].value		:= T[index].value + 0.50;
+			T[index].mean_value	:= T[index].mean_value + 0.50;*)
+
+
+			(* Vibration *)
+			(*IF VIB[index].value 	> 100.0 THEN
+				VIB[index].value	:= 0.0;
+				VIB[index].mean_value	:= 0.0;
+			END_IF;	
+			VIB[index].value	:= VIB[index].value + 0.50;
+			VIB[index].mean_value	:= VIB[index].mean_value + 0.50;*)
+
+
+			(* Voltage Input *)
+			(*IF VIN[index].value 	> 100.0 THEN
+				VIN[index].value	:= 0.0;
+				VIN[index].mean_value	:= 0.0;
+			END_IF;	
+			VIN[index].value	:= VIN[index].value + 0.50;
+			VIN[index].mean_value	:= VIN[index].mean_value + 0.50;*)
+
+					
+		END_FOR;
+	
+		Count_Set_Speed := 0;
+	END_IF;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+END_PROGRAM

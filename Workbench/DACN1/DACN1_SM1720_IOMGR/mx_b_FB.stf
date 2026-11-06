@@ -1,0 +1,5 @@
+FUNCTION_BLOCK mx_b_FB
+
+
+	value := x_in * slope + offset;
+END_FUNCTION_BLOCK

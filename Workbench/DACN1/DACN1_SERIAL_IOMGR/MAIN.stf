@@ -1,0 +1,104 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN									
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+	2.0	          2002/10/17		N. Sangiovanni	Calibration modification
+
+************************************************************************************************************************************************)	
+	IF (First_Time_Trough = TRUE) THEN 
+
+		First_Time_Trough := FALSE;
+		Out_Serial_IOMgr.status := IDLING;
+		count_Xfer := 0;
+
+                FOR i:= 1 TO MAX_PORTS BY 1 DO 
+    
+                    disable_serial_port[i] := false;
+
+                END_FOR;
+
+	END_IF; 
+
+	CASE  In_Serial_IOMgr.command OF
+	
+	OPEN:
+		IF ((Out_Serial_IOMgr.status = CLOSED) OR (Out_Serial_IOMgr.status = IDLING)) THEN  
+
+			open_Serial_IOMgr(In_Serial_IOMgr.number_of_ports, In_Serial_IOMgr.number_of_rdata);
+	
+			Out_Serial_IOMgr.status		:= open_Serial_IOMgr.status;	
+			Out_Serial_IOMgr.err_code	:= open_Serial_IOMgr.err_code;	
+			Out_Serial_IOMgr.previous_index	:= In_Serial_IOMgr.current_index;
+			current_FV := 0;
+			FV_counter := 0;
+
+		END_IF; 
+	LOAD:
+		IF ((Out_Serial_IOMgr.status = OPENED) OR (Out_Serial_IOMgr.status = LOADING)) THEN 
+
+			load_Serial_IOMgr(In_Serial_IOMgr.number_of_variables, rdata_base, In_rdata_user);
+
+			Out_Serial_IOMgr.status		:= load_Serial_IOMgr.status;	
+			Out_Serial_IOMgr.err_code	:= load_Serial_IOMgr.err_code;	
+
+		END_IF; 
+	INITIALIZE:
+		IF (Out_Serial_IOMgr.status = LOADED) THEN 
+
+			initialize_Serial_IOMgr(In_Serial_IOMgr.number_of_ports);
+
+			Out_Serial_IOMgr.status		:= initialize_Serial_IOMgr.status;	
+			Out_Serial_IOMgr.err_code	:= initialize_Serial_IOMgr.err_code;	
+
+		END_IF; 
+	RUN:
+		IF  ((Out_Serial_IOMgr.status =  INITIALIZED)  OR (Out_Serial_IOMgr.status = RUNNING) OR (Out_Serial_IOMgr.status = ERROR_ON_RUNNING)  ) THEN 
+
+			run_Serial_IOMgr( In_Serial_IOMgr.number_of_ports);
+
+			Out_Serial_IOMgr.status		:= run_Serial_IOMgr.status;	
+			Out_Serial_IOMgr.err_code	:= run_Serial_IOMgr.err_code;	
+
+			CASE (In_Serial_IOMgr.sub_command) OF
+				XFER_COEFF:
+					IF Out_Serial_IOMgr.sub_status <> COEFF_XFERED THEN
+						xfer_coefficients();
+						Out_Serial_IOMgr.sub_status := xfer_coefficients.sub_status;
+					END_IF;
+
+				CALIB:
+					Cal_Update();
+					Out_Serial_IOMgr.sub_status 	:= Cal_Update.sub_status;
+					Out_Serial_IOMgr.Cal_Raw 	:= Cal_Update.Cal_Raw;	
+				ELSE					
+					Out_Serial_IOMgr.sub_status := 0;
+				END_CASE;
+			END_IF;
+	CLOSE:
+		IF  (Out_Serial_IOMgr.status <> CLOSED) THEN 
+
+			close_Serial_IOMgr(In_Serial_IOMgr.number_of_ports, rdata_base);
+
+			Out_Serial_IOMgr.status		:= close_Serial_IOMgr.status;	
+			Out_Serial_IOMgr.err_code		:= close_Serial_IOMgr.err_code;	
+			
+		END_IF; 
+	IDLE:
+		Out_Serial_IOMgr.status := IDLING;
+	END_CASE; 
+
+
+
+
+
+
+END_PROGRAM

@@ -1,0 +1,91 @@
+FUNCTION_BLOCK initialize_SM1720_FB
+(*
+	Request the first scan and prepare the next scan
+*)
+err_code := OK;
+status := INITIALIZING;
+
+IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+
+	set_sm_origin(fd1, FCU_ADDRESS, 0);
+
+(*IF (In_SM1720_IOMgr.mode = 1000) THEN*)
+
+
+
+	IF (FCU_required = TRUE) THEN 
+
+		set_sm_origin(fd1, FCU_ADDRESS, 0);
+		FCU_setpoint	:= 0;
+
+		REQUEST_SM_POSITION(fd1, FCU_ADDRESS);	
+
+	END_IF; 																																							
+			
+	IF (GOV_required = TRUE) THEN 
+
+		set_sm_origin(fd2, GOV_ADDRESS, 0);
+		GOV_setpoint	:= 0;
+
+		REQUEST_SM_POSITION(fd2, GOV_ADDRESS);	
+
+	END_IF; 						
+
+END_IF; 
+
+err_code := OK;
+
+current_scan	:= 1;
+next_scan	:= current_scan + 1;
+
+IF (status = INITIALIZING) THEN 
+	status := INITIALIZED;
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

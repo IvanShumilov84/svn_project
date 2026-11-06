@@ -1,0 +1,1570 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Channels.BooleanChannel">
+            <summary>
+            Base class for KineticaRT Channel objects containing boolean (true/false) values.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Channels.InfoChannel">
+            <summary>
+            Base class for a KineticaRT.Logic.Channels Channel object.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Channels.Channel">
+            <summary>
+            An Object with a value.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Object">
+            <summary>
+            A standard object.
+            </summary>
+            <remarks>
+            Most KineticaRT Logic and Server objects are based on this class.
+            A collection of these objects can be held in an ChannelCollection class.
+            </remarks>
+        </member>
+        <member name="T:KineticaRT.IConnectable">
+            <summary>
+            Interface providing for KineticaRT objects to be found and connected together.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.IConnectable.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.IConnectable.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.IConnectable.FindObject(System.String)">
+            <summary>
+            Returns the named Object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.IConnectable.ObjectSearch">
+            <summary>
+            Event handler for requests from the objects children to find another object for them by name.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.IConnectable.PropertyChanged">
+            <summary>
+            Event which fires when the value of the objects property has changed.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Object.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Object.OnPropertyChanged(System.String)">
+            <summary>
+            Event which fires when the value of the objects property has changed.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.OnObjectSearch(System.String)">
+            <summary>
+            Fires an object search event to the parent object.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.FindObject(System.String)">
+            <summary>
+            Returns the named object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Object.Children_OnObjectSearch(System.String)">
+            <summary>
+            Event handler for requests from the objects children to find another object for them by name.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Object.Name">
+            <summary>
+            Gets or sets the objects name.  The name is used to identify the object from other objects.
+            </summary>
+            <value>The objects name.</value>
+        </member>
+        <member name="E:KineticaRT.Object.PropertyChanged">
+            <summary>
+            Event which fires when the value of the objects property has changed.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Object.ObjectSearch">
+            <summary>
+            Event handler for requests from the objects children to find another object for them by name.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Channels.IChannel">
+            <summary>
+            Interface providing for KineticaRT channel objects to be found, connected together, set and read.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Channels.IChannel.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="E:KineticaRT.Channels.IChannel.ValueChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="F:KineticaRT.Channels.Channel.objValue">
+            <summary>
+            Current value of the Gauge.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.Channel.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Channels.Channel.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Channels.Channel.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.Channels.Channel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Channels.Channel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Channels.Channel.OnValueChanged(KineticaRT.Values.Value)">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Channels.Channel.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="E:KineticaRT.Channels.Channel.ValueChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="T:KineticaRT.Channels.IInfoChannel">
+            <summary>
+            Interface providing Description, Tooltip and Value properties for KineticaRT channel objects of various types.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Channels.IInfoChannel.Name">
+            <summary>
+            Gets or sets the channels name.  The name is used to identify the channel from other objects.
+            </summary>
+            <value>The objects name.</value>
+        </member>
+        <member name="P:KineticaRT.Channels.IInfoChannel.Description">
+            <summary>
+            Gets or sets the channel description.
+            </summary>
+            <value>A string describing this channel.</value>
+            <remarks>This is used by classes such as the Dial to label the object on the screen.  It should be kept fairly short.</remarks>
+        </member>
+        <member name="P:KineticaRT.Channels.IInfoChannel.ToolTip">
+            <summary>
+            Gets or sets the tooltip for channel.
+            </summary>
+            <value>A string for display on tooltips.</value>
+            <remarks>This is used by classes such as the Dial to provide a full description when the mouse hovers over the display.  You can make this as long as you wish.</remarks>
+        </member>
+        <member name="M:KineticaRT.Channels.InfoChannel.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.InfoChannel.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.InfoChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.InfoChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="P:KineticaRT.Channels.InfoChannel.Description">
+            <summary>
+            Gets or sets the channel description.
+            </summary>
+            <value>A string describing this channel.</value>
+            <remarks>This is used by classes such as the Dial to label the object on the screen.  It should be kept fairly short.</remarks>
+        </member>
+        <member name="P:KineticaRT.Channels.InfoChannel.ToolTip">
+            <summary>
+            Gets or sets the tooltip for channel.
+            </summary>
+            <value>A string for display on tooltips.</value>
+            <remarks>This is used by classes such as the Dial to provide a full description when the mouse hovers over the display.  You can make this as long as you wish.</remarks>
+        </member>
+        <member name="M:KineticaRT.Channels.BooleanChannel.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Channels.BooleanChannel.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.BooleanChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.BooleanChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Channels.BooleanChannel.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="P:KineticaRT.Channels.BooleanChannel.TrueText">
+            <summary>
+            Text to display when value is true.
+            </summary>
+            <value>A string representing the channel when true.</value>
+        </member>
+        <member name="P:KineticaRT.Channels.BooleanChannel.FalseText">
+            <summary>
+            Text to display when value is false.
+            </summary>
+            <value>A string representing the channel when false.</value>
+        </member>
+        <member name="T:KineticaRT.ChannelCollection">
+            <summary>
+            A Collection of Channels.
+            </summary>
+            <remarks>A tree of channels can be built up using this class.</remarks>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.FindObject(System.String)">
+            <summary>
+            Gets the Object with the specified name
+            </summary>
+            <param name="name">The name of the Object to get</param>
+            <returns>The Object with the specifed name</returns>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.Rename(KineticaRT.Object,System.String)">
+            <summary>
+            Renames the specified Object.
+            </summary>
+            <param name="theObject">The Object to rename.</param>
+            <param name="newName">The new name of the object.</param>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.Rename(System.String,System.String)">
+            <summary>
+            Renames the specified Object.
+            </summary>
+            <param name="oldName">The old name of the object.</param>
+            <param name="newName">The new name of the object.</param>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.Add(KineticaRT.Object)">
+            <summary>
+            Adds the specified Object to the collection.
+            </summary>
+            <param name="newObject">The Object to add.</param>
+            <remarks>The object is added using its current name.</remarks>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.Remove(KineticaRT.Object)">
+            <summary>
+            Removes the specified Object from the collection.
+            </summary>
+            <param name="deleteObject">The Object to remove.</param>
+            <remarks>The object is removed using its current name.</remarks>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.Add(System.String,KineticaRT.Object)">
+            <summary>
+            Adds the specifed Object to the collection and names it.
+            </summary>
+            <param name="name">The name to give the Object</param>
+            <param name="newObject">The Object to add.</param>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.OnObjectSearch(System.String)">
+            <summary>Called when one of the children wants to find an Object by name.</summary>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.GetNames">
+            <summary>
+            Gets a string array containing the names of all the channels in the collection.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.Connect">
+            <summary>
+            Calls the Connect method on all the child Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.Disconnect">
+            <summary>
+            Calls the Disconnect method on all the child Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.ChannelCollection.OnPropertyChanged(System.String)">
+            <summary>
+            Called to fire the PropertyChanged event.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.ChannelCollection.ObjectSearch">
+            <summary>Occurs when one of the children wants to find an Object by name.</summary>
+        </member>
+        <member name="E:KineticaRT.ChannelCollection.PropertyChanged">
+            <summary>
+            Event which fires when the value of the objects property has changed.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Channels.NumericChannel">
+            <summary>
+            Base class for KineticaRT Channel objects containing numeric values.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Channels.INumericChannel">
+            <summary>
+            Interface providing Units, DecimalDigits, Minimum, Maximum, Format, Description, Tooltip and Value properties for numeric KineticaRT channel objects of various types.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Channels.INumericChannel.Units">
+            <summary>
+            Gets or sets the units string for a channel.
+            </summary>
+            <value>A string representing the units of the channel.</value>
+            <remarks>This property is normally used to put a units label on display controls such as the Dial.</remarks>
+            <example>"Km"</example>
+        </member>
+        <member name="P:KineticaRT.Channels.INumericChannel.DecimalDigits">
+            <summary>
+            Gets or sets the number of decimal digits to be displayed if displayed in number format or fixed point format.
+            </summary>
+            <value>The number of decimal digits to be displayed.</value>
+        </member>
+        <member name="P:KineticaRT.Channels.INumericChannel.Minimum">
+            <summary>
+            Gets or sets the minimum value of channel.
+            </summary>
+            <value>The minimum value of the channel.</value>
+            <remarks>
+            This value is normally used for setting the minimum value on a display scale.
+            <para>No limit checking is performed so the actual Value may be lower.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Channels.INumericChannel.Maximum">
+            <summary>
+            Gets or sets the maximum value of channel.
+            </summary>
+            <value>The maximum balue of the channel.</value>
+            <remarks>
+            This value is normally used for setting the maximum value on a display scale.
+            <para>No limit checking is performed so the actual Value may be higher.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Channels.INumericChannel.Format">
+            <summary>
+            Gets or sets the format of the channel when viewed as text.
+            </summary>
+            <value>A string describing the display format of the channel.</value>
+            <remarks>The following formats can be used:
+            <ul>
+            <li>"C" - Currency</li>
+            <li>"D" - Decimal</li>
+            <li>"E" - Exponential</li>
+            <li>"F" - Fixed Point</li>
+            <li>"G" - General</li>
+            <li>"N" - Number</li>
+            <li>"P" - Percentage</li>
+            <li>"X" - Hexadecimal</li>
+            <li>"0.00" - Zero padding</li>
+            <li>"#.##" - Blank padding</li>
+            </ul>
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericChannel.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericChannel.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericChannel.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericChannel.Units">
+            <summary>
+            Gets or sets the units string for a channel.
+            </summary>
+            <value>A string representing the units of the channel.</value>
+            <remarks>This property is normally used to put a units label on display controls such as the Dial.</remarks>
+            <example>"Km"</example>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericChannel.DecimalDigits">
+            <summary>
+            Gets or sets the number of decimal digits to be displayed if displayed in number format or fixed point format.
+            </summary>
+            <value>The number of decimal digits to be displayed.</value>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericChannel.Minimum">
+            <summary>
+            Gets or sets the minimum value of channel.
+            </summary>
+            <value>The minimum value of the channel.</value>
+            <remarks>
+            This value is normally used for setting the minimum value on a display scale.
+            <para>No limit checking is performed so the actual Value may be lower.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericChannel.Maximum">
+            <summary>
+            Gets or sets the maximum value of channel.
+            </summary>
+            <value>The maximum balue of the channel.</value>
+            <remarks>
+            This value is normally used for setting the maximum value on a display scale.
+            <para>No limit checking is performed so the actual Value may be higher.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericChannel.Format">
+            <summary>
+            Gets or sets the format of the channel when viewed as text.
+            </summary>
+            <value>A string describing the display format of the channel.</value>
+            <remarks>The following formats can be used:
+            <ul>
+            <li>"C" - Currency</li>
+            <li>"D" - Decimal</li>
+            <li>"E" - Exponential</li>
+            <li>"F" - Fixed Point</li>
+            <li>"G" - General</li>
+            <li>"N" - Number</li>
+            <li>"P" - Percentage</li>
+            <li>"X" - Hexadecimal</li>
+            <li>"0.00" - Zero padding</li>
+            <li>"#.##" - Blank padding</li>
+            </ul>
+            </remarks>
+        </member>
+        <member name="T:KineticaRT.Channels.TextChannel">
+            <summary>
+            Base class for KineticaRT Channel objects containing text (string) values.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.TextChannel.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Channels.TextChannel.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.TextChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.TextChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="T:KineticaRT.Channels.VariableChannel">
+            <summary>
+            A Channel with a value.
+            </summary>
+            <remarks>Differs from a channel in that the value can be persisted.</remarks>
+        </member>
+        <member name="M:KineticaRT.Channels.VariableChannel.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.VariableChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Channels.VariableChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="T:KineticaRT.Collection">
+            <summary>
+            A standard collection object.
+            An object that has child objects.
+            </summary>
+            <remarks>
+            Most KineticaRT Logic and Server objects are based on this class.
+            A collection of these objects can be held in an ObjectCollection class.
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Collection.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Collection.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Collection.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Collection.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Collection.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Collection.FindObject(System.String)">
+            <summary>
+            Returns the named object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Collection.Children">
+            <summary>
+            Gets or sets the objects Children Collection.  Gets null if there are no children.
+            </summary>
+            <value>This object children collection.</value>
+        </member>
+        <member name="T:KineticaRT.ObjectSearchEventHandler">
+            <summary>
+            Represents the method that will handle the ObjectSearch event fired by an object to ask its parent object to find another object for it by name.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Channels.ValueChangedEventHandler">
+            <summary>Represents the method that will handle the ValueChanged event raised when the Value property is changed on a Channel object.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="newVal">The new value.</param>
+        </member>
+        <member name="T:KineticaRT.Channels.IBooleanChannel">
+            <summary>
+            Interface providing TrueText, FalseText and Value properties for boolean KineticaRT channel objects of various types.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Channels.IBooleanChannel.TrueText">
+            <summary>
+            Text to display when value is true.
+            </summary>
+            <value>A string representing the channel when true.</value>
+        </member>
+        <member name="P:KineticaRT.Channels.IBooleanChannel.FalseText">
+            <summary>
+            Text to display when value is false.
+            </summary>
+            <value>A string representing the channel when false.</value>
+        </member>
+        <member name="T:KineticaRT.LicenceForm">
+            <summary>
+            Form for entering licence details.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.LicenceForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.LicenceForm.#ctor(System.String)">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.LicenceForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.LicenceForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.ChangeRecordAttribute">
+            <summary>
+            Attribute for recording the change history of anything.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.ChangeRecordAttribute.#ctor(System.Double,System.String,System.String,System.String)">
+            <summary>
+            A change record.
+            </summary>
+            <param name="version">The new version number</param>
+            <param name="date">Date of change</param>
+            <param name="author">Name of author</param>
+            <param name="description">Description of change</param>
+        </member>
+        <member name="F:KineticaRT.ChangeRecordAttribute.date">
+            <summary>
+            Date of change.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.ChangeRecordAttribute.version">
+            <summary>
+            New version number.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.ChangeRecordAttribute.description">
+            <summary>
+            Description of change
+            </summary>
+        </member>
+        <member name="F:KineticaRT.ChangeRecordAttribute.author">
+            <summary>
+            Author of change
+            </summary>
+        </member>
+        <member name="T:KineticaRT.CopyrightAttribute">
+            <summary>
+            Attribute for recording the copyright of anything.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.CopyrightAttribute.#ctor(System.String)">
+            <summary>
+            A change record.
+            </summary>
+            <param name="message">Copyright message</param>
+        </member>
+        <member name="F:KineticaRT.CopyrightAttribute.message">
+            <summary>
+            Copyright message.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.ReferenceAttribute">
+            <summary>
+            Attribute for recording a reference.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.ReferenceAttribute.#ctor">
+            <summary>
+            A reference.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.ReferenceAttribute.ProjectNumber">
+            <summary>
+            Project Number.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.ReferenceAttribute.ProjectName">
+            <summary>
+            Project Name.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.ReferenceAttribute.DocumentReference">
+            <summary>
+            Document reference number.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.ReferenceAttribute.DocumentName">
+            <summary>
+            Document Name.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Server">
+            <summary>
+            Root object for a tree of KineticaRT Logic and Server Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Server.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.Server.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="T:KineticaRT.Services">
+            <summary>
+            Contains various KineticaRT system services.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Services.FastUpdater">
+            <summary>Gets a KineticaRT system-defined object.</summary>
+            <value>An Updater which updates at a fast rate.</value>
+        </member>
+        <member name="P:KineticaRT.Services.OneSecondUpdater">
+            <summary>Gets a KineticaRT system-defined object.</summary>
+            <value>An Updater which updates at 1 Hz.</value>
+        </member>
+        <member name="T:KineticaRT.Updater">
+            <summary>
+            Generates an update event for objects to update themselves on.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Updater.#ctor(System.String,System.Int32)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="name">Name of updater.</param>
+            <param name="updateRate">Update rate in milliseconds.</param>
+        </member>
+        <member name="M:KineticaRT.Updater.Finalize">
+            <summary>
+            Destructor for class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Updater.Dispose">
+            <summary>
+            Closes all resources used by this class, including the update thread.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Updater.Dispose(System.Boolean)">
+            <summary>
+            Closes all resources used by this class, including the update thread.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Updater.UpdateRate">
+            <summary>Gets the update rate.</summary>
+            <value>Update rate in seconds.</value>
+        </member>
+        <member name="E:KineticaRT.Updater.Update">
+            <summary>Occurs at the specified update rate.</summary>
+        </member>
+        <member name="T:KineticaRT.Updater.UpdateEventHandler">
+            <summary>Represents the method that will handle the Update event.</summary>
+        </member>
+        <member name="T:KineticaRT.Values.Boolean">
+            <summary>
+            KineticaRT Value containing a boolean value.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Values.Value">
+            <summary>
+            Implements the basic functionality common to all KineticaRT Value objects.
+            </summary>
+            <remarks>Use this type when you don't know what type of Value a channel will supply.</remarks>
+            <seealso cref="T:KineticaRT.Values.Double"/>
+        </member>
+        <member name="M:KineticaRT.Values.Value.CompareTo(System.Object)">
+            <summary>Compares this instance to a specified object and returns an indication of their relative values</summary>
+            <returns>A 32-bit signed integer that indicates the relative order of the comparands. The return value has these meanings:
+            <ul>
+            <li>Less than zero - This instance is less than obj. </li>
+            <li>Zero - This instance is equal to obj. </li>
+            <li> Greater than zero - This instance is greater than obj. </li>
+            </ul>
+            </returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.op_Increment(KineticaRT.Values.Value)">
+            <summary>
+            Return a value one greater than the original.
+            </summary>
+            <param name="value">The original value.</param>
+            <returns>The new value</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.op_GreaterThan(KineticaRT.Values.Value,KineticaRT.Values.Value)">
+            <summary>
+            Greater than operator.
+            </summary>
+            <param name="value1">LHS</param>
+            <param name="value2">RHS</param>
+            <returns>true if LHS greater than RHS otherwise false.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.op_LessThan(KineticaRT.Values.Value,KineticaRT.Values.Value)">
+            <summary>
+            Less than operator.
+            </summary>
+            <param name="value1">LHS</param>
+            <param name="value2">RHS</param>
+            <returns>true if LHS less than RHS otherwise false.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.op_GreaterThan(KineticaRT.Values.Value,System.Double)">
+            <summary>
+            Greater than operator.
+            </summary>
+            <param name="value1">LHS</param>
+            <param name="value2">RHS</param>
+            <returns>true if LHS greater than RHS otherwise false.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.op_LessThan(KineticaRT.Values.Value,System.Double)">
+            <summary>
+            Less than operator.
+            </summary>
+            <param name="value1">LHS</param>
+            <param name="value2">RHS</param>
+            <returns>true if LHS less than RHS otherwise false.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.Add(KineticaRT.Values.Value)">
+            <summary>
+            Adds this Value to another Value.
+            </summary>
+            <param name="rhs">The Value to add.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.Subtract(KineticaRT.Values.Value)">
+            <summary>
+            Subtracts this Value from another Value.
+            </summary>
+            <param name="rhs">The Value to subtract.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.Multiply(KineticaRT.Values.Value)">
+            <summary>
+            Multiplies this Value by another Value.
+            </summary>
+            <param name="rhs">The Value to multiply by.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.Divide(KineticaRT.Values.Value)">
+            <summary>
+            Divides this Value by another Value.
+            </summary>
+            <param name="rhs">The Value to divide by.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.ToDouble">
+            <summary>
+            Converts this Value to a System.Double.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Value.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts this Value to a System.String using the specified format.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.#ctor(System.Boolean)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="value">The value of the new class.</param>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToBoolean(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToChar(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToDateTime(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToDecimal(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToDouble(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToSByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToSingle(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToString(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToUInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToUInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToUInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToType(System.Type,System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.GetTypeCode">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToDouble">
+            <summary>
+            Converts this Value to a System.Double.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.ToBoolean">
+            <summary>
+            Converts this Value to a System.Boolean.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.CompareTo(System.Object)">
+            <summary>Compares this instance to a specified object and returns an indication of their relative values</summary>
+            <returns>A 32-bit signed integer that indicates the relative order of the comparands. The return value has these meanings:
+            <ul>
+            <li>Less than zero - This instance is less than obj. </li>
+            <li>Zero - This instance is equal to obj. </li>
+            <li> Greater than zero - This instance is greater than obj. </li>
+            </ul>
+            </returns>
+        </member>
+        <member name="T:KineticaRT.Values.Boolean.TypeConverter">
+            <summary>
+            TypeConverter for KineticaRT.Boolean type.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Overrides the CanConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Overrides the ConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Boolean.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Overrides the ConvertTo method of TypeConverter.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Values.Values">
+            <summary>
+            Standard values for common values and error conditions.
+            </summary>
+            <remarks>Using standard values avoids having to create new objects each time you use one of these values.<br/>
+            Using standard error values also allows specific errors to be recognised and used correctly by various objects.</remarks>
+        </member>
+        <member name="P:KineticaRT.Values.Values.EmptyString">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.OperationNotSupported">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.TypeMismatch">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.NotConnected">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.OutOfRange">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.UnderRange">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.OverRange">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.Pi">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.PositiveInfinity">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.NegativeInfinity">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.True">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.False">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.Zero">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.One">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="P:KineticaRT.Values.Values.MinusOne">
+            <summary>Gets a KineticaRT system-defined value.</summary>
+            <value>A Value object representing a system-defined value</value>
+        </member>
+        <member name="T:KineticaRT.Values.DateTime">
+            <summary>
+            KineticaRT Value containing a date and time value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.#ctor(System.DateTime)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="value">The value of the new class.</param>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToBoolean(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToChar(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToDateTime(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToDecimal(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToDouble(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToSByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToSingle(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToString(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToUInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToUInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToUInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToType(System.Type,System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.GetTypeCode">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToDouble">
+            <summary>
+            Converts this Value to a System.Double.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts this Value to a System.String using the specified format.
+            </summary>
+            <returns>The result.</returns>
+            <remarks>The following formats can be used:
+            <ul>
+            <li>"d" - Short date</li>
+            <li>"D" - Long date</li>
+            <li>"f" - Long date, short time</li>
+            <li>"F" - Long date, long time</li>
+            <li>"g" - short date, short time</li>
+            <li>"G" - short date, long time</li>
+            <li>"t" - short time</li>
+            <li>"T" - Long time</li>
+            <li>"u" - Universal time (sortable)</li>
+            <li>"U" - Universal time</li>
+            <li>"dddd yyyy/MM/dd hh:mm:ss fff" - Custom</li>
+            </ul>
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.CompareTo(System.Object)">
+            <summary>Compares this instance to a specified object and returns an indication of their relative values</summary>
+            <returns>A 32-bit signed integer that indicates the relative order of the comparands. The return value has these meanings:
+            <ul>
+            <li>Less than zero - This instance is less than obj. </li>
+            <li>Zero - This instance is equal to obj. </li>
+            <li> Greater than zero - This instance is greater than obj. </li>
+            </ul>
+            </returns>
+        </member>
+        <member name="T:KineticaRT.Values.DateTime.TypeConverter">
+            <summary>
+            TypeConverter for KineticaRT.DateTime type.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Overrides the CanConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Overrides the ConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DateTime.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Overrides the ConvertTo method of TypeConverter.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Values.Double">
+            <summary>
+            KineticaRT Value containing a double precision IEEE floating point value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToBoolean(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToChar(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToDateTime(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToDecimal(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToDouble(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToSByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToSingle(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToString(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToUInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToUInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToUInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToType(System.Type,System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.GetTypeCode">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.#ctor(System.Double)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="value">The value of the new class.</param>
+        </member>
+        <member name="M:KineticaRT.Values.Double.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="newVal">The value of the new class.</param>
+        </member>
+        <member name="M:KineticaRT.Values.Double.#ctor(System.Single)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="newVal">The value of the new class.</param>
+        </member>
+        <member name="M:KineticaRT.Values.Double.CompareTo(System.Object)">
+            <summary>Compares this instance to a specified object and returns an indication of their relative values</summary>
+            <returns>A 32-bit signed integer that indicates the relative order of the comparands. The return value has these meanings:
+            <ul>
+            <li>Less than zero - This instance is less than obj. </li>
+            <li>Zero - This instance is equal to obj. </li>
+            <li> Greater than zero - This instance is greater than obj. </li>
+            </ul>
+            </returns>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToDouble">
+            <summary>
+            Converts this Value to a System.Double.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Double.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts this Value to a System.String using the specified format.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Double.Add(KineticaRT.Values.Value)">
+            <summary>
+            Adds this Value to another Value.
+            </summary>
+            <param name="rhs">The Value to add.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Double.Subtract(KineticaRT.Values.Value)">
+            <summary>
+            Subtracts this Value from another Value.
+            </summary>
+            <param name="rhs">The Value to subtract.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Double.Multiply(KineticaRT.Values.Value)">
+            <summary>
+            Multiplies this Value by another Value.
+            </summary>
+            <param name="rhs">The Value to multiply by.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Double.Divide(KineticaRT.Values.Value)">
+            <summary>
+            Divides this Value by another Value.
+            </summary>
+            <param name="rhs">The Value to divide by.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="T:KineticaRT.Values.Double.TypeConverter">
+            <summary>
+            TypeConverter for KineticaRT.Double type.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Overrides the CanConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Overrides the ConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Double.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Overrides the ConvertTo method of TypeConverter.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Values.DoubleArray">
+            <summary>
+            KineticaRT Value containing an array of double precision IEEE floating point values.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.#ctor(System.Double[])">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="value">The value of the new class.</param>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="value">The value of the new instance.</param>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToBoolean(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToChar(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToDateTime(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToDecimal(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToDouble(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToSByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToSingle(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToString(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToUInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToUInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToUInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToType(System.Type,System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.GetTypeCode">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToDoubleArray">
+            <summary>
+            Converts this Value to a System.Double[].
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts this Value to a System.String using the specified format.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="T:KineticaRT.Values.DoubleArray.TypeConverter">
+            <summary>
+            TypeConverter for KineticaRT.DoubleArray type.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Overrides the CanConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Overrides the ConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.DoubleArray.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Overrides the ConvertTo method of TypeConverter.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Values.Text">
+            <summary>
+            KineticaRT Value containing a text (string) value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+            <param name="newVal">The value of the new class.</param>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToBoolean(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToChar(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToDateTime(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToDecimal(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToDouble(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToSByte(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToSingle(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToString(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToUInt16(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToUInt32(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToUInt64(System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToType(System.Type,System.IFormatProvider)">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.GetTypeCode">
+            <summary>Implements the IConvertible Interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToDouble">
+            <summary>
+            Converts this Value to a System.Double.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Text.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts this Value to a System.String using the specified format.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Values.Text.CompareTo(System.Object)">
+            <summary>Compares this instance to a specified object and returns an indication of their relative values</summary>
+            <returns>A 32-bit signed integer that indicates the relative order of the comparands. The return value has these meanings:
+            <ul>
+            <li>Less than zero - This instance is less than obj. </li>
+            <li>Zero - This instance is equal to obj. </li>
+            <li> Greater than zero - This instance is greater than obj. </li>
+            </ul>
+            </returns>
+        </member>
+        <member name="M:KineticaRT.Values.Text.Add(KineticaRT.Values.Value)">
+            <summary>
+            Adds this Value to another Value.
+            </summary>
+            <param name="rhs">The Value to add.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="T:KineticaRT.Values.Text.TypeConverter">
+            <summary>
+            TypeConverter for KineticaRT.Text type.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Overrides the CanConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Overrides the ConvertFrom method of TypeConverter.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Values.Text.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Overrides the ConvertTo method of TypeConverter.
+            </summary>
+        </member>
+    </members>
+</doc>

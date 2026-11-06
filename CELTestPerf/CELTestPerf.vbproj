@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E41619C9-1CF9-4A8B-8E88-6F2CF1494265}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CELTestPerf</RootNamespace>
+    <AssemblyName>CELTestPerf</AssemblyName>
+    <MyType>Empty</MyType>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <StartupObject>CELTestPerf.Form1</StartupObject>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CELTestPerf_Sequence.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CEL.Net\CEL.vbproj">
+      <Project>{1f06bed1-b64b-424e-9d4e-2889b45a9f2c}</Project>
+      <Name>CEL</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL.Net\KineticaRT\Channels\CEL.Channels.csproj">
+      <Project>{316d32d9-46a2-483f-9722-76b263ed6891}</Project>
+      <Name>CEL.Channels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL.Net\KineticaRT\Sequence\CEL.Sequence.csproj">
+      <Project>{b9707826-5441-49f9-9e5d-4ca6a92399e9}</Project>
+      <Name>CEL.Sequence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL.Net\KineticaRT\Servers\Logger\CEL.Servers.Logger.csproj">
+      <Project>{2e5e3e4a-26a7-49c8-adad-13e9a08207b9}</Project>
+      <Name>CEL.Servers.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL.Net\KineticaRT\Splash\CEL.Splash.vbproj">
+      <Project>{9873ef38-1c16-4e10-892a-9f995f1ea01a}</Project>
+      <Name>CEL.Splash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL.Net\Servers\CEL.Servers.vbproj">
+      <Project>{845f60b3-47e7-4614-ba70-6e6ed437153a}</Project>
+      <Name>CEL.Servers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\BarGraph\KineticaRT.Controls.BarGraph.csproj">
+      <Project>{3D2180B6-3618-4797-9C3F-0177F1717021}</Project>
+      <Name>KineticaRT.Controls.BarGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Button\KineticaRT.Controls.Button.csproj">
+      <Project>{58f86faa-1750-4451-a0d3-0fa807f7e3c6}</Project>
+      <Name>KineticaRT.Controls.Button</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Dial\KineticaRT.Controls.Dial.csproj">
+      <Project>{9AC2E2EF-5F51-4EA0-9837-883E7212E1FC}</Project>
+      <Name>KineticaRT.Controls.Dial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Display\KineticaRT.Controls.Display.csproj">
+      <Project>{a26314d0-7c8d-48b7-8bc3-9b56738cbfdc}</Project>
+      <Name>KineticaRT.Controls.Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Explorer\KineticaRT.Controls.Explorer.csproj">
+      <Project>{bf4fac1a-21b9-48ae-8649-462465e20eab}</Project>
+      <Name>KineticaRT.Controls.Explorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Frame\KineticaRT.Controls.Frame.csproj">
+      <Project>{3245d543-24d7-4010-ad8a-095fae19a0a2}</Project>
+      <Name>KineticaRT.Controls.Frame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Indicator\KineticaRT.Controls.Indicator.csproj">
+      <Project>{C2C09634-54D6-4DAD-BD3A-213A7D2F9AE6}</Project>
+      <Name>KineticaRT.Controls.Indicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\KineticaRT.Controls.csproj">
+      <Project>{0753e173-b6a0-4724-bd16-db25b9a194a6}</Project>
+      <Name>KineticaRT.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Picture\KineticaRT.Controls.Picture.csproj">
+      <Project>{a6181f72-f54d-4e0d-93a5-6b6c1636812a}</Project>
+      <Name>KineticaRT.Controls.Picture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Tab\KineticaRT.Controls.Tab.csproj">
+      <Project>{90f1bff6-0233-4a46-a654-02097b3a107b}</Project>
+      <Name>KineticaRT.Controls.Tab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\Trend\KineticaRT.Controls.Trend.csproj">
+      <Project>{bb42ef0a-6af4-4249-bb99-0860be6968f8}</Project>
+      <Name>KineticaRT.Controls.Trend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Controls\XYGraph\KineticaRT.Controls.XYGraph.csproj">
+      <Project>{3c67995f-c505-4c5a-baa6-5e71094d58c5}</Project>
+      <Name>KineticaRT.Controls.XYGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\KineticaRT.csproj">
+      <Project>{f4ad27c5-4183-4d56-8cba-56cc3947732a}</Project>
+      <Name>KineticaRT %28KineticaRT\KineticaRT%29</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Logic\Channels\KineticaRT.Logic.Channels.csproj">
+      <Project>{b2a4b4cd-02c6-4a37-82b1-1c732239361e}</Project>
+      <Name>KineticaRT.Logic.Channels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Logic\Expressions\KineticaRT.Logic.Expressions.csproj">
+      <Project>{ec941795-e302-4eb8-a729-911791641897}</Project>
+      <Name>KineticaRT.Logic.Expressions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Sequence\KineticaRT.Sequence.csproj">
+      <Project>{F1A4B1DD-00C8-4264-A870-9C83DE3D7B49}</Project>
+      <Name>KineticaRT.Sequence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KineticaRT\Servers\Logger\KineticaRT.Servers.Logger.csproj">
+      <Project>{cfbf0ca8-f3c8-4541-97d4-8831096623ae}</Project>
+      <Name>KineticaRT.Servers.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KineticaRT\Servers\OpcClient\KineticaRT.Servers.OpcClient.csproj">
+      <Project>{f6de4b27-5bc6-4ee2-9148-b211ffb79919}</Project>
+      <Name>KineticaRT.Servers.OpcClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Application\KineticaRT.Studio.Application.csproj">
+      <Project>{b642c01b-0bcf-4d74-8526-eb402f195a59}</Project>
+      <Name>KineticaRT.Studio.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\BarGraph\KineticaRT.Studio.Controls.BarGraph.csproj">
+      <Project>{c10f654f-2b64-402f-a0de-3268d221152d}</Project>
+      <Name>KineticaRT.Studio.Controls.BarGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\Button\KineticaRT.Studio.Controls.Button.csproj">
+      <Project>{6491f629-806a-4b05-87a7-5fdf73a04d09}</Project>
+      <Name>KineticaRT.Studio.Controls.Button</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\ChannelSelector\KineticaRT.Studio.Controls.ChannelSelector.csproj">
+      <Project>{AF97483E-45A1-4DC9-A2F1-F7B6A6AF72B4}</Project>
+      <Name>KineticaRT.Studio.Controls.ChannelSelector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\Checkbox\KineticaRT.Studio.Controls.Checkbox.csproj">
+      <Project>{97D63DF3-8492-4F5F-BE25-2825AB81D2F8}</Project>
+      <Name>KineticaRT.Studio.Controls.Checkbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\Dial\KineticaRT.Studio.Controls.Dial.csproj">
+      <Project>{BF1EB84F-E961-4A4D-BE3F-01A8418B1DA3}</Project>
+      <Name>KineticaRT.Studio.Controls.Dial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KineticaRT\Studio\Controls\Display\KineticaRT.Studio.Controls.Display.csproj">
+      <Project>{1fce97f1-cfc6-406e-8a83-ae0c5b90501a}</Project>
+      <Name>KineticaRT.Studio.Controls.Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj">
+      <Project>{12431171-A893-4FB0-A7C4-1DABCCC8B763}</Project>
+      <Name>KineticaRT.Studio.Controls.Indicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\KineticaRT.Studio.Controls.csproj">
+      <Project>{a5416daa-e173-4736-86e4-ccaa81c25721}</Project>
+      <Name>KineticaRT.Studio.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\Controls\LampIndicator\KineticaRT.Studio.Controls.LampIndicator.csproj">
+      <Project>{E91AB4C6-FC7F-4E4A-A1F9-4FD08C201FF8}</Project>
+      <Name>KineticaRT.Studio.Controls.LampIndicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\Studio\KineticaRT.Studio.csproj">
+      <Project>{ace748ca-c341-4dba-9698-bca085d24ea2}</Project>
+      <Name>KineticaRT.Studio</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Interop.KineticaRT_OPC">
+      <HintPath>..\HMI\Interop.KineticaRT_OPC.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.XML">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\TSCP700_GARUDA_A_RUN.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y "$(TargetDir)*.dll" "$(ProjectDir)"
+copy "$(TargetDir)PrjMaster_HMI.exe"   "$(ProjectDir)CELTestPerf.exe"
+</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

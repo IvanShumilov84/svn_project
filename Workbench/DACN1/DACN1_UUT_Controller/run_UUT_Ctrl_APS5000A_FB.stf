@@ -1,0 +1,323 @@
+FUNCTION_BLOCK run_UUT_Ctrl_APS5000A_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_TSCP700_FB									
+														
+************************************************************************************************************************************************)	
+
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: RUNNING');*)
+	err_code 	:= OK;
+
+
+	(* Definition des signaux *)
+	
+	(* N1 Speed *)
+	CASE 	ANY_TO_DINT ( N1_BINDING_SOURCE ) OF
+			BINDING_DACN1_NIDAQ_IOMGR_F:
+				N1_Freq := DACN1_NIDAQ_IOMGR_F[N1_INDEX].Mean_Value;        (* N1 Frequence *)
+	ELSE
+			err_code := -1;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS5000A: N1_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+	END_CASE;         
+
+	(* Run_Sw *)
+	CASE 	ANY_TO_DINT ( APU_RUN_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+			Run_Sw		:= DACN1_SERIAL_IOMGR_DOUT[ APU_RUN_CMD_INDEX ];  
+	ELSE
+		err_code := -2;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS5000A: APU_RUN_CMD_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* APU_START *)
+	CASE 	ANY_TO_DINT ( APU_START_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+			APU_START_CMD		:= DACN1_SERIAL_IOMGR_DOUT[ APU_START_CMD_INDEX ];  
+	ELSE
+		err_code := -3;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS5000A: APU_START_CMD_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+
+
+      (* Fin definition des signaux *)
+
+	IF (N1_Freq < 100.0) THEN
+
+		N1_Speed 		:= 0.0;
+		N1_Speed_PCT 	:= 0.0;
+
+	ELSE 
+
+		N1_Speed		:= (N1_Freq * N1_100_RPM) / N1_100_FREQ;
+		N1_Speed_PCT	:= (N1_Freq / N1_100_FREQ ) * 100.0;
+
+	END_IF;
+
+	TExhaust	:= (CANBUS_EGT_TC1_DEGF + CANBUS_EGT_TC2_DEGF) / 2.0;
+      RTL  		:= CANBUS_RTL;
+	T_OIL		:= CANBUS_TO_APUOIL;
+	P_OIL		:= CANBUS_PO_APUSYS;
+
+	Total_Power	:= LB_INFO[1].TOTAL_POWER + LB_INFO[2].TOTAL_POWER;
+	APU_Rolling := N1_Freq  >= 25.0;
+	APU_Run	:= Run_Sw AND NOT EPS_Trip AND RTL;
+	APU_SD	:= (APUC_STATE = 128.0 OR APUC_STATE = 64.0 ) AND N1_Freq >= 1442.0;
+	APU_Start	:= Run_Sw AND APU_Rolling AND NOT EPS_Trip AND NOT RTL;
+
+
+	(* EGT: 1100°F Steady-State; 1300°F Start *)
+	IF (RTL = FALSE) THEN
+		UUT_Trip_T[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.T1;
+	ELSE
+		UUT_Trip_T[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;
+	END_IF;
+
+
+(*	UUT_Trip_T[1].Trip_Point	:=	;*)
+(*	UUT_Trip_T[2].Trip_Point	:=	;*)
+	UUT_Trip_T[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.T3;
+	UUT_Trip_T[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.T4;
+
+	UUT_Trip_F[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.F1;
+	UUT_Trip_F[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.F2;
+	UUT_Trip_F[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.F3;
+	UUT_Trip_F[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.F4;
+
+	UUT_Trip_N[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.N1;
+	UUT_Trip_N[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.N2;
+	UUT_Trip_N[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.N3;
+	UUT_Trip_N[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.N4;
+
+	UUT_Trip_P[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.P1;
+	UUT_Trip_P[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.P2;
+	UUT_Trip_P[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.P3;
+	UUT_Trip_P[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.P4;
+
+	UUT_Trip_Q[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q1;
+	UUT_Trip_Q[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q2;
+	UUT_Trip_Q[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q3;
+	UUT_Trip_Q[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q4;
+
+	UUT_Trip_V[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.V1;
+	UUT_Trip_V[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.V2;
+	UUT_Trip_V[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.V3;
+	UUT_Trip_V[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.V4;
+
+	UUT_Trip_VIB[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB1;
+	UUT_Trip_VIB[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB2;
+	UUT_Trip_VIB[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB3;
+	UUT_Trip_VIB[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB4;
+
+
+	IF T_EGT_TRIP_TYPE = 1 THEN
+		UUT_Trip_T[1].Trip_Source	:= 	ANY_TO_REAL(MAX(ANY_TO_DINT(CANBUS_EGT_TC1_DEGF ),ANY_TO_DINT(CANBUS_EGT_TC2_DEGF )));
+	ELSIF T_EGT_TRIP_TYPE = 2 THEN
+		UUT_Trip_T[1].Trip_Source	:=	TExhaust;
+	ELSE (*NOT SUPPORTED*)
+		UUT_Trip_T[1].Trip_Source := 9999.0;
+	END_IF;
+
+(*	UUT_Trip_T[2].Trip_Source	:=	;*)
+	UUT_Trip_T[3].Trip_Source	:=	T_OIL;
+(*	UUT_Trip_T[4].Trip_Source	:=	;*)
+
+
+(*	UUT_Trip_F[1].Trip_Source	:=	;*)
+(*	UUT_Trip_F[2].Trip_Source	:=	;*)
+(*	UUT_Trip_F[3].Trip_Source	:=	;*)
+(*	UUT_Trip_F[4].Trip_Source	:=	;*)
+
+	UUT_Trip_N[1].Trip_Source	:=	N1_Speed;
+(*	UUT_Trip_N[2].Trip_Source	:=	;*)
+(*	UUT_Trip_N[3].Trip_Source	:=	;*)
+(*	UUT_Trip_N[4].Trip_Source	:=	;*)
+
+
+(* When over 90% Speed, 5-seconds delay before trip *)
+IF	( P_OIL < UUT_Trip_P[1].Trip_Point AND N1_Speed_PCT > 90.0) THEN
+	LowOilPressure(TRUE, t#5s);
+ELSE
+	LowOilPressure(FALSE, t#5s);
+END_IF;
+
+IF LowOilPressure.Q THEN
+
+	UUT_Trip_P[1].Trip_Source 	:= 	P_OIL;
+ELSE
+	UUT_Trip_P[1].Trip_Source 	:= 	3000.0; (* arbitrary high value, no trip will be detected *)
+
+END_IF;
+
+UUT_Trip_P[1].Trip_High := FALSE; (* il s'agit d'un low pressure *)
+
+(*	UUT_Trip_P[2].Trip_Source	:=	;*)
+(*	UUT_Trip_P[3].Trip_Source	:=	;*)
+(*	UUT_Trip_P[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_Q[1].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[2].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[3].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_V[1].Trip_Source	:=	;*)
+(*	UUT_Trip_V[2].Trip_Source	:=	;*)
+(*	UUT_Trip_V[3].Trip_Source	:=	;*)
+(*	UUT_Trip_V[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_VIB[1].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[2].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[3].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[4].Trip_Source	:=	;*)
+
+
+EGT_Limit := UUT_Trip_T[1].Trip_Point;
+
+
+
+
+Start_cmd_detected(APU_START_CMD); (* Start is detected when DOUT changes to TRUE *)
+
+IF Start_cmd_detected.Q THEN
+	EGT_Ref	:= TExhaust;
+ELSIF APU_SD OR NOT Run_Sw THEN
+    EGT_Ref := 5000.0;   (* a shutdown have been commanded OR RUN/STOP is at STOP, set the reference to a high value so the ignition will not be detected *)
+END_IF;
+
+IF (TExhaust > (EGT_Ref + 100.0)) THEN
+	Ignition	:= TRUE;
+ELSE
+	Ignition	:= FALSE;
+END_IF;
+
+IF (Total_Power > 5.0 AND RTL) THEN
+	Load_applied:= TRUE;
+ELSE
+	Load_applied:= FALSE;
+END_IF;
+
+Load_Reached_Latch(Total_Power >= 445000.0, NOT Load_applied);
+
+ET_RTL_Latch(Ignition,NOT APU_Start); (* Start when APU starts. Reset Latch when APU start Completed/Aborted *)
+		
+ET_50PCT_Latch(Ignition, NOT APU_Start OR N1_Freq  >= (N1_100_FREQ/ 2.0)); (* Start at Ignition. Reset Latch when APU start Aborted or 50% Speed reached *)
+
+ET_LOAD_Latch(Load_applied, NOT Load_applied OR Total_Power >= 445000.0); (* Start when load is applied. Reset if load is removed of 445 kVA is attained because it's 450 +/- 5*)
+
+ET_RD_Latch(APU_SD, N1_Freq < 144.2 ); (* Start when APU is shutting down and speed is at 80% (11536 Hz). Reset when shutdown is completed *)
+
+ET_RUN_Latch(N1_Freq >= 11536.0, NOT Run_Sw); (* Starts when APU speed reaches 25 Hz. Resets when APU switch is @ STOP. *)
+
+IF ET_RTL_Latch.Q1 = TRUE THEN
+	ET_RTL_Timer(TRUE, t#300s);
+	ET_RTL	:= ANY_TO_REAL(ET_RTL_Timer.ET)/1000.0;
+ELSE
+	ET_RTL_Timer(FALSE, t#300s);
+END_IF;
+
+IF ET_50PCT_Latch.Q1 = TRUE THEN
+	ET_50PCT_Timer(TRUE, t#300s);
+	ET_50PCT	:= ANY_TO_REAL(ET_50PCT_Timer.ET)/1000.0;
+ELSE
+	ET_50PCT_Timer(FALSE, t#300s);
+END_IF;
+
+IF ET_LOAD_Latch.Q1 = TRUE THEN
+
+	ET_LOAD_Timer(TRUE, t#300s);
+
+	IF Load_Reached_Latch.Q1 = FALSE THEN
+		ET_LOAD	:= ANY_TO_REAL(ET_LOAD_Timer.ET)/1000.0;
+	END_IF;
+ELSE
+	ET_LOAD_Timer(FALSE, t#300s);
+END_IF;
+
+IF ET_RD_Latch.Q1 = TRUE THEN
+	ET_RD_Timer(TRUE, t#300s);
+	ET_RD		:= ANY_TO_REAL(ET_RD_Timer.ET)/1000.0;
+ELSE
+	ET_RD_Timer(FALSE, t#300s);
+
+END_IF;
+
+IF ET_RUN_Latch.Q1 = TRUE THEN
+	ET_RUN_Timer(TRUE, t#30000s);
+	ET_RUN	:= ANY_TO_REAL(ET_RUN_Timer.ET)/1000.0;
+ELSE
+	ET_RUN_Timer(FALSE, t#30000s);
+END_IF;
+
+
+Perf_pt_detected(Perf_pt_taken);
+
+IF Perf_pt_detected.Q THEN
+	ET_RTL	:= 0.0;
+	ET_RTL_Timer(FALSE, t#300s);
+	ET_50PCT	:= 0.0;
+	ET_50PCT_Timer(FALSE, t#300s);
+	ET_RD		:= 0.0;
+	ET_RD_Timer(FALSE, t#300s);
+END_IF;
+
+IF OPC_PERF_NEW_TEST THEN
+	ET_RTL	:= 0.0;
+	ET_RTL_Timer(FALSE, t#300s);
+	ET_50PCT	:= 0.0;
+	ET_50PCT_Timer(FALSE, t#300s);
+	ET_LOAD	:= 0.0;
+	ET_LOAD_Timer(FALSE, t#300s);
+	ET_RUN	:= 0.0;
+	ET_RUN_Timer(FALSE, t#30000s);
+	ET_RD		:= 0.0;
+	ET_RD_Timer(FALSE, t#300s);
+END_IF;
+
+IF NOT APU_Rolling THEN
+	ET_RUN	:= 0.0;
+END_IF;
+
+IF NOT Run_Sw THEN
+	ET_RTL	:= 0.0;
+	ET_50PCT:= 0.0;
+END_IF;
+
+IF NOT Load_applied THEN
+	ET_LOAD	:= 0.0;
+END_IF;
+
+IF NOT (APUC_STATE = 128.0 OR APUC_STATE = 64.0 ) THEN
+	ET_RD := 0.0;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

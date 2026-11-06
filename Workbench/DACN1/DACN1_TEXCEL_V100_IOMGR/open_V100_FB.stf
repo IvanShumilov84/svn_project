@@ -1,0 +1,154 @@
+FUNCTION_BLOCK open_V100_FB
+(************************************************************************************************************************************************
+	Name :		open_V100_FB									
+														
+	Description :	Setup Froude Dynamometer V100 Channels. 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2002/08/23		S.Lepage		Adapt dyno settings for Greece
+
+************************************************************************************************************************************************)	
+
+(* Open TEXCEL V100 *)
+
+status := OPENING;
+err_code 	:= OK;
+
+Error_on_Open := FALSE ;
+
+channel_no[1] := 0;		(*Dynamometer Speed in RPM*)
+
+channel_no[2] := 2;		(*Outlet Valve Position in %*)
+
+channel_no[3] := 3;		(*Inlet Valve Position in %*)
+
+channel_no[4] := 4;		(*Dynamometer Torque lbs-ft*)
+
+channel_no[5] := 24;	(*Bearing No.1 Dyno 1 Temp in DegC*)
+
+channel_no[6] := 25;	(*Bearing No.2 Dyno 1 Temp in DegC*)
+
+channel_no[7] := 24;	(*Bearing No.1 Dyno 2 Temp in DegC*)
+(* SINGAPORE *)
+(*channel_no[7] := 55;	Bearing No.1 Dyno 2 Temp in DegC *)
+
+channel_no[8] := 25;	(*Bearing No.2 Dyno 2 Temp in DegC*)
+(* SINGAPORE *)
+(*channel_no[8] := 56;	Bearing No.2 Dyno 2 Temp in DegC *)
+
+channel_no[9] := 27;	(*Water Inlet Dyno Temp in DegC*)
+
+channel_no[10] := 26;	(*Water Outlet Dyno 1 Temp in DegC*)
+
+channel_no[11] := 26;	(*Water Outlet Dyno 2 Temp in DegC*)
+(* SINGAPORE *)
+(*channel_no[11] := 57;	Water Outlet Dyno 2 Temp in DegC *)
+
+channel_no[12] := 1;	(*Dynamometer Speed in RPM Analog*)
+
+channel_no[13] := 0;	(*Dynamometer Speed in RPM*)
+(* SINGAPORE *)
+(*channel_no[13] := 26;	Water Inlet Dyno 1Temp in DegC *)
+
+channel_no[14] := 0;	(*Dynamometer Speed in RPM*)
+(* SINGAPORE *)
+(*channel_no[14] := 27;	Water Outlet Dyno 1Temp in DegC *)
+
+channel_no[15] := 32;	(*Engine Power in Bhp*)
+
+channel_no[16] := 0;	(*Dynamometer Speed in RPM*)
+(* SINGAPORE *)
+(*channel_no[16] := 33;	Dynamometer Demand *)
+
+channel_no[17] := 21;	(*Inlet Valve Demand in %*)
+(* SINGAPORE *)
+(*channel_no[17] := 35;	Inlet Valve Demand in % *)
+
+channel_no[18] := 0;	(*Dynamometer Speed in RPM*)
+(* SINGAPORE *)
+(*channel_no[18] := 36;	Speed Difference in RPM *)
+
+channel_no[19] := 0;	(*Dynamometer Speed in RPM*)
+(* SINGAPORE *)
+(*channel_no[19] := 37;	Torque in Nm *)
+
+channel_no[20] := 14;	(*Load Cell Exc. in Volts*)
+
+num_of_channels := 20;
+
+
+(* SINGAPORE *)
+IF (First_Time_Open = TRUE) THEN 		
+
+	OPEN_SER_PORT('/dev/ser1', 9600, 8, 1, 'none'); (* Pluggé sur fb_open_ser_v100 qui lui supporte le canonique*)
+     (* OPEN_SER_PORT('/dev/ser16', 9600, 8, 1, 'none', CANONICAL_PORT); *) (*était pluggé sur fb_open_ser qui ne supportait pas le canonique*)
+	fd := OPEN_SER_PORT.FD;
+	First_Time_Open := FALSE ;
+
+END_IF;
+
+inlet_demand_ramp := 5.0;
+
+remote_control_disabled := FALSE;
+
+IF UUT_Info.Model = 'MAKILA 1A1' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF  UUT_Info.Model = 'T53-L-13B' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF  UUT_Info.Model = 'T55-L-712SSB' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF  UUT_Info.Model = 'T55-L-714A' THEN 
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_MAN_MODE;
+	demand_ramp := 1.0;
+
+ELSIF	(UUT_Info.Model = 'T56-A-14') OR (UUT_Info.Model = 'T56-A-15LFE') OR (UUT_Info.Model = 'T56-A-15GFE') THEN
+
+	inlet_valve_mode :=  DYNO_INLET_VALVE_AUTO_MODE;
+	demand_ramp := 1.0;
+
+	(* Le flight simulator du V100 ne peut pas etre pris en charge par remoting via le DAS ... cette option n<est pas supporte par le texcel 
+	ainsi il faut bloquer l<acces remote du DAS pour le T56 mais par contre il faut lire l<information du dyno *) 
+
+	remote_control_disabled := TRUE;
+
+
+ELSE 
+	(*inlet_valve_mode := DYNO_INLET_VALVE_AUTO_MODE ;*)
+	inlet_valve_mode :=  DYNO_INLET_VALVE_AUTO_MODE;
+	inlet_valve_demand := 0.0;
+	demand_ramp := 1.0;
+
+END_IF; 
+
+status := OPENED;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

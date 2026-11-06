@@ -1,0 +1,19 @@
+FUNCTION_BLOCK OS_Board_Get_Channel_Engine_Cfg_FB
+
+	XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+	hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+	IF hCfgSettings <> 0 THEN
+		ChannelKey := 'ConfigurationSettings.OVERSPEED_BOARD.' + Channel_Name;
+
+		EngineCfgNo := ReadOneIntegerConfigItemST(ChannelKey + '.ENGINE_CFG_NO', '32');
+
+		XMLCFGSETTINGS_CLOSE(hCfgSettings);
+
+		hCfgSettings := 0;
+	END_IF;
+
+
+
+END_FUNCTION_BLOCK

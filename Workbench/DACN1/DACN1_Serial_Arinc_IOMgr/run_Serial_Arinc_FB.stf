@@ -1,0 +1,311 @@
+FUNCTION_BLOCK run_Serial_Arinc_FB
+(************************************************************************************************************************************************
+	Name :		run_Serial_Arinc_FB									
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/13		N. Sangiovanni	First Release
+	2.0		 2005/07/15		S. Lepage	Change ARP3A and ARP3B from gage to absolute
+
+************************************************************************************************************************************************)	
+
+(* Read the current scan *)
+status := RUNNING;
+err_code := OK;
+
+
+IF(In_Serial_Arinc_IOMgr.mode = RUN_FOR_TRUE) THEN
+	IF (	( UUT_Info.Model = 'GTCP131-9A'	) OR
+		( UUT_Info.Model = 'GTCP131-9B'	) OR
+		( UUT_Info.Model = 'GTCP331-350C'	) OR
+		( UUT_Info.Model = 'GTCP331-500B'	) ) THEN
+		
+		(*SERIAL_ARINC_DECODE(fd, UUT_Info.Model);*)
+		SERIAL_ARINC_DECODE(fd, 'GTCP131-9B');(*Patch pour faire fonctionner le 9A ?????*)
+
+		err_code	:= SERIAL_ARINC_DECODE.ERR_CODE; 
+
+		IF err_code = OK THEN
+			Temp_Description		:= SERIAL_ARINC_DECODE.DESCRIPTION;
+			Temp_Value			:= SERIAL_ARINC_DECODE.VALUE;
+			Temp_Unit			:= SERIAL_ARINC_DECODE.UNIT;
+			Temp_Discrete		:= SERIAL_ARINC_DECODE.DISCRETE;
+	
+			FOR i := 1 TO 35 BY 1 DO
+				Temp_Serial_Arinc[i].description 	:= Temp_Description[i];
+				Temp_Serial_Arinc[i].value 		:= Temp_Value[i];
+				Temp_Serial_Arinc[i].unit		:= Temp_Unit[i];
+				Temp_Serial_Arinc[i].discrete		:= Temp_Discrete[i];
+			END_FOR;
+
+			WRITE_SER_STRING(fd, Send_String) ;
+
+			IF (WRITE_SER_STRING.err_code <> Nbr_Send_String) THEN
+				err_code := -1;
+			ELSE
+				err_code := OK;
+			END_IF;
+
+			(* Order the GTCP131-9A Arinc Label *)
+			IF (	(UUT_Info.Model = 'GTCP131-9A')) THEN
+
+				IF LEFT(Temp_Serial_Arinc[2].description,1) = 'X' THEN
+					FOR j := 1 TO 16 DO
+						Serial_Arinc[j].description	:= '';
+						Serial_Arinc[j].value		:= 0.0;
+						Serial_Arinc[j].unit		:= '';
+					END_FOR;
+				END_IF;
+
+				FOR i := 1 TO SERIAL_ARINC_DECODE.NBR_SCAN BY 1 DO
+
+					IF Temp_Serial_Arinc[i].description = 'L037' THEN
+
+						Serial_Arinc[1].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L242' THEN
+
+						Serial_Arinc[2].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L110' THEN
+
+						Serial_Arinc[3].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L112' THEN
+
+						Serial_Arinc[4].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L123' THEN
+
+						Serial_Arinc[5].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L130' THEN
+
+						Serial_Arinc[6].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L166' THEN
+
+						Serial_Arinc[7].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L247' THEN
+
+						Serial_Arinc[8].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L243' THEN
+
+						Serial_Arinc[9].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L244' THEN
+
+						Serial_Arinc[10].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L245' THEN
+
+						Serial_Arinc[11].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L274' THEN
+
+						Serial_Arinc[12].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L165' THEN
+
+						Serial_Arinc[13].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L134' THEN
+
+						Serial_Arinc[14].value		:= Temp_Serial_Arinc[i].value;
+
+					END_IF;
+				END_FOR;
+			(* Order the GTCP131-9B Arinc Label *)
+			ELSIF (	(UUT_Info.Model = 'GTCP131-9B')) THEN
+
+				IF LEFT(Temp_Serial_Arinc[2].description,1) = 'X' THEN
+					FOR j := 1 TO 16 DO
+						Serial_Arinc[j].description	:= '';
+						Serial_Arinc[j].value		:= 0.0;
+						Serial_Arinc[j].unit		:= '';
+					END_FOR;
+				END_IF;
+
+
+				FOR i := 1 TO SERIAL_ARINC_DECODE.NBR_SCAN BY 1 DO
+					IF Temp_Serial_Arinc[i].description = 'L051' THEN
+
+						Serial_Arinc[1].value		:= Temp_Serial_Arinc[i].value;
+	
+					ELSIF Temp_Serial_Arinc[i].description = 'L047' THEN
+
+						Serial_Arinc[2].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L050' THEN
+	
+						Serial_Arinc[3].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L061' THEN
+
+						Serial_Arinc[4].value		:= Temp_Serial_Arinc[i].value;
+
+						ELSIF Temp_Serial_Arinc[i].description = 'L062' THEN
+
+						Serial_Arinc[5].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L063' THEN
+
+						Serial_Arinc[6].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L040' THEN
+
+						Serial_Arinc[7].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L045' THEN
+
+						Serial_Arinc[8].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L046' THEN
+
+						Serial_Arinc[9].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L060' THEN
+
+						Serial_Arinc[10].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L064' THEN
+
+						Serial_Arinc[11].value		:= Temp_Serial_Arinc[i].value;
+
+					END_IF;
+				END_FOR;
+			(* Order the GTCP331-350C Arinc Label *)
+			ELSIF (	(UUT_Info.Model = 'GTCP331-350C')) THEN
+
+				IF LEFT(Temp_Serial_Arinc[2].description,1) = 'X' THEN
+					FOR j := 1 TO 17 DO
+						Serial_Arinc[j].description	:= '';
+						Serial_Arinc[j].value		:= 0.0;
+						Serial_Arinc[j].unit		:= '';
+					END_FOR;
+				END_IF;
+
+
+				FOR i := 1 TO SERIAL_ARINC_DECODE.NBR_SCAN BY 1 DO
+					IF Temp_Serial_Arinc[i].description = 'L176' THEN
+
+						Serial_Arinc[1].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L130' THEN
+
+						Serial_Arinc[2].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L131' THEN
+
+						Serial_Arinc[3].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L175' THEN
+
+						Serial_Arinc[4].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L166' THEN
+
+						Serial_Arinc[5].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L165' THEN
+
+						Serial_Arinc[6].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L123' THEN
+
+						Serial_Arinc[7].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L244' THEN
+					
+						Serial_Arinc[8].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L110' THEN
+
+						Serial_Arinc[9].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L112' THEN
+
+						Serial_Arinc[10].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L074' THEN
+
+						Serial_Arinc[11].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L121' THEN
+
+						Serial_Arinc[12].value		:= Temp_Serial_Arinc[i].value;
+
+					END_IF;
+				END_FOR;
+			(* Order the GTCP331-500B Arinc Label *)
+			ELSIF((UUT_Info.Model = 'GTCP331-500B')) THEN
+
+				IF LEFT(Temp_Serial_Arinc[2].description,1) = 'X' THEN
+					FOR j := 1 TO 9 DO
+						Serial_Arinc[j].description	:= '';
+						Serial_Arinc[j].value		:= 0.0;
+						Serial_Arinc[j].unit		:= '';
+					END_FOR;
+				END_IF;	
+
+
+				FOR i := 1 TO SERIAL_ARINC_DECODE.NBR_SCAN BY 1 DO
+					IF Temp_Serial_Arinc[i].description = 'L001' THEN
+
+						Serial_Arinc[1].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L002' THEN
+
+						Serial_Arinc[2].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L003' THEN
+
+						Serial_Arinc[3].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L004' THEN
+
+						Serial_Arinc[4].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L005' THEN
+
+						Serial_Arinc[5].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L006' THEN
+
+						Serial_Arinc[6].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L007' THEN
+	
+						Serial_Arinc[7].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L008' THEN
+
+						Serial_Arinc[8].value		:= Temp_Serial_Arinc[i].value;
+
+					ELSIF Temp_Serial_Arinc[i].description = 'L009' THEN
+
+						Serial_Arinc[9].value		:= Temp_Serial_Arinc[i].value;
+
+					END_IF;
+				END_FOR;
+			END_IF; 
+		END_IF; 
+	END_IF; 
+END_IF; 
+	
+IF (err_code <> OK ) THEN 
+	status := ERROR_ON_RUNNING;
+END_IF; 
+
+
+
+
+END_FUNCTION_BLOCK

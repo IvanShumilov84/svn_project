@@ -1,0 +1,89 @@
+<project>
+    <assemblies>
+        <assembly location="E:\KineticaRT Web\Dot Net\KineticaRT\bin\Debug\KineticaRT.dll" documentation="E:\KineticaRT Web\Dot Net\KineticaRT\bin\Debug\documentation.xml" />
+        <assembly location="E:\KineticaRT Web\Dot Net\KineticaRT\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.dll" documentation="E:\KineticaRT Web\Dot Net\KineticaRT\Logic\Channels\bin\Debug\documentation.xml" />
+        <assembly location="E:\KineticaRT Web\Dot Net\KineticaRT\Logic\Expression\bin\Debug\KineticaRT.Logic.Expressions.dll" documentation="E:\KineticaRT Web\Dot Net\KineticaRT\Logic\Expression\bin\Debug\documentation.xml" />
+        <assembly location="E:\KineticaRT Web\Dot Net\KineticaRT\Logic\Message\bin\Debug\KineticaRT.Logic.Message.dll" documentation="E:\KineticaRT Web\Dot Net\KineticaRT\Logic\Message\bin\Debug\documentation.xml" />
+    </assemblies>
+    <namespaces>
+        <namespace name="KineticaRT">The KineticaRT namespace contains fundamental classes and base classes for use in the KineticaRT System. </namespace>
+        <namespace name="KineticaRT.Logic.Channels">The KineticaRT.Logic.Channels namespace contains Channel objects for the basic value types.<br/>  These channels contain usefull properties such as Description, Tooltip, Minimum, Maximum and Units so that Controls such as the Dial can be automatically labled and scaled when connected to one of these Channels.</namespace>
+        <namespace name="KineticaRT.Logic.Expressions">The KineticaRT.Logic.Expressions namespace contains objects for evaluating text based expressions involving Channel objects within a tree of Objects.</namespace>
+        <namespace name="KineticaRT.Logic.Expressions.Design"></namespace>
+        <namespace name="KineticaRT.Logic.Message"></namespace>
+        <namespace name="KineticaRT.Values">The KineticaRT.Values namespace contains Value objects.  These are used by KineticaRT to pass values amongst the other objects.  Values may be stored in Channel objects, processed by Logic objects and displayed by Control objects.</namespace>
+    </namespaces>
+    <documenters>
+        <documenter name="JavaDoc">
+            <property name="OutputDirectory" value=".\docs\JavaDoc\" />
+            <property name="ShowMissingSummaries" value="False" />
+            <property name="ShowMissingRemarks" value="False" />
+            <property name="ShowMissingParams" value="False" />
+            <property name="ShowMissingReturns" value="False" />
+            <property name="ShowMissingValues" value="False" />
+            <property name="DocumentInternals" value="False" />
+            <property name="DocumentProtected" value="True" />
+            <property name="DocumentPrivates" value="False" />
+            <property name="DocumentEmptyNamespaces" value="False" />
+            <property name="IncludeAssemblyVersion" value="False" />
+            <property name="CopyrightText" value="" />
+            <property name="CopyrightHref" value="" />
+            <property name="SkipNamespacesWithoutSummaries" value="False" />
+            <property name="AutoPropertyBackerSummaries" value="False" />
+            <property name="AutoDocumentConstructors" value="True" />
+            <property name="DocumentAttributes" value="False" />
+            <property name="DocumentedAttributes" value="" />
+        </documenter>
+        <documenter name="MSDN">
+            <property name="OutputDirectory" value="E:\KineticaRT Web\Dot Net\KineticaRT\Documentation\" />
+            <property name="HtmlHelpName" value="KineticaRT" />
+            <property name="IncludeFavorites" value="False" />
+            <property name="Title" value="KineticaRT" />
+            <property name="SplitTOCs" value="False" />
+            <property name="DefaulTOC" value="" />
+            <property name="IncludeHierarchy" value="False" />
+            <property name="ShowVisualBasic" value="True" />
+            <property name="OmitObjectTags" value="False" />
+            <property name="RootPageFileName" value="" />
+            <property name="SortTOCByNamespace" value="True" />
+            <property name="ShowMissingSummaries" value="True" />
+            <property name="ShowMissingRemarks" value="False" />
+            <property name="ShowMissingParams" value="True" />
+            <property name="ShowMissingReturns" value="True" />
+            <property name="ShowMissingValues" value="True" />
+            <property name="DocumentInternals" value="False" />
+            <property name="DocumentProtected" value="True" />
+            <property name="DocumentPrivates" value="False" />
+            <property name="DocumentEmptyNamespaces" value="False" />
+            <property name="IncludeAssemblyVersion" value="False" />
+            <property name="CopyrightText" value="" />
+            <property name="CopyrightHref" value="" />
+            <property name="ReferencesPath" value="E:\KineticaRT Web\Dot Net\KineticaRT" />
+            <property name="SkipNamespacesWithoutSummaries" value="False" />
+            <property name="AutoPropertyBackerSummaries" value="True" />
+            <property name="AutoDocumentConstructors" value="True" />
+            <property name="DocumentAttributes" value="False" />
+            <property name="DocumentedAttributes" value="" />
+        </documenter>
+        <documenter name="XML">
+            <property name="OutputFile" value=".\doc\doc.xml" />
+            <property name="ShowMissingSummaries" value="False" />
+            <property name="ShowMissingRemarks" value="False" />
+            <property name="ShowMissingParams" value="False" />
+            <property name="ShowMissingReturns" value="False" />
+            <property name="ShowMissingValues" value="False" />
+            <property name="DocumentInternals" value="False" />
+            <property name="DocumentProtected" value="True" />
+            <property name="DocumentPrivates" value="False" />
+            <property name="DocumentEmptyNamespaces" value="False" />
+            <property name="IncludeAssemblyVersion" value="False" />
+            <property name="CopyrightText" value="" />
+            <property name="CopyrightHref" value="" />
+            <property name="SkipNamespacesWithoutSummaries" value="False" />
+            <property name="AutoPropertyBackerSummaries" value="False" />
+            <property name="AutoDocumentConstructors" value="True" />
+            <property name="DocumentAttributes" value="False" />
+            <property name="DocumentedAttributes" value="" />
+        </documenter>
+    </documenters>
+</project>

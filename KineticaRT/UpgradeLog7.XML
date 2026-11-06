@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CEL V2">
+</Property><Property Name="Solution File" Value="C:\KineticaRT\KineticaRT_CEL 2-0\CEL V2.sln">
+</Property><Property Name="Date" Value="Monday, December 06, 2010">
+</Property><Property Name="Time" Value="16:05:46 PM">
+</Property><Property Name="Log Number" Value="7">
+</Property></Properties><Event ErrorLevel="1" Project="C:\KineticaRT\KineticaRT_CEL 2-0\Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj" Source="Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj" Description="MSB2014: The project-to-project reference with GUID {3097EBA7-835B-4445-8010-72F3BD0899AF} cannot be converted because it is not listed in the file 'C:\KineticaRT\KineticaRT_CEL 2-0\CEL V2.sln'.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj" Description="Project file successfully backed up as C:\KineticaRT\KineticaRT_CEL 2-0\Backup\KineticaRT.Studio.Controls.Indicator.csproj">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj.user" Description="Project user file successfully backed up as C:\KineticaRT\KineticaRT_CEL 2-0\Backup\KineticaRT.Studio.Controls.Indicator.csproj.user">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\AssemblyInfo.cs" Description="File successfully backed up as C:\KineticaRT\KineticaRT_CEL 2-0\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\StudioIndicator.cs" Description="File successfully backed up as C:\KineticaRT\KineticaRT_CEL 2-0\Backup\StudioIndicator.cs">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\StudioIndicator.resx" Description="File successfully backed up as C:\KineticaRT\KineticaRT_CEL 2-0\Backup\StudioIndicator.resx">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Indicator" Source="Studio\Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

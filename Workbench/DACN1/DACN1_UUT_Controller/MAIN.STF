@@ -1,0 +1,72 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+	IF (First_Time_Trough = TRUE) THEN 
+		First_Time_Trough		:= FALSE;
+		Out_UUT_Controller.status	:= IDLING;
+	END_IF; 
+
+	
+	CASE  In_UUT_Controller.command OF
+	OPEN:
+		IF ((Out_UUT_Controller.status = CLOSED) OR (Out_UUT_Controller.status = IDLING)) THEN  
+			open_UUT_Controller(UUT_Info);
+	
+			Out_UUT_Controller.status		:= open_UUT_Controller.status;	
+			Out_UUT_Controller.err_code		:= open_UUT_Controller.err_code;	
+			Out_UUT_Controller.previous_index 	:= In_UUT_Controller.current_index;
+		END_IF; 
+
+	LOAD:
+		IF ((Out_UUT_Controller.status = OPENED) OR (Out_UUT_Controller.status = LOADING)) THEN 
+			load_UUT_Controller(UUT_Info);
+
+			Out_UUT_Controller.status		:= load_UUT_Controller.status;	
+			Out_UUT_Controller.err_code		:= load_UUT_Controller.err_code;	
+		END_IF; 
+
+	INITIALIZE:
+		IF (Out_UUT_Controller.status = LOADED) THEN 
+			initialize_UUT_Controller(UUT_Info);
+
+			Out_UUT_Controller.status		:= initialize_UUT_Controller.status;	
+			Out_UUT_Controller.err_code		:= initialize_UUT_Controller.err_code;	
+		END_IF; 
+
+	RUN:
+		IF  ((Out_UUT_Controller.status =  INITIALIZED)  OR (Out_UUT_Controller.status = RUNNING)) THEN 
+			run_UUT_Controller(UUT_Info);
+
+			Out_UUT_Controller.status		:= run_UUT_Controller.status;	
+			Out_UUT_Controller.err_code		:= run_UUT_Controller.err_code;	
+		END_IF; 
+	 
+	CLOSE:
+		IF  (Out_UUT_Controller.status <> CLOSED) THEN 
+			close_UUT_Controller(UUT_Info);
+
+			Out_UUT_Controller.status		:= close_UUT_Controller.status;	
+			Out_UUT_Controller.err_code		:= close_UUT_Controller.err_code;	
+		END_IF; 
+
+	IDLE:
+		Out_UUT_Controller.status := IDLING;
+	END_CASE; 
+
+
+
+
+END_PROGRAM

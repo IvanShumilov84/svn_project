@@ -1,0 +1,24 @@
+FUNCTION_BLOCK INTERPOLATION_2D_FB
+			SlopeA		:= (Y_A2 - Y_A1) / (RPM_2 - RPM_1);
+			OffsetA		:= Y_A1 - (SlopeA * RPM_1);
+
+			XA		:= RPM * SlopeA + OffsetA;
+
+			SlopeB		:= (Y_B2 - Y_B1) / (RPM_2 - RPM_1);
+			OffsetB		:= Y_B1 - (SlopeB * RPM_1);
+
+			XB		:= RPM * SlopeB + OffsetB;
+
+			SlopeEGT	:= (XB - XA) / (T_B - T_A);
+			OffsetEGT	:= XA - (SlopeEGT * T_A);
+
+			Lim_EGT		:= Inlet_Temp * SlopeEGT + OffsetEGT;
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

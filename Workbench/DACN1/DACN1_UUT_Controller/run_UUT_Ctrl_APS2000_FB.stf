@@ -1,0 +1,484 @@
+FUNCTION_BLOCK run_UUT_Ctrl_APS2000_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_APS2000_FB									
+														
+************************************************************************************************************************************************)	
+
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: RUNNING');*)
+	err_code 	:= OK;
+
+
+	(* 45225 RPM = 9045 Hz *)
+	(* 100%	     = 9045 Hz *)
+	(* Limits is expressed in % *)
+	CASE 	ANY_TO_DINT ( NG_BINDING_SOURCE ) OF
+
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			NG_HZ	:=DACN1_NIDAQ_IOMGR_F[ NG_INDEX ].Mean_Value; 		
+	ELSE
+		err_code := -1;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: N1_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;         
+	NG_Speed_RPM	:= (NG_HZ * NG_100_RPM) / NG_100_FREQ;
+	NG_Speed_PCT	:= (NG_HZ / NG_100_FREQ ) * 100.0;
+
+	
+	(* T_EGT_P (ENGINE PROBES) *********************************)
+	CASE 	ANY_TO_DINT ( T_EGT_P_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+			TEgt_P_Avg	:= ((DACN1_NIDAQ_IOMGR_VIN[ T_EGT_P_ENGINE_PROBE_INDEX[1] ].Mean_Value + 
+						DACN1_NIDAQ_IOMGR_VIN[ T_EGT_P_ENGINE_PROBE_INDEX[2] ].Mean_Value) / 2.0); (* OUTPUT DegF *)
+
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			TEgt_P_Avg	:= ((DACN1_POWERDNA_IOMGR_T[ T_EGT_P_ENGINE_PROBE_INDEX[1] ].Mean_Value + 
+						DACN1_POWERDNA_IOMGR_T[ T_EGT_P_ENGINE_PROBE_INDEX[2] ].Mean_Value) / 2.0); (* OUTPUT DegF *)
+	ELSE
+		err_code := -2;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: T_EGT_P_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;         
+
+	(* T_EGT (EXHAUST PROBES) **********************************)
+	(* WARNING It is possible to delete some probes in the HMI which is affecting the calculation *)
+	TEgt_Avg 				:= 0.0;
+	TEgt_Avg_Nb_Of_Probe	:= 0.0;
+
+	CASE 	ANY_TO_DINT ( T_EGT_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			
+			FOR i:= 1 TO T_EGT_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					(* ATTENTION Output de Power_DNA apres calibration sera en Degf a cause de la channel list et non en Degc*)
+					IF (DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TEgt_Avg := TEgt_Avg  + DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value; (* DegF *)
+						TEgt_Avg_Nb_Of_Probe := TEgt_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+			
+			FOR i:= 1 TO T_EGT_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					(* ATTENTION Output de Power_DNA ou Nidaq apres calibration sera en Degf a cause de la channel list et non en Degc*)
+					IF (DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TEgt_Avg := TEgt_Avg  + DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Mean_Value; (* DegF *)
+						TEgt_Avg_Nb_Of_Probe := TEgt_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+	ELSE
+		err_code := -3;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: T_EGT_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE;         
+	IF (TEgt_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TEgt_Avg	:= TEgt_Avg / TEgt_Avg_Nb_Of_Probe;
+	END_IF;
+	
+	(* T_INLET **********************************)
+	(* WARNING It is possible to delete some probes in the HMI which is affecting the calculation *)
+	(*
+	TInlet_Avg 				:= 0.0;
+	TInlet_Avg_Nb_Of_Probe	:= 0.0;
+
+	CASE 	ANY_TO_DINT ( T_INLET_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			
+			FOR i:= 1 TO T_INLET_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN ( * Validate if the reading is OK * )
+
+						TInlet_Avg := TInlet_Avg  + DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value;
+						TInlet_Avg_Nb_Of_Probe := TInlet_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+	ELSE
+		err_code := -4;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: T_INLET_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE;         
+	IF (TInlet_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TInlet_Avg	:= TInlet_Avg / TInlet_Avg_Nb_Of_Probe;
+	END_IF;
+	*)
+
+	(* T_OIL ************************************)
+	CASE 	ANY_TO_DINT ( T_OIL_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			T_OIL		:= DACN1_POWERDNA_IOMGR_T[ T_OIL_PROBE_INDEX ].Mean_Value;  (* DegF *)
+
+	ELSE
+		err_code := -5;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: T_OIL_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	END_CASE;         
+
+	(* P_OIL ************************************)
+	CASE 	ANY_TO_DINT ( P_OIL_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_P:
+			P_OIL		:= DACN1_POWERDNA_IOMGR_P[ P_OIL_PROBE_INDEX ].Mean_Value; (* psig *)
+
+	ELSE
+		err_code := -6;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: P_OIL_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	END_CASE;         
+
+
+	(* RTL ****************************)(* RTL = Ready to Load or APU Available depending on the wording *)
+	CASE 	ANY_TO_DINT ( RTL_DIN_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DIN:
+			RTL	:= DACN1_SERIAL_IOMGR_DIN[ RTL_DIN_INDEX ]; (* APU Available same thing different name *)
+	ELSE
+		err_code := -7;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: RTL_DIN_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+	(* E_STOP_ECB ****************************)
+	CASE 	ANY_TO_DINT ( E_STOP_ECB_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+			E_STOP_ECB_CMD		:= DACN1_SERIAL_IOMGR_DOUT[ E_STOP_ECB_CMD_INDEX ];  
+	ELSE
+		err_code := -8;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: E_STOP_ECB_DOUT_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	
+	(* E_STOP_DAS ****************************)
+	CASE 	ANY_TO_DINT ( E_STOP_DAS_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+			E_STOP_DAS_CMD		:= NOT(DACN1_SERIAL_IOMGR_DOUT[ E_STOP_DAS_CMD_INDEX ]);   (* When DOUT is TRUE = Normal Operation *)
+
+	ELSE
+		err_code := -9;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: E_STOP_DAS_DOUT_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+	(* APU_FAULT ****************************)
+	CASE 	ANY_TO_DINT ( APU_FAULT_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DIN:
+			APU_FAULT		:= DACN1_SERIAL_IOMGR_DIN[APU_FAULT_INDEX];
+	ELSE
+		err_code := -10;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: APU_FAULT_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+
+
+	(* APU_STOP  ****************************)
+	CASE 	ANY_TO_DINT ( APU_STOP_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+			APU_STOP_CMD	:= DACN1_SERIAL_IOMGR_DOUT[ APU_STOP_CMD_INDEX ];
+	ELSE
+		err_code := -13;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: APU_STOP_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* STARTER_ENGAGED  ****************************)
+	CASE 	ANY_TO_DINT ( STARTER_ENGAGED_IND_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DIN:
+			STARTER_ENGAGED_IND	:= (DACN1_SERIAL_IOMGR_DIN[ STARTER_ENGAGED_IND_INDEX ] AND NG_Speed_PCT < 90.0);  (* That DIN for APS2000 is also the signal for Overspeed, so the condition <90 PCT is required *)
+	ELSE
+		err_code := -14;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS2000: STARTER_ENGAGED_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+
+	(* LOGICAL CHANNEL ****************)
+	RPM_Increasing 		:= NG_Speed_RPM > 150.0 AND RTL;
+	APU_Rolling			:= NG_Speed_RPM >= 25.0;
+	APU_Rolling_Over90 	:= NG_Speed_RPM >= (0.9 * NG_100_RPM); (* rpm *)
+
+
+
+	(* TIMERS **************************************)
+		Start_Acceleration_Latch(STARTER_ENGAGED_IND, APU_STOP_CMD); 
+
+        TIME_RUN_Latch(APU_Rolling_Over90, NOT APU_Rolling); (* Starts when APU speed is over 90% max speed. Resets when engine shutdown. *)
+
+        TIME_RUN_DOWN_Latch(APU_STOP_CMD AND RTL, NOT APU_Rolling); (* Starts when engine shutdown.Resets when APU speed reaches 25 Hz. *)
+
+        ET_CRANK_Latch(APU_Rolling AND NOT APU_STOP_CMD, NOT STARTER_ENGAGED_IND);  (* Starts when APU speed reaches 25 Hz. Resets MAIN Contactor is off. *)
+
+        ET_100_Latch(APU_Rolling AND NOT APU_STOP_CMD, NOT APU_Rolling OR NG_Speed_RPM > (0.95 * NG_100_RPM));  (* Acceleration Timer: Starts when APU speed reaches 25 Hz. Resets at 95% speed. *)
+
+        IF TIME_RUN_Latch.Q1 = TRUE THEN
+            TIME_RUN_Timer(TRUE, t#8h);
+            TIME_RUN:= ANY_TO_REAL(TIME_RUN_Timer.ET) / 1000.0;
+        ELSE
+            TIME_RUN_Timer(FALSE, t#8h);
+        END_IF;
+
+        IF TIME_RUN_DOWN_Latch.Q1 = TRUE THEN
+            TIME_RUN_DOWN_Timer(TRUE, t#8h);
+            TIME_RUN_DOWN:= ANY_TO_REAL(TIME_RUN_DOWN_Timer.ET) / 1000.0;
+        ELSE
+            TIME_RUN_DOWN_Timer(FALSE, t#8h);
+        END_IF;
+        
+        IF ET_CRANK_Latch.Q1 = TRUE THEN
+            ET_CRANK_Timer(TRUE, t#300s);
+            ET_CRANK:= ANY_TO_REAL(ET_CRANK_Timer.ET) / 1000.0;
+        ELSE
+            ET_CRANK_Timer(FALSE, t#300s);
+        END_IF;
+
+        IF ET_100_Latch.Q1 = TRUE THEN
+            ET_100_Timer(TRUE, t#300s);
+            ET_100:= ANY_TO_REAL(ET_100_Timer.ET) / 1000.0;
+        ELSE
+            ET_100_Timer(FALSE, t#300s);
+        END_IF;
+
+        IF ET_SIP_Latch.Q1 = TRUE THEN
+            ET_SIP_Timer(TRUE, t#300s);
+            ET_SIP:= ANY_TO_REAL(ET_SIP_Timer.ET) / 1000.0;
+        ELSE
+            ET_SIP_Timer(FALSE, t#300s);
+        END_IF;
+
+        Perf_pt_detected(Perf_pt_taken);
+
+        IF Perf_pt_detected.Q THEN
+            TIME_RUN := 0.0;
+            TIME_RUN_Timer(FALSE, t#8h);
+
+            TIME_RUN_DOWN := 0.0;
+            TIME_RUN_DOWN_Timer(FALSE, t#8h);
+
+            ET_SIP := 0.0;
+            ET_SIP_Timer(FALSE, t#300s);
+        END_IF;
+
+        IF OPC_PERF_NEW_TEST THEN
+            TIME_RUN := 0.0;
+            TIME_RUN_Timer(FALSE, t#8h);
+
+            TIME_RUN_DOWN := 0.0;
+            TIME_RUN_DOWN_Timer(FALSE, t#8h);
+
+            ET_CRANK := 0.0;
+            ET_CRANK_Timer(FALSE, t#300s);
+
+            ET_100 := 0.0;
+            ET_100_Timer(FALSE, t#300s);
+
+            ET_SIP := 0.0;
+            ET_SIP_Timer(FALSE, t#300s);
+        END_IF;
+
+        IF NOT APU_Rolling THEN
+            TIME_RUN  		:= 0.0;
+            ET_SIP    		:= 0.0;
+            TEgt_P_Avg_Max 	:= 0.0;
+            TEgt_Avg_Max 	:= 0.0;
+            ET_CRANK   		:= 0.0;
+            ET_100    		:= 0.0;
+        ELSE
+            IF TEgt_P_Avg > TEgt_P_Avg_Max THEN
+                TEgt_P_Avg_Max := TEgt_P_Avg;
+            END_IF; 
+
+            (* maximum of the EGT Facility Rake Temperature *)
+            IF TEgt_Avg > TEgt_Avg_Max THEN
+                TEgt_Avg_Max := TEgt_Avg;
+            END_IF;
+        END_IF;
+
+        IF RPM_Increasing  THEN
+           TIME_RUN_DOWN := 0.0;
+        END_IF;
+		
+		IF Start_Acceleration_Latch.Q1 = TRUE THEN
+						
+			IF Accel_Init = TRUE THEN (* Those variables are initiated in the MAIN *)
+				Accel_Init := FALSE;
+				AccelerationTime_Value	:= 0.0;
+				StarterCutoutTime_Value := 0.0;
+				TEgt_PeakStart_DEGF_Value := 0.0;
+			END_IF;
+
+			IF NG_Speed_RPM < 45135.0 THEN (* 100% RPM APS2200 = 45225 at -0.2% = 45135 *) 	
+				Acceleration_Timer(TRUE, t#300s);
+				AccelerationTime_Value	:= ANY_TO_REAL(Acceleration_Timer.ET)/1000.0;
+				TEgt_PeakStart_DEGF_Value := ANY_TO_REAL(Max(ANY_TO_DINT(TEgt_Avg_Max),ANY_TO_DINT(TEgt_PeakStart_DEGF_Value )));
+				
+				IF NG_Speed_RPM > 24824.0 AND StarterCutoutTime_Value  = 0.0 THEN (* 55% RPM APS2000 = 45225 at -0.2% = 24824 For Starter Cutout Time *)
+					StarterCutoutTime_Value := AccelerationTime_Value;
+				END_IF;
+			ELSE
+				Acceleration_Timer(FALSE, t#300s);(*Stop the timer*)								
+				Start_Acceleration_Latch(STARTER_ENGAGED_IND,TRUE); (*Reset Latch*)
+			END_IF;
+		ELSE
+			Acceleration_Timer(FALSE, t#300s);
+			Accel_Init	:= TRUE;
+		END_IF;
+
+
+
+	UUT_Trip_T[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.T1;
+	UUT_Trip_T[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;
+	UUT_Trip_T[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.T3;
+	UUT_Trip_T[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.T4;
+
+	UUT_Trip_F[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.F1;
+	UUT_Trip_F[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.F2;
+	UUT_Trip_F[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.F3;
+	UUT_Trip_F[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.F4;
+
+	UUT_Trip_N[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.N1;
+	UUT_Trip_N[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.N2;
+	UUT_Trip_N[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.N3;
+	UUT_Trip_N[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.N4;
+
+	UUT_Trip_P[1].Trip_Point	:=	-UUT_Info.UUT_TripPoints.P1; (* UNDERPRESSURE .... must use reverse logic*)
+	UUT_Trip_P[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.P2;
+	UUT_Trip_P[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.P3;
+	UUT_Trip_P[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.P4;
+
+	UUT_Trip_Q[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q1;
+	UUT_Trip_Q[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q2;
+	UUT_Trip_Q[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q3;
+	UUT_Trip_Q[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q4;
+
+	UUT_Trip_V[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.V1;
+	UUT_Trip_V[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.V2;
+	UUT_Trip_V[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.V3;
+	UUT_Trip_V[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.V4;
+
+	UUT_Trip_VIB[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB1;
+	UUT_Trip_VIB[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB2;
+	UUT_Trip_VIB[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB3;
+	UUT_Trip_VIB[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB4;
+
+
+
+	(************* EXHAUST TRIP **************)
+	UUT_Trip_T[1].Trip_Source	:=	TEgt_P_Avg; (* Max 1360 DegF*)
+
+
+	(************ OIL OVERTEMP TRIP **************)
+   	UUT_Trip_T[2].Trip_Source	:=	T_OIL;      (* Max 275 deg F *)
+		
+	UUT_Trip_T[3].Trip_Source	:=	0.0;
+	UUT_Trip_T[4].Trip_Source	:=	0.0;
+
+
+	
+	
+	UUT_Trip_F[1].Trip_Source	:=	0.0;
+	UUT_Trip_F[2].Trip_Source	:=	0.0;
+	UUT_Trip_F[3].Trip_Source	:=	0.0;
+	UUT_Trip_F[4].Trip_Source	:=	0.0;
+
+
+
+	(* OVERSPEED TRIP *)
+	UUT_Trip_N[1].Trip_Source	:=	NG_Speed_PCT; (* Speed Trip point for APS2000 in expressed in percentage *)
+	UUT_Trip_N[2].Trip_Source	:=	0.0;
+	UUT_Trip_N[3].Trip_Source	:=	0.0;
+	UUT_Trip_N[4].Trip_Source	:=	0.0;
+
+
+
+	(* LOW AND HIGH OIL PRESSURE TRIP *)
+    	IF (NOT RTL ) THEN
+	    	UUT_Trip_P[1].Trip_Source	:=	-5000.0; (* when not RTL we do not trip on low pressure, arbitrary high number *)
+			UUT_Trip_P[2].Trip_Source	:=	-5000.0; 
+
+    	ELSIF (E_STOP_ECB_CMD OR E_STOP_DAS_CMD ) THEN (* trip by other source *)
+	    	UUT_Trip_P[1].Trip_Source	:=	-5000.0;  (* arbitrary high number *)
+			UUT_Trip_P[2].Trip_Source	:=	-5000.0;
+
+		ELSIF (APU_FAULT ) THEN (* normal stop command *)
+		    UUT_Trip_P[1].Trip_Source	:=	-5000.0;  (* arbitrary high number *)
+			UUT_Trip_P[2].Trip_Source	:=	-5000.0;
+
+    	ELSE
+	    	UUT_Trip_P[1].Trip_Source	:=	-P_Oil; (* LOW OIL PRESSURE *)
+
+			IF (T_OIL > 100.0 AND T_OIL < 275.0) THEN (* DegF *)
+	    		UUT_Trip_P[2].Trip_Source	:=	P_Oil; (* HIGH OIL PRESSURE *)
+			ELSE
+				UUT_Trip_P[2].Trip_Source	:=	-5000;
+			END_IF;
+    	END_IF;
+
+	
+
+
+	UUT_Trip_P[3].Trip_Source	:=	0.0;
+	UUT_Trip_P[4].Trip_Source	:=	0.0;
+
+	UUT_Trip_Q[1].Trip_Source	:=	0.0;
+	UUT_Trip_Q[2].Trip_Source	:=	0.0;
+	UUT_Trip_Q[3].Trip_Source	:=	0.0;
+	UUT_Trip_Q[4].Trip_Source	:=	0.0;
+
+	UUT_Trip_V[1].Trip_Source	:=	0.0;
+	UUT_Trip_V[2].Trip_Source	:=	0.0;
+	UUT_Trip_V[3].Trip_Source	:=	0.0;
+	UUT_Trip_V[4].Trip_Source	:=	0.0;
+
+	UUT_Trip_VIB[1].Trip_Source	:=	0.0;
+	UUT_Trip_VIB[2].Trip_Source	:=	0.0;
+	UUT_Trip_VIB[3].Trip_Source	:=	0.0;
+	UUT_Trip_VIB[4].Trip_Source	:=	0.0;
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

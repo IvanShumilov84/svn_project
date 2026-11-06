@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KRT_Dial</name>
+    </assembly>
+    <members>
+        <member name="T:KRT_Dial.Dial">
+            <summary>
+            Dial control
+            </summary>
+        </member>
+        <member name="F:KRT_Dial.Dial.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KRT_Dial.Dial.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KRT_Dial.Dial.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:KRT_Dial.Dial.ScaleObj">
+            <summary>
+            Scale property
+            </summary>
+        </member>
+        <member name="P:KRT_Dial.Dial.TopText">
+            <summary>
+            TopText property
+            </summary>
+            <value>Text displayed at the top of the Dial</value>
+        </member>
+        <member name="T:KRT_Dial.Needle">
+            <summary>
+            Needle for a Dial
+            </summary>
+        </member>
+        <member name="P:KRT_Dial.Needle.Value">
+            <summary>
+            Current Value
+            </summary>
+        </member>
+        <member name="P:KRT_Dial.Needle.Source">
+            <summary>
+            Object that is the Source of the needle's value
+            </summary>
+        </member>
+    </members>
+</doc>

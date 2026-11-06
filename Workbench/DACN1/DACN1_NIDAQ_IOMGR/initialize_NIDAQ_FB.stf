@@ -1,0 +1,173 @@
+FUNCTION_BLOCK initialize_NIDAQ_FB
+(************************************************************************************************************************************************
+    Name :        initialize_NIDAQ_FB                                    
+                                                        
+    Description :    Data Acquisition routine on National A/D Card                                   
+
+    Dependacy :     
+
+                    HYSTORY
+    Rev        Date        Name        Description
+                (YYYY/MM/DD)
+
+    1.0        2008/01/28    D.Lepage    First Released based on initialize_SCU_FB
+
+************************************************************************************************************************************************)
+
+err_code := OK ;
+status   := INITIALIZING;
+dummy  := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: INITIALIZING');
+
+
+
+FOR i:= 1 TO MAX_NIDAQ DO
+
+   	IF NIDaqDevices[i].deviceHandle <> -1 THEN
+
+		(* 6225 has analog inputs, ACCES IO doesnt *)
+		IF (NIDaqDevices[i].FieldEquipment = 'SCU') OR (NIDaqDevices[i].FieldEquipment = 'PCI-6225')  THEN
+
+       		NIDaqAISetup( NIDaqDevices[i].deviceHandle );
+        		err_code := NIDaqAISetup.errcode;
+
+   	    		IF err_code = OK THEN
+
+       	    		NIDaqAIArmStart( NIDaqDevices[i].deviceHandle );
+           			err_code := NIDaqAIArmStart.errcode;
+
+	    		END_IF;
+
+		END_IF;
+
+        IF err_code = OK THEN
+
+           (* we have 24 value to pack in 3 word of 8 bits, first word *)
+            pack_data0   := 0;
+            pack_data1   := 0;
+            pack_data2   := 0;
+            bit_position := 1;
+
+            FOR j := 0 TO 7 DO
+
+               IF ( NIDaqDevices[i].DIO_Direction[j] = 1 ) THEN (* since we initialize to 0, we care only about the 1 *)
+
+                   pack_data0 :=  pack_data0 + bit_position;                  
+
+               END_IF; 
+
+               bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+            END_FOR;
+
+            (* we have 24 value to pack in 3 word of 8 bits, second word *)
+            bit_position := 1;
+
+            FOR j := 8 TO 15 DO
+
+               IF ( NIDaqDevices[i].DIO_Direction[j] = 1 ) THEN (* since we initialize to 0, we care only about the 1 *)
+
+                   pack_data1 :=  pack_data1 + ANY_TO_SINT( bit_position );                  
+
+               END_IF; 
+
+               bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+            END_FOR;
+
+            (* we have 24 value to pack in 3 word of 8 bits, third word *)
+            bit_position := 1;
+
+			(* 6225 has 3 ports of DIO for a total of 24, ACCES IO has 2 ports of DIO for a total of 16 so pack_data2 must be zero *)
+			IF (NIDaqDevices[i].FieldEquipment = 'SCU') OR (NIDaqDevices[i].FieldEquipment = 'PCI-6225')  THEN
+
+            	FOR j := 16 TO 23 DO
+
+					IF ( NIDaqDevices[i].DIO_Direction[j] = 1 ) THEN (* since we initialize to 0, we care only about the 1 *)
+
+						pack_data2 :=  pack_data2 + ANY_TO_SINT( bit_position );                  
+
+					END_IF; 
+
+					bit_position := bit_position * 2; (* next bit position, 1, 2, 4, 8, 16, 32, 64, 128 *)
+
+            	END_FOR;
+
+			ELSE
+
+				pack_data2 := 0;
+
+			END_IF;
+
+
+            NIDaqDIOSetDir( NIDaqDevices[i].deviceHandle, pack_data0, pack_data1, pack_data2 );
+
+            err_code := NIDaqDIOSetDir.errcode;
+
+        END_IF;
+
+        IF err_code <> OK THEN
+
+            EXIT; (* get out of the for loop *)
+
+        END_IF;
+
+    END_IF;
+END_FOR;
+
+PowerOn_Latch(FALSE,TRUE);	(*Reset Latch*)
+PowerOn_Timer(FALSE, t#15s);	(*Reset Timer*)
+
+NIDaqCTRFreqGenFixedActivated := FALSE;
+
+IF (err_code <> OK) THEN 
+
+    status   := ERROR_ON_INITIALIZING;
+    dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON INITIALIZING');
+
+ELSE
+
+    status   := INITIALIZED;
+    dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: INITIALIZED');
+
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

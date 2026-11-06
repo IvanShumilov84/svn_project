@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KineticaRT.Controls.DialDemo", "KineticaRT.Controls.DialDemo.csproj", "{9AC2E2EF-5F51-4EA0-9837-883E7212E1FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9AC2E2EF-5F51-4EA0-9837-883E7212E1FC}.Debug.ActiveCfg = Debug|.NET
+		{9AC2E2EF-5F51-4EA0-9837-883E7212E1FC}.Debug.Build.0 = Debug|.NET
+		{9AC2E2EF-5F51-4EA0-9837-883E7212E1FC}.Release.ActiveCfg = Release|.NET
+		{9AC2E2EF-5F51-4EA0-9837-883E7212E1FC}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

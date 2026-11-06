@@ -1,0 +1,181 @@
+FUNCTION_BLOCK open_UUT_Ctrl_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_FB									
+														
+	Description :	Setup UUT Controller 							      
+
+	Dependacy : 	
+
+					HISTORY
+	Rev		Date				Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset		First Release
+	2.0	         2002/05/22		S.Lepage		Change Makila Engine limits
+	3.0	         2002/08/19		S.Lepage		Add P&WC Engines for Grece project 
+	3.1	         2003/07/11		N. Sangiovanni	Add P&WC Engines for Brazil project
+	4.0		   2005/12/14		D. Lepage		Not aplicable for FAN Cell
+	5.0		   2016/07/21		Shahbaz H.		Handles the Return_To_Idle functionality
+	5.1		   2019/05/29		M. Bisson		Add RE220 engines for S7
+
+************************************************************************************************************************************************)	
+
+	status 	:= OPENING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: OPENING');
+	err_code 	:= OK;
+	XMLError	:= False;
+
+	XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+	hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+	IF hCfgSettings <> 0 THEN
+	
+
+		(* E_STOP_DAS FROM FACILITY XML SECTION *)
+		E_STOP_DAS_IND_BINDING_SOURCE		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.FACILITY.E_STOP_DAS_IND_BINDING_SOURCE', '0'));
+		E_STOP_DAS_IND_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.E_STOP_DAS_IND_INDEX', '0');
+		E_STOP_MUSHROOM_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.MUSHROOM_INDEX', '0');
+
+
+		(* Engine Stop/Emergency Stop rearm *)
+		ENGINE_STOP_REARM_CMD_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.ENGINE_STOP_REARM_CMD_INDEX', '0');
+		EMERGENCY_STOP_REARM_CMD_INDEX	:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.EMERGENCY_STOP_REARM_CMD_INDEX', '0');
+
+
+		RETURN_TO_IDLE_FUNCTION_ENABLED	:= ReadOneBooleanConfigItemST( 'ConfigurationSettings.FACILITY.RETURN_TO_IDLE_FUNCTION_ENABLED', 'false');
+
+		IF UUT_Info.Family = 'A250-RR300' THEN
+			open_UUT_Ctrl_A250_RR300();
+
+		ELSIF UUT_Info.Family = 'APS500' THEN
+			open_UUT_Ctrl_APS500();
+
+		ELSIF UUT_Info.Family = 'APS1000' THEN
+			open_UUT_Ctrl_APS1000();
+
+		ELSIF UUT_Info.Model = 'APS2000' THEN
+			open_UUT_Ctrl_APS2000();
+
+		ELSIF UUT_Info.Family = 'APS2X00' THEN
+			open_UUT_Ctrl_APS2X00();
+
+		ELSIF UUT_Info.Family = 'APS32X0' THEN
+			open_UUT_Ctrl_APS32X0();
+
+		ELSIF UUT_Info.Model = 'APS5000A' THEN
+			open_UUT_Ctrl_APS5000A();
+
+		ELSIF UUT_Info.Family = 'GTCP85-98' THEN
+			open_UUT_Ctrl_GTCP85_98();
+
+		ELSIF UUT_Info.Family = 'GTCP85-129' THEN
+			open_UUT_Ctrl_GTCP85_129();
+
+		ELSIF UUT_Info.Model = 'GTCP131-9A' THEN
+			open_UUT_Ctrl_GTCP131_9A();
+
+		ELSIF UUT_Info.Model = 'GTCP131-9B' THEN
+			open_UUT_Ctrl_GTCP131_9B();
+
+		ELSIF UUT_Info.Family = 'RE220' THEN
+			open_UUT_Ctrl_RE220();
+
+		ELSIF UUT_Info.Family = 'GTCP331-200' THEN
+			open_UUT_Ctrl_GTCP331_200();
+
+		ELSIF UUT_Info.Family = 'GTCP331-350' THEN
+			open_UUT_Ctrl_GTCP331_350();
+
+		ELSIF UUT_Info.Family = 'GTCP331-500' THEN
+			open_UUT_Ctrl_GTCP331_500();
+
+		ELSIF UUT_Info.Family = 'PT6A' THEN
+			open_UUT_Ctrl_PT6A();
+
+		ELSIF UUT_Info.Family = 'PT6C' THEN
+			open_UUT_Ctrl_PT6C();
+
+		ELSIF UUT_Info.Family = 'PT6T' THEN
+			open_UUT_Ctrl_PT6T();
+
+		ELSIF UUT_Info.Family = 'PW100' THEN
+			open_UUT_Ctrl_PW100();
+
+		ELSIF UUT_Info.Model = 'PW150A' THEN
+			open_UUT_Ctrl_PW150A();
+
+		ELSIF UUT_Info.Family = 'PW200' THEN
+			open_UUT_Ctrl_PW200();
+
+		ELSIF UUT_Info.Family = 'PW210' THEN
+			open_UUT_Ctrl_PW210();
+
+		ELSIF UUT_Info.Model = 'PW901A' THEN
+			open_UUT_Ctrl_PW901A();
+
+		ELSIF UUT_Info.Model = 'PW980A' THEN
+			open_UUT_Ctrl_PW980A();
+
+		ELSIF UUT_Info.Family = 'T53' THEN
+			open_UUT_Ctrl_T53();
+
+		ELSIF UUT_Info.Family = 'T700' THEN
+			open_UUT_Ctrl_T700();
+
+		ELSIF UUT_Info.Family = 'TPE331' THEN
+			open_UUT_Ctrl_TPE331();
+
+		ELSIF UUT_Info.Family = 'TSCP700' THEN
+			open_UUT_Ctrl_TSCP700();
+
+		END_IF;
+
+		XMLCFGSETTINGS_CLOSE(hCfgSettings);
+		hCfgSettings := 0;
+
+	ELSE
+		err_code := ERROR_ON_OPENING;
+		dummy := LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+	END_IF;
+
+	IF (err_code <> OK) Or (XMLError = True) THEN 
+		err_code 	:= ERROR_ON_OPENING;
+		status	:= ERROR_ON_OPENING;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: ERROR ON OPENING');
+	ELSE 
+		status 	:= OPENED;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: OPENED');
+	END_IF;
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

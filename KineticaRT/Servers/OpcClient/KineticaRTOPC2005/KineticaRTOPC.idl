@@ -1,0 +1,113 @@
+// KineticaRTOPC.idl : IDL source for KineticaRTOPC.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (KineticaRTOPC.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "opcda.idl";
+	
+	dispinterface IClient ;
+
+//----------------------------------------------------------------------------------------------------------
+	[
+		uuid(BD1F6AE4-440C-44bf-947A-35835B0797DA),
+		helpstring("IKRT_GroupUpdate Interface")
+	]
+	dispinterface IKRT_GroupUpdate
+	{
+		properties:
+		methods:
+			[id(1), helpstring("method OnDataChange")] 
+			HRESULT OnDataChange
+			(
+				[in]                 DWORD       dwTransid, 
+				[in]                 OPCHANDLE   hGroup, 
+				[in]                 HRESULT     hrMasterquality,
+				[in]                 HRESULT     hrMastererror,
+				[in]                 DWORD       dwCount, 
+				[in, size_is(dwCount)] OPCHANDLE * phClientItems, 
+				[in, size_is(dwCount)] VARIANT   * pvValues, 
+				[in, size_is(dwCount)] WORD      * pwQualities,
+				//[in, size_is(dwCount)] FILETIME  * pftTimeStamps,
+				[in, size_is(dwCount)] HRESULT   * pErrors
+			);
+	};
+
+//----------------------------------------------------------------------------------------------------------
+	interface IClient ;
+	
+	[
+		object,
+		uuid(E26B69FF-32EB-4683-82AD-728D0B0BB108),
+		dual,
+		helpstring("IGroup Interface"),
+		pointer_default(unique)
+	]
+	interface IGroup : IDispatch
+	{
+		[propget, id(1), helpstring("property UpdateRate")] HRESULT UpdateRate([out, retval] long *pVal);
+		[propput, id(1), helpstring("property UpdateRate")] HRESULT UpdateRate([in] long newVal);
+		[propget, id(2), helpstring("property DeadBand")] HRESULT DeadBand([out, retval] float *pVal);
+		[propput, id(2), helpstring("property DeadBand")] HRESULT DeadBand([in] float newVal);
+		[propget, id(3), helpstring("property Connected")] HRESULT Connected([out, retval] BOOL *pVal);
+		[propput, id(3), helpstring("property Connected")] HRESULT Connected([in] BOOL newVal);
+		[id(4), helpstring("method CreateItem")] HRESULT CreateItem([in]long id, [in] BSTR itemID, [out] VARIANT *type, [out, retval] long * pItem);
+		[propget, id(5), helpstring("property Client")] HRESULT Client([out, retval] IClient * *pVal);
+		[propput, id(5), helpstring("property Client")] HRESULT Client([in] IClient * newVal);
+		[propget, id(6), helpstring("property Server")] HRESULT Server([out, retval] IUnknown* *pVal);
+		[propput, id(6), helpstring("property Server")] HRESULT Server([in] IUnknown* newVal);
+		[propget, id(7), helpstring("property Destination")] HRESULT Destination([out, retval] IDispatch* *pVal);
+		[propput, id(7), helpstring("property Destination")] HRESULT Destination([in] IDispatch* newVal);
+		[id(8), helpstring("method DeleteItem")] HRESULT DeleteItem([in] long pItem);
+		[id(9), helpstring("method UpdateItems")] HRESULT UpdateItems([in] long count, [in] SAFEARRAY( VARIANT ) items, [in] SAFEARRAY( VARIANT) values);
+		[id(10), helpstring("method DeleteItems")] HRESULT DeleteItems([in] long count, [in] SAFEARRAY( VARIANT ) items);
+	};
+	[
+		object,
+		uuid(6B1EB334-5DF5-4B55-939F-C2453810D90C),
+		dual,
+		helpstring("IClient Interface"),
+		pointer_default(unique)
+	]
+	interface IClient : IDispatch
+	{
+		[propget, id(1), helpstring("property Machine")] HRESULT Machine([out, retval] BSTR *pVal);
+		[propput, id(1), helpstring("property Machine")] HRESULT Machine([in] BSTR newVal);
+		[propget, id(2), helpstring("property Server")] HRESULT Server([out, retval] BSTR *pVal);
+		[propput, id(2), helpstring("property Server")] HRESULT Server([in] BSTR newVal);
+		[propget, id(3), helpstring("property Connected")] HRESULT Connected([out, retval] BOOL *pVal);
+		[propput, id(3), helpstring("property Connected")] HRESULT Connected([in] BOOL newVal);
+		[propget, id(4), helpstring("property BrowseInfo")] HRESULT BrowseInfo([out, retval] BSTR *pVal);
+		[propget, id(5), helpstring("property VendorInfo")] HRESULT VendorInfo([out, retval] BSTR *pVal);
+		[id(6), helpstring("method CreateGroup")] HRESULT CreateGroup([out, retval] IGroup ** pGroup);
+	};
+
+[
+	uuid(B80EAF9C-0979-4063-A7DD-D264402B2125),
+	version(1.0),
+	helpstring("KineticaRTOPC 1.0 Type Library")
+]
+library KineticaRT_OPC
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(0225BC86-34E7-4D03-BA27-87D6A87FB59A),
+		helpstring("Client Class")
+	]
+	coclass Client
+	{
+		[default] interface IClient;
+	};
+	[
+		uuid(C68958AC-AE95-4DCF-8DAF-EF0DF29B3E11),
+		helpstring("Group Class")
+	]
+	coclass Group
+	{
+		[default] interface IGroup;
+	};
+};

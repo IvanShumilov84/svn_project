@@ -1,0 +1,244 @@
+FUNCTION_BLOCK run_UUT_Ctrl_APS500_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_APS500_FB									
+														
+************************************************************************************************************************************************)	
+
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: RUNNING');*)
+	err_code 	:= OK;
+
+	(* Definition des signaux *)	
+
+	FOR i:= 1 TO ETC_NUMBER_PROBE BY 1 DO
+		CASE 	ANY_TO_DINT ( ETC_PROBE_BINDING_SOURCE ) OF
+			BINDING_DACN1_NIDAQ_IOMGR_VIN:
+				ETC_ENGINE_PROBE[i] := DACN1_NIDAQ_IOMGR_VIN[ ETC_ENGINE_PROBE_INDEX[i] ].Mean_Value;
+
+			BINDING_DACN1_POWERDNA_IOMGR_T:
+				ETC_ENGINE_PROBE[i] := DACN1_POWERDNA_IOMGR_T[ ETC_ENGINE_PROBE_INDEX[i] ].Mean_Value;
+
+			BINDING_DACN1_SERIAL_IOMGR_T:
+				ETC_ENGINE_PROBE[i] := DACN1_SERIAL_IOMGR_T[ ETC_ENGINE_PROBE_INDEX[i] ].Mean_Value;
+		ELSE
+			err_code := -2;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS500: ETC_PROBE_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+		END_CASE;         
+	END_FOR;
+
+	(* N1 Speed *)
+	CASE 	ANY_TO_DINT ( N1_BINDING_SOURCE ) OF
+			BINDING_DACN1_NIDAQ_IOMGR_F:
+				N1_Freq := DACN1_NIDAQ_IOMGR_F[N1_INDEX].Mean_Value;        (* N1 Frequence *)
+	ELSE
+			err_code := -4;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS500: N1_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+	END_CASE;
+
+	(* N1 95% *)
+
+	
+	CASE 	ANY_TO_DINT ( N1_95_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DIN:
+			N1_95_IND := DACN1_SERIAL_IOMGR_DIN[N1_95_INDEX]; 	(* 95% ON N1 signal *)
+	ELSE
+			err_code := -6;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS500: N1_95_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+	END_CASE;
+
+
+	(* Overtemp Disable *) 
+
+	CASE ANY_TO_DINT ( OVERTEMP_DISABLE_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+			OVERTEMP_DISABLE := DACN1_SERIAL_IOMGR_DOUT[OVERTEMP_DISABLE_INDEX]; (* DISABLE OVERTEMP*)
+
+	ELSE
+			err_code := -7;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS500: OVERTEMP_DISABLE_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+	END_CASE;
+
+	(* ECB_POWER  ****************************)
+	CASE 	ANY_TO_DINT ( ECB_POWER_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+			ECB_POWER_CMD	:= DACN1_SERIAL_IOMGR_DOUT[ ECB_POWER_CMD_INDEX ];
+	ELSE
+		err_code := -8;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_APS500: ECB_POWER_CMD_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+      (* Fin definition des signaux *)
+
+	IF (N1_Freq < 100.0) THEN
+
+		N1_Speed 		:= 0.0;
+		N1_Speed_PCT 	:= 0.0;
+
+	ELSE 
+
+		N1_Speed		:= (N1_Freq * N1_100_RPM) / N1_100_FREQ;
+		N1_Speed_PCT	:= (N1_Freq / N1_100_FREQ ) * 100.0;
+
+	END_IF;
+
+
+	TExhaust 			 := 0.0;
+	TExhaust_Avg_Nb_Of_Probe := 0.0;
+ 
+	FOR i:= 1 TO ETC_NUMBER_PROBE BY 1 DO
+		IF (ETC_ENGINE_PROBE[i] < 3000.0 And ETC_ENGINE_PROBE[i]  > -400.0) THEN (* Validate if the reading is OK *)
+			TExhaust := TExhaust + ETC_ENGINE_PROBE[i] ;
+			TExhaust_Avg_Nb_Of_Probe := TExhaust_Avg_Nb_Of_Probe + 1.0;
+		END_IF;
+	END_FOR;
+
+	IF (TExhaust_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TExhaust	:= TExhaust / TExhaust_Avg_Nb_Of_Probe;
+	ELSE
+		TExhaust	:= 3000.0;(* FORCE A TRIPPER *)
+	END_IF;
+
+
+	(* Limits are based if APU is in start / steady state : monitoring Ready To Load *)
+
+	IF (OVERTEMP_DISABLE = TRUE) THEN
+
+		UUT_Trip_T[1].Trip_Point	:=	6000.0;  (* Arbitrary high number to disable the overtemp detection *)
+
+	ELSIF (N1_95_IND = FALSE) THEN
+
+		UUT_Trip_T[1].Trip_Point	:=	EGT_TRIP_START;
+
+	ELSIF	(N1_95_IND = TRUE) THEN
+
+		UUT_Trip_T[1].Trip_Point	:=	EGT_TRIP_STEADY;
+
+	END_IF;
+
+
+	UUT_Trip_T[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;
+	UUT_Trip_T[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.T3;
+	UUT_Trip_T[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.T4;
+
+	UUT_Trip_F[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.F1;
+	UUT_Trip_F[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.F2;
+	UUT_Trip_F[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.F3;
+	UUT_Trip_F[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.F4;
+
+
+	(* ECB performs a speed test at powered up *)
+	(* So in the 7 second following the power on, the speed is going to it's maximum for one seconds *)
+
+	PowerOn_Latch(ECB_POWER_CMD, NOT ECB_POWER_CMD);  (* Starts when PowerOn is applied to the ECB. Resets when Power Off. *)
+
+ 
+	IF PowerOn_Latch.Q1 = TRUE THEN
+		PowerOn_Timer(TRUE, t#15s);
+	ELSE
+		PowerOn_Timer(FALSE, t#15s);
+	END_IF;
+ 
+	OVERSPEED_DISABLE  := ECB_POWER_CMD And (ANY_TO_REAL(PowerOn_Timer.ET) / 1000.0) < 5.0;
+
+	IF (OVERSPEED_DISABLE = TRUE) THEN
+		UUT_Trip_N[1].Trip_Point	:=	100000.0; (* Arbitrary high number to disable the overspeed detection *)
+	ELSE
+		UUT_Trip_N[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.N1;
+	END_IF;
+
+	UUT_Trip_N[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.N2;
+	UUT_Trip_N[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.N3;
+	UUT_Trip_N[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.N4;
+
+	UUT_Trip_P[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.P1;
+	UUT_Trip_P[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.P2;
+	UUT_Trip_P[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.P3;
+	UUT_Trip_P[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.P4;
+
+	UUT_Trip_Q[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q1;
+	UUT_Trip_Q[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q2;
+	UUT_Trip_Q[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q3;
+	UUT_Trip_Q[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q4;
+
+	UUT_Trip_V[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.V1;
+	UUT_Trip_V[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.V2;
+	UUT_Trip_V[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.V3;
+	UUT_Trip_V[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.V4;
+
+	UUT_Trip_VIB[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB1;
+	UUT_Trip_VIB[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB2;
+	UUT_Trip_VIB[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB3;
+	UUT_Trip_VIB[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB4;
+
+
+	UUT_Trip_T[1].Trip_Source	:=	TExhaust;
+(*	UUT_Trip_T[2].Trip_Source	:=	;*)
+(*	UUT_Trip_T[3].Trip_Source	:=	;*)
+(*	UUT_Trip_T[4].Trip_Source	:=	;*)
+
+
+(*	UUT_Trip_F[1].Trip_Source	:=	;*)
+(*	UUT_Trip_F[2].Trip_Source	:=	;*)
+(*	UUT_Trip_F[3].Trip_Source	:=	;*)
+(*	UUT_Trip_F[4].Trip_Source	:=	;*)
+
+	UUT_Trip_N[1].Trip_Source	:=	N1_Speed;
+(*	UUT_Trip_N[2].Trip_Source	:=	;*)
+(*	UUT_Trip_N[3].Trip_Source	:=	;*)
+(*	UUT_Trip_N[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_P[1].Trip_Source	:=	;*)
+(*	UUT_Trip_P[2].Trip_Source	:=	;*)
+(*	UUT_Trip_P[3].Trip_Source	:=	;*)
+(*	UUT_Trip_P[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_Q[1].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[2].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[3].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_V[1].Trip_Source	:=	;*)
+(*	UUT_Trip_V[2].Trip_Source	:=	;*)
+(*	UUT_Trip_V[3].Trip_Source	:=	;*)
+(*	UUT_Trip_V[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_VIB[1].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[2].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[3].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[4].Trip_Source	:=	;*)
+
+EGT_Limit := UUT_Trip_T[1].Trip_Point;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

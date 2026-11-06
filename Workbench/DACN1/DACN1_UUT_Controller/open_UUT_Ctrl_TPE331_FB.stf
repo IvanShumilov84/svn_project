@@ -1,0 +1,68 @@
+FUNCTION_BLOCK open_UUT_Ctrl_TPE331_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_TPE331_FB									
+														
+************************************************************************************************************************************************)	
+
+
+		(* T_INLET *)
+		T_INLET_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_INLET_PROBE_BINDING_SOURCE', '0'));
+		T_INLET_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_INLET_NUMBER_PROBE', '0');
+
+		T_INLET_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_INLET_PROBE_INDEX1', '0');
+		T_INLET_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_INLET_PROBE_INDEX2', '0');
+
+		(* TT3 *)
+		T_T3_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_T3_PROBE_BINDING_SOURCE', '0'));
+		T_T3_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_T3_NUMBER_PROBE', '0');
+
+		T_T3_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_T3_PROBE_INDEX1', '0');
+		T_T3_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_T3_PROBE_INDEX2', '0');
+
+		(* T_EGT *)
+		T_EGT_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_BINDING_SOURCE', '0'));
+		T_EGT_NUMBER_PROBE   := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_NUMBER_PROBE', '0');
+
+		T_EGT_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX1', '0');
+		T_EGT_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX2', '0');
+		T_EGT_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX3', '0');
+		T_EGT_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX4', '0');
+		T_EGT_PROBE_INDEX[5] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX5', '0');
+		T_EGT_PROBE_INDEX[6] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX6', '0');
+		T_EGT_PROBE_INDEX[7] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX7', '0');
+		T_EGT_PROBE_INDEX[8] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX8', '0');
+		T_EGT_PROBE_INDEX[9] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX9', '0');
+		T_EGT_PROBE_INDEX[10] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX10', '0');
+		T_EGT_PROBE_INDEX[11] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX11', '0');
+		T_EGT_PROBE_INDEX[12] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX12', '0');
+		T_EGT_PROBE_INDEX[13] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX13', '0');
+		T_EGT_PROBE_INDEX[14] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX14', '0');
+		T_EGT_PROBE_INDEX[15] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX15', '0');
+		T_EGT_PROBE_INDEX[16] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.T_EGT_PROBE_INDEX16', '0');
+
+
+		(* SPEED *)
+
+		NP_INDEX 			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.NP_INDEX', '0');
+		NP_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.NP_BINDING_SOURCE', '0'));
+		NP_100_RPM 		:= ReadOneRealConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.NP_100_RPM_CONSTANT', '0');
+		NP_100_FREQ 		:= ReadOneRealConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.NP_100_FREQ_CONSTANT', '0');
+
+		(* TORQUE *)
+		(* via Voltage *)
+		
+		TORQUE_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.TORQUE_INDEX', '0');
+		TORQUE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.' + UUT_Info.Model + '.TORQUE_BINDING_SOURCE', '0'));
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

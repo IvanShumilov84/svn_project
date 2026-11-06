@@ -1,0 +1,10 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\KineticaRT.dll
+bin\Debug\KineticaRT.pdb
+bin\Debug\KineticaRT.xml
+obj\Debug\KineticaRT.Logic.Timing.csproj.GenerateResource.Cache
+bin\Debug\KineticaRT.Logic.Timing.dll
+bin\Debug\KineticaRT.Logic.Timing.pdb
+obj\Debug\KineticaRT.Logic.Timing.FaultStrings.resources
+obj\Debug\KineticaRT.Logic.Timing.dll
+obj\Debug\KineticaRT.Logic.Timing.pdb

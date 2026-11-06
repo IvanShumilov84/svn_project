@@ -1,0 +1,85 @@
+FUNCTION_BLOCK load_Scanivalve_FB
+(************************************************************************************************************************************************
+	Name :		load_Scanivalve_IOMgr_FB									
+														
+	Description :	Load all parameters of IO for the DTS3250 system								      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2001/11/05		P.Dextraze	Add INIT_RDATA CALL 
+	2.1	         2003/05/22		N. Sangiovanni	Modification Archiving
+	3.0	         2004/12/08		N. Sangiovanni	Adapt for CELDAS200 Generation
+
+************************************************************************************************************************************************)	
+
+	status 		:= LOADING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: LOADING');
+	err_code 	:= OK;
+
+
+	FOR i := 1 TO Number_of_Scanivalve DO
+
+		IF In_Scanivalve_Temp_IOMgr.mode = RUN_FOR_TRUE THEN
+
+			SCANIVALVE_LOAD(ScaniValve_Structure[i].Sock, Scanivalve_Structure[i].Model);
+
+			IF Scanivalve_Structure[i].Model = SCANIVALVE_DTS3250 THEN
+				Scanivalve_Structure[i].filename	:= SCANIVALVE_LOAD.FILENAME;
+			ELSE
+				Scanivalve_Structure[i].filename	:= '/usr/v2000/app/DACN1_REAL_SCANIVALVE_CSV.csv';
+			END_IF;
+
+			ScaniValve_Structure[i].err_code 	:= SCANIVALVE_LOAD.ERR_CODE;
+
+			IF (ScaniValve_Structure[i].err_code <> OK) THEN
+				ScaniValve_Structure[i].Sock 	:= -1;
+				i 				:= Number_of_Scanivalve ;
+				err_code 			:= ScaniValve_Structure[i].err_code;
+			END_IF;
+
+		ELSE
+			Scanivalve_Structure[i].filename		:= '/usr/v2000/app/DACN1_REAL_SCANIVALVE_CSV.csv';
+		END_IF;
+
+	END_FOR;
+
+
+
+	IF err_code = OK THEN
+		(* Verify filename are all the same *)
+		IF (i > 2) THEN
+			IF (ScaniValve_Structure[i-1].Filename <> ScaniValve_Structure[i-2].Filename) THEN
+				i 		:= Number_of_ScaniValve ;
+				err_code 	:= ERROR_ON_LOADING;
+			END_IF;
+		END_IF ;
+	
+		(* Set CSV Filename *)
+		CSV_Filename := ScaniValve_Structure[1].Filename ;
+	ELSE
+		(* Set CSV Filename *)
+		CSV_Filename := '';
+	END_IF;	
+
+
+	IF (err_code <> OK) THEN 
+		status	:= ERROR_ON_LOADING;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: ERROR_ON_LOADING');
+	ELSE 
+		status 	:= LOADED;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: LOADED');
+	END_IF; 	
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

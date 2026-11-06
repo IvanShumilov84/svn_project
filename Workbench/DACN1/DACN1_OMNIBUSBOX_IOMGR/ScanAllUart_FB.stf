@@ -1,0 +1,47 @@
+FUNCTION_BLOCK ScanAllUart_FB
+(************************************************************************************************************************************************
+	Name :		ScanAllUart_FB									
+														
+	Description :	Scan all Uart channels of the OmniBusBox system.
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/03/10	Danny Lepage	First Release
+
+************************************************************************************************************************************************)
+
+err_code := OK;
+
+FOR i:= 1 TO numberOfBox by 1 DO
+	FOR j:= 1 TO CELBTI_MAXCORES DO
+		IF (boxDescriptor[i].core[j].hCore <> 0) THEN
+			FOR k := 1 TO CELBTI_MAXCHANS DO
+
+				(*
+				 * Starts up all configured channels
+				 *)
+
+				IF ( boxDescriptor[i].core[j].channel[k].isChannelUsed AND
+				    (boxDescriptor[i].core[j].channel[k].channelType = CELBTI_CHTYPEUART)) THEN
+						CELBTI_UARTScanList(boxDescriptor[i].core[j].hCore, ANY_TO_SINT(k-1));
+						err_code := CELBTI_UARTScanList.ERR_CODE;
+						IF (err_code <> OK) THEN
+							k := CELBTI_MAXCHANS;
+						END_IF;
+				END_IF;
+			END_FOR;
+		END_IF;
+		IF (err_code <> OK) THEN
+			j := CELBTI_MAXCORES;
+		END_IF;
+	END_FOR;
+	IF (err_code <> OK) THEN
+		i := numberOfBox;
+	END_IF;
+END_FOR;
+
+END_FUNCTION_BLOCK

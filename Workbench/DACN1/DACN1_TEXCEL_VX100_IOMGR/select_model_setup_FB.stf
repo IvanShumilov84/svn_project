@@ -1,0 +1,355 @@
+FUNCTION_BLOCK select_model_setup_FB
+
+(*
+ * Texcel VX100 Model Setup.
+ *
+ * REFERENCE : 
+ *	INSTRUCTION MANUAL: IM 1356/2
+ *	ISSUE: 4
+ *	OPERATOR'S MANUAL FOR TEXCEL VX100 DYNAMOMETER CONTROL SYSTEM
+ *
+ * DESCRIPTION :
+ *
+ * Check if model change is needed i.e. Current Texcel VX100 Model is different
+ * than model required by CELDAS.
+ *
+ * If model change is needed, the following sequence needs to be performed:
+ *
+ * 1. Wait until the Dyno Control Mode is in Auto (remote).
+ * 2. Use command 5 to request that control is stopped.
+ * 3. Using Data packet 6, poll the Texcel until oktochangemodel is set to 1
+ *    This should happen if <inletstatus> and <outletstatus> are both 0 and
+ *	the speed is less than 25 RPM.
+ * 4, Use command 6 to request the new model.
+ * 5. Using Data packet 6, poll the Texcel until modelnumber equals requested model.
+ * 6. Use command 7 to clear the stop control request and apply a reset.
+ * 7. Using Data packet 6, poll the Texcel until inlet and outlet valve status are
+ *	different than 0, which indicates reset completed. 
+      NOTE : If the STOP BUTTON (Red Mushroom) is pressed on the Texcel VX100 Front Panel,
+ *		 inlet and outlet valve status ARE KEPT AT 0. So this function block we`'ll keep
+ *		 LOOPING AT THIS STEP UNTIL STOP BUTTON IS RELEASED.
+ * 8. Done ! Either the proper model was already selected or the model has been changed successfully.
+ *
+ *)
+
+IF reset_all = TRUE THEN 
+
+	select_model_step	:= 1;
+	status		:= FALSE;
+
+ELSE 
+
+	(*
+	 * Select Dyno model based on CELDAS Current Engine Model
+	 *)
+
+
+	requestedModel := model_selection;
+
+
+	CASE select_model_step OF
+		1:
+			(*
+			 * Check if we need to load new model
+			 *)
+			VX100RequestGeneralParameters(fd);
+
+			IF (VX100RequestGeneralParameters.ERR_CODE = 0) THEN
+
+				VX100ReadGeneralParameters(fd);
+
+				IF (VX100ReadGeneralParameters.ERR_CODE = 0) THEN
+
+					VX100AutoMode := (VX100ReadGeneralParameters.Mode = 1);
+
+					IF (	(VX100ReadGeneralParameters.modelNo < 1) OR
+						(VX100ReadGeneralParameters.modelNo > 8)	  ) THEN
+						VX100Model := '';
+					ELSE
+						VX100Model := VX100_MODEL_STRINGS[VX100ReadGeneralParameters.modelNo];
+					END_IF;
+
+					IF (VX100ReadGeneralParameters.modelNo <> requestedModel) THEN
+						(*
+						 * Need to change model
+						 * Wait until we are in Auto / Remote Mode
+						 *)
+						IF (VX100ReadGeneralParameters.Mode = 1) THEN
+							select_model_step := 2;
+						END_IF;
+					ELSE
+						(*
+						 * Requested model already loaded. Done!
+						 *)
+						select_model_step := 8;
+					END_IF;
+				ELSE
+					Error_Comm := TRUE;
+					CLOSE_SER_PORT(fd);
+					fd := -1;
+				END_IF;
+			ELSE
+				Error_Comm := TRUE;
+				CLOSE_SER_PORT(fd);
+				fd := -1;
+			END_IF;
+		2:
+			(*
+			 * We are in auto mode. Request Texcel to Stop
+			 *)
+			VX100RequestToStop(fd, ANY_TO_DINT(TRUE));
+
+			IF (VX100RequestToStop.ERR_CODE = 0) THEN
+				CASE VX100RequestToStop.RESP_CODE OF
+				1:
+					(*
+					 * Command OK
+					 *)
+					select_model_step := 3;
+				2:
+					(*
+					 * Rejected not in "Auto"
+					 *)
+					VX100AutoMode := FALSE;
+					select_model_step := 1;
+				3:
+					(*
+					 * Rejected, invalid command or syntax error
+					 *)
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100RequestToStop rejected');
+				ELSE
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100RequestToStop unexpected response code'); 
+				END_CASE;
+			ELSE
+				Error_Comm:= TRUE;
+				CLOSE_SER_PORT(fd);
+				fd := -1;
+			END_IF;
+		3:
+			(*
+			 * Wait until we are Ok to Request Model Change
+			 *)
+			VX100RequestGeneralParameters(fd);
+
+			IF (VX100RequestGeneralParameters.ERR_CODE = 0) THEN
+
+				VX100ReadGeneralParameters(fd);
+
+				IF (VX100ReadGeneralParameters.ERR_CODE = 0) THEN
+
+					VX100AutoMode := (VX100ReadGeneralParameters.Mode = 1);
+
+					IF (	(VX100ReadGeneralParameters.modelNo < 1) OR
+						(VX100ReadGeneralParameters.modelNo > 8)	  ) THEN
+						VX100Model := '';
+					ELSE
+						VX100Model := VX100_MODEL_STRINGS[VX100ReadGeneralParameters.modelNo];
+					END_IF;
+
+					IF (VX100ReadGeneralParameters.modelNo <> requestedModel) THEN
+
+						IF (VX100ReadGeneralParameters.okToChangeModel = 1) THEN
+							select_model_step := 4;
+						END_IF;
+					ELSE
+						(*
+						 * Model selected
+						 *)
+						select_model_step := 6;
+					END_IF;
+				ELSE
+					Error_Comm := True;
+					CLOSE_SER_PORT(fd);
+					fd := -1;
+				END_IF;
+			ELSE
+				Error_Comm := TRUE;
+				CLOSE_SER_PORT(fd);
+				fd := -1;
+			END_IF;
+		4:
+			(*
+			 * Request Model Change
+			 *)
+			VX100SetModel(fd, requestedModel);
+
+			IF (VX100SetModel.ERR_CODE = 0) THEN
+
+				CASE VX100SetModel.RESP_CODE OF
+				1:
+					(* Command OK, wait until model change completes *)
+					select_model_step := 5;
+				2:
+					(* Rejected, not in "auto". Wait until we are in Auto/Remote mode *)
+					VX100AutoMode := FALSE;
+					select_model_step := 1;
+				3:
+					(* Rejected, invalid command, systax error or parameter out of range *)
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100SetModel rejected');
+				
+				4:
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100SetModel model not loaded. Retrying');
+					select_model_step := 1;
+				8:
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100SetModel conditions not correct for model change. Retrying');
+					select_model_step := 1;
+				9:
+					(*
+					 * Model selected
+					 *)
+				ELSE
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100SetModel unexpected response code !!!');
+				END_CASE;
+			ELSE
+				Error_Comm := TRUE;
+				CLOSE_SER_PORT(fd);
+				fd := -1;
+			END_IF;
+		5:
+			(*
+			 * Wait for model change completion
+			 *)
+			VX100RequestGeneralParameters(fd);
+
+			IF (VX100RequestGeneralParameters.ERR_CODE = 0) THEN
+
+				VX100ReadGeneralParameters(fd);
+
+				IF (VX100ReadGeneralParameters.ERR_CODE = 0) THEN
+
+					VX100AutoMode := (VX100ReadGeneralParameters.Mode = 1);
+
+					IF (	(VX100ReadGeneralParameters.modelNo < 1) OR
+						(VX100ReadGeneralParameters.modelNo > 8)	  ) THEN
+						VX100Model := '';
+					ELSE
+						VX100Model := VX100_MODEL_STRINGS[VX100ReadGeneralParameters.modelNo];
+					END_IF;
+
+					IF (VX100ReadGeneralParameters.modelNo = requestedModel) THEN
+						select_model_step := 6;
+					END_IF;
+				ELSE
+					Error_Comm := TRUE;
+					CLOSE_SER_PORT(fd);
+					fd := -1;
+				END_IF;			
+			ELSE
+				Error_Comm := TRUE;
+				CLOSE_SER_PORT(fd);
+				fd := -1;
+			END_IF;
+		6:
+			(*
+			 * Clear stop control request and apply reset
+			 *)
+			VX100Reset(fd);
+
+			IF (VX100Reset.ERR_CODE = 0) THEN
+
+				CASE VX100Reset.RESP_CODE OF
+				1:
+					(*
+					 * Reset Accepted, Verify reset has been applied
+					 *)
+					select_model_step := 7;
+				2:
+					(*
+					 * Command rejected, not in "Auto"
+					 *)
+					VX100AutoMode := FALSE;
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100Reset rejected, not in auto mode. Retrying.');
+					select_model_step := 1;
+				4:
+					(*
+					 * Model not loaded. Retry ?
+					 *)
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100Reset model not loaded. Retrying.');
+					select_model_step := 1;
+				ELSE
+					dummy := LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR : VX100Reset unexpected response code !!!');
+				END_CASE;
+			ELSE
+				Error_Comm := TRUE;
+				CLOSE_SER_PORT(fd);
+				fd := -1;
+			END_IF;
+		7:
+			(*
+			 * Wait for reset to complete
+			 *)
+			VX100RequestGeneralParameters(fd);
+
+			IF (VX100RequestGeneralParameters.ERR_CODE = 0) THEN
+
+				VX100ReadGeneralParameters(fd);
+
+				IF (VX100ReadGeneralParameters.ERR_CODE = 0) THEN
+
+					VX100AutoMode := (VX100ReadGeneralParameters.Mode = 1);
+
+					IF (	(VX100ReadGeneralParameters.modelNo < 1) OR
+						(VX100ReadGeneralParameters.modelNo > 8)	  ) THEN
+						VX100Model := '';
+					ELSE
+						VX100Model := VX100_MODEL_STRINGS[VX100ReadGeneralParameters.modelNo];
+					END_IF;
+
+					IF (	(VX100ReadGeneralParameters.inletStatus <> 0) AND
+						(VX100ReadGeneralParameters.outletStatus <> 0) ) THEN
+
+						select_model_step := 8;
+					END_IF;
+				ELSE
+					Error_Comm := TRUE;
+					CLOSE_SER_PORT(fd);
+					fd := -1;
+				END_IF;
+			ELSE
+				Error_Comm := TRUE;
+				CLOSE_SER_PORT(fd);
+				fd := -1;
+			END_IF;
+		8:
+			(*
+			 * Model change completed successfully
+			 *)
+			status := TRUE;
+		9:
+			(*
+			 * Communication Lost, waiting for reconnect
+			 * Nothing to do for now
+			 *)
+			 
+	END_CASE;
+END_IF;
+
+IF Error_Comm = TRUE THEN
+
+	OPEN_VX100(VX100_IP_ADDRESS, VX100_IP_PORT);
+
+	IF OPEN_VX100.ERR_CODE = 0 THEN
+		fd			:= OPEN_VX100.SOCK;
+		Error_Comm		:= FALSE;
+		select_model_step	:= 1;
+	ELSE
+		fd			:= -1;
+		Error_Comm		:= TRUE;
+		select_model_step	:= 9;
+	END_IF;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

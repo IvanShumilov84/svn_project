@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Sequences - KineticaRT Studio</title>
+		<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+		<link href="Manual.css" rel="Stylesheet">
+	</head>
+	<body>
+		<H2>Sequences</H2>
+		<P>KineticaRT Studio sequences are&nbsp;written in either the C# or Visual Basic 
+			languages and are stored in text files with the extensions ".cs" or 
+			".vb".&nbsp; KineticaRT Studio does not provide any editors for these files; 
+			you can use Windows Notepad, your favorite text/code editor or the Visual 
+			Studio editors which provide color coding and syntax checking.&nbsp;&nbsp; 
+			Opening a file for editing from the KineticaRT Studio Sequences menu will open 
+			it in the editor configured as the Windows default editor for files with that 
+			extension (Visual Studio if you have it installed).</P>
+		<P>KineticaRT Studio uses the standard Microsoft compilers for C# and Visual Basic 
+			so your source code must be compatible with the Microsoft standards.&nbsp; You 
+			can make use of Microsoft's online help&nbsp;for the language specification, 
+			examples, design guides etc.&nbsp; (See links below) or the Visual Studio help 
+			if you have it.</P>
+		<P>Note that no extra licenses are required to use the compilers, even on the 
+			target (users) computers.</P>
+		<P>In addition to being compatible with the Microsoft language specifications; in 
+			order for KineticaRT Studio to load and run the sequences they must contain a 
+			class with the correct name and which is based on the KineticaRT Sequence 
+			class.&nbsp; The minimum code for a working sequence is automatically generated 
+			when you create a new sequence.&nbsp; You should extend this code rather than 
+			modify it.</P>
+		<P>The KineticaRT.Sequence base class provides a number of methods to assist in 
+			creating sequences such as methods to access the KineticaRT Studio channels and 
+			a method to wait until a KineticaRT channel reaches a specified value.&nbsp; 
+			These are detailed in the KineticaRT Studio Programming Manual and some 
+			examples of their use will be given below.</P>
+		<H3>Using Diagnostics&nbsp;/ Debugging</H3>
+		<P>KineticaRT Studio allows the use of the .net <STRONG>System.Diagnostics.Trace.WriteLine(string)</STRONG>
+			and <STRONG>System.Diagnostics.Debug.WriteLine(string) </STRONG>methods for 
+			diagnostic purposes within the sequences.</P>
+		<P>Both these methods will output the given strings to the message listbox in the 
+			Configurer window if the Configurer window&nbsp;is enabled.</P>
+		<P>For each sequence file, it is possible to configure whether debug, trace, both 
+			or neither is shown.&nbsp; If neither are configured then the 
+			statements&nbsp;will be removed by the compiler and they will have no effect on 
+			performance.</P>
+		<P>At present these settings must be configured by editing the project file and 
+			setting the "Define" attribute on the appropriate "Sequence" item.&nbsp; These 
+			options will be added to the sequence menu in a future version.&nbsp; Changes 
+			to the settings will have no effect until the sequence is re-compiled.</P>
+		<P>If you are using Visual Studio for debugging purposes then these methods will 
+			also output to the Visual Studio "Output" window if you attach Visual Studio to 
+			the KineticaRT Studio process.&nbsp; You must have "Debug" enabled if you wish 
+			to place breakpoints in the your Sequence code.</P>
+		<H5>Note</H5>
+		<P>This page does not appear to be finished.&nbsp; It will be extended&nbsp;for the 
+			next version.&nbsp; Ask KineticaRT technical support if you need&nbsp;further 
+			information.</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

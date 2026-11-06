@@ -1,0 +1,3 @@
+﻿Public Class HardwareConfigurationForm
+
+End Class

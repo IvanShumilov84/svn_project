@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Using Event Handlers</title>
+		<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+		<link href="Manual.css" rel="Stylesheet">
+	</head>
+	<body>
+		<H2>Event Handlers</H2>
+		<P>In KineticaRT Studio, Event Handlers are located in the Sequence files and 
+			written in the C# or Visual Basic .net languages.
+		</P>
+		<P>In previous versions of KineticaRT we have had action lists available on 
+			controls such as buttons. In KineticaRT Studio actions are implemented using 
+			the sequences.</P>
+		<P>Advantages of using C# for sequences and event handlers:</P>
+		<OL>
+			<LI>
+			C# is a standard .Net language.
+			<LI>
+			C# is a strongly typed language making most of the programming errors of C++ 
+			impossible while retaining the flexibility.
+			<LI>
+			C# is widely used for .Net development. (Probably the most widely used next to 
+			Visual Basic.)
+			<LI>
+			C# is fully compatible with Visual Studio .Net, all third party .Net software 
+			components and allows access to all operating system facilities.
+			<LI>
+				There are many C# books and training courses available.
+			</LI>
+		</OL>
+		<P>The same list applies if you want to use the Visual Basic language.</P>
+		<P>KineticaRT Studio sequences are developer or user written .Net classes based on 
+			the KineticaRT Studio Sequence base class. The base class provides various 
+			methods to make the development of test sequences easy. Use of multithreaded 
+			sequences is straightforward.</P>
+		<H3>Example of Using Buttons with Sequences and Event Handlers</H3>
+		<P>The following example is in C# source code and may be used within a KineticaRT 
+			Studio sequence file. For help on the language see Microsoft documentation, C# 
+			books and the help files for KineticaRT and the KineticaRT Sequence component:</P>
+		<P>
+		</P>
+		<pre>
+class TestSequence1 : Sequence
+{
+	KineticaRT.Channels.Channel b1 ;
+	KineticaRT.Channels.Channel b2 ; 
+	KineticaRT.Channels.Channel n1 ; 
+
+	// Called by KineticaRT Studio on initialization. 
+	public override void Connect () 
+	{ 
+		base.Connect () ; 
+		System.Diagnostics.Trace.WriteLine ("TestSequence1: Demonstrate use of buttons") ; 
+		// Find the control channels - quicker to do this during startup than continuously. 
+		b1 = GetChannel ("Controls.Run") ; 
+		b2 = GetChannel ("Controls.Reset") ; 
+		n1 = GetChannel ("Value") ; 
+		if ((b1 == null) || (b2 == null) || (n1 == null)) 
+		{ 
+			System.Diagnostics.Trace.WriteLine ("TestSequence1: Missing Channels") ;
+			return ; 
+		} 
+		
+		// Initialise our control 
+		channels. b1.Value = Values.False ; 
+		b2.Value = Values.False ; 
+		n1.Value = Values.Zero ; 
+		
+		// Start our monitoring thread(s). 
+		StartThread (new ThreadStart(MainThreadMethod)); 
+		
+		// Connect our event handler(s). 
+		b2.ValueChanged += new KineticaRT.Channels.ValueChangedEventHandler(OnReset); 
+	} 
+
+	// This method increments "Value" 10 times per second whenever any run button is pressed. 
+	void MainThreadMethod() 
+	{ 
+		while (true) 
+		{ 
+			Wait (b1) ; // Wait for b1 (run button) to be pressed. (Wait is a KineticaRT Sequence method.) 
+			n1.Value ++ ; // Increment “Value”. 
+			if (n1.Value &gt; 100) 
+			{ 
+				n1.Value = Values.Zero ; 
+			} 
+			Wait (100) ; // One hundred milliseconds. 
+		} 
+	}
+	
+	// This method (event handler) is called when any reset button is pressed or released and resets "Value" if the button was pressed. 
+	private void OnReset (KineticaRT.Channels.IChannel sender, KineticaRT.Values.Value newVal) 
+	{ 
+		if (newVal == Values.True) n1.Value = Values.Zero ; 
+	} 
+} 
+</pre>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

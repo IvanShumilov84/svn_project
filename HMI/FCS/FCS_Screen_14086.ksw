@@ -1,0 +1,3 @@
+<Window BackColor="Black" Font="Trebuchet MS, 14.25pt, style=Bold" ForeColor="White" RightToLeft="0" AllowDrop="true" TabIndex="0" BorderColor="Blue" BorderStyle="1" BorderWidth="0.1" Name="tab" Shape="1" ToolTipText="" UpdateSpeed="1" HorizontalGrid.Size="8" HorizontalGrid.Spacing="2" VerticalGrid.Size="8" VerticalGrid.Spacing="2" TitleEnabled="false" Title="FCS" WindowState="0" Left="2000" Top="100" Width="720" Height="600" CurrentPanelIndex="0">
+  <Panel File="FCS\FCS_Panel_14086.dll" Text="Panel 1" />
+</Window>

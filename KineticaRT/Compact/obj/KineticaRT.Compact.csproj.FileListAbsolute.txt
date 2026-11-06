@@ -1,0 +1,47 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\bin\Compact\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\bin\Compact\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Compact\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Compact\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Compact\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\bin\Release\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\bin\Release\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Release\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\obj\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\obj\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\obj\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\bin\Release\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\bin\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\obj\Release\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\obj\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\bin\Compact\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\bin\Compact\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\obj\Compact\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\obj\Compact\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\obj\Compact\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.XML
+D:\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\obj\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\obj\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\bin\Release\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\bin\Release\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\obj\Release\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\obj\Release\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\bin\Compact\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\bin\Compact\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\obj\Compact\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\obj\Compact\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\obj\Compact\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\bin\Debug\KineticaRT.Compact.XML

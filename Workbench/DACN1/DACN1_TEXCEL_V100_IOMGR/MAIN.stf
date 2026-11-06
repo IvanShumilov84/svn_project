@@ -1,0 +1,81 @@
+PROGRAM MAIN
+
+IF (First_Time_Trough = TRUE) THEN 
+
+	First_Time_Trough := FALSE;
+	Out_Texcel_V100_IOMgr.status := IDLING;
+	First_Time_Open := TRUE;
+	First_Time_Set :=	TRUE ;
+
+END_IF; 
+
+CASE  In_Texcel_V100_IOMgr.command OF
+	
+	OPEN:
+
+		IF ((Out_Texcel_V100_IOMgr.status = IDLING) OR (Out_Texcel_V100_IOMgr.status = OPENING)) THEN  
+
+			open_V100_IOMgr(UUT_Info);
+	
+			Out_Texcel_V100_IOMgr.status	:= open_V100_IOMgr.status;	
+			Out_Texcel_V100_IOMgr.err_code	:= open_V100_IOMgr.err_code;	
+			rdata_base		:= open_V100_IOMgr.rdata_base_handle;
+			Out_Texcel_V100_IOMgr.previous_index := In_Texcel_V100_IOMgr.current_index;
+
+		END_IF; 
+
+	LOAD:
+
+		IF ((Out_Texcel_V100_IOMgr.status = OPENED) OR (Out_Texcel_V100_IOMgr.status = LOADING)) THEN 
+
+			load_V100_IOMgr(UUT_Info, In_rdata_user);
+
+			Out_Texcel_V100_IOMgr.status	:= load_V100_IOMgr.status;	
+			Out_Texcel_V100_IOMgr.err_code	:= load_V100_IOMgr.err_code;	
+
+		END_IF; 
+
+	INITIALIZE:
+
+		IF (Out_Texcel_V100_IOMgr.status = LOADED) THEN 
+
+			initialize_V100_IOMgr(UUT_Info);
+
+			Out_Texcel_V100_IOMgr.status	:= initialize_V100_IOMgr.status;	
+			Out_Texcel_V100_IOMgr.err_code	:= initialize_V100_IOMgr.err_code;	
+
+		END_IF; 
+
+	RUN:
+
+		IF  ((Out_Texcel_V100_IOMgr.status =  INITIALIZED)  OR (Out_Texcel_V100_IOMgr.status = RUNNING)) THEN 
+
+			run_V100_IOMgr(UUT_Info);
+
+			Out_Texcel_V100_IOMgr.status	:= run_V100_IOMgr.status;	
+			Out_Texcel_V100_IOMgr.err_code	:= run_V100_IOMgr.err_code;	
+
+		END_IF; 
+	 
+	CLOSE:
+
+		IF  (Out_Texcel_V100_IOMgr.status <> CLOSED) THEN 
+
+			close_V100_IOMgr(UUT_Info);
+
+			Out_Texcel_V100_IOMgr.status	:= close_V100_IOMgr.status;	
+			Out_Texcel_V100_IOMgr.err_code	:= close_V100_IOMgr.err_code;	
+
+		END_IF; 
+
+	IDLE:
+
+		Out_Texcel_V100_IOMgr.status := IDLING;
+
+END_CASE; 
+
+
+
+
+
+END_PROGRAM

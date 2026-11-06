@@ -1,0 +1,312 @@
+FUNCTION_BLOCK initialize_PowerDNA_FB
+	(************************************************************************************************************************************************
+	Name :    	initialize_PowerDNA_FB	                                
+                                                        
+	Description :	One shot initialization prior to run                                   
+
+	Dependacy :     
+                	HYSTORY
+
+	Rev		Date		Name		Description
+                (YYYY/MM/DD)
+
+	1.0	         2009/02/12		J.Hamelin	First Release
+    ************************************************************************************************************************************************)    
+
+	status       := INITIALIZING;
+	dummy	     := LOG_MSG('ErrLog', 'DACN1_PowerDNA_TEMPERATURE_IOMGR: INITIALIZING');
+	err_code     := OK;
+	current_FV   := 0;
+	Log_Not_Done := TRUE;
+        
+	FOR i:= 1 TO 4 DO 
+
+    		PowerDNA_Structure[i].status := INITIALIZING;
+
+	END_FOR;
+
+
+	(* Init *)
+	number_of_powerdnas := 0; (*1*);
+	previousLayerID := -1; 
+	previousPowerDnaIP := '';
+	First_Time_Initialize := FALSE;
+	
+	(*FOR powerdna := 1 TO number_of_powerdnas DO*)  (* ce FOR est necessaire pusique chaque cube a son propre CSV file *)
+
+	
+    	IF err_code = OK THEN
+
+            (* Open CSV of PowerDNA *)
+        	(*OPEN_REAL_DATA( PowerDNA_Structure[ powerdna ].filename );*)
+			OPEN_REAL_DATA( CSV_filename );
+
+        	hdle_real_data := OPEN_REAL_DATA.handle;
+        	err_code       := OPEN_REAL_DATA.errcode;
+						
+        	IF err_code = OK THEN
+     
+                (* Real File Reading *)
+            	READ_PDNAREAL_DATA ( hdle_real_data );
+           
+            	WHILE READ_PDNAREAL_DATA.errcode = 108 DO  
+
+                	FV_EXTRACT(READ_PDNAREAL_DATA.name);
+
+					(* Read the number of powerdnas from csv file...  each time we change of IP *)
+					IF (READ_PDNAREAL_DATA.fieldequipmentid <> previousPowerDnaIP) THEN
+						
+						previousPowerDnaIP := READ_PDNAREAL_DATA.fieldequipmentid;
+						previousLayerID := -1; (* Reset layer id when changing of powerdna *)
+						number_of_powerdnas := number_of_powerdnas + 1;
+						powerdna := number_of_powerdnas; (*- 1;*) (* S'assure d'etre au bon index *)
+						PowerDNA_Structure[ powerdna ].number_of_layers := 0; (* s'assure qu'a chaque changement de ip  on reset le no de layers *)
+						PowerDNA_Structure[ powerdna ].status := INITIALIZING;
+						PowerDNA_Structure[ powerdna ].IPaddress := READ_PDNAREAL_DATA.fieldequipmentid;
+
+
+
+						(* ft 2013/05/17 Bug dans le driver du powerdna ou corruption de la memoire:
+							lorsque j<ouvre une adresse IP ex. 125 ca me retourne un hangel 1203856800 ensuite je close ce handle et set le handle a -1, 
+							et si reouvre ensuite le .124 ca me retourne le meme handle 1203856800, et celui-ci pointe toujours sur pdna .125.  Pour eviter ca faut que
+							les adresses hardcode dans le open match 100% les adressses IP dans le CSV *)
+						IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+							IF PowerDNA_Structure[ powerdna ].handle <> -1 THEN
+
+								POWERDNA_CLOSE(PowerDNA_Structure[ powerdna ].handle);
+								PowerDNA_Structure[ powerdna ].handle := -1;   
+							END_IF;
+
+							POWERDNA_OPEN(PowerDNA_Structure[ powerdna ].IPaddress);
+
+                			PowerDNA_Structure[ powerdna ].handle   := POWERDNA_OPEN.HANDLE;  
+                			PowerDNA_Structure[ powerdna ].err_code := POWERDNA_OPEN.ERR_CODE;
+				
+	                		IF (PowerDNA_Structure[ powerdna ].err_code <> OK) THEN
+	
+								POWERDNA_CLOSE(PowerDNA_Structure[ powerdna ].handle);
+ 
+        	            		PowerDNA_Structure[ powerdna ].handle := -1;
+            	       			err_code                     := POWERDNA_OPEN.ERR_CODE;
+							ELSE
+
+								POWERDNA_GETNAME(PowerDNA_Structure[ powerdna ].handle); 
+								PowerDNA_Structure[ powerdna ].IOMname := POWERDNA_GETNAME.BUFFER;  (* IOMname is required in the running when connection lost and trying to reconnect *)
+
+							END_IF;
+
+						END_IF;
+  						
+
+					END_IF;
+					
+					IF PowerDNA_Structure[ powerdna ].handle <> -1 THEN
+
+                		IF ((READ_PDNAREAL_DATA.fieldequipmentid <> 'SPARE') AND  (READ_PDNAREAL_DATA.deviceid <> 'SPARE' AND (FV_EXTRACT.FV_TYPE = FV_T OR FV_EXTRACT.FV_TYPE = FV_P))) THEN 
+                    
+							IF  (READ_PDNAREAL_DATA.base_address  <> previousLayerID) THEN
+								
+								PowerDNA_Structure[ powerdna ].number_of_layers := PowerDNA_Structure[ powerdna ].number_of_layers  + 1;(* Assure that CSV file is ordered by FieldEquipmentID, Base_Address and Physical_Channel *)
+								previousLayerID := READ_PDNAREAL_DATA.base_address;
+								PowerDNA_Structure[ powerdna ].layer[ READ_PDNAREAL_DATA.base_address ].layer_name := READ_PDNAREAL_DATA.deviceid;
+
+							
+								IF (READ_PDNAREAL_DATA.deviceid = 'DNA-AI-225') THEN (* And  (READ_PDNAREAL_DATA.base_address  <> previousLayerID)) THEN*)  (* Assure that CSV file is ordered by FieldEquipmentID, Base_Address and Physical_Channel *)
+
+									(*IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN
+										POWERDNA_SETRATE( PowerDNA_Structure[ powerdna ].handle ,READ_PDNAREAL_DATA.base_address , POWERDNA_SCAN_RATE);
+										PowerDNA_Structure[ powerdna ].err_code := POWERDNA_SETRATE.ERR_CODE;
+									END_IF;*)
+
+
+								ELSIF (READ_PDNAREAL_DATA.deviceid = 'DNA-AI-201-100' ) THEN
+
+									IF READ_PDNAREAL_DATA.minDCValue < -15.0 Or  READ_PDNAREAL_DATA.maxDCValue > 15.0 Or READ_PDNAREAL_DATA.termConfig <> 2 THEN
+															
+										PowerDNA_Structure[ powerdna ].err_code := -1;  (* FORCE ERROR *)
+	
+										dummy	:= LOG_MSG('ErrLog', 'DACN1_PowerDNA: AI201 CHANNEL CONFIG ERROR ERROR_ON_INITIALIZING');
+									END_IF;
+		
+								END_IF;
+
+							END_IF;
+						
+																	
+							IF (PowerDNA_Structure[ powerdna ].err_code <> OK) THEN
+
+								IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+									POWERDNA_CLOSE(PowerDNA_Structure[ powerdna ].handle); 
+ 								
+	            	        		PowerDNA_Structure[ powerdna ].handle := -1;
+		            	        	err_code                     := PowerDNA_Structure[ powerdna ].err_code;
+	    	       			        layer                        := PowerDNA_Structure[ powerdna ].number_of_layers;    (* force the exit of the for loop *)
+								
+								END_IF;
+
+    	                	   
+							ELSE
+
+								current_FV              := current_FV + 1;
+			        	        FV[current_FV].FV_type  := FV_EXTRACT.FV_TYPE;
+      			        	    FV[current_FV].FV_index := FV_EXTRACT.FV_INDEX;   
+                    
+            			    	IF ( READ_PDNAREAL_DATA.fieldequipmentid = PowerDNA_Structure[ powerdna ].IPaddress ) THEN   
+
+	                  		 		FV[current_FV].Powerdna:= powerdna;
+		                        	FV[current_FV].Layer   := READ_PDNAREAL_DATA.base_address;
+    		                    	FV[current_FV].Channel := READ_PDNAREAL_DATA.physical_channel;
+
+				                   	PowerDNA_Structure[ powerdna ].layer[ READ_PDNAREAL_DATA.base_address ].channel[ READ_PDNAREAL_DATA.physical_channel ].tctype 	:= READ_PDNAREAL_DATA.in_channel_type;        
+									PowerDNA_Structure[ powerdna ].layer[ READ_PDNAREAL_DATA.base_address ].channel[ READ_PDNAREAL_DATA.physical_channel ].minDCValue := READ_PDNAREAL_DATA.minDCValue ;
+									PowerDNA_Structure[ powerdna ].layer[ READ_PDNAREAL_DATA.base_address ].channel[ READ_PDNAREAL_DATA.physical_channel ].maxDCValue := READ_PDNAREAL_DATA.maxDCValue ;
+
+                        
+      		        		    END_IF;                        
+        	
+            		    		err_code := FV_EXTRACT.ERR_CODE;
+
+		                  		IF err_code = OK THEN
+    			
+    		        	      	    In_rdata_user := READ_PDNAREAL_DATA.st_record;
+
+            	      	      		INIT_RDATA(rdata_base, In_rdata_user);
+
+	            	            	FV[current_FV].data_handle := INIT_RDATA.data_handle;
+		            	            err_code                   := INIT_RDATA.ERR_CODE;
+
+								END_IF;
+
+							END_IF;
+
+	          			END_IF;    
+
+					END_IF;
+				
+				
+    	 	    	READ_PDNAREAL_DATA ( hdle_real_data );  
+    
+				END_WHILE;
+        	  
+    	       	CLOSE_REAL_DATA(hdle_real_data);
+   
+			END_IF;(*err_code*)
+
+    		number_of_var := current_FV;
+
+		END_IF; (*err_code*)
+
+		(*IF First_Time_Initialize = FALSE THEN
+			First_Time_Initialize := TRUE;
+			number_of_powerdnas := number_of_powerdnas -1; *) (* number_of_powerdnas  was initialised to 1 to be sure to enter the loop FOR *)
+		(*END_IF;*)
+
+
+	(*END_FOR;*)
+
+	
+
+(* set the scan rate for each layer in each powerdna  *)
+(*IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN*)
+
+		
+    	IF err_code = OK THEN 
+ 
+	    	        	    
+	        (* Initialise PowerDNA *)
+		
+	    	FOR powerdna := 1 TO  number_of_powerdnas DO
+    
+    	    	FOR layer := 0 to ( PowerDNA_Structure[ powerdna ].number_of_layers  -1 ) DO  
+
+            	    	
+            	   	IF (PowerDNA_Structure[ powerdna ].handle <> -1) THEN   
+
+						PowerDNA_Structure[ powerdna ].layer[ layer ].Reinit_Clock_ScanRate := TRUE;
+
+
+						IF 'DNA-AI-225' = (PowerDNA_Structure[ powerdna ].layer[ layer ].layer_name) THEN
+						
+							PowerDNA_Structure[ powerdna ].layer[ layer ].CLSize := 25; (* 24 Diff channel + 1 CJC *)
+
+						ELSIF 'DNA-AI-201-100' = (PowerDNA_Structure[ powerdna ].layer[ layer ].layer_name) THEN
+
+							PowerDNA_Structure[ powerdna ].layer[ layer ].CLSize := 12; (* 12 Diff channel *)
+							
+						END_IF;         
+  
+           	    	END_IF; 
+            
+           		END_FOR;
+  
+	    	END_FOR;
+
+		END_IF;
+	
+(*END_IF;*)
+
+
+IF (err_code <> OK) THEN 
+
+	status := ERROR_ON_INITIALIZING;
+   	dummy  := LOG_MSG('ErrLog', 'DACN1_PowerDNA_IOMGR: ERROR_ON_INITIALIZING');
+
+ELSE 
+
+	IF (current_FV > 0) THEN 
+ 
+     		status      := INITIALIZED;
+        	dummy       := LOG_MSG('ErrLog', 'DACN1_PowerDNA_IOMGR: INITIALIZED');
+     	  	current_FV  := 0;
+
+     		FOR i:= 1 TO  NUMBER_OF_POWERDNAS DO
+
+           		PowerDNA_Structure[i].status := INITIALIZED;
+
+        	END_FOR;
+  
+	END_IF;
+ 
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

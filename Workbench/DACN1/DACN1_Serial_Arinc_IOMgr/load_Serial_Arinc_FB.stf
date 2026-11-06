@@ -1,0 +1,27 @@
+FUNCTION_BLOCK load_Serial_Arinc_FB
+(************************************************************************************************************************************************
+	Name :		load_Serial_Arinc_FB									
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/13		N. Sangiovanni	First Release
+
+************************************************************************************************************************************************)	
+
+	status := LOADING;
+	err_code := OK;
+
+
+	IF (err_code <> OK) THEN 
+		status := ERROR_ON_LOADING;
+	ELSE 
+		status := LOADED;
+	END_IF; 	
+
+END_FUNCTION_BLOCK

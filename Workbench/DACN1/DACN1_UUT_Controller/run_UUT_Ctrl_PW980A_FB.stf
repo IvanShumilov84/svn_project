@@ -1,0 +1,143 @@
+FUNCTION_BLOCK run_UUT_Ctrl_PW980A_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_PW980A_FB									
+														
+************************************************************************************************************************************************)	
+
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: RUNNING');*)
+	err_code 	:= OK;
+
+
+
+	(* N1 SPEED *******************************)
+	CASE 	ANY_TO_DINT ( N1_BINDING_SOURCE ) OF
+
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			N1_Freq	:=DACN1_NIDAQ_IOMGR_F[ N1_INDEX ].Mean_Value;
+	ELSE
+		err_code := -1;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW980A: N1_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* N2 SPEED *******************************)
+	CASE 	ANY_TO_DINT ( N2_BINDING_SOURCE ) OF
+
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			N2_Freq	:=DACN1_NIDAQ_IOMGR_F[ N2_INDEX ].Mean_Value;
+	ELSE
+		err_code := -2;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW980A: N2_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	N1_Speed		:= N1_Freq * N1_100_RPM/ N1_100_FREQ;
+	N2_Speed		:= N2_Freq * N2_100_RPM/ N2_100_FREQ;
+
+
+	
+	(* TExhaust (ENGINE PROBES) *********************************)
+	CASE 	ANY_TO_DINT ( T_EGT_P_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+			TExhaust	:= DACN1_NIDAQ_IOMGR_VIN[ T_EGT_P_ENGINE_PROBE_INDEX[1] ].Mean_Value;
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			TExhaust	:= DACN1_POWERDNA_IOMGR_T[ T_EGT_P_ENGINE_PROBE_INDEX[1] ].Mean_Value;
+	ELSE
+		err_code := -3;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW980A: T_EGT_P_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* Steady-State at 95% N1 *)
+	IF N1_Speed < 0.95 * N1_100_RPM THEN 
+
+		UUT_Trip_T[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.T1;
+
+	ELSE 
+
+		UUT_Trip_T[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;
+
+	END_IF; 
+
+(*	UUT_Trip_T[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;*)
+(*	UUT_Trip_T[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.T3;*)
+(*	UUT_Trip_T[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.T4;*)
+
+(*	UUT_Trip_F[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.F1;*)
+(*	UUT_Trip_F[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.F2;*)
+(*	UUT_Trip_F[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.F3;*)
+(*	UUT_Trip_F[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.F4;*)
+
+	UUT_Trip_N[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.N1;
+	UUT_Trip_N[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.N2;
+(*	UUT_Trip_N[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.N3;*)
+(*	UUT_Trip_N[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.N4;*)
+
+(*	UUT_Trip_P[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.P1;*)
+(*	UUT_Trip_P[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.P2;*)
+(*	UUT_Trip_P[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.P3;*)
+(*	UUT_Trip_P[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.P4;*)
+
+(*	UUT_Trip_Q[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q1;*)
+(*	UUT_Trip_Q[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q2;*)
+(*	UUT_Trip_Q[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q3;*)
+(*	UUT_Trip_Q[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q4;*)
+
+(*	UUT_Trip_V[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.V1;*)
+(*	UUT_Trip_V[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.V2;*)
+(*	UUT_Trip_V[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.V3;*)
+(*	UUT_Trip_V[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.V4;*)
+
+(*	UUT_Trip_VIB[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB1;*)
+(*	UUT_Trip_VIB[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB2;*)
+(*	UUT_Trip_VIB[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB3;*)
+(*	UUT_Trip_VIB[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB4;*)
+
+
+	UUT_Trip_T[1].Trip_Source	:=	TExhaust;
+(*	UUT_Trip_T[2].Trip_Source	:=	;*)
+(*	UUT_Trip_T[3].Trip_Source	:=	;*)
+(*	UUT_Trip_T[4].Trip_Source	:=	;*)
+
+
+(*	UUT_Trip_F[1].Trip_Source	:=	;*)
+(*	UUT_Trip_F[2].Trip_Source	:=	;*)
+(*	UUT_Trip_F[3].Trip_Source	:=	;*)
+(*	UUT_Trip_F[4].Trip_Source	:=	;*)
+
+	UUT_Trip_N[1].Trip_Source	:=	N1_Speed;
+	UUT_Trip_N[2].Trip_Source	:=	N2_Speed;
+(*	UUT_Trip_N[3].Trip_Source	:=	;*)
+(*	UUT_Trip_N[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_P[1].Trip_Source	:=	;*)
+(*	UUT_Trip_P[2].Trip_Source	:=	;*)
+(*	UUT_Trip_P[3].Trip_Source	:=	;*)
+(*	UUT_Trip_P[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_Q[1].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[2].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[3].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_V[1].Trip_Source	:=	;*)
+(*	UUT_Trip_V[2].Trip_Source	:=	;*)
+(*	UUT_Trip_V[3].Trip_Source	:=	;*)
+(*	UUT_Trip_V[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_VIB[1].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[2].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[3].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[4].Trip_Source	:=	;*)
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

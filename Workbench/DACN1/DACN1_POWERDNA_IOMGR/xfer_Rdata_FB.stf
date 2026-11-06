@@ -1,0 +1,46 @@
+FUNCTION_BLOCK xfer_Rdata_FB
+(************************************************************************************************************************************************
+	Name :		xfer_RData_FB									
+														
+	Description :	Transfer to RDATA selected IO for Archiving 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2003/05/22		N. Sangiovanni		First Release
+
+************************************************************************************************************************************************)	
+
+	status := 1;
+
+	FV_EXTRACT(INSERT(ANY_TO_STRING(IO_Index), IO_Prefix, 1));
+
+
+(* TODO:  Same as FV Size  a revoir *)
+	FOR idx := 1 to 100 DO	(* Same as FV Size *)
+
+		IF FV[idx].FV_type = FV_EXTRACT.FV_TYPE AND FV[idx].FV_index = FV_EXTRACT.FV_INDEX THEN
+
+			Update_RData(	rdata_base,
+					FV[idx].data_handle,
+					IO_Acq_ON			);
+
+			status := 0;
+			idx := 100;
+
+		END_IF;
+
+	END_FOR;
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

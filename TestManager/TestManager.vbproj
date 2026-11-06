@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E56F2DA1-DFDD-45BA-B117-462DA3CD49F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TestManager</RootNamespace>
+    <AssemblyName>TestManager</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Empty</MyType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TestManager.MainForm</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\HMI\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\HMI\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon %285%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\HMI\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchiveReportDetailForm.Designer.vb">
+      <DependentUpon>ArchiveReportDetailForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveReportDetailForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChannelEditorForm.Designer.vb">
+      <DependentUpon>ChannelEditorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChannelEditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChannelsNotValidWarningForm.Designer.vb">
+      <DependentUpon>ChannelsNotValidWarningForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChannelsNotValidWarningForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelnetConnection.vb" />
+    <Compile Include="CommonModule.vb" />
+    <Compile Include="FlowmeterConfigurationForm.Designer.vb">
+      <DependentUpon>FlowmeterConfigurationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FlowmeterConfigurationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HardwareConfigurationForm.Designer.vb">
+      <DependentUpon>HardwareConfigurationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HardwareConfigurationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadCellAssignationForm.Designer.vb">
+      <DependentUpon>LoadCellAssignationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadCellAssignationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HmiNumericChannelForm.Designer.vb">
+      <DependentUpon>HmiNumericChannelForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HmiNumericChannelForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogReportCategoriesForm.Designer.vb">
+      <DependentUpon>LogReportCategoriesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogReportCategoriesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogReportDetailForm.Designer.vb">
+      <DependentUpon>LogReportDetailForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogReportDetailForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceForm.Designer.vb">
+      <DependentUpon>MaintenanceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarForm.Designer.vb">
+      <DependentUpon>ProgressBarForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestProgressStepForm.Designer.vb">
+      <DependentUpon>TestProgressStepForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestProgressStepForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEditorForm.Designer.vb">
+      <DependentUpon>UserEditorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserEditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ArchiveReportDetailForm.resx">
+      <DependentUpon>ArchiveReportDetailForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChannelEditorForm.resx">
+      <DependentUpon>ChannelEditorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChannelsNotValidWarningForm.resx">
+      <DependentUpon>ChannelsNotValidWarningForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlowmeterConfigurationForm.resx">
+      <DependentUpon>FlowmeterConfigurationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HardwareConfigurationForm.resx">
+      <DependentUpon>HardwareConfigurationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadCellAssignationForm.resx">
+      <DependentUpon>LoadCellAssignationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HmiNumericChannelForm.resx">
+      <DependentUpon>HmiNumericChannelForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogReportCategoriesForm.resx">
+      <DependentUpon>LogReportCategoriesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogReportDetailForm.resx">
+      <DependentUpon>LogReportDetailForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceForm.resx">
+      <DependentUpon>MaintenanceForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBarForm.resx">
+      <DependentUpon>ProgressBarForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestProgressStepForm.resx">
+      <DependentUpon>TestProgressStepForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserEditorForm.resx">
+      <DependentUpon>UserEditorForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CEL.Library\CEL.Library.vbproj">
+      <Project>{e291f3a7-ea2d-418b-b9f4-945844580eca}</Project>
+      <Name>CEL.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL.Net\CEL.vbproj">
+      <Project>{1f06bed1-b64b-424e-9d4e-2889b45a9f2c}</Project>
+      <Name>CEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CEL.Net\Data\CEL.Data.vbproj">
+      <Project>{86b17da9-643b-4c90-b4a9-fe92516e1adf}</Project>
+      <Name>CEL.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitySpaces\EntitySpaces.Core\EntitySpaces.Core45.csproj">
+      <Project>{81b80c15-74f7-480a-b3c1-d8792785b357}</Project>
+      <Name>EntitySpaces.Core45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitySpaces\EntitySpaces.DynamicQuery\EntitySpaces.DynamicQuery45.csproj">
+      <Project>{9aa003d3-6dbb-4c6c-bdc5-f3e1f3bbb0dd}</Project>
+      <Name>EntitySpaces.DynamicQuery45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitySpaces\EntitySpaces.Interfaces\EntitySpaces.Interfaces45.csproj">
+      <Project>{b13ac54d-1cee-4b91-beae-98cf0a4aa180}</Project>
+      <Name>EntitySpaces.Interfaces45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitySpaces\EntitySpaces.LoaderMT\EntitySpaces.LoaderMT45.csproj">
+      <Project>{646de25e-4951-4174-b8e2-16e6d6d5008a}</Project>
+      <Name>EntitySpaces.LoaderMT45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitySpaces\EntitySpaces.Loader\EntitySpaces.Loader45.csproj">
+      <Project>{7dff20d6-c320-4920-ae92-4f096d8dfe61}</Project>
+      <Name>EntitySpaces.Loader45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitySpaces\Providers\EntitySpaces.MSAccessProvider\EntitySpaces.MSAccessProvider45.csproj">
+      <Project>{d39c62ac-c3be-433f-95db-6175703b092e}</Project>
+      <Name>EntitySpaces.MSAccessProvider45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KineticaRT\Controls\Dial\KineticaRT.Controls.Dial.csproj">
+      <Project>{9ac2e2ef-5f51-4ea0-9837-883e7212e1fc}</Project>
+      <Name>KineticaRT.Controls.Dial</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KineticaRT\Controls\KineticaRT.Controls.csproj">
+      <Project>{0753e173-b6a0-4724-bd16-db25b9a194a6}</Project>
+      <Name>KineticaRT.Controls</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Kineticart\KineticaRT.csproj">
+      <Project>{f4ad27c5-4183-4d56-8cba-56cc3947732a}</Project>
+      <Name>KineticaRT %28KineticaRT\KineticaRT%29</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.HMINumericChannelsCollection.datasource" />
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.LoadCellsCollection.datasource" />
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.SecurityLevelCollection.datasource" />
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.TestProgressCheckTypeCollection.datasource" />
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.TestProgressStepTypeCollection.datasource" />
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.TestProgressTestStepCollection.datasource" />
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.UsersCollection.datasource" />
+    <None Include="Resources\Welcome_SreenHS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Welcome_Screen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-disabled.png" />
+    <None Include="Resources\arrow-up-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-3-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-3-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon %285%29.ico" />
+    <None Include="Resources\avion 2 GIF1.gif" />
+    <None Include="Resources\CEL -bleu - Beland-PMS 534CMYK_haute définition.gif" />
+    <None Include="Resources\CEL eps1.gif" />
+    <None Include="Resources\avion 2 GIF.gif" />
+    <None Include="Resources\fond bleu1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

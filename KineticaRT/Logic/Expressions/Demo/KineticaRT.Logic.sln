@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KineticaRT.Logic.Expressions Demo", "KineticaRT.Logic.Expressions Demo.csproj", "{EC941795-E302-4EB8-A729-911791641897}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EC941795-E302-4EB8-A729-911791641897}.Debug.ActiveCfg = Debug|.NET
+		{EC941795-E302-4EB8-A729-911791641897}.Debug.Build.0 = Debug|.NET
+		{EC941795-E302-4EB8-A729-911791641897}.Release.ActiveCfg = Release|.NET
+		{EC941795-E302-4EB8-A729-911791641897}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

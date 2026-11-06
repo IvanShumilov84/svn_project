@@ -1,0 +1,469 @@
+FUNCTION_BLOCK initialize_AFDX_FB
+	(************************************************************************************************************************************************
+	Name :    	initialize_PowerDNA_FB	                                
+                                                        
+	Description :	One shot initialization prior to run                                   
+
+	Dependacy :     
+                	HYSTORY
+
+	Rev		Date		Name		Description
+                (YYYY/MM/DD)
+
+	1.0	         2009/02/12		J.Hamelin	First Release
+    ************************************************************************************************************************************************)    
+
+	status       := INITIALIZING;
+	dummy	     := LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: INITIALIZING');
+	err_code     := OK;
+	(*current_FV   := 0;*)
+	Log_Not_Done := TRUE;
+        
+
+	PowerDNA_Structure.status := INITIALIZING;
+
+
+	(* Init *)
+	First_Time_Initialize := FALSE;
+	counter_signal_integer_in 	:=0;
+	counter_signal_integer_out 	:=0;
+	counter_signal_udinteger_in :=0;
+	counter_signal_udinteger_out:=0;
+	counter_signal_real_in 		:=0;
+	counter_signal_real_out 	:=0;
+	counter_signal_string_in 	:=0;
+	counter_signal_string_out 	:=0;
+	counter_fs_in				:=0;
+	counter_fs_out				:=0;
+
+ 	previous_vl_id 				:=0;
+	previous_udp_src			:=0;
+	previous_udp_dst			:=0;
+	previous_fds_address 		:=0;
+	previous_fs_address 		:=0;
+	previous_signal_address 	:=0;
+
+
+	(*  CSV FILE AFDX  *)
+	(* WARNING: ALL THE CSV FILE for AFDX must be ordered! per 
+				1- engine_model
+				2- vl_id
+				3- udp_src
+				4- udp_dst
+				5- fds_address
+				6- signal_address
+				7- start_bit
+				8- fs_address *)
+
+
+   	IF err_code = OK THEN
+
+		PowerDNA_Structure.status := INITIALIZING;
+
+		(**************** AFDX VIRTUAL LINK ******************)
+		OPEN_REAL_DATA( CSV_FILE_AFDX_VIRTUAL_LINK);
+		handle_vl_csv 	:= OPEN_REAL_DATA.handle;
+		err_code       	:= OPEN_REAL_DATA.errcode;
+
+
+		IF err_code = OK THEN
+		
+			READ_AFDX_VIRTUAL_LINK_CSV ( handle_vl_csv );
+
+			WHILE READ_AFDX_VIRTUAL_LINK_CSV.err_code = 17 DO 
+
+				IF(READ_AFDX_VIRTUAL_LINK_CSV.engine_model   = UUT_Info.Model )THEN 
+					CASE READ_AFDX_VIRTUAL_LINK_CSV.TXRX OF
+					0: (* RECEIVE *)
+						IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+							POWERDNA_AFDXADD_INPUTVL(PowerDNA_Structure.hAfdxDev,
+													READ_AFDX_VIRTUAL_LINK_CSV.vl_id,
+													READ_AFDX_VIRTUAL_LINK_CSV.vl_mode,
+													READ_AFDX_VIRTUAL_LINK_CSV.nb_of_sub_vl,
+													READ_AFDX_VIRTUAL_LINK_CSV.sub_vl_id,
+													READ_AFDX_VIRTUAL_LINK_CSV.bag,
+													READ_AFDX_VIRTUAL_LINK_CSV.mtu,
+													READ_AFDX_VIRTUAL_LINK_CSV.max_jitter,
+													READ_AFDX_VIRTUAL_LINK_CSV.skew_max,
+													READ_AFDX_VIRTUAL_LINK_CSV.skew_delay,
+													READ_AFDX_VIRTUAL_LINK_CSV.prev_sn_range,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_enabled,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_sid,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_skew_max,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_age_max,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_lag_max);
+
+							err_code := POWERDNA_AFDXADD_INPUTVL.ERR_CODE;
+						END_IF;
+						
+					1: (* TRANSMIT *)
+						IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+							POWERDNA_AFDXADD_OUTPUTVL(PowerDNA_Structure.hAfdxDev,
+													READ_AFDX_VIRTUAL_LINK_CSV.vl_id,
+													READ_AFDX_VIRTUAL_LINK_CSV.vl_mode,
+													READ_AFDX_VIRTUAL_LINK_CSV.nb_of_sub_vl,
+													READ_AFDX_VIRTUAL_LINK_CSV.sub_vl_id,
+													READ_AFDX_VIRTUAL_LINK_CSV.bag,
+													READ_AFDX_VIRTUAL_LINK_CSV.mtu,
+													READ_AFDX_VIRTUAL_LINK_CSV.max_jitter,
+													READ_AFDX_VIRTUAL_LINK_CSV.skew_max,
+													READ_AFDX_VIRTUAL_LINK_CSV.skew_delay,
+													READ_AFDX_VIRTUAL_LINK_CSV.prev_sn_range,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_enabled,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_sid,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_skew_max,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_age_max,
+													READ_AFDX_VIRTUAL_LINK_CSV.ede_lag_max);
+
+							err_code := POWERDNA_AFDXADD_OUTPUTVL.ERR_CODE;
+						END_IF;
+
+					END_CASE;
+				END_IF;
+
+				IF err_code <> OK THEN
+					EXIT;
+				END_IF;
+
+				READ_AFDX_VIRTUAL_LINK_CSV( handle_vl_csv );
+
+			END_WHILE;
+
+			CLOSE_REAL_DATA(handle_vl_csv);
+
+		END_IF;
+
+		IF err_code = OK THEN
+
+			(******************** AFDX PORT *************************)
+			OPEN_REAL_DATA( CSV_FILE_AFDX_PORT);
+			handle_port_csv := OPEN_REAL_DATA.handle;
+    			err_code       := OPEN_REAL_DATA.errcode;
+	
+			IF err_code = OK THEN
+
+				READ_AFDX_PORT_CSV ( handle_port_csv );
+						
+				WHILE READ_AFDX_PORT_CSV.err_code = 20 DO 
+ 
+					IF READ_AFDX_PORT_CSV.engine_model  = UUT_Info.Model THEN
+						IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+							POWERDNA_AFDXADD_PORT(PowerDNA_Structure.hAfdxDev,
+									READ_AFDX_PORT_CSV.vl_id,
+									READ_AFDX_PORT_CSV.udp_src,
+									READ_AFDX_PORT_CSV.udp_dst,
+									READ_AFDX_PORT_CSV.port_name,
+									READ_AFDX_PORT_CSV.port_mode,
+									READ_AFDX_PORT_CSV.port_id,
+									READ_AFDX_PORT_CSV.period,
+									READ_AFDX_PORT_CSV.period_skew,
+									READ_AFDX_PORT_CSV.end_system_src,
+									READ_AFDX_PORT_CSV.partition_src,
+									READ_AFDX_PORT_CSV.end_system_dst,
+									READ_AFDX_PORT_CSV.partition_dst,
+									READ_AFDX_PORT_CSV.sub_vl_id,
+									READ_AFDX_PORT_CSV.port_type,
+									READ_AFDX_PORT_CSV.message_length,
+									READ_AFDX_PORT_CSV.depth,
+									READ_AFDX_PORT_CSV.buffer_size,
+									READ_AFDX_PORT_CSV.trace);
+
+							err_code := POWERDNA_AFDXADD_PORT.ERR_CODE;
+							IF err_code <> OK THEN
+								EXIT;
+							END_IF;
+						END_IF;
+					END_IF;
+						
+					READ_AFDX_PORT_CSV( handle_port_csv );
+
+				END_WHILE;
+
+				CLOSE_REAL_DATA(handle_port_csv);
+
+			END_IF;
+
+		END_IF;
+
+		IF err_code = OK THEN
+
+			(******************* AFDX SIGNAL ***********************)
+			OPEN_REAL_DATA( CSV_FILE_AFDX_SIGNAL);
+			handle_signal_csv 	:= OPEN_REAL_DATA.handle;
+			err_code				:= OPEN_REAL_DATA.errcode;
+			first_time			:= TRUE;
+
+        	IF err_code = OK THEN
+           
+				READ_AFDX_SIGNAL_CSV ( handle_signal_csv );
+
+				previous_vl_id			:= 0;
+				previous_udp_src		:= 0;
+				previous_udp_dst		:= 0;
+				previous_fds_address 	:= 0;
+				previous_fs_address		:= 0;
+				previous_signal_address := 0;
+
+		    	WHILE READ_AFDX_SIGNAL_CSV.err_code = 20 DO  
+		
+					IF	(UUT_Info.Model = READ_AFDX_SIGNAL_CSV.engine_model) THEN
+
+						(**************** FS SIGNAL *****************)
+						IF(((READ_AFDX_SIGNAL_CSV.fds_address = previous_fds_address) AND (READ_AFDX_SIGNAL_CSV.fs_address <> previous_fs_address)) OR 
+							(READ_AFDX_SIGNAL_CSV.fds_address 	<> previous_fds_address)OR
+							(READ_AFDX_SIGNAL_CSV.udp_src 		<> previous_udp_src) 	OR 
+							(READ_AFDX_SIGNAL_CSV.udp_dst 		<> previous_udp_dst)  	OR
+							(READ_AFDX_SIGNAL_CSV.vl_id			<> previous_vl_id)  	OR
+							(first_time = TRUE)) THEN
+							IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+								(* handle_fds needed for signal creation *)
+								POWERDNA_AFDXADD_FDS(PowerDNA_Structure.hAfdxDev,
+													READ_AFDX_SIGNAL_CSV.vl_id,
+													READ_AFDX_SIGNAL_CSV.port_id,
+													READ_AFDX_SIGNAL_CSV.fds_name,
+													READ_AFDX_SIGNAL_CSV.fs_address,
+													READ_AFDX_SIGNAL_CSV.fds_address,
+													READ_AFDX_SIGNAL_CSV.fds_length);
+
+								err_code := POWERDNA_AFDXADD_FDS.ERR_CODE;
+
+								IF err_code = OK THEN
+									handle_fds := POWERDNA_AFDXADD_FDS.HFDS;
+								ELSE
+									EXIT;
+								END_IF;
+							END_IF;
+
+							IF READ_AFDX_SIGNAL_CSV.data_type <> 4 THEN (*4: OPAQUE NOT SUPPORTED pour eviter un dephasage des index des FS avec le HMI*)
+								CASE READ_AFDX_SIGNAL_CSV.txrx OF 
+									0: (**** RECEIVE ****)
+										counter_fs_in := counter_fs_in + 1;
+										FS_IN[counter_fs_in].hMsg := handle_fds;
+										FS_IN[counter_fs_in].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+										FS_IN[counter_fs_in].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+
+									1: (**** TRANSMIT ****)
+										counter_fs_out := counter_fs_out + 1;
+										FS_OUT[counter_fs_out].hMsg := handle_fds;
+										FS_OUT[counter_fs_out].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+										FS_OUT[counter_fs_out].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								END_CASE;
+							END_IF;
+
+																					
+						END_IF;
+
+						CASE READ_AFDX_SIGNAL_CSV.data_type OF
+						0:	(* STRING *) 
+							IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN				
+								POWERDNA_AFDXREGISTER_STRINGSIGNAL(handle_fds, READ_AFDX_SIGNAL_CSV.PARAMETER_NAME,
+									READ_AFDX_SIGNAL_CSV.signal_address,READ_AFDX_SIGNAL_CSV.length);
+								err_code := POWERDNA_AFDXREGISTER_STRINGSIGNAL.ERR_CODE;
+							END_IF;
+							IF err_code = OK THEN
+								handle_signal := POWERDNA_AFDXREGISTER_STRINGSIGNAL.PHSIGNAL;
+
+								CASE READ_AFDX_SIGNAL_CSV.txrx OF
+								0: (**** RECEIVE ****)
+									counter_signal_string_in := counter_signal_string_in + 1;
+									SIGNAL_STRING_IN[counter_signal_string_in].hMsg := handle_signal;
+									SIGNAL_STRING_IN[counter_signal_string_in].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_STRING_IN[counter_signal_string_in].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								1: (**** TRANSMIT ****)
+									counter_signal_string_out := counter_signal_string_out + 1;
+									SIGNAL_STRING_OUT[counter_signal_string_out].hMsg := handle_signal;
+									SIGNAL_STRING_OUT[counter_signal_string_out].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_STRING_OUT[counter_signal_string_out].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								END_CASE;
+							ELSE
+								EXIT;
+							END_IF;
+																		
+						1: (* INTEGER *)
+							IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+								POWERDNA_AFDXREGISTER_INTEGER32SIGNAL(handle_fds, READ_AFDX_SIGNAL_CSV.PARAMETER_NAME,
+									READ_AFDX_SIGNAL_CSV.signal_address,
+									ANY_TO_DINT(READ_AFDX_SIGNAL_CSV.min_value),
+									ANY_TO_DINT(READ_AFDX_SIGNAL_CSV.max_value));
+								err_code := POWERDNA_AFDXREGISTER_INTEGER32SIGNAL.ERR_CODE;
+							END_IF;
+							IF err_code = OK THEN
+								handle_signal := POWERDNA_AFDXREGISTER_INTEGER32SIGNAL.PHSIGNAL;
+
+								CASE READ_AFDX_SIGNAL_CSV.txrx OF
+								0: (**** RECEIVE ****)
+									counter_signal_integer_in := counter_signal_integer_in + 1;
+									SIGNAL_INT_IN[counter_signal_integer_in].hMsg := handle_signal;
+									SIGNAL_INT_IN[counter_signal_integer_in].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_INT_IN[counter_signal_integer_in].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								1: (**** TRANSMIT ****)
+									counter_signal_integer_out := counter_signal_integer_out + 1;
+									SIGNAL_INT_OUT[counter_signal_integer_out].hMsg := handle_signal;
+									SIGNAL_INT_OUT[counter_signal_integer_out].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_INT_OUT[counter_signal_integer_out].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								END_CASE;
+							ELSE
+								EXIT;
+							END_IF;
+						2: (* FLOAT/REAL *)
+							IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+								POWERDNA_AFDXREGISTER_REAL32SIGNAL(handle_fds, READ_AFDX_SIGNAL_CSV.PARAMETER_NAME,
+									READ_AFDX_SIGNAL_CSV.signal_address,
+									READ_AFDX_SIGNAL_CSV.min_value,
+									READ_AFDX_SIGNAL_CSV.max_value);
+								err_code := POWERDNA_AFDXREGISTER_REAL32SIGNAL.ERR_CODE;
+							END_IF;
+
+							IF err_code = OK THEN
+								handle_signal := POWERDNA_AFDXREGISTER_REAL32SIGNAL.PHSIGNAL;
+
+								CASE READ_AFDX_SIGNAL_CSV.txrx OF
+								0: (**** RECEIVE ****)
+									counter_signal_real_in := counter_signal_real_in + 1;
+									SIGNAL_REAL_IN[counter_signal_real_in].hMsg := handle_signal;
+									SIGNAL_REAL_IN[counter_signal_real_in].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_REAL_IN[counter_signal_real_in].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								1:
+									counter_signal_real_out := counter_signal_real_out + 1;
+									SIGNAL_REAL_OUT[counter_signal_real_out].hMsg := handle_signal;
+									SIGNAL_REAL_OUT[counter_signal_real_out].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_REAL_OUT[counter_signal_real_out].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								END_CASE;
+							ELSE
+								EXIT;
+							END_IF;
+						3: (* BOOLEAN *)
+							IF(	(previous_vl_id 		= READ_AFDX_SIGNAL_CSV.vl_id AND
+								previous_udp_src		= READ_AFDX_SIGNAL_CSV.udp_src AND
+								previous_udp_dst		= READ_AFDX_SIGNAL_CSV.udp_dst AND
+								previous_fds_address 	= READ_AFDX_SIGNAL_CSV.fds_address AND
+								previous_signal_address <> READ_AFDX_SIGNAL_CSV.signal_address)  OR first_time = TRUE OR
+								(previous_vl_id 		<> READ_AFDX_SIGNAL_CSV.vl_id OR
+								previous_udp_src		<> READ_AFDX_SIGNAL_CSV.udp_src OR
+								previous_udp_dst		<> READ_AFDX_SIGNAL_CSV.udp_dst OR
+								previous_fds_address 	<> READ_AFDX_SIGNAL_CSV.fds_address AND
+								previous_signal_address <> READ_AFDX_SIGNAL_CSV.signal_address ) )THEN
+								IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+									POWERDNA_AFDXREGISTER_UINTEGER32SIGNAL(handle_fds, READ_AFDX_SIGNAL_CSV.PARAMETER_NAME,
+										READ_AFDX_SIGNAL_CSV.signal_address,
+										ANY_TO_UDINT(READ_AFDX_SIGNAL_CSV.min_value),
+										ANY_TO_UDINT(READ_AFDX_SIGNAL_CSV.max_value));
+									err_code := POWERDNA_AFDXREGISTER_UINTEGER32SIGNAL.ERR_CODE;
+								END_IF;
+								IF err_code = OK THEN
+									handle_signal := POWERDNA_AFDXREGISTER_UINTEGER32SIGNAL.PHSIGNAL;
+
+									CASE READ_AFDX_SIGNAL_CSV.txrx OF
+									0: (**** RECEIVE ****)
+										counter_signal_udinteger_in := counter_signal_udinteger_in + 1;
+										SIGNAL_UDINT_IN[counter_signal_udinteger_in].hMsg := handle_signal;
+										SIGNAL_UDINT_IN[counter_signal_udinteger_in].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+										SIGNAL_UDINT_IN[counter_signal_udinteger_in].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+									1: (**** TRANSMIT ****)
+										counter_signal_udinteger_out := counter_signal_udinteger_out + 1;
+										SIGNAL_UDINT_OUT[counter_signal_udinteger_out].hMsg := handle_signal;
+										SIGNAL_UDINT_OUT[counter_signal_udinteger_out].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+										SIGNAL_UDINT_OUT[counter_signal_udinteger_out].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+									END_CASE;
+								ELSE
+									EXIT;
+								END_IF;
+							END_IF;
+						(*4: OPAQUE NOT SUPPORTED *)
+						5: (* ENUMERATION *)
+							IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+								POWERDNA_AFDXREGISTER_UINTEGER32SIGNAL(handle_fds, READ_AFDX_SIGNAL_CSV.PARAMETER_NAME,
+									READ_AFDX_SIGNAL_CSV.signal_address,
+									ANY_TO_UDINT(READ_AFDX_SIGNAL_CSV.min_value),
+									ANY_TO_UDINT(READ_AFDX_SIGNAL_CSV.max_value));
+								err_code := POWERDNA_AFDXREGISTER_UINTEGER32SIGNAL.ERR_CODE;
+							END_IF;
+							IF err_code = OK THEN
+								handle_signal := POWERDNA_AFDXREGISTER_UINTEGER32SIGNAL.PHSIGNAL;
+
+								CASE READ_AFDX_SIGNAL_CSV.txrx OF
+								0: (**** RECEIVE ****)
+									counter_signal_udinteger_in := counter_signal_udinteger_in + 1;
+									SIGNAL_UDINT_IN[counter_signal_udinteger_in].hMsg := handle_signal;
+									SIGNAL_UDINT_IN[counter_signal_udinteger_in].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_UDINT_IN[counter_signal_udinteger_in].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								1: (**** TRANSMIT ****)
+									counter_signal_udinteger_out := counter_signal_udinteger_out + 1;
+									SIGNAL_UDINT_OUT[counter_signal_udinteger_out].hMsg := handle_signal;
+									SIGNAL_UDINT_OUT[counter_signal_udinteger_out].fds := READ_AFDX_SIGNAL_CSV.fds_name;
+									SIGNAL_UDINT_OUT[counter_signal_udinteger_out].signal := READ_AFDX_SIGNAL_CSV.parameter_name;
+								END_CASE;
+							ELSE
+								EXIT;
+							END_IF;
+						(*6: BINARY NOT SUPPORTED *)
+						END_CASE;
+
+					END_IF;
+													
+					first_time				:= FALSE;
+					previous_vl_id 			:= READ_AFDX_SIGNAL_CSV.vl_id;
+					previous_udp_src		:= READ_AFDX_SIGNAL_CSV.udp_src;
+					previous_udp_dst		:= READ_AFDX_SIGNAL_CSV.udp_dst;
+					previous_fds_address 	:= READ_AFDX_SIGNAL_CSV.fds_address;
+					previous_fs_address		:= READ_AFDX_SIGNAL_CSV.fs_address;
+					previous_signal_address := READ_AFDX_SIGNAL_CSV.signal_address;
+											
+	
+					READ_AFDX_SIGNAL_CSV( handle_signal_csv );  
+	
+	    	
+				END_WHILE; (*READ_AFDX_SIGNAL_CSV*)        	  
+		
+												       	  	
+				CLOSE_REAL_DATA(handle_signal_csv);
+   	
+			END_IF;(*err_code DU OPEN READ_AFDX_SIGNAL_CSV *)
+	
+		END_IF;(* handle_port *)
+
+	END_IF; (* IF engine_model = .... filtering record *)
+							
+
+
+   
+
+		
+    IF err_code = OK THEN 
+	        	    
+		(* Initialise PowerDNA *)
+   	   	
+	END_IF;
+	
+
+
+IF (err_code <> OK) THEN 
+
+	status := ERROR_ON_INITIALIZING;
+   	dummy  := LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: ERROR_ON_INITIALIZING');
+
+ELSE 
+   	status      := INITIALIZED;
+    dummy       := LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: INITIALIZED');
+ 
+  	PowerDNA_Structure.status := INITIALIZED;
+
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

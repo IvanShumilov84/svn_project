@@ -1,0 +1,68 @@
+FUNCTION_BLOCK open_UUT_Ctrl_HTS900_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_HTS900._FB									
+														
+	Description :	Code for importing Speed,INLET, EGT and InterTurbine static Data to the Workbench at Opening.
+    
+
+	Dependacy : 	
+
+					HISTORY
+	Rev			Date			Name			Description
+		     		(YYYY/MM/DD)
+
+	1.0	         	2020/01/08 		Shahbaz		First Release
+	
+************************************************************************************************************************************************)	
+
+
+		
+		(* Parameters are retrieved from XML(.cfg) file by engine model *)
+		Prefix_String := 'ConfigurationSettings.' + UUT_INFO.Model + '.';
+
+
+		(* SPEED *)
+		NG_INDEX 				:= ReadOneIntegerConfigItemST( Prefix_String + 'NG_INDEX', '0');
+		NG_BINDING_SOURCE 		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'NG_BINDING_SOURCE', '0'));
+		NG_100_RPM 				:= ReadOneRealConfigItemST( Prefix_String + 'NG_100_RPM_CONSTANT', '0');
+		NG_100_FREQ 			:= ReadOneRealConfigItemST( Prefix_String + 'NG_100_FREQ_CONSTANT', '0');
+
+		NP_INDEX 				:= ReadOneIntegerConfigItemST( Prefix_String + 'NP_INDEX', '0');
+		NP_BINDING_SOURCE 		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'NP_BINDING_SOURCE', '0'));
+		NP_100_RPM 				:= ReadOneRealConfigItemST( Prefix_String + 'NP_100_RPM_CONSTANT', '0');
+		NP_100_FREQ 			:= ReadOneRealConfigItemST( Prefix_String + 'NP_100_FREQ_CONSTANT', '0');
+
+		(* Inlet Temperature  *)
+		T_INLET_PROBE_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_INLET_PROBE_BINDING_SOURCE', '0'));
+		T_INLET_NUMBER_PROBE		:= ReadOneIntegerConfigItemST( Prefix_String + 'T_INLET_NUMBER_PROBE', '0');
+
+		FOR i:=1 TO T_INLET_NUMBER_PROBE BY 1 DO
+			
+			T_INLET_PROBE_INDEX[i] 	:= ReadOneIntegerConfigItemST( Prefix_String + 'T_INLET_PROBE_INDEX' + ANY_TO_STRING(i), '0');
+
+		END_FOR;
+
+			
+		(* Exhaust Temperature *)
+		T_EGT_PROBE_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_EGT_PROBE_BINDING_SOURCE', '0'));
+		T_EGT_NUMBER_PROBE  		:= ReadOneIntegerConfigItemST( Prefix_String + 'T_EGT_NUMBER_PROBE', '0');
+
+		FOR i:=1 TO T_EGT_NUMBER_PROBE BY 1 DO
+			
+			T_EGT_PROBE_INDEX[i] 	:= ReadOneIntegerConfigItemST( Prefix_String + 'T_EGT_PROBE_INDEX' + ANY_TO_STRING(i), '0');
+
+		END_FOR;
+
+		
+		(* Interturbine Temperature *)
+		MGT_PROBE_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_MGT_PROBE_BINDING_SOURCE', '0'));
+		MGT_index 				:= ReadOneIntegerConfigItemST( Prefix_String + 'T_MGT_INDEX', '0');
+
+
+		(* Torque *)
+		TORQUE_BINDING_SOURCE		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'TORQUE_BINDING_SOURCE', '0'));
+		TORQUE_INDEX 			:= ReadOneIntegerConfigItemST( Prefix_String + 'TORQUE_INDEX', '0');
+
+
+
+END_FUNCTION_BLOCK

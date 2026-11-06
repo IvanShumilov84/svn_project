@@ -1,0 +1,28 @@
+FUNCTION_BLOCK open_UUT_Ctrl_PW980A_FB
+    Prefix_String := 'ConfigurationSettings.PW980A.';
+
+	IF (err_code <> OK) THEN 
+		status	:= ERROR_ON_OPENING;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: ERROR ON OPENING');		
+	ELSE
+
+
+		(* SPEED *)
+		N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N1_BINDING_SOURCE', '0'));
+		N1_INDEX 			:= ReadOneIntegerConfigItemST( Prefix_String + 'N1_INDEX', '0');
+		N1_100_RPM 			:= ReadOneRealConfigItemST( Prefix_String + 'N1_100_RPM_CONSTANT', '0');
+		N1_100_FREQ 		:= ReadOneRealConfigItemST( Prefix_String + 'N1_100_FREQ_CONSTANT', '0');
+
+		N2_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N2_BINDING_SOURCE', '0'));
+		N2_INDEX 			:= ReadOneIntegerConfigItemST( Prefix_String + 'N2_INDEX', '0');
+		N2_100_RPM 			:= ReadOneRealConfigItemST( Prefix_String + 'N2_100_RPM_CONSTANT', '0');
+		N2_100_FREQ 		:= ReadOneRealConfigItemST( Prefix_String + 'N2_100_FREQ_CONSTANT', '0');
+
+
+		(* T_EGT_P *)
+		T_EGT_P_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_EGT_P_PROBE_BINDING_SOURCE', '0'));
+		T_EGT_P_ENGINE_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( Prefix_String + 'T_EGT_P_PROBE_INDEX1', '0');
+
+	END_IF;
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,119 @@
+FUNCTION_BLOCK Record_Parameter_Index_FB
+(************************************************************************************************************************************************
+	Name :		Record_Parameter_Index_FB									
+														
+	Description :	Record the Parameter Index in the Array
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/03/01	Danny Lepage	First Release
+
+************************************************************************************************************************************************)
+
+(*
+ * ARINC Parameters
+ *)
+
+IF (parameterName = 'AADN1TRM') THEN
+   AADN1TRM_index := index;
+ELSIF (parameterName = 'ABDN1TRM') THEN
+   ABDN1TRM_index := index;
+ELSIF (parameterName = 'AAIGV') THEN
+   AAIGV_index := index;
+ELSIF (parameterName = 'ABIGV') THEN
+   ABIGV_index := index;
+ELSIF (parameterName = 'AAL272') THEN
+   AAL272_index := index;
+ELSIF (parameterName = 'ABL272') THEN
+   ABL272_index := index;
+ELSIF (parameterName = 'AAN1') THEN
+   AAN1_index := index;
+ELSIF (parameterName = 'ABN1') THEN
+   ABN1_index := index;
+ELSIF (parameterName = 'AAN2') THEN
+   AAN2_index := index;
+ELSIF (parameterName = 'ABN2') THEN
+   ABN2_index := index;
+ELSIF (parameterName = 'AAT45') THEN
+   AAT45_index := index;
+ELSIF (parameterName = 'ABT45') THEN
+   ABT45_index := index;
+ELSIF (parameterName = 'AATLA') THEN
+   AATLA_index := index;
+ELSIF (parameterName = 'ABTLA') THEN
+   ABTLA_index := index;
+ELSIF (parameterName = 'AATTOAV') THEN
+   AATTOAV_index := index;
+ELSIF (parameterName = 'ABTTOAV') THEN
+   ABTTOAV_index := index;
+
+(*
+ * UART Parameters
+ *)
+
+ELSIF ((parameterName = 'BOV') OR (parameterName = 'EABOV') OR (parameterName = 'EABOVIN')) THEN
+   EABOV_index := index;
+ELSIF ((parameterName = 'BOVREQ') OR (parameterName = 'EABOVREQ')) THEN
+   EABOVREQ_index := index;
+ELSIF (parameterName = 'EAIGV') THEN
+   EAIGV_index := index;
+ELSIF (parameterName = 'EBIGV') THEN
+   EBIGV_index := index;
+ELSIF (parameterName = 'EAT45') THEN
+   EAT45_index := index;
+ELSIF (parameterName = 'EBT45') THEN
+   EBT45_index := index;
+ELSIF (parameterName = 'EABOVCOM')	THEN
+   EABOVCOM_index := index;
+ELSIF (parameterName = 'EBBOVCOM')	THEN
+   EBBOVCOM_index := index;
+ELSIF (parameterName = 'EABVSTCM') THEN
+   EABVSTCM_index := index;
+ELSIF (parameterName = 'EBBVSTCM') THEN
+   EBBVSTCM_index := index;
+ELSIF (parameterName = 'EAN1') 	THEN
+   EAN1_index := index;
+ELSIF (parameterName = 'EBN1')	THEN
+   EBN1_index := index;
+ELSIF (parameterName = 'EAQACNCT') THEN
+   EAQACNCT_EAINCON_index := index;
+ELSIF (parameterName = 'EAINCON') THEN
+   EAQACNCT_EAINCON_index := index;
+ELSIF (parameterName = 'EATLA') THEN
+   EATLA_index := index;
+ELSIF (parameterName = 'EBTLA') THEN
+   EBTLA_index := index;
+ELSIF (parameterName = 'EAN2C11') THEN
+   EAN2C11_index := index;
+ELSIF (parameterName = 'EBN2C11') THEN
+   EBN2C11_index := index;
+ELSIF (parameterName = 'N2COR') THEN
+   EAN2COR_index := index;
+ELSIF (parameterName = 'EAN2COR') THEN
+   EAN2COR_index := index;
+ELSIF (parameterName = 'EAN2C25') THEN
+   EAN2C25_index := index;
+ELSIF (parameterName = 'MGT') THEN
+   MGT_index := index;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,82 @@
+FUNCTION_BLOCK open_UUT_Ctrl_TSCP700_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_TSCP700_FB									
+														
+************************************************************************************************************************************************)	
+
+    	Prefix_String := 'ConfigurationSettings.TSCP700.';
+
+	ETC_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'ETC_PROBE_BINDING_SOURCE', '0'));
+
+	ETC_NUMBER_PROBE := ReadOneIntegerConfigItemST( Prefix_String + 'ETC_NUMBER_PROBE', '2');
+
+	FOR i:= 1 TO ETC_NUMBER_PROBE BY 1 DO
+		ETC_ENGINE_PROBE_INDEX[i] := ReadOneIntegerConfigItemST( Prefix_String + 'ETC_PROBE_INDEX'+ ANY_TO_STRING(i), '0');
+	END_FOR;
+
+	T_OIL_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_OIL_PROBE_BINDING_SOURCE', '0'));
+	T_OIL_PROBE_INDEX := ReadOneIntegerConfigItemST( Prefix_String + 'T_OIL_PROBE_INDEX', '0');
+
+	EGT_VS_N2_X[1] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEX1_CONSTANT', '0');
+	EGT_VS_N2_X[2] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEX2_CONSTANT', '0');
+	EGT_VS_N2_X[3] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEX3_CONSTANT', '0');
+	EGT_VS_N2_X[4] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEX4_CONSTANT', '0');
+
+	EGT_VS_N2_Y[1] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEY1_CONSTANT', '0');
+	EGT_VS_N2_Y[2] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEY2_CONSTANT', '0');
+	EGT_VS_N2_Y[3] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEY3_CONSTANT', '0');
+	EGT_VS_N2_Y[4] := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEY4_CONSTANT', '0');
+
+	N2_95_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N2_95_BINDING_SOURCE', '0'));
+	N2_95_INDEX := ReadOneIntegerConfigItemST( Prefix_String + 'N2_95_INDEX', '0');
+
+      IF (UUT_Info.Model = 'TSCP700-4B') OR (UUT_Info.Model = 'TSCP700-5')  THEN
+
+    		Prefix_String := 'ConfigurationSettings.TSCP700-4B-5.';
+
+		N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N1_BINDING_SOURCE', '0'));
+		N1_INDEX := ReadOneIntegerConfigItemST( Prefix_String + 'N1_INDEX', '0');
+		N2_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N2_BINDING_SOURCE', '0'));
+		N2_INDEX := ReadOneIntegerConfigItemST( Prefix_String + 'N2_INDEX', '0');
+
+		N1_100_RPM := ReadOneRealConfigItemST( Prefix_String + 'N1_100_RPM_CONSTANT', '0');
+		N2_100_RPM := ReadOneRealConfigItemST( Prefix_String + 'N2_100_RPM_CONSTANT', '0');
+
+		N1_100_FREQ := ReadOneRealConfigItemST( Prefix_String + 'N1_100_FREQ_CONSTANT', '0');
+		N2_100_FREQ := ReadOneRealConfigItemST( Prefix_String + 'N2_100_FREQ_CONSTANT', '0');
+
+		EGT_VS_N2_TIME_DELAY := ReadOneTimeConfigItemST( Prefix_String + 'EGT_VS_N2_TIME_DELAY_CONSTANT', '0');
+		EGT_VS_N2_Y3_AFTER_DELAY := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEY3_AFTER_DELAY_CONSTANT', '0');
+
+	ELSIF (UUT_Info.Model = 'TSCP700-4E') THEN
+
+    		Prefix_String := 'ConfigurationSettings.TSCP700-4E.';
+
+		N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N1_BINDING_SOURCE', '0'));
+		N1_INDEX := ReadOneIntegerConfigItemST( Prefix_String + 'N1_INDEX', '0');
+		N2_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N2_BINDING_SOURCE', '0'));
+		N2_INDEX := ReadOneIntegerConfigItemST( Prefix_String + 'N2_INDEX', '0');
+
+		N1_100_RPM := ReadOneRealConfigItemST( Prefix_String + 'N1_100_RPM_CONSTANT', '0');
+		N2_100_RPM := ReadOneRealConfigItemST( Prefix_String + 'N2_100_RPM_CONSTANT', '0');
+
+		N1_100_FREQ := ReadOneRealConfigItemST( Prefix_String + 'N1_100_FREQ_CONSTANT', '0');
+		N2_100_FREQ := ReadOneRealConfigItemST( Prefix_String + 'N2_100_FREQ_CONSTANT', '0');
+
+		EGT_VS_N2_TIME_DELAY := ReadOneTimeConfigItemST( Prefix_String + 'EGT_VS_N2_TIME_DELAY_CONSTANT', '0');
+		EGT_VS_N2_Y3_AFTER_DELAY := ReadOneRealConfigItemST( Prefix_String + 'EGT_VS_N2_TABLEY3_AFTER_DELAY_CONSTANT', '0');
+
+	END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

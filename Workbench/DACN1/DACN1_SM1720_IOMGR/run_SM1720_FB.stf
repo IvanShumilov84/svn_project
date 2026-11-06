@@ -1,0 +1,530 @@
+FUNCTION_BLOCK run_SM1720_FB
+err_code := OK;
+status := RUNNING;
+
+(*IF (In_SM1720_IOMgr.mode = 1000) THEN*)
+
+
+	
+	
+	IF (FCU_required = TRUE) THEN 
+		(* Compute Lever Position in Percent output dans FCU_lever_pcnt.value *)
+		FCU_lever_pcnt(SCU_Vhs[8].value, SCU_Vhs[9].value);	
+
+	END_IF; 																																											
+			
+	IF (GOV_required = TRUE) THEN 
+		(* Compute Lever Position in Percent output dans GOV_lever_pcnt.value *)
+		GOV_lever_pcnt(SCU_Vhs[8].value, SCU_Vhs[7].value);	
+
+	END_IF; 
+
+
+
+IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+
+	(* Read data from SM1720 *)
+
+	CASE  current_scan OF
+
+		1:
+			IF (FCU_required = TRUE) THEN 
+
+				READ_FCU_VALUE(fd1);	
+
+				FCU_position := READ_FCU_VALUE.VALUE; (* FCU Actuatopr position in count/pas *)
+
+			END_IF; 																																											
+			
+			IF (GOV_required = TRUE) THEN 
+
+				READ_GOV_VALUE(fd2);	
+
+				GOV_position := READ_GOV_VALUE.VALUE; (* GOV Actuatopr position in count/pas *)
+
+			END_IF; 
+
+		2:
+			(* Nothing to read from SM when setting position *)		
+
+	END_CASE; 	
+
+	(* Send Command to SM1720 *)
+
+	CASE  next_scan OF 
+
+		1:
+			IF (FCU_required = TRUE) THEN 
+
+				REQUEST_SM_POSITION(fd1, FCU_ADDRESS);(* Lecture de la position actuelle du Smart Motor *)
+
+				(* TODO: ft enlever le set_smdatum ici-bas... test pour ajuster les variables du smart motor*)
+				(*IF( FCU_Set_SM_Parameters)THEN
+
+					FCU_Set_SM_Parameters := FALSE;
+
+					SET_SM_DATUM(	  fd1
+					, FCU_ADDRESS
+					, FCU_throttle_info.sm_datum.kp			
+					, FCU_throttle_info.sm_datum.ki			
+					, FCU_throttle_info.sm_datum.kd			
+					, FCU_throttle_info.sm_datum.kl			
+					, FCU_throttle_info.sm_datum.ks			
+					, FCU_throttle_info.sm_datum.kv			
+					, FCU_throttle_info.sm_datum.ka			
+					, FCU_throttle_info.sm_datum.kg			
+					, FCU_throttle_info.sm_datum.max_acceleration			
+					, FCU_throttle_info.sm_datum.max_velocity			
+					, FCU_throttle_info.sm_datum.max_amps			
+					, FCU_throttle_info.sm_datum.max_error			
+		            		);	
+				END_IF;*)
+
+
+			END_IF; 																																											
+			
+			IF (GOV_required = TRUE) THEN 
+
+				REQUEST_SM_POSITION(fd2, GOV_ADDRESS);(* Lecture de la position actuelle du Smart Motor *)
+
+				(* TODO: ft enlever le set_smdatum ici-bas... test pour ajuster les variables du smart motor*)
+				(*IF( GOV_Set_SM_Parameters)THEN
+
+					GOV_Set_SM_Parameters := FALSE;
+
+					SET_SM_DATUM(	  fd2
+					, GOV_ADDRESS
+					, GOV_throttle_info.sm_datum.kp			
+					, GOV_throttle_info.sm_datum.ki			
+					, GOV_throttle_info.sm_datum.kd			
+					, GOV_throttle_info.sm_datum.kl			
+					, GOV_throttle_info.sm_datum.ks			
+					, GOV_throttle_info.sm_datum.kv			
+					, GOV_throttle_info.sm_datum.ka			
+					, GOV_throttle_info.sm_datum.kg			
+					, GOV_throttle_info.sm_datum.max_acceleration			
+					, GOV_throttle_info.sm_datum.max_velocity			
+					, GOV_throttle_info.sm_datum.max_amps			
+					, GOV_throttle_info.sm_datum.max_error			
+		            		);	
+				END_IF;*)
+
+
+			END_IF; 						
+
+		2:
+			IF (FCU_required = TRUE)  THEN 
+
+				
+				SET_SM_POSITION( fd1, FCU_ADDRESS,				(* Commande la nouvelle position au Smart Motor *)
+					 	 FCU_throttle_info.sm_datum.max_acceleration,
+						 FCU_throttle_info.sm_datum.max_velocity,
+					 	 FCU_setpoint);	
+
+			END_IF; 
+		
+			IF (GOV_required = TRUE) THEN 
+
+				SET_SM_POSITION( fd2, GOV_ADDRESS,				(* Commande la nouvelle position au Smart Motor *)
+						 GOV_throttle_info.sm_datum.max_acceleration,
+					 	 GOV_throttle_info.sm_datum.max_velocity,
+					 	 GOV_setpoint);	
+
+			END_IF; 																																							
+			
+	END_CASE; 	
+
+END_IF; 
+
+	(* Process Actuator Data *)
+
+	CASE  current_scan OF
+
+		1:
+			IF (FCU_required = TRUE) THEN 
+				
+
+				IF (FCU_Reset_Rigging = TRUE) THEN					
+					FCU_throttle_info.Min_Stop_Point.Capture_done 			:= FALSE;
+					FCU_throttle_info.Max_Stop_Point.Capture_done 			:= FALSE;
+					FCU_throttle_info.Idle_Point.Capture_done 				:= FALSE;
+					FCU_throttle_info.FlightSim_Min_Point.Capture_done 		:= FALSE;
+					FCU_throttle_info.FlightSim_Max_Point.Capture_done 		:= FALSE;
+					FCU_calib_done := FALSE ;
+					FCU_rigged := FALSE;
+				END_IF;
+
+
+				IF (FCU_calib_done = FALSE ) THEN 
+					
+					(* Execute la procedure de rigging pour le FCU *)
+					rig_FCU_throttle(FCU_Reset_Rigging, FCU_lever_pcnt.value, FCU_position, FCU_throttle_info);
+
+					(*FCU_rigged			:= rig_FCU_throttle.status;*)
+					FCU_setpoint		:= rig_FCU_throttle.actuator_position_demand;					
+					FCU_Compute_Status 	:= rig_FCU_throttle.Compute_Status;
+					
+					IF FCU_Compute_Status = TRUE THEN
+						FCU_act_angle(ANY_TO_REAL(FCU_position), rig_FCU_throttle.actuator_slope, rig_FCU_throttle.actuator_offset);
+						FCU_ANG.value 	:= FCU_act_angle.x_out;
+					ELSE
+						FCU_Ang.value 	:= 0.0;
+					END_IF;						
+				
+
+					(*IF (FCU_rigged = TRUE) THEN*)
+					IF(FCU_rigged = FALSE AND FCU_Compute_Status )THEN
+
+						FCU_rigged := TRUE;
+						FCU_throttle_info.lever_slope		:= rig_FCU_throttle.lever_slope;
+						FCU_throttle_info.lever_offset		:= rig_FCU_throttle.lever_offset;
+						FCU_throttle_info.actuator_slope	:= rig_FCU_throttle.actuator_slope;
+						FCU_throttle_info.actuator_offset	:= rig_FCU_throttle.actuator_offset;
+						FCU_throttle_info.mode				:= ACTIVE_MODE;
+
+					ELSIF ( FCU_rigged = TRUE ) THEN
+							
+						IF(FCU_throttle_info.Min_Stop_Point.Enabled AND FCU_throttle_info.Min_Stop_Point.Capture_required ) THEN
+							CAPTURE_POINT(FCU_throttle_info.Min_Stop_Point, FCU_lever_pcnt.value, FCU_throttle_info);
+							IF(CAPTURE_POINT.status = TRUE) THEN
+								FCU_throttle_info.Min_Stop_Point.Position_degree 	:= CAPTURE_POINT.value_degree;
+								FCU_throttle_info.Min_Stop_Point.Capture_done 		:= TRUE;
+								FCU_throttle_info.Min_Stop_Point.Store_Value 		:= FALSE;
+							END_IF;
+						ELSE
+							FCU_throttle_info.Min_Stop_Point.Capture_done := TRUE;
+						END_IF;
+	
+
+						IF(FCU_throttle_info.Idle_Point.Enabled AND FCU_throttle_info.Idle_Point.Capture_required ) THEN
+							CAPTURE_POINT(FCU_throttle_info.Idle_Point, FCU_lever_pcnt.value, FCU_throttle_info);
+							IF(CAPTURE_POINT.status = TRUE) THEN
+								FCU_throttle_info.Idle_Point.Position_degree 		:= CAPTURE_POINT.value_degree;
+								FCU_throttle_info.Idle_Point.Capture_done 			:= TRUE;
+								FCU_throttle_info.Idle_Point.Store_Value 			:= FALSE;
+
+								(* Return to Idle On Emergency Trips *)
+								IF ( FCU_throttle_info.Estop_enable = TRUE ) THEN
+									FCU_throttle_info.Estop_angle := CAPTURE_POINT.value_degree;
+								END_IF;	
+							END_IF;
+						ELSE
+							FCU_throttle_info.Idle_Point.Capture_done := TRUE;
+						END_IF;
+
+						IF(FCU_throttle_info.Max_Stop_Point.Enabled AND FCU_throttle_info.Max_Stop_Point.Capture_required ) THEN
+							CAPTURE_POINT(FCU_throttle_info.Max_Stop_Point, FCU_lever_pcnt.value, FCU_throttle_info);
+							IF(CAPTURE_POINT.status = TRUE) THEN
+								FCU_throttle_info.Max_Stop_Point.Position_degree 	:= CAPTURE_POINT.value_degree;
+								FCU_throttle_info.Max_Stop_Point.Capture_done 		:= TRUE;
+								FCU_throttle_info.Max_Stop_Point.Store_value 		:= FALSE;
+							END_IF;
+						ELSE
+							FCU_throttle_info.Max_Stop_Point.Capture_done := TRUE;
+						END_IF;
+
+						
+						IF(FCU_throttle_info.FlightSim_Min_Point.Enabled AND FCU_throttle_info.FlightSim_Min_Point.Capture_required ) THEN
+							CAPTURE_POINT(FCU_throttle_info.FlightSim_Min_Point, FCU_lever_pcnt.value, FCU_throttle_info);
+							IF(CAPTURE_POINT.status = TRUE) THEN
+								FCU_throttle_info.FlightSim_Min_Point.Position_in_count := FCU_position; (* In this case we need the actuator positon *)
+								FCU_throttle_info.FlightSim_Min_Point.Capture_done 		:= TRUE;
+								FCU_throttle_info.FlightSim_Min_Point.Store_Value 		:= FALSE;
+							END_IF;
+						ELSE
+							FCU_throttle_info.FlightSim_Min_Point.Capture_done := TRUE;
+						END_IF;
+						IF(FCU_throttle_info.FlightSim_Max_Point.Enabled AND FCU_throttle_info.FlightSim_Max_Point.Capture_required ) THEN
+							CAPTURE_POINT(FCU_throttle_info.FlightSim_Max_Point, FCU_lever_pcnt.value, FCU_throttle_info);
+							IF(CAPTURE_POINT.status = TRUE) THEN
+								FCU_throttle_info.FlightSim_Max_Point.Position_in_count	:= FCU_position; (* In this case we need the actuator positon *)
+								FCU_throttle_info.FlightSim_Max_Point.Capture_done 		:= TRUE;
+								FCU_throttle_info.FlightSim_Max_Point.Store_value 		:= FALSE;
+							END_IF;
+						ELSE
+							FCU_throttle_info.FlightSim_Max_Point.Capture_done := TRUE;
+						END_IF;
+
+
+						
+						IF( FCU_flightsim_required = TRUE ) THEN
+
+							(* Calculate slope and offset for flight simulator mode to send to VOUT to TEXCEL V100 *)
+							IF( (FCU_throttle_info.FlightSim_Min_Point.Capture_done = TRUE) AND 
+								(FCU_throttle_info.FlightSim_Min_Point.Enabled 		= TRUE)	AND 
+								(FCU_throttle_info.FlightSim_Max_Point.Capture_done = TRUE) AND 
+								(FCU_throttle_info.FlightSim_Max_Point.Enabled		= TRUE)	) THEN
+	
+								(* Calculate slope/offset for actual motor between 0 and 90 deg *)
+								compute_mx_b_coeffs( ANY_TO_REAL(FCU_throttle_info.FlightSim_Max_Point.Position_in_count), 
+									 				 ANY_TO_REAL(FCU_throttle_info.FlightSim_Min_Point.Position_in_count),
+													 FCU_throttle_info.FlightSim_Max_Point.Position_degree,
+													 FCU_throttle_info.FlightSim_Min_Point.Position_degree);
+							
+								FCU_throttle_info.flightsim_slope 	:= compute_mx_b_coeffs.slope;
+								FCU_throttle_info.flightsim_offset 	:= compute_mx_b_coeffs.offset;
+								
+
+								FCU_throttle_info.Vout_Max_Point.Position_degree := FCU_throttle_info.FlightSim_Max_Point.Position_degree;
+								FCU_throttle_info.Vout_Min_Point.Position_degree := FCU_throttle_info.FlightSim_Min_Point.Position_degree;
+
+								(* Calculate slope/offset to generate output from 0-9VDC (corresponding to servo motor angle from 0 and 90 deg) *)
+								compute_mx_b_coeffs( ANY_TO_REAL(FCU_throttle_info.Vout_Max_Point.Position_degree), 
+									 				 ANY_TO_REAL(FCU_throttle_info.Vout_Min_Point.Position_degree),
+													 ANY_TO_REAL(FCU_throttle_info.Vout_Max_Point.Position_vdc),
+													 ANY_TO_REAL(FCU_throttle_info.Vout_Min_Point.Position_vdc));
+
+								FCU_throttle_info.vout_slope 	:= compute_mx_b_coeffs.slope;
+								FCU_throttle_info.vout_offset 	:= compute_mx_b_coeffs.offset;
+
+							END_IF;
+							
+						END_IF;
+
+						IF(FCU_throttle_info.Min_Stop_Point.Capture_done AND 
+						   FCU_throttle_info.Max_Stop_Point.Capture_done AND 
+						   FCU_throttle_info.Idle_Point.Capture_done  AND
+						   FCU_throttle_info.FlightSim_Min_Point.Capture_done AND
+						   FCU_throttle_info.FlightSim_Max_Point.Capture_done ) THEN
+
+							FCU_calib_done := rig_FCU_throttle.status; 
+
+						END_IF;
+
+					END_IF; 
+
+				END_IF; 
+
+			ELSE 
+
+				FCU_calib_done := TRUE;
+
+			END_IF; 																																											
+			
+			IF ( GOV_required = TRUE ) THEN 
+
+				IF ( FCU_calib_done = TRUE ) THEN (* Valide que le FCU est rigge avant de passer au rigging du GOV *)		
+
+
+					IF (GOV_Reset_Rigging = TRUE) THEN					
+						GOV_throttle_info.Min_Stop_Point.Capture_done 	:= FALSE;
+						GOV_throttle_info.Max_Stop_Point.Capture_done 	:= FALSE;
+						GOV_throttle_info.Idle_Point.Capture_done 		:= FALSE;
+						GOV_calib_done := FALSE ;
+						GOV_rigged := FALSE;
+					END_IF;
+
+
+					IF ( GOV_calib_done = FALSE ) THEN 
+
+						(* Execute la procedure de rigging pour le GOV *)
+								    	(*Reset, position levier %  , Position actuateur, struct info du throttle *)
+						rig_GOV_throttle(GOV_Reset_Rigging, GOV_lever_pcnt.value, GOV_position, GOV_throttle_info);
+
+						(*GOV_rigged			:= rig_GOV_throttle.status;*)
+						GOV_setpoint		:= rig_GOV_throttle.actuator_position_demand;			
+						GOV_Compute_Status 	:= rig_GOV_throttle.Compute_Status;
+					
+						IF GOV_Compute_Status = TRUE THEN
+							GOV_act_angle(ANY_TO_REAL(GOV_position), rig_GOV_throttle.actuator_slope, rig_GOV_throttle.actuator_offset);
+							GOV_ANG.value 	:= GOV_act_angle.x_out;
+						ELSE
+							GOV_Ang.value 	:= 0.0;
+						END_IF;						
+
+						IF GOV_rigged = FALSE AND GOV_Compute_Status THEN 
+
+							GOV_rigged := TRUE;
+							GOV_throttle_info.lever_slope		:= rig_GOV_throttle.lever_slope;
+							GOV_throttle_info.lever_offset		:= rig_GOV_throttle.lever_offset;
+							GOV_throttle_info.actuator_slope	:= rig_GOV_throttle.actuator_slope;
+							GOV_throttle_info.actuator_offset	:= rig_GOV_throttle.actuator_offset;
+							GOV_throttle_info.mode				:= ACTIVE_MODE;
+						
+						ELSIF ( GOV_rigged = TRUE ) THEN
+
+							IF( GOV_throttle_info.Min_Stop_Point.Enabled AND GOV_throttle_info.Min_Stop_Point.Capture_required ) THEN
+								CAPTURE_POINT( GOV_throttle_info.Min_Stop_Point, GOV_lever_pcnt.value, GOV_throttle_info );
+								IF ( CAPTURE_POINT.status = TRUE ) THEN
+									GOV_throttle_info.Min_Stop_Point.Position_degree 	:= CAPTURE_POINT.value_degree;
+									GOV_throttle_info.Min_Stop_Point.Capture_done 		:= TRUE;
+									GOV_throttle_info.Min_Stop_Point.Store_Value 		:= FALSE;
+								END_IF;
+							ELSE
+								GOV_throttle_info.Min_Stop_Point.Capture_done := TRUE;
+							END_IF;
+	
+
+							IF( GOV_throttle_info.Idle_Point.Enabled AND GOV_throttle_info.Idle_Point.Capture_required ) THEN
+								CAPTURE_POINT( GOV_throttle_info.Idle_Point, GOV_lever_pcnt.value, GOV_throttle_info );
+								IF ( CAPTURE_POINT.status = TRUE ) THEN
+									GOV_throttle_info.Idle_Point.Position_degree 		:= CAPTURE_POINT.value_degree;
+									GOV_throttle_info.Idle_Point.Capture_done 			:= TRUE;
+									GOV_throttle_info.Idle_Point.Store_Value 			:= FALSE;
+
+									(* Return to Idle On Emergency Trips *)
+									IF ( GOV_throttle_info.Estop_enable = TRUE ) THEN
+										GOV_throttle_info.Estop_angle := CAPTURE_POINT.value_degree;
+									END_IF;	
+								END_IF;
+							ELSE
+								GOV_throttle_info.Idle_Point.Capture_done := TRUE;
+							END_IF;
+
+							IF( GOV_throttle_info.Max_Stop_Point.Enabled AND GOV_throttle_info.Max_Stop_Point.Capture_required ) THEN
+								CAPTURE_POINT( GOV_throttle_info.Max_Stop_Point, GOV_lever_pcnt.value, GOV_throttle_info );
+								IF( CAPTURE_POINT.status = TRUE ) THEN
+									GOV_throttle_info.Max_Stop_Point.Position_degree 	:= CAPTURE_POINT.value_degree;
+									GOV_throttle_info.Max_Stop_Point.Capture_done 		:= TRUE;
+									GOV_throttle_info.Max_Stop_Point.Store_value 		:= FALSE;
+								END_IF;
+							ELSE
+								GOV_throttle_info.Max_Stop_Point.Capture_done := TRUE;
+							END_IF;
+			
+							IF(GOV_throttle_info.Min_Stop_Point.Capture_done AND 
+							   GOV_throttle_info.Max_Stop_Point.Capture_done AND 
+							   GOV_throttle_info.Idle_Point.Capture_done  ) THEN
+								GOV_calib_done := rig_GOV_throttle.status;
+							END_IF;
+
+						END_IF; 
+
+					END_IF; 
+
+				END_IF; 
+
+			ELSE 
+				GOV_calib_done := TRUE;
+
+			END_IF; 													
+
+			IF (FCU_calib_done = TRUE) THEN 
+
+				IF (FCU_required = TRUE)  THEN 
+
+					FCU_throttle_info.Estop_cmd := SCU_trip_line1 OR SCU_trip_line2; (* TODO: Overspeed/ Overtorque/Overtemp T56*)
+
+					FCU_throttle_demand(FCU_lever_pcnt.value, FCU_throttle_info);
+
+					FCU_setpoint := FCU_throttle_demand.actuator_position_demand; (* Calcul la demande du Throttle *)
+
+					FCU_act_angle(ANY_TO_REAL(FCU_position), FCU_throttle_info.actuator_slope, FCU_throttle_info.actuator_offset);
+
+					FCU_ANG.value := 	FCU_act_angle.x_out;
+
+					IF( FCU_flightsim_required = TRUE ) THEN
+
+						(* Calcul pour le VOUT Texcel V100 *)
+						FCU_servo_angle(ANY_TO_REAL(FCU_position), FCU_throttle_info.flightsim_slope, FCU_throttle_info.flightsim_offset);
+						(* Calcul pour le voltage d'output a partir de la position du servo moteur  en degre *)
+						FCU_vout_demand(FCU_servo_angle.x_out, FCU_throttle_info.vout_slope, FCU_throttle_info.vout_offset);
+						(* Envoi le voltage proportionnel a la possition du servo moteur *)
+						VOUT_TEXCEL_V100 := FCU_vout_demand.x_out * 1000.0; (* mV -> V *)
+
+					END_IF;
+
+				END_IF; 
+		
+			END_IF; 
+
+			IF (GOV_calib_done = TRUE) THEN 
+
+				IF (GOV_required = TRUE) THEN 
+
+					GOV_throttle_demand(GOV_lever_pcnt.value, GOV_throttle_info);
+
+					GOV_setpoint := GOV_throttle_demand.actuator_position_demand; (* Calcul la demande du Throttle *)
+
+					GOV_act_angle(ANY_TO_REAL(GOV_position), GOV_throttle_info.actuator_slope, GOV_throttle_info.actuator_offset);
+
+					GOV_ANG.value := 	GOV_act_angle.x_out;
+	
+				END_IF; 						
+
+			END_IF; 
+
+		2:
+			(* Nothing to proceed *)
+
+	END_CASE; 	
+
+(* END_IF; *)
+
+(*  Prepare the next scan *)
+
+IF (current_scan = 2) THEN 
+
+	current_scan := 1;
+
+ELSE
+
+	current_scan := current_scan + 1;
+
+END_IF;     
+
+IF (next_scan = 2) THEN 
+
+	next_scan := 1;
+
+ELSE
+
+	next_scan := next_scan + 1;
+
+END_IF;     
+
+err_code := OK;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

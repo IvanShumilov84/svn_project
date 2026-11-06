@@ -1,0 +1,1152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+
+  <Engine>
+    <Model>RE220-RJ</Model>
+    <SN>P-S7</SN>
+    <TESTDATE>01/09/2019</TESTDATE>
+  </Engine>
+
+  <ChannelMap>
+
+	<!-- Temperature channels -->
+
+	<Channel>
+		<Parameter>T1_1</Parameter>
+		<Name>T_INLET1_DEGF</Name>
+		<FVName>T1</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[1].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_2</Parameter>
+		<Name>T_INLET2_DEGF</Name>
+		<FVName>T2</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[2].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_3</Parameter>
+		<Name>T_INLET3_DEGF</Name>
+		<FVName>T3</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[3].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_4</Parameter>
+		<Name>T_INLET4_DEGF</Name>
+		<FVName>T4</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[4].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_5</Parameter>
+		<Name>T_INLET5_DEGF</Name>
+		<FVName>T5</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[5].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_6</Parameter>
+		<Name>T_INLET6_DEGF</Name>
+		<FVName>T6</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[6].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_7</Parameter>
+		<Name>T_INLET7_DEGF</Name>
+		<FVName>T7</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[7].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_8</Parameter>
+		<Name>T_INLET8_DEGF</Name>
+		<FVName>T8</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[8].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>T1_9</Parameter>
+		<Name>T_INLET9_DEGF</Name>
+		<FVName>T9</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[9].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T1_10</Parameter>
+		<Name>T_INLET10_DEGF</Name>
+		<FVName>T10</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[10].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T1_11</Parameter>
+		<Name>T_INLET11_DEGF</Name>
+		<FVName>T11</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[11].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T1_12</Parameter>
+		<Name>T_INLET12_DEGF</Name>
+		<FVName>T12</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[12].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T1_13</Parameter>
+		<Name>T_INLET13_DEGF</Name>
+		<FVName>T13</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[13].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T1_14</Parameter>
+		<Name>T_INLET14_DEGF</Name>
+		<FVName>T14</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[14].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T1_15</Parameter>
+		<Name>T_INLET15_DEGF</Name>
+		<FVName>T15</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[15].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>TB_1</Parameter>
+		<Name>T_BLEED1_DEGF</Name>
+		<FVName>T17</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[17].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>TB_2</Parameter>
+		<Name>T_BLEED2_DEGF</Name>
+		<FVName>T18</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[18].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>TB_3</Parameter>
+		<Name>T_BLEED3_DEGF</Name>
+		<FVName>T19</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[19].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>TB_4</Parameter>
+		<Name>T_BLEED4_DEGF</Name>
+		<FVName>T20</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[20].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>TOIL</Parameter>
+		<Name>T_OIL_DEGF</Name>
+		<FVName>T22</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[22].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>TCELL</Parameter>
+		<Name>T_CELL_DEGF</Name>
+		<FVName>T24</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[24].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_1</Parameter>
+		<Name>T_EGT1_DEGF</Name>
+		<FVName>T25</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[25].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_2</Parameter>
+		<Name>T_EGT2_DEGF</Name>
+		<FVName>T26</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[26].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_3</Parameter>
+		<Name>T_EGT3_DEGF</Name>
+		<FVName>T27</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[27].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_4</Parameter>
+		<Name>T_EGT4_DEGF</Name>
+		<FVName>T28</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[28].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_5</Parameter>
+		<Name>T_EGT5_DEGF</Name>
+		<FVName>T29</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[29].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_6</Parameter>
+		<Name>T_EGT6_DEGF</Name>
+		<FVName>T30</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[30].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_7</Parameter>
+		<Name>T_EGT7_DEGF</Name>
+		<FVName>T31</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[31].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_8</Parameter>
+		<Name>T_EGT8_DEGF</Name>
+		<FVName>T32</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[32].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_9</Parameter>
+		<Name>T_EGT9_DEGF</Name>
+		<FVName>T33</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[33].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_10</Parameter>
+		<Name>T_EGT10_DEGF</Name>
+		<FVName>T34</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[34].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_11</Parameter>
+		<Name>T_EGT11_DEGF</Name>
+		<FVName>T35</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[35].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>EGT_12</Parameter>
+		<Name>T_EGT12_DEGF</Name>
+		<FVName>T36</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[36].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>EGT_13</Parameter>
+		<Name>T_EGT13_DEGF</Name>
+		<FVName>T37</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[37].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>EGT_14</Parameter>
+		<Name>T_EGT14_DEGF</Name>
+		<FVName>T38</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[38].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>EGT_15</Parameter>
+		<Name>T_EGT15_DEGF</Name>
+		<FVName>T39</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[39].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>T_ETC1</Parameter>
+		<Name>T_ETC1_DEGF</Name>
+		<FVName>T40</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[40].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T_ETC2</Parameter>
+		<Name>T_ETC2_DEGF</Name>
+		<FVName>T41</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[41].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>T_FUEL</Parameter>
+		<Name>T_FUEL_DEGF</Name>
+		<FVName>T48</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.t[48].mean_value</ItemID>
+	</Channel>
+
+	<!-- Pressure channels -->
+			
+	<Channel>
+		<Parameter>PBAR</Parameter>
+		<Name>P_BARO_PSIA</Name>
+		<FVName>P24</FVName>
+		<Units>PSIA</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[24].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>PCELL</Parameter>
+		<Name>P_INLET_PSIA</Name>
+		<FVName>P2</FVName>
+		<Units>PSIA</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[2].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>P_EXHAUST_STATIC</Parameter>
+		<Name>P_EXHAUST_PSIG</Name>
+		<FVName>P3</FVName>
+		<Units>PSIG</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[3].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>P_COMP_DISCH</Parameter>
+		<Name>P_COMP_DISCH_PSIG</Name>
+		<FVName>P4</FVName>
+		<Units>PSIG</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[4].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>PB</Parameter>
+		<Name>P_BLEED1_5_PSIA</Name>
+		<FVName>P5</FVName>
+		<Units>PSIA</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[5].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>PSGBX</Parameter>
+		<Name>P_GEARBOX_PSIA</Name>
+		<FVName>P7</FVName>
+		<Units>PSIA</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[7].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>POIL</Parameter>
+		<Name>P_OIL_PSIG</Name>
+		<FVName>P9</FVName>
+		<Units>PSIG</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[9].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>PFUEL</Parameter>
+		<Name>P_FUEL_PSIG</Name>
+		<FVName>P11</FVName>
+		<Units>PSIG</Units>
+		<ItemID>dacn1.dacn1_powerdna_iomgr.p[11].mean_value</ItemID>
+	</Channel>
+
+	<!-- Analogue inputs channels -->
+
+	<Channel>
+		<Parameter>Engine Harness ID Resistor 2.20kOhms</Parameter>
+		<Name>HARNESS_ID</Name>
+		<FVName>VIN1</FVName>
+		<Units>VOLT</Units>
+		<ItemID>dacn1.dacn1_serial_iomgr.vin[1].value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>AC 400Hz Voltage</Parameter>
+		<Name>STARTER_VOLTAGE_AC400HZ_SOURCE_VAC</Name>
+		<FVName>VIN2</FVName>
+		<Units>VOLT</Units>
+		<ItemID>dacn1.dacn1_serial_iomgr.vin[2].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>AC 400Hz Amperage</Parameter>
+		<Name>STARTER_CURRENT_SOURCE_AMP</Name>
+		<FVName>VIN3</FVName>
+		<Units>AMP</Units>
+		<ItemID>dacn1.dacn1_serial_iomgr.vin[3].mean_value</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>Small Load Air Valve Position</Parameter>
+		<Name>LOAD_AIR_VALVE_POSITION_PCT</Name>
+		<FVName>VIN4</FVName>
+		<Units>PCT</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.vin[4].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>Bleed Flow Meter</Parameter>
+		<Name>WB_MEASURED</Name>
+		<FVName>VIN5</FVName>
+		<Units>LB/MIN</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.vin[5].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>Orifice Delta Pressure</Parameter>
+		<Name>P_ORIFICE_DELTA_PSID</Name>
+		<FVName>VIN6</FVName>
+		<Units>PSID</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.vin[6].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>Inlet Orifice Pressure</Parameter>
+		<Name>P_ORIFICE_PSIA</Name>
+		<FVName>VIN7</FVName>
+		<Units>PSIA</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.vin[7].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Orifice Temperature</Parameter>
+		<Name>T_ORIFICE_DEGF</Name>
+		<FVName>VIN8</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.vin[8].mean_value</ItemID>
+	</Channel>
+
+
+
+	<!-- Frequency inputs channels -->
+
+	<Channel>
+		<Parameter>SPEED_N1</Parameter>
+		<Name>NG</Name>
+		<FVName>F1</FVName>
+		<Units>HZ</Units>
+		<!-- 12200Hz @48800RPM -->
+		<Slope>4.0</Slope>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.f[1].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>SPEED_N2</Parameter>
+		<Name>NG</Name>
+		<FVName>F2</FVName>
+		<Units>HZ</Units>
+		<!-- 12200Hz @48800RPM -->
+		<Slope>4.0</Slope>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>SPEED_N3</Parameter>
+		<Name>NG</Name>
+		<FVName>F3</FVName>
+		<Units>HZ</Units>
+		<!-- 3039Hz @48800RPM -->
+		<Slope>1</Slope>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.f[3].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>FF4</Parameter>
+		<Name>F4_HZ</Name>
+		<FVName>F4</FVName>
+		<Units>HZ</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.f[4].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>FF5</Parameter>
+		<Name>F5_HZ</Name>
+		<FVName>F5</FVName>
+		<Units>HZ</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.f[5].mean_value</ItemID>
+	</Channel>
+
+
+	<!-- Vibration channels -->
+
+	<Channel>
+		<Parameter>Turbine Vibration</Parameter>
+		<Name>VIB_TURBINE</Name>
+		<FVName>VIB3</FVName>
+		<Units>IPS_P</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.vib[3].mean_value</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>Gearbox Vibration</Parameter>
+		<Name>VIB_GEARBOX</Name>
+		<FVName>VIB6</FVName>
+		<Units>IPS_P</Units>
+		<ItemID>dacn1.dacn1_nidaq_iomgr.vib[6].mean_value</ItemID>
+	</Channel>
+
+
+
+	<Channel>
+		<Parameter>LB1 Power</Parameter>
+		<Name>LB1_POWER_TOT</Name>
+		<FVName>LB_POWER_TOT_OPC</FVName>
+		<Units>KW</Units>
+		<!-- <ItemID>dacn1.dacn1_uut_controller.lb_info[1].total_power</ItemID> -->
+		<!-- <ItemID>dacn1.dacn1_load_bank_controller.lb_info[1].total_power</ItemID> -->
+		<ItemID>dacn1.dacn1_UUT_Controller.pm1_power_tot.pv</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>SAMPLE_T_FUEL_DEGF</Parameter>
+		<Name>SAMPLE_T_FUEL_DEGF</Name>
+		<FVName>Test_Mgr_UUT_Answer6</FVName>
+		<Units>DEGF</Units>
+		<ItemID>dacn1.dacn1_uut_controller.uut_info.uut_answers[6]</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>SAMPLE_SG_FUEL</Parameter>
+		<Name>SAMPLE_SG_FUEL</Name>
+		<FVName>Test_Mgr_UUT_Answer5</FVName>
+		<Units>NONE</Units>
+		<ItemID>dacn1.dacn1_uut_controller.uut_info.uut_answers[5]</ItemID>
+	</Channel>
+
+
+	<!-- Digital inputs channels -->
+			
+	<Channel>
+		<Parameter>ADAPTOR BOX ID1</Parameter>
+		<Name>ADAPTOR_BOX_ID1_IND</Name>
+		<FVName>DIN1</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[1]</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>ADAPTOR BOX ID2</Parameter>
+		<Name>ADAPTOR_BOX_ID2_IND</Name>
+		<FVName>DIN2</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[2]</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>ADAPTOR BOX ID3</Parameter>
+		<Name>ADAPTOR_BOX_ID3_IND</Name>
+		<FVName>DIN3</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[3]</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>ADAPTOR BOX ID4</Parameter>
+		<Name>ADAPTOR_BOX_ID4_IND</Name>
+		<FVName>DIN4</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[4]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>ADAPTOR BOX ID5</Parameter>
+		<Name>ADAPTOR_BOX_ID5_IND</Name>
+		<FVName>DIN32</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[32]</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>Fuel On</Parameter>
+		<Name>FUEL_ON_IND</Name>
+		<FVName>DIN5</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[5]</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>Ready To Load</Parameter>
+		<Name>READY_TO_LOAD_IND</Name>
+		<FVName>DIN7</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[7]</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>Ignitor</Parameter>
+		<Name>IGNITOR_ON_IND</Name>
+		<FVName>DIN8</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[8]</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>Master Power ON 28VDC ECB</Parameter>
+		<Name>POWER_FEEDBACK_IND</Name>
+		<FVName>DIN31</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[31]</ItemID>
+	</Channel>
+		
+		
+	<Channel>
+		<Parameter>EMERGENCY_STOP</Parameter>
+		<Name>E_STOP_IND</Name>
+		<FVName>DIN33</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[33]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>EMERGENCY_STOP_MUSHROOM</Parameter>
+		<Name>MUSHROOM_REVERSE_IND</Name>
+		<FVName>DIN34</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[34]</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>Intake Louver Open Indicator</Parameter>
+		<Name>LOUVER_INTAKE_OPENED_IND</Name>
+		<FVName>DIN35</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[35]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Intake Louver Close Indicator</Parameter>
+		<Name>LOUVER_INTAKE_CLOSED_IND</Name>
+		<FVName>DIN36</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[36]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Exhaust Hat Open Indicator</Parameter>
+		<Name>EXHAUST_HAT_OPENED_IND</Name>
+		<FVName>DIN37</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[37]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Exhaust Hat Close Indicator</Parameter>
+		<Name>EXHAUST_HAT_CLOSED_IND</Name>
+		<FVName>DIN38</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[38]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Preservative Low Level Indicator</Parameter>
+		<Name>PRESERVATIVE_LEVEL_LOW_IND</Name>
+		<FVName>DIN39</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[39]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Fuel Level Low Indicator</Parameter>
+		<Name>FUEL_HIGH_LEVEL_IND</Name>
+		<FVName>DIN40</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[40]</ItemID>
+	</Channel>
+	
+	<Channel>
+		<Parameter>Fuel Level High Indicator</Parameter>
+		<Name>FUEL_LOW_LEVEL_IND</Name>
+		<FVName>DIN41</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[41]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Shop Air</Parameter>
+		<Name>SHOP_AIR_PRESSURE_IND</Name>
+		<FVName>DIN42</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[42]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Door Switch Double Door</Parameter>
+		<Name>DOOR_TC_DOUBLE_CLOSED_IND</Name>
+		<FVName>DIN43</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[43]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Door Switch Electrical Door</Parameter>
+		<Name>DOOR_TC_SAS_CLOSED_IND</Name>
+		<FVName>DIN44</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[44]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Facility Fire Indicator</Parameter>
+		<Name>FACILITY_FIRE_IND</Name>
+		<FVName>DIN45</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[45]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Starter Contactor 28VDC</Parameter>
+		<Name>STARTER_CONTACTOR1_DC_ON_IND</Name>
+		<FVName>DIN46</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[46]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Starter Ready 28VDC</Parameter>
+		<Name>STARTER_RECTIFIER_READY_28_VDC_IND</Name>
+		<FVName>DIN47</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[47]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>UPS ON BATTERY ELECTRICAL</Parameter>
+		<Name>UPS_ON_BATTERY_IND</Name>
+		<FVName>DIN49</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[49]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Fume Extraction Fan Indicator</Parameter>
+		<Name>FUME_EXTRACTION_FAN_STATUS</Name>
+		<FVName>DIN50</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[50]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>UPS ON BATTERY CONTROL ROOM</Parameter>
+		<Name>UPS_ON_BATTERY_CONTROL_ROOM_IND</Name>
+		<FVName>DIN51</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[51]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Oil Cooling Fax Auxiliary</Parameter>
+		<Name>OIL_COOLING_FAN_AUX_IND</Name>
+		<FVName>DIN63</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[63]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Oil Cooling Fan Overload</Parameter>
+		<Name>OIL_COOLING_FAN_OVERLOAD_IND</Name>
+		<FVName>DIN64</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[64]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Fuel Supply Pump Auxiliary</Parameter>
+		<Name>FUEL_SUPPLY_PUMP_AUX_IND</Name>
+		<FVName>DIN65</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[65]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Fuel Supply Pump Overload</Parameter>
+		<Name>PUMP_FAN_OVERLOAD_IND</Name>
+		<FVName>DIN66</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[66]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Fume Extraction Fan Auxiliary</Parameter>
+		<Name>FUME_EXTRACTION_FAN_AUX_IND</Name>
+		<FVName>DIN67</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[67]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Fume Extraction Fan Overload</Parameter>
+		<Name>FUME_EXTRACTION_FAN_OVERLOAD_IND</Name>
+		<FVName>DIN68</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[68]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Load Bank Disconnect Indicator</Parameter>
+		<Name>LB1_AUX_POWER_DISC_REVERSE_IND</Name>
+		<FVName>DIN78</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[78]</ItemID>
+	</Channel>
+		
+	<Channel>
+		<Parameter>Auxiliary Power Indicator</Parameter>
+		<Name>LB1_AUX_POWER_IND</Name>
+		<FVName>DIN79</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[79]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Temperature Interlock</Parameter>
+		<Name>LB1_AUX_FAN_OVERLOAD_IND</Name>
+		<FVName>DIN80</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[80]</ItemID>
+	</Channel>
+
+	<Channel>
+		<Parameter>Air Flow Interlock</Parameter>
+		<Name>LB1_FAN_ENABLED_SOURCE_IND</Name>
+		<FVName>DIN81</FVName>
+		<ItemID>dacn1.dacn1_serial_iomgr.din[81]</ItemID>
+	</Channel>
+
+		
+  </ChannelMap>
+
+  <Conditions>
+	
+		<Condition>		
+			<NO>1</NO>
+			<Description>System Ready to Start</Description>
+			<Parameters>
+				<Parameter><Name>EMERGENCY_STOP</Name><Value>True</Value></Parameter>
+				<Parameter><Name>EMERGENCY_STOP_MUSHROOM</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Facility Fire Indicator</Name><Value>True</Value></Parameter>
+				<Parameter><Name>ADAPTOR BOX ID1</Name><Value>True</Value></Parameter>
+				<Parameter><Name>ADAPTOR BOX ID2</Name><Value>False</Value></Parameter>
+				<Parameter><Name>ADAPTOR BOX ID3</Name><Value>False</Value></Parameter>
+				<Parameter><Name>ADAPTOR BOX ID4</Name><Value>False</Value></Parameter>
+				<Parameter><Name>ADAPTOR BOX ID5</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Master Power ON 28VDC ECB</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Intake Louver Open Indicator</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Exhaust Hat Open Indicator</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Shop Air</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Fuel Supply Pump Auxiliary</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Engine Harness ID Resistor 2.20kOhms</Name><Value>2.2</Value><Units>VOLT</Units></Parameter>
+				<Parameter><Name>Starter Ready 28VDC</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Load Bank Disconnect Indicator</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Auxiliary Power Indicator</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Door Switch Double Door</Name><Value>True</Value></Parameter>
+				<Parameter><Name>Door Switch Electrical Door</Name><Value>True</Value></Parameter>
+			</Parameters>
+		</Condition>
+		
+		<Condition>		
+			<NO>2</NO>
+			<Description>No Load (TCOND = 1001)</Description>
+			<Parameters>
+				<Parameter><Name>PBAR</Name><Value>14.70</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>PCELL</Name><Value>14.60</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>TCELL</Name><Value>86</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>P_EXHAUST_STATIC</Name><Value>14.85</Value><Units>PSIG</Units></Parameter>				
+
+				<Parameter><Name>T1_1</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_2</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_3</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_4</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_5</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_6</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_7</Name><Value>86</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_8</Name><Value>87</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_9</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_10</Name><Value>88</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_11</Name><Value>87</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_12</Name><Value>86</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_13</Name><Value>85</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_14</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_15</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>EGT_1</Name><Value>950</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_2</Name><Value>960</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_3</Name><Value>945</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_4</Name><Value>963</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_5</Name><Value>938</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_6</Name><Value>950</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_7</Name><Value>960</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_8</Name><Value>945</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_9</Name><Value>963</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_10</Name><Value>938</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_11</Name><Value>950</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_12</Name><Value>960</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_13</Name><Value>945</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_14</Name><Value>963</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_15</Name><Value>938</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>T_ETC1</Name><Value>970</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T_ETC2</Name><Value>974</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>FF4</Name><Value>80</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>FF5</Name><Value>90</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>T_FUEL</Name><Value>82</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>PFUEL</Name><Value>40</Value><Units>PSIG</Units></Parameter>			
+
+				<Parameter><Name>SPEED_N3</Name><Value>3039</Value><Units>HZ</Units></Parameter>			
+
+				<Parameter><Name>TOIL</Name><Value>185</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>POIL</Name><Value>70</Value><Units>PSIG</Units></Parameter>			
+				<Parameter><Name>PSGBX</Name><Value>0.5</Value><Units>PSIA</Units></Parameter>			
+
+				<Parameter><Name>Ready To Load</Name><Value>True</Value></Parameter>
+
+				<Parameter><Name>Turbine Vibration</Name><Value>0.50</Value><Units>IPS_P</Units></Parameter>			
+				<Parameter><Name>Gearbox Vibration</Name><Value>0.25</Value><Units>IPS_P</Units></Parameter>			
+
+			</Parameters>
+		</Condition>
+
+		<Condition>		
+			<NO>3</NO>
+			<Description>ECS Load (TCOND = 1002)</Description>
+			<Parameters>
+				<Parameter><Name>PBAR</Name><Value>14.71</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>PCELL</Name><Value>14.61</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>TCELL</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>P_EXHAUST_STATIC</Name><Value>14.85</Value><Units>PSIG</Units></Parameter>				
+
+				<Parameter><Name>T1_1</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_2</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_3</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_4</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_5</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_6</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_7</Name><Value>86</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_8</Name><Value>87</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_9</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_10</Name><Value>88</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_11</Name><Value>87</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_12</Name><Value>86</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_13</Name><Value>85</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_14</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_15</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>EGT_1</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_2</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_3</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_4</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_5</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_6</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_7</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_8</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_9</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_10</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_11</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_12</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_13</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_14</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_15</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>T_ETC1</Name><Value>1120</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T_ETC2</Name><Value>1100</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>FF4</Name><Value>80</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>FF5</Name><Value>90</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>T_FUEL</Name><Value>82</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>PFUEL</Name><Value>40</Value><Units>PSIG</Units></Parameter>			
+
+				<Parameter><Name>SPEED_N3</Name><Value>3039</Value><Units>HZ</Units></Parameter>			
+
+				<Parameter><Name>TOIL</Name><Value>185</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>POIL</Name><Value>70</Value><Units>PSIG</Units></Parameter>			
+				<Parameter><Name>PSGBX</Name><Value>0.5</Value><Units>PSIA</Units></Parameter>			
+
+				<Parameter><Name>Ready To Load</Name><Value>True</Value></Parameter>
+
+				<Parameter><Name>Turbine Vibration</Name><Value>0.50</Value><Units>IPS_P</Units></Parameter>			
+				<Parameter><Name>Gearbox Vibration</Name><Value>0.25</Value><Units>IPS_P</Units></Parameter>			
+
+				<Parameter><Name>TB_1</Name><Value>450</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_2</Name><Value>460</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_3</Name><Value>445</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_4</Name><Value>463</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>PB</Name><Value>59.5</Value><Units>PSIA</Units></Parameter>			
+
+				<Parameter><Name>Orifice Temperature</Name><Value>453</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>Inlet Orifice Pressure</Name><Value>56</Value><Units>PSIA</Units></Parameter>			
+				<Parameter><Name>Orifice Delta Pressure</Name><Value>3</Value><Units>PSID</Units></Parameter>			
+
+				<Parameter><Name>Small Load Air Valve Position</Name><Value>100</Value><Units>PCT</Units></Parameter>			
+				<Parameter><Name>Bleed Flow Meter</Name><Value>105</Value><Units>LB/MIN</Units></Parameter>			
+
+				<Parameter><Name>LB1 Power</Name><Value>37000</Value><Units>KW</Units></Parameter>
+
+			</Parameters>
+		</Condition>
+
+		<Condition>		
+			<NO>3</NO>
+			<Description>MES Load (TCOND = 1003)</Description>
+			<Parameters>
+				<Parameter><Name>PBAR</Name><Value>14.71</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>PCELL</Name><Value>14.61</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>TCELL</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>P_EXHAUST_STATIC</Name><Value>14.85</Value><Units>PSIG</Units></Parameter>				
+
+				<Parameter><Name>T1_1</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_2</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_3</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_4</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_5</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_6</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_7</Name><Value>86</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_8</Name><Value>87</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_9</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_10</Name><Value>88</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_11</Name><Value>87</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_12</Name><Value>86</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_13</Name><Value>85</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_14</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_15</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>EGT_1</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_2</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_3</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_4</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_5</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_6</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_7</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_8</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_9</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_10</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_11</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_12</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_13</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_14</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_15</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>T_ETC1</Name><Value>1120</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T_ETC2</Name><Value>1100</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>FF4</Name><Value>80</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>FF5</Name><Value>90</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>T_FUEL</Name><Value>82</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>PFUEL</Name><Value>40</Value><Units>PSIG</Units></Parameter>			
+
+				<Parameter><Name>SPEED_N3</Name><Value>3039</Value><Units>HZ</Units></Parameter>			
+
+				<Parameter><Name>TOIL</Name><Value>185</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>POIL</Name><Value>70</Value><Units>PSIG</Units></Parameter>			
+				<Parameter><Name>PSGBX</Name><Value>0.5</Value><Units>PSIA</Units></Parameter>			
+
+				<Parameter><Name>Ready To Load</Name><Value>True</Value></Parameter>
+
+				<Parameter><Name>Turbine Vibration</Name><Value>0.50</Value><Units>IPS_P</Units></Parameter>			
+				<Parameter><Name>Gearbox Vibration</Name><Value>0.25</Value><Units>IPS_P</Units></Parameter>			
+
+				<Parameter><Name>TB_1</Name><Value>450</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_2</Name><Value>460</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_3</Name><Value>445</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_4</Name><Value>463</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>PB</Name><Value>59.5</Value><Units>PSIA</Units></Parameter>			
+
+				<Parameter><Name>Orifice Temperature</Name><Value>453</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>Inlet Orifice Pressure</Name><Value>56</Value><Units>PSIA</Units></Parameter>			
+				<Parameter><Name>Orifice Delta Pressure</Name><Value>3</Value><Units>PSID</Units></Parameter>			
+
+				<Parameter><Name>Small Load Air Valve Position</Name><Value>100</Value><Units>PCT</Units></Parameter>			
+				<Parameter><Name>Bleed Flow Meter</Name><Value>105</Value><Units>LB/MIN</Units></Parameter>			
+
+				<Parameter><Name>LB1 Power</Name><Value>37000</Value><Units>KW</Units></Parameter>
+
+			</Parameters>
+		</Condition>
+
+		<Condition>		
+			<NO>3</NO>
+			<Description>Final Data</Description>
+			<Parameters>
+				<Parameter><Name>PBAR</Name><Value>14.71</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>PCELL</Name><Value>14.61</Value><Units>PSIA</Units></Parameter>
+				<Parameter><Name>TCELL</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>P_EXHAUST_STATIC</Name><Value>14.85</Value><Units>PSIG</Units></Parameter>				
+
+				<Parameter><Name>T1_1</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_2</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_3</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_4</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_5</Name><Value>84</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_6</Name><Value>85</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_7</Name><Value>86</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_8</Name><Value>87</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_9</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+				<Parameter><Name>T1_10</Name><Value>88</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_11</Name><Value>87</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_12</Name><Value>86</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_13</Name><Value>85</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_14</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T1_15</Name><Value>84</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>EGT_1</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_2</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_3</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_4</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_5</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_6</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_7</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_8</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_9</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_10</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_11</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_12</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_13</Name><Value>1110</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_14</Name><Value>1115</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>EGT_15</Name><Value>1105</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>T_ETC1</Name><Value>1120</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>T_ETC2</Name><Value>1100</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>FF4</Name><Value>80</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>FF5</Name><Value>90</Value><Units>HZ</Units></Parameter>			
+				<Parameter><Name>T_FUEL</Name><Value>82</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>PFUEL</Name><Value>40</Value><Units>PSIG</Units></Parameter>			
+
+				<Parameter><Name>SPEED_N3</Name><Value>3039</Value><Units>HZ</Units></Parameter>			
+
+				<Parameter><Name>TOIL</Name><Value>185</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>POIL</Name><Value>70</Value><Units>PSIG</Units></Parameter>			
+				<Parameter><Name>PSGBX</Name><Value>0.5</Value><Units>PSIA</Units></Parameter>			
+
+				<Parameter><Name>Turbine Vibration</Name><Value>0.50</Value><Units>IPS_P</Units></Parameter>			
+				<Parameter><Name>Gearbox Vibration</Name><Value>0.25</Value><Units>IPS_P</Units></Parameter>			
+
+				<Parameter><Name>TB_1</Name><Value>450</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_2</Name><Value>460</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_3</Name><Value>445</Value><Units>DEGF</Units></Parameter>			
+				<Parameter><Name>TB_4</Name><Value>463</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>PB</Name><Value>59.5</Value><Units>PSIA</Units></Parameter>			
+
+				<Parameter><Name>Orifice Temperature</Name><Value>453</Value><Units>DEGF</Units></Parameter>			
+
+				<Parameter><Name>Inlet Orifice Pressure</Name><Value>56</Value><Units>PSIA</Units></Parameter>			
+				<Parameter><Name>Orifice Delta Pressure</Name><Value>3</Value><Units>PSID</Units></Parameter>			
+
+				<Parameter><Name>Small Load Air Valve Position</Name><Value>100</Value><Units>PCT</Units></Parameter>			
+				<Parameter><Name>Bleed Flow Meter</Name><Value>105</Value><Units>LB/MIN</Units></Parameter>			
+
+				<Parameter><Name>LB1 Power</Name><Value>37000</Value><Units>KW</Units></Parameter>
+
+			</Parameters>
+		</Condition>
+		
+	</Conditions>
+	
+</Performance>

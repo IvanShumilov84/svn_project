@@ -1,0 +1,1825 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Performance>
+
+  <Engine>
+    <Model>PW306C</Model>
+    <SN>XX2000</SN>
+    <TESTDATE>14/08/2015</TESTDATE>
+  </Engine>
+
+  <ChannelMap>
+    <Channel>
+      <Parameter>SG</Parameter>
+      <Name>SG_FUEL_SAMPLE</Name>
+      <FVName>VIN7</FVName>
+      <Units>None</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[7].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIF</Parameter>
+      <Name>FUEL_TEMP_DEGF</Name>
+      <FVName>T51</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.t[51].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>N1_RPM</Parameter>
+      <Name>N1_HZ</Name>
+      <FVName>F1</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>N2_RPM</Parameter>
+      <Name>N2_HZ</Name>
+      <FVName>F2</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>FN</Parameter>
+      <Name>TRUST_FRAME_LBF</Name>
+      <FVName>VIN6</FVName>
+      <Units>LBF</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[6].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>WF2</Parameter>
+      <Name>FUEL_MASS_FLOW</Name>
+      <FVName>F5</FVName>
+      <Units>PPH</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PSN</Parameter>
+      <Name>BARO_PRESSURE_PSIA</Name>
+      <FVName>P1</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>VIGV_CHA</Parameter>
+      <Name>VARIABLE_INLET_GUIDE_VANE_ARINC_CHA</Name>
+      <FVName>UART_IGV_CHA</FVName>
+      <Units>Deg</Units>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[16].engunit</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>VIGV_CHB</Parameter>
+      <Name>VARIABLE_INLET_GUIDE_VANE_ARINC_CHB</Name>
+      <FVName>UART_IGV_CHB</FVName>
+      <Units>Deg</Units>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_chb[16].engunit</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P1A-1</Parameter>
+      <Name>BELMOUTH_1_PSIA</Name>
+      <FVName>P4</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P1A-2</Parameter>
+      <Name>BELMOUTH_2_PSIA</Name>
+      <FVName>P5</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PS3</Parameter>
+      <Name>COMPRESSOR_PRESSURE_PSIA</Name>
+      <FVName>P3</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T45_CHA</Parameter>
+      <Name>T45_CHA_DEGC</Name>
+      <FVName>ARINC_T45_CHA</FVName>
+      <Units>DegC</Units>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[24].engunit</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T45_CHB</Parameter>
+      <Name>T45_CHB_DEGC</Name>
+      <FVName>ARINC_T45_CHB</FVName>
+      <Units>DegC</Units>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_chb[24].engunit</ItemID>
+    </Channel>
+
+
+    <Channel>
+      <Parameter>Tt6-1</Parameter>
+      <Name>Tt6-1_DEGF</Name>
+      <FVName>T1</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-2</Parameter>
+      <Name>Tt6-2_DEGF</Name>
+      <FVName>T2</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-3</Parameter>
+      <Name>Tt6-3_DEGF</Name>
+      <FVName>T3</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-4</Parameter>
+      <Name>Tt6-4_DEGF</Name>
+      <FVName>T4</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-5</Parameter>
+      <Name>Tt6-5_DEGF</Name>
+      <FVName>T5</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[5].mean_value</ItemID>
+    </Channel>
+    <!--<Channel>
+      <Parameter>Tt6-6</Parameter>
+      <Name>Tt6-6_DEGF</Name>
+      <FVName>T6</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[6].mean_value</ItemID>
+    </Channel>-->
+    <Channel>
+      <Parameter>Tt6-7</Parameter>
+      <Name>Tt6-7_DEGF</Name>
+      <FVName>T7</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[7].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-8</Parameter>
+      <Name>Tt6-8_DEGF</Name>
+      <FVName>T8</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[8].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-9</Parameter>
+      <Name>Tt6-9_DEGF</Name>
+      <FVName>T9</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[9].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-10</Parameter>
+      <Name>Tt6-10_DEGF</Name>
+      <FVName>T10</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[10].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-11</Parameter>
+      <Name>Tt6-11_DEGF</Name>
+      <FVName>T11</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[11].mean_value</ItemID>
+    </Channel>
+    <!--<Channel>
+      <Parameter>Tt6-12</Parameter>
+      <Name>Tt6-12_DEGF</Name>
+      <FVName>T12</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[12].mean_value</ItemID>
+    </Channel>-->
+    <Channel>
+      <Parameter>Tt6-13</Parameter>
+      <Name>Tt6-13_DEGF</Name>
+      <FVName>T13</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[13].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-14</Parameter>
+      <Name>Tt6-14_DEGF</Name>
+      <FVName>T14</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[14].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-15</Parameter>
+      <Name>Tt6-15_DEGF</Name>
+      <FVName>T15</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[15].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-16</Parameter>
+      <Name>Tt6-16_DEGF</Name>
+      <FVName>T16</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[16].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-17</Parameter>
+      <Name>Tt6-17_DEGF</Name>
+      <FVName>T17</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[17].mean_value</ItemID>
+    </Channel>
+    <!--<Channel>
+      <Parameter>Tt6-18</Parameter>
+      <Name>Tt6-18_DEGF</Name>
+      <FVName>T18</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[18].mean_value</ItemID>
+    </Channel>-->
+    <Channel>
+      <Parameter>Tt6-19</Parameter>
+      <Name>Tt6-19_DEGF</Name>
+      <FVName>T19</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[19].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-20</Parameter>
+      <Name>Tt6-20_DEGF</Name>
+      <FVName>T20</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[20].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-21</Parameter>
+      <Name>Tt6-21_DEGF</Name>
+      <FVName>T21</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[21].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-22</Parameter>
+      <Name>Tt6-22_DEGF</Name>
+      <FVName>T22</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[22].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt6-23</Parameter>
+      <Name>Tt6-23_DEGF</Name>
+      <FVName>T23</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[23].mean_value</ItemID>
+    </Channel>
+    <!--<Channel>
+      <Parameter>Tt6-24</Parameter>
+      <Name>Tt6-24_DEGF</Name>
+      <FVName>T24</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[24].mean_value</ItemID>
+    </Channel>-->
+
+
+    <Channel>
+      <Parameter>Tt1-1</Parameter>
+      <Name>Tt1-1_DEGF</Name>
+      <FVName>T34</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[34].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-2</Parameter>
+      <Name>Tt1-2_DEGF</Name>
+      <FVName>T35</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[35].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-3</Parameter>
+      <Name>Tt1-3_DEGF</Name>
+      <FVName>T36</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[36].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-4</Parameter>
+      <Name>Tt1-4_DEGF</Name>
+      <FVName>T37</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[37].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-5</Parameter>
+      <Name>Tt1-5_DEGF</Name>
+      <FVName>T38</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[38].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-6</Parameter>
+      <Name>Tt1-6_DEGF</Name>
+      <FVName>T39</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[39].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-7</Parameter>
+      <Name>Tt1-7_DEGF</Name>
+      <FVName>T40</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[40].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>Tt1-8</Parameter>
+      <Name>Tt1-8_DEGF</Name>
+      <FVName>T41</FVName>
+      <Units>DegF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[41].mean_value</ItemID>
+    </Channel>
+  </ChannelMap>
+
+  <Conditions>
+
+    <Condition>
+      <NO>4</NO>
+      <Description>CONDITION 04</Description>
+      <Parameters>
+        <Parameter>
+          <Name>SG</Name>
+          <Value>0.812</Value>
+          <Units>None</Units>
+        </Parameter>
+        <Parameter>
+          <Name>TIF</Name>
+          <Value>54.4000</Value>
+          <Units>DegF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N1_RPM</Name>
+          <Value>3918.6841</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N2_RPM</Name>
+          <Value>6990.3706</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>FN</Name>
+          <Value>4426.0</Value>
+          <Units>LBF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>WF2</Name>
+          <Value>1639.63</Value>
+          <Units>PPH</Units>
+        </Parameter>
+        <Parameter>
+          <Name>PSN</Name>
+          <Value>14.6750</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+        <Parameter>
+          <Name>VIGV_CHA</Name>
+          <Value>32.6</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>VIGV_CHB</Name>
+          <Value>32.6</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-1</Name>
+          <Value>14.6754</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-2</Name>
+          <Value>14.6754</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>PS3</Name>
+          <Value>233.0823</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHA</Name>
+          <Value>652.65</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHB</Name>
+          <Value>652.65</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-1</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-2</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-3</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-4</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-5</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-6</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-7</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-8</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-9</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-10</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-11</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-12</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-13</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-14</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-15</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-16</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-17</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-18</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+        <Parameter>
+          <Name>Tt6-19</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-20</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-21</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-22</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-23</Name>
+          <Value>910.56</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-24</Name>
+          <Value>1049.9900</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt1-1</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-2</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-3</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-4</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-5</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-6</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-7</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-8</Name>
+          <Value>10.79</Value>
+          <Units>DegF</Units>
+        </Parameter>
+      </Parameters>
+    </Condition>
+
+    <Condition>
+      <NO>5</NO>
+      <Description>CONDITION 05</Description>
+      <Parameters>
+        <Parameter>
+          <Name>SG</Name>
+          <Value>0.817</Value>
+          <Units>None</Units>
+        </Parameter>
+        <Parameter>
+          <Name>TIF</Name>
+          <Value>44.6</Value>
+          <Units>DegF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N1_RPM</Name>
+          <Value>4137.8939</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N2_RPM</Name>
+          <Value>7122.1247</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>FN</Name>
+          <Value>5104.1</Value>
+          <Units>LBF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>WF2</Name>
+          <Value>1903.14</Value>
+          <Units>PPH</Units>
+        </Parameter>
+        <Parameter>
+          <Name>PSN</Name>
+          <Value>14.6637</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+        <Parameter>
+          <Name>VIGV_CHA</Name>
+          <Value>22.62</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>VIGV_CHB</Name>
+          <Value>22.62</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-1</Name>
+          <Value>14.6660</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-2</Name>
+          <Value>14.6660</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>PS3</Name>
+          <Value>260.4307</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHA</Name>
+          <Value>696.65</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHB</Name>
+          <Value>696.65</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-1</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-2</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-3</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-4</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-5</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-6</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-7</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-8</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-9</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-10</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-11</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-12</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-13</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-14</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-15</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-16</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-17</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-18</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+        <Parameter>
+          <Name>Tt6-19</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-20</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-21</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-22</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-23</Name>
+          <Value>960.05</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-24</Name>
+          <Value>1068.99</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt1-1</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-2</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-3</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-4</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-5</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-6</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-7</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-8</Name>
+          <Value>9.39</Value>
+          <Units>DegF</Units>
+        </Parameter>
+      </Parameters>
+    </Condition>
+
+    <Condition>
+      <NO>6</NO>
+      <Description>CONDITION 06</Description>
+      <Parameters>
+        <Parameter>
+          <Name>SG</Name>
+          <Value>0.818</Value>
+          <Units>None</Units>
+        </Parameter>
+        <Parameter>
+          <Name>TIF</Name>
+          <Value>42.8</Value>
+          <Units>DegF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N1_RPM</Name>
+          <Value>4277.4277</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N2_RPM</Name>
+          <Value>7219.3045</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>FN</Name>
+          <Value>5576.3</Value>
+          <Units>LBF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>WF2</Name>
+          <Value>2104.44</Value>
+          <Units>PPH</Units>
+        </Parameter>
+        <Parameter>
+          <Name>PSN</Name>
+          <Value>14.6602</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+        <Parameter>
+          <Name>VIGV_CHA</Name>
+          <Value>16.79</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>VIGV_CHB</Name>
+          <Value>16.79</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-1</Name>
+          <Value>14.6606</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-2</Name>
+          <Value>14.6606</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>PS3</Name>
+          <Value>278.9302</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHA</Name>
+          <Value>730.1330</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHB</Name>
+          <Value>730.1330</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-1</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-2</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-3</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-4</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-5</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-6</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-7</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-8</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-9</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-10</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-11</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-12</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-13</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-14</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-15</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-16</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-17</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-18</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+        <Parameter>
+          <Name>Tt6-19</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-20</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-21</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-22</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-23</Name>
+          <Value>998.48</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-24</Name>
+          <Value>1053.93</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt1-1</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-2</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-3</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-4</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-5</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-6</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-7</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-8</Name>
+          <Value>9.44</Value>
+          <Units>DegF</Units>
+        </Parameter>
+      </Parameters>
+    </Condition>
+
+    <Condition>
+      <NO>7</NO>
+      <Description>CONDITION 07</Description>
+      <Parameters>
+        <Parameter>
+          <Name>SG</Name>
+          <Value>0.818</Value>
+          <Units>None</Units>
+        </Parameter>
+        <Parameter>
+          <Name>TIF</Name>
+          <Value>42.2</Value>
+          <Units>DegF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N1_RPM</Name>
+          <Value>4376.7437</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N2_RPM</Name>
+          <Value>7303.9689</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>FN</Name>
+          <Value>5937.1</Value>
+          <Units>LBF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>WF2</Name>
+          <Value>1670.83</Value>
+          <Units>PPH</Units>
+        </Parameter>
+        <Parameter>
+          <Name>PSN</Name>
+          <Value>14.6500</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+        <Parameter>
+          <Name>VIGV_CHA</Name>
+          <Value>13.07</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>VIGV_CHB</Name>
+          <Value>13.07</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-1</Name>
+          <Value>14.6530</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-2</Name>
+          <Value>14.6530</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>PS3</Name>
+          <Value>293.4750</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHA</Name>
+          <Value>754.12</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHB</Name>
+          <Value>754.12</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-1</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-2</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-3</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-4</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-5</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-6</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-7</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-8</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-9</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-10</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-11</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-12</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-13</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-14</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-15</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-16</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-17</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-18</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+        <Parameter>
+          <Name>Tt6-19</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-20</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-21</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-22</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-23</Name>
+          <Value>1027.57</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-24</Name>
+          <Value>1024.08</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt1-1</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-2</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-3</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-4</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-5</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-6</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-7</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-8</Name>
+          <Value>9.36</Value>
+          <Units>DegF</Units>
+        </Parameter>
+      </Parameters>
+    </Condition>
+
+    <Condition>
+      <NO>8</NO>
+      <Description>CONDITION 08</Description>
+      <Parameters>
+        <Parameter>
+          <Name>SG</Name>
+          <Value>0.818</Value>
+          <Units>None</Units>
+        </Parameter>
+        <Parameter>
+          <Name>TIF</Name>
+          <Value>42.3</Value>
+          <Units>DegF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N1_RPM</Name>
+          <Value>4362.3886</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>N2_RPM</Name>
+          <Value>7291.8535</Value>
+          <Units>HZ</Units>
+        </Parameter>
+        <Parameter>
+          <Name>FN</Name>
+          <Value>5889.3</Value>
+          <Units>LBF</Units>
+        </Parameter>
+        <Parameter>
+          <Name>WF2</Name>
+          <Value>2239.48</Value>
+          <Units>PPH</Units>
+        </Parameter>
+        <Parameter>
+          <Name>PSN</Name>
+          <Value>14.6439</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+        <Parameter>
+          <Name>VIGV_CHA</Name>
+          <Value>13.65</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>VIGV_CHB</Name>
+          <Value>13.65</Value>
+          <Units>Deg</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-1</Name>
+          <Value>14.6465</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>P1A-2</Name>
+          <Value>14.6465</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>PS3</Name>
+          <Value>291.3275</Value>
+          <Units>PSIA</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHA</Name>
+          <Value>750.31</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>T45_CHB</Name>
+          <Value>750.31</Value>
+          <Units>DegC</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-1</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-2</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-3</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-4</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-5</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-6</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-7</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-8</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-9</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-10</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-11</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <!--<Parameter>
+          <Name>Tt6-12</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt6-13</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-14</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt6-15</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-16</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-17</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-18</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+        <Parameter>
+          <Name>Tt6-19</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-20</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-21</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-22</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <Parameter>
+          <Name>Tt6-23</Name>
+          <Value>1022.83</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+        <!--<Parameter>
+          <Name>Tt6-24</Name>
+          <Value>1032.01</Value>
+          <Units>DegF</Units>
+        </Parameter>-->
+
+
+        <Parameter>
+          <Name>Tt1-1</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-2</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-3</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-4</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-5</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-6</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-7</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+
+
+        <Parameter>
+          <Name>Tt1-8</Name>
+          <Value>8.97</Value>
+          <Units>DegF</Units>
+        </Parameter>
+      </Parameters>
+    </Condition>
+
+
+  </Conditions>
+
+
+</Performance>

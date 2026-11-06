@@ -1,0 +1,231 @@
+FUNCTION_BLOCK run_AFDX_FB
+(************************************************************************************************************************************************
+	Name :		run_PowerDNA_FB									
+														
+	Description :	read temperatures from the powerdna 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2009/02/12		J.Hamelin		First Release
+	2.0	         2009/04/10		J.Hamelin		verify sate of the handle prior to a reading 
+	
+
+************************************************************************************************************************************************)	
+
+err_code := OK;
+status   := RUNNING;
+(* CODE FROM 05288  Log message every 15 minutes. 900 000 ms *)
+(*IF  (modulo_rest= 0) THEN
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_POWERDNA_IOMGR: RUNNING');
+END_IF;
+
+modulo_rest:= MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+*)
+err_code := OK;
+
+
+
+	
+(* number_of_powerdnas calculated from CSV see Initializing sequence*)
+
+PowerDNA_Structure.status := RUNNING;
+	
+
+
+	IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+	(* Read the current scan *)
+
+		IF ( PowerDNA_Structure.hAfdxDev <> 0 ) THEN
+
+
+
+
+			FOR index := 1 TO counter_fs_in DO
+								
+				(*FS_IN[index].value := GET_FS_VALUE(FS_IN[index].hMsg);*)
+				POWERDNA_AfdxGet_FunctionalStatus(FS_IN[index].hMsg);
+
+				IF POWERDNA_AfdxGet_FunctionalStatus.err_code = OK THEN
+					FS_IN[index].value := POWERDNA_AfdxGet_FunctionalStatus.Value;
+				END_IF;
+
+			END_FOR;
+
+			(**** PROCESS OUTPUTS ****)
+			FOR index := 1 TO counter_signal_string_out DO
+									
+				POWERDNA_AfdxSet_StringSignalValue(SIGNAL_STRING_OUT[index].hMsg, SIGNAL_STRING_OUT[index].value);
+
+			END_FOR;
+
+			FOR index := 1 TO counter_signal_integer_out DO
+									
+				POWERDNA_AfdxSet_Integer32SignalValue(SIGNAL_INT_OUT[index].hMsg, SIGNAL_INT_OUT[index].value);
+
+			END_FOR;
+		
+			FOR index := 1 TO counter_signal_udinteger_out DO
+									
+				POWERDNA_AfdxSet_UInteger32SignalValue(SIGNAL_UDINT_OUT[index].hMsg, SIGNAL_UDINT_OUT[index].value);
+
+			END_FOR;
+
+
+			FOR index := 1 TO counter_signal_real_out DO
+									
+				POWERDNA_AfdxSet_Real32SignalValue(SIGNAL_REAL_OUT[index].hMsg, SIGNAL_REAL_OUT[index].value);
+
+			END_FOR;
+
+			FOR index := 1 TO counter_fs_out DO
+									
+				POWERDNA_AfdxSet_FunctionalStatus(FS_OUT[index].hMsg, FS_OUT[index].value);
+
+			END_FOR;
+
+			POWERDNA_AfdxSendAll_Messages(PowerDNA_Structure.hAfdxDev);
+
+			POWERDNA_AfdxReceiveAll_Messages(PowerDNA_Structure.hAfdxDev);
+
+			(**** PROCESS INPUTS ****)
+			FOR index := 1 TO counter_signal_string_in DO
+								
+				POWERDNA_AfdxGet_StringSignalValue(SIGNAL_STRING_IN[index].hMsg);
+
+				IF POWERDNA_AfdxGet_StringSignalValue.err_code = OK THEN
+					SIGNAL_STRING_IN[index].value := POWERDNA_AfdxGet_StringSignalValue.Value; 
+				END_IF;
+
+			END_FOR;
+
+			FOR index := 1 TO counter_signal_integer_in DO
+									
+				POWERDNA_AfdxGet_Integer32SignalValue(SIGNAL_INT_IN[index].hMsg);
+
+				IF POWERDNA_AfdxGet_Integer32SignalValue.err_code = OK THEN
+					SIGNAL_INT_IN[index].value := POWERDNA_AfdxGet_Integer32SignalValue.Value;
+				END_IF;
+
+			END_FOR;
+
+			FOR index := 1 TO counter_signal_udinteger_in DO
+									
+				POWERDNA_AfdxGet_UInteger32SignalValue(SIGNAL_UDINT_IN[index].hMsg);
+
+				IF POWERDNA_AfdxGet_UInteger32SignalValue.err_code = OK THEN
+					SIGNAL_UDINT_IN[index].value := POWERDNA_AfdxGet_UInteger32SignalValue.Value;
+				END_IF;
+
+			END_FOR;
+
+
+			FOR index := 1 TO counter_signal_real_in DO
+									
+				(*SIGNAL_REAL_IN[index].value := GET_REAL_SIGNAL_VALUE(SIGNAL_REAL_IN[index].hMsg);*)
+
+				POWERDNA_AfdxGet_Real32SignalValue(SIGNAL_REAL_IN[index].hMsg);
+
+				IF POWERDNA_AfdxGet_Real32SignalValue.err_code = OK THEN
+					SIGNAL_REAL_IN[index].value := POWERDNA_AfdxGet_Real32SignalValue.Value;
+				END_IF;
+
+			END_FOR;
+
+(*
+ * Reconnect not supported yet								
+			IF (PowerDNA_Structure.err_code <> OK) THEN
+					
+				      		
+				dummy := LOG_MSG('ErrLog', 'AFDX: LOST CONNECTION');
+				    	
+				POWERDNA_CLOSE(PowerDNA_Structure.handle); 
+ 						
+				PowerDNA_Structure.handle := -1;
+				PowerDNA_Structure.status := RUN;
+				err_code 	              := PowerDNA_READ.ERR_CODE; (+* force the exit of for loop *+)
+						
+								
+			END_IF;
+*)
+
+		END_IF;
+	
+(*
+ * Reconnect not supported yet
+ * Implies to rebuild all the Afdx config (VLs, Ports, Signals)
+
+		IF ( PowerDNA_Structure.handle = -1 ) THEN
+				
+					
+			POWERDNA_OPEN(PowerDNA_Structure.IPaddress);
+				
+
+ 			PowerDNA_Structure.err_code := POWERDNA_OPEN.ERR_CODE;
+				
+			IF (PowerDNA_Structure.err_code <> OK) THEN
+
+				PowerDNA_Structure.handle 	:= -1;
+				PowerDNA_Structure.status 	:= RUN;
+				err_code := PowerDNA_Structure.err_code;
+
+			ELSE
+
+				PowerDNA_Structure.handle := POWERDNA_OPEN.HANDLE; 
+
+				POWERDNA_GETNAME(PowerDNA_Structure.handle);
+						
+				IF  ( PowerDNA_Structure.IOMname = POWERDNA_GETNAME.BUFFER ) THEN
+							
+					Log_Not_Done := TRUE;
+
+				    dummy := LOG_MSG('ErrLog', 'AFDX: RECONNECTION SUCCESSFUL');
+			    
+				
+					FOR layer := 0 to ( PowerDNA_Structure.number_of_layers - 1 ) DO
+
+						PowerDNA_Structure.layer[ layer ].Reinit_Clock_ScanRate := TRUE;
+
+					END_FOR;
+
+				ELSE
+					POWERDNA_CLOSE(PowerDNA_Structure.handle); 
+						
+				    PowerDNA_Structure.handle := -1;
+					PowerDNA_Structure.status := RUN;
+							
+					IF ( Log_Not_Done ) THEN
+
+				        dummy := LOG_MSG('ErrLog', 'AFDX: SWAPPED WITHOUT CLOSING');
+		
+						Log_Not_Done := FALSE;
+
+					END_IF;
+
+				END_IF;
+
+			END_IF;
+
+		END_IF;
+*)
+		
+	
+	ELSE (* RUN_FOR_TRUE *)
+
+	END_IF; 
+
+	
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

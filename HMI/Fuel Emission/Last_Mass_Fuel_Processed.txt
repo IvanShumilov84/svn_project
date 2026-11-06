@@ -1,0 +1,11 @@
+Date = 04/25/2013
+Time = 15:23:27
+Total Fuel Consumed from sensor in kg = 1
+Total Fuel Consumed from sensor in gallons = 2
+Total Nox emissions for the period in kg = 0
+Total CO emissions for the period in kg = 0
+Total HC emissions for the period in kg = 0
+Total Nox emissions in kg = 0.00579999983301605
+Total CO emissions in kg = 0.0508999705298265
+Total HC emissions in kg = 0.00740000158498333
+Expiration Date = 12/31/2011

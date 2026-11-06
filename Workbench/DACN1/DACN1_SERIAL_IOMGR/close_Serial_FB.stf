@@ -1,0 +1,80 @@
+FUNCTION_BLOCK close_Serial_FB
+(************************************************************************************************************************************************
+	Name :		close_Serial_IOMgr_FB									
+														
+	Description :	Close all serial port of networked system and rdata 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2001/11/05		P.Dextraze	Add CLOSE_RDATA CALL 
+
+************************************************************************************************************************************************)	
+	status 		:= CLOSING;
+	err_code 	:= OK;
+
+	IF (First_Time_Close = TRUE) THEN 
+	
+		dummy := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: CLOSING');
+ 
+		IF(In_Serial_IOMgr.mode = RUN_FOR_TRUE) THEN
+			FOR i:= 1 TO MAX_PORTS BY 1 DO
+				IF(ser_ports[i].fd <> SPARE) THEN  	
+					CLOSE_SER_PORT(ser_ports[i].fd);
+					err_code := CLOSE_SER_PORT.ERR_CODE;
+	
+					IF ((err_code <> OK) AND (status = CLOSING)) THEN 
+						status := ERROR_ON_CLOSING;
+					END_IF; 
+				END_IF; 
+			END_FOR;
+		END_IF;
+
+		CLOSE_REAL_DATA ( hdle_real_data );
+		IF (hdle_real_data <> -1) THEN
+			CLOSE_REAL_DATA ( hdle_real_data );
+			hdle_real_data := -1;
+		END_IF;
+
+		CLOSE_BOOL_DATA ( hdle_bool_data );
+		IF (hdle_bool_data <> -1) THEN
+			CLOSE_BOOL_DATA ( hdle_bool_data );
+			hdle_bool_data := -1;
+		END_IF;
+
+		IF( rdata_base <> 0) THEN	
+			CLOSE_RDATA(rdata_base);
+			err_code := CLOSE_RDATA.ERR_CODE;
+			rdata_base := 0;
+		END_IF;
+
+
+		Out_Serial_IOMgr.previous_index := 0;
+
+		wait_for_File_Closed(FALSE, t#8s);
+
+		First_Time_Close := FALSE;
+
+	END_IF; 
+
+
+	wait_for_File_Closed(TRUE, t#8s);
+
+	IF (wait_for_File_Closed.Q = TRUE) THEN 
+		status 	:= CLOSED;
+		dummy 	:= LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: CLOSED');
+	END_IF; 
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

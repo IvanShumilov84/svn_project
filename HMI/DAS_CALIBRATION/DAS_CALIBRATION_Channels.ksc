@@ -1,0 +1,840 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Enabled>true</Enabled>
+<AlternateNames xsi:type="xsd:anyType" xsi:null="1"/>
+<Accuracy href="#ref-5"/>
+<C1 href="#ref-6"/>
+<C2 href="#ref-7"/>
+<Cal_Branch href="#ref-8"/>
+<Cal_C1 href="#ref-9"/>
+<Cal_C2 href="#ref-10"/>
+<Cal_C3 href="#ref-11"/>
+<Cal_C4 href="#ref-12"/>
+<Cal_C5 href="#ref-13"/>
+<Cal_C6 href="#ref-14"/>
+<Cal_Degree href="#ref-15"/>
+<Cal_Index href="#ref-16"/>
+<Cal_Prefix href="#ref-17"/>
+<Calib_Close_Test href="#ref-18"/>
+<Calib_Resize_Panel href="#ref-19"/>
+<Calib_UserInputs_Cancel href="#ref-20"/>
+<Calib_UserInputs_OK href="#ref-21"/>
+<Calibration_Due_Date1 href="#ref-22"/>
+<Calibration_Due_Date2 href="#ref-23"/>
+<Calibration_Due_Date3 href="#ref-24"/>
+<Calibration_Due_Date4 href="#ref-25"/>
+<Calibration_Humidity href="#ref-26"/>
+<Calibration_Range href="#ref-27"/>
+<Calibration_Temp href="#ref-28"/>
+<Calibration_Value href="#ref-29"/>
+<CCAS_Requested_Vib_Channel href="#ref-30"/>
+<Channel_Range href="#ref-31"/>
+<Channel_Type href="#ref-32"/>
+<Check_Report href="#ref-33"/>
+<Comments href="#ref-34"/>
+<CSV_Filename href="#ref-35"/>
+<Generic_Name href="#ref-36"/>
+<Last_Calib_Date href="#ref-37"/>
+<Margin_Accuracy href="#ref-38"/>
+<New_Calib_Report href="#ref-39"/>
+<OEM_Tolerance href="#ref-40"/>
+<OEM_Tolerance_Text href="#ref-41"/>
+<Offset href="#ref-42"/>
+<P1_Clear_Button href="#ref-43"/>
+<P1_Enter_Button href="#ref-44"/>
+<P1_Measured href="#ref-45"/>
+<P1_Measured_Button href="#ref-46"/>
+<P1_Simulated href="#ref-47"/>
+<P2_Clear_Button href="#ref-48"/>
+<P2_Enter_Button href="#ref-49"/>
+<P2_Measured href="#ref-50"/>
+<P2_Measured_Button href="#ref-51"/>
+<P2_Simulated href="#ref-52"/>
+<P3_Clear_Button href="#ref-53"/>
+<P3_Enter_Button href="#ref-54"/>
+<P3_Measured href="#ref-55"/>
+<P3_Measured_Button href="#ref-56"/>
+<P3_Simulated href="#ref-57"/>
+<P4_Clear_Button href="#ref-58"/>
+<P4_Enter_Button href="#ref-59"/>
+<P4_Measured href="#ref-60"/>
+<P4_Measured_Button href="#ref-61"/>
+<P4_Simulated href="#ref-62"/>
+<P5_Clear_Button href="#ref-63"/>
+<P5_Enter_Button href="#ref-64"/>
+<P5_Measured href="#ref-65"/>
+<P5_Measured_Button href="#ref-66"/>
+<P5_Simulated href="#ref-67"/>
+<P6_Clear_Button href="#ref-68"/>
+<P6_Enter_Button href="#ref-69"/>
+<P6_Measured href="#ref-70"/>
+<P6_Measured_Button href="#ref-71"/>
+<P6_Simulated href="#ref-72"/>
+<Save_Calib_Info href="#ref-73"/>
+<Save_Data href="#ref-74"/>
+<SCU_Speed_Channel href="#ref-75"/>
+<Slope href="#ref-76"/>
+<TC_Transducer_SN href="#ref-77"/>
+<Test_Mgr_Calib_Calcul href="#ref-78"/>
+<Test_Mgr_Calib_Flag href="#ref-79"/>
+<Test_Mgr_PUsed href="#ref-80"/>
+<Test_Mgr_Sub_Command href="#ref-81"/>
+<Test_Mgr_Sub_Status href="#ref-82"/>
+<Transducer_Range href="#ref-83"/>
+<Units_Measured href="#ref-84"/>
+<Units_Simulated href="#ref-85"/>
+</a1:ChannelCollection>
+<a3:NumericChannel id="ref-5" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-86">Accuracy</Name>
+<Description id="ref-87">Accuracy</Description>
+<ToolTip id="ref-88"></ToolTip>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-89">F3</Format>
+<DecimalDigits>2</DecimalDigits>
+</a3:NumericChannel>
+<a3:NumericChannel id="ref-6" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-90">C1</Name>
+<Description id="ref-91">C1</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-92">F3</Format>
+<DecimalDigits>2</DecimalDigits>
+</a3:NumericChannel>
+<a3:NumericChannel id="ref-7" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-93">C2</Name>
+<Description id="ref-94">C2</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-95">F3</Format>
+<DecimalDigits>2</DecimalDigits>
+</a3:NumericChannel>
+<a4:TextItem id="ref-8" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-96">Cal_Branch</Name>
+<Description id="ref-97">Cal_Branch</Description>
+<ToolTip href="#ref-88"/>
+<Group id="ref-98">Group_Fast</Group>
+<ItemID id="ref-99">dacn1.dacn1_user_interface.tm_out_tm_calib.branch</ItemID>
+</a4:TextItem>
+<a4:Item id="ref-9" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-100">Cal_C1</Name>
+<Description id="ref-101">Cal_C1</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-102">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-103">Group_Fast</Group>
+<ItemID id="ref-104">dacn1.dacn1_user_interface.tm_out_tm_calib.coeffs[1]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-10" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-105">Cal_C2</Name>
+<Description id="ref-106">Cal_C2</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-107">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-108">Group_Fast</Group>
+<ItemID id="ref-109">dacn1.dacn1_user_interface.tm_out_tm_calib.coeffs[2]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-11" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-110">Cal_C3</Name>
+<Description id="ref-111">Cal_C3</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-112">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-113">Group_Fast</Group>
+<ItemID id="ref-114">dacn1.dacn1_user_interface.tm_out_tm_calib.coeffs[3]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-12" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-115">Cal_C4</Name>
+<Description id="ref-116">Cal_C4</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-117">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-118">Group_Fast</Group>
+<ItemID id="ref-119">dacn1.dacn1_user_interface.tm_out_tm_calib.coeffs[4]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-13" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-120">Cal_C5</Name>
+<Description id="ref-121">Cal_C5</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-122">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-123">Group_Fast</Group>
+<ItemID id="ref-124">dacn1.dacn1_user_interface.tm_out_tm_calib.coeffs[5]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-14" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-125">Cal_C6</Name>
+<Description id="ref-126">Cal_C6</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-127">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-128">Group_Fast</Group>
+<ItemID id="ref-129">dacn1.dacn1_user_interface.tm_out_tm_calib.coeffs[6]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-15" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-130">Cal_Degree</Name>
+<Description id="ref-131">Cal_Degree</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-132">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-133">Group_Fast</Group>
+<ItemID id="ref-134">dacn1.dacn1_user_interface.tm_out_tm_calib.degree</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-16" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-135">Cal_Index</Name>
+<Description id="ref-136">Cal_Index</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-137">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-138">Group_Fast</Group>
+<ItemID id="ref-139">dacn1.dacn1_user_interface.tm_out_tm_calib.index</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:TextItem id="ref-17" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-140">Cal_Prefix</Name>
+<Description id="ref-141">Cal_Prefix</Description>
+<ToolTip href="#ref-88"/>
+<Group id="ref-142">Group_Fast</Group>
+<ItemID id="ref-143">dacn1.dacn1_user_interface.tm_out_tm_calib.prefix</ItemID>
+</a4:TextItem>
+<a5:BooleanVariable id="ref-18" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-144">Calib_Close_Test</Name>
+<Description id="ref-145">Close Calibration</Description>
+<ToolTip id="ref-146">Close Calibration</ToolTip>
+<TrueText id="ref-147">True</TrueText>
+<FalseText id="ref-148">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a5:BooleanVariable id="ref-19" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-150">Calib_Resize_Panel</Name>
+<Description id="ref-151">Resize Panel</Description>
+<ToolTip id="ref-152">Resize Panel</ToolTip>
+<TrueText id="ref-153">True</TrueText>
+<FalseText id="ref-154">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a5:BooleanVariable id="ref-20" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-155">Calib_UserInputs_Cancel</Name>
+<Description id="ref-156">Cancel</Description>
+<ToolTip id="ref-157">Cancel</ToolTip>
+<TrueText id="ref-158">True</TrueText>
+<FalseText id="ref-159">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a5:BooleanVariable id="ref-21" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-160">Calib_UserInputs_OK</Name>
+<Description id="ref-161">OK</Description>
+<ToolTip id="ref-162">OK</ToolTip>
+<TrueText id="ref-163">True</TrueText>
+<FalseText id="ref-164">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a3:TextChannel id="ref-22" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-165">Calibration_Due_Date1</Name>
+<Description id="ref-166">Calibration_Due_Date1</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-23" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-167">Calibration_Due_Date2</Name>
+<Description id="ref-168">Calibration_Due_Date2</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-24" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-169">Calibration_Due_Date3</Name>
+<Description id="ref-170">Calibration_Due_Date3</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-25" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-171">Calibration_Due_Date4</Name>
+<Description id="ref-172">Calibration_Due_Date4</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-26" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-173">Calibration_Humidity</Name>
+<Description id="ref-174">Calibration Humidity</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-27" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-175">Calibration_Range</Name>
+<Description id="ref-176">Calibration_Range</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-28" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-177">Calibration_Temp</Name>
+<Description id="ref-178">Calibration Temp</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a4:Item id="ref-29" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-179">Calibration_Value</Name>
+<Description id="ref-180">Calibration_Value</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-181">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-182">Group_Fast</Group>
+<ItemID id="ref-183">dacn1.test_mgr.out_test_mgr.cal_raw</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-30" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-184">CCAS_Requested_Vib_Channel</Name>
+<Description id="ref-185">CCAS_Requested_Vib_Channel</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-186">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-187">Group_Fast</Group>
+<ItemID id="ref-188">dacn1.dacn1_user_interface.tm_ccas_requested_vib_channel</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:TextChannel id="ref-31" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-189">Channel_Range</Name>
+<Description id="ref-190">Channel_Range</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-32" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-191">Channel_Type</Name>
+<Description id="ref-192">Channel_Type</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a5:BooleanVariable id="ref-33" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-193">Check_Report</Name>
+<Description id="ref-194">Check Last Calibration Report</Description>
+<ToolTip id="ref-195">Check Last Calibration Report</ToolTip>
+<TrueText id="ref-196">True</TrueText>
+<FalseText id="ref-197">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a3:TextChannel id="ref-34" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-198">Comments</Name>
+<Description id="ref-199">Comments</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a4:TextItem id="ref-35" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-200">CSV_Filename</Name>
+<Description id="ref-201">PowerDNA_CSV_Filename</Description>
+<ToolTip href="#ref-88"/>
+<Group id="ref-202">Group_Fast</Group>
+<ItemID id="ref-203">dacn1.dacn1_user_interface.powerdna_csv_filename</ItemID>
+</a4:TextItem>
+<a3:TextChannel id="ref-36" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-204">Generic_Name</Name>
+<Description id="ref-205">Generic Name</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-37" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-206">Last_Calib_Date</Name>
+<Description id="ref-207">Last Calibration Date</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-38" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-208">Margin_Accuracy</Name>
+<Description id="ref-209">Margin_Accuracy</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a5:BooleanVariable id="ref-39" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-210">New_Calib_Report</Name>
+<Description id="ref-211">Calibration Report</Description>
+<ToolTip id="ref-212">Calibration Report</ToolTip>
+<TrueText id="ref-213">True</TrueText>
+<FalseText id="ref-214">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a3:NumericChannel id="ref-40" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-215">OEM_Tolerance</Name>
+<Description id="ref-216">OEM Tolerance</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-217">F3</Format>
+<DecimalDigits>2</DecimalDigits>
+</a3:NumericChannel>
+<a3:TextChannel id="ref-41" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-218">OEM_Tolerance_Text</Name>
+<Description id="ref-219">OEM Tolerance Text</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:NumericChannel id="ref-42" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-220">Offset</Name>
+<Description id="ref-221">Offset</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-222">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+</a3:NumericChannel>
+<a3:BooleanChannel id="ref-43" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-223">P1_Clear_Button</Name>
+<Description id="ref-224">Clear</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-225">True</TrueText>
+<FalseText id="ref-226">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-44" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-227">P1_Enter_Button</Name>
+<Description id="ref-228">Enter</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-229">True</TrueText>
+<FalseText id="ref-230">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-45" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-231">P1_Measured</Name>
+<Description id="ref-232">P1_Measured</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-233">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-234">Group_Fast</Group>
+<ItemID id="ref-235">dacn1.dacn1_user_interface.tm_px[1]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-46" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-236">P1_Measured_Button</Name>
+<Description id="ref-237">1st Measured Value</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-238">True</TrueText>
+<FalseText id="ref-239">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-47" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-240">P1_Simulated</Name>
+<Description id="ref-241">1st Simulated Value</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-242">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-243">Group_Fast</Group>
+<ItemID id="ref-244">dacn1.dacn1_user_interface.tm_py[1]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-48" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-245">P2_Clear_Button</Name>
+<Description id="ref-246">Clear</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-247">True</TrueText>
+<FalseText id="ref-248">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-49" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-249">P2_Enter_Button</Name>
+<Description id="ref-250">Enter</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-251">True</TrueText>
+<FalseText id="ref-252">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-50" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-253">P2_Measured</Name>
+<Description id="ref-254">P2_Measured</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-255">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-256">Group_Fast</Group>
+<ItemID id="ref-257">dacn1.dacn1_user_interface.tm_px[2]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-51" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-258">P2_Measured_Button</Name>
+<Description id="ref-259">2nd Measured Value</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-260">True</TrueText>
+<FalseText id="ref-261">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-52" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-262">P2_Simulated</Name>
+<Description id="ref-263">2nd Simulated Value</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-264">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-265">Group_Fast</Group>
+<ItemID id="ref-266">dacn1.dacn1_user_interface.tm_py[2]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-53" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-267">P3_Clear_Button</Name>
+<Description id="ref-268">Clear</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-269">True</TrueText>
+<FalseText id="ref-270">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-54" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-271">P3_Enter_Button</Name>
+<Description id="ref-272">Enter</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-273">True</TrueText>
+<FalseText id="ref-274">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-55" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-275">P3_Measured</Name>
+<Description id="ref-276">P3_Measured</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-277">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-278">Group_Fast</Group>
+<ItemID id="ref-279">dacn1.dacn1_user_interface.tm_px[3]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-56" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-280">P3_Measured_Button</Name>
+<Description id="ref-281">3rd Measured Value</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-282">True</TrueText>
+<FalseText id="ref-283">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-57" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-284">P3_Simulated</Name>
+<Description id="ref-285">3rd Simulated Value</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-286">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-287">Group_Fast</Group>
+<ItemID id="ref-288">dacn1.dacn1_user_interface.tm_py[3]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-58" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-289">P4_Clear_Button</Name>
+<Description id="ref-290">Clear</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-291">True</TrueText>
+<FalseText id="ref-292">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-59" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-293">P4_Enter_Button</Name>
+<Description id="ref-294">Enter</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-295">True</TrueText>
+<FalseText id="ref-296">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-60" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-297">P4_Measured</Name>
+<Description id="ref-298">P4_Measured</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-299">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-300">Group_Fast</Group>
+<ItemID id="ref-301">dacn1.dacn1_user_interface.tm_px[4]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-61" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-302">P4_Measured_Button</Name>
+<Description id="ref-303">4th Measured Value</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-304">True</TrueText>
+<FalseText id="ref-305">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-62" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-306">P4_Simulated</Name>
+<Description id="ref-307">4th Simulated Value</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-308">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-309">Group_Fast</Group>
+<ItemID id="ref-310">dacn1.dacn1_user_interface.tm_py[4]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-63" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-311">P5_Clear_Button</Name>
+<Description id="ref-312">Clear</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-313">True</TrueText>
+<FalseText id="ref-314">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-64" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-315">P5_Enter_Button</Name>
+<Description id="ref-316">Enter</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-317">True</TrueText>
+<FalseText id="ref-318">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-65" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-319">P5_Measured</Name>
+<Description id="ref-320">P5_Measured</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-321">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-322">Group_Fast</Group>
+<ItemID id="ref-323">dacn1.dacn1_user_interface.tm_px[5]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-66" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-324">P5_Measured_Button</Name>
+<Description id="ref-325">5th Measured Value</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-326">True</TrueText>
+<FalseText id="ref-327">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-67" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-328">P5_Simulated</Name>
+<Description id="ref-329">5th Simulated Value</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-330">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-331">Group_Fast</Group>
+<ItemID id="ref-332">dacn1.dacn1_user_interface.tm_py[5]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-68" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-333">P6_Clear_Button</Name>
+<Description id="ref-334">Clear</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-335">True</TrueText>
+<FalseText id="ref-336">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-69" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-337">P6_Enter_Button</Name>
+<Description id="ref-338">Enter</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-339">True</TrueText>
+<FalseText id="ref-340">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-70" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-341">P6_Measured</Name>
+<Description id="ref-342">P6_Measured</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-343">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-344">Group_Fast</Group>
+<ItemID id="ref-345">dacn1.dacn1_user_interface.tm_px[6]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:BooleanChannel id="ref-71" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-346">P6_Measured_Button</Name>
+<Description id="ref-347">6th Measured Value</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-348">True</TrueText>
+<FalseText id="ref-349">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-72" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-350">P6_Simulated</Name>
+<Description id="ref-351">6th Simulated Value</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>-10000</Min>
+<Max>10000</Max>
+<Format id="ref-352">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+<Group id="ref-353">Group_Fast</Group>
+<ItemID id="ref-354">dacn1.dacn1_user_interface.tm_py[6]</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a5:BooleanVariable id="ref-73" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-355">Save_Calib_Info</Name>
+<Description id="ref-356">Save Calibration Information</Description>
+<ToolTip id="ref-357">Save Calibration Information</ToolTip>
+<TrueText id="ref-358">True</TrueText>
+<FalseText id="ref-359">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a5:BooleanVariable id="ref-74" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-360">Save_Data</Name>
+<Description id="ref-361">Save Data</Description>
+<ToolTip id="ref-362">Save Data</ToolTip>
+<TrueText id="ref-363">True</TrueText>
+<FalseText id="ref-364">False</FalseText>
+<Value href="#ref-149"/>
+</a5:BooleanVariable>
+<a4:Item id="ref-75" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-365">SCU_Speed_Channel</Name>
+<Description id="ref-366">SCU_Speed_Channel</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-367">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-368">Group_Fast</Group>
+<ItemID id="ref-369">dacn1.dacn1_user_interface.tm_scu_speed_channel</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:NumericChannel id="ref-76" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-370">Slope</Name>
+<Description id="ref-371">Slope</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-372">F4</Format>
+<DecimalDigits>4</DecimalDigits>
+</a3:NumericChannel>
+<a3:TextChannel id="ref-77" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-373">TC_Transducer_SN</Name>
+<Description id="ref-374">T/C Transducer SN</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a4:Item id="ref-78" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-375">Test_Mgr_Calib_Calcul</Name>
+<Description id="ref-376">Test_Mgr_Calib_Calcul</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-377">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-378">Group_Fast</Group>
+<ItemID id="ref-379">dacn1.dacn1_user_interface.tm_calib_calcul</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:BooleanItem id="ref-79" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-380">Test_Mgr_Calib_Flag</Name>
+<Description id="ref-381">Calibration</Description>
+<ToolTip href="#ref-88"/>
+<TrueText id="ref-382">True</TrueText>
+<FalseText id="ref-383">False</FalseText>
+<Group id="ref-384">Group_Fast</Group>
+<ItemID id="ref-385">dacn1.dacn1_user_interface.tm_calib_flag</ItemID>
+</a4:BooleanItem>
+<a4:Item id="ref-80" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-386">Test_Mgr_PUsed</Name>
+<Description id="ref-387">Test_Mgr_PUsed</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-388">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-389">Group_Fast</Group>
+<ItemID id="ref-390">dacn1.dacn1_user_interface.tm_pused</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-81" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-391">Test_Mgr_Sub_Command</Name>
+<Description id="ref-392">Test_Mgr_Sub_Command</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-393">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-394">Group_Fast</Group>
+<ItemID id="ref-395">dacn1.dacn1_user_interface.tm_in_test_mgr.sub_command</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-82" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-396">Test_Mgr_Sub_Status</Name>
+<Description id="ref-397">Test_Mgr_Sub_Status</Description>
+<ToolTip href="#ref-88"/>
+<Units href="#ref-88"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-398">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-399">Group_Fast</Group>
+<ItemID id="ref-400">dacn1.test_mgr.out_test_mgr.sub_status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a3:TextChannel id="ref-83" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-401">Transducer_Range</Name>
+<Description id="ref-402">Transducer Range</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-84" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-403">Units_Measured</Name>
+<Description id="ref-404">Units of measured value</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a3:TextChannel id="ref-85" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-405">Units_Simulated</Name>
+<Description id="ref-406">Units of simulated value</Description>
+<ToolTip href="#ref-88"/>
+</a3:TextChannel>
+<a6:Boolean id="ref-149" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Values/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<val>false</val>
+</a6:Boolean>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

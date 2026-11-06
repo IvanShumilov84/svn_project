@@ -1,0 +1,75 @@
+FUNCTION_BLOCK initialize_GALIL_FB
+(************************************************************************************************************************************************
+	Name :		initialize_GALIL_FB									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+
+************************************************************************************************************************************************)	
+	
+	err_code := OK;
+	status := INITIALIZING;
+
+	(* Log message every 15 minutes. 900 000 ms *)
+	IF  (mod_rest = 0) THEN
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: INITIALIZING');
+	END_IF;
+
+	mod_rest := MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+
+
+
+	Init_Disengage := TRUE ;
+	GALIL_Running := FALSE ;
+	DoneRigging := FALSE ;
+	MaxStopDone := FALSE;
+	MinStopDone := FALSE;
+	MaxAngleDone := FALSE;
+	MinAngleDone := FALSE;
+
+	Reset_Set_zero_pos := FALSE ;
+
+	line_nb := 0 ;
+
+
+	IF (status = INITIALIZING) THEN 
+		
+		status := INITIALIZED;
+
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: INITIALIZED');
+	END_IF;
+
+	(* initialize first logging for running *)
+	mod_rest := 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

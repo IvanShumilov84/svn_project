@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>GTCP331-250</Model>
+    <SN>388381-1</SN>
+    <TESTDATE>31/01/2007</TESTDATE>
+  </Engine>
+	<ChannelMap>
+
+		<Channel>
+			<Parameter>PRESSION_ATMO</Parameter>
+			<Name>P_BARO_PSIA</Name>
+			<FVName>P1</FVName>
+			<Units>PSIA</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[1].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMPERATURE_T1_1</Parameter>
+			<Name>T_INLET1_DEGF</Name>
+			<FVName>T73</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[73].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMPERATURE_T1_2</Parameter>
+			<Name>T_INLET2_DEGF</Name>
+			<FVName>T74</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[74].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMPERATURE_T1_3</Parameter>
+			<Name>T_INLET3_DEGF</Name>
+			<FVName>T75</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[75].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMPERATURE_T1_4</Parameter>
+			<Name>T_INLET4_DEGF</Name>
+			<FVName>T76</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[76].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>PRESSION_DECHARGE_COMPRESSEUR</Parameter>
+			<Name>P_PCD_PSIG</Name>
+			<FVName>P4</FVName>
+			<Units>PSIA</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[4].mean_value</ItemID>
+		</Channel>
+
+
+		<Channel>
+			<Parameter>PRESSURE_LOAD</Parameter>
+			<Name>P_BLEED_PSIA</Name>
+			<FVName>P5</FVName>
+			<Units>PSIA</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[5].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMPERATURE_LOAD</Parameter>
+			<Name>T_BLEED_DEGF</Name>
+			<FVName>T81</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[81].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>EGT_MOTEUR_1</Parameter>
+			<Name>T_EGT_P1_DEGF</Name>
+			<FVName>VIN70</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.vin[70].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>EGT_MOTEUR_2</Parameter>
+			<Name>T_EGT_P2_DEGF</Name>
+			<FVName>VIN71</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.vin[71].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>EGT_BUSE_1</Parameter>
+			<Name>T_EGT1_DEGF</Name>
+			<FVName>T25</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[25].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>EGT_BUSE_2</Parameter>
+			<Name>T_EGT2_DEGF</Name>
+			<FVName>T26</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[26].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>VIBRATION_ENGINE</Parameter>
+			<Name>VIB_TURBINE_IPS</Name>
+			<FVName>VIB13</FVName>
+			<Units>in/sec RMS</Units>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.vib[13].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>VIBRATION_GEARBOX</Parameter>
+			<Name>VIB_GEARBOX_IPS</Name>
+			<FVName>VIB27</FVName>
+			<Units>in/sec RMS</Units>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.vib[27].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>VIBRATION_COOLING_FAN</Parameter>
+			<Name>VIB_COOLING_FAN_IPS</Name>
+			<FVName>VIB35</FVName>
+			<Units>in/sec Pk</Units>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.vib[35].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>PRESSION_ECHAPPEMENT</Parameter>
+			<Name>P_EXHAUST_INH20G</Name>
+			<FVName>P3</FVName>
+			<Units>PSIG</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[3].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>PRESSION_HUILE_PRINCIP</Parameter>
+			<Name>P_OIL_PSIG</Name>
+			<FVName>P9</FVName>
+			<Units>PSIG</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[9].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMP_HUILE_PRINC</Parameter>
+			<Name>T_OIL_DEGF</Name>
+			<FVName>T84</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.t[84].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>PRESSION_AIR_GEARBOX</Parameter>
+			<Name>P_GB_VENT_INH20G</Name>
+			<FVName>P6</FVName>
+			<Units>PSIA</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[6].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>PRESSION_FUEL</Parameter>
+			<Name>P_FUEL_PSIG</Name>
+			<FVName>P11</FVName>
+			<Units>PSIG</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[11].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMPERATURE_FUEL</Parameter>
+			<Name>T_FUEL_DEGF</Name>
+			<FVName>FM_FUEL_TEMP_OPC</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_uut_controller.fm_t_fuel.pv</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>PRESSION_FUEL_DISCHARGE</Parameter>
+			<Name>P_FUEL_DISCHARGE_PSIG</Name>
+			<FVName>P12</FVName>
+			<Units>PSIG</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[12].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>DEBIT_FUEL</Parameter>
+			<Name>WF_RAW_PPH</Name>
+			<FVName>FM_FUEL_FLOW_OPC</FVName>
+			<Units>PPH</Units>
+			<ItemID>dacn1.dacn1_uut_controller.fm_mass_fuel_flow.pv</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>VITESSE_N1</Parameter>
+			<Name>N1_RPM</Name>
+			<FVName>F13</FVName>
+			<Units>HZ</Units>
+			<!-- 4014.2 Hz @  40142 RPM -->
+			<Slope>10.00</Slope>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.f[13].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>VITESSE_N2</Parameter>
+			<Name>N2_RPM</Name>
+			<FVName>F19</FVName>
+			<Units>HZ</Units>
+			<!-- 4014.2 Hz @  40142 RPM -->
+			<Slope>10.00</Slope>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.f[19].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>PRESSION_ORIFICE</Parameter>
+			<Name>P_ORIFICE_PSIA</Name>
+			<FVName>P27</FVName>
+			<Units>PSIA</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[27].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>TEMPERATURE_ORIFICE</Parameter>
+			<Name>T_ORIFICE_DEGF</Name>
+			<FVName>T98</FVName>
+			<Units>DEGF</Units>
+			<ItemID>dacn1.dacn1_serial_iomgr.t[97].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>DELTA_P_ORIFICE</Parameter>
+			<Name>P_ORIFICE_DELTA_INH20D</Name>
+			<FVName>P28</FVName>
+			<Units>PSID</Units>
+			<ItemID>dacn1.dacn1_powerdna_iomgr.p[28].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>APU_READY</Parameter>
+			<Name>APU_READY_IND</Name>
+			<FVName>DIN13</FVName>
+			<ItemID>dacn1.dacn1_serial_iomgr.din[16]</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>IGV_POSITION</Parameter>
+			<Name>IGV_POSITION_DEGS</Name>
+			<FVName>VIN67</FVName>
+			<Units>DEGS</Units>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.vin[67].mean_value</ItemID>
+		</Channel>
+
+		<Channel>
+			<Parameter>SCV_TORQUE</Parameter>
+			<Name>TQ_MOTOR_CURRENT</Name>
+			<FVName>VIN68</FVName>
+			<Units>mA</Units>
+			<ItemID>dacn1.dacn1_nidaq_iomgr.vin[68].mean_value</ItemID>
+		</Channel>
+
+	</ChannelMap>
+
+  
+  <Conditions>
+<Condition>
+<NO>1</NO>
+<Description>No Load</Description>
+  <Parameters>
+<Parameter><Name>PRESSION_ATMO</Name><Value>14.8</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_1</Name><Value>46.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_2</Name><Value>46.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_3</Name><Value>46.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_4</Name><Value>46.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PRESSION_DECHARGE_COMPRESSEUR</Name><Value>1.111</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRESSURE_LOAD</Name><Value>0.0</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>TEMPERATURE_LOAD</Name><Value>0.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_MOTEUR_1</Name><Value>662.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_MOTEUR_2</Name><Value>663.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_BUSE_1</Name><Value>689.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_BUSE_2</Name><Value>690.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>VIBRATION_ENGINE</Name><Value>0.4</Value><Units>in/sec RMS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.45</Value><Units>in/sec RMS</Units></Parameter>
+<Parameter><Name>VIBRATION_COOLING_FAN</Name><Value>0.50</Value><Units>in/sec pk</Units></Parameter>
+<Parameter><Name>PRESSION_ECHAPPEMENT</Name><Value>2.222</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>PRESSION_HUILE_PRINCIP</Name><Value>59</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>TEMP_HUILE_PRINC</Name><Value>141</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PRESSION_AIR_GEARBOX</Name><Value>-32.8</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEMPERATURE_FUEL</Name><Value>63.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PRESSION_FUEL</Name><Value>34.0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRESSION_FUEL_DISCHARGE</Name><Value>3.333</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>DEBIT_FUEL</Name><Value>268.3</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>VITESSE_N1</Name><Value>40115.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>VITESSE_N2</Name><Value>40116.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>PRESSION_ORIFICE</Name><Value>22.2</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>TEMPERATURE_ORIFICE</Name><Value>57.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DELTA_P_ORIFICE</Name><Value>0.3</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>APU_READY</Name><Value>False</Value></Parameter>
+<Parameter><Name>IGV_POSITION</Name><Value>10.0</Value><Units>DEGS</Units></Parameter>
+<Parameter><Name>SCV_TORQUE</Name><Value>5.0</Value><Units>mA</Units></Parameter>
+  </Parameters>
+</Condition>
+		
+<Condition>
+<NO>2</NO>
+<Description>MES</Description>
+  <Parameters>
+<Parameter><Name>PRESSION_ATMO</Name><Value>14.8</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_1</Name><Value>47.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_2</Name><Value>47.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_3</Name><Value>47.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEMPERATURE_T1_4</Name><Value>47.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PRESSION_DECHARGE_COMPRESSEUR</Name><Value>4.444</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRESSURE_LOAD</Name><Value>62.9</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>TEMPERATURE_LOAD</Name><Value>375.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_MOTEUR_1</Name><Value>978.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_MOTEUR_2</Name><Value>979.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_BUSE_1</Name><Value>940.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_BUSE_2</Name><Value>941.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>VIBRATION_ENGINE</Name><Value>0.46</Value><Units>in/sec RMS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.51</Value><Units>in/sec RMS</Units></Parameter>
+<Parameter><Name>VIBRATION_COOLING_FAN</Name><Value>0.57</Value><Units>in/sec pk</Units></Parameter>
+<Parameter><Name>PRESSION_ECHAPPEMENT</Name><Value>5.555</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>PRESSION_HUILE_PRINCIP</Name><Value>57</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>TEMP_HUILE_PRINC</Name><Value>156</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PRESSION_AIR_GEARBOX</Name><Value>-48.4</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEMPERATURE_FUEL</Name><Value>60.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PRESSION_FUEL</Name><Value>31.0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRESSION_FUEL_DISCHARGE</Name><Value>6.666</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>DEBIT_FUEL</Name><Value>441.3</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>VITESSE_N1</Name><Value>40689.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>VITESSE_N2</Name><Value>40690.0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>PRESSION_ORIFICE</Name><Value>51.7</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>TEMPERATURE_ORIFICE</Name><Value>362.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DELTA_P_ORIFICE</Name><Value>16.3</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>APU_READY</Name><Value>True</Value></Parameter>
+<Parameter><Name>IGV_POSITION</Name><Value>20.0</Value><Units>DEGS</Units></Parameter>
+<Parameter><Name>SCV_TORQUE</Name><Value>15.0</Value><Units>mA</Units></Parameter>
+  </Parameters>
+</Condition>
+
+  </Conditions>
+</Performance>

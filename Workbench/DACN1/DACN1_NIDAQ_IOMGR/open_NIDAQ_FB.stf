@@ -1,0 +1,277 @@
+FUNCTION_BLOCK open_NIDAQ_FB
+(************************************************************************************************************************************************
+    Name :        open_NIDAQ_FB                                    
+                                                        
+    Description :    Data Acquisition routine on National A/D Card                                   
+
+    Dependacy :     
+
+                    HYSTORY
+    Rev        Date        Name        Description
+                (YYYY/MM/DD)
+
+    1.0        2008/01/28    D.Lepage    First Released based on open_SCU_FB
+    2.0        2011/02/24    S.Boyte     Change the initialization of the NIDaqDevices structure
+
+************************************************************************************************************************************************)    
+
+
+status   := OPENING;
+err_code := OK;
+
+
+IF (First_Time_Open = TRUE) THEN         
+
+	dummy := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: OPENING');
+	XMLError	:= False;
+
+	XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+	hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+	IF hCfgSettings <> 0 THEN
+
+		IF UUT_Info.Family = 'APS2X00' Or UUT_Info.Family = 'APS32X0' THEN
+			(* ECB_POWER_CMD *)
+			ECB_POWER_CMD_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.' + UUT_Info.Family +'.ECB_POWER_CMD_BINDING_SOURCE', '0'));
+			ECB_POWER_CMD_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.' + UUT_Info.Family +'.ECB_POWER_CMD_INDEX', '0');
+		END_IF;
+
+		IF UUT_Info.Family = 'PT6C' Or UUT_Info.Family = 'PW200' Or UUT_Info.Family = 'PW210' Or UUT_Info.Family = 'T700' Or UUT_Info.Model = 'A250-C40B' Or UUT_Info.Model = 'A250-C47B' THEN
+			(* Frequency Generator Functionnality Based on Engine Family *)
+			FREQUENCY_GENERATOR_ENABLED 			:= ReadOneBooleanConfigItemST('ConfigurationSettings.' + UUT_Info.Model + '.FREQUENCY_GENERATOR_ENABLED', 'false');
+			FREQUENCY_GENERATOR_SOURCE_TYPE 		:= ReadOneStringConfigItemST('ConfigurationSettings.'  + UUT_Info.Model + '.FREQUENCY_GENERATOR_SOURCE_TYPE', 'FIXED');
+			FREQUENCY_GENERATOR_OUTPUT_INDEX 		:= ReadOneIntegerConfigItemST('ConfigurationSettings.'  + UUT_Info.Model + '.FREQUENCY_GENERATOR_OUTPUT_INDEX', '1');
+			FREQUENCY_GENERATOR_FREQUENCY			:= ReadOneRealConfigItemST('ConfigurationSettings.'  + UUT_Info.Model + '.FREQUENCY_GENERATOR_FREQUENCY', '1.0');
+			FREQUENCY_GENERATOR_SOURCE_INDEX 		:= ReadOneIntegerConfigItemST('ConfigurationSettings.'  + UUT_Info.Model + '.FREQUENCY_GENERATOR_SOURCE_INDEX', '1');
+			FREQUENCY_GENERATOR_SOURCE_COEFFICIENT	        := ReadOneRealConfigItemST('ConfigurationSettings.'  + UUT_Info.Model + '.FREQUENCY_GENERATOR_SOURCE_COEFFICIENT', '1.0');
+		END_IF;
+
+		XMLCFGSETTINGS_CLOSE(hCfgSettings);
+		hCfgSettings := 0;
+
+	ELSE
+		err_code := ERROR_ON_OPENING;
+		dummy := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+	END_IF;
+	
+	IF (err_code <> OK) Or (XMLError = True) THEN 
+		err_code 	:= ERROR_ON_OPENING;
+		status	:= ERROR_ON_OPENING;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON OPENING');
+	ELSE 
+		status 	:= OPENED;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: OPENED');
+	END_IF;
+
+    Cal_Update(TRUE); (* Reset Calibration State *)
+
+    (* initialize the structure *)
+    FOR i := 1 TO MAX_NIDAQ DO
+
+        NIDaqDevices[i].deviceHandle := -1;
+	  NIDaqDevices[i].FieldEquipment := '';
+
+        FOR j := 0 TO (NIDAQ_NUMBER_DIO - 1) DO
+
+            NIDaqDevices[i].DIO_Direction[j] := 0;
+
+        END_FOR;
+
+    END_FOR;
+
+    (* Initialize the array *)
+    FOR i := 1 TO MAX_NIDAQ_IO DO
+    
+        FV[i].FV_TYPE      := 0;
+        FV[i].FV_index     := 0;
+        FV[i].data_handle  := 0;
+        FV[i].device_index := 0;
+        FV[i].channel      := 0;
+        FV[i].bit          := 0;
+
+    END_FOR;
+    
+    rdata_base     := 0;
+    hdle_bool_data := 0;
+    hdle_real_data := 0;
+    current_FV     := 0;
+
+    IF(In_NIDAQ_IOMgr.mode = RUN_FOR_TRUE)THEN
+	
+		NIDaqInit();
+		err_code := NIDaqInit.ERRCODE;
+
+	END_IF;
+
+    IF (err_code = OK ) THEN         
+
+	  (* !!!! Make sure this number must be equal or greater than the number of FV of this ressource !!! *)
+        OPEN_RDATA(216);
+
+        err_code   := OPEN_RDATA.ERR_CODE;
+        rdata_base := OPEN_RDATA.BASE_HANDLE;
+
+    ELSE 
+        rdata_base := 0;
+        status     := ERROR_ON_OPENING;
+
+    END_IF; 
+
+    IF (err_code = OK ) THEN
+		OS_BOARD_CAL_START_DELAY := T#5s;
+		OS_BOARD_CAL_START_TIMER(FALSE, OS_BOARD_CAL_START_DELAY);
+		OS_BOARD_CAL_DONE := FALSE;
+		OS_BOARD_CAL_SUCCESS := FALSE;
+        IF UUT_Info.Model <> 'SYSTEM CHECK' THEN
+		OS_BOARD_IS_ENABLED := FALSE;
+		OS_BOARD_N1_BOARD_ENABLE := FALSE;
+		OS_BOARD_N2_BOARD_ENABLE := FALSE;
+		OS_BOARD_N3_BOARD_ENABLE := FALSE;
+		OS_BOARD_N4_BOARD_ENABLE := FALSE;
+		OS_BOARD_N1_BOARD_CAL_DONE := FALSE;
+		OS_BOARD_N2_BOARD_CAL_DONE := FALSE;
+		OS_BOARD_N3_BOARD_CAL_DONE := FALSE;
+		OS_BOARD_N4_BOARD_CAL_DONE := FALSE;
+
+
+	      OS_BOARD_LOAD_CFG(UUT_Info.Model);
+
+            err_code := OS_BOARD_LOAD_CFG.ERR_CODE;
+
+            IF (err_code = OK AND OS_BOARD_IS_ENABLED) THEN
+                OS_BOARD_N1_BOARD_ENABLE := OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.ENABLE;
+		    OS_BOARD_N2_BOARD_ENABLE := OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.ENABLE;
+		    OS_BOARD_N3_BOARD_ENABLE := OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.ENABLE;
+		    OS_BOARD_N4_BOARD_ENABLE := OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.ENABLE;
+		    OS_BOARD_N1_BOARD_CAL_DONE := FALSE;
+		    OS_BOARD_N2_BOARD_CAL_DONE := FALSE;
+		    OS_BOARD_N3_BOARD_CAL_DONE := FALSE;
+		    OS_BOARD_N4_BOARD_CAL_DONE := FALSE;
+		    (* Reset Overspeed Board *)
+		    OS_BOARD_N1(OS_BOARD_N1_BOARD_ENABLE,
+				 OS_BOARD_N1_BOARD_OSC_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.FOUT,
+				 OS_BOARD_N1_BOARD_FOUT_INDEX,
+				 OS_BOARD_N1_BOARD_VREF_VOUT_INDEX,
+				 OS_BOARD_CAL_STEP_DELAY,
+				 OS_TRIP_IND,
+				 OS_BOARD_MASTER_RESET_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.CAL_VOUT_MIN,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.CAL_VOUT_MAX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N1_BOARD.CAL_VOUT_STEP,
+				 TRUE);
+		    OS_BOARD_N2(OS_BOARD_N2_BOARD_ENABLE,
+				 OS_BOARD_N2_BOARD_OSC_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.FOUT,
+				 OS_BOARD_N2_BOARD_FOUT_INDEX,
+				 OS_BOARD_N2_BOARD_VREF_VOUT_INDEX,
+				 OS_BOARD_CAL_STEP_DELAY,
+				 OS_TRIP_IND,
+				 OS_BOARD_MASTER_RESET_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.CAL_VOUT_MIN,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.CAL_VOUT_MAX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N2_BOARD.CAL_VOUT_STEP,
+				 TRUE);
+		    OS_BOARD_N3(OS_BOARD_N3_BOARD_ENABLE,
+				 OS_BOARD_N3_BOARD_OSC_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.FOUT,
+				 OS_BOARD_N3_BOARD_FOUT_INDEX,
+				 OS_BOARD_N3_BOARD_VREF_VOUT_INDEX,
+				 OS_BOARD_CAL_STEP_DELAY,
+				 OS_TRIP_IND,
+				 OS_BOARD_MASTER_RESET_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.CAL_VOUT_MIN,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.CAL_VOUT_MAX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N3_BOARD.CAL_VOUT_STEP,
+				 TRUE);
+		    OS_BOARD_N4(OS_BOARD_N4_BOARD_ENABLE,
+				 OS_BOARD_N4_BOARD_OSC_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.FOUT,
+				 OS_BOARD_N4_BOARD_FOUT_INDEX,
+				 OS_BOARD_N4_BOARD_VREF_VOUT_INDEX,
+				 OS_BOARD_CAL_STEP_DELAY,
+				 OS_TRIP_IND,
+				 OS_BOARD_MASTER_RESET_DOUT_INDEX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.CAL_VOUT_MIN,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.CAL_VOUT_MAX,
+				 OS_BOARD_ENGINE_CFGS[OS_BOARD_ENGINE_CFG_NO].N4_BOARD.CAL_VOUT_STEP,
+				 TRUE);
+
+		END_IF;
+        ELSE
+            OS_BOARD_IS_ENABLED := FALSE;
+            OS_BOARD_N1_BOARD_ENABLE := FALSE;
+            OS_BOARD_N2_BOARD_ENABLE := FALSE;
+            OS_BOARD_N3_BOARD_ENABLE := FALSE;
+            OS_BOARD_N4_BOARD_ENABLE := FALSE;
+        END_IF;
+    END_IF;
+
+    First_Time_Open  := FALSE;
+ 
+    First_Time_Close := TRUE;
+
+END_IF; 
+
+
+IF (err_code <> OK) THEN 
+
+    status := ERROR_ON_OPENING;
+    dummy  := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON OPENING');
+
+ELSE
+
+    status := OPENED;
+    dummy  := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: OPENED');
+
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

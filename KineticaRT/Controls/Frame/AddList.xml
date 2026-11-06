@@ -1,0 +1,60 @@
+<Addables>
+	<Component Name="Button Interlock" Type="KineticaRT.Controls.ButtonInterlock, KineticaRT.Controls.Button" />
+	<Component Name="Sound" Type="KineticaRT.Logic.Message.Sound, KineticaRT.Logic.Message" />
+	<Component Name="Voice" Type="KineticaRT.Logic.Message.Voice, KineticaRT.Logic.Message" />
+	<Add Name="Bar Graph" Type="KineticaRT.Controls.BarGraph, KineticaRT.Controls.BarGraph" />
+	<Add Name="Button" Type="KineticaRT.Controls.Button, KineticaRT.Controls.Button" />
+	<Add Name="Dial" Type="KineticaRT.Controls.Dial, KineticaRT.Controls.Dial" />
+	<Add Name="Dial (multiple needles)" Type="KineticaRT.Controls.DialMultiNeedle, KineticaRT.Controls.Dial" />
+	<Add Name="Display" Type="KineticaRT.Controls.Display, KineticaRT.Controls.Display" />
+	<Add Name="Frame" Type="KineticaRT.Controls.Frame, KineticaRT.Controls.Frame" />
+	<Add Name="Indicator" Type="KineticaRT.Controls.Indicator, KineticaRT.Controls.Indicator" />
+	<Add Name="Knob" Type="KineticaRT.Controls.Knob, KineticaRT.Controls.Knob" />
+	<Add Name="Message Display" Type="KineticaRT.Logic.Message.Display, KineticaRT.Logic.Message" />
+	<Add Name="Picture" Type="KineticaRT.Controls.Picture, KineticaRT.Controls.Picture" />
+	<Add Name="Slider" Type="KineticaRT.Controls.Slider, KineticaRT.Controls.Slider" />
+	<Add Name="Slider (multiple needles)" Type="KineticaRT.Controls.SliderMultiNeedle, KineticaRT.Controls.Slider" />
+	<Add Name="Tab" Type="KineticaRT.Controls.Tab, KineticaRT.Controls.Tab" />
+	<Add Name="TimeGraph" Type="KineticaRT.Controls.TimeGraph, KineticaRT.Controls.TimeGraph" />
+	<Add Name="Trend" Type="KineticaRT.Controls.Trend, KineticaRT.Controls.Trend" />
+	<Add Name="XYGraph" Type="KineticaRT.Controls.XYGraph, KineticaRT.Controls.XYGraph" />
+	<Add Name="System Button" Type="System.Windows.Forms.Button, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<Add Name="Studio Bar Graph" Type="KineticaRT.Studio.Controls.BarGraph, KineticaRT.Studio.Controls.BarGraph" />
+	<Add Name="Studio Button" Type="KineticaRT.Studio.Controls.Button, KineticaRT.Studio.Controls.Button" />
+	<Add Name="Studio Channel Selector" Type="KineticaRT.Studio.Controls.ChannelSelector, KineticaRT.Studio.Controls.ChannelSelector" />
+	<Add Name="Studio Checkbox" Type="KineticaRT.Studio.Controls.Checkbox, KineticaRT.Studio.Controls.Checkbox" />
+	<Add Name="Studio Dial" Type="KineticaRT.Studio.Controls.Dial, KineticaRT.Studio.Controls.Dial" />
+	<Add Name="Studio Display" Type="KineticaRT.Studio.Controls.Display, KineticaRT.Studio.Controls.Display" />
+	<Add Name="Studio Error Linear" Type="KineticaRT.Studio.Controls.ErrorLinear, KineticaRT.Studio.Controls.ErrorLinear" />
+	<Add Name="Studio Indicator" Type="KineticaRT.Studio.Controls.Indicator, KineticaRT.Studio.Controls.Indicator" />
+	<Add Name="Studio Linear" Type="KineticaRT.Studio.Controls.Linear, KineticaRT.Studio.Controls.Linear" />
+	<Add Name="Studio Radio Button" Type="KineticaRT.Studio.Controls.RadioButton, KineticaRT.Studio.Controls.RadioButton" />
+	<Add Name="Studio SetPoint Dial" Type="KineticaRT.Studio.Controls.SetPointDial, KineticaRT.Studio.Controls.SetPointDial" />
+	<Add Name="Studio SetPoint Linear" Type="KineticaRT.Studio.Controls.SetPointLinear, KineticaRT.Studio.Controls.SetPointLinear" />
+	<Reference Assembly="KineticaRT.Controls.BarGraph.dll" />
+	<Reference Assembly="KineticaRT.Controls.Button.dll" />
+	<Reference Assembly="KineticaRT.Controls.Dial.dll" />
+	<Reference Assembly="KineticaRT.Controls.Display.dll" />
+	<Reference Assembly="KineticaRT.Controls.Indicator.dll" />
+	<Reference Assembly="KineticaRT.Controls.Knob.dll" />
+	<Reference Assembly="KineticaRT.Controls.Picture.dll" />
+	<Reference Assembly="KineticaRT.Controls.Slider.dll" />
+	<Reference Assembly="KineticaRT.Controls.Tab.dll" />
+	<Reference Assembly="KineticaRT.Controls.TimeGraph.dll" />
+	<Reference Assembly="KineticaRT.Controls.Trend.dll" />
+	<Reference Assembly="KineticaRT.Controls.XYGraph.dll" />
+	<Reference Assembly="KineticaRT.Logic.Message.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.BarGraph.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.Button.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.ChannelSelector.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.Checkbox.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.Dial.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.Display.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.ErrorLinear.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.Indicator.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.Linear.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.RadioButton.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.SetPointDial.dll" />
+	<Reference Assembly="KineticaRT.Studio.Controls.SetPointLinear.dll" />
+</Addables>

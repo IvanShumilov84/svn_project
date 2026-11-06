@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBA9ADBC-FDA3-42B0-8164-473F49817234}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PrjMaster_HMI.FormHMIMAster</StartupObject>
+    <RootNamespace>PrjMaster_HMI</RootNamespace>
+    <AssemblyName>HMI</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <OptionStrict>Off</OptionStrict>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HMI.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HMI.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>HMI.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>HMI.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>HMI.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>HMI.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\My Projects\KineticaRT\PrjMaster_HMI\adodb.dll</HintPath>
+    </Reference>
+    <Reference Include="CEL, Version=2.0.4792.30579, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CEL.dll</HintPath>
+    </Reference>
+    <Reference Include="CEL.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CEL.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="CEL.KineticaRT.Channels, Version=2.0.4792.30574, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CEL.KineticaRT.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="CEL.KineticaRT.Controls, Version=2.0.4792.30572, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CEL.KineticaRT.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CEL.KineticaRT.Sequence, Version=2.0.4792.30576, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CEL.KineticaRT.Sequence.dll</HintPath>
+    </Reference>
+    <Reference Include="CEL.KineticaRT.Servers.Logger, Version=2.0.4792.30576, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CEL.KineticaRT.Servers.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="CELDAS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CELDAS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ConfigurationSettings">
+      <HintPath>..\ConfigurationSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Core, Version=2012.1.930.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EntitySpaces.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.DynamicQuery, Version=2012.1.930.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EntitySpaces.DynamicQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Interfaces, Version=2012.1.930.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EntitySpaces.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Loader, Version=2012.1.930.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EntitySpaces.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.LoaderMT, Version=2012.1.930.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EntitySpaces.LoaderMT.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.MSAccessProvider, Version=2012.1.930.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EntitySpaces.MSAccessProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.KineticaRT_OPC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\KineticaRT\Servers\OpcClient\bin\Debug\Interop.KineticaRT_OPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.KRTLib_OPC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Interop.KRTLib_OPC.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Controls, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Controls.Button, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Controls.Button.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Controls.Display, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Controls.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Controls.Explorer, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Controls.Explorer.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Controls.Frame, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Controls.Frame.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Controls.Indicator">
+      <HintPath>..\KineticaRT.Controls.Indicator.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Controls.Tab, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Controls.Tab.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Logic.Channels, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Logic.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Logic.Expressions, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Logic.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Logic.Message, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Logic.Message.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Sequence, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Sequence.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Servers.Logger, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Servers.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Servers.OpcClient, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Servers.OpcClient.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Application, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.BarGraph, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.BarGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.Button, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.Button.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.ChannelSelector, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.ChannelSelector.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.Checkbox, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.Checkbox.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.Dial, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.Dial.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.Display, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.Indicator">
+      <HintPath>..\KineticaRT.Studio.Controls.Indicator.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.LampIndicator, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.LampIndicator.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.Linear, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.Linear.dll</HintPath>
+    </Reference>
+    <Reference Include="KineticaRT.Studio.Controls.RadioButton, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2e0c8c468356d1c8, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KineticaRT.Studio.Controls.RadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ARCHIVE\Archive_Sequence.vb">
+      <Link>Archive_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\ARINC\ARINC.vb">
+      <Link>ARINC.vb</Link>
+    </Compile>
+    <Compile Include="..\ATAR_09C\ATAR_09C_Sequence.vb">
+      <Link>ATAR_09C_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\CELDAS.vb">
+      <Link>CELDAS.vb</Link>
+    </Compile>
+    <Compile Include="..\ConfigurationSettings.vb">
+      <Link>ConfigurationSettings.vb</Link>
+    </Compile>
+    <Compile Include="..\DAS_CALIBRATION\Calibration_Sequence.vb">
+      <Link>Calibration_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\Flowmeter_Sequence.vb">
+      <Link>Flowmeter_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\GTCP131_9A\GTCP131_9A_Sequence.vb">
+      <Link>GTCP131_9A_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\GTCP131_9B\GTCP131_9B_Sequence.vb">
+      <Link>GTCP131_9B_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\GTCP85_129\GTCP85_129_Sequence.vb">
+      <Link>GTCP85_129_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\OpenTest_Sequence.vb">
+      <Link>OpenTest_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\PW127\PW127_EEC_Sequence.vb">
+      <Link>PW127_EEC_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\PW127\PW127_Performance_Sequence.vb">
+      <Link>PW127_Performance_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\PW127\PW127_Sequence.vb">
+      <Link>PW127_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\PW150\PW150_Sequence.vb">
+      <Link>PW150_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\PW308C_ANC\PW308C_Sequence.vb">
+      <Link>PW308C_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\PWC\PWC83025_Sequence.vb">
+      <Link>PWC83025_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\SYSTEM_CHECK\SystemCheck_Sequence.vb">
+      <Link>SystemCheck_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\TFE731\TFE731_Sequence.vb">
+      <Link>TFE731_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\Throttle_Sequence.vb">
+      <Link>Throttle_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="..\TSCP700\TSCP700_Sequence.vb">
+      <Link>TSCP700_Sequence.vb</Link>
+    </Compile>
+    <Compile Include="FormHmiMaster.Designer.vb">
+      <DependentUpon>FormHmiMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormHmiMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\PrjMaster_HMI.exe.config">
+      <Link>PrjMaster_HMI.exe.config</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\PrjMaster_HMI.exe.config1">
+      <Link>PrjMaster_HMI.exe.config1</Link>
+    </None>
+    <None Include="..\PrjMaster_HMI.ksp">
+      <Link>PrjMaster_HMI.ksp</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.Uut.datasource" />
+    <None Include="My Project\DataSources\CEL.Data.BusinessObjects.UUTQuestion.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>rem xcopy /Y "$(TargetDir)CEL*.dll" "$(SolutionDir)HMI"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

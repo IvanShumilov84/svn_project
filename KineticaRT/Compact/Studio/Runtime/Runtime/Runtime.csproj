@@ -1,0 +1,160 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Win32Resource>hidpi.res</Win32Resource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBEEC09D-452E-437D-B5FB-856036A39A50}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Runtime</RootNamespace>
+    <AssemblyName>PDA</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>Runtime</DeployDirSuffix>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Compact.Display, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Compact.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="Compact.Home, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Compact.Home.dll</HintPath>
+    </Reference>
+    <Reference Include="Compact.Indicator, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Compact.Indicator.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Controls\Button\KineticaRT.Compact.Controls.Button.csproj">
+      <Project>{78197AD3-5AD3-4D66-81FB-0C6D31678B36}</Project>
+      <Name>KineticaRT.Compact.Controls.Button</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Controls\Dial\KineticaRT.Compact.Controls.Dial.csproj">
+      <Project>{2B38AD4A-5F14-47E9-B3FD-DD5E5C0A44C8}</Project>
+      <Name>KineticaRT.Compact.Controls.Dial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Controls\Display\KineticaRT.Compact.Controls.Display.csproj">
+      <Project>{BCBD98ED-EAE6-444F-A892-F3C78337F876}</Project>
+      <Name>KineticaRT.Compact.Controls.Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Controls\Frame\KineticaRT.Compact.Controls.Frame.csproj">
+      <Project>{5989404C-E071-43DF-AE74-1FFB65687CF9}</Project>
+      <Name>KineticaRT.Compact.Controls.Frame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Controls\Indicator\KineticaRT.Compact.Controls.Indicator.csproj">
+      <Project>{6B7597D3-E571-475C-91FA-FB01F73D3752}</Project>
+      <Name>KineticaRT.Compact.Controls.Indicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Controls\Input\KineticaRT.Compact.Controls.Input.csproj">
+      <Project>{76E3127F-6082-4946-948C-D9F13D872F64}</Project>
+      <Name>KineticaRT.Compact.Controls.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Controls\KineticaRT.Compact.Controls.csproj">
+      <Project>{AB226135-7C8B-4059-B8A5-A5D016754785}</Project>
+      <Name>KineticaRT.Compact.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\KineticaRT.Compact.csproj">
+      <Project>{956A6578-612B-439C-9890-5004B09CDF7E}</Project>
+      <Name>KineticaRT.Compact</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Logic\Channels\KineticaRT.Compact.Logic.Channels.csproj">
+      <Project>{EF16A8C0-94CC-4C3A-A748-80CEC33F28AB}</Project>
+      <Name>KineticaRT.Compact.Logic.Channels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Logic\Expressions\KineticaRT.Compact.Logic.Expressions.csproj">
+      <Project>{634D1CEA-B844-437B-9E79-7E6720D9F6BB}</Project>
+      <Name>KineticaRT.Compact.Logic.Expressions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Servers\Exchange\KineticaRT.Compact.Servers.Exchange.csproj">
+      <Project>{507B855F-2FA8-4CCB-AB40-E407C0BECEB9}</Project>
+      <Name>KineticaRT.Compact.Servers.Exchange</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Display.ksw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

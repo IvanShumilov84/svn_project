@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Picture</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.Picture">
+            <summary>
+            KineticaRT Picture Control
+            Displays images from files, including animated GIFs
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Picture.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Picture.#ctor">
+            <summary>
+            Initialises a new instance of the Picture class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Picture.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Picture.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Picture.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Picture.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Picture.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Picture.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.FileName">
+            <summary>
+            Gets or sets the image file to be displayed
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.Fill">
+            <summary>
+            Gets or sets a FillColor object
+            </summary>
+            <remarks>Replacement colors, including fill, are not available with animated images</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.Play">
+            <summary>
+            Gets or sets whether an animatable image is played
+            </summary>
+            <remarks>Replacement colors, including fill, are not available with animated images</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.PlaySourceChannel">
+            <summary>
+            Gets or sets the object that is the Source for the Play property
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.PlaySource">
+            <summary>
+            Gets or sets the name of the object to be the PlaySource
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.VariableColors">
+            <summary>
+            Gets or sets a collection of ReplaceableColor objects
+            </summary>
+             <remarks>Replacement colors, including fill, are not available with animated images</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.KeepOriginalSize">
+            <summary>
+            Gets or sets whether the image remains its original size, rather than resizing to fit the control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Picture.Alignment">
+            <summary>
+            Gets or sets the Horizontal and Vertical Alignment of the image when KeepOriginalSize is true
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.ReplaceableColor">
+            <summary>
+            A ReplaceableColor is a color that is replaced by a diferent color when the image is drawn
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ReplaceableColor.#ctor">
+            <summary>
+            Initialises a new instance of the ReplaceableColor class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ReplaceableColor.ResetOriginalColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ReplaceableColor.ResetDisplayColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ReplaceableColor.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ReplaceableColor.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ReplaceableColor.OriginalColor">
+            <summary>
+            Gets or sets the Color to be replaced
+            </summary>
+            <remarks>Any parts of the image that are OriginalColor will be drawn in DisplayColor.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.ReplaceableColor.DisplayColor">
+            <summary>
+            Gets or sets the replacement color
+            </summary>
+            <remarks>Any parts of the image that are OriginalColor will be drawn in DisplayColor.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.ReplaceableColor.Enabled">
+            <summary>
+            Gets or sets whether color replacement actually occurs
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ReplaceableColor.EnabledSourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the Enabled property
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.ReplaceableColor.EnabledSource">
+            <summary>
+            Gets or sets the name of the object to be the EnabledSource
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.FillColor">
+            <summary>
+            A FillColor is a ReplaceableColor wher the replacement is only made over a defined fraction of an image
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.FillColor.#ctor">
+            <summary>
+            Initialises a new instance of the FillColor class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.FillColor.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.FillColor.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.FillColor.Value">
+            <summary>
+            Gets or sets the Value specifying what over proportion of the image the color is replaced
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.FillColor.SourceChannel">
+            <summary>
+            Gets or sets an object that is the source of the Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.FillColor.Source">
+            <summary>
+            Gets or sets the name of the object to be the Source
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.VariableColorCollection">
+            <summary>
+            Variable colors collection
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.VariableColorCollection.#ctor">
+            <summary>
+            Initialises a new instance of the VariableColorCollection class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.VariableColorCollection.#ctor(KineticaRT.Controls.ReplaceableColor[])">
+            <summary>
+            Initialises a new instance of the VariableColorCollection class containing the specified ReplacableColor objects
+            </summary>
+            <param name="colors">Array of ReplaceableColor objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.VariableColorCollection.AddColor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Adds a new replaceableColor object with the specified colors
+            </summary>
+            <param name="OriginalColor">OriginalColor of new ReplaceableColor</param>
+            <param name="DisplayColor">DisplayColor of new ReplaceableColor</param>
+        </member>
+        <member name="M:KineticaRT.Controls.VariableColorCollection.AddRange(KineticaRT.Controls.ReplaceableColor[])">
+            <summary>
+            Adds an array of ReplaceableColor objects to the collection
+            </summary>
+            <param name="newColors">Array of ReplaceableColors to add</param>
+        </member>
+        <member name="P:KineticaRT.Controls.VariableColorCollection.Item(System.Int32)">
+            <summary>
+            ReplaceableColor object currently at the given index position
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.VariableColorCollection.EnabledCount">
+            <summary>
+            Number of enabled items in the collection
+            </summary>
+        </member>
+    </members>
+</doc>

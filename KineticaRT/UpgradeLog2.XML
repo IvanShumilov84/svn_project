@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="KineticaRT Release + Studio Setup">
+</Property><Property Name="Solution File" Value="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln">
+</Property><Property Name="Date" Value="03 February 2006">
+</Property><Property Name="Time" Value="12:00:26">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="KineticaRT.Controls.Picture.Setup.vdproj" Source="Controls\Picture\Setup\KineticaRT.Controls.Picture.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Picture.Setup.vdproj" Source="Controls\Picture\Setup\KineticaRT.Controls.Picture.Setup.vdproj" Description="Converted">
+</Event></UpgradeLog>

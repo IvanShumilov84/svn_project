@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>APS5000A</Model>
+    <SN>P80347</SN>
+    <TESTDATE>09/25/2012</TESTDATE>
+  </Engine>
+  <ChannelMap>
+ 
+    <Channel>
+      <Parameter>BLEED_LOUVER</Parameter>
+      <Name>LOUVER_BLEED_AUX_IND</Name>
+      <FVName>DIN53</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[53]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR1</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN55</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[55]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR2</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN61</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[61]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR3</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN62</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[62]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR4</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN63</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[63]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_WATER_RETURN_ON</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN96</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[96]</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>ENGINE HARNESS_BIT1</Parameter>
+      <Name>ENGINE_HARNESS_ID1_IND</Name>
+      <FVName>DIN1</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[1]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT2</Parameter>
+      <Name>ENGINE_HARNESS_ID2_IND</Name>
+      <FVName>DIN2</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[2]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT3</Parameter>
+      <Name>ENGINE_HARNESS_ID3_IND</Name>
+      <FVName>DIN3</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[3]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT4</Parameter>
+      <Name>ENGINE_HARNESS_ID1_IND</Name>
+      <FVName>DIN4</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[4]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT5</Parameter>
+      <Name>ENGINE_HARNESS_ID5_IND</Name>
+      <FVName>DIN32</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[32]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EMERGENCY_STOP</Parameter>
+      <Name>ESTOP_IND</Name>
+      <FVName>DIN49</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[49]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>EXHAUST_LOUVER</Parameter>
+      <Name>LOUVER_EXHAUST_AUX_IND</Name>
+      <FVName>DIN52</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[52]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUEL_PUMP_ON</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN94</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[94]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUME_EXTRACTION_FAN</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN98</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[98]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>INTAKE_LOUVER</Parameter>
+      <Name>LOUVER_INTAKE_AUX_IND</Name>
+      <FVName>DIN51</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[51]</ItemID>
+    </Channel>
+  
+    <Channel>
+      <Parameter>LB1_CURRENT1</Parameter>
+      <Name>LB1_CURRENT1</Name>
+      <FVName>OPC_LB1_CURRENT1</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il1.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB1_CURRENT2</Parameter>
+      <Name>LB1_CURRENT2</Name>
+      <FVName>OPC_LB1_CURRENT2</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il2.pv</ItemID>
+    </Channel>
+ 
+    <Channel>
+      <Parameter>LB1_CURRENT3</Parameter>
+      <Name>LB1_CURRENT3</Name>
+      <FVName>OPC_LB1_CURRENT3</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il3.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB1_FREQUENCY</Parameter>
+      <Name>LB1_FREQUENCY</Name>
+      <FVName>OPC_LB1_FREQUENCY</FVName>
+      <Units>HERTZ</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_freq.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB1_POWER</Parameter>
+      <Name>LB1_POWER</Name>
+      <FVName>OPC_LB1_POWER</FVName>
+      <Units>w</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_power_tot.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB1_VOLT1</Parameter>
+      <Name>LB1_VOLT1</Name>
+      <FVName>OPC_LB1_VOLT1</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl1_n.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB1_VOLT2</Parameter>
+      <Name>LB1_VOLT2</Name>
+      <FVName>OPC_LB1_VOLT2</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl2_n.pv</ItemID>
+    </Channel>
+ 
+        <Channel>
+      <Parameter>LB1_VOLT3</Parameter>
+      <Name>LB1_VOLT3</Name>
+      <FVName>OPC_LB1_VOLT3</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl3_n.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_CURRENT1</Parameter>
+      <Name>LB2_CURRENT1</Name>
+      <FVName>OPC_LB2_CURRENT1</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il1.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_CURRENT2</Parameter>
+      <Name>LB2_CURRENT2</Name>
+      <FVName>OPC_LB2_CURRENT2</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il2.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_CURRENT3</Parameter>
+      <Name>LB2_CURRENT3</Name>
+      <FVName>OPC_LB2_CURRENT3</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il3.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_FREQUENCY</Parameter>
+      <Name>LB2_FREQUENCY</Name>
+      <FVName>OPC_LB2_FREQUENCY</FVName>
+      <Units>HERTZ</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_freq.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_POWER</Parameter>
+      <Name>LB2_POWER</Name>
+      <FVName>OPC_LB2_POWER</FVName>
+      <Units>w</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_power_tot.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_VOLT1</Parameter>
+      <Name>LB2_VOLT1</Name>
+      <FVName>OPC_LB2_VOLT1</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl1_n.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_VOLT2</Parameter>
+      <Name>LB2_VOLT2</Name>
+      <FVName>OPC_LB2_VOLT2</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl2_n.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB2_VOLT3</Parameter>
+      <Name>LB2_VOLT3</Name>
+      <FVName>OPC_LB2_VOLT3</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl3_n.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>POWER_ON</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN31</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[31]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>SPEED_N1</Parameter>
+      <Name>N1</Name>
+      <FVName>F14</FVName>
+      <Units>HZ</Units>
+      <!-- 14420.0Hz @36050.0RPM -->
+      <Slope>2.5</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[9].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_CELL</Parameter>
+      <Name>T_CELL</Name>
+      <FVName>T24</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[24].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>P_CELL</Parameter>
+      <Name>P_CELL</Name>
+      <FVName>P1</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[1].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>VIBRATION_GEARBOX</Parameter>
+      <Name>VIB_GEARBOX</Name>
+      <FVName>VIB28</FVName>
+      <Units>MILS</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[23].mean_value</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>VIBRATION_TURBINE</Parameter>
+      <Name>VIB_TURBINE</Name>
+      <FVName>VIB14</FVName>
+      <Units>MILS</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[9].mean_value</ItemID>
+    </Channel>
+   
+     <Channel>
+      <Parameter>VALID_ECB</Parameter>
+      <Name>ECB_ID</Name>
+      <FVName>VIN81</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.VIN[81].mean_value</ItemID>
+    </Channel>
+
+  </ChannelMap>
+  
+  
+  <Conditions>
+
+  
+<Condition>
+<NO>1</NO>
+<Description>System Ready to Start</Description>
+  <Parameters>
+    
+<Parameter><Name>ENGINE HARNESS_BIT1</Name><Value>False</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT2</Name><Value>True</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT3</Name><Value>True</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT4</Name><Value>False</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT5</Name><Value>False</Value></Parameter>
+<Parameter><Name>VALID_ECB</Name><Value>4.53</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>DOOR1</Name><Value>True</Value></Parameter>
+<Parameter><Name>DOOR2</Name><Value>True</Value></Parameter>
+<Parameter><Name>DOOR3</Name><Value>True</Value></Parameter>
+<Parameter><Name>DOOR4</Name><Value>True</Value></Parameter>
+<Parameter><Name>EXHAUST_LOUVER</Name><Value>True</Value></Parameter>
+<Parameter><Name>BLEED_LOUVER</Name><Value>True</Value></Parameter>
+<Parameter><Name>INTAKE_LOUVER</Name><Value>True</Value></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>POWER_ON</Name><Value>True</Value></Parameter>
+<Parameter><Name>FUEL_PUMP_ON</Name><Value>True</Value></Parameter>
+<Parameter><Name>EMERGENCY_STOP</Name><Value>True</Value></Parameter>
+<Parameter><Name>DYNO_WATER_RETURN_ON</Name><Value>True</Value></Parameter>
+<Parameter><Name>FUME_EXTRACTION_FAN</Name><Value>True</Value></Parameter>
+<Parameter><Name>T_CELL</Name><Value>68</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_CELL</Name><Value>14</Value><Units>PSIA</Units></Parameter>
+
+  </Parameters>
+</Condition>
+    
+<Condition>
+<NO>2</NO>
+<Description>RUN IN IDLE</Description>
+  <Parameters>
+<Parameter><Name>LB1_CURRENT1</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB1_CURRENT2</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB1_CURRENT3</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB1_FREQUENCY</Name><Value>0</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB1_POWER</Name><Value>0</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB1_VOLT1</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB1_VOLT2</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB1_VOLT3</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB2_CURRENT1</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB2_CURRENT2</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB2_CURRENT3</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB2_FREQUENCY</Name><Value>0</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB2_POWER</Name><Value>0</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB2_VOLT1</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB2_VOLT2</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB2_VOLT3</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+
+<Parameter><Name>SPEED_N1</Name><Value>36050</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>T_CELL</Name><Value>68</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_CELL</Name><Value>14</Value><Units>PSIA</Units></Parameter>
+
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+    
+<Condition>
+<NO>3</NO>
+<Description>95.1% Overspeed</Description>
+  <Parameters>
+
+<Parameter><Name>SPEED_N1</Name><Value>38358</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>T_CELL</Name><Value>191.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_CELL</Name><Value>111</Value><Units>PSIA</Units></Parameter>
+
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+ 
+    
+<Condition>
+<NO>4</NO>
+<Description>98.1% Overspeed</Description>
+  <Parameters>
+
+<Parameter><Name>SPEED_N1</Name><Value>39569</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>T_CELL</Name><Value>197</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_CELL</Name><Value>63</Value><Units>PSIA</Units></Parameter>
+
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+ 
+<Condition>
+<NO>5</NO>
+<Description>Overspeed</Description>
+  <Parameters>
+
+<Parameter><Name>SPEED_N1</Name><Value>40377</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>T_CELL</Name><Value>200.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_CELL</Name><Value>62</Value><Units>PSIA</Units></Parameter>
+
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>6</NO>
+<Description>6 W</Description>
+  <Parameters>
+
+<Parameter><Name>LB1_POWER</Name><Value>6</Value><Units>w</Units></Parameter>
+  </Parameters>
+</Condition>
+
+    
+    <Condition>
+<NO>7</NO>
+<Description>400KW</Description>
+  <Parameters>
+
+<Parameter><Name>LB1_POWER</Name><Value>400000</Value><Units>w</Units></Parameter>
+  </Parameters>
+</Condition>
+
+   <Condition>
+<NO>8</NO>
+<Description>449KW</Description>
+  <Parameters>
+
+<Parameter><Name>LB1_POWER</Name><Value>449000</Value><Units>w</Units></Parameter>
+  </Parameters>
+</Condition>
+  </Conditions>
+</Performance>

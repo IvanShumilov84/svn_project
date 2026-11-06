@@ -1,0 +1,305 @@
+FUNCTION_BLOCK run_User_Interface_FB
+(************************************************************************************************************************************************
+	Name :		run_User_Interface_FB									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+status 		:= RUNNING;
+(*dummy		:= LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: RUNNING');*)
+err_code 	:= OK;
+
+IF PROJECT_NUMBER <> 17865 THEN (* With the new Rearm safety protection, the main reset on the HMI is longer and not handled by this portion of code*)
+
+
+	(* MAIN RESET TRIPS, For all engine *)
+	MainResetTimer(TM_UUT_Info.Main_Reset, t#500ms);
+	IF (TM_UUT_Info.Main_Reset = TRUE AND MainResetTimer.Q = TRUE) THEN
+		TM_UUT_Info.Main_Reset := FALSE;					
+	END_IF;
+
+END_IF;
+
+
+
+IF PROJECT_NUMBER = 12917 THEN
+
+	IF TM_UUT_Info.Model = 'GTCP331-200' THEN 
+		(* Facility Fire is linked to a specific DOUT that sets the ECB in Fire Alarm Specific State *)
+		(* From 49-61-26, Page 69, 31 Mar 2011 : (20) (Fire emergency) A fire emergency protective shutdown occurs when the fire shutdown signal is grounded for 50 ms *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[ECB_FIRE_INDEX] := NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]);
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	ELSIF TM_UUT_Info.Model = 'GTCP331-250' THEN 
+		(* Any Emergency Stop is linked to a specific DOUT that sets the ECB in Emergency Shutdown Specific State *)
+		(* From 49-61-12, Page 9, 2 Oct 2007 : Emergency Switch : Ground or Open : Ground Initiates an emergency shutdown of the APU *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[ECB_EMERGENCY_INDEX] := EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd;
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	ELSIF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 11813 THEN
+
+	IF TM_UUT_Info.Family = 'APS2X00' THEN 
+  	 	DACN1_SERIAL_IOMGR_DOUT[ECB_EMERGENCY_INDEX] := EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd;
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	ELSIF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	END_IF;
+
+
+ELSIF PROJECT_NUMBER = 11894 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	END_IF;
+	
+ELSIF PROJECT_NUMBER = 14075 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 10726 THEN
+
+	(* DAS Emergency Shutdown Logic, For all engine *)
+	IF TM_UUT_Info.Family = 'GTCP85-129' THEN 
+   		DACN1_SERIAL_IOMGR_DOUT[65] := NOT(EPS_Trip OR DACN1_SERIAL_IOMGR_DIN[69] Or DACN1_SERIAL_IOMGR_DIN[10]); (* Trip Detected OR Facility Fire Alarm Or ECB Overspeed *) 
+	ELSIF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+   		DACN1_SERIAL_IOMGR_DOUT[65] := NOT(EPS_Trip OR DACN1_SERIAL_IOMGR_DIN[69]); (* Trip Detected OR Facility Fire Alarm *) 
+	END_IF;
+
+
+ELSIF PROJECT_NUMBER = 12958 THEN
+
+	IF TM_UUT_Info.Family = 'APS2X00' THEN 
+  	 	DACN1_SERIAL_IOMGR_DOUT[ECB_EMERGENCY_INDEX] := EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]);
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd) OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]);
+	ELSIF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 11825 THEN
+
+	IF TM_UUT_Info.Model = 'GTCP331-200' THEN 
+		(* Facility Fire is linked to a specific DOUT that sets the ECB in Fire Alarm Specific State *)
+		(* From 49-61-26, Page 69, 31 Mar 2011 : (20) (Fire emergency) A fire emergency protective shutdown occurs when the fire shutdown signal is grounded for 50 ms *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[ECB_FIRE_INDEX] := NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]);
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	ELSIF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 13015 THEN
+
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 	        (* Trip Detected OR Facility Fire Alarm *) 
+	        (* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	END_IF;
+	
+ELSIF PROJECT_NUMBER = 13031 THEN
+
+	IF TM_UUT_Info.Family = 'GTCP85-129' THEN
+
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) OR NOT(DACN1_SERIAL_IOMGR_DIN[LOW_OIL_PRESSURE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+
+	ELSIF TM_UUT_Info.Family = 'GTCP85-98' THEN 
+	
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) OR NOT(DACN1_SERIAL_IOMGR_DIN[LOW_OIL_PRESSURE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+
+	ELSIF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 14085 THEN
+
+	IF ( TM_UUT_Info.Family = 'PT6C') OR ( TM_UUT_Info.Model = 'PW210A') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+		(* Torquemeter Lube Pack Pressure Switch is in reversed logic *)
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]) OR NOT(DACN1_SERIAL_IOMGR_DIN[LUBE_PACK_PRESSURE_SWITCH]));
+	
+	ELSIF ( TM_UUT_Info.Family = 'PW200') OR ( TM_UUT_Info.Model = 'PW210S') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 14086 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+		(* Torquemeter Lube Pack Pressure Switch is in reversed logic *)
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 14105 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Reverse Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+		(* The DACN1_SERIAL_IOMGR_DOUT is reverse logic (fail safe) *)
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX1] := NOT (EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 15234 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* E-STOP only occurs in case of E-STOP push buttons and 110% Overspeed *) 
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX1] := NOT(EPS_Trip Or NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX1]) Or NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX2]) Or NOT(DACN1_SERIAL_IOMGR_DIN[CUSTOMER_ESTOP_INDEX]));
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX2] := NOT(EPS_Trip Or NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX1]) Or NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX2]) Or NOT(DACN1_SERIAL_IOMGR_DIN[CUSTOMER_ESTOP_INDEX]));
+	END_IF;
+
+
+ELSIF PROJECT_NUMBER = 17865 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 	        (* Trip Detected OR Facility Fire Alarm *) 
+	        (* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+ 		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := NOT(EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd OR NOT(DACN1_SERIAL_IOMGR_DIN[MUSHROOM_INDEX]));
+	END_IF;
+
+
+ELSIF PROJECT_NUMBER = 18957 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 		(* Trip Detected OR Facility Reverse Fire Alarm *) 
+		(* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+		(* The DACN1_SERIAL_IOMGR_DOUT is reverse logic (fail safe) *)
+		DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX1] := NOT (EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) Or E_STOP_Trip_cmd);
+	END_IF;
+
+ELSIF PROJECT_NUMBER = 14094 THEN
+
+	IF ( TM_UUT_Info.Model <> 'SYSTEM CHECK') THEN
+ 	        (* Trip Detected OR Facility Fire Alarm *) 
+	        (* E_STOP_Trip_cmd in logic in case HMI is triggering an E-STOP. *)
+  	 	DACN1_SERIAL_IOMGR_DOUT[E_STOP_DAS_CMD_INDEX] := EPS_Trip OR NOT(DACN1_SERIAL_IOMGR_DIN[FACILITY_FIRE_INDEX]) OR E_STOP_Trip_cmd;
+  	 	DACN1_SERIAL_IOMGR_DOUT[ENGINE_STOP_REARM_CMD_INDEX] := ENGINE_STOP_REARM_CMD;
+	END_IF;
+END_IF;
+
+
+OPC_PERF_NEW_TEST_RESET(OPC_PERF_NEW_TEST, t#1s);
+
+IF (OPC_PERF_NEW_TEST_RESET.Q = TRUE) THEN
+
+	OPC_PERF_NEW_TEST := FALSE;
+
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

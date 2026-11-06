@@ -1,0 +1,159 @@
+FUNCTION_BLOCK run_GALIL_FB
+(************************************************************************************************************************************************
+	Name :		run_GALIL_FB									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+(* Run PLC *)
+	status := RUNNING;
+	err_code := OK;
+
+	(* Log message every 15 minutes. 900 000 ms *)
+	IF  (mod_rest = 0) THEN
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: RUNNING');
+	END_IF;
+
+	mod_rest := MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+
+	IF ( (UUT_Info.Model <> 'DAS CALIBRATION') AND (In_Galil_Controller.mode = RUN_FOR_TRUE) ) THEN
+
+		IF DoneRigging = TRUE THEN
+
+			IF ( User_Rig.Clear_demand = TRUE ) THEN
+				Rig_Throttle( TRUE );
+			END_IF;
+
+
+			IF GALIL_Running  = FALSE THEN
+
+				IF Set_zero_pos = TRUE THEN
+					line_nb := 0;
+					Reset_Set_zero_pos := TRUE;
+				ELSE
+					line_nb := 56;
+				END_IF;
+
+				GET_DEG_OFFSET_GALIL( ihdmc );
+				err_code := GET_DEG_OFFSET_GALIL.ERR_CODE;
+				Deg_Offset := GET_DEG_OFFSET_GALIL.OFFSET;
+
+				GET_DEG_SLOPE_GALIL( ihdmc ) ;
+				err_code := GET_DEG_SLOPE_GALIL.ERR_CODE;
+				Deg_Slope := GET_DEG_SLOPE_GALIL.SLOPE;
+
+				GET_CONTROLLER_OFFSET_GALIL( ihdmc );
+				err_code := GET_CONTROLLER_OFFSET_GALIL.ERR_CODE;
+				Ctrl_Offset := GET_CONTROLLER_OFFSET_GALIL.OFFSET;
+
+				GET_CONTROLLER_SLOPE_GALIL( ihdmc );
+				err_code := GET_CONTROLLER_SLOPE_GALIL.ERR_CODE;
+				Ctrl_Slope := GET_CONTROLLER_SLOPE_GALIL.SLOPE;
+
+				START_RIG_CONTROLLER_GALIL( ihdmc, line_nb );
+				err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+				GALIL_Running := TRUE ;
+			ELSE
+
+				IF err_code = 0 THEN
+
+					GET_MOTOR_POSITION_GALIL( ANY_TO_DINT(ihdmc) ); (* Return Motor position in COUNT *)
+					err_code := GET_MOTOR_POSITION_GALIL.ERR_CODE;
+					Count := GET_MOTOR_POSITION_GALIL.POSITION; 
+
+					GET_THROTTLE_POSITION_GALIL( ANY_TO_DINT(ihdmc) ); (* Return TLA position in VOLTS *)
+					err_code := GET_THROTTLE_POSITION_GALIL.ERR_CODE;
+					Volt := GET_THROTTLE_POSITION_GALIL.POSITION;
+
+					Count2 := (Volt * Ctrl_Slope) + Ctrl_Offset;
+					LeverDeg := (Count2 - Deg_Offset) / Deg_Slope;
+
+
+					IF In_N_Trip[1] = TRUE Or In_N_Trip[2] = TRUE Or In_T_Trip[1] = TRUE  Or In_TQ_Trip[1] = TRUE THEN
+						ReturnToIdle := TRUE;
+					ELSIF LeverDeg < 25.0 THEN
+						ReturnToIdle := FALSE;	
+					END_IF;
+
+					IF Deg_Slope <> 0.0 THEN
+						TLA := (Count - Deg_Offset) / Deg_Slope ;
+
+						(* IF INHIBIT ON limit PLA position to MAX DRY *)
+						(* Limit FCU to Idle when overpseed, overtemp of overtorque *)
+						IF AB_INHIBIT = TRUE Or ReturnToIdle = TRUE THEN
+
+							IF ( GALIL_Inhibit = FALSE ) THEN
+								GALIL_Inhibit := TRUE;
+								(* Set INHBIT variable in the controller *)
+								STOP_RIG_CONTROLLER_GALIL( ihdmc );
+								err_code := STOP_CONTROLLER_GALIL.ERR_CODE;
+
+								START_RIG_CONTROLLER_GALIL( ihdmc, 64 );
+								err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+											
+							END_IF;
+
+						ELSE
+
+							IF ( GALIL_Inhibit = TRUE ) THEN
+								GALIL_Inhibit := FALSE;
+								(* Reset INHIBIT variable in the controller *)
+								STOP_RIG_CONTROLLER_GALIL( ihdmc );
+								err_code := STOP_CONTROLLER_GALIL.ERR_CODE;
+
+								START_RIG_CONTROLLER_GALIL( ihdmc, 67 );
+								err_code := START_RIG_CONTROLLER_GALIL.ERR_CODE;
+
+
+							END_IF;
+
+						END_IF;
+
+					END_IF;
+
+				ELSE
+					(*GALIL_Running := FALSE;*)
+				END_IF;
+
+			END_IF;
+			
+(* Reset Read_x and Read_y for next Disengage *)
+
+			Read_x1 := 0.0;
+			Read_y1 := 0.0;
+			Read_x2 := 0.0;
+			Read_y2 := 0.0;
+ 
+		ELSE
+			Rig_Throttle( FALSE );
+			DoneRigging := Rig_Throttle.RiggingDone;
+			MaxAngleDone := Rig_Throttle.StoreMaxAngleDone;
+			MinAngleDone := Rig_Throttle.StoreMinAngleDone;
+		END_IF;
+		(* Get galil status and verify error limit exceed *)
+
+		GET_GALIL_STATUS( ihdmc );
+		err_code := GET_GALIL_STATUS.ERR_CODE;
+
+		IF (AND_MASK( GET_GALIL_STATUS.CTRL_STATUS, 16#0040 ) = 16#0040) THEN
+			galil_error_limit := TRUE;
+		ELSE
+			galil_error_limit := FALSE;
+		END_IF; 
+	END_IF;
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>T700-401</Model>
+    <SN>1234</SN>
+    <TESTDATE>09/25/2012</TESTDATE>
+  </Engine>
+  <ChannelMap>
+
+    <Channel>
+      <Parameter>T_SUMP_B_DEGF</Parameter>
+      <Name>T_SUMP_B_DEGF</Name>
+      <FVName>T1</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[1].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_SUMP_B_AFT_DEGF</Parameter>
+      <Name>T_SUMP_B_DEGF</Name>
+      <FVName>T5</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[5].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_SUMP_A_FWD_DEGF</Parameter>
+      <Name>T_SUMP_A_FWD_DEGF</Name>
+      <FVName>T3</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[3].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_SUMP_A_AFT_DEGF</Parameter>
+      <Name>T_SUMP_A_AFT_DEGF</Name>
+      <FVName>T43</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[43].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_SUMP_C_FWD_DEGF</Parameter>
+      <Name>T_SUMP_C_FWD_DEGF</Name>
+      <FVName>T44</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[44].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_SUMP_C_AFT_DEGF</Parameter>
+      <Name>T_SUMP_C_AFT_DEGF</Name>
+      <FVName>T45</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[45].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_UPSTREAM_1_DEGF</Parameter>
+      <Name>T_UPSTREAM_1_DEGF</Name>
+      <FVName>T51</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[51].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_UPSTREAM_2_DEGF</Parameter>
+      <Name>T_UPSTREAM_DEGF</Name>
+      <FVName>T52</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[52].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AMBIANT_TEMPERATURE</Parameter>
+      <Name>T_CELL_DEGF</Name>
+      <FVName>T47</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[47].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_T45H_SOURCE_MAP</Parameter>
+      <Name>T_T45H_SOURCE_MAP</Name>
+      <FVName>T48</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[48].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_DISCHARGE_1_SOURCE_DEGF</Parameter>
+      <Name>T_DISCHARGE_1_SOURCE_DEGF</Name>
+      <FVName>T7</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[7].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_DISCHARGE_2_SOURCE_DEGF</Parameter>
+      <Name>T_DISCHARGE_2_SOURCE_DEGF</Name>
+      <FVName>T8</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[8].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_1</Parameter>
+      <Name>T_INLET1_DEGF</Name>
+      <FVName>T9</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[9].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_2</Parameter>
+      <Name>T_INLET2_DEGF</Name>
+      <FVName>T10</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[10].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_3</Parameter>
+      <Name>T_INLET3_DEGF</Name>
+      <FVName>T11</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[11].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_4</Parameter>
+      <Name>T_INLET4_DEGF</Name>
+      <FVName>T12</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[12].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_5</Parameter>
+      <Name>T_INLET5_DEGF</Name>
+      <FVName>T13</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[13].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_6</Parameter>
+      <Name>T_INLET6_DEGF</Name>
+      <FVName>T14</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[14].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_7</Parameter>
+      <Name>T_INLET7_DEGF</Name>
+      <FVName>T15</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[15].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_8</Parameter>
+      <Name>T_INLET8_DEGF</Name>
+      <FVName>T16</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[16].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_9</Parameter>
+      <Name>T_INLET9_DEGF</Name>
+      <FVName>T17</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[17].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_10</Parameter>
+      <Name>T_INLET10_DEGF</Name>
+      <FVName>T18</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[18].mean_value</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_11</Parameter>
+      <Name>T_INLET11_DEGF</Name>
+      <FVName>T19</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[19].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_12</Parameter>
+      <Name>T_INLET12_DEGF</Name>
+      <FVName>T20</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[20].mean_value</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_13</Parameter>
+      <Name>T_INLET13_DEGF</Name>
+      <FVName>T21</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[21].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_14</Parameter>
+      <Name>T_INLET14_DEGF</Name>
+      <FVName>T22</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[22].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_15</Parameter>
+      <Name>T_INLET15_DEGF</Name>
+      <FVName>T23</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[23].mean_value</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_16</Parameter>
+      <Name>T_INLET16_DEGF</Name>
+      <FVName>T24</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[24].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_17</Parameter>
+      <Name>T_INLET17_DEGF</Name>
+      <FVName>T25</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[25].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_18</Parameter>
+      <Name>T_INLET18_DEGF</Name>
+      <FVName>T26</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[26].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_19</Parameter>
+      <Name>T_INLET19_DEGF</Name>
+      <FVName>T27</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[27].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_20</Parameter>
+      <Name>T_INLET20_DEGF</Name>
+      <FVName>T28</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[28].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_21</Parameter>
+      <Name>T_INLET21_DEGF</Name>
+      <FVName>T29</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[29].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_22</Parameter>
+      <Name>T_INLET22_DEGF</Name>
+      <FVName>T30</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[30].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_23</Parameter>
+      <Name>T_INLET23_DEGF</Name>
+      <FVName>T31</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[31].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_24</Parameter>
+      <Name>T_INLET24_DEGF</Name>
+      <FVName>T32</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[32].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_25</Parameter>
+      <Name>T_INLET25_DEGF</Name>
+      <FVName>T33</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[33].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_26</Parameter>
+      <Name>T_INLET26_DEGF</Name>
+      <FVName>T34</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[34].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_27</Parameter>
+      <Name>T_INLET27_DEGF</Name>
+      <FVName>T35</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[35].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_28</Parameter>
+      <Name>T_INLET28_DEGF</Name>
+      <FVName>T36</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[36].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_29</Parameter>
+      <Name>T_INLET29_DEGF</Name>
+      <FVName>T37</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[37].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_30</Parameter>
+      <Name>T_INLET30_DEGF</Name>
+      <FVName>T38</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[38].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_31</Parameter>
+      <Name>T_INLET31_DEGF</Name>
+      <FVName>T39</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[39].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_32</Parameter>
+      <Name>T_INLET32_DEGF</Name>
+      <FVName>T40</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[40].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>P_PS3_PSIA</Parameter>
+      <Name>P_PS3_PSIA</Name>
+      <FVName>P2</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[2].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>BAROMETRIC_PRESSURE</Parameter>
+      <Name>P_BARO_PSIA</Name>
+      <FVName>P3</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[3].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>P_BOOST_PSIG</Parameter>
+      <Name>P_BOOST_PSIG</Name>
+      <FVName>P5</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[5].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>P_SUMP_B_PSIG</Parameter>
+      <Name>P_SUMP_B_PSIG</Name>
+      <FVName>P6</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[6].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_FUEL_INLET_PSIG</Parameter>
+      <Name>P_FUEL_INLET_PSIG</Name>
+      <FVName>P7</FVName>
+      <Units>PSIg</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[7].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_P3X_PSIA</Parameter>
+      <Name>P_P3X_PSIA</Name>
+      <FVName>P9</FVName>
+      <Units>PSIg</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[9].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_CELL_REAR_PSIA</Parameter>
+      <Name>P_CELL_REAR_PSIA</Name>
+      <FVName>P10</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[10].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_CELL_FRONT_PSIA</Parameter>
+      <Name>P_CELL_FRONT_PSIA</Name>
+      <FVName>P11</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[12].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_1_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_1_SOURCE_PSIA</Name>
+      <FVName>P28</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[28].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_2_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_2_SOURCE_PSIA</Name>
+      <FVName>P29</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[29].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_3_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_3_SOURCE_PSIA</Name>
+      <FVName>P30</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[30].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_4_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_4_SOURCE_PSIA</Name>
+      <FVName>P31</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[31].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_5_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_5_SOURCE_PSIA</Name>
+      <FVName>P32</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[32].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_6_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_6_SOURCE_PSIA</Name>
+      <FVName>P33</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[33].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_7_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_7_SOURCE_PSIA</Name>
+      <FVName>P34</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[34].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_S_INLET_8_SOURCE_PSIA</Parameter>
+      <Name>P_S_INLET_8_SOURCE_PSIA</Name>
+      <FVName>P35</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[35].mean_value</ItemID>
+    </Channel>
+
+ 	<Channel>
+      <Parameter>P_T_INLET_1_SOURCE_PSIA</Parameter>
+      <Name>P_ST_INLET_1_SOURCE_PSIA</Name>
+      <FVName>P36</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[36].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_T_INLET_2_SOURCE_PSIA</Parameter>
+      <Name>P_T_INLET_2_SOURCE_PSIA</Name>
+      <FVName>P37</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[37].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_T_INLET_3_SOURCE_PSIA</Parameter>
+      <Name>P_T_INLET_3_SOURCE_PSIA</Name>
+      <FVName>P38</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[38].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_T_INLET_4_SOURCE_PSIA</Parameter>
+      <Name>P_T_INLET_4_SOURCE_PSIA</Name>
+      <FVName>P39</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[39].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_EXHAUST_1_SOURCE_PSIA</Parameter>
+      <Name>P_EXHAUST_1_SOURCE_PSIA</Name>
+      <FVName>P40</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[40].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_EXHAUST_2_SOURCE_PSIA</Parameter>
+      <Name>P_EXHAUST_2_SOURCE_PSIA</Name>
+      <FVName>P41</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[41].mean_value</ItemID>
+    </Channel>
+
+ 	<Channel>
+      <Parameter>P_UPSTREAM_1_SOURCE_PSIA</Parameter>
+      <Name>P_UPSTREAM_1_SOURCE_PSIA</Name>
+      <FVName>P44</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[44].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_UPSTREAM_2_SOURCE_PSIA</Parameter>
+      <Name>P_UPSTREAM_2_SOURCE_PSIA</Name>
+      <FVName>P45</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[45].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_UPSTREAM_3_SOURCE_PSIA</Parameter>
+      <Name>P_UPSTREAM_3_SOURCE_PSIA</Name>
+      <FVName>P46</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[46].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_UPSTREAM_4_SOURCE_PSIA</Parameter>
+      <Name>P_UPSTREAM_4_SOURCE_PSIA</Name>
+      <FVName>P47</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[47].mean_value</ItemID>
+    </Channel>
+
+ 	<Channel>
+      <Parameter>P_THROAT_1_SOURCE_PSIA</Parameter>
+      <Name>P_THROAT_1_SOURCE_PSIA</Name>
+      <FVName>P48</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[48].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_THROAT_2_SOURCE_PSIA</Parameter>
+      <Name>P_THROAT_2_SOURCE_PSIA</Name>
+      <FVName>P49</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[49].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>P_THROAT_3_SOURCE_PSIA</Parameter>
+      <Name>P_THROAT_3_SOURCE_PSIA</Name>
+      <FVName>P50</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[50].mean_value</ItemID>
+    </Channel>
+	
+	<Channel>
+      <Parameter>P_THROAT_4_SOURCE_PSIA</Parameter>
+      <Name>P_THROAT_4_SOURCE_PSIA</Name>
+      <FVName>P51</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_scanivalve_pressure_iomgr.p[51].mean_value</ItemID>
+    </Channel>
+	
+	<Channel>
+      <Parameter>TC_Double_Door_Closed</Parameter>
+      <Name>DOOR_TC_DOUBLE_CLOSED_IND</Name>
+      <FVName>DIN204</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[204]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>TC_Simple_Entry_Door_Closed</Parameter>
+      <Name>DOOR_TC_SIMPLE_CLOSED_IND</Name>
+      <FVName>DIN203</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[203]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>COOLING_TOWER_FAN</Parameter>
+      <Name>COOLING_TOWER_FAN_STATUS</Name>
+      <FVName>DIN303</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[303]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>COOLING_TOWER_PUMP</Parameter>
+      <Name>COOLING_TOWER_PUMP_STATUS</Name>
+      <FVName>DIN301</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[301]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>COOLING_TOWER_VIBRATION_SWITCH_IND</Parameter>
+      <Name>COOLING_TOWER_VIBRATION_SWITCH_IND</Name>
+      <FVName>DIN213</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[213]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_WATER_SUPPLY_PUMP</Parameter>
+      <Name>DYNO_WATER_SUPPLY_PUMP_STATUS</Name>
+      <FVName>DIN318</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[318]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>E3_Harness_ID0</Parameter>
+      <Name>E3_HARNESS_AVAILABLE</Name>
+      <FVName>DIN109</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[109]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>E1_Harness_ID1</Parameter>
+      <Name>E1_HARNESS_24_PINS_AVAILABLE</Name>
+      <FVName>DIN108</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[108]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE_HARNESS_ID2</Parameter>
+      <Name>E1_HARNESS_31_PINS_AVAILABLE</Name>
+      <FVName>DIN114</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[114]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_FUEL_1_DEGF</Parameter>
+      <Name>T_FUEL_1_DEGF</Name>
+      <FVName>T49</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[49].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>T_FUEL_2_DEGF</Parameter>
+      <Name>T_FUEL_2_DEGF</Name>
+      <FVName>T50</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[50].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUEL_PUMP</Parameter>
+      <Name>FUEL_SUPPLY_PUMP_IND</Name>
+      <FVName>DIN329</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[329]</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>Fuel_Pump_Fault</Parameter>
+      <Name>FUEL_SUPPLY_PUMP_FAULT</Name>
+      <FVName>DIN330</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[330]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Fuel_Inhibiting_Level_ind</Parameter>
+      <Name>FUEL_INHIBITING_LEVEL_IND</Name>
+      <FVName>DIN217</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[217]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>HS2600_POWER_PACK</Parameter>
+      <Name>DYNO_HYDRAULIC_POWER_PACK_SUPPLY_HS2600_STATUS</Name>
+      <FVName>DIN323</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[323]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Inlet_Heater_Fault</Parameter>
+      <Name>INLET_HEATER_FAULT</Name>
+      <FVName>DIN218</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[218]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Inlet_Heater_Status</Parameter>
+      <Name>INLET_HEATER_STATUS</Name>
+      <FVName>DIN219</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[219]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Dyno_Water_Supply_Pump_Drive_Status</Parameter>
+      <Name>DYNO_WATER_SUPPLY_PUMP_DRIVE_STATUS</Name>
+      <FVName>DIN201</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[201]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Dyno_Water_Supply_Pump_Drive_Overload</Parameter>
+      <Name>DYNO_WATER_SUPPLY_PUMP_DRIVE_OVERLOAD</Name>
+      <FVName>DIN202</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[202]</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>HS2600_POWER_PACK_SCAV1</Parameter>
+      <Name>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP1_HS2600_STATUS</Name>
+      <FVName>DIN325</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[325]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>HS2600_POWER_PACK_SCAV2</Parameter>
+      <Name>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP2_HS2600_STATUS</Name>
+      <FVName>DIN327</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[327]</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>Flywhell_Pwr_Pack_Supply</Parameter>
+      <Name>FLYWHEEL_HYDRAULIC_POWER_PACK_SUPPLY_STATUS</Name>
+      <FVName>DIN312</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[312]</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>Flywhell_Pwr_Pack_Scav1</Parameter>
+      <Name>FLYWHEEL_POWER_PACK_SCAV_PUMP1_STATUS</Name>
+      <FVName>DIN314</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[314]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Flywhell_Pwr_Pack_Scav2</Parameter>
+      <Name>FLYWHEEL_POWER_PACK_SCAV_PUMP2_STATUS</Name>
+      <FVName>DIN316</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[316]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Fume_Extraction</Parameter>
+      <Name>FUME_EXTRACTION_FAN_STATUS</Name>
+      <FVName>DIN305</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[305]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Louver_Intake_ON</Parameter>
+      <Name>LOUVER_INTAKE_IND</Name>
+      <FVName>DIN221</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[221]</ItemID>
+    </Channel>
+  
+    <Channel>
+      <Parameter>Louver_Exhaust_ON</Parameter>
+      <Name>LOUVER_EXHAUST_IND</Name>
+      <FVName>DIN210</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[210]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Shop_Air_Pressure</Parameter>
+      <Name>SHOP_AIR_PRESSURE_SWITCH_IND</Name>
+      <FVName>DIN211</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[211]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>H_Water_Level</Parameter>
+      <Name>FACILITY_WATER_LEVEL_H_IND_SOURCE</Name>
+      <FVName>DIN206</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[206]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>L_Water_Level</Parameter>
+      <Name>FACILITY_WATER_LEVEL_L_IND_SOURCE</Name>
+      <FVName>DIN207</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[207]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LL_Water_Level</Parameter>
+      <Name>FACILITY_WATER_LEVEL_LL_IND_SOURCE</Name>
+      <FVName>DIN208</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[208]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Fuel_Levl_Low</Parameter>
+      <Name>FUEL_FARM_LEVEL_LOW_IND</Name>
+      <FVName>DIN209</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[209]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Fuel_Pressure_Low</Parameter>
+      <Name>FUEL_LOW_PRESSURE_SWITCH_IND</Name>
+      <FVName>DIN107</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[107]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Facility_Fire</Parameter>
+      <Name>FACILITY_FIRE_IND</Name>
+      <FVName>DIN214</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[214]</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>OIL_GEARBOX_TEMPERATURE</Parameter>
+      <Name>T_AGB_DEGF</Name>
+      <FVName>T4</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[4].mean_value</ItemID>
+    </Channel>
+ 
+    <Channel>
+      <Parameter>P_ENGINE_LUBE_PSIG</Parameter>
+      <Name>P_ENGINE_LUBE_PSIG</Name>
+      <FVName>P8</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[8].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>NG_HZ</Parameter>
+      <Name>NG_HZ</Name>
+      <FVName>F1</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[1].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>NP_HZ</Parameter>
+      <Name>NP_HZ</Name>
+      <FVName>F2</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>W_F1_HZ</Parameter>
+      <Name>WF1_HZ</Name>
+      <FVName>F3</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[3].mean_value</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>W_F2_HZ</Parameter>
+      <Name>WF2_HZ</Name>
+      <FVName>F4</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[4].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Rotor_Speed_Signal</Parameter>
+      <Name>ROTOR_SPEED_SIGNAL</Name>
+      <FVName>F5</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[5].mean_value</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>DEC_TORQUE_LBSFT</Parameter>
+      <Name>DEC_TORQUE_LBSFT</Name>
+      <FVName>VIN1</FVName>
+      <Units>lbs-ft</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[1].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>TORQUE_METER_TORQUE_LBSFT</Parameter>
+      <Name>TORQUE_METER_TORQUE_LBSFT</Name>
+      <FVName>VIN3</FVName>
+      <Units>lbs-ft</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[3].mean_value</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>IGNITION_VOLTAGE_VDC</Parameter>
+      <Name>IGNITION_VOLTAGE_VDC</Name>
+      <FVName>VIN5</FVName>
+      <Units>VDC</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[5].mean_value</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>IGNITION_CURRENT_AMP</Parameter>
+      <Name>IGNITION_CURRENT_AMP</Name>
+      <FVName>VIN6</FVName>
+      <Units>Amp</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[6].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DEC_DIAG_CODE_SIGNAL</Parameter>
+      <Name>DEC_DIAG_CODE_SIGNAL</Name>
+      <FVName>VIN7</FVName>
+      <Units>Amp</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[7].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DEC_VOLTS_SOURCE_VDC</Parameter>
+      <Name>DEC_VOLTS_SOURCE_VDC</Name>
+      <FVName>VIN8</FVName>
+      <Units>Amp</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[8].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>DEC_CURRENT_AMP</Parameter>
+      <Name>DEC_CURRENT_AMP</Name>
+      <FVName>VIN9</FVName>
+      <Units>Amp</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[9].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>ENGINE_OIL_PRESSURE_TRANSMITTER_EXC</Parameter>
+      <Name>ENGINE_OIL_PRESSURE_TRANSMITTER_EXC</Name>
+      <FVName>VIN13</FVName>
+      <Units>VDC</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[13].mean_value</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>ENGINE_OIL_PRESSURE_TRANSMITTER_SIG</Parameter>
+      <Name>ENGINE_OIL_PRESSURE_TRANSMITTER_SIG</Name>
+      <FVName>VIN14</FVName>
+      <Units>VDC</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[14].mean_value</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>ENGINE_OIL_TEMP_RAW</Parameter>
+      <Name>ENGINE_OIL_TEMP_RAW</Name>
+      <FVName>VIN15</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.vin[15].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>VIBRATION_EXHAUST1</Parameter>
+      <Name>VIB_EXHAUST_1_IPS</Name>
+      <FVName>VIB1</FVName>
+      <Units>in/sec Pk</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[1].mean_value</ItemID>
+    </Channel>
+   
+     <Channel>
+      <Parameter>VIBRATION_EXHAUST4</Parameter>
+      <Name>VIB_EXHAUST_4_IPS</Name>
+      <FVName>VIB2</FVName>
+      <Units>in/sec Pk</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[2].mean_value</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>VIBRATION_AGB</Parameter>
+      <Name>VIB_AGB_IPS</Name>
+      <FVName>VIB3</FVName>
+      <Units>in/sec Pk</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[3].mean_value</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>VIBRATION_Flywheel</Parameter>
+      <Name>VIB_FLYWHEEL_SOURCE_IPS</Name>
+      <FVName>VIB4</FVName>
+      <Units>in/sec Pk</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[4].mean_value</ItemID>
+    </Channel>
+
+     <Channel>
+      <Parameter>VIBRATION_Dyno</Parameter>
+      <Name>VIB_DYNO_SOURCE_IPS</Name>
+      <FVName>VIB5</FVName>
+      <Units>in/sec Pk</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[5].mean_value</ItemID>
+    </Channel>
+
+	<Channel>
+      <Parameter>COOLING_TOWER_FAN_OVERLOAD</Parameter>
+      <Name>COOLING_TOWER_FAN_OVERLOAD</Name>
+      <FVName>DIN304</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[304]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>COOLING_TOWER_PUMP_OVERLOAD</Parameter>
+      <Name>COOLING_TOWER_PUMP_OVERLOAD</Name>
+      <FVName>DIN302</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[302]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP1_HS2600_OVERLOAD</Parameter>
+      <Name>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP1_HS2600_OVERLOAD</Name>
+      <FVName>DIN326</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[326]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP2_HS2600_OVERLOAD</Parameter>
+      <Name>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP2_HS2600_OVERLOAD</Name>
+      <FVName>DIN328</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[328]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_HYDRAULIC_POWER_PACK_SUPPLY_HS2600_OVERLOAD</Parameter>
+      <Name>DYNO_HYDRAULIC_POWER_PACK_SUPPLY_HS2600_OVERLOAD</Name>
+      <FVName>DIN324</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[324]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_WATER_SUPPLY_PUMP_OVERLOAD</Parameter>
+      <Name>DYNO_WATER_SUPPLY_PUMP_OVERLOAD</Name>
+      <FVName>DIN319</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[319]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FLYWHEEL_HYDRAULIC_POWER_PACK_SUPPLY_OVERLOAD</Parameter>
+      <Name>FLYWHEEL_HYDRAULIC_POWER_PACK_SUPPLY_OVERLOAD</Name>
+      <FVName>DIN313</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[313]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FLYWHEEL_POWER_PACK_SCAV_PUMP1_OVERLOAD</Parameter>
+      <Name>FLYWHEEL_POWER_PACK_SCAV_PUMP1_OVERLOAD</Name>
+      <FVName>DIN315</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[315]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FLYWHEEL_POWER_PACK_SCAV_PUMP2_OVERLOAD</Parameter>
+      <Name>FLYWHEEL_POWER_PACK_SCAV_PUMP2_OVERLOAD</Name>
+      <FVName>DIN317</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[317]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUME_EXTRACTION_FAN_FAULT</Parameter>
+      <Name>FUME_EXTRACTION_FAN_FAULT</Name>
+      <FVName>DIN306</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[306]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>E_STOP</Parameter>
+      <Name>E_STOP_REVERSE_IND</Name>
+      <FVName>DIN215</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[215]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>Hard_Overspeed_Successful</Parameter>
+      <Name>OS_BOARD_CAL_SUCCESS_OPC</Name>
+      <FVName>dacn1.dacn1_nidaq_iomgr.os_board_cal_done</FVName>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.os_board_cal_done</ItemID>
+    </Channel>
+	
+    <Channel>
+      <Parameter>Pressure_breakes</Parameter>
+      <Name>SLIDING_TABLE_BRAKE_ON</Name>
+      <FVName>DIN222</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[222]</ItemID>
+    </Channel>
+
+	</ChannelMap>
+  
+  <Conditions> 
+
+	<Condition>
+		<NO>1</NO>
+		<Description>SETUP</Description>
+		<Parameters>
+			<Parameter><Name>TC_Simple_Entry_Door_Closed</Name><Value>True</Value></Parameter>
+			<Parameter><Name>TC_Double_Door_Closed</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Facility_Fire</Name><Value>True</Value></Parameter>
+			<Parameter><Name>COOLING_TOWER_FAN</Name><Value>True</Value></Parameter>
+			<Parameter><Name>COOLING_TOWER_PUMP</Name><Value>True</Value></Parameter>
+			<Parameter><Name>DYNO_WATER_SUPPLY_PUMP</Name><Value>True</Value></Parameter>
+			<Parameter><Name>FUEL_PUMP</Name><Value>True</Value></Parameter>
+			<Parameter><Name>HS2600_POWER_PACK</Name><Value>True</Value></Parameter>
+			<Parameter><Name>HS2600_POWER_PACK_SCAV1</Name><Value>True</Value></Parameter>
+			<Parameter><Name>HS2600_POWER_PACK_SCAV2</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Dyno_Water_Supply_Pump_Drive_Status</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Dyno_Water_Supply_Pump_Drive_Overload</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Flywhell_Pwr_Pack_Supply</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Flywhell_Pwr_Pack_Scav1</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Flywhell_Pwr_Pack_Scav2</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Fume_Extraction</Name><Value>True</Value></Parameter>
+			<Parameter><Name>COOLING_TOWER_FAN_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>COOLING_TOWER_PUMP_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP1_HS2600_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>DYNO_HYDRAULIC_POWER_PACK_SCAV_PUMP2_HS2600_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>DYNO_HYDRAULIC_POWER_PACK_SUPPLY_HS2600_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>DYNO_WATER_SUPPLY_PUMP_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>FLYWHEEL_HYDRAULIC_POWER_PACK_SUPPLY_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>FLYWHEEL_POWER_PACK_SCAV_PUMP1_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>FLYWHEEL_POWER_PACK_SCAV_PUMP2_OVERLOAD</Name><Value>True</Value></Parameter>
+			<Parameter><Name>FUME_EXTRACTION_FAN_FAULT</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Inlet_Heater_Fault</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Fuel_Pump_Fault</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Dyno_Water_Supply_Pump_Drive_Overload</Name><Value>True</Value></Parameter>		
+			<Parameter><Name>Louver_Intake_ON</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Louver_Exhaust_ON</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Shop_Air_Pressure</Name><Value>True</Value></Parameter>
+			<Parameter><Name>E3_Harness_ID0</Name><Value>True</Value></Parameter>
+			<Parameter><Name>H_Water_Level</Name><Value>True</Value></Parameter>
+			<Parameter><Name>L_Water_Level</Name><Value>True</Value></Parameter>
+			<Parameter><Name>LL_Water_Level</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Fuel_Levl_Low</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Fuel_Pressure_Low</Name><Value>False</Value></Parameter>
+			<Parameter><Name>E_STOP</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Hard_Overspeed_Successful</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Pressure_breakes</Name><Value>True</Value></Parameter>
+			<Parameter><Name>COOLING_TOWER_VIBRATION_SWITCH_IND</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Fuel_Inhibiting_Level_ind</Name><Value>True</Value></Parameter>
+			<Parameter><Name>Inlet_Heater_Status</Name><Value>True</Value></Parameter>
+		</Parameters> 
+	</Condition>  
+	
+	<Condition>
+		<NO>2</NO>
+		<Description>PERF 001 AT REST</Description>
+		<Parameters>
+			<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>14.7</Value><Units>PSIA</Units></Parameter>
+			<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>74</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>55</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST1</Name><Value>0</Value></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST4</Name><Value>0</Value></Parameter>
+			<Parameter><Name>VIBRATION_AGB</Name><Value>0</Value></Parameter>
+			<Parameter><Name>VIBRATION_Flywheel</Name><Value>0</Value></Parameter>
+			<Parameter><Name>VIBRATION_Dyno</Name><Value>0</Value></Parameter>
+			<Parameter><Name>NG_HZ</Name><Value>0</Value></Parameter>
+			<Parameter><Name>NP_HZ</Name><Value>0</Value></Parameter>
+			<Parameter><Name>Rotor_Speed_Signal</Name><Value>0</Value></Parameter>
+			<Parameter><Name>DEC_TORQUE_LBSFT</Name><Value>0</Value></Parameter>
+			<Parameter><Name>TORQUE_METER_TORQUE_LBSFT</Name><Value>0</Value></Parameter>
+			<Parameter><Name>IGNITION_VOLTAGE_VDC</Name><Value>125</Value></Parameter>
+			<Parameter><Name>IGNITION_CURRENT_AMP</Name><Value>4</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_EXC</Name><Value>94</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_SIG</Name><Value>53</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_TEMP_RAW</Name><Value>120</Value></Parameter>
+			<Parameter><Name>P_ENGINE_LUBE_PSIG</Name><Value>35</Value></Parameter>
+			<Parameter><Name>P_PS3_PSIA</Name><Value>40</Value></Parameter>
+			<Parameter><Name>T_T45H_SOURCE_MAP</Name><Value>80</Value></Parameter>
+			<Parameter><Name>T_FUEL_1_DEGF</Name><Value>75</Value></Parameter>
+			<Parameter><Name>T_FUEL_2_DEGF</Name><Value>76</Value></Parameter>
+			<Parameter><Name>P_FUEL_INLET_PSIG</Name><Value>6</Value></Parameter>
+			<Parameter><Name>W_F1_HZ</Name><Value>50</Value></Parameter>
+			<Parameter><Name>W_F2_HZ</Name><Value>53</Value></Parameter>
+			<Parameter><Name>P_BOOST_PSIG</Name><Value>31</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_FWD_DEGF</Name><Value>46</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_AFT_DEGF</Name><Value>58</Value></Parameter>
+			<Parameter><Name>T_SUMP_B_AFT_DEGF</Name><Value>63</Value></Parameter>
+			<Parameter><Name>P_SUMP_B_PSIG</Name><Value>12</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_FWD_DEGF</Name><Value>55</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_AFT_DEGF</Name><Value>53</Value></Parameter>
+			<Parameter><Name>DEC_DIAG_CODE_SIGNAL</Name><Value>0</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_5</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_6</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_7</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_8</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_9</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_10</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_11</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_12</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_13</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_14</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_15</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_16</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_17</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_18</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_19</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_20</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_21</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_22</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_23</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_24</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_25</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_26</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_27</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_28</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_29</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_30</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_31</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_32</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>P_S_INLET_1_SOURCE_PSIA</Name><Value>70</Value></Parameter>
+			<Parameter><Name>P_S_INLET_2_SOURCE_PSIA</Name><Value>76</Value></Parameter>
+			<Parameter><Name>P_S_INLET_3_SOURCE_PSIA</Name><Value>79</Value></Parameter>
+			<Parameter><Name>P_S_INLET_4_SOURCE_PSIA</Name><Value>81</Value></Parameter>
+			<Parameter><Name>P_S_INLET_5_SOURCE_PSIA</Name><Value>71</Value></Parameter>
+			<Parameter><Name>P_S_INLET_6_SOURCE_PSIA</Name><Value>72</Value></Parameter>
+			<Parameter><Name>P_S_INLET_7_SOURCE_PSIA</Name><Value>77</Value></Parameter>
+			<Parameter><Name>P_S_INLET_8_SOURCE_PSIA</Name><Value>80</Value></Parameter>
+			<Parameter><Name>P_T_INLET_1_SOURCE_PSIA</Name><Value>80</Value></Parameter>
+			<Parameter><Name>P_T_INLET_2_SOURCE_PSIA</Name><Value>86</Value></Parameter>
+			<Parameter><Name>P_T_INLET_3_SOURCE_PSIA</Name><Value>89</Value></Parameter>
+			<Parameter><Name>P_T_INLET_4_SOURCE_PSIA</Name><Value>91</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_1_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_2_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_3_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_4_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_THROAT_1_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_2_SOURCE_PSIA</Name><Value>14.77</Value></Parameter>
+			<Parameter><Name>P_THROAT_3_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_4_SOURCE_PSIA</Name><Value>14.79</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_1_DEGF</Name><Value>71</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_2_DEGF</Name><Value>73</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_1_SOURCE_DEGF</Name><Value>85</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_2_SOURCE_DEGF</Name><Value>87</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_1_SOURCE_PSIA</Name><Value>88</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_2_SOURCE_PSIA</Name><Value>83</Value></Parameter>
+			<Parameter><Name>DEC_VOLTS_SOURCE_VDC</Name><Value>115</Value></Parameter>
+			<Parameter><Name>DEC_CURRENT_AMP</Name><Value>48</Value></Parameter>
+		</Parameters> 
+	</Condition>
+	
+	<Condition>
+		<NO>3</NO>
+		<Description>PERF 002 GREEN</Description>
+		<Parameters>
+			<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>14.78</Value><Units>PSIA</Units></Parameter>
+			<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>74</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>80</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST1</Name><Value>1</Value></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST4</Name><Value>1.1</Value></Parameter>
+			<Parameter><Name>VIBRATION_AGB</Name><Value>1.1</Value></Parameter>
+			<Parameter><Name>VIBRATION_Flywheel</Name><Value>0.5</Value></Parameter>
+			<Parameter><Name>VIBRATION_Dyno</Name><Value>0.6</Value></Parameter>
+			<Parameter><Name>NG_HZ</Name><Value>1500</Value></Parameter>
+			<Parameter><Name>NP_HZ</Name><Value>1393</Value></Parameter>
+			<Parameter><Name>Rotor_Speed_Signal</Name><Value>900</Value></Parameter>
+			<Parameter><Name>DEC_TORQUE_LBSFT</Name><Value>296</Value></Parameter>
+			<Parameter><Name>TORQUE_METER_TORQUE_LBSFT</Name><Value>296</Value></Parameter>
+			<Parameter><Name>IGNITION_VOLTAGE_VDC</Name><Value>125</Value></Parameter>
+			<Parameter><Name>IGNITION_CURRENT_AMP</Name><Value>4</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_EXC</Name><Value>96</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_SIG</Name><Value>53</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_TEMP_RAW</Name><Value>150</Value></Parameter>
+			<Parameter><Name>P_ENGINE_LUBE_PSIG</Name><Value>150</Value></Parameter>
+			<Parameter><Name>P_PS3_PSIA</Name><Value>140</Value></Parameter>
+			<Parameter><Name>P_P3X_PSIA</Name><Value>1370.72</Value></Parameter>
+			<Parameter><Name>T_T45H_SOURCE_MAP</Name><Value>1100</Value></Parameter>
+			<Parameter><Name>T_FUEL_1_DEGF</Name><Value>75</Value></Parameter>
+			<Parameter><Name>T_FUEL_2_DEGF</Name><Value>76</Value></Parameter>
+			<Parameter><Name>P_FUEL_INLET_PSIG</Name><Value>15</Value></Parameter>
+			<Parameter><Name>W_F1_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>W_F2_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>P_BOOST_PSIG</Name><Value>31</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_FWD_DEGF</Name><Value>46</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_AFT_DEGF</Name><Value>58</Value></Parameter>
+			<Parameter><Name>T_SUMP_B_DEGF</Name><Value>63</Value></Parameter>
+			<Parameter><Name>P_SUMP_B_PSIG</Name><Value>130</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_FWD_DEGF</Name><Value>55</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_AFT_DEGF</Name><Value>53</Value></Parameter>
+			<Parameter><Name>DEC_DIAG_CODE_SIGNAL</Name><Value>0</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_5</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_6</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_7</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_8</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_9</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_10</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_11</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_12</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_13</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_14</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_15</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_16</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_17</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_18</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_19</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_20</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_21</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_22</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_23</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_24</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_25</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_26</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_27</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_28</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_29</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_30</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_31</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_32</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>P_S_INLET_1_SOURCE_PSIA</Name><Value>13.98</Value></Parameter>
+			<Parameter><Name>P_S_INLET_2_SOURCE_PSIA</Name><Value>13.93</Value></Parameter>
+			<Parameter><Name>P_S_INLET_3_SOURCE_PSIA</Name><Value>13.97</Value></Parameter>
+			<Parameter><Name>P_S_INLET_4_SOURCE_PSIA</Name><Value>13.94</Value></Parameter>
+			<Parameter><Name>P_S_INLET_5_SOURCE_PSIA</Name><Value>13.94</Value></Parameter>
+			<Parameter><Name>P_S_INLET_6_SOURCE_PSIA</Name><Value>13.95</Value></Parameter>
+			<Parameter><Name>P_S_INLET_7_SOURCE_PSIA</Name><Value>13.94</Value></Parameter>
+			<Parameter><Name>P_S_INLET_8_SOURCE_PSIA</Name><Value>13.96</Value></Parameter>
+			<Parameter><Name>P_T_INLET_1_SOURCE_PSIA</Name><Value>14.58</Value></Parameter>
+			<Parameter><Name>P_T_INLET_2_SOURCE_PSIA</Name><Value>14.585</Value></Parameter>
+			<Parameter><Name>P_T_INLET_3_SOURCE_PSIA</Name><Value>14.584</Value></Parameter>
+			<Parameter><Name>P_T_INLET_4_SOURCE_PSIA</Name><Value>14.586</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_1_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_2_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_3_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_4_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_THROAT_1_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_2_SOURCE_PSIA</Name><Value>14.77</Value></Parameter>
+			<Parameter><Name>P_THROAT_3_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_4_SOURCE_PSIA</Name><Value>14.79</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_1_DEGF</Name><Value>71</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_2_DEGF</Name><Value>73</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_1_SOURCE_DEGF</Name><Value>85</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_2_SOURCE_DEGF</Name><Value>87</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_1_SOURCE_PSIA</Name><Value>14.585</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_2_SOURCE_PSIA</Name><Value>14.583</Value></Parameter>
+			<Parameter><Name>P_CELL_REAR_PSIA</Name><Value>-0.2</Value></Parameter>
+			<Parameter><Name>P_CELL_FRONT_PSIA</Name><Value>-0.2</Value></Parameter>
+			<Parameter><Name>DEC_VOLTS_SOURCE_VDC</Name><Value>115</Value></Parameter>
+			<Parameter><Name>DEC_CURRENT_AMP</Name><Value>48</Value></Parameter>
+		</Parameters> 
+	</Condition>
+	
+	<Condition>
+		<NO>4</NO>
+		<Description>PERF 003 YELLOW</Description>
+		<Parameters>
+			<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>14.7</Value><Units>PSIA</Units></Parameter>
+			<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>74</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>55</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST1</Name><Value>2</Value></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST4</Name><Value>2</Value></Parameter>
+			<Parameter><Name>VIBRATION_AGB</Name><Value>2</Value></Parameter>
+			<Parameter><Name>VIBRATION_Flywheel</Name><Value>0.8</Value></Parameter>
+			<Parameter><Name>VIBRATION_Dyno</Name><Value>0.9</Value></Parameter>
+			<Parameter><Name>NG_HZ</Name><Value>2136.7</Value></Parameter>
+			<Parameter><Name>NP_HZ</Name><Value>1394</Value></Parameter>
+			<Parameter><Name>Rotor_Speed_Signal</Name><Value>900</Value></Parameter>
+			<Parameter><Name>DEC_TORQUE_LBSFT</Name><Value>411</Value></Parameter>
+			<Parameter><Name>TORQUE_METER_TORQUE_LBSFT</Name><Value>411</Value></Parameter>
+			<Parameter><Name>IGNITION_VOLTAGE_VDC</Name><Value>125</Value></Parameter>
+			<Parameter><Name>IGNITION_CURRENT_AMP</Name><Value>4</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_EXC</Name><Value>98</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_SIG</Name><Value>53</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_TEMP_RAW</Name><Value>150</Value></Parameter>
+			<Parameter><Name>P_ENGINE_LUBE_PSIG</Name><Value>111</Value></Parameter>
+			<Parameter><Name>P_PS3_PSIA</Name><Value>243</Value></Parameter>
+			<Parameter><Name>T_T45H_SOURCE_MAP</Name><Value>1491</Value></Parameter>
+			<Parameter><Name>T_FUEL_1_DEGF</Name><Value>75</Value></Parameter>
+			<Parameter><Name>T_FUEL_2_DEGF</Name><Value>76</Value></Parameter>
+			<Parameter><Name>P_FUEL_INLET_PSIG</Name><Value>6</Value></Parameter>
+			<Parameter><Name>W_F1_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>W_F2_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>P_BOOST_PSIG</Name><Value>31</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_FWD_DEGF</Name><Value>46</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_AFT_DEGF</Name><Value>58</Value></Parameter>
+			<Parameter><Name>T_SUMP_B_DEGF</Name><Value>63</Value></Parameter>
+			<Parameter><Name>P_SUMP_B_PSIG</Name><Value>65</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_FWD_DEGF</Name><Value>55</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_AFT_DEGF</Name><Value>53</Value></Parameter>
+			<Parameter><Name>DEC_DIAG_CODE_SIGNAL</Name><Value>0</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_5</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_6</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_7</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_8</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_9</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_10</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_11</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_12</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_13</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_14</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_15</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_16</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_17</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_18</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_19</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_20</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_21</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_22</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_23</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_24</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_25</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_26</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_27</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_28</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_29</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_30</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_31</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_32</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>P_S_INLET_1_SOURCE_PSIA</Name><Value>20</Value></Parameter>
+			<Parameter><Name>P_S_INLET_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>P_S_INLET_3_SOURCE_PSIA</Name><Value>19</Value></Parameter>
+			<Parameter><Name>P_S_INLET_4_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_S_INLET_5_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_S_INLET_6_SOURCE_PSIA</Name><Value>13</Value></Parameter>
+			<Parameter><Name>P_S_INLET_7_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_S_INLET_8_SOURCE_PSIA</Name><Value>15</Value></Parameter>
+			<Parameter><Name>P_T_INLET_1_SOURCE_PSIA</Name><Value>15</Value></Parameter>
+			<Parameter><Name>P_T_INLET_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>P_T_INLET_3_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_T_INLET_4_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_1_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_2_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_3_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_4_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_THROAT_1_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_2_SOURCE_PSIA</Name><Value>14.77</Value></Parameter>
+			<Parameter><Name>P_THROAT_3_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_4_SOURCE_PSIA</Name><Value>14.79</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_1_DEGF</Name><Value>71</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_2_DEGF</Name><Value>73</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_1_SOURCE_DEGF</Name><Value>85</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_2_SOURCE_DEGF</Name><Value>87</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_1_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>DEC_VOLTS_SOURCE_VDC</Name><Value>115</Value></Parameter>
+			<Parameter><Name>DEC_CURRENT_AMP</Name><Value>48</Value></Parameter>
+		</Parameters> 
+	</Condition>  
+	
+	<Condition>
+		<NO>5</NO>
+		<Description>PERF 004 RED</Description>
+		<Parameters>
+			<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>14.7</Value><Units>PSIA</Units></Parameter>
+			<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>74</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>55</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST1</Name><Value>2.9</Value></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST4</Name><Value>3.0</Value></Parameter>
+			<Parameter><Name>VIBRATION_AGB</Name><Value>5.1</Value></Parameter>
+			<Parameter><Name>VIBRATION_Flywheel</Name><Value>11</Value></Parameter>
+			<Parameter><Name>VIBRATION_Dyno</Name><Value>11</Value></Parameter>
+			<Parameter><Name>NG_HZ</Name><Value>2179</Value></Parameter>
+			<Parameter><Name>NP_HZ</Name><Value>1463</Value></Parameter>
+			<Parameter><Name>Rotor_Speed_Signal</Name><Value>900</Value></Parameter>
+			<Parameter><Name>DEC_TORQUE_LBSFT</Name><Value>501</Value></Parameter>
+			<Parameter><Name>TORQUE_METER_TORQUE_LBSFT</Name><Value>501</Value></Parameter>
+			<Parameter><Name>IGNITION_VOLTAGE_VDC</Name><Value>125</Value></Parameter>
+			<Parameter><Name>IGNITION_CURRENT_AMP</Name><Value>4</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_EXC</Name><Value>106</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_SIG</Name><Value>53</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_TEMP_RAW</Name><Value>195</Value></Parameter>
+			<Parameter><Name>P_ENGINE_LUBE_PSIG</Name><Value>180</Value></Parameter>
+			<Parameter><Name>P_PS3_PSIA</Name><Value>243</Value></Parameter>
+			<Parameter><Name>T_T45H_SOURCE_MAP</Name><Value>1597</Value></Parameter>
+			<Parameter><Name>T_FUEL_1_DEGF</Name><Value>75</Value></Parameter>
+			<Parameter><Name>T_FUEL_2_DEGF</Name><Value>76</Value></Parameter>
+			<Parameter><Name>P_FUEL_INLET_PSIG</Name><Value>6</Value></Parameter>
+			<Parameter><Name>W_F1_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>W_F2_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>P_BOOST_PSIG</Name><Value>31</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_FWD_DEGF</Name><Value>46</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_AFT_DEGF</Name><Value>58</Value></Parameter>
+			<Parameter><Name>T_SUMP_B_DEGF</Name><Value>63</Value></Parameter>
+			<Parameter><Name>P_SUMP_B_PSIG</Name><Value>12</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_FWD_DEGF</Name><Value>55</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_AFT_DEGF</Name><Value>53</Value></Parameter>
+			<Parameter><Name>DEC_DIAG_CODE_SIGNAL</Name><Value>0</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_5</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_6</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_7</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_8</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_9</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_10</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_11</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_12</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_13</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_14</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_15</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_16</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_17</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_18</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_19</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_20</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_21</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_22</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_23</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_24</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_25</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_26</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_27</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_28</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_29</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_30</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_31</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_32</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>P_S_INLET_1_SOURCE_PSIA</Name><Value>20</Value></Parameter>
+			<Parameter><Name>P_S_INLET_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>P_S_INLET_3_SOURCE_PSIA</Name><Value>19</Value></Parameter>
+			<Parameter><Name>P_S_INLET_4_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_S_INLET_5_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_S_INLET_6_SOURCE_PSIA</Name><Value>13</Value></Parameter>
+			<Parameter><Name>P_S_INLET_7_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_S_INLET_8_SOURCE_PSIA</Name><Value>15</Value></Parameter>
+			<Parameter><Name>P_T_INLET_1_SOURCE_PSIA</Name><Value>15</Value></Parameter>
+			<Parameter><Name>P_T_INLET_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>P_T_INLET_3_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_T_INLET_4_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_1_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_2_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_3_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_4_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_THROAT_1_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_2_SOURCE_PSIA</Name><Value>14.77</Value></Parameter>
+			<Parameter><Name>P_THROAT_3_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_4_SOURCE_PSIA</Name><Value>14.79</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_1_DEGF</Name><Value>71</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_2_DEGF</Name><Value>73</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_1_SOURCE_DEGF</Name><Value>85</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_2_SOURCE_DEGF</Name><Value>87</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_1_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>DEC_VOLTS_SOURCE_VDC</Name><Value>115</Value></Parameter>
+			<Parameter><Name>DEC_CURRENT_AMP</Name><Value>48</Value></Parameter>
+		</Parameters> 
+	</Condition>  
+
+		<Condition>
+		<NO>6</NO>
+		<Description>PERF 005 TRIP</Description>
+		<Parameters>
+			<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>14.7</Value><Units>PSIA</Units></Parameter>
+			<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>74</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>55</Value><Units>DEGF</Units></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST1</Name><Value>3</Value></Parameter>
+			<Parameter><Name>VIBRATION_EXHAUST4</Name><Value>4</Value></Parameter>
+			<Parameter><Name>VIBRATION_AGB</Name><Value>5.1</Value></Parameter>
+			<Parameter><Name>VIBRATION_Flywheel</Name><Value>11</Value></Parameter>
+			<Parameter><Name>VIBRATION_Dyno</Name><Value>11</Value></Parameter>
+			<Parameter><Name>NG_HZ</Name><Value>2222</Value></Parameter>
+			<Parameter><Name>NP_HZ</Name><Value>1534</Value></Parameter>
+			<Parameter><Name>Rotor_Speed_Signal</Name><Value>900</Value></Parameter>
+			<Parameter><Name>DEC_TORQUE_LBSFT</Name><Value>701</Value></Parameter>
+			<Parameter><Name>TORQUE_METER_TORQUE_LBSFT</Name><Value>701</Value></Parameter>
+			<Parameter><Name>IGNITION_VOLTAGE_VDC</Name><Value>125</Value></Parameter>
+			<Parameter><Name>IGNITION_CURRENT_AMP</Name><Value>4</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_EXC</Name><Value>92</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_PRESSURE_TRANSMITTER_SIG</Name><Value>53</Value></Parameter>
+			<Parameter><Name>ENGINE_OIL_TEMP_RAW</Name><Value>195</Value></Parameter>
+			<Parameter><Name>P_ENGINE_LUBE_PSIG</Name><Value>180</Value></Parameter>
+			<Parameter><Name>P_PS3_PSIA</Name><Value>243</Value></Parameter>
+			<Parameter><Name>T_T45H_SOURCE_MAP</Name><Value>1673</Value></Parameter>
+			<Parameter><Name>T_FUEL_1_DEGF</Name><Value>75</Value></Parameter>
+			<Parameter><Name>T_FUEL_2_DEGF</Name><Value>76</Value></Parameter>
+			<Parameter><Name>P_FUEL_INLET_PSIG</Name><Value>6</Value></Parameter>
+			<Parameter><Name>W_F1_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>W_F2_HZ</Name><Value>170</Value></Parameter>
+			<Parameter><Name>P_BOOST_PSIG</Name><Value>31</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_FWD_DEGF</Name><Value>46</Value></Parameter>
+			<Parameter><Name>T_SUMP_A_AFT_DEGF</Name><Value>58</Value></Parameter>
+			<Parameter><Name>T_SUMP_B_DEGF</Name><Value>63</Value></Parameter>
+			<Parameter><Name>P_SUMP_B_PSIG</Name><Value>12</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_FWD_DEGF</Name><Value>55</Value></Parameter>
+			<Parameter><Name>T_SUMP_C_AFT_DEGF</Name><Value>53</Value></Parameter>
+			<Parameter><Name>DEC_DIAG_CODE_SIGNAL</Name><Value>0</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_5</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_6</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_7</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_8</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_9</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_10</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_11</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_12</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_13</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_14</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_15</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_16</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_17</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_18</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_19</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_20</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_21</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_22</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_23</Name><Value>71.7</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_24</Name><Value>72.8</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_25</Name><Value>71.9</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_26</Name><Value>72.01</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_27</Name><Value>71.1</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_28</Name><Value>72.2</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_29</Name><Value>73.3</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_30</Name><Value>71.4</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_31</Name><Value>72.5</Value></Parameter>
+			<Parameter><Name>AIR_INLET_TEMPERATURE_32</Name><Value>70.6</Value></Parameter>
+			<Parameter><Name>P_S_INLET_1_SOURCE_PSIA</Name><Value>20</Value></Parameter>
+			<Parameter><Name>P_S_INLET_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>P_S_INLET_3_SOURCE_PSIA</Name><Value>19</Value></Parameter>
+			<Parameter><Name>P_S_INLET_4_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_S_INLET_5_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_S_INLET_6_SOURCE_PSIA</Name><Value>13</Value></Parameter>
+			<Parameter><Name>P_S_INLET_7_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_S_INLET_8_SOURCE_PSIA</Name><Value>15</Value></Parameter>
+			<Parameter><Name>P_T_INLET_1_SOURCE_PSIA</Name><Value>15</Value></Parameter>
+			<Parameter><Name>P_T_INLET_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>P_T_INLET_3_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_T_INLET_4_SOURCE_PSIA</Name><Value>14</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_1_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_2_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_3_SOURCE_PSIA</Name><Value>14.81</Value></Parameter>
+			<Parameter><Name>P_UPSTREAM_4_SOURCE_PSIA</Name><Value>14.82</Value></Parameter>
+			<Parameter><Name>P_THROAT_1_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_2_SOURCE_PSIA</Name><Value>14.77</Value></Parameter>
+			<Parameter><Name>P_THROAT_3_SOURCE_PSIA</Name><Value>14.78</Value></Parameter>
+			<Parameter><Name>P_THROAT_4_SOURCE_PSIA</Name><Value>14.79</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_1_DEGF</Name><Value>71</Value></Parameter>
+			<Parameter><Name>T_UPSTREAM_2_DEGF</Name><Value>73</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_1_SOURCE_DEGF</Name><Value>85</Value></Parameter>
+			<Parameter><Name>T_DISCHARGE_2_SOURCE_DEGF</Name><Value>87</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_1_SOURCE_PSIA</Name><Value>17</Value></Parameter>
+			<Parameter><Name>P_EXHAUST_2_SOURCE_PSIA</Name><Value>16</Value></Parameter>
+			<Parameter><Name>DEC_VOLTS_SOURCE_VDC</Name><Value>115</Value></Parameter>
+			<Parameter><Name>DEC_CURRENT_AMP</Name><Value>48</Value></Parameter>
+		</Parameters> 
+	</Condition>  
+
+	</Conditions>
+</Performance>
+
+

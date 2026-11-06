@@ -1,0 +1,36 @@
+FUNCTION_BLOCK open_UUT_Ctrl_HTS900_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_LTS101._FB									
+														
+	Description :	Code for importing Speed and MGT and Data to the Workbench at Opening.
+ 	Dependacy : 	
+
+					HISTORY
+	Rev			Date (YYYY/MM/DD)	Name			Description
+  	1.0	         	2020/01/28 		Sylvain Boyte		First Release
+	
+************************************************************************************************************************************************)	
+
+
+		
+		(* Parameters are retrieved from XML(.cfg) file by engine model *)
+		Prefix_String := 'ConfigurationSettings.' + UUT_INFO.Model + '.';
+		Prefix_String_Family := 'ConfigurationSettings.' + UUT_INFO.Family + '.';
+
+		(* SPEED *)
+		NG_INDEX 					:= ReadOneIntegerConfigItemST( Prefix_String + 'NG_INDEX', '-1');
+		NG_BINDING_SOURCE 			:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'NG_BINDING_SOURCE', '-1'));
+		NG_100_RPM 					:= ReadOneRealConfigItemST( Prefix_String + 'NG_100_RPM_CONSTANT', '-1');
+		NG_100_FREQ 				:= ReadOneRealConfigItemST( Prefix_String + 'NG_100_FREQ_CONSTANT', '-1');
+		NG_SPEED_AT_GI_PCT			:= ReadOneRealConfigItemST( Prefix_String + 'NG_SPEED_AT_GI_PCT_CONSTANT', '-1');
+
+		NP_INDEX 					:= ReadOneIntegerConfigItemST( Prefix_String + 'NP_INDEX', '-1');
+		NP_BINDING_SOURCE 			:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'NP_BINDING_SOURCE', '-1'));
+		NP_100_RPM 					:= ReadOneRealConfigItemST( Prefix_String + 'NP_100_RPM_CONSTANT', '-1');
+		NP_100_FREQ 				:= ReadOneRealConfigItemST( Prefix_String + 'NP_100_FREQ_CONSTANT', '-1');
+
+		(* Measured Gas Temperature *)
+		MGT_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String_Family + 'MGT_PROBE_BINDING_SOURCE', '-1'));
+		MGT_index 					:= ReadOneIntegerConfigItemST( Prefix_String_Family + 'MGT_INDEX', '-1');
+
+END_FUNCTION_BLOCK

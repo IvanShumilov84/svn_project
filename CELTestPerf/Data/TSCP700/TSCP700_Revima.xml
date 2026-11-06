@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>TSCP700-4B</Model>
+    <SN>P80347</SN>
+    <TESTDATE>09/25/2012</TESTDATE>
+  </Engine>
+  <ChannelMap>
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_1</Parameter>
+      <Name>T_INLET1_DEGF</Name>
+      <FVName>T73</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[73].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_2</Parameter>
+      <Name>T_INLET2_DEGF</Name>
+      <FVName>T74</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[74].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_3</Parameter>
+      <Name>T_INLET3_DEGF</Name>
+      <FVName>T75</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[75].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AIR_INLET_TEMPERATURE_4</Parameter>
+      <Name>T_INLET4_DEGF</Name>
+      <FVName>T76</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[76].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>AMBIANT_TEMPERATURE</Parameter>
+      <Name>T_CELL_DEGF</Name>
+      <FVName>T24</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[24].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>APU_INLET_DOOR</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN12</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[12]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>BAROMETRIC_PRESSURE</Parameter>
+      <Name>P_BARO_PSIA</Name>
+      <FVName>P1</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[1].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>BLEED_AIR_DIFF_PRESSURE</Parameter>
+      <Name>P_ORIFICE_DELTA_PSID</Name>
+      <FVName>P28</FVName>
+      <Units>PSID</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[28].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>BLEED_AIR_ORIF_PRESSURE</Parameter>
+      <Name>P_ORIFICE_PSIG</Name>
+      <FVName>P27</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[27].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>BLEED_AIR_TOTAL_PRESSURE</Parameter>
+      <Name>P_BLEED_PSIA</Name>
+      <FVName>P5</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[5].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>BLEED_AIR1_TEMPERATURE</Parameter>
+      <Name>T_BLEED1_DEGF</Name>
+      <FVName>T81</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[81].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>BLEED_AIR2_TEMPERATURE</Parameter>
+      <Name>T_BLEED2_DEGF</Name>
+      <FVName>T82</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[82].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>BLEED_ORIF_TEMPERATURE</Parameter>
+      <Name>T_ORIFICE_DEGF</Name>
+      <FVName>T98</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.t[98].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>BLEED_LOUVER</Parameter>
+      <Name>LOUVER_BLEED_AUX_IND</Name>
+      <FVName>DIN53</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[53]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR1</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN55</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[55]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR2</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN61</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[61]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR3</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN62</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[62]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DOOR4</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN63</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[63]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_POWER</Parameter>
+      <Name>TODO</Name>
+      <FVName>vin20</FVName>
+      <Units>KG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[20].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_PRESSURE</Parameter>
+      <Name>TODO</Name>
+      <FVName>P18</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[18].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>DYNO_WATER_RETURN_ON</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN96</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[96]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>EGT_1</Parameter>
+      <Name>T_EGT1_DEGF</Name>
+      <FVName>T25</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[25].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_2</Parameter>
+      <Name>T_EGT2_DEGF</Name>
+      <FVName>T26</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[26].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_3</Parameter>
+      <Name>T_EGT3_DEGF</Name>
+      <FVName>T27</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[27].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_4</Parameter>
+      <Name>T_EGT4_DEGF</Name>
+      <FVName>T28</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[28].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_5</Parameter>
+      <Name>T_EGT5_DEGF</Name>
+      <FVName>T29</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[29].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_6</Parameter>
+      <Name>T_EGT6_DEGF</Name>
+      <FVName>T30</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[30].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_7</Parameter>
+      <Name>T_EGT7_DEGF</Name>
+      <FVName>T31</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[31].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_8</Parameter>
+      <Name>T_EGT8_DEGF</Name>
+      <FVName>T32</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[32].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_9</Parameter>
+      <Name>T_EGT9_DEGF</Name>
+      <FVName>T33</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[33].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_10</Parameter>
+      <Name>T_EGT10_DEGF</Name>
+      <FVName>T34</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[34].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_11</Parameter>
+      <Name>T_EGT11_DEGF</Name>
+      <FVName>T35</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[35].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_12</Parameter>
+      <Name>T_EGT12_DEGF</Name>
+      <FVName>T36</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[36].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_13</Parameter>
+      <Name>T_EGT13_DEGF</Name>
+      <FVName>T37</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[37].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_14</Parameter>
+      <Name>T_EGT14_DEGF</Name>
+      <FVName>T38</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[38].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_15</Parameter>
+      <Name>T_EGT15_DEGF</Name>
+      <FVName>T39</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[39].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_16</Parameter>
+      <Name>T_EGT16_DEGF</Name>
+      <FVName>T40</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[40].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_17</Parameter>
+      <Name>T_EGT17_DEGF</Name>
+      <FVName>T41</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[41].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_18</Parameter>
+      <Name>T_EGT18_DEGF</Name>
+      <FVName>T42</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[42].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_ENGINE_LOWER</Parameter>
+      <Name>T_ETC2_DEGF</Name>
+      <FVName>VIN71</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[71].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EGT_ENGINE_UPPER</Parameter>
+      <Name>T_ETC1_DEGF</Name>
+      <FVName>VIN70</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[70].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT1</Parameter>
+      <Name>ENGINE_HARNESS_ID1_IND</Name>
+      <FVName>DIN1</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[1]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT2</Parameter>
+      <Name>ENGINE_HARNESS_ID2_IND</Name>
+      <FVName>DIN2</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[2]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT3</Parameter>
+      <Name>ENGINE_HARNESS_ID3_IND</Name>
+      <FVName>DIN3</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[3]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT4</Parameter>
+      <Name>ENGINE_HARNESS_ID1_IND</Name>
+      <FVName>DIN4</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[4]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>ENGINE HARNESS_BIT5</Parameter>
+      <Name>ENGINE_HARNESS_ID5_IND</Name>
+      <FVName>DIN32</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[32]</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>EMERGENCY_STOP</Parameter>
+      <Name>ESTOP_IND</Name>
+      <FVName>DIN49</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[49]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>EXHAUST_LOUVER</Parameter>
+      <Name>LOUVER_EXHAUST_AUX_IND</Name>
+      <FVName>DIN52</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[52]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>EXHAUST_STATIC</Parameter>
+      <Name>P_ESP_PSIG</Name>
+      <FVName>P3</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[3].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUEL_DISCH_PRESSURE</Parameter>
+      <Name>P_FUEL_DISCHARGE_PSIG</Name>
+      <FVName>P12</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[12].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FM_FUEL_FLOW</Parameter>
+      <Name>WF</Name>
+      <FVName>WF</FVName>
+      <Units>PPH</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_mass_fuel_flow.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUEL_INLET_PRESSURE</Parameter>
+      <Name>P_FUEL_INLET_PSIG</Name>
+      <FVName>P11</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[11].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUEL_INLET_TEMPERATURE</Parameter>
+      <Name>T_FUEL_DEGF</Name>
+      <FVName>OPC_T_FUEL</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_t_fuel.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUEL_PUMP_ON</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN94</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[94]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>FUEL_QUANTITY</Parameter>
+      <Name>TODO</Name>
+      <FVName>FM_TOTAL_VOLUME_OPC</FVName>
+      <Units>GAL</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_total_vol_fuel.pv</ItemID>
+    </Channel>
+
+
+    <Channel>
+      <Parameter>FUME_EXTRACTION_FAN</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN98</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[98]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>GEARBOX_BREATHER</Parameter>
+      <Name>P_OIL_GB_BREATHER_PSIA</Name>
+      <FVName>P6</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[6].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>INTAKE_LOUVER</Parameter>
+      <Name>LOUVER_INTAKE_AUX_IND</Name>
+      <FVName>DIN51</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[51]</ItemID>
+    </Channel>
+  
+    <Channel>
+      <Parameter>LB_CURRENT1</Parameter>
+      <Name>LB_CURRENT1</Name>
+      <FVName>OPC_LB_CURRENT1</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il1.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB_CURRENT2</Parameter>
+      <Name>LB_CURRENT2</Name>
+      <FVName>OPC_LB_CURRENT2</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il2.pv</ItemID>
+    </Channel>
+ 
+    <Channel>
+      <Parameter>LB_CURRENT3</Parameter>
+      <Name>LB_CURRENT3</Name>
+      <FVName>OPC_LB_CURRENT3</FVName>
+      <Units>A</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_current_il3.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB_FREQUENCY</Parameter>
+      <Name>LB_FREQUENCY</Name>
+      <FVName>OPC_LB_FREQUENCY</FVName>
+      <Units>HERTZ</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_freq.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB_POWER</Parameter>
+      <Name>LB_POWER</Name>
+      <FVName>OPC_LB_POWER</FVName>
+      <Units>w</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_power_tot.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB_VOLT1</Parameter>
+      <Name>LB_VOLT1</Name>
+      <FVName>OPC_LB_VOLT1</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl1_n.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>LB_VOLT2</Parameter>
+      <Name>LB_VOLT2</Name>
+      <FVName>OPC_LB_VOLT2</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl2_n.pv</ItemID>
+    </Channel>
+ 
+        <Channel>
+      <Parameter>LB_VOLT3</Parameter>
+      <Name>LB_VOLT3</Name>
+      <FVName>OPC__LB_VOLT3</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_uut_controller.pm1_voltage_vl3_n.pv</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>N2_GT_95_PCT</Parameter>
+      <Name>N2_95_IND</Name>
+      <FVName>DIN9</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[9]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>OIL_GEARBOX_TEMPERATURE</Parameter>
+      <Name>T_OIL_DEGF</Name>
+      <FVName>T10</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[10].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>OIL_INLET_TEMPERATURE</Parameter>
+      <Name>T_OIL_DEGF</Name>
+      <FVName>T84</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[84].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>OIL_LEVEL1</Parameter>
+      <Name>OIL_LEVEL1</Name>
+      <FVName>VIN69</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[69].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>OIL_LEVEL2</Parameter>
+      <Name>OIL_LEVEL2</Name>
+      <FVName>VIN62</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[62].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>OIL_PUMP_DISCH_PRESSURE</Parameter>
+      <Name>P_OIL_PUMP_DSCH_PSIG</Name>
+      <FVName>P9</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[9].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>OIL_QUANTITY_LEVEL</Parameter>
+      <Name>OIL_QTY_LEVEL</Name>
+      <FVName>VIN61</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[61].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>P_2_11</Parameter>
+      <Name>P_LP_COMP_DSCH_PSIG</Name>
+      <FVName>P4</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[4].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>POWER_ON</Parameter>
+      <Name>TODO</Name>
+      <FVName>DIN31</FVName>
+      <ItemID>dacn1.dacn1_serial_iomgr.din[31]</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>SPEED_N1</Parameter>
+      <Name>N1</Name>
+      <FVName>F14</FVName>
+      <Units>HZ</Units>
+      <!-- 14050.0Hz @28100.0RPM -->
+      <Slope>2.0</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[14].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>SPEED_N1_4E</Parameter>
+      <Name>N1</Name>
+      <FVName>F15</FVName>
+      <Units>HZ</Units>
+      <!-- 14050.0Hz @28100.0RPM -->
+      <Slope>2.0</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[15].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>SPEED_N2</Parameter>
+      <Name>N2</Name>
+      <FVName>F21</FVName>
+      <Units>HZ</Units>
+      <!-- 13537.0Hz @35667.0RPM -->
+      <Slope>2.63478</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[21].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>SPEED_N2_4E</Parameter>
+      <Name>N2</Name>
+      <FVName>F22</FVName>
+      <Units>HZ</Units>
+      <!-- 13537.0Hz @35667.0RPM -->
+      <Slope>2.63478</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[22].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>STARTER_CURRENT</Parameter>
+      <Name>TODO</Name>
+      <FVName>vin2</FVName>
+      <Units>AMP</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[2].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>STARTER_VOLTAGE</Parameter>
+      <Name>TODO</Name>
+      <FVName>vin1</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vin[1].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>SURGE_PRESSURE</Parameter>
+      <Name>P_SURGE_PSIG</Name>
+      <FVName>P8</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[8].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>VIBRATION_GEARBOX</Parameter>
+      <Name>VIB_GEARBOX</Name>
+      <FVName>VIB28</FVName>
+      <Units>MILS</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[28].mean_value</ItemID>
+    </Channel>
+
+    <Channel>
+      <Parameter>VIBRATION_GEARBOX_4E</Parameter>
+      <Name>VIB_GEARBOX</Name>
+      <FVName>VIB29</FVName>
+      <Units>MILS</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[29].mean_value</ItemID>
+    </Channel>
+    
+     <Channel>
+      <Parameter>VIBRATION_TURBINE</Parameter>
+      <Name>VIB_TURBINE</Name>
+      <FVName>VIB14</FVName>
+      <Units>MILS</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[14].mean_value</ItemID>
+    </Channel>
+   
+    <Channel>
+      <Parameter>VIBRATION_TURBINE_4E</Parameter>
+      <Name>VIB_TURBINE</Name>
+      <FVName>VIB15</FVName>
+      <Units>MILS</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[15].mean_value</ItemID>
+    </Channel>
+    
+    <Channel>
+      <Parameter>VALID_ECB</Parameter>
+      <Name>ECB_ID</Name>
+      <FVName>VIN81</FVName>
+      <Units>VOLT</Units>
+      <ItemID>dacn1.dacn1_serial_iomgr.VIN[81].mean_value</ItemID>
+    </Channel>
+
+  </ChannelMap>
+  
+  
+  <Conditions>
+<Condition>
+<NO>1</NO>
+<Description>Configure for TSCP700-4E</Description>
+  <Parameters>
+<Parameter><Name>ENGINE HARNESS_BIT5</Name><Value>True</Value></Parameter>
+<Parameter><Name>VALID_ECB</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>750</Value><Units>GAL</Units></Parameter>
+  </Parameters>
+</Condition>
+ 
+<Condition>
+<NO>2</NO>
+<Description>Configure for TSCP700-4B-5</Description>
+  <Parameters>
+<Parameter><Name>ENGINE HARNESS_BIT5</Name><Value>False</Value></Parameter>
+<Parameter><Name>VALID_ECB</Name><Value>7.5</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>700</Value><Units>GAL</Units></Parameter>
+  </Parameters>
+</Condition>
+
+    
+<Condition>
+<NO>3</NO>
+<Description>System Ready to Start</Description>
+  <Parameters>
+    
+<Parameter><Name>APU_INLET_DOOR</Name><Value>True</Value></Parameter>
+<Parameter><Name>BLEED_LOUVER</Name><Value>True</Value></Parameter>
+<Parameter><Name>DOOR1</Name><Value>True</Value></Parameter>
+<Parameter><Name>DOOR2</Name><Value>True</Value></Parameter>
+<Parameter><Name>DOOR3</Name><Value>True</Value></Parameter>
+<Parameter><Name>DOOR4</Name><Value>True</Value></Parameter>
+<Parameter><Name>DYNO_WATER_RETURN_ON</Name><Value>True</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT1</Name><Value>False</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT2</Name><Value>True</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT3</Name><Value>False</Value></Parameter>
+<Parameter><Name>ENGINE HARNESS_BIT4</Name><Value>True</Value></Parameter>
+<Parameter><Name>EMERGENCY_STOP</Name><Value>True</Value></Parameter>
+<Parameter><Name>EXHAUST_LOUVER</Name><Value>True</Value></Parameter>
+<Parameter><Name>FUEL_PUMP_ON</Name><Value>True</Value></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>775</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>FUME_EXTRACTION_FAN</Name><Value>True</Value></Parameter>
+<Parameter><Name>INTAKE_LOUVER</Name><Value>True</Value></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>False</Value></Parameter>
+<Parameter><Name>POWER_ON</Name><Value>True</Value></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>0</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>STARTER_CURRENT</Name><Value>0</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>STARTER_VOLTAGE</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+  </Parameters>
+</Condition>
+    
+<Condition>
+<NO>4</NO>
+<Description>RUN IN IDLE</Description>
+  <Parameters>
+<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>87.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>86.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>87.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>88.1</Value><Units>DEGF</Units></Parameter> 
+<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>1008.8</Value><Units>MBARA</Units></Parameter>
+<Parameter><Name>BLEED_AIR_DIFF_PRESSURE</Name><Value>0.0</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>BLEED_AIR_ORIF_PRESSURE</Name><Value>0.7</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR_TOTAL_PRESSURE</Name><Value>0.7</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR1_TEMPERATURE</Name><Value>165.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_AIR2_TEMPERATURE</Name><Value>166.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_ORIF_TEMPERATURE</Name><Value>93.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DYNO_POWER</Name><Value>0</Value><Units>KG</Units></Parameter>
+<Parameter><Name>DYNO_PRESSURE</Name><Value>0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>EGT_1</Name><Value>858</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_2</Name><Value>837</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_3</Name><Value>679</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_4</Name><Value>792</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_5</Name><Value>807</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_6</Name><Value>719</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_7</Name><Value>782</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_8</Name><Value>787</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_9</Name><Value>768</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_10</Name><Value>679</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_11</Name><Value>727</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_12</Name><Value>782</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_13</Name><Value>798</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_14</Name><Value>766</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_15</Name><Value>798</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_16</Name><Value>782</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_17</Name><Value>864</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_18</Name><Value>753</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_UPPER</Name><Value>792</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_LOWER</Name><Value>834</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EXHAUST_STATIC</Name><Value>-0.1</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FM_FUEL_FLOW</Name><Value>233.6</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>FUEL_DISCH_PRESSURE</Name><Value>333.5</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_PRESSURE</Name><Value>24.8</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_TEMPERATURE</Name><Value>87.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>800</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>GEARBOX_BREATHER</Name><Value>1.0</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>LB_CURRENT1</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT2</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT3</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_FREQUENCY</Name><Value>0</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB_POWER</Name><Value>0</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB_VOLT1</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT2</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT3</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>True</Value></Parameter>
+<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>200</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_INLET_TEMPERATURE</Name><Value>220</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_LEVEL1</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_LEVEL2</Name><Value>2</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_PUMP_DISCH_PRESSURE</Name><Value>93.4</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>OIL_QUANTITY_LEVEL</Name><Value>4.3</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>P_2_11</Name><Value>4.5</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>17848</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>17848</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>36024</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>36024</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SURGE_PRESSURE</Name><Value>-0.30</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX_4E</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE_4E</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+    
+
+    
+    <Condition>
+<NO>5</NO>
+<Description>ZERO LOAD</Description>
+  <Parameters>
+<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>91.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>91.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>90.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>91.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>90.8</Value><Units>DEGF</Units></Parameter> 
+<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>1009.1</Value><Units>MBARA</Units></Parameter>
+<Parameter><Name>BLEED_AIR_DIFF_PRESSURE</Name><Value>-0.1</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>BLEED_AIR_ORIF_PRESSURE</Name><Value>0.9</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR_TOTAL_PRESSURE</Name><Value>0.8</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR1_TEMPERATURE</Name><Value>211.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_AIR2_TEMPERATURE</Name><Value>213.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_ORIF_TEMPERATURE</Name><Value>300</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DYNO_POWER</Name><Value>0</Value><Units>KG</Units></Parameter>
+<Parameter><Name>DYNO_PRESSURE</Name><Value>0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>EGT_1</Name><Value>855</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_2</Name><Value>828</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_3</Name><Value>776</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_4</Name><Value>685</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_5</Name><Value>797</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_6</Name><Value>715</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_7</Name><Value>776</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_8</Name><Value>785</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_9</Name><Value>763</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_10</Name><Value>683</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_11</Name><Value>716</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_12</Name><Value>776</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_13</Name><Value>787</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_14</Name><Value>753</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_15</Name><Value>789</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_16</Name><Value>776</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_17</Name><Value>859</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_18</Name><Value>752</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_UPPER</Name><Value>783</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_LOWER</Name><Value>827</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EXHAUST_STATIC</Name><Value>-0.1</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FM_FUEL_FLOW</Name><Value>224.1</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>FUEL_DISCH_PRESSURE</Name><Value>329.2</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_PRESSURE</Name><Value>24.9</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_TEMPERATURE</Name><Value>84.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>900</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>GEARBOX_BREATHER</Name><Value>1.3</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>LB_CURRENT1</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT2</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT3</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_FREQUENCY</Name><Value>0</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB_POWER</Name><Value>0</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB_VOLT1</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT2</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT3</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>True</Value></Parameter>
+<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>280.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_INLET_TEMPERATURE</Name><Value>268.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_LEVEL1</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_LEVEL2</Name><Value>2</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_PUMP_DISCH_PRESSURE</Name><Value>88.6</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>OIL_QUANTITY_LEVEL</Name><Value>4.3</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>P_2_11</Name><Value>4.6</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>17877</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>17877</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>36026</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>36026</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SURGE_PRESSURE</Name><Value>-0.20</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.1</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX_4E</Name><Value>0.1</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.23</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE_4E</Name><Value>0.23</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+    
+
+    
+       <Condition>
+<NO>6</NO>
+<Description>GENERATOR LOAD</Description>
+  <Parameters>
+<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>90.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>91.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>88.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>90.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>89.5</Value><Units>DEGF</Units></Parameter> 
+<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>1008.5</Value><Units>MBARA</Units></Parameter>
+<Parameter><Name>BLEED_AIR_DIFF_PRESSURE</Name><Value>-0.3</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>BLEED_AIR_ORIF_PRESSURE</Name><Value>28.1</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR_TOTAL_PRESSURE</Name><Value>28</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR1_TEMPERATURE</Name><Value>267.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_AIR2_TEMPERATURE</Name><Value>269.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_ORIF_TEMPERATURE</Name><Value>194.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DYNO_POWER</Name><Value>0</Value><Units>KG</Units></Parameter>
+<Parameter><Name>DYNO_PRESSURE</Name><Value>0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>EGT_1</Name><Value>960</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_2</Name><Value>939</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_3</Name><Value>743</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_4</Name><Value>879</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_5</Name><Value>881</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_6</Name><Value>818</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_7</Name><Value>870</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_8</Name><Value>838</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_9</Name><Value>848</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_10</Name><Value>743</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_11</Name><Value>790</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_12</Name><Value>870</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_13</Name><Value>923</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_14</Name><Value>854</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_15</Name><Value>876</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_16</Name><Value>870</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_17</Name><Value>974</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_18</Name><Value>868</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_UPPER</Name><Value>853</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_LOWER</Name><Value>900</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EXHAUST_STATIC</Name><Value>-0.2</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FM_FUEL_FLOW</Name><Value>347.2</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>FUEL_DISCH_PRESSURE</Name><Value>409</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_PRESSURE</Name><Value>24.1</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_TEMPERATURE</Name><Value>85.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>1000</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>GEARBOX_BREATHER</Name><Value>2.2</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>LB_CURRENT1</Name><Value>248</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT2</Name><Value>245.1</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT3</Name><Value>248.6</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_FREQUENCY</Name><Value>401.3</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB_POWER</Name><Value>88800</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB_VOLT1</Name><Value>120.7</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT2</Name><Value>119.3</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT3</Name><Value>120.1</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>True</Value></Parameter>
+<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>293.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_INLET_TEMPERATURE</Name><Value>273.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_LEVEL1</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_LEVEL2</Name><Value>2</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_PUMP_DISCH_PRESSURE</Name><Value>90.5</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>OIL_QUANTITY_LEVEL</Name><Value>4.7</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>P_2_11</Name><Value>12.4</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>22088</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>22088</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>36027</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>36027</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SURGE_PRESSURE</Name><Value>-0.70</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.07</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX_4E</Name><Value>0.07</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.15</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE_4E</Name><Value>0.15</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+
+    
+
+    
+    
+<Condition>
+<NO>7</NO>
+<Description>ECS</Description>
+  <Parameters>
+<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>93.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>92.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>91.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>95.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>89.1</Value><Units>DEGF</Units></Parameter> 
+<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>1008.8</Value><Units>MBARA</Units></Parameter>
+<Parameter><Name>BLEED_AIR_DIFF_PRESSURE</Name><Value>54.7</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>BLEED_AIR_ORIF_PRESSURE</Name><Value>30.2</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR_TOTAL_PRESSURE</Name><Value>34.8</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR1_TEMPERATURE</Name><Value>311.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_AIR2_TEMPERATURE</Name><Value>313.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_ORIF_TEMPERATURE</Name><Value>309</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DYNO_POWER</Name><Value>0</Value><Units>KG</Units></Parameter>
+<Parameter><Name>DYNO_PRESSURE</Name><Value>0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>EGT_1</Name><Value>1079</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_2</Name><Value>1042</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_3</Name><Value>822</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_4</Name><Value>971</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_5</Name><Value>987</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_6</Name><Value>919</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_7</Name><Value>970</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_8</Name><Value>933</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_9</Name><Value>946</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_10</Name><Value>822</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_11</Name><Value>883</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_12</Name><Value>970</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_13</Name><Value>1033</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_14</Name><Value>951</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_15</Name><Value>975</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_16</Name><Value>970</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_17</Name><Value>1085</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_18</Name><Value>957</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_UPPER</Name><Value>949</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_LOWER</Name><Value>1004</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EXHAUST_STATIC</Name><Value>-0.2</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FM_FUEL_FLOW</Name><Value>441.8</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>FUEL_DISCH_PRESSURE</Name><Value>530.1</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_PRESSURE</Name><Value>23.6</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_TEMPERATURE</Name><Value>84.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>1100</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>GEARBOX_BREATHER</Name><Value>4.0</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>LB_CURRENT1</Name><Value>248.1</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT2</Name><Value>245.3</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT3</Name><Value>248.7</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_FREQUENCY</Name><Value>401.3</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB_POWER</Name><Value>88900</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB_VOLT1</Name><Value>120.7</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT2</Name><Value>119.4</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT3</Name><Value>120.0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>True</Value></Parameter>
+<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>320.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_INLET_TEMPERATURE</Name><Value>300.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_LEVEL1</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_LEVEL2</Name><Value>2</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_PUMP_DISCH_PRESSURE</Name><Value>89</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>OIL_QUANTITY_LEVEL</Name><Value>4.9</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>P_2_11</Name><Value>16.5</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>25240</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>25240</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>35500</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>35500</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SURGE_PRESSURE</Name><Value>0.0</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.09</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX_4E</Name><Value>0.09</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.18</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE_4E</Name><Value>0.18</Value><Units>MILS</Units></Parameter>
+</Parameters>
+</Condition>
+    
+    
+<Condition>
+<NO>8</NO>
+<Description>MES</Description>
+  <Parameters>
+<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>93.1</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>92.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>91.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>95.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>89.3</Value><Units>DEGF</Units></Parameter> 
+<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>1008.9</Value><Units>MBARA</Units></Parameter>
+<Parameter><Name>BLEED_AIR_DIFF_PRESSURE</Name><Value>52</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>BLEED_AIR_ORIF_PRESSURE</Name><Value>38.6</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR_TOTAL_PRESSURE</Name><Value>42.9</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR1_TEMPERATURE</Name><Value>340.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_AIR2_TEMPERATURE</Name><Value>342.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_ORIF_TEMPERATURE</Name><Value>338.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DYNO_POWER</Name><Value>0</Value><Units>KG</Units></Parameter>
+<Parameter><Name>DYNO_PRESSURE</Name><Value>0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>EGT_1</Name><Value>1099</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_2</Name><Value>1028</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_3</Name><Value>820</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_4</Name><Value>965</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_5</Name><Value>966</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_6</Name><Value>900</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_7</Name><Value>963</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_8</Name><Value>899</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_9</Name><Value>955</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_10</Name><Value>820</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_11</Name><Value>883</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_12</Name><Value>963</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_13</Name><Value>1029</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_14</Name><Value>954</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_15</Name><Value>956</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_16</Name><Value>963</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_17</Name><Value>1082</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_18</Name><Value>952</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_UPPER</Name><Value>948</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_LOWER</Name><Value>1005</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EXHAUST_STATIC</Name><Value>-0.2</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FM_FUEL_FLOW</Name><Value>477.0</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>FUEL_DISCH_PRESSURE</Name><Value>590.7</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_PRESSURE</Name><Value>23.3</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_TEMPERATURE</Name><Value>84.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>1200</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>GEARBOX_BREATHER</Name><Value>5.0</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>LB_CURRENT1</Name><Value>248.0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT2</Name><Value>245.2</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT3</Name><Value>248.6</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_FREQUENCY</Name><Value>400.9</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB_POWER</Name><Value>88800</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB_VOLT1</Name><Value>120.6</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT2</Name><Value>119.3</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT3</Name><Value>120.0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>True</Value></Parameter>
+<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>327.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_INLET_TEMPERATURE</Name><Value>307.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_LEVEL1</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_LEVEL2</Name><Value>2</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_PUMP_DISCH_PRESSURE</Name><Value>89.6</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>OIL_QUANTITY_LEVEL</Name><Value>4.9</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>P_2_11</Name><Value>20.2</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>26500</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>26500</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>35445</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>35445</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SURGE_PRESSURE</Name><Value>0.0</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.09</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX_4E</Name><Value>0.09</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.19</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE_4E</Name><Value>0.19</Value><Units>MILS</Units></Parameter>
+    </Parameters>
+</Condition>
+
+
+
+<Condition>
+<NO>9</NO>
+<Description>STANDBY</Description>
+  <Parameters>
+<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>92.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>92.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>91.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>93.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>88.7</Value><Units>DEGF</Units></Parameter> 
+<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>1008.9</Value><Units>MBARA</Units></Parameter>
+<Parameter><Name>BLEED_AIR_DIFF_PRESSURE</Name><Value>10</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>BLEED_AIR_ORIF_PRESSURE</Name><Value>45.2</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR_TOTAL_PRESSURE</Name><Value>46</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR1_TEMPERATURE</Name><Value>342.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_AIR2_TEMPERATURE</Name><Value>344.6</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_ORIF_TEMPERATURE</Name><Value>330.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DYNO_POWER</Name><Value>0</Value><Units>KG</Units></Parameter>
+<Parameter><Name>DYNO_PRESSURE</Name><Value>0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>EGT_1</Name><Value>881</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_2</Name><Value>856</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_3</Name><Value>693</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_4</Name><Value>770</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_5</Name><Value>826</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_6</Name><Value>780</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_7</Name><Value>801</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_8</Name><Value>758</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_9</Name><Value>764</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_10</Name><Value>693</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_11</Name><Value>739</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_12</Name><Value>801</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_13</Name><Value>830</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_14</Name><Value>802</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_15</Name><Value>818</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_16</Name><Value>801</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_17</Name><Value>885</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_18</Name><Value>786</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_UPPER</Name><Value>799</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_LOWER</Name><Value>853</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EXHAUST_STATIC</Name><Value>-0.2</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FM_FUEL_FLOW</Name><Value>398.0</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>FUEL_DISCH_PRESSURE</Name><Value>434.0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_PRESSURE</Name><Value>23.8</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_TEMPERATURE</Name><Value>84.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>1300</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>GEARBOX_BREATHER</Name><Value>4.8</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>LB_CURRENT1</Name><Value>0.0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT2</Name><Value>0.0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT3</Name><Value>0.0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_FREQUENCY</Name><Value>0.0</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB_POWER</Name><Value>0.0</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB_VOLT1</Name><Value>0.0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT2</Name><Value>0.0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT3</Name><Value>0.0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>True</Value></Parameter>
+<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>316.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_INLET_TEMPERATURE</Name><Value>296.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_LEVEL1</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_LEVEL2</Name><Value>2</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_PUMP_DISCH_PRESSURE</Name><Value>92.3</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>OIL_QUANTITY_LEVEL</Name><Value>4.9</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>P_2_11</Name><Value>20.7</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>25855</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>25855</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>36212</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>36212</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SURGE_PRESSURE</Name><Value>-1.7</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.09</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX_4E</Name><Value>0.09</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.2</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE_4E</Name><Value>0.2</Value><Units>MILS</Units></Parameter>
+    </Parameters>
+</Condition>
+
+    
+<Condition>
+<NO>10</NO>
+<Description>Starting condition</Description>
+  <Parameters>
+<Parameter><Name>AIR_INLET_TEMPERATURE_1</Name><Value>87.5</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_2</Name><Value>88</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_3</Name><Value>86.9</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AIR_INLET_TEMPERATURE_4</Name><Value>87.7</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>AMBIANT_TEMPERATURE</Name><Value>88.1</Value><Units>DEGF</Units></Parameter> 
+<Parameter><Name>BAROMETRIC_PRESSURE</Name><Value>1008.8</Value><Units>MBARA</Units></Parameter>
+<Parameter><Name>BLEED_AIR_DIFF_PRESSURE</Name><Value>0.0</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>BLEED_AIR_ORIF_PRESSURE</Name><Value>0.7</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR_TOTAL_PRESSURE</Name><Value>0.7</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>BLEED_AIR1_TEMPERATURE</Name><Value>165.4</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_AIR2_TEMPERATURE</Name><Value>166.8</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>BLEED_ORIF_TEMPERATURE</Name><Value>93.2</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>DYNO_POWER</Name><Value>0</Value><Units>KG</Units></Parameter>
+<Parameter><Name>DYNO_PRESSURE</Name><Value>0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>EGT_1</Name><Value>858</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_2</Name><Value>837</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_3</Name><Value>679</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_4</Name><Value>792</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_5</Name><Value>807</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_6</Name><Value>719</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_7</Name><Value>782</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_8</Name><Value>787</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_9</Name><Value>768</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_10</Name><Value>679</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_11</Name><Value>727</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_12</Name><Value>782</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_13</Name><Value>798</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_14</Name><Value>766</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_15</Name><Value>798</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_16</Name><Value>782</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_17</Name><Value>864</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_18</Name><Value>753</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_UPPER</Name><Value>792</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EGT_ENGINE_LOWER</Name><Value>834</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>EXHAUST_STATIC</Name><Value>-0.1</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FM_FUEL_FLOW</Name><Value>233.6</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>FUEL_DISCH_PRESSURE</Name><Value>333.5</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_PRESSURE</Name><Value>24.8</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>FUEL_INLET_TEMPERATURE</Name><Value>87.3</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>FUEL_QUANTITY</Name><Value>800</Value><Units>GAL</Units></Parameter>
+<Parameter><Name>GEARBOX_BREATHER</Name><Value>1.0</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>LB_CURRENT1</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT2</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_CURRENT3</Name><Value>0</Value><Units>A</Units></Parameter>
+<Parameter><Name>LB_FREQUENCY</Name><Value>0</Value><Units>HERTZ</Units></Parameter>
+<Parameter><Name>LB_POWER</Name><Value>0</Value><Units>W</Units></Parameter>
+<Parameter><Name>LB_VOLT1</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT2</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>LB_VOLT3</Name><Value>0</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>N2_GT_95_PCT</Name><Value>False</Value></Parameter>
+<Parameter><Name>OIL_GEARBOX_TEMPERATURE</Name><Value>200</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_INLET_TEMPERATURE</Name><Value>220</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>OIL_LEVEL1</Name><Value>8</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_LEVEL2</Name><Value>2</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>OIL_PUMP_DISCH_PRESSURE</Name><Value>93.4</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>OIL_QUANTITY_LEVEL</Name><Value>4.3</Value><Units>VOLT</Units></Parameter>
+<Parameter><Name>P_2_11</Name><Value>4.5</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>SPEED_N1</Name><Value>9000</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N1_4E</Name><Value>9000</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2</Name><Value>18000</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SPEED_N2_4E</Name><Value>18000</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>SURGE_PRESSURE</Name><Value>-0.30</Value><Units>INHG</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_GEARBOX_4E</Name><Value>0.12</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+<Parameter><Name>VIBRATION_TURBINE_4E</Name><Value>0.25</Value><Units>MILS</Units></Parameter>
+  </Parameters>
+</Condition>
+
+ <Condition>
+<NO>11</NO>
+<Description>Starter Current to 2000</Description>
+  <Parameters>
+<Parameter><Name>STARTER_CURRENT</Name><Value>2000</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>STARTER_VOLTAGE</Name><Value>100</Value><Units>VOLT</Units></Parameter>
+  </Parameters>
+</Condition>
+ 
+    
+     <Condition>
+<NO>11</NO>
+<Description>Starter Current to 500</Description>
+  <Parameters>
+<Parameter><Name>STARTER_CURRENT</Name><Value>500</Value><Units>AMP</Units></Parameter>
+<Parameter><Name>STARTER_VOLTAGE</Name><Value>75</Value><Units>VOLT</Units></Parameter>
+  </Parameters>
+</Condition>
+
+    
+  </Conditions>
+</Performance>

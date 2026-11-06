@@ -1,0 +1,113 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN									
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+	2.0	          2002/10/17		N. Sangiovanni	Calibration modification
+
+************************************************************************************************************************************************)	
+	IF (First_Time_Trough = TRUE) THEN 
+		First_Time_Trough := FALSE;
+		Out_PowerDNA_IOMgr.status := IDLING;
+		count_Xfer := 0;
+	END_IF; 
+
+	CASE  In_PowerDNA_IOMgr.command OF
+	
+	OPEN:
+		IF ((Out_PowerDNA_IOMgr.status = CLOSED) OR (Out_PowerDNA_IOMgr.status = IDLING)) THEN  
+
+			(* open_PowerDNA_IOMgr(In_PowerDNA_IOMgr.number_of_ports, In_PowerDNA_IOMgr.number_of_rdata); *)
+			open_PowerDNA_IOMgr();
+	
+			Out_PowerDNA_IOMgr.status		:= open_PowerDNA_IOMgr.status;	
+			Out_PowerDNA_IOMgr.err_code		:= open_PowerDNA_IOMgr.err_code;	
+			Out_PowerDNA_IOMgr.previous_index	:= In_PowerDNA_IOMgr.current_index;
+			current_FV := 0;
+			FV_counter := 0;
+
+		END_IF; 
+	LOAD:
+		IF ((Out_PowerDNA_IOMgr.status = OPENED) OR (Out_PowerDNA_IOMgr.status = LOADING)) THEN 
+
+			(* load_PowerDNA_IOMgr(In_PowerDNA_IOMgr.number_of_variables, rdata_base, In_rdata_user); *) 
+			load_PowerDNA_IOMgr();
+
+
+			Out_PowerDNA_IOMgr.status	:= load_PowerDNA_IOMgr.status;	
+			Out_PowerDNA_IOMgr.err_code	:= load_PowerDNA_IOMgr.err_code;	
+
+		END_IF; 
+	INITIALIZE:
+		IF (Out_PowerDNA_IOMgr.status = LOADED) THEN 
+
+		(*	initialize_PowerDNA_IOMgr(In_PowerDNA_IOMgr.number_of_ports); *)
+			initialize_PowerDNA_IOMgr();
+
+
+			Out_PowerDNA_IOMgr.status	:= initialize_PowerDNA_IOMgr.status;	
+			Out_PowerDNA_IOMgr.err_code	:= initialize_PowerDNA_IOMgr.err_code;	
+
+		END_IF; 
+	RUN:
+		IF  ((Out_PowerDNA_IOMgr.status =  INITIALIZED)  OR (Out_PowerDNA_IOMgr.status = RUNNING) OR (Out_PowerDNA_IOMgr.status = ERROR_ON_RUNNING) ) THEN 
+
+			(*  run_PowerDNA_IOMgr( number_of_var); *)
+			run_PowerDNA_IOMgr( number_of_var);
+
+			Out_PowerDNA_IOMgr.status	:= run_PowerDNA_IOMgr.status;	
+			Out_PowerDNA_IOMgr.err_code	:= run_PowerDNA_IOMgr.err_code;	
+
+			CASE (In_PowerDNA_IOMgr.sub_command) OF
+				XFER_COEFF:
+					IF Out_PowerDNA_IOMgr.sub_status <> COEFF_XFERED THEN
+						xfer_coefficients();
+						Out_PowerDNA_IOMgr.sub_status := xfer_coefficients.sub_status;
+					END_IF;
+
+				CALIB:
+					Cal_Update();
+					Out_PowerDNA_IOMgr.sub_status := Cal_Update.sub_status;
+					Out_PowerDNA_IOMgr.Cal_Raw 	:= Cal_Update.Cal_Raw;
+
+				REQ_XFER_COEFF:
+					XFER_COEFF_FLAG := XFER_COEFF_FLAG XOR TRUE;
+					sub_command 	:= SUB_IDLE;
+				
+				ELSE					
+					Out_PowerDNA_IOMgr.sub_status := 0;
+				END_CASE;
+			END_IF;
+	CLOSE:
+		IF  (Out_PowerDNA_IOMgr.status <> CLOSED) THEN 
+
+			(* close_PowerDNA_IOMgr(In_PowerDNA_IOMgr.number_of_ports, rdata_base); *)
+			close_PowerDNA_IOMgr();
+
+			Out_PowerDNA_IOMgr.status	:= close_PowerDNA_IOMgr.status;	
+			Out_PowerDNA_IOMgr.err_code	:= close_PowerDNA_IOMgr.err_code;	
+			
+		END_IF; 
+	IDLE:
+		Out_PowerDNA_IOMgr.status := IDLING;
+	END_CASE; 
+
+
+
+
+
+
+
+
+
+
+
+END_PROGRAM

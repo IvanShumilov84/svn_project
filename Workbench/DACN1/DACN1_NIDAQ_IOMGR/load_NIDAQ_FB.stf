@@ -1,0 +1,498 @@
+FUNCTION_BLOCK load_NIDAQ_FB
+(************************************************************************************************************************************************
+    Name :        load_NIDAQ_FB                                    
+                                                        
+    Description :    Data Acquisition routine on National A/D Card                                   
+
+    Dependacy :     
+
+                    HYSTORY
+    Rev        Date        Name        Description
+                (YYYY/MM/DD)
+
+    1.0        2008/01/28    D.Lepage    First Released based on load_SCU_FB (EDAQ SCU_IOMGR) and load_AD_FB (Diamond AD_IOMGR)
+    2.0        2011/02/24    S.Boyte     Rewrite code because DOUT are not working for Polish project 10718
+                                         Add more check to validate CSV file content and protect code against corruption memory
+
+************************************************************************************************************************************************)    
+
+status := LOADING;
+dummy  := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: LOADING');
+err_code := OK;
+
+OPEN_BOOL_DATA( '/usr/v2000/app/DACN1_BOOL_NIDAQ_CSV.csv' );
+
+IF ( OPEN_BOOL_DATA.errcode = OK ) THEN 
+
+    hdle_bool_data := OPEN_BOOL_DATA.handle;
+
+ELSE 
+
+    err_code := OPEN_BOOL_DATA.errcode;
+    status   := ERROR_ON_LOADING;
+    dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING: cannot open /usr/v2000/app/DACN1_BOOL_NIDAQ_CSV.csv file');
+    RETURN;
+
+END_IF; 
+
+READ_BOOL_DATA( hdle_bool_data );
+
+WHILE ( READ_BOOL_DATA.errcode = 6 ) DO
+
+    IF (READ_BOOL_DATA.deviceid <> 'SPARE') THEN
+
+        current_FV := current_FV + 1;
+
+        IF ( current_FV > MAX_NIDAQ_IO ) THEN
+
+            err_code := current_FV;
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: number of IO exceed array capacity MAX_NIAQ_IO ');
+
+            CLOSE_BOOL_DATA ( hdle_bool_data ) ; (* closing FILE hdle *)
+            hdle_bool_data := 0;
+
+            RETURN;
+
+        END_IF; 
+
+
+        FV_EXTRACT(READ_BOOL_DATA.name);
+
+        IF ( FV_EXTRACT.ERR_CODE = OK ) THEN
+
+            FV[current_FV].FV_type      := FV_EXTRACT.FV_TYPE;
+            FV[current_FV].FV_index     := FV_EXTRACT.FV_INDEX;
+            FV[current_FV].channel      := READ_BOOL_DATA.channel;
+            FV[current_FV].bit          := READ_BOOL_DATA.bit;
+			(* validate the format of the CSV, should not contains double quote  Ref Access: Schema.ini *)
+			IF( RIGHT(READ_BOOL_DATA.deviceid, 1) = '"')THEN
+			 	err_code := FV[current_FV].device_index;
+            	status   := ERROR_ON_LOADING;
+	            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: Invalid CSV format');
+			END_IF;
+			FV[current_FV].device_index := ANY_TO_DINT(RIGHT(READ_BOOL_DATA.deviceid, 1));
+
+		(* Setting Type of NIDaqDevice *)
+		NIDaqDevices[ANY_TO_DINT(RIGHT(READ_BOOL_DATA.deviceid, 1))].FieldEquipment := READ_BOOL_DATA.FIELDEQUIPMENTID;
+
+            device_index := FV[current_FV].device_index;
+            index_DIO    := (FV[current_FV].channel + 1) * (FV[current_FV].bit +1) -1;(* 0 to...*)
+
+        ELSE
+
+            err_code := FV_EXTRACT.ERR_CODE;
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: FV_EXTRACT returned an error');
+
+            CLOSE_BOOL_DATA ( hdle_bool_data ) ; (* closing FILE hdle *)
+            hdle_bool_data := 0;
+
+            RETURN;
+
+        END_IF; 
+
+        (* sanity check *)
+        IF ( FV[current_FV].device_index > MAX_NIDAQ OR FV[current_FV].device_index <= 0 ) THEN
+                 
+            err_code := FV[current_FV].device_index; (* at least we can know which value is bad *)
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: device number from CSV file exceed number of device in array');
+
+            CLOSE_BOOL_DATA ( hdle_bool_data ) ; (* closing FILE hdle *)
+            hdle_bool_data := 0;
+
+            RETURN;
+
+        END_IF;
+
+        (* sanity check *)
+        IF ( index_DIO >= NIDAQ_NUMBER_DIO OR index_DIO < 0 ) THEN
+                                   
+            err_code := FV[current_FV].channel; (* at least we can know which value is bad *)
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: index of boolean channel from CSV is higher than actual number of channel');
+
+            CLOSE_BOOL_DATA ( hdle_bool_data ) ; (* closing FILE hdle *)
+            hdle_bool_data := 0;
+
+            RETURN;
+
+         END_IF;
+
+         (* sanity check *)
+         IF (FV[current_FV].FV_Type <> FV_DOUT AND FV[current_FV].FV_Type <> FV_DIN) THEN
+                                   
+            err_code := FV[current_FV].FV_Type;
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: Type of channel from CSV should be FV_DOUT or FV_DIN');
+
+            CLOSE_BOOL_DATA ( hdle_bool_data ) ; (* closing FILE hdle *)
+            hdle_bool_data := 0;
+
+            RETURN;
+
+         END_IF;
+
+		IF(In_NIDAQ_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+			IF ( NIDaqDevices[device_index].deviceHandle = -1 ) THEN (* card communication not establised yet *)
+
+    	    	(* establish communication with the card *)
+        	    NIDaqDeviceOpen( READ_BOOL_DATA.deviceid );
+
+            	IF ( NIDaqDeviceOpen.errcode = OK ) THEN 
+
+	        		NIDaqDevices[device_index].deviceHandle := NIDaqDeviceOpen.crdHandle;
+
+	    	    ELSE
+
+    	    		err_code := NIDaqDeviceOpen.errcode;
+        	    	status   := ERROR_ON_LOADING;
+            	    dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: cannot establish communication with NIDAQ card');
+
+		            CLOSE_BOOL_DATA ( hdle_bool_data ) ; (* closing FILE hdle *)
+    		        hdle_bool_data := 0;
+
+        		    RETURN;
+            	END_IF; 
+		
+			END_IF;
+
+		END_IF;
+
+
+		IF  ( FV[current_FV].FV_Type = FV_DOUT ) THEN
+
+        	NIDaqDevices[device_index].DIO_Direction[index_DIO] := 1; 
+
+        ELSIF ( FV[current_FV].FV_Type = FV_DIN ) THEN
+                            
+        	NIDaqDevices[device_index].DIO_Direction[index_DIO] := 0; 
+
+        END_IF; (* do not need else error because already previously check in sanity check *)
+
+	END_IF;
+
+	READ_BOOL_DATA( hdle_bool_data );
+
+END_WHILE;
+
+(* Work done, close the CSV file*)
+IF (hdle_bool_data <> 0) THEN
+
+    CLOSE_BOOL_DATA ( hdle_bool_data ) ; (* This is OK just closing FILE hdle *)
+    hdle_bool_data := 0;
+
+END_IF;
+
+
+
+
+
+(* Now process the real element for the NIDAQ card *)
+OPEN_REAL_DATA( '/usr/v2000/app/DACN1_REAL_NIDAQ_CSV.csv' );
+
+
+IF ( OPEN_REAL_DATA.errcode = OK ) THEN 
+
+    hdle_real_data := OPEN_REAL_DATA.handle ;
+
+ELSE 
+
+    err_code := OPEN_REAL_DATA.errcode;
+    status   := ERROR_ON_LOADING;
+    dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: cannot open /usr/v2000/app/DACN1_REAL_NIDAQ_CSV.csv' );
+    RETURN;
+
+END_IF; 
+
+READ_REAL_DATA ( hdle_real_data ) ;
+
+WHILE ( READ_REAL_DATA.errcode = 106) DO
+
+    IF (In_NIDAQ_IOMgr.current_device <> 'SPARE') THEN 
+
+        current_FV := current_FV + 1;
+
+        IF ( current_FV > MAX_NIDAQ_IO ) THEN
+
+            err_code := current_FV;
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: number of IO exceed array capacity MAX_NIAQ_IO ');
+
+            CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+            hdle_real_data := 0;
+
+            RETURN;
+
+        END_IF; 
+
+
+        FV_EXTRACT( READ_REAL_DATA.name ) ;
+
+        IF ( FV_EXTRACT.ERR_CODE = OK ) THEN
+
+            FV[current_FV].FV_type      := FV_EXTRACT.FV_TYPE ;
+            FV[current_FV].FV_index     := FV_EXTRACT.FV_INDEX ;
+            FV[current_FV].channel      := READ_REAL_DATA.channel ;
+			(* validate the format of the CSV, should not contains double quote  Ref Access: Schema.ini*)
+			IF( RIGHT(READ_BOOL_DATA.deviceid, 1) = '"')THEN
+			 	err_code := FV[current_FV].device_index;
+            	status   := ERROR_ON_LOADING;
+	            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING boolean: Invalid CSV format');
+			END_IF;
+
+            FV[current_FV].device_index := ANY_TO_DINT(RIGHT(READ_REAL_DATA.deviceid, 1));
+
+				(* Setting Type of NIDaqDevice *)
+		NIDaqDevices[ANY_TO_DINT(RIGHT(READ_REAL_DATA.deviceid, 1))].FieldEquipment := READ_REAL_DATA.FIELDEQUIPMENTID;
+
+            device_index := FV[current_FV].device_index;
+
+        ELSE
+
+            err_code := FV_EXTRACT.ERR_CODE;
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: FV_EXTRACT returned an error');
+
+            CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+            hdle_real_data := 0;
+
+            RETURN;
+
+        END_IF; 
+
+        (* sanity check *)
+        IF ( FV[current_FV].device_index > MAX_NIDAQ OR FV[current_FV].device_index <= 0 ) THEN
+                 
+            err_code := FV[current_FV].device_index; (* at least we can know which value is bad *)
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: device number from CSV file exceed number of device in array');
+
+            CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+            hdle_real_data := 0;
+
+            RETURN;
+
+        END_IF;
+
+         (* sanity check *)
+         CASE FV[current_FV].FV_type OF
+
+            FV_F, FV_P, FV_VIB, FV_VIN : 
+
+                IF ( FV[current_FV].FV_Type = FV_VIN ) THEN
+
+                    IF (FV[current_FV].channel >= NIDAQ_NUMBER_AI OR FV[current_FV].channel < 0 ) THEN
+                                   
+                        err_code := FV[current_FV].channel; (* at least we can know which value is bad *)
+                        status   := ERROR_ON_LOADING;
+                        dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: index of real input channel from CSV is higher than actual number of channel');
+
+                        CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+                        hdle_real_data := 0;
+
+                        RETURN;
+
+                    END_IF;
+                END_IF; 
+
+            FV_VOUT :
+
+                IF (NIDaqDevices[ANY_TO_DINT(RIGHT(READ_REAL_DATA.deviceid, 1))].FieldEquipment = 'SCU') OR (NIDaqDevices[ANY_TO_DINT(RIGHT(READ_REAL_DATA.deviceid, 1))].FieldEquipment = 'PCI-6225')  THEN				    
+
+		        NUMBER_AO := NIDAQ_NUMBER_AO;
+
+                ELSE
+
+                    NUMBER_AO := PCIDA124_NUMBER_AO;
+
+		    END_IF;
+
+                IF (FV[current_FV].channel >= NUMBER_AO OR FV[current_FV].channel < 0 ) THEN
+                                   
+                     err_code := FV[current_FV].channel; (* at least we can know which value is bad *)
+                     status   := ERROR_ON_LOADING;
+                     dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: index of real output channel from CSV is higher than actual number of channel');
+
+                     CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+                     hdle_real_data := 0;
+
+                     RETURN;
+
+                END_IF;
+
+                                   
+         ELSE
+
+            err_code := FV[current_FV].FV_Type;
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: Type of channel from CSV should be FV_F, FV_P, FV_VIB, FV_VIN OR fv_vout' );
+
+            CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+            hdle_real_data := 0;
+
+            RETURN;
+
+         END_CASE;
+
+
+		IF(In_NIDAQ_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+         	IF ( NIDaqDevices[device_index].deviceHandle = -1 ) THEN (* card communication not establised yet *)
+
+             	(* establish communication with the card *)
+	             NIDaqDeviceOpen( READ_REAL_DATA.deviceid );
+
+    	         IF ( NIDaqDeviceOpen.errcode = OK ) THEN 
+
+        	         NIDaqDevices[device_index].deviceHandle := NIDaqDeviceOpen.crdHandle;
+
+            	 ELSE
+
+                	 err_code := NIDaqDeviceOpen.errcode;
+	                 status   := ERROR_ON_LOADING;
+    	             dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: cannot establish communication with NIDAQ card');
+
+        	         CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+            	     hdle_real_data := 0;
+	
+    	             RETURN;
+
+        	     END_IF; 
+
+         	END_IF;
+	
+		END_IF; 
+
+
+        IF(In_NIDAQ_IOMgr.mode = RUN_FOR_TRUE)THEN
+ 
+			IF  ( FV[current_FV].FV_Type = FV_VOUT ) THEN
+
+    	         NIDaqAOChannelCreate( NIDaqDevices[device_index].deviceHandle, ANY_TO_SINT(FV[current_FV].channel), 
+                                   READ_REAL_DATA.minDCValue, READ_REAL_DATA.maxDCValue );
+
+        	     err_code := NIDaqAOChannelCreate.errcode;
+
+	         ELSE
+                            
+    	         NIDaqAIChannelCreate( NIDaqDevices[device_index].deviceHandle, ANY_TO_SINT(FV[current_FV].channel), 
+                                   READ_REAL_DATA.termConfig, READ_REAL_DATA.minDCValue, READ_REAL_DATA.maxDCValue );
+
+        	     err_code := NIDaqAIChannelCreate.errcode;
+
+	         END_IF; (* do not need else error because already previously check in sanity check *)
+
+		END_IF;
+
+
+        IF err_code <> OK THEN
+
+            status := ERROR_ON_LOADING;
+            dummy  := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: cannot create channel');
+            dummy  := LOG_MSG('ErrLog', READ_REAL_DATA.name);
+
+            CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+            hdle_real_data := 0;
+
+            RETURN;
+
+        END_IF;
+
+        In_rdata_user := READ_REAL_DATA.st_record;
+
+        INIT_RDATA(rdata_base,In_rdata_user);
+
+        FV[current_FV].data_handle := INIT_RDATA.data_handle;
+
+        IF ( INIT_RDATA.ERR_CODE <> OK ) THEN
+                 
+            err_code := INIT_RDATA.ERR_CODE;
+            status   := ERROR_ON_LOADING;
+            dummy    := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: ERROR ON LOADING real: cannot INIT_RDATA');
+
+            CLOSE_REAL_DATA ( hdle_real_data ) ; (* closing FILE hdle *)
+            hdle_real_data := 0;
+
+            RETURN;
+
+        END_IF;
+
+    END_IF;
+
+    READ_REAL_DATA( hdle_real_data );
+
+END_WHILE;
+
+
+(* Work done, close the CSV file*)
+IF (hdle_real_data <> 0) THEN
+
+    CLOSE_REAL_DATA ( hdle_real_data ) ; (* This is OK just closing FILE hdle *)
+    hdle_real_data := 0;
+
+END_IF;
+
+
+number_of_var := current_FV;
+status        := LOADED;
+dummy         := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR: LOADED');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

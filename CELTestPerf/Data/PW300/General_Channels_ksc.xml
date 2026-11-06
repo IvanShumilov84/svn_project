@@ -1,0 +1,1605 @@
+﻿<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <SOAP-ENV:Body>
+    <a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <AIR_PRESSURE_STARTER_VALUE href="#ref-6"/>
+      <ARCHIVE_BUTTON href="#ref-7"/>
+      <ARINCAbortBtn href="#ref-8"/>
+      <ARINCUpdateBtn href="#ref-9"/>
+      <CLOSE_AIR_CONTROL_BUTTON href="#ref-10"/>
+      <CLOSE_ARCHIVE_BUTTON href="#ref-11"/>
+      <CLOSE_EEC_BUTTON href="#ref-12"/>
+      <CLOSE_FCS_BUTTON href="#ref-13"/>
+      <Close_Test href="#ref-14"/>
+      <ClosePerfWindow href="#ref-15"/>
+      <DECREASE_AIR_BUTTON href="#ref-16"/>
+      <EAT48UFN_DELETE href="#ref-17"/>
+      <EBT48UFN_DELETE href="#ref-18"/>
+      <EEC_BUTTON href="#ref-19"/>
+      <FUEL_FLOW href="#ref-20"/>
+      <FUEL_USED_GM href="#ref-21"/>
+      <INCREASE_AIR_BUTTON href="#ref-22"/>
+      <Log_Report href="#ref-23"/>
+      <MAIN_RESET href="#ref-24"/>
+      <MANUAL_AIR_BUTTON href="#ref-25"/>
+      <Messages href="#ref-26"/>
+      <OPC_ARINCL227 href="#ref-27"/>
+      <OPC_ARINCL271_BIT20 href="#ref-28"/>
+      <OPC_DRY_SPIN href="#ref-29"/>
+      <OPC_DUMMY href="#ref-30"/>
+      <OPC_E_STOP_TRIP href="#ref-31"/>
+      <OPC_EEC_ATS_ON href="#ref-32"/>
+      <OPC_EEC_LANE_A href="#ref-33"/>
+      <OPC_EEC_LANE_B href="#ref-34"/>
+      <OPC_EEC_POWER_ON href="#ref-35"/>
+      <OPC_HI_IGN_RATE_BTN href="#ref-36"/>
+      <OPC_HI_IGN_RATE_DEMAND href="#ref-37"/>
+      <OPC_HI_IGN_RATE_RESET href="#ref-38"/>
+      <OPC_HI_RATE_BUTTON_DISABLED href="#ref-39"/>
+      <OPC_IGN_HI_RATE_CHA href="#ref-40"/>
+      <OPC_IGN_HI_RATE_CHB href="#ref-41"/>
+      <OPC_IGN_LO_RATE_CHA href="#ref-42"/>
+      <OPC_IGN_LO_RATE_CHB href="#ref-43"/>
+      <OPC_IGNITION_CONT href="#ref-44"/>
+      <OPC_LB_CURRENT_IL1 href="#ref-45"/>
+      <OPC_LB_CURRENT_IL2 href="#ref-46"/>
+      <OPC_LB_CURRENT_IL3 href="#ref-47"/>
+      <OPC_LB_POWER_TOT href="#ref-48"/>
+      <OPC_LB_VOLTAGE_VL1_N href="#ref-49"/>
+      <OPC_LB_VOLTAGE_VL2_N href="#ref-50"/>
+      <OPC_LB_VOLTAGE_VL3_N href="#ref-51"/>
+      <OPC_LO_IGN_RATE_BTN href="#ref-52"/>
+      <OPC_LO_IGN_RATE_DEMAND href="#ref-53"/>
+      <OPC_LO_IGN_RATE_RESET href="#ref-54"/>
+      <OPC_LOUVER_READY href="#ref-55"/>
+      <OPC_MAINT_BUTTON href="#ref-56"/>
+      <OPC_MOP_OFFSET href="#ref-57"/>
+      <OPC_MOPD_ENG_CHA_DELETE href="#ref-58"/>
+      <OPC_MOPD_ENG_CHB_DELETE href="#ref-59"/>
+      <OPC_MOPD_ENG_OFFSET href="#ref-60"/>
+      <OPC_MOT_CHA_DELETE href="#ref-61"/>
+      <OPC_MOT_CHB_DELETE href="#ref-62"/>
+      <OPC_N1_TRIP href="#ref-63"/>
+      <OPC_N2_ABOVE_95GI href="#ref-64"/>
+      <OPC_N2_ABOVE_GI href="#ref-65"/>
+      <OPC_N2_TRIP href="#ref-66"/>
+      <OPC_P_AGB_OFFSET href="#ref-67"/>
+      <OPC_P_MOTIVE_OFFSET href="#ref-68"/>
+      <OPC_P1A_1_OFFSET href="#ref-69"/>
+      <OPC_P1A_2_OFFSET href="#ref-70"/>
+      <OPC_P3_OFFSET href="#ref-71"/>
+      <OPC_S1A_1_OFFSET href="#ref-72"/>
+      <OPC_S1A_2_OFFSET href="#ref-73"/>
+      <OPC_S1A_3_OFFSET href="#ref-74"/>
+      <OPC_S1A_4_OFFSET href="#ref-75"/>
+      <OPC_SEND_ARINCL227_DRY href="#ref-76"/>
+      <OPC_SEND_ARINCL227_IGNITION href="#ref-77"/>
+      <OPC_SEND_ARINCL227_TPC href="#ref-78"/>
+      <OPC_SEND_ARINCL227_WET href="#ref-79"/>
+      <OPC_SEND_ARINCL227_WET_THEN_DRY href="#ref-80"/>
+      <OPC_STARTER_CURRENT href="#ref-81"/>
+      <OPC_STARTER_CURRENT_CMD href="#ref-82"/>
+      <OPC_STARTER_DC_ON href="#ref-83"/>
+      <OPC_STARTER_FAULT_CLEAR href="#ref-84"/>
+      <OPC_STARTER_VOLTAGE href="#ref-85"/>
+      <OPC_STARTER_VOLTAGE_CMD href="#ref-86"/>
+      <OPC_T_TT8_AVG href="#ref-87"/>
+      <OPC_T1_TRIP href="#ref-88"/>
+      <OPC_T6B_1_DELETE href="#ref-89"/>
+      <OPC_T6B_2_DELETE href="#ref-90"/>
+      <OPC_T6B_3_DELETE href="#ref-91"/>
+      <OPC_T6B_4_DELETE href="#ref-92"/>
+      <OPC_T6B_5_DELETE href="#ref-93"/>
+      <OPC_T6B_6_DELETE href="#ref-94"/>
+      <OPC_T6E_1_DELETE href="#ref-95"/>
+      <OPC_T6E_2_DELETE href="#ref-96"/>
+      <OPC_T6E_3_DELETE href="#ref-97"/>
+      <OPC_T6E_4_DELETE href="#ref-98"/>
+      <OPC_T6E_5_DELETE href="#ref-99"/>
+      <OPC_T6E_6_DELETE href="#ref-100"/>
+      <OPC_T6G_1_DELETE href="#ref-101"/>
+      <OPC_T6G_2_DELETE href="#ref-102"/>
+      <OPC_T6G_3_DELETE href="#ref-103"/>
+      <OPC_T6G_4_DELETE href="#ref-104"/>
+      <OPC_T6G_5_DELETE href="#ref-105"/>
+      <OPC_T6G_6_DELETE href="#ref-106"/>
+      <OPC_T6K_1_DELETE href="#ref-107"/>
+      <OPC_T6K_2_DELETE href="#ref-108"/>
+      <OPC_T6K_3_DELETE href="#ref-109"/>
+      <OPC_T6K_4_DELETE href="#ref-110"/>
+      <OPC_T6K_5_DELETE href="#ref-111"/>
+      <OPC_T6K_6_DELETE href="#ref-112"/>
+      <OPC_THRUST_OFFSET href="#ref-113"/>
+      <OPC_TRIM_PLUG_CHANGE href="#ref-114"/>
+      <OPC_TT1_1_DELETE href="#ref-115"/>
+      <OPC_TT1_2_DELETE href="#ref-116"/>
+      <OPC_TT1_3_DELETE href="#ref-117"/>
+      <OPC_TT1_4_DELETE href="#ref-118"/>
+      <OPC_TT1_5_DELETE href="#ref-119"/>
+      <OPC_TT1_6_DELETE href="#ref-120"/>
+      <OPC_TT1_7_DELETE href="#ref-121"/>
+      <OPC_TT1_8_DELETE href="#ref-122"/>
+      <OPC_V1_TRIP href="#ref-123"/>
+      <OPC_V2_TRIP href="#ref-124"/>
+      <OPC_V3_TRIP href="#ref-125"/>
+      <OPC_WET_SPIN href="#ref-126"/>
+      <OPC_WET_THEN_DRYSPIN href="#ref-127"/>
+      <OPERATING_TIME href="#ref-128"/>
+      <RESET_SPIN_BUTTONS href="#ref-129"/>
+      <RESET_SPIN_BUTTONS_DONE href="#ref-130"/>
+      <T_EGT_LIMITS href="#ref-131"/>
+      <TARE href="#ref-132"/>
+      <TEST_STEP_NB href="#ref-133"/>
+      <THROTTLE_BUTTON href="#ref-134"/>
+
+      <OPC_T6C_1_DELETE href="#ref-688"/>
+      <OPC_T6C_2_DELETE href="#ref-694"/>
+      <OPC_T6C_3_DELETE href="#ref-700"/>
+      <OPC_T6C_4_DELETE href="#ref-706"/>
+      <OPC_T6C_5_DELETE href="#ref-712"/>
+      <!--<OPC_T6C_6_DELETE href="#ref-718"/>-->
+
+      <OPC_T6H_1_DELETE href="#ref-724"/>
+      <OPC_T6H_2_DELETE href="#ref-730"/>
+      <OPC_T6H_3_DELETE href="#ref-736"/>
+      <OPC_T6H_4_DELETE href="#ref-742"/>
+      <OPC_T6H_5_DELETE href="#ref-748"/>
+      <!--<OPC_T6H_6_DELETE href="#ref-754"/>-->
+
+      <OPC_T6L_1_DELETE href="#ref-760"/>
+      <OPC_T6L_2_DELETE href="#ref-766"/>
+      <OPC_T6L_3_DELETE href="#ref-772"/>
+      <OPC_T6L_4_DELETE href="#ref-778"/>
+      <OPC_T6L_5_DELETE href="#ref-784"/>
+      <!--<OPC_T6L_6_DELETE href="#ref-790"/>-->
+      
+    </a1:ChannelCollection>
+    <a2:NumericChannel id="ref-6" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-135">AIR_PRESSURE_STARTER_VALUE</Name>
+      <Description id="ref-136"></Description>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-137">F0</Format>
+      <DecimalDigits>0</DecimalDigits>
+    </a2:NumericChannel>
+    <a3:BooleanVariable id="ref-7" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-138">ARCHIVE_BUTTON</Name>
+      <Description id="ref-139">Archive</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-140">True</TrueText>
+      <FalseText id="ref-141">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a2:BooleanChannel id="ref-8" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-143">ARINCAbortBtn</Name>
+      <Description id="ref-144">Abort Test</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-145">True</TrueText>
+      <FalseText id="ref-146">False</FalseText>
+    </a2:BooleanChannel>
+    <a2:BooleanChannel id="ref-9" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-147">ARINCUpdateBtn</Name>
+      <Description id="ref-148">Update ARINC</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-149">True</TrueText>
+      <FalseText id="ref-150">False</FalseText>
+    </a2:BooleanChannel>
+    <a3:BooleanVariable id="ref-10" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-151">CLOSE_AIR_CONTROL_BUTTON</Name>
+      <Description id="ref-152">Close</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-153">True</TrueText>
+      <FalseText id="ref-154">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a3:BooleanVariable id="ref-11" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-155">CLOSE_ARCHIVE_BUTTON</Name>
+      <Description id="ref-156">Close</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-157">True</TrueText>
+      <FalseText id="ref-158">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a3:BooleanVariable id="ref-12" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-159">CLOSE_EEC_BUTTON</Name>
+      <Description id="ref-160">Close</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-161">True</TrueText>
+      <FalseText id="ref-162">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a3:BooleanVariable id="ref-13" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-163">CLOSE_FCS_BUTTON</Name>
+      <Description id="ref-164">Close</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-165">True</TrueText>
+      <FalseText id="ref-166">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a3:BooleanVariable id="ref-14" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-167">Close_Test</Name>
+      <Description id="ref-168">Close Test</Description>
+      <ToolTip id="ref-169">Close Test</ToolTip>
+      <TrueText id="ref-170">True</TrueText>
+      <FalseText id="ref-171">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a2:BooleanChannel id="ref-15" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-172">ClosePerfWindow</Name>
+      <Description id="ref-173">Close</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-174">True</TrueText>
+      <FalseText id="ref-175">False</FalseText>
+    </a2:BooleanChannel>
+    <a2:BooleanChannel id="ref-16" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-176">DECREASE_AIR_BUTTON</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-177">True</TrueText>
+      <FalseText id="ref-178">False</FalseText>
+    </a2:BooleanChannel>
+    <a4:BooleanChannel id="ref-17" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.Logging/KineticaRT.Servers.Logger%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-179">EAT48UFN_DELETE</Name>
+      <Description id="ref-180">EAT48UFN</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-181">True</TrueText>
+      <FalseText id="ref-182">False</FalseText>
+      <Logger href="#ref-136"/>
+      <Source href="#ref-136"/>
+      <Index>0</Index>
+      <Enabled>false</Enabled>
+    </a4:BooleanChannel>
+    <a4:BooleanChannel id="ref-18" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.Logging/KineticaRT.Servers.Logger%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-183">EBT48UFN_DELETE</Name>
+      <Description id="ref-184">EBT48UFN</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-181"/>
+      <FalseText href="#ref-182"/>
+      <Logger href="#ref-136"/>
+      <Source href="#ref-136"/>
+      <Index>0</Index>
+      <Enabled>false</Enabled>
+    </a4:BooleanChannel>
+    <a3:BooleanVariable id="ref-19" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-185">EEC_BUTTON</Name>
+      <Description id="ref-186">EEC</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-187">True</TrueText>
+      <FalseText id="ref-188">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a5:Item id="ref-20" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-189">FUEL_FLOW</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>0</Max>
+      <Format id="ref-190">N</Format>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-191">Group_Fast</Group>
+      <ItemID id="ref-192">DACN1.DACN1_User_Interface.FUEL_FLOW</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a2:NumericChannel id="ref-21" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-193">FUEL_USED_GM</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>0</Max>
+      <Format id="ref-194">N</Format>
+      <DecimalDigits>1</DecimalDigits>
+    </a2:NumericChannel>
+    <a2:BooleanChannel id="ref-22" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-195">INCREASE_AIR_BUTTON</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-177"/>
+      <FalseText href="#ref-178"/>
+    </a2:BooleanChannel>
+    <a2:BooleanChannel id="ref-23" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-196">Log_Report</Name>
+      <Description id="ref-197">Log Report</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-198">True</TrueText>
+      <FalseText id="ref-199">False</FalseText>
+    </a2:BooleanChannel>
+    <a5:BooleanItem id="ref-24" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-200">MAIN_RESET</Name>
+      <Description id="ref-201">Reset Trips</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-202">True</TrueText>
+      <FalseText id="ref-203">False</FalseText>
+      <Group id="ref-204">Group_Fast</Group>
+      <ItemID id="ref-205">dacn1.dacn1_user_interface.tm_uut_info.main_reset</ItemID>
+    </a5:BooleanItem>
+    <a3:BooleanVariable id="ref-25" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-206">MANUAL_AIR_BUTTON</Name>
+      <Description id="ref-207">Manual Air Control</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-208">True</TrueText>
+      <FalseText id="ref-209">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a2:VariableChannel id="ref-26" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-211">Messages</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Value href="#ref-212"/>
+    </a2:VariableChannel>
+    <a5:Item id="ref-27" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-213">OPC_ARINCL227</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-214">N</Format>
+      <DecimalDigits>0</DecimalDigits>
+      <Group id="ref-215">Group_Fast</Group>
+      <ItemID id="ref-216">DACN1.DACN1_User_Interface.arincL227</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-28" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-217">OPC_ARINCL271_BIT20</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-218">True</TrueText>
+      <FalseText id="ref-219">False</FalseText>
+      <Group id="ref-220">Group_Fast</Group>
+      <ItemID id="ref-221">DACN1.DACN1_User_Interface.arincL271_bit20</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-29" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-222">OPC_DRY_SPIN</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-223">True</TrueText>
+      <FalseText id="ref-224">False</FalseText>
+      <Group id="ref-225">Group_Fast</Group>
+      <ItemID id="ref-226">DACN1.DACN1_User_Interface.dry_spin_button</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-30" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-227">OPC_DUMMY</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-228">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-229">Group_Fast</Group>
+      <ItemID id="ref-230">DACN1.DACN1_User_Interface.FlapPosition</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-31" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-231">OPC_E_STOP_TRIP</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-232">True</TrueText>
+      <FalseText id="ref-233">False</FalseText>
+      <Group id="ref-234">Group_Fast</Group>
+      <ItemID id="ref-235">DACN1.DACN1_User_Interface.E_STOP_Trip</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-32" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-236">OPC_EEC_ATS_ON</Name>
+      <Description id="ref-237">OPC_EEC_ATS_ON</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-238">True</TrueText>
+      <FalseText id="ref-239">False</FalseText>
+      <Group id="ref-240">Group_Fast</Group>
+      <ItemID id="ref-241">DACN1.DACN1_User_Interface.EEC_ATS_ON</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-33" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-242">OPC_EEC_LANE_A</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-243">True</TrueText>
+      <FalseText id="ref-244">False</FalseText>
+      <Group id="ref-245">Group_Fast</Group>
+      <ItemID id="ref-246">DACN1.DACN1_User_Interface.eec_lane_a</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-34" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-247">OPC_EEC_LANE_B</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-243"/>
+      <FalseText href="#ref-244"/>
+      <Group id="ref-248">Group_Fast</Group>
+      <ItemID id="ref-249">DACN1.DACN1_User_Interface.eec_lane_b</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-35" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-250">OPC_EEC_POWER_ON</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-251">True</TrueText>
+      <FalseText id="ref-252">False</FalseText>
+      <Group id="ref-253">Group_Fast</Group>
+      <ItemID id="ref-254">DACN1.DACN1_User_Interface.eec_power_on</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-36" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-255">OPC_HI_IGN_RATE_BTN</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-256">True</TrueText>
+      <FalseText id="ref-257">False</FalseText>
+      <Group id="ref-258">Group_Fast</Group>
+      <ItemID id="ref-259">DACN1.DACN1_User_Interface.User_High_Rate_Ignition_ON_OFF_demand</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-37" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-260">OPC_HI_IGN_RATE_DEMAND</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-261">True</TrueText>
+      <FalseText id="ref-262">False</FalseText>
+      <Group id="ref-263">Group_Fast</Group>
+      <ItemID id="ref-264">DACN1.DACN1_User_Interface.high_rate_ignition_ON_OFF_demand</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-38" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-265">OPC_HI_IGN_RATE_RESET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-266">True</TrueText>
+      <FalseText id="ref-267">False</FalseText>
+      <Group id="ref-268">Group_Fast</Group>
+      <ItemID id="ref-269">DACN1.DACN1_User_Interface.User_High_Rate_Ignition_ON_OFF_reset</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-39" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-270">OPC_HI_RATE_BUTTON_DISABLED</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-271">True</TrueText>
+      <FalseText id="ref-272">False</FalseText>
+      <Group id="ref-273">Group_Fast</Group>
+      <ItemID id="ref-274">DACN1.DACN1_User_Interface.High_Ignition_Rate_Button_Disabled</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-40" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-275">OPC_IGN_HI_RATE_CHA</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-276">True</TrueText>
+      <FalseText id="ref-277">False</FalseText>
+      <Group id="ref-278">Group_Fast</Group>
+      <ItemID id="ref-279">DACN1.DACN1_User_Interface.High_Ignition_Rate_ch_a_din</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-41" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-280">OPC_IGN_HI_RATE_CHB</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-281">True</TrueText>
+      <FalseText id="ref-282">False</FalseText>
+      <Group id="ref-283">Group_Fast</Group>
+      <ItemID id="ref-284">DACN1.DACN1_User_Interface.High_Ignition_Rate_ch_b_din</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-42" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-285">OPC_IGN_LO_RATE_CHA</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-286">True</TrueText>
+      <FalseText id="ref-287">False</FalseText>
+      <Group id="ref-288">Group_Fast</Group>
+      <ItemID id="ref-289">DACN1.DACN1_User_Interface.Low_Ignition_Rate_ch_a_din</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-43" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-290">OPC_IGN_LO_RATE_CHB</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-291">True</TrueText>
+      <FalseText id="ref-292">False</FalseText>
+      <Group id="ref-293">Group_Fast</Group>
+      <ItemID id="ref-294">DACN1.DACN1_User_Interface.Low_Ignition_Rate_ch_b_din</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-44" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-295">OPC_IGNITION_CONT</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-223"/>
+      <FalseText href="#ref-224"/>
+      <Group id="ref-296">Group_Fast</Group>
+      <ItemID id="ref-297">DACN1.DACN1_User_Interface.ignition_cont_button</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-45" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-298">OPC_LB_CURRENT_IL1</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-299">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-300">Group_Fast</Group>
+      <ItemID id="ref-301">DACN1.DACN1_User_Interface.LB_CURRENT_IL1</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-46" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-302">OPC_LB_CURRENT_IL2</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-303">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-304">Group_Fast</Group>
+      <ItemID id="ref-305">DACN1.DACN1_User_Interface.LB_CURRENT_IL2</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-47" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-306">OPC_LB_CURRENT_IL3</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-307">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-308">Group_Fast</Group>
+      <ItemID id="ref-309">DACN1.DACN1_User_Interface.LB_CURRENT_IL3</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-48" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-310">OPC_LB_POWER_TOT</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-311">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-312">Group_Fast</Group>
+      <ItemID id="ref-313">DACN1.DACN1_User_Interface.LB_POWER_TOT</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-49" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-314">OPC_LB_VOLTAGE_VL1_N</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-315">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-316">Group_Fast</Group>
+      <ItemID id="ref-317">DACN1.DACN1_User_Interface.LB_VOLTAGE_VL1_N</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-50" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-318">OPC_LB_VOLTAGE_VL2_N</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-319">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-320">Group_Fast</Group>
+      <ItemID id="ref-321">DACN1.DACN1_User_Interface.LB_VOLTAGE_VL2_N</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-51" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-322">OPC_LB_VOLTAGE_VL3_N</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-323">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-324">Group_Fast</Group>
+      <ItemID id="ref-325">DACN1.DACN1_User_Interface.LB_VOLTAGE_VL3_N</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-52" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-326">OPC_LO_IGN_RATE_BTN</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-327">True</TrueText>
+      <FalseText id="ref-328">False</FalseText>
+      <Group id="ref-329">Group_Fast</Group>
+      <ItemID id="ref-330">DACN1.DACN1_User_Interface.User_Low_Rate_Ignition_ON_OFF_demand</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-53" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-331">OPC_LO_IGN_RATE_DEMAND</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-332">True</TrueText>
+      <FalseText id="ref-333">False</FalseText>
+      <Group id="ref-334">Group_Fast</Group>
+      <ItemID id="ref-335">DACN1.DACN1_User_Interface.low_rate_ignition_ON_OFF_demand</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-54" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-336">OPC_LO_IGN_RATE_RESET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-337">True</TrueText>
+      <FalseText id="ref-338">False</FalseText>
+      <Group id="ref-339">Group_Fast</Group>
+      <ItemID id="ref-340">DACN1.DACN1_User_Interface.User_Low_Rate_Ignition_ON_OFF_reset</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-55" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-341">OPC_LOUVER_READY</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-342">True</TrueText>
+      <FalseText id="ref-343">False</FalseText>
+      <Group id="ref-344">Group_Fast</Group>
+      <ItemID id="ref-345">DACN1.DACN1_User_Interface.Louver_Ready</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-56" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-346">OPC_MAINT_BUTTON</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-347">True</TrueText>
+      <FalseText id="ref-348">False</FalseText>
+      <Group id="ref-349">Group_Fast</Group>
+      <ItemID id="ref-350">DACN1.DACN1_User_Interface.MaintenanceButton</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-57" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-351">OPC_MOP_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-352">N</Format>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-353">Group_Fast</Group>
+      <ItemID id="ref-354">dacn1.dacn1_user_interface.mop_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-58" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-355">OPC_MOPD_ENG_CHA_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-356">True</TrueText>
+      <FalseText id="ref-357">False</FalseText>
+      <Group id="ref-358">Group_Fast</Group>
+      <ItemID id="ref-359">DACN1.DACN1_User_Interface.mopd_eng_cha_delete</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-59" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-360">OPC_MOPD_ENG_CHB_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-356"/>
+      <FalseText href="#ref-357"/>
+      <Group id="ref-361">Group_Fast</Group>
+      <ItemID id="ref-362">DACN1.DACN1_User_Interface.mopd_eng_chb_delete</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-60" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-363">OPC_MOPD_ENG_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-364">Group_Fast</Group>
+      <ItemID id="ref-365">dacn1.dacn1_user_interface.p_mopd_eng_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-61" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-366">OPC_MOT_CHA_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-356"/>
+      <FalseText href="#ref-357"/>
+      <Group id="ref-367">Group_Fast</Group>
+      <ItemID id="ref-368">DACN1.DACN1_User_Interface.mot_cha_delete</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-62" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-369">OPC_MOT_CHB_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-356"/>
+      <FalseText href="#ref-357"/>
+      <Group id="ref-370">Group_Fast</Group>
+      <ItemID id="ref-371">DACN1.DACN1_User_Interface.mot_chb_delete</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-63" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-372">OPC_N1_TRIP</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-373">True</TrueText>
+      <FalseText id="ref-374">False</FalseText>
+      <Group id="ref-375">Group_Fast</Group>
+      <ItemID id="ref-376">DACN1.DACN1_User_Interface.N_Trip[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-64" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-377">OPC_N2_ABOVE_95GI</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-378">True</TrueText>
+      <FalseText id="ref-379">False</FalseText>
+      <Group id="ref-380">Group_Fast</Group>
+      <ItemID id="ref-381">DACN1.DACN1_User_Interface.N2_ABOVE_95GI</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-65" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-382">OPC_N2_ABOVE_GI</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-383">True</TrueText>
+      <FalseText id="ref-384">False</FalseText>
+      <Group id="ref-385">Group_Fast</Group>
+      <ItemID id="ref-386">DACN1.DACN1_User_Interface.N2_ABOVE_GI</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-66" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-387">OPC_N2_TRIP</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-388">True</TrueText>
+      <FalseText id="ref-389">False</FalseText>
+      <Group id="ref-390">Group_Fast</Group>
+      <ItemID id="ref-391">DACN1.DACN1_User_Interface.N_Trip[2]</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-67" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-392">OPC_P_AGB_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-393">Group_Fast</Group>
+      <ItemID id="ref-394">dacn1.dacn1_user_interface.p_agb_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-68" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-395">OPC_P_MOTIVE_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-396">Group_Fast</Group>
+      <ItemID id="ref-397">dacn1.dacn1_user_interface.p_motive_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-69" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-398">OPC_P1A_1_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-399">Group_Fast</Group>
+      <ItemID id="ref-400">dacn1.dacn1_user_interface.p1a_1_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-70" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-401">OPC_P1A_2_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-402">Group_Fast</Group>
+      <ItemID id="ref-403">dacn1.dacn1_user_interface.p1a_2_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-71" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-404">OPC_P3_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-405">Group_Fast</Group>
+      <ItemID id="ref-406">dacn1.dacn1_user_interface.p3_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-72" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-407">OPC_S1A_1_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-408">Group_Fast</Group>
+      <ItemID id="ref-409">dacn1.dacn1_user_interface.s1a_1_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-73" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-410">OPC_S1A_2_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-411">Group_Fast</Group>
+      <ItemID id="ref-412">dacn1.dacn1_user_interface.s1a_2_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-74" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-413">OPC_S1A_3_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-414">Group_Fast</Group>
+      <ItemID id="ref-415">dacn1.dacn1_user_interface.s1a_3_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-75" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-416">OPC_S1A_4_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format href="#ref-352"/>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-417">Group_Fast</Group>
+      <ItemID id="ref-418">dacn1.dacn1_user_interface.s1a_4_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-76" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-419">OPC_SEND_ARINCL227_DRY</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-420">True</TrueText>
+      <FalseText id="ref-421">False</FalseText>
+      <Group id="ref-422">Group_Fast</Group>
+      <ItemID id="ref-423">DACN1.DACN1_User_Interface.sending_arincL227_dry</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-77" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-424">OPC_SEND_ARINCL227_IGNITION</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-420"/>
+      <FalseText href="#ref-421"/>
+      <Group id="ref-425">Group_Fast</Group>
+      <ItemID id="ref-426">DACN1.DACN1_User_Interface.sending_arincL227_ignition</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-78" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-427">OPC_SEND_ARINCL227_TPC</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-223"/>
+      <FalseText href="#ref-224"/>
+      <Group id="ref-428">Group_Fast</Group>
+      <ItemID id="ref-429">DACN1.DACN1_User_Interface.sending_arincL227_trim_plug</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-79" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-430">OPC_SEND_ARINCL227_WET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-223"/>
+      <FalseText href="#ref-224"/>
+      <Group id="ref-431">Group_Fast</Group>
+      <ItemID id="ref-432">DACN1.DACN1_User_Interface.sending_arincL227_wet</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-80" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-433">OPC_SEND_ARINCL227_WET_THEN_DRY</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-420"/>
+      <FalseText href="#ref-421"/>
+      <Group id="ref-434">Group_Fast</Group>
+      <ItemID id="ref-435">DACN1.DACN1_User_Interface.sending_arincL227_wet_then_dry</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-81" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-436">OPC_STARTER_CURRENT</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-437">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-438">Group_Fast</Group>
+      <ItemID id="ref-439">DACN1.DACN1_User_Interface.STARTER_CURRENT</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-82" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-440">OPC_STARTER_CURRENT_CMD</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-441">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-442">Group_Fast</Group>
+      <ItemID id="ref-443">DACN1.DACN1_User_Interface.STARTER_CURRENT_CMD</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-83" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-444">OPC_STARTER_DC_ON</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-445">True</TrueText>
+      <FalseText id="ref-446">False</FalseText>
+      <Group id="ref-447">Group_Fast</Group>
+      <ItemID id="ref-448">DACN1.DACN1_User_Interface.STARTER_DC_ON</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-84" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-449">OPC_STARTER_FAULT_CLEAR</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-450">True</TrueText>
+      <FalseText id="ref-451">False</FalseText>
+      <Group id="ref-452">Group_Fast</Group>
+      <ItemID id="ref-453">DACN1.DACN1_User_Interface.STARTER_FAULT_CLEAR</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-85" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-454">OPC_STARTER_VOLTAGE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-455">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-456">Group_Fast</Group>
+      <ItemID id="ref-457">DACN1.DACN1_User_Interface.STARTER_VOLTAGE</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-86" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-458">OPC_STARTER_VOLTAGE_CMD</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-459">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-460">Group_Fast</Group>
+      <ItemID id="ref-461">DACN1.DACN1_User_Interface.STARTER_VOLTAGE_CMD</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:Item id="ref-87" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-462">OPC_T_TT8_AVG</Name>
+      <Description id="ref-463">TT8 Avg</Description>
+      <ToolTip href="#ref-136"/>
+      <Units id="ref-464"> °F</Units>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-465">F0</Format>
+      <DecimalDigits>0</DecimalDigits>
+      <Group id="ref-466">Group_Fast</Group>
+      <ItemID id="ref-467">DACN1.DACN1_User_Interface.T_TT8_AVG</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-88" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-468">OPC_T1_TRIP</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-469">True</TrueText>
+      <FalseText id="ref-470">False</FalseText>
+      <Group id="ref-471">Group_Fast</Group>
+      <ItemID id="ref-472">DACN1.DACN1_User_Interface.T_Trip[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-89" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-473">OPC_T6B_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-474">True</TrueText>
+      <FalseText id="ref-475">False</FalseText>
+      <Group id="ref-476">Group_Fast</Group>
+      <ItemID id="ref-477">DACN1.DACN1_User_Interface.T6B_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-90" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-478">OPC_T6B_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-479">True</TrueText>
+      <FalseText id="ref-480">False</FalseText>
+      <Group id="ref-481">Group_Fast</Group>
+      <ItemID id="ref-482">DACN1.DACN1_User_Interface.T6B_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-91" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-483">OPC_T6B_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-484">True</TrueText>
+      <FalseText id="ref-485">False</FalseText>
+      <Group id="ref-486">Group_Fast</Group>
+      <ItemID id="ref-487">DACN1.DACN1_User_Interface.T6B_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-92" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-488">OPC_T6B_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-489">True</TrueText>
+      <FalseText id="ref-490">False</FalseText>
+      <Group id="ref-491">Group_Fast</Group>
+      <ItemID id="ref-492">DACN1.DACN1_User_Interface.T6B_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-93" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-493">OPC_T6B_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-494">True</TrueText>
+      <FalseText id="ref-495">False</FalseText>
+      <Group id="ref-496">Group_Fast</Group>
+      <ItemID id="ref-497">DACN1.DACN1_User_Interface.T6B_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-94" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-498">OPC_T6B_6_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-499">True</TrueText>
+      <FalseText id="ref-500">False</FalseText>
+      <Group id="ref-501">Group_Fast</Group>
+      <ItemID id="ref-502">DACN1.DACN1_User_Interface.T6B_DELETE[6]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-95" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-503">OPC_T6E_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-504">True</TrueText>
+      <FalseText id="ref-505">False</FalseText>
+      <Group id="ref-506">Group_Fast</Group>
+      <ItemID id="ref-507">DACN1.DACN1_User_Interface.T6E_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-96" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-508">OPC_T6E_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-509">True</TrueText>
+      <FalseText id="ref-510">False</FalseText>
+      <Group id="ref-511">Group_Fast</Group>
+      <ItemID id="ref-512">DACN1.DACN1_User_Interface.T6E_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-97" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-513">OPC_T6E_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-514">True</TrueText>
+      <FalseText id="ref-515">False</FalseText>
+      <Group id="ref-516">Group_Fast</Group>
+      <ItemID id="ref-517">DACN1.DACN1_User_Interface.T6E_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-98" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-518">OPC_T6E_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-519">True</TrueText>
+      <FalseText id="ref-520">False</FalseText>
+      <Group id="ref-521">Group_Fast</Group>
+      <ItemID id="ref-522">DACN1.DACN1_User_Interface.T6E_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-99" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-523">OPC_T6E_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-524">True</TrueText>
+      <FalseText id="ref-525">False</FalseText>
+      <Group id="ref-526">Group_Fast</Group>
+      <ItemID id="ref-527">DACN1.DACN1_User_Interface.T6E_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-100" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-528">OPC_T6E_6_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-529">True</TrueText>
+      <FalseText id="ref-530">False</FalseText>
+      <Group id="ref-531">Group_Fast</Group>
+      <ItemID id="ref-532">DACN1.DACN1_User_Interface.T6E_DELETE[6]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-101" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-533">OPC_T6G_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-534">True</TrueText>
+      <FalseText id="ref-535">False</FalseText>
+      <Group id="ref-536">Group_Fast</Group>
+      <ItemID id="ref-537">DACN1.DACN1_User_Interface.T6G_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-102" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-538">OPC_T6G_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-539">True</TrueText>
+      <FalseText id="ref-540">False</FalseText>
+      <Group id="ref-541">Group_Fast</Group>
+      <ItemID id="ref-542">DACN1.DACN1_User_Interface.T6G_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-103" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-543">OPC_T6G_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-544">True</TrueText>
+      <FalseText id="ref-545">False</FalseText>
+      <Group id="ref-546">Group_Fast</Group>
+      <ItemID id="ref-547">DACN1.DACN1_User_Interface.T6G_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-104" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-548">OPC_T6G_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-549">True</TrueText>
+      <FalseText id="ref-550">False</FalseText>
+      <Group id="ref-551">Group_Fast</Group>
+      <ItemID id="ref-552">DACN1.DACN1_User_Interface.T6G_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-105" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-553">OPC_T6G_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-554">True</TrueText>
+      <FalseText id="ref-555">False</FalseText>
+      <Group id="ref-556">Group_Fast</Group>
+      <ItemID id="ref-557">DACN1.DACN1_User_Interface.T6G_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-106" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-558">OPC_T6G_6_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-559">True</TrueText>
+      <FalseText id="ref-560">False</FalseText>
+      <Group id="ref-561">Group_Fast</Group>
+      <ItemID id="ref-562">DACN1.DACN1_User_Interface.T6G_DELETE[6]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-107" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-563">OPC_T6K_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-564">True</TrueText>
+      <FalseText id="ref-565">False</FalseText>
+      <Group id="ref-566">Group_Fast</Group>
+      <ItemID id="ref-567">DACN1.DACN1_User_Interface.T6K_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-108" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-568">OPC_T6K_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-569">True</TrueText>
+      <FalseText id="ref-570">False</FalseText>
+      <Group id="ref-571">Group_Fast</Group>
+      <ItemID id="ref-572">DACN1.DACN1_User_Interface.T6K_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-109" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-573">OPC_T6K_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-574">True</TrueText>
+      <FalseText id="ref-575">False</FalseText>
+      <Group id="ref-576">Group_Fast</Group>
+      <ItemID id="ref-577">DACN1.DACN1_User_Interface.T6K_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-110" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-578">OPC_T6K_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-579">True</TrueText>
+      <FalseText id="ref-580">False</FalseText>
+      <Group id="ref-581">Group_Fast</Group>
+      <ItemID id="ref-582">DACN1.DACN1_User_Interface.T6K_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-111" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-583">OPC_T6K_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-584">True</TrueText>
+      <FalseText id="ref-585">False</FalseText>
+      <Group id="ref-586">Group_Fast</Group>
+      <ItemID id="ref-587">DACN1.DACN1_User_Interface.T6K_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-112" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-588">OPC_T6K_6_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-589">True</TrueText>
+      <FalseText id="ref-590">False</FalseText>
+      <Group id="ref-591">Group_Fast</Group>
+      <ItemID id="ref-592">DACN1.DACN1_User_Interface.T6K_DELETE[6]</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-113" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-593">OPC_THRUST_OFFSET</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-594">N</Format>
+      <DecimalDigits>2</DecimalDigits>
+      <Group id="ref-595">Group_Fast</Group>
+      <ItemID id="ref-596">dacn1.dacn1_user_interface.thrust_offset</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a5:BooleanItem id="ref-114" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-597">OPC_TRIM_PLUG_CHANGE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-223"/>
+      <FalseText href="#ref-224"/>
+      <Group id="ref-598">Group_Fast</Group>
+      <ItemID id="ref-599">DACN1.DACN1_User_Interface.trim_plug_change_button</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-115" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-600">OPC_TT1_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-601">True</TrueText>
+      <FalseText id="ref-602">False</FalseText>
+      <Group id="ref-603">Group_Fast</Group>
+      <ItemID id="ref-604">DACN1.DACN1_User_Interface.TT1_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-116" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-605">OPC_TT1_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-606">True</TrueText>
+      <FalseText id="ref-607">False</FalseText>
+      <Group id="ref-608">Group_Fast</Group>
+      <ItemID id="ref-609">DACN1.DACN1_User_Interface.TT1_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-117" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-610">OPC_TT1_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-611">True</TrueText>
+      <FalseText id="ref-612">False</FalseText>
+      <Group id="ref-613">Group_Fast</Group>
+      <ItemID id="ref-614">DACN1.DACN1_User_Interface.TT1_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-118" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-615">OPC_TT1_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-616">True</TrueText>
+      <FalseText id="ref-617">False</FalseText>
+      <Group id="ref-618">Group_Fast</Group>
+      <ItemID id="ref-619">DACN1.DACN1_User_Interface.TT1_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-119" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-620">OPC_TT1_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-621">True</TrueText>
+      <FalseText id="ref-622">False</FalseText>
+      <Group id="ref-623">Group_Fast</Group>
+      <ItemID id="ref-624">DACN1.DACN1_User_Interface.TT1_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-120" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-625">OPC_TT1_6_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-626">True</TrueText>
+      <FalseText id="ref-627">False</FalseText>
+      <Group id="ref-628">Group_Fast</Group>
+      <ItemID id="ref-629">DACN1.DACN1_User_Interface.TT1_DELETE[6]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-121" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-630">OPC_TT1_7_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-631">True</TrueText>
+      <FalseText id="ref-632">False</FalseText>
+      <Group id="ref-633">Group_Fast</Group>
+      <ItemID id="ref-634">DACN1.DACN1_User_Interface.TT1_DELETE[7]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-122" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-635">OPC_TT1_8_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-636">True</TrueText>
+      <FalseText id="ref-637">False</FalseText>
+      <Group id="ref-638">Group_Fast</Group>
+      <ItemID id="ref-639">DACN1.DACN1_User_Interface.TT1_DELETE[8]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-123" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-640">OPC_V1_TRIP</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-641">True</TrueText>
+      <FalseText id="ref-642">False</FalseText>
+      <Group id="ref-643">Group_Fast</Group>
+      <ItemID id="ref-644">DACN1.DACN1_User_Interface.V_Trip[1]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-124" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-645">OPC_V2_TRIP</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-646">True</TrueText>
+      <FalseText id="ref-647">False</FalseText>
+      <Group id="ref-648">Group_Fast</Group>
+      <ItemID id="ref-649">DACN1.DACN1_User_Interface.V_Trip[2]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-125" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-650">OPC_V3_TRIP</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-651">True</TrueText>
+      <FalseText id="ref-652">False</FalseText>
+      <Group id="ref-653">Group_Fast</Group>
+      <ItemID id="ref-654">DACN1.DACN1_User_Interface.V_Trip[3]</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-126" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-655">OPC_WET_SPIN</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-223"/>
+      <FalseText href="#ref-224"/>
+      <Group id="ref-656">Group_Fast</Group>
+      <ItemID id="ref-657">DACN1.DACN1_User_Interface.wet_spin_button</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-127" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-658">OPC_WET_THEN_DRYSPIN</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-223"/>
+      <FalseText href="#ref-224"/>
+      <Group id="ref-659">Group_Fast</Group>
+      <ItemID id="ref-660">DACN1.DACN1_User_Interface.wet_then_dryspin_button</ItemID>
+    </a5:BooleanItem>
+    <a2:NumericChannel id="ref-128" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-661">OPERATING_TIME</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>0</Max>
+      <Format id="ref-662">N</Format>
+      <DecimalDigits>2</DecimalDigits>
+    </a2:NumericChannel>
+    <a5:BooleanItem id="ref-129" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-663">RESET_SPIN_BUTTONS</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-664">True</TrueText>
+      <FalseText id="ref-665">False</FalseText>
+      <Group id="ref-666">Group_Fast</Group>
+      <ItemID id="ref-667">DACN1.DACN1_User_Interface.reset_spin_buttons</ItemID>
+    </a5:BooleanItem>
+    <a5:BooleanItem id="ref-130" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-668">RESET_SPIN_BUTTONS_DONE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-669">True</TrueText>
+      <FalseText id="ref-670">False</FalseText>
+      <Group id="ref-671">Group_Fast</Group>
+      <ItemID id="ref-672">DACN1.DACN1_User_Interface.reset_spin_buttons_done</ItemID>
+    </a5:BooleanItem>
+    <a5:Item id="ref-131" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-673">T_EGT_LIMITS</Name>
+      <Description id="ref-674">EGT Limits</Description>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-675">F1</Format>
+      <DecimalDigits>1</DecimalDigits>
+      <Group id="ref-676">Group_Fast</Group>
+      <ItemID id="ref-677">DACN1.DACN1_User_Interface.EGT_Limit</ItemID>
+      <Scale>1</Scale>
+      <Offset>0</Offset>
+    </a5:Item>
+    <a2:BooleanChannel id="ref-132" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-678">TARE</Name>
+      <Description id="ref-679">Tare</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText href="#ref-181"/>
+      <FalseText href="#ref-182"/>
+    </a2:BooleanChannel>
+    <a2:NumericChannel id="ref-133" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-680">TEST_STEP_NB</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <Units href="#ref-136"/>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Format id="ref-681">N</Format>
+      <DecimalDigits>2</DecimalDigits>
+    </a2:NumericChannel>
+    <a3:BooleanVariable id="ref-134" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-682">THROTTLE_BUTTON</Name>
+      <Description id="ref-683">Throttle</Description>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-684">True</TrueText>
+      <FalseText id="ref-685">False</FalseText>
+      <Value href="#ref-142"/>
+    </a3:BooleanVariable>
+    <a6:Boolean id="ref-142" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Values/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <val>false</val>
+    </a6:Boolean>
+    <a7:Message id="ref-212" xmlns:a7="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Message/KineticaRT.Logic.Message%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <text id="ref-686">MOPD ENG Ch. A available is now 0</text>
+      <source id="ref-687">MOPD_ENG_CHA_AVAIL</source>
+      <priority>0</priority>
+      <timestamp>2009-04-29T18:47:28.9382731+01:00</timestamp>
+    </a7:Message>
+
+    <a5:BooleanItem id="ref-688" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-689">OPC_T6C_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-690">True</TrueText>
+      <FalseText id="ref-691">False</FalseText>
+      <Group id="ref-692">Group_Fast</Group>
+      <ItemID id="ref-693">DACN1.DACN1_User_Interface.T6C_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-694" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-695">OPC_T6C_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-696">True</TrueText>
+      <FalseText id="ref-697">False</FalseText>
+      <Group id="ref-698">Group_Fast</Group>
+      <ItemID id="ref-699">DACN1.DACN1_User_Interface.T6C_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-700" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-701">OPC_T6C_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-702">True</TrueText>
+      <FalseText id="ref-703">False</FalseText>
+      <Group id="ref-704">Group_Fast</Group>
+      <ItemID id="ref-705">DACN1.DACN1_User_Interface.T6C_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-706" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-707">OPC_T6C_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-708">True</TrueText>
+      <FalseText id="ref-709">False</FalseText>
+      <Group id="ref-710">Group_Fast</Group>
+      <ItemID id="ref-711">DACN1.DACN1_User_Interface.T6C_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-712" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-713">OPC_T6C_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-714">True</TrueText>
+      <FalseText id="ref-715">False</FalseText>
+      <Group id="ref-716">Group_Fast</Group>
+      <ItemID id="ref-717">DACN1.DACN1_User_Interface.T6C_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-724" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-725">OPC_T6H_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-726">True</TrueText>
+      <FalseText id="ref-727">False</FalseText>
+      <Group id="ref-728">Group_Fast</Group>
+      <ItemID id="ref-729">DACN1.DACN1_User_Interface.T6H_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-730" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-731">OPC_T6H_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-732">True</TrueText>
+      <FalseText id="ref-733">False</FalseText>
+      <Group id="ref-734">Group_Fast</Group>
+      <ItemID id="ref-735">DACN1.DACN1_User_Interface.T6H_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-736" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-737">OPC_T6H_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-738">True</TrueText>
+      <FalseText id="ref-739">False</FalseText>
+      <Group id="ref-740">Group_Fast</Group>
+      <ItemID id="ref-741">DACN1.DACN1_User_Interface.T6H_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-742" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-743">OPC_T6H_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-744">True</TrueText>
+      <FalseText id="ref-745">False</FalseText>
+      <Group id="ref-746">Group_Fast</Group>
+      <ItemID id="ref-747">DACN1.DACN1_User_Interface.T6H_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-748" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-749">OPC_T6H_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-750">True</TrueText>
+      <FalseText id="ref-751">False</FalseText>
+      <Group id="ref-752">Group_Fast</Group>
+      <ItemID id="ref-753">DACN1.DACN1_User_Interface.T6H_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+
+
+
+
+
+    <a5:BooleanItem id="ref-760" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-761">OPC_T6L_1_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-762">True</TrueText>
+      <FalseText id="ref-763">False</FalseText>
+      <Group id="ref-764">Group_Fast</Group>
+      <ItemID id="ref-765">DACN1.DACN1_User_Interface.T6L_DELETE[1]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-766" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-767">OPC_T6L_2_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-768">True</TrueText>
+      <FalseText id="ref-769">False</FalseText>
+      <Group id="ref-770">Group_Fast</Group>
+      <ItemID id="ref-771">DACN1.DACN1_User_Interface.T6L_DELETE[2]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-772" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-773">OPC_T6L_3_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-774">True</TrueText>
+      <FalseText id="ref-775">False</FalseText>
+      <Group id="ref-776">Group_Fast</Group>
+      <ItemID id="ref-777">DACN1.DACN1_User_Interface.T6L_DELETE[3]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-778" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-779">OPC_T6L_4_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-780">True</TrueText>
+      <FalseText id="ref-781">False</FalseText>
+      <Group id="ref-782">Group_Fast</Group>
+      <ItemID id="ref-783">DACN1.DACN1_User_Interface.T6L_DELETE[4]</ItemID>
+    </a5:BooleanItem>
+
+    <a5:BooleanItem id="ref-784" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+      <Name id="ref-785">OPC_T6L_5_DELETE</Name>
+      <Description href="#ref-136"/>
+      <ToolTip href="#ref-136"/>
+      <TrueText id="ref-786">True</TrueText>
+      <FalseText id="ref-787">False</FalseText>
+      <Group id="ref-788">Group_Fast</Group>
+      <ItemID id="ref-789">DACN1.DACN1_User_Interface.T6L_DELETE[5]</ItemID>
+    </a5:BooleanItem>
+    
+    
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

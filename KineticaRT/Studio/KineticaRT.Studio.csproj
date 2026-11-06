@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACE748CA-C341-4DBA-9698-BCA085D24EA2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>CEL.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>PrjMaster_HMI</AssemblyName>
+    <AssemblyOriginatorKeyFile>KineticaRTKey.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StudioDemonstration</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\HMI\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\HMI\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\HMI\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\HMI\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\HMI\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\HMI\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>True</Private>
+    </Reference>
+    <ProjectReference Include="..\..\CEL.Library\CEL.Library.vbproj">
+      <Project>{e291f3a7-ea2d-418b-b9f4-945844580eca}</Project>
+      <Name>CEL.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\CEL.vbproj">
+      <Project>{1f06bed1-b64b-424e-9d4e-2889b45a9f2c}</Project>
+      <Name>CEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\Data\CEL.Data.vbproj">
+      <Project>{86b17da9-643b-4c90-b4a9-fe92516e1adf}</Project>
+      <Name>CEL.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\IODevice\CEL.IODevice.vbproj">
+      <Project>{4bcfc7d1-4c93-4613-bd19-4c948917d25b}</Project>
+      <Name>CEL.IODevice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\KineticaRT\Channels\CEL.Channels.csproj">
+      <Project>{316d32d9-46a2-483f-9722-76b263ed6891}</Project>
+      <Name>CEL.Channels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\KineticaRT\Controls\CEL.Controls.csproj">
+      <Project>{ceb228b6-e439-4c50-8916-60f54215c267}</Project>
+      <Name>CEL.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\KineticaRT\Controls\CEL.KineticaRT.Controls.ZedGraphControl\CEL.KineticaRT.Controls.ZedGraphControl.csproj">
+      <Project>{5fb32b61-1add-47bf-be10-03cc46894ff2}</Project>
+      <Name>CEL.KineticaRT.Controls.ZedGraphControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\KineticaRT\Sequence\CEL.Sequence.csproj">
+      <Project>{b9707826-5441-49f9-9e5d-4ca6a92399e9}</Project>
+      <Name>CEL.Sequence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\KineticaRT\Servers\Logger\CEL.Servers.Logger.csproj">
+      <Project>{2e5e3e4a-26a7-49c8-adad-13e9a08207b9}</Project>
+      <Name>CEL.Servers.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\KineticaRT\Splash\CEL.Splash.vbproj">
+      <Project>{9873ef38-1c16-4e10-892a-9f995f1ea01a}</Project>
+      <Name>CEL.Splash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.Net\Servers\CEL.Servers.vbproj">
+      <Project>{845f60b3-47e7-4614-ba70-6e6ed437153a}</Project>
+      <Name>CEL.Servers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.STM\CEL.STM.vbproj">
+      <Project>{fa180ed5-0e17-4d50-b383-3f133165b282}</Project>
+      <Name>CEL.STM %28CEL.STM\CEL.STM%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CEL.WPF.Controls\CEL.WPF.Controls.csproj">
+      <Project>{582f9225-531f-470c-8b1d-b2bf8de2e09f}</Project>
+      <Name>CEL.WPF.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.Core\EntitySpaces.Core45.csproj">
+      <Project>{81b80c15-74f7-480a-b3c1-d8792785b357}</Project>
+      <Name>EntitySpaces.Core45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.DebuggerVisualizer\EntitySpaces.DebuggerVisualizer45.csproj">
+      <Project>{a82a0bf9-2c70-4396-bd4b-9f287b0b347d}</Project>
+      <Name>EntitySpaces.DebuggerVisualizer45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.DynamicQuery\EntitySpaces.DynamicQuery45.csproj">
+      <Project>{9aa003d3-6dbb-4c6c-bdc5-f3e1f3bbb0dd}</Project>
+      <Name>EntitySpaces.DynamicQuery45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.Interfaces\EntitySpaces.Interfaces45.csproj">
+      <Project>{b13ac54d-1cee-4b91-beae-98cf0a4aa180}</Project>
+      <Name>EntitySpaces.Interfaces45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.LoaderMT\EntitySpaces.LoaderMT45.csproj">
+      <Project>{646de25e-4951-4174-b8e2-16e6d6d5008a}</Project>
+      <Name>EntitySpaces.LoaderMT45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.Loader\EntitySpaces.Loader45.csproj">
+      <Project>{7dff20d6-c320-4920-ae92-4f096d8dfe61}</Project>
+      <Name>EntitySpaces.Loader45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\Providers\EntitySpaces.MSAccessProvider\EntitySpaces.MSAccessProvider45.csproj">
+      <Project>{d39c62ac-c3be-433f-95db-6175703b092e}</Project>
+      <Name>EntitySpaces.MSAccessProvider45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\PwcServer\PwcServer.vbproj">
+      <Project>{e77854b3-17c8-4785-8278-c82cb41f5a53}</Project>
+      <Name>PwcServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\PwcSharedInterface\PwcSharedInterface.vbproj">
+      <Project>{7bd142dc-755e-4808-8d8c-909cceef6ec9}</Project>
+      <Name>PwcSharedInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\BarGraph\KineticaRT.Controls.BarGraph.csproj">
+      <Name>KineticaRT.Controls.BarGraph</Name>
+      <Project>{3D2180B6-3618-4797-9C3F-0177F1717021}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Button\KineticaRT.Controls.Button.csproj">
+      <Name>KineticaRT.Controls.Button</Name>
+      <Project>{58F86FAA-1750-4451-A0D3-0FA807F7E3C6}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Dial\KineticaRT.Controls.Dial.csproj">
+      <Name>KineticaRT.Controls.Dial</Name>
+      <Project>{9AC2E2EF-5F51-4EA0-9837-883E7212E1FC}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Display\KineticaRT.Controls.Display.csproj">
+      <Name>KineticaRT.Controls.Display</Name>
+      <Project>{A26314D0-7C8D-48B7-8BC3-9B56738CBFDC}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Explorer\KineticaRT.Controls.Explorer.csproj">
+      <Project>{bf4fac1a-21b9-48ae-8649-462465e20eab}</Project>
+      <Name>KineticaRT.Controls.Explorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Frame\KineticaRT.Controls.Frame.csproj">
+      <Project>{3245d543-24d7-4010-ad8a-095fae19a0a2}</Project>
+      <Name>KineticaRT.Controls.Frame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Indicator\KineticaRT.Controls.Indicator.csproj">
+      <Name>KineticaRT.Controls.Indicator</Name>
+      <Project>{C2C09634-54D6-4DAD-BD3A-213A7D2F9AE6}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\KineticaRT.Controls.csproj">
+      <Name>KineticaRT.Controls</Name>
+      <Project>{0753E173-B6A0-4724-BD16-DB25B9A194A6}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Knob\KineticaRT.Controls.Knob.csproj">
+      <Name>KineticaRT.Controls.Knob</Name>
+      <Project>{984E621C-0ACE-443C-9B0B-125B8B8DBFAA}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Picture\KineticaRT.Controls.Picture.csproj">
+      <Name>KineticaRT.Controls.Picture</Name>
+      <Project>{A6181F72-F54D-4E0D-93A5-6B6C1636812A}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Slider\KineticaRT.Controls.Slider.csproj">
+      <Project>{31a66f2c-be05-4db3-a43e-77c8c882eaee}</Project>
+      <Name>KineticaRT.Controls.Slider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Tab\KineticaRT.Controls.Tab.csproj">
+      <Project>{90f1bff6-0233-4a46-a654-02097b3a107b}</Project>
+      <Name>KineticaRT.Controls.Tab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Trend\KineticaRT.Controls.Trend.csproj">
+      <Name>KineticaRT.Controls.Trend</Name>
+      <Project>{BB42EF0A-6AF4-4249-BB99-0860BE6968F8}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\XYGraph\KineticaRT.Controls.XYGraph.csproj">
+      <Name>KineticaRT.Controls.XYGraph</Name>
+      <Project>{3C67995F-C505-4C5A-BAA6-5E71094D58C5}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KineticaRT.csproj">
+      <Project>{f4ad27c5-4183-4d56-8cba-56cc3947732a}</Project>
+      <Name>KineticaRT %28KineticaRT\KineticaRT%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Channels\KineticaRT.Logic.Channels.csproj">
+      <Name>KineticaRT.Logic.Channels</Name>
+      <Project>{B2A4B4CD-02C6-4A37-82B1-1C732239361E}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Expressions\KineticaRT.Logic.Expressions.csproj">
+      <Name>KineticaRT.Logic.Expressions</Name>
+      <Project>{EC941795-E302-4EB8-A729-911791641897}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Message\KineticaRT.Logic.Message.csproj">
+      <Name>KineticaRT.Logic.Message</Name>
+      <Project>{7B28998E-356A-494A-8802-322D2B1975D7}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Sequence\KineticaRT.Sequence.csproj">
+      <Name>KineticaRT.Sequence</Name>
+      <Project>{F1A4B1DD-00C8-4264-A870-9C83DE3D7B49}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Servers\Logger\KineticaRT.Servers.Logger.csproj">
+      <Project>{CFBF0CA8-F3C8-4541-97D4-8831096623AE}</Project>
+      <Name>KineticaRT.Servers.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servers\OpcClient\KineticaRT.Servers.OpcClient.csproj">
+      <Name>KineticaRT.Servers.OpcClient</Name>
+      <Project>{F6DE4B27-5BC6-4EE2-9148-B211FFB79919}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Servers\Simulate\KineticaRT.Servers.Simulate.csproj">
+      <Name>KineticaRT.Servers.Simulate</Name>
+      <Project>{7D8EB0D3-FC43-42EB-98FF-AFAFCAD98AED}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="Application\KineticaRT.Studio.Application.csproj">
+      <Project>{B642C01B-0BCF-4D74-8526-EB402F195A59}</Project>
+      <Name>KineticaRT.Studio.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\BarGraph\KineticaRT.Studio.Controls.BarGraph.csproj">
+      <Project>{C10F654F-2B64-402F-A0DE-3268D221152D}</Project>
+      <Name>KineticaRT.Studio.Controls.BarGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\Button\KineticaRT.Studio.Controls.Button.csproj">
+      <Project>{6491F629-806A-4B05-87A7-5FDF73A04D09}</Project>
+      <Name>KineticaRT.Studio.Controls.Button</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\ChannelSelector\KineticaRT.Studio.Controls.ChannelSelector.csproj">
+      <Project>{AF97483E-45A1-4DC9-A2F1-F7B6A6AF72B4}</Project>
+      <Name>KineticaRT.Studio.Controls.ChannelSelector</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\Checkbox\KineticaRT.Studio.Controls.Checkbox.csproj">
+      <Project>{97D63DF3-8492-4F5F-BE25-2825AB81D2F8}</Project>
+      <Name>KineticaRT.Studio.Controls.Checkbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\Dial\KineticaRT.Studio.Controls.Dial.csproj">
+      <Project>{BF1EB84F-E961-4A4D-BE3F-01A8418B1DA3}</Project>
+      <Name>KineticaRT.Studio.Controls.Dial</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\Display\KineticaRT.Studio.Controls.Display.csproj">
+      <Project>{1FCE97F1-CFC6-406E-8A83-AE0C5B90501A}</Project>
+      <Name>KineticaRT.Studio.Controls.Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\ErrorLinear\KineticaRT.Studio.Controls.ErrorLinear.csproj">
+      <Project>{9BBBC3C2-F079-4F3C-9666-D8CCC3C092F6}</Project>
+      <Name>KineticaRT.Studio.Controls.ErrorLinear</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\Indicator\KineticaRT.Studio.Controls.Indicator.csproj">
+      <Project>{12431171-A893-4FB0-A7C4-1DABCCC8B763}</Project>
+      <Name>KineticaRT.Studio.Controls.Indicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\KineticaRT.Studio.Controls.csproj">
+      <Project>{A5416DAA-E173-4736-86E4-CCAA81C25721}</Project>
+      <Name>KineticaRT.Studio.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\LampIndicator\KineticaRT.Studio.Controls.LampIndicator.csproj">
+      <Project>{E91AB4C6-FC7F-4E4A-A1F9-4FD08C201FF8}</Project>
+      <Name>KineticaRT.Studio.Controls.LampIndicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\Linear\KineticaRT.Studio.Controls.Linear.csproj">
+      <Project>{8013455E-10CE-410B-BED2-985997AEE9DE}</Project>
+      <Name>KineticaRT.Studio.Controls.Linear</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\RadioButton\KineticaRT.Studio.Controls.RadioButton.csproj">
+      <Project>{B8F3A47E-FBA4-4816-ACE0-2C120C86339E}</Project>
+      <Name>KineticaRT.Studio.Controls.RadioButton</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\SetPointDial\KineticaRT.Studio.Controls.SetPointDial.csproj">
+      <Project>{E9177809-491D-41C9-A8EF-EB629858770F}</Project>
+      <Name>KineticaRT.Studio.Controls.SetPointDial</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\SetPointLinear\KineticaRT.Studio.Controls.SetPointLinear.csproj">
+      <Project>{02F08673-9E37-41B7-B949-15CCB38C444F}</Project>
+      <Name>KineticaRT.Studio.Controls.SetPointLinear</Name>
+    </ProjectReference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Help.ndoc" />
+    <None Include="KineticaRTKey.snk" />
+    <None Include="Manual\toc.hhc" />
+    <Content Include="App.ico" />
+    <Content Include="arrow.gif" />
+    <Content Include="backtotop.gif" />
+    <Content Include="CEL.ico" />
+    <Content Include="divider.gif" />
+    <Content Include="DividerLine.gif" />
+    <Content Include="Manual\Application.gif" />
+    <Content Include="Manual\arrow.gif" />
+    <Content Include="Manual\BugList.htm" />
+    <Content Include="Manual\ChannelsAddExistingCollection.htm" />
+    <Content Include="Manual\ChannelsAddNewCollection.htm" />
+    <Content Include="Manual\ChannnelsCollectionMenu.htm" />
+    <Content Include="Manual\ConfiguringChannels.htm" />
+    <Content Include="Manual\ConfiguringComponents.htm" />
+    <Content Include="Manual\ConfiguringComputer.htm" />
+    <Content Include="Manual\ConfiguringControls.htm" />
+    <Content Include="Manual\ConfiguringPanels.htm" />
+    <Content Include="Manual\ConfiguringProjects.htm" />
+    <Content Include="Manual\ConfiguringSequences.htm" />
+    <Content Include="Manual\ConfiguringWindows.htm" />
+    <Content Include="Manual\ControlsDisplay.htm" />
+    <Content Include="Manual\ControlsFrame.htm" />
+    <Content Include="Manual\ControlsOthers.htm" />
+    <Content Include="Manual\ControlsStudioBargraph.htm" />
+    <Content Include="Manual\ControlsStudioButton.htm" />
+    <Content Include="Manual\ControlsStudioChannelSelector.htm" />
+    <Content Include="Manual\ControlsStudioCheckbox.htm" />
+    <Content Include="Manual\ControlsStudioDial.htm" />
+    <Content Include="Manual\ControlsStudioDisplay.htm" />
+    <Content Include="Manual\ControlsStudioErrorLinear.htm" />
+    <Content Include="Manual\ControlsStudioLampIndicator.htm" />
+    <Content Include="Manual\ControlsStudioLinear.htm" />
+    <Content Include="Manual\ControlsStudioRadioButton.htm" />
+    <Content Include="Manual\ControlsStudioSetpointDial.htm" />
+    <Content Include="Manual\ControlsStudioSetpointLinear.htm" />
+    <Content Include="Manual\FAQ.htm" />
+    <Content Include="Manual\FileExit.htm" />
+    <Content Include="Manual\Files.htm" />
+    <Content Include="Manual\FileSaveAll.htm" />
+    <Content Include="Manual\HelpAboutKineticaRTStudio.htm" />
+    <Content Include="Manual\HelpKineticaRTOnline.htm" />
+    <Content Include="Manual\HelpKineticaRTStudioHelp.htm" />
+    <Content Include="Manual\Introduction.htm" />
+    <Content Include="Manual\LogicExpression.htm" />
+    <Content Include="Manual\LogicMessage.htm" />
+    <Content Include="Manual\Manual.css" />
+    <Content Include="Manual\Manual.htm" />
+    <Content Include="Manual\MenuEdit.htm" />
+    <Content Include="Manual\MenuEditControl.htm" />
+    <Content Include="Manual\NumberFormats.htm" />
+    <Content Include="Manual\Overview.htm" />
+    <Content Include="Manual\ProjectAllwaysOnTop.htm" />
+    <Content Include="Manual\ProjectConnectAll.htm" />
+    <Content Include="Manual\ProjectDisconnectAll.htm" />
+    <Content Include="Manual\ProjectEnableConfigurer.htm" />
+    <Content Include="Manual\ProjectEnableExplorer.htm" />
+    <Content Include="Manual\ProjectEnableWindowClosedown.htm" />
+    <Content Include="Manual\ProjectSave.htm" />
+    <Content Include="Manual\PropertiesAccesibility.htm" />
+    <Content Include="Manual\PropertiesAppearance.htm" />
+    <Content Include="Manual\PropertiesBehavior.htm" />
+    <Content Include="Manual\PropertiesDescription.htm" />
+    <Content Include="Manual\PropertiesGeneral.htm" />
+    <Content Include="Manual\PropertiesLayout.htm" />
+    <Content Include="Manual\PropertiesScale.htm" />
+    <Content Include="Manual\PropertiesTooltip.htm" />
+    <Content Include="Manual\PropertiesUnits.htm" />
+    <Content Include="Manual\SavingPanels.htm" />
+    <Content Include="Manual\SequenceAddExistingSequence.htm" />
+    <Content Include="Manual\SequenceAddNewSequence.htm" />
+    <Content Include="Manual\SequenceSequenceMenu.htm" />
+    <Content Include="Manual\ServersLogger.htm" />
+    <Content Include="Manual\ServersOpcClient.htm" />
+    <Content Include="Manual\ServersSimulate.htm" />
+    <Content Include="Manual\UserMenu.htm" />
+    <Content Include="Manual\UsingButtons.htm" />
+    <Content Include="Manual\UsingEventHandlers.htm" />
+    <Content Include="Manual\WindowAddExistingWindow.htm" />
+    <Content Include="Manual\WindowAddNewWindow.htm" />
+    <Content Include="Manual\WindowWindowMenu.htm" />
+    <Content Include="Overview.gif" />
+    <Content Include="Overview.htm" />
+    <Content Include="Overview.jpg" />
+    <Content Include="overviewtitle.gif" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="LicenseForm.resx">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

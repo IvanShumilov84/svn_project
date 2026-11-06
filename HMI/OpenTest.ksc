@@ -1,0 +1,1029 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Enabled>true</Enabled>
+<AlternateNames xsi:type="xsd:anyType" xsi:null="1"/>
+<Cancel_MeasurementUnit href="#ref-6"/>
+<Cancel_Password href="#ref-7"/>
+<Cancel_UserInputs href="#ref-8"/>
+<LastPerfReport href="#ref-9"/>
+<OK_MeasurementUnit href="#ref-10"/>
+<OK_Password href="#ref-11"/>
+<OK_UserInputs href="#ref-12"/>
+<Open_Test href="#ref-13"/>
+<Test_Mgr_Cmd href="#ref-14"/>
+<Test_Mgr_Mode href="#ref-15"/>
+<Test_Mgr_Status href="#ref-16"/>
+<Test_Mgr_User_ID href="#ref-17"/>
+<Test_Mgr_User_Name href="#ref-18"/>
+<Test_Mgr_User_Security_Lvl href="#ref-19"/>
+<Test_Mgr_UUT_Answer1 href="#ref-20"/>
+<Test_Mgr_UUT_Answer10 href="#ref-21"/>
+<Test_Mgr_UUT_Answer11 href="#ref-22"/>
+<Test_Mgr_UUT_Answer12 href="#ref-23"/>
+<Test_Mgr_UUT_Answer13 href="#ref-24"/>
+<Test_Mgr_UUT_Answer14 href="#ref-25"/>
+<Test_Mgr_UUT_Answer15 href="#ref-26"/>
+<Test_Mgr_UUT_Answer16 href="#ref-27"/>
+<Test_Mgr_UUT_Answer17 href="#ref-28"/>
+<Test_Mgr_UUT_Answer18 href="#ref-29"/>
+<Test_Mgr_UUT_Answer2 href="#ref-30"/>
+<Test_Mgr_UUT_Answer3 href="#ref-31"/>
+<Test_Mgr_UUT_Answer4 href="#ref-32"/>
+<Test_Mgr_UUT_Answer5 href="#ref-33"/>
+<Test_Mgr_UUT_Answer6 href="#ref-34"/>
+<Test_Mgr_UUT_Answer7 href="#ref-35"/>
+<Test_Mgr_UUT_Answer8 href="#ref-36"/>
+<Test_Mgr_UUT_Answer9 href="#ref-37"/>
+<Test_Mgr_UUT_Calib_Constant1 href="#ref-38"/>
+<Test_Mgr_UUT_Calib_Constant2 href="#ref-39"/>
+<Test_Mgr_UUT_Choice1 href="#ref-40"/>
+<Test_Mgr_UUT_Choice2 href="#ref-41"/>
+<Test_Mgr_UUT_Choice3 href="#ref-42"/>
+<Test_Mgr_UUT_Choice4 href="#ref-43"/>
+<Test_Mgr_UUT_Choice5 href="#ref-44"/>
+<Test_Mgr_UUT_Choice6 href="#ref-45"/>
+<Test_Mgr_UUT_Choice7 href="#ref-46"/>
+<Test_Mgr_UUT_Choice8 href="#ref-47"/>
+<Test_Mgr_UUT_Family href="#ref-48"/>
+<Test_Mgr_UUT_Model href="#ref-49"/>
+<Test_Mgr_UUT_Model2 href="#ref-50"/>
+<Test_Mgr_UUT_Option1 href="#ref-51"/>
+<Test_Mgr_UUT_Option10 href="#ref-52"/>
+<Test_Mgr_UUT_Option11 href="#ref-53"/>
+<Test_Mgr_UUT_Option12 href="#ref-54"/>
+<Test_Mgr_UUT_Option13 href="#ref-55"/>
+<Test_Mgr_UUT_Option14 href="#ref-56"/>
+<Test_Mgr_UUT_Option15 href="#ref-57"/>
+<Test_Mgr_UUT_Option16 href="#ref-58"/>
+<Test_Mgr_UUT_Option2 href="#ref-59"/>
+<Test_Mgr_UUT_Option3 href="#ref-60"/>
+<Test_Mgr_UUT_Option4 href="#ref-61"/>
+<Test_Mgr_UUT_Option5 href="#ref-62"/>
+<Test_Mgr_UUT_Option6 href="#ref-63"/>
+<Test_Mgr_UUT_Option7 href="#ref-64"/>
+<Test_Mgr_UUT_Option8 href="#ref-65"/>
+<Test_Mgr_UUT_Option9 href="#ref-66"/>
+<TM_STATUS href="#ref-67"/>
+<TM_UUT_Answer1 href="#ref-68"/>
+<TM_UUT_Answer10 href="#ref-69"/>
+<TM_UUT_Answer11 href="#ref-70"/>
+<TM_UUT_Answer12 href="#ref-71"/>
+<TM_UUT_Answer13 href="#ref-72"/>
+<TM_UUT_Answer14 href="#ref-73"/>
+<TM_UUT_Answer15 href="#ref-74"/>
+<TM_UUT_Answer16 href="#ref-75"/>
+<TM_UUT_Answer17 href="#ref-76"/>
+<TM_UUT_Answer18 href="#ref-77"/>
+<TM_UUT_Answer2 href="#ref-78"/>
+<TM_UUT_Answer3 href="#ref-79"/>
+<TM_UUT_Answer4 href="#ref-80"/>
+<TM_UUT_Answer5 href="#ref-81"/>
+<TM_UUT_Answer6 href="#ref-82"/>
+<TM_UUT_Answer7 href="#ref-83"/>
+<TM_UUT_Answer8 href="#ref-84"/>
+<TM_UUT_Answer9 href="#ref-85"/>
+<TM_UUT_Choice1 href="#ref-86"/>
+<TM_UUT_Choice2 href="#ref-87"/>
+<TM_UUT_Choice3 href="#ref-88"/>
+<TM_UUT_Choice4 href="#ref-89"/>
+<TM_UUT_Choice5 href="#ref-90"/>
+<TM_UUT_Choice6 href="#ref-91"/>
+<TM_UUT_Choice7 href="#ref-92"/>
+<TM_UUT_Choice8 href="#ref-93"/>
+<TM_UUT_Family href="#ref-94"/>
+<TM_UUT_Model href="#ref-95"/>
+<TM_UUT_Option1 href="#ref-96"/>
+<TM_UUT_Option10 href="#ref-97"/>
+<TM_UUT_Option11 href="#ref-98"/>
+<TM_UUT_Option12 href="#ref-99"/>
+<TM_UUT_Option13 href="#ref-100"/>
+<TM_UUT_Option14 href="#ref-101"/>
+<TM_UUT_Option15 href="#ref-102"/>
+<TM_UUT_Option16 href="#ref-103"/>
+<TM_UUT_Option2 href="#ref-104"/>
+<TM_UUT_Option3 href="#ref-105"/>
+<TM_UUT_Option4 href="#ref-106"/>
+<TM_UUT_Option5 href="#ref-107"/>
+<TM_UUT_Option6 href="#ref-108"/>
+<TM_UUT_Option7 href="#ref-109"/>
+<TM_UUT_Option8 href="#ref-110"/>
+<TM_UUT_Option9 href="#ref-111"/>
+</a1:ChannelCollection>
+<a3:BooleanChannel id="ref-6" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-112">Cancel_MeasurementUnit</Name>
+<Description id="ref-113">Cancel</Description>
+<ToolTip id="ref-114"></ToolTip>
+<TrueText id="ref-115">True</TrueText>
+<FalseText id="ref-116">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-7" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-117">Cancel_Password</Name>
+<Description id="ref-118">Cancel</Description>
+<ToolTip href="#ref-114"/>
+<TrueText id="ref-119">True</TrueText>
+<FalseText id="ref-120">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-8" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-121">Cancel_UserInputs</Name>
+<Description id="ref-122">Cancel</Description>
+<ToolTip href="#ref-114"/>
+<TrueText id="ref-123">True</TrueText>
+<FalseText id="ref-124">False</FalseText>
+</a3:BooleanChannel>
+<a3:TextChannel id="ref-9" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-125">LastPerfReport</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+</a3:TextChannel>
+<a3:BooleanChannel id="ref-10" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-126">OK_MeasurementUnit</Name>
+<Description id="ref-127">OK</Description>
+<ToolTip href="#ref-114"/>
+<TrueText id="ref-128">True</TrueText>
+<FalseText id="ref-129">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-11" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-130">OK_Password</Name>
+<Description id="ref-131">OK</Description>
+<ToolTip href="#ref-114"/>
+<TrueText id="ref-132">True</TrueText>
+<FalseText id="ref-133">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-12" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-134">OK_UserInputs</Name>
+<Description id="ref-135">OK</Description>
+<ToolTip href="#ref-114"/>
+<TrueText id="ref-136">True</TrueText>
+<FalseText id="ref-137">False</FalseText>
+</a3:BooleanChannel>
+<a3:BooleanChannel id="ref-13" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-138">Open_Test</Name>
+<Description id="ref-139">OPEN TEST</Description>
+<ToolTip href="#ref-114"/>
+<TrueText id="ref-140">True</TrueText>
+<FalseText id="ref-141">False</FalseText>
+</a3:BooleanChannel>
+<a4:Item id="ref-14" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-142">Test_Mgr_Cmd</Name>
+<Description id="ref-143">Test_Mgr_Cmd</Description>
+<ToolTip href="#ref-114"/>
+<Units href="#ref-114"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-144">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-145">Group_Fast</Group>
+<ItemID id="ref-146">dacn1.dacn1_user_interface.tm_in_test_mgr.command</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-15" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-147">Test_Mgr_Mode</Name>
+<Description id="ref-148">Test_Mgr_Mode</Description>
+<ToolTip href="#ref-114"/>
+<Units href="#ref-114"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-149">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-150">Group_Fast</Group>
+<ItemID id="ref-151">dacn1.dacn1_user_interface.tm_in_test_mgr.mode</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-16" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-152">Test_Mgr_Status</Name>
+<Description id="ref-153">Test Mgr Status</Description>
+<ToolTip href="#ref-114"/>
+<Units href="#ref-114"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-154">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-155">Group_Fast</Group>
+<ItemID id="ref-156">dacn1.dacn1_user_interface.tm_out_test_mgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-17" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-157">Test_Mgr_User_ID</Name>
+<Description id="ref-158">Test_Mgr_User_ID</Description>
+<ToolTip href="#ref-114"/>
+<Units href="#ref-114"/>
+<Min>0</Min>
+<Max>1</Max>
+<Format id="ref-159">G</Format>
+<DecimalDigits>0</DecimalDigits>
+<Group id="ref-160">Group_Fast</Group>
+<ItemID id="ref-161">dacn1.dacn1_user_interface.tm_user_info.id</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:TextItem id="ref-18" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-162">Test_Mgr_User_Name</Name>
+<Description id="ref-163">Test_Mgr_User_Name</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-164">Group_Fast</Group>
+<ItemID id="ref-165">dacn1.dacn1_user_interface.tm_user_info.name</ItemID>
+</a4:TextItem>
+<a3:TextChannel id="ref-19" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-166">Test_Mgr_User_Security_Lvl</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+</a3:TextChannel>
+<a5:TextChannel id="ref-20" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-167">Test_Mgr_UUT_Answer1</Name>
+<Description id="ref-168">Serial Number</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-169">OpenTest.TM_UUT_Answer1</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-21" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-170">Test_Mgr_UUT_Answer10</Name>
+<Description id="ref-171">Engine Mod Status</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-172">OpenTest.TM_UUT_Answer10</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-22" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-173">Test_Mgr_UUT_Answer11</Name>
+<Description id="ref-174">TSN</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-175">OpenTest.TM_UUT_Answer11</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-23" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-176">Test_Mgr_UUT_Answer12</Name>
+<Description id="ref-177">TSO</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-178">OpenTest.TM_UUT_Answer12</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-24" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-179">Test_Mgr_UUT_Answer13</Name>
+<Description id="ref-180">TSLV</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-181">OpenTest.TM_UUT_Answer13</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-25" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-182">Test_Mgr_UUT_Answer14</Name>
+<Description id="ref-183">TSI</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-184">OpenTest.TM_UUT_Answer14</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-26" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-185">Test_Mgr_UUT_Answer15</Name>
+<Description id="ref-186">CSN</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-187">OpenTest.TM_UUT_Answer15</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-27" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-188">Test_Mgr_UUT_Answer16</Name>
+<Description id="ref-189">CSO</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-190">OpenTest.TM_UUT_Answer16</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-28" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-191">Test_Mgr_UUT_Answer17</Name>
+<Description id="ref-192">CSLV</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-193">OpenTest.TM_UUT_Answer17</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-29" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-194">Test_Mgr_UUT_Answer18</Name>
+<Description id="ref-195">CSI</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-196">OpenTest.TM_UUT_Answer18</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-30" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-197">Test_Mgr_UUT_Answer2</Name>
+<Description id="ref-198">Work Order</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-199">OpenTest.TM_UUT_Answer2</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-31" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-200">Test_Mgr_UUT_Answer3</Name>
+<Description id="ref-201">Part Number</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-202">OpenTest.TM_UUT_Answer3</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-32" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-203">Test_Mgr_UUT_Answer4</Name>
+<Description id="ref-204">LHV (btu/lb)</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-205">OpenTest.TM_UUT_Answer4</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-33" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-206">Test_Mgr_UUT_Answer5</Name>
+<Description id="ref-207">Fuel SG</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-208">OpenTest.TM_UUT_Answer5</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-34" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-209">Test_Mgr_UUT_Answer6</Name>
+<Description id="ref-210">TFuel (°F)</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-211">OpenTest.TM_UUT_Answer6</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-35" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-212">Test_Mgr_UUT_Answer7</Name>
+<Description id="ref-213">Oil Type</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-214">OpenTest.TM_UUT_Answer7</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-36" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-215">Test_Mgr_UUT_Answer8</Name>
+<Description id="ref-216">Fuel Type</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-217">OpenTest.TM_UUT_Answer8</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-37" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-218">Test_Mgr_UUT_Answer9</Name>
+<Description id="ref-219">Customer Name</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-220">OpenTest.TM_UUT_Answer9</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a4:Item id="ref-38" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-221">Test_Mgr_UUT_Calib_Constant1</Name>
+<Description id="ref-222">Test_Mgr_UUT_Calib_Constant_1</Description>
+<ToolTip href="#ref-114"/>
+<Units href="#ref-114"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-223">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-224">Group_Fast</Group>
+<ItemID id="ref-225">dacn1.dacn1_user_interface.tm_uut_info.uut_calibre_constant_1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a4:Item id="ref-39" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-226">Test_Mgr_UUT_Calib_Constant2</Name>
+<Description id="ref-227">Test_Mgr_UUT_Calib_Constant_2</Description>
+<ToolTip href="#ref-114"/>
+<Units href="#ref-114"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-228">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-229">Group_Fast</Group>
+<ItemID id="ref-230">dacn1.dacn1_user_interface.tm_uut_info.uut_calibre_constant_2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a4:Item>
+<a5:TextChannel id="ref-40" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-231">Test_Mgr_UUT_Choice1</Name>
+<Description id="ref-232">Test Type</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-233">OpenTest.TM_UUT_Choice1</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-41" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-234">Test_Mgr_UUT_Choice2</Name>
+<Description id="ref-235">Operator</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-236">OpenTest.TM_UUT_Choice2</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-42" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-237">Test_Mgr_UUT_Choice3</Name>
+<Description id="ref-238">Supervisor</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-239">OpenTest.TM_UUT_Choice3</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-43" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-240">Test_Mgr_UUT_Choice4</Name>
+<Description id="ref-241">Inspector</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-242">OpenTest.TM_UUT_Choice4</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-44" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-243">Test_Mgr_UUT_Choice5</Name>
+<Description id="ref-244">Repair Type</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-245">OpenTest.TM_UUT_Choice5</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-45" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-246">Test_Mgr_UUT_Choice6</Name>
+<Description id="ref-247">Reason</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-248">OpenTest.TM_UUT_Choice6</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-46" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-249">Test_Mgr_UUT_Choice7</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-250">OpenTest.TM_UUT_Choice7</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-47" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-251">Test_Mgr_UUT_Choice8</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-252">OpenTest.TM_UUT_Choice8</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-48" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-253">Test_Mgr_UUT_Family</Name>
+<Description id="ref-254">Engine Model</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-255">OpenTest.TM_UUT_Family</Source>
+<Logger id="ref-256">ARCHIVE</Logger>
+<EventLogger id="ref-257">EVENT_ARCHIVE</EventLogger>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-49" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-258">Test_Mgr_UUT_Model</Name>
+<Description id="ref-259">Engine Model</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-260">OpenTest.TM_UUT_Model</Source>
+<Logger id="ref-261">ARCHIVE</Logger>
+<EventLogger id="ref-262">EVENT_ARCHIVE</EventLogger>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextLink id="ref-50" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-263">Test_Mgr_UUT_Model2</Name>
+<Description id="ref-264">Engine Model</Description>
+<ToolTip href="#ref-114"/>
+<Source href="#ref-114"/>
+<Destination id="ref-265">OpenTest.TM_UUT_Model</Destination>
+<Logger id="ref-266">ARCHIVE</Logger>
+<EventLogger id="ref-267">EVENT_ARCHIVE</EventLogger>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a5:TextLink>
+<a5:TextChannel id="ref-51" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-268">Test_Mgr_UUT_Option1</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-269">OpenTest.TM_UUT_Option1</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-52" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-270">Test_Mgr_UUT_Option10</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-271">OpenTest.TM_UUT_Option10</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-53" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-272">Test_Mgr_UUT_Option11</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-273">OpenTest.TM_UUT_Option11</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-54" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-274">Test_Mgr_UUT_Option12</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-275">OpenTest.TM_UUT_Option12</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-55" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-276">Test_Mgr_UUT_Option13</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-277">OpenTest.TM_UUT_Option13</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-56" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-278">Test_Mgr_UUT_Option14</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-279">OpenTest.TM_UUT_Option14</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-57" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-280">Test_Mgr_UUT_Option15</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-281">OpenTest.TM_UUT_Option15</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-58" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-282">Test_Mgr_UUT_Option16</Name>
+<Description id="ref-283">Option 16</Description>
+<ToolTip href="#ref-114"/>
+<Source id="ref-284">OpenTest.TM_UUT_Option16</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-59" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-285">Test_Mgr_UUT_Option2</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-286">OpenTest.TM_UUT_Option2</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-60" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-287">Test_Mgr_UUT_Option3</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-288">OpenTest.TM_UUT_Option3</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-61" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-289">Test_Mgr_UUT_Option4</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-290">OpenTest.TM_UUT_Option4</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-62" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-291">Test_Mgr_UUT_Option5</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-292">OpenTest.TM_UUT_Option5</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-63" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-293">Test_Mgr_UUT_Option6</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-294">OpenTest.TM_UUT_Option6</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-64" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-295">Test_Mgr_UUT_Option7</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-296">OpenTest.TM_UUT_Option7</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-65" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-297">Test_Mgr_UUT_Option8</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-298">OpenTest.TM_UUT_Option8</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a5:TextChannel id="ref-66" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-299">Test_Mgr_UUT_Option9</Name>
+<Description href="#ref-114"/>
+<ToolTip href="#ref-114"/>
+<Source id="ref-300">OpenTest.TM_UUT_Option9</Source>
+<Logger href="#ref-114"/>
+<EventLogger href="#ref-114"/>
+<Index>1</Index>
+<Enabled>true</Enabled>
+</a5:TextChannel>
+<a6:Expression id="ref-67" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-301">TM_STATUS</Name>
+<Description id="ref-302">STATUS</Description>
+<ToolTip href="#ref-114"/>
+<Text id="ref-303">If (Test_Mgr_Status = -1, &#34;ERROR ON OPENING&#34;, If (Test_Mgr_Status = -2, &#34;ERROR ON LOADING&#34;, If (Test_Mgr_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If (Test_Mgr_Status = -4, &#34;ERROR ON RUNNING&#34;, If (Test_Mgr_Status = -5, &#34;ERROR ON CLOSING&#34;,  If (Test_Mgr_Status = 0, &#34;NOT CONNECTED&#34;, If (Test_Mgr_Status = 1, &#34;OPENING&#34;, If (Test_Mgr_Status = 2, &#34;OPENED&#34;, If (Test_Mgr_Status = 3, &#34;LOADING&#34;, If (Test_Mgr_Status = 4, &#34;LOADED&#34;, If (Test_Mgr_Status = 5, &#34;INITIALIZING&#34;, If (Test_Mgr_Status = 6, &#34;INITIALIZED&#34;, If (Test_Mgr_Status = 7, &#34;RUNNING&#34;, If (Test_Mgr_Status = 8, &#34;CLOSING&#34;, If (Test_Mgr_Status = 9, &#34;CLOSED&#34;, If (Test_Mgr_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a6:Expression>
+<a4:TextItem id="ref-68" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-304">TM_UUT_Answer1</Name>
+<Description id="ref-305">Answer 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-306">Group_Fast</Group>
+<ItemID id="ref-307">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[1]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-69" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-308">TM_UUT_Answer10</Name>
+<Description id="ref-309">Answer 10</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-310">Group_Fast</Group>
+<ItemID id="ref-311">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[10]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-70" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-312">TM_UUT_Answer11</Name>
+<Description id="ref-313">Answer 11</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-314">Group_Fast</Group>
+<ItemID id="ref-315">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[11]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-71" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-316">TM_UUT_Answer12</Name>
+<Description id="ref-317">Answer 12</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-318">Group_Fast</Group>
+<ItemID id="ref-319">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[12]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-72" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-320">TM_UUT_Answer13</Name>
+<Description id="ref-321">Answer 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-322">Group_Fast</Group>
+<ItemID id="ref-323">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[13]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-73" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-324">TM_UUT_Answer14</Name>
+<Description id="ref-325">Answer 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-326">Group_Fast</Group>
+<ItemID id="ref-327">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[14]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-74" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-328">TM_UUT_Answer15</Name>
+<Description id="ref-329">Answer 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-330">Group_Fast</Group>
+<ItemID id="ref-331">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[15]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-75" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-332">TM_UUT_Answer16</Name>
+<Description id="ref-333">Answer 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-334">Group_Fast</Group>
+<ItemID id="ref-335">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[16]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-76" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-336">TM_UUT_Answer17</Name>
+<Description id="ref-337">Answer 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-338">Group_Fast</Group>
+<ItemID id="ref-339">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[17]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-77" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-340">TM_UUT_Answer18</Name>
+<Description id="ref-341">Answer 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-342">Group_Fast</Group>
+<ItemID id="ref-343">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[18]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-78" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-344">TM_UUT_Answer2</Name>
+<Description id="ref-345">Answer 2</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-346">Group_Fast</Group>
+<ItemID id="ref-347">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[2]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-79" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-348">TM_UUT_Answer3</Name>
+<Description id="ref-349">Answer 3</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-350">Group_Fast</Group>
+<ItemID id="ref-351">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[3]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-80" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-352">TM_UUT_Answer4</Name>
+<Description id="ref-353">Answer 4</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-354">Group_Fast</Group>
+<ItemID id="ref-355">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[4]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-81" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-356">TM_UUT_Answer5</Name>
+<Description id="ref-357">Answer 5</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-358">Group_Fast</Group>
+<ItemID id="ref-359">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[5]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-82" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-360">TM_UUT_Answer6</Name>
+<Description id="ref-361">Answer 6</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-362">Group_Fast</Group>
+<ItemID id="ref-363">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[6]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-83" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-364">TM_UUT_Answer7</Name>
+<Description id="ref-365">Answer 7</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-366">Group_Fast</Group>
+<ItemID id="ref-367">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[7]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-84" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-368">TM_UUT_Answer8</Name>
+<Description id="ref-369">Answer 8</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-370">Group_Fast</Group>
+<ItemID id="ref-371">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[8]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-85" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-372">TM_UUT_Answer9</Name>
+<Description id="ref-373">Answer 9</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-374">Group_Fast</Group>
+<ItemID id="ref-375">dacn1.dacn1_user_interface.tm_uut_info.uut_answers[9]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-86" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-376">TM_UUT_Choice1</Name>
+<Description id="ref-377">Choice 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-378">Group_Fast</Group>
+<ItemID id="ref-379">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[1]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-87" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-380">TM_UUT_Choice2</Name>
+<Description id="ref-381">Choice 2</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-382">Group_Fast</Group>
+<ItemID id="ref-383">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[2]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-88" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-384">TM_UUT_Choice3</Name>
+<Description id="ref-385">Choice 3</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-386">Group_Fast</Group>
+<ItemID id="ref-387">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[3]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-89" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-388">TM_UUT_Choice4</Name>
+<Description id="ref-389">Choice 4</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-390">Group_Fast</Group>
+<ItemID id="ref-391">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[4]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-90" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-392">TM_UUT_Choice5</Name>
+<Description id="ref-393">Choice 5</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-394">Group_Fast</Group>
+<ItemID id="ref-395">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[5]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-91" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-396">TM_UUT_Choice6</Name>
+<Description id="ref-397">Choice 6</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-398">Group_Fast</Group>
+<ItemID id="ref-399">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[6]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-92" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-400">TM_UUT_Choice7</Name>
+<Description id="ref-401">Choice 7</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-402">Group_Fast</Group>
+<ItemID id="ref-403">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[7]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-93" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-404">TM_UUT_Choice8</Name>
+<Description id="ref-405">Choice 8</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-406">Group_Fast</Group>
+<ItemID id="ref-407">dacn1.dacn1_user_interface.tm_uut_info.uut_choices[8]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-94" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-408">TM_UUT_Family</Name>
+<Description id="ref-409">Engine Model</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-410">Group_Fast</Group>
+<ItemID id="ref-411">dacn1.dacn1_user_interface.tm_uut_info.family</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-95" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-412">TM_UUT_Model</Name>
+<Description id="ref-413">Engine Model</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-414">Group_Fast</Group>
+<ItemID id="ref-415">dacn1.dacn1_user_interface.tm_uut_info.model</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-96" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-416">TM_UUT_Option1</Name>
+<Description id="ref-417">Option 1</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-418">Group_Fast</Group>
+<ItemID id="ref-419">dacn1.dacn1_user_interface.tm_uut_info.uut_options[1]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-97" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-420">TM_UUT_Option10</Name>
+<Description id="ref-421">Option 10</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-422">Group_Fast</Group>
+<ItemID id="ref-423">dacn1.dacn1_user_interface.tm_uut_info.uut_options[10]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-98" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-424">TM_UUT_Option11</Name>
+<Description id="ref-425">Option 11</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-426">Group_Fast</Group>
+<ItemID id="ref-427">dacn1.dacn1_user_interface.tm_uut_info.uut_options[11]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-99" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-428">TM_UUT_Option12</Name>
+<Description id="ref-429">Option 12</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-430">Group_Fast</Group>
+<ItemID id="ref-431">dacn1.dacn1_user_interface.tm_uut_info.uut_options[12]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-100" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-432">TM_UUT_Option13</Name>
+<Description id="ref-433">Option 13</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-434">Group_Fast</Group>
+<ItemID id="ref-435">dacn1.dacn1_user_interface.tm_uut_info.uut_options[13]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-101" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-436">TM_UUT_Option14</Name>
+<Description id="ref-437">Option 14</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-438">Group_Fast</Group>
+<ItemID id="ref-439">dacn1.dacn1_user_interface.tm_uut_info.uut_options[14]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-102" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-440">TM_UUT_Option15</Name>
+<Description id="ref-441">Option 15</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-442">Group_Fast</Group>
+<ItemID id="ref-443">dacn1.dacn1_user_interface.tm_uut_info.uut_options[15]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-103" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-444">TM_UUT_Option16</Name>
+<Description id="ref-445">Option 16</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-446">Group_Fast</Group>
+<ItemID id="ref-447">dacn1.dacn1_user_interface.tm_uut_info.uut_options[16]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-104" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-448">TM_UUT_Option2</Name>
+<Description id="ref-449">Option 2</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-450">Group_Fast</Group>
+<ItemID id="ref-451">dacn1.dacn1_user_interface.tm_uut_info.uut_options[2]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-105" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-452">TM_UUT_Option3</Name>
+<Description id="ref-453">Option 3</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-454">Group_Fast</Group>
+<ItemID id="ref-455">dacn1.dacn1_user_interface.tm_uut_info.uut_options[3]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-106" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-456">TM_UUT_Option4</Name>
+<Description id="ref-457">Option 4</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-458">Group_Fast</Group>
+<ItemID id="ref-459">dacn1.dacn1_user_interface.tm_uut_info.uut_options[4]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-107" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-460">TM_UUT_Option5</Name>
+<Description id="ref-461">Option 5</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-462">Group_Fast</Group>
+<ItemID id="ref-463">dacn1.dacn1_user_interface.tm_uut_info.uut_options[5]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-108" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-464">TM_UUT_Option6</Name>
+<Description id="ref-465">Option 6</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-466">Group_Fast</Group>
+<ItemID id="ref-467">dacn1.dacn1_user_interface.tm_uut_info.uut_options[6]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-109" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-468">TM_UUT_Option7</Name>
+<Description id="ref-469">Option 7</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-470">Group_Fast</Group>
+<ItemID id="ref-471">dacn1.dacn1_user_interface.tm_uut_info.uut_options[7]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-110" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-472">TM_UUT_Option8</Name>
+<Description id="ref-473">Option 8</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-474">Group_Fast</Group>
+<ItemID id="ref-475">dacn1.dacn1_user_interface.tm_uut_info.uut_options[8]</ItemID>
+</a4:TextItem>
+<a4:TextItem id="ref-111" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-476">TM_UUT_Option9</Name>
+<Description id="ref-477">Option 9</Description>
+<ToolTip href="#ref-114"/>
+<Group id="ref-478">Group_Fast</Group>
+<ItemID id="ref-479">dacn1.dacn1_user_interface.tm_uut_info.uut_options[9]</ItemID>
+</a4:TextItem>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

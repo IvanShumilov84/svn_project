@@ -1,0 +1,12 @@
+C:\KineticaRT\KineticaRT_CEL 2-0\Servers\Keyboard\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT_CEL 2-0\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.Keyboard.resources
+C:\KineticaRT\KineticaRT_CEL 2-0\Servers\Keyboard\obj\Debug\ResGen.read.1.tlog
+C:\KineticaRT\KineticaRT_CEL 2-0\Servers\Keyboard\obj\Debug\ResGen.write.1.tlog
+C:\KineticaRT\KineticaRT_CEL 2-0\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.dll
+C:\KineticaRT\KineticaRT_CEL 2-0\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.pdb
+C:\My Projects\CELDAS 200\Kineticart\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.XML
+C:\My Projects\CELDAS 200\Kineticart\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.csprojResolveAssemblyReference.cache
+C:\My Projects\CELDAS 200\Kineticart\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.Keyboard.resources
+C:\My Projects\CELDAS 200\Kineticart\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.csproj.GenerateResource.Cache
+C:\My Projects\CELDAS 200\Kineticart\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.dll
+C:\My Projects\CELDAS 200\Kineticart\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.pdb

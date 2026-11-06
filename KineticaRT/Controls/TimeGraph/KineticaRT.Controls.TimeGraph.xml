@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.TimeGraph</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Channels.DataType">
+            <summary>
+            Enumeration of possible data types
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Channels.DataType.Mean">
+            <summary>
+            Mean Values
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Channels.DataType.Minimum">
+            <summary>
+            Minimum Values
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Channels.DataType.Maximum">
+            <summary>
+            Maximum Values
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Channels.Trace">
+            <summary>
+            Mockup of tape data recorder
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.Trace.#ctor">
+            <summary>
+            New Tape
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.Trace.GetValues(System.DateTime,System.DateTime,System.Int32,KineticaRT.Channels.DataType)">
+            <summary>
+            Returns data values
+            </summary>
+            <param name="StartTime"></param>
+            <param name="EndTime"></param>
+            <param name="Count"></param>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KineticaRT.Channels.NumericTrace">
+            <summary>
+            Trace channel for numeric data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericTrace.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericTrace.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericTrace.GetValues(System.DateTime,System.DateTime,System.Int32,KineticaRT.Channels.DataType)">
+            <summary>
+            Returns data values
+            </summary>
+            <param name="startTime"></param>
+            <param name="endTime"></param>
+            <param name="count"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericTrace.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Channels.NumericTrace.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericTrace.Period">
+            <summary>
+            Gets or sets period for which data is kept.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericTrace.SourceChannel">
+            <summary>
+            Gets or sets the Channel object that is the Source of the trace data
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Channels.NumericTrace.Source">
+            <summary>
+            Gets or sets the name of the Source
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.TimeGraph">
+            <summary>
+            The KineticaRT TimeGraph control displays recorded data over a range of time
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TimeGraph.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.#ctor">
+            <summary>
+            Initialises a new instance of the TimeGraph class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.ResetLeftScale">
+            <summary>
+            Reset the LeftScale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.ResetRightScale">
+            <summary>
+            Reset the RightScale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.ResetTraces">
+            <summary>
+            Reset the Trace Collection to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeGraph.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.AllowAutoScroll">
+            <summary>
+            Gets or sets if the control should track current time if current time is visible.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.BorderStyle">
+            <summary>
+            Gets or Sets the style of the Control's Border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.BorderWidth">
+            <summary>
+            Gets or Sets the width of the Control's Border
+            </summary>
+            <remarks>
+            Values between 0 and 0.5 represent a proportion of the width of the Control.
+            Values greater than or equal to 1 represent the number of pixels
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.ScaleWidthIsPercent">
+            <summary>
+            Gets or Sets whether the ScaleWidth property is in pixels or a percentage of the total width
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.ScaleWidth">
+            <summary>
+            Gets or Sets the width of the Scales (pixels or percentage depending on ScaleWidthIsPercent)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.LeftScale">
+            <summary>
+            Gets the Left Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.RightScale">
+            <summary>
+            Gets the Right Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.ViewStart">
+            <summary>
+            Gets or Sets the start of the time period on view
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.ViewEnd">
+            <summary>
+            Gets or Sets the end of the time period on view
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.Traces">
+            <summary>
+            Gets or sets the Collection of TimeTrace objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeGraph.Freeze">
+            <summary>
+            Gets or sets whether the graph scrolls automatically when the current time is visible
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.TimeTraceRangeSources">
+            <summary>
+            Enumeration of possible sources of Minimum and Maximum values for a TimeTrace
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TimeTraceRangeSources.Self">
+            <summary>
+            The TimeTrace's own Minimum and Maximum properties are used
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TimeTraceRangeSources.LeftScale">
+            <summary>
+            The range of the parent Control's LeftScale is used.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TimeTraceRangeSources.RightScale">
+            <summary>
+            The range of the parent Control's RightScale is used.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.TimeTraceCollection">
+            <summary>
+            Collection of TimeTrace objects designed for use with a TimeGraph
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTraceCollection.#ctor">
+            <summary>
+            Initialises a new instance of the TimeTraceCollection class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTraceCollection.#ctor(System.Boolean)">
+            <summary>
+            Initialises a new instance of the TimeTraceCollection class, optionally adding a single TimeTrace object
+            </summary>
+            <param name="AddATrace">If True, the collection initialises containing a single TimeTrace, else it contains no TimeTraces</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTraceCollection.#ctor(KineticaRT.Controls.TimeTrace[])">
+            <summary>
+            Initialises a new instance of the TimeTraceCollection class containing the specified trace objects
+            </summary>
+            <param name="traces">Array of TimeTrace objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTraceCollection.AddTrace(System.Drawing.Color)">
+            <summary>
+            Adds a new TimeTrace of the specified color
+            </summary>
+            <param name="LineColor">Color of new TimeTrace</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTraceCollection.AddRange(KineticaRT.Controls.TimeTrace[])">
+            <summary>
+            Adds an array of TimeTrace objects to the collection
+            </summary>
+            <param name="newTraces">Array of TimeTraces to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTraceCollection.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,System.DateTime,System.DateTime,KineticaRT.Controls.Scale,KineticaRT.Controls.Scale)">
+            <summary>
+            Draw all the TimeTraces in the collection
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="PaperRect">Rectangle in which to draw</param>
+            <param name="StartTime">Time at start of rectangle</param>
+            <param name="EndTime">Time at end of rectangle</param>
+            <param name="LeftScale">Left Scale</param>
+            <param name="RightScale">Right Scale</param>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTraceCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the TimeTrace object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.TimeTrace">
+            <summary>
+            TimeTrace object, designed for use on a TimeGraph.
+            Displays the historical value of a recorded source over a period of time.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTrace.#ctor">
+            <summary>
+            Initialises a new instance of the TimeTrace class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTrace.#ctor(System.Drawing.Color,KineticaRT.Controls.TimeTraceRangeSources)">
+            <summary>
+            Initialises a new instance of the TimeTrace class with the specified Color and range source
+            </summary>
+            <param name="LineColor">Color of TimeTrace line</param>
+            <param name="RangeSource">Where TimeTrace gets it minimum and maximum values</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTrace.#ctor(System.Drawing.Color)">
+            <summary>
+            Initialises a new instance of the TimeTrace class with the specified Color
+            </summary>
+            <param name="LineColor">Color of TimeTrace line</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTrace.ResetLineColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTrace.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,System.DateTime,System.DateTime,KineticaRT.Controls.Scale,KineticaRT.Controls.Scale)">
+            <summary>
+            Draw the Trace
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="PaperRect">Rectangle in which to draw</param>
+            <param name="StartTime">Time at start of rectangle</param>
+            <param name="EndTime">Time at end of rectangle</param>
+            <param name="LeftScale">Left Scale</param>
+            <param name="RightScale">Right Scale</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTrace.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TimeTrace.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.LineColor">
+            <summary>
+            Gets or sets the color of the trace line
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.Visible">
+            <summary>
+            Gets or sets whether the trace is visible
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.Maximum">
+            <summary>
+            Gets or sets the Maximum value displayed on the Graph
+            </summary>
+            <remarks>Whether this value is sued depends on the setting of RangeSource</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.Minimum">
+            <summary>
+            Gets or sets the Minimum value displayed on the Graph
+            </summary>
+            <remarks>Whether this value is used depends on the setting of RangeSource</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.Width">
+            <summary>
+            Gets or sets the width of the trace line in pixels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.RangeSource">
+            <summary>
+            Gets or sets the source of the Minimum and Maximum values displayed by the trace
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.SourceChannel">
+            <summary>
+            Gets or sets the Channel object that is the Source of the trace data
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.Source">
+            <summary>
+            Gets or sets the name of the Tape to be the Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.TimeTrace.DataType">
+            <summary>
+            Gets or sets the type of data values displayed
+            </summary>
+        </member>
+    </members>
+</doc>

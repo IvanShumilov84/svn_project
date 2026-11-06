@@ -1,0 +1,161 @@
+FUNCTION_BLOCK OS_Board_N2_FB
+(*
+ * SCU overspeed board calibration.
+ *
+ * Overspeed boards use a comparator and a Vref. Vout of the FtoV is compare to the VRef.
+ * If Vout > VRef, overspeed board trip.
+ *
+ * Instead of using a fix VRef, we are using an analog output coming from a DAC.
+ * This allow us to adapt the VRef to the trip point of a particalar engine.
+ *
+ * The algorithm works as follow :
+ * 1. Reset The Overspeed board
+ * 2. Set VOut to max value
+ * 3. Generate the trip point frequency
+ * 4. Using a Dichotomic divide and conquer search algorithm, search the biggest VOut 
+ *    that still trip the overspeed board at the trip point frequency.
+ *
+ * Vout is search between VOUT_MAX and VOUT_MIN.
+ * We try with the mid point (VOUT_MAX + VOUT_MIN)/2.0
+ * If we trip:
+ *	VOUT is too low, we need to search within the new interval VOUT_MAX and VOUT
+ * If we timeout before tripping:
+ *	VOUT is too high, we need to search within the new interval VOUT and VOUT_MIN
+ * We continue trying with the mid point of this new interval.
+ * Once the interval is 10mV, either:
+ * - The interval is within the original VOUT_MIN, VOUT_MAX interval
+ *   This must be the Vout (VRef) value
+ * - The interval is VOUT_MIN, or VOUT_MAX
+ *   Vout (VRef) must be outside VOUT_MIN, VOUT_MAX interval
+ *   use VOUT_MAX as value and signal that the calibration has failed.
+ *
+ *)
+
+
+IF Reset = TRUE THEN
+
+	(* Reset OS BOARD Calibration *)
+	OSC_DOUT					:= FALSE;
+      MASTER_RESET_DOUT				:= FALSE;
+	VOUT_CUR					:= VOUT_MAX;
+	VOUT_CUR_MAX				:= VOUT_MAX;
+	VOUT_CUR_MIN				:= VOUT_MIN;
+	CAL_DONE					:= FALSE;
+	CAL_FAILED					:= FALSE;
+      MASTER_RESET_DONE				:= FALSE;
+	MASTER_RESET_DELAY			:= T#500ms;
+	DOUT[MASTER_RESET_DOUT_INDEX]		:= MASTER_RESET_DOUT;
+	DELAY(FALSE, MASTER_RESET_DELAY);
+
+ELSIF NOT ENABLED THEN
+
+	VOUT_CUR := VOUT_MAX;
+
+ELSIF VOUT_MIN = VOUT_MAX THEN
+
+	CAL_DONE := TRUE;
+	CAL_FAILED := FALSE;
+	VOUT_CUR := VOUT_MAX;
+
+ELSIF NOT MASTER_RESET_DONE THEN
+
+	DELAY(TRUE, MASTER_RESET_DELAY);
+	(*VOUT_CUR := VOUT_CUR_MAX;*)
+	VOUT_CUR := VOUT_MAX;
+
+	(*IF DELAY.Q OR (NOT OS_TRIP) THEN*)
+	IF DELAY.Q THEN
+		DELAY(FALSE, CAL_STEP_DELAY);
+		MASTER_RESET_DOUT := FALSE;
+		NIDaqCTRFreqGen(NIDaqDevices[1].deviceHandle, ANY_TO_SINT(FOUT_INDEX), 1, ANY_TO_REAL(FOUT));
+		MASTER_RESET_DONE := TRUE;
+		VOUT_CUR := (VOUT_CUR_MAX + VOUT_CUR_MIN) / 2.0;
+	ELSE
+		MASTER_RESET_DOUT := TRUE;
+	END_IF;
+
+	DOUT[MASTER_RESET_DOUT_INDEX]	:= MASTER_RESET_DOUT;
+
+ELSIF NOT CAL_DONE THEN
+
+	OSC_DOUT := TRUE;
+
+	(*IF Round(VOUT_CUR_MAX, 2) = Round(VOUT_CUR_MIN, 2) THEN*)
+	IF ABS(VOUT_CUR_MAX - VOUT_CUR_MIN) < 0.005 THEN
+		(*
+		 * Interval has converge within 10mV, this must be the VRef / VOut we were looking for.
+		 *)
+		CAL_DONE:=TRUE;
+		(*IF (Round(VOUT_CUR_MAX, 2) >= VOUT_MAX) OR (Round(VOUT_CUR_MAX, 2) <= VOUT_MIN) THEN*)
+		IF ((VOUT_CUR_MAX - VOUT_MAX) > 0.01) OR ((VOUT_CUR_MAX - VOUT_MIN) < 0.01) THEN
+			CAL_FAILED := TRUE;
+			VOUT_CUR := VOUT_MAX;
+		ELSE
+			VOUT_CUR := VOUT_CUR_MAX;
+		END_IF;
+	ELSE
+		DELAY(TRUE, CAL_STEP_DELAY);
+		IF DELAY.Q OR OS_TRIP THEN
+			IF OS_TRIP THEN
+				(*
+				 * We Triped, VOUT_CUR is too low
+				 *)
+				VOUT_CUR_MIN := VOUT_CUR;
+				MASTER_RESET_DONE := FALSE;
+			ELSE
+				(*
+				 * No trip, VOUT_CUR is too High
+				 *)
+				VOUT_CUR_MAX := VOUT_CUR;
+				VOUT_CUR := (VOUT_CUR_MAX + VOUT_CUR_MIN) / 2.0;
+			END_IF;
+			DELAY(FALSE, CAL_STEP_DELAY);
+		END_IF;
+	END_IF;
+
+	IF CAL_DONE THEN
+		NIDaqCTRFreqGen(NIDaqDevices[1].deviceHandle, ANY_TO_SINT(FOUT_INDEX), 0, 0.0);
+	END_IF;
+
+ELSIF CAL_DONE THEN
+	OSC_DOUT := FALSE;
+END_IF;
+
+(*
+ * Make sure to overide values regardless of states
+ * else, they will take the value comming from de bindings.
+ *)
+DOUT[OSC_DOUT_INDEX]		:= NOT OSC_DOUT; (* Reverse logic in SCU *)
+VOUT[VOUT_INDEX]			:= VOUT_CUR;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

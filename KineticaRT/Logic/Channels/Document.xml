@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Logic.Channels</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Logic.Channels.Channel">
+            <summary>
+            Base class for a KineticaRT.Logic.Channels Channel object.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Channel.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Channel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Channel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Channel.Description">
+            <summary>
+            Description of channel.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Channel.ToolTip">
+            <summary>
+            Tooltip for channel.
+            A long description used in tooltips etc.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.Numeric">
+            <summary>
+            KineticaRT Channel object containing a double precision floating point value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Numeric.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Numeric.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Numeric.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Numeric.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Numeric.Units">
+            <summary>
+            Units of channel.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Numeric.DecimalDigits">
+            <summary>
+            Number of decimal digits to be displayed if displayed in number format or fixed point format.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Numeric.Min">
+            <summary>
+            Minimum value of channel.
+            Note: This value is normally used for setting the minimum value on a display scale,
+            no limit checking is performed so the actual Value may be lower.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Numeric.Max">
+            <summary>
+            Maximum value of channel.
+            Note: This value is normally used for setting the maximum value on a display scale,
+            no limit checking is performed so the actual Value may be higher.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Numeric.Format">
+            <summary>
+            Format of channel when viewed as text.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.Boolean">
+            <summary>
+            KineticaRT Channel object containing a boolean value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Boolean.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Boolean.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Boolean.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Boolean.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Boolean.TrueText">
+            <summary>
+            Text to display when value is true.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Boolean.FalseText">
+            <summary>
+            Text to display when value is false.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.Text">
+            <summary>
+            KineticaRT Channel object containing a double precision floating point value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Text.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Text.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Text.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Text.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.NumericLink">
+            <summary>
+            KineticaRT Channel object containing a double precision floating point value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericLink.Source">
+            <summary>
+            Name of source channel.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericLink.Destination">
+            <summary>
+            Name of destination channel.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericLink.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.NumericExpression">
+            <summary>
+            KineticaRT Channel object containing a double precision floating point value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Implements the ISerializable interface and returns the data needed to serialize the object.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericExpression.Text">
+            <summary>
+            Expression text
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericExpression.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+    </members>
+</doc>

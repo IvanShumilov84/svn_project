@@ -1,0 +1,3 @@
+<Window BackColor="Control" Font="Microsoft Sans Serif, 8.25pt" ForeColor="SteelBlue" RightToLeft="0" TabIndex="0" BorderColor="LightSteelBlue" BorderStyle="1" BorderWidth="0.1" Name="tab" Shape="0" ToolTipText="" UpdateSpeed="1" HorizontalGrid.Size="8" HorizontalGrid.Spacing="2" VerticalGrid.Size="8" VerticalGrid.Spacing="2" Title="Messages" WindowState="1" Left="1290" Top="413" Width="824" Height="271" CurrentPanelIndex="0">
+  <Panel File="Messages_Top.dll" Text="Messages" />
+</Window>

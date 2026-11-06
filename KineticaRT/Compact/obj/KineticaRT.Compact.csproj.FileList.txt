@@ -1,0 +1,15 @@
+bin\Debug\KineticaRT.Compact.dll
+bin\Debug\KineticaRT.Compact.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\KineticaRT.Compact.dll
+obj\Debug\KineticaRT.Compact.pdb
+bin\Compact\KineticaRT.Compact.dll
+bin\Compact\KineticaRT.Compact.pdb
+obj\Compact\ResolveAssemblyReference.cache
+obj\Compact\KineticaRT.Compact.dll
+obj\Compact\KineticaRT.Compact.pdb
+bin\Release\KineticaRT.Compact.dll
+bin\Release\KineticaRT.Compact.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\KineticaRT.Compact.dll
+obj\Release\KineticaRT.Compact.pdb

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Controls - KineticaRT Studio</title>
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+		<meta content="FrontPage.Editor.Document" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<LINK href="Manual.css" rel="Stylesheet"></head>
+	<body>
+		<H2>Controls</H2>
+		<H3>Introduction</H3>
+		<P>
+		KineticaRT Studio panels can contain any Windows .NET controls including the 
+		KineticaRT Studio .NET controls and the standard KineticaRT .NET controls.
+		<P>
+		The KineticaRT.Studio controls are designed specifically for use within 
+		KineticaRT Studio and will all support drag and drop of channels and automatic 
+		configuration&nbsp;with display of channel description, channel units etc.
+		<P>
+		The standard KineticaRT controls will also support drag and drop but are 
+		designed mainly for use with Visual Studio / Visual Basic&nbsp;so 
+		have&nbsp;less automatic configuration and also have far more configuration 
+		options.
+		<P>Non-KineticaRT .NET controls are generally not designed for use with KineticaRT 
+			channels and generally need some source code written in order to tell them what 
+			to do.&nbsp; This can either be placed in a KineticaRT Sequence or for ease of 
+			use by the end user it is often better to wrap the control in a custom User 
+			Control which provides all the automatic configuration, drag &amp; drop etc 
+			functionality that the user will expect.&nbsp; This can then be dropped onto a 
+			KineticaRT panel and used in the same way the KineticaRT Studio controls 
+			are.&nbsp; To do this will require a software development package such as 
+			Microsoft's Visual Studio or Visual Basic.</P>
+		<H3>Entering Edit mode to Configure the&nbsp;Controls</H3>
+		<IMG src="PanelMenu.gif" align="right" width="281" height="406">
+		<P>Right click on your panel and select <STRONG>Enter Edit Mode</STRONG> then right 
+			click again to display the edit menu as shown.</P>
+		<P>The menus are described below.</P>
+		<P>Some of the menu options work on the selected controls.&nbsp; Any number of 
+			controls can be selected and one of them is always the master control.&nbsp; 
+			The master control can be identified by its larger handles.</P>
+		<P>To select a control, click on it with the mouse or drag the selection box around 
+			it using the mouse.&nbsp; The selection box can be dragged around several 
+			controls at once.&nbsp;</P>
+		<P>To select extra controls, click on them using the mouse while holding down the 
+			SHIFT or CTRL keys.&nbsp; Alternatively drag the selection box around them 
+			while holding the SHIFT key.</P>
+		<P>To un-select controls, click on them using the mouse while holding down the CTRL 
+			key.</P>
+		<P>To unselect all controls click on the panel background or on the tabs at the top 
+			of the panel.<BR clear="all">
+			<br clear="all">
+		</P>
+		<P>&nbsp;</P>
+		<H3>The Edit Menu</H3>
+		<P>The options on the edit menu allow for configuration of the controls on the 
+			panel.</P>
+		<P>Each option is detailed <A href="MenuEdit.htm">here</A>.</P>
+		<H3>The Controls Edit Menu</H3>
+		<P>Right clicking on a control instead of the panel background or tab brings up an 
+			edit menu specific to that control.</P>
+		<P>The options on this menu are detailed <A href="MenuEditControl.htm">here</A>.</P>
+		<H3>Control Properties</H3>
+		<P>You can enter a controls property dialog box via:</P>
+		<UL dir="ltr">
+			<LI>
+			The controls edit menu / properties
+			<LI>
+			Double clicking on a control
+			<LI>
+				Pressing ALT-Enter
+			</LI>
+		</UL>
+		<P>The properties are divided into groups, some groups are specific to a type of 
+			control, others are shared between many types of control.&nbsp; The more common 
+			groups used by the KineticaRT.Studio controls are described here:</P>
+		<UL>
+			<LI>
+				<a href="PropertiesAccesibility.htm">Accessibility</a>
+			<LI>
+				<a href="PropertiesAppearance.htm">Appearance</a>
+			<LI>
+				<a href="PropertiesBehavior.htm">Behavior</a>
+			<LI>
+				<a href="PropertiesDescription.htm">Description</a>
+			<LI>
+				<a href="PropertiesGeneral.htm">General</a>
+			<LI>
+				<a href="PropertiesLayout.htm">Layout</a>
+			<LI>
+				<a href="PropertiesScale.htm">Scale</a>
+			<LI>
+				<a href="PropertiesToolTip.htm">ToolTip</a>
+			<LI>
+				<a href="PropertiesUnits.htm">Units</a></LI>
+		</UL>
+		<h3>Connecting Channels to Controls</h3>
+		<P>The method of connecting a channel to a control, or a control to a channel 
+			depends on the control.</P>
+		<P>The KineticaRT.Studio controls can be connected by:</P>
+		<UL>
+			<LI>
+				Drag and Drop of a channel from the channel <STRONG>Explorer </STRONG>
+			window onto the control
+			<LI>
+				Typing the name of the channel into the Source property in the controls 
+				properties dialog</LI></UL>
+		<H5>Note
+		</H5>
+		<P>
+			At present drag and drop does not work when in edit mode.</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

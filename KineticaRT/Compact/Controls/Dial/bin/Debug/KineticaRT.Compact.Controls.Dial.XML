@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Compact.Controls.Dial</name>
+    </assembly>
+    <members>
+        <member name="F:KineticaRT.Compact.Controls.Dial.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.BeginInit">
+            <summary>
+            Signals the object that initialization is starting.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.EndInit">
+            <summary>
+            Signals the object that initialization is complete.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.Connect2">
+            <summary>
+            Connects this object to others, Stage 2.
+            </summary>
+            <remarks>This will be called after all objects have recieved a Connect call.</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.ScaleAngles(System.Boolean,System.Double@,System.Double@)">
+            <summary>
+            Converts angles for non-square controls.
+            </summary>
+            <param name="Acw">True if the controlis anti-clockwise</param>
+            <param name="StartAngle">Angle in square that is returned converted to an angle in the current Rectangle</param>
+            <param name="SweepAngle">Angle in square that is returned converted to an angle in the current Rectangle</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.DrawNeedle(System.Drawing.Graphics)">
+            <summary>
+            Draw the needle
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.FractionToValue(System.Double)">
+            <summary>
+            Converts a proportion to an actual value based on the scale's current range
+            </summary>
+            <param name="fraction">Proportion to convert (0-1)</param>
+            <returns>Value to which the given proportion relates</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.ValueToFraction(System.Double)">
+            <summary>
+            Converts a value in the scale's current range to a proportion of the way through that range
+            </summary>
+            <param name="Value">Value to convert</param>
+            <returns>Fraction of the way along the range</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Dial.ValueToFraction(System.Single)">
+            <summary>
+            Converts a value in the scale's current range to a proportion of the way through that range
+            </summary>
+            <param name="Value">Value to convert</param>
+            <returns>Fraction of the way along the range</returns>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.Value">
+            <summary>
+            Gets or sets a KineticaRT.Compact.Values.Value which indicates the location of the needle.  This will normaly be of type KineticaRT.Compact.Values.Double.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.DoubleValue">
+            <summary>
+            Gets or sets a double value which indicates the location of the needle.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.ZeroAngle">
+            <summary>
+            Gets or Sets the zero (start) angle of the Scale (Circular scales only). Degrees clockwise from top.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.SweepAngle">
+            <summary>
+            Gets or Sets the Sweep angle of the Scale, in Degrees (circular scales only).
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.ScaleColor">
+            <summary>
+            Gets or Sets the color of the Scale (lines and text)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.LabelAfter">
+            <summary>
+            Gets or Sets how many major marks occur before labels start
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.MajorMarksStart">
+            <summary>
+            Gets or Sets the value at which the first Major mark is drawn
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.MajorMarksRepeat">
+            <summary>
+            Gets or Sets the Interval between major marks
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.MinorMarksDivisions">
+            <summary>
+            Gets or Sets the number of divisions between major marks
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.Maximum">
+            <summary>
+            Gets or Sets the Maximum value shown
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.Minimum">
+            <summary>
+            Gets or Sets the Minimum Value shown
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.AutoAdjust">
+            <summary>
+            Gets or Sets whether automatic adjustment of MajorMarksStart, MajorMarksRepeat
+            MinorMarksDivisions and DecimalPlaces occurs
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.Position">
+            <summary>
+            Gets or Sets the position of the Scale line as proportion of the parent Control (0..1)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.LabelEvery">
+            <summary>
+            Gets or Sets the number of major marks between labels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.DecimalPlaces">
+            <summary>
+            Gets or Sets the number of decimal places on numeric labels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.LabelPosition">
+            <summary>
+            Gets or Sets the position of labels relative to the Scale line
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.LabelsEnabled">
+            <summary>
+            Gets or Sets whether labels are shown
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Dial.UseSourceScaling">
+            <summary>
+            Gets or Sets whether the minimum and maximum are obtained from the source channel.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.ScaleMarkPositions">
+            <summary>
+            Enumeration of positions for labels and marks relative to the scale line
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.ScaleMarkPositions.Inside">
+            <summary>
+            Inside the line (circular scales); Left for vertical scales; Above for Horizontal scales
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.ScaleMarkPositions.Outside">
+            <summary>
+            Outside the line (circular scales); Right for vertical scales; Below for Horizontal scales
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.ScaleMarkPositions.On">
+            <summary>
+            On the line
+            </summary>
+        </member>
+    </members>
+</doc>

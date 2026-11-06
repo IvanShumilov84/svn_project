@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Studio.Splash</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Studio.Splash">
+            <summary>
+            Provides a splash screen window for KineticaRT Studio.
+            </summary>
+            <remarks>Used during application loading.</remarks>
+        </member>
+        <member name="F:KineticaRT.Studio.Splash.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Splash.#ctor">
+            <summary>
+            Initialises a new instance of the Splash class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Splash.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Splash.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Splash.SetText(System.String)">
+            <summary>
+            Sets the top line of text.
+            </summary>
+            <remarks>Called by KineticaRT Studio.</remarks>
+            <param name="Text">Text to set.</param>
+        </member>
+        <member name="M:KineticaRT.Studio.Splash.SetProgress(System.String)">
+            <summary>
+            Sets the bottom line of text.
+            </summary>
+            <remarks>Called by KineticaRT Studio.</remarks>
+            <param name="Text">Text to set.</param>
+        </member>
+        <member name="M:KineticaRT.Studio.Splash.Show">
+            <summary>
+            Shows the Window.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Splash.Hide">
+            <summary>
+            Hides the window.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

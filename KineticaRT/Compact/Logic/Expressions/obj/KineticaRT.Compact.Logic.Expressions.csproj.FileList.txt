@@ -1,0 +1,12 @@
+obj\Release\ResolveAssemblyReference.cache
+bin\Release\KineticaRT.Logic.Expressions.dll
+bin\Release\KineticaRT.Compact.dll
+bin\Release\KineticaRT.Compact.pdb
+obj\Release\KineticaRT.Logic.Expressions.dll
+bin\Debug\KineticaRT.Logic.Expressions.dll
+bin\Debug\KineticaRT.Logic.Expressions.pdb
+bin\Debug\KineticaRT.Compact.dll
+bin\Debug\KineticaRT.Compact.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\KineticaRT.Logic.Expressions.dll
+obj\Debug\KineticaRT.Logic.Expressions.pdb

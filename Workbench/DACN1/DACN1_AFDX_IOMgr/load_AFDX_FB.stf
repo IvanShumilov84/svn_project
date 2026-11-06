@@ -1,0 +1,71 @@
+FUNCTION_BLOCK load_AFDX_FB
+(************************************************************************************************************************************************
+	Name :		load_PowerDNA_FB									
+														
+	Description :	Load proper CSV file for the powerdna
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2009/02/12		J.Hamelin	First Release
+	
+
+************************************************************************************************************************************************)	
+
+	status 		:= LOADING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: LOADING');
+	err_code 	:= OK;
+
+
+	PowerDNA_Structure.status := LOADING;
+
+			
+	IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+	
+
+		POWERDNA_GETNAME(PowerDNA_Structure.handle);
+
+		PowerDNA_Structure.IOMname := POWERDNA_GETNAME.BUFFER;
+		PowerDNA_Structure.err_code 	:= PowerDNA_GETNAME.ERR_CODE;
+
+		IF (PowerDNA_Structure.err_code <> OK) THEN
+			POWERDNA_AFDXDESTROY_DEVICE(PowerDNA_Structure.hAfdxDev);
+			POWERDNA_CLOSE(PowerDNA_Structure.handle); 
+
+ 			IF (POWERDNA_CLOSE.ERR_CODE <> 0) THEN
+
+				err_code := POWERDNA_CLOSE.ERR_CODE ;
+
+			END_IF;
+
+			PowerDNA_Structure.hAfdxDev := 0;
+			PowerDNA_Structure.handle 	:= -1;
+			
+		END_IF;
+
+	END_IF;
+
+
+	IF (err_code <> OK) THEN 
+
+		status	:= ERROR_ON_LOADING;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: ERROR_ON_LOADING');
+
+	ELSE 
+
+		status 	:= LOADED;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: LOADED');
+
+		PowerDNA_Structure.status := LOADED;
+
+	END_IF; 	
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

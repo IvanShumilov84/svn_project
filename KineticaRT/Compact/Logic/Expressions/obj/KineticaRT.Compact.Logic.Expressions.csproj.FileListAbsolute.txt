@@ -1,0 +1,39 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Release\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\KineticaRT.Logic.Expressions.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\KineticaRT.Logic.Expressions.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Release\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Release\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Release\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.pdb
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\bin\Debug\KineticaRT.Compact.xml
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Expressions\obj\Debug\KineticaRT.Logic.Expressions.pdb

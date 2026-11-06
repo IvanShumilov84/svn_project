@@ -1,0 +1,155 @@
+FUNCTION_BLOCK close_OMNIBUSBOX_FB
+(************************************************************************************************************************************************
+	Name :		close_OMNIBUSBOX_FB									
+														
+	Description :	Close of the OMNIBUSBOX System 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/09	Danny Lepage		First Release
+
+************************************************************************************************************************************************)
+
+status 	 := CLOSING;
+err_code := OK;
+
+IF (First_Time_Close = TRUE) THEN
+	IF (In_OMNIBUSBOX_IOMgr.mode = RUN_FOR_TRUE) THEN
+		FOR i:= 1 TO numberOfBox DO
+			IF (boxDescriptor[i].hCard <> 0) THEN
+				FOR j:= 1 TO CELBTI_MAXCORES DO
+					IF (boxDescriptor[i].core[j].hCore <> 0) THEN
+						CELBTI_CORESTOP(boxDescriptor[i].core[j].hCore);
+						FOR k:= 1 TO CELBTI_MAXCHANS DO
+							IF (boxDescriptor[i].core[j].channel[k].isChannelUsed = TRUE) THEN
+								CASE (boxDescriptor[i].core[j].channel[k].channelType) OF
+								CELBTI_CHTYPEA429:
+									CELBTI_A429ChStop(boxDescriptor[i].core[j].hCore, ANY_TO_SINT(k-1));
+								CELBTI_CHTYPEUART:
+									CELBTI_UARTPortStop(boxDescriptor[i].core[j].hCore, ANY_TO_SINT(k-1));
+								END_CASE;
+								boxDescriptor[i].core[j].channel[k].isChannelUsed := FALSE;
+								boxDescriptor[i].core[j].channel[k].channelType := 0;
+							END_IF;
+						END_FOR;
+						boxDescriptor[i].core[j].hCore := 0;
+					END_IF;
+				END_FOR;
+
+				CELBTI_CARDCLOSE(boxDescriptor[i].hCard);
+				boxDescriptor[i].hCard := 0;
+			END_IF;
+		END_FOR;
+
+		FOR i:= 1 TO MAX(A429InCHACounter, A429InCHBCounter) DO
+			A429IN_CHA[i].hMsg := 0;
+			A429IN_CHA[i].SDI := 0;
+			A429IN_CHA[i].label := '';
+			A429IN_CHA[i].format := 0;
+			A429IN_CHA[i].defaultValue := '';
+			A429IN_CHA[i].engUnit := 0.0;
+			A429IN_CHA[i].data := 0;
+			A429IN_CHA[i].SM := 0;
+			A429IN_CHA[i].tagTime := '';
+
+			A429IN_CHB[i].hMsg := 0;
+			A429IN_CHB[i].SDI := 0;
+			A429IN_CHB[i].label := '';
+			A429IN_CHB[i].format := 0;
+			A429IN_CHB[i].defaultValue := '';
+			A429IN_CHB[i].engUnit := 0.0;
+			A429IN_CHB[i].data := 0;
+			A429IN_CHB[i].SM := 0;
+			A429IN_CHB[i].tagTime := '';
+		END_FOR;
+
+		FOR i:= 1 TO MAX(A429OutCHACounter, A429OUTCHBCounter) DO
+			A429OUT_CHA[i].hMsg := 0;
+			A429OUT_CHA[i].SDI := 0;
+			A429OUT_CHA[i].label := '';
+			A429OUT_CHA[i].format := 0;
+			A429OUT_CHA[i].defaultValue := '';
+			A429OUT_CHA[i].engUnit := 0.0;
+			A429OUT_CHA[i].data := 0;
+			A429OUT_CHA[i].SM := 0;
+			A429OUT_CHA[i].tagTime := '';
+
+			A429OUT_CHB[i].hMsg := 0;
+			A429OUT_CHB[i].SDI := 0;
+			A429OUT_CHB[i].label := '';
+			A429OUT_CHB[i].format := 0;
+			A429OUT_CHB[i].defaultValue := '';
+			A429OUT_CHB[i].engUnit := 0.0;
+			A429OUT_CHB[i].data := 0;
+			A429OUT_CHB[i].SM := 0;
+			A429OUT_CHB[i].tagTime := '';
+		END_FOR;
+
+		FOR i:= 1 TO MAX(UARTCHACounter, UARTCHBCounter) DO
+			UART_CHA[i].hMsg := 0;
+			UART_CHA[i].dataType := 0;
+			UART_CHA[i].data := 0;
+			UART_CHA[i].engUnit := 0.0;
+
+			UART_CHB[i].hMsg := 0;
+			UART_CHB[i].dataType := 0;
+			UART_CHB[i].data := 0;
+			UART_CHB[i].engUnit := 0.0;
+		END_FOR;
+	END_IF;
+
+(*      Reset index        *)
+
+	AAIGV_index := 0;
+	ABIGV_index := 0;
+	AAN1_index := 0;
+	ABN1_index := 0;
+	AAN2_index := 0;
+	ABN2_index := 0;
+	AAT45_index := 0;
+	ABT45_index := 0;
+	AATLA_index := 0;
+	ABTLA_index := 0;
+
+	EAIGV_index := 0;
+	EBIGV_index := 0;
+	EAT45_index := 0;
+	EBT45_index := 0;
+	EABOVCOM_index := 0;
+	EBBOVCOM_index := 0;
+	EAN1_index := 0;
+	EBN1_index := 0;
+	EAQACNCT_EAINCON_index := 0;
+	EATLA_index := 0;
+	EBTLA_index := 0;
+
+
+	First_Time_Close := FALSE;
+	First_Time_Open  := TRUE;
+END_IF;
+
+IF (err_code <> OK) THEN
+	status := ERROR_ON_CLOSING;
+ELSE
+	status := CLOSED;
+END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

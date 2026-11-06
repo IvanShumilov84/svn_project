@@ -1,0 +1,154 @@
+﻿<project schemaVersion="1.6.0.7">
+    <assemblies>
+        <assembly assemblyPath="..\Controls\Aircraft1\bin\Debug\KineticaRT.Controls.Aircraft.dll" xmlCommentsPath="..\Controls\Aircraft1\bin\Debug\KineticaRT.Controls.Aircraft.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\BarGraph\bin\Debug\KineticaRT.Controls.BarGraph.dll" xmlCommentsPath="..\Controls\BarGraph\KineticaRT.Controls.BarGraph.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Button\bin\Debug\KineticaRT.Controls.Button.dll" xmlCommentsPath="..\Controls\Button\KineticaRT.Controls.Button.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Compass\bin\Debug\KineticaRT.Controls.Compass.dll" xmlCommentsPath="..\Controls\Compass\bin\Debug\KineticaRT.Controls.Compass.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Dial\bin\Debug\KineticaRT.Controls.Dial.dll" xmlCommentsPath="..\Controls\Dial\KineticaRT.Controls.Dial.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Display\bin\Debug\KineticaRT.Controls.Display.dll" xmlCommentsPath="..\Controls\Display\KineticaRT.Controls.Display.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\bin\Debug\KineticaRT.Controls.dll" xmlCommentsPath="..\Controls\KineticaRT.Controls.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Explorer\bin\Debug\KineticaRT.Controls.Explorer.dll" xmlCommentsPath="..\Controls\Explorer\KineticaRT.Controls.Explorer.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Frame\bin\Debug\KineticaRT.Controls.Frame.dll" xmlCommentsPath="..\Controls\Frame\KineticaRT.Controls.Frame.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Indicator\bin\Debug\KineticaRT.Controls.Indicator.dll" xmlCommentsPath="..\Controls\Indicator\KineticaRT.Controls.Indicator.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Knob\bin\Debug\KineticaRT.Controls.Knob.dll" xmlCommentsPath="..\Controls\Knob\KineticaRT.Controls.Knob.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Picture\bin\Debug\KineticaRT.Controls.Picture.dll" xmlCommentsPath="..\Controls\Picture\KineticaRT.Controls.Picture.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Slider\bin\Debug\KineticaRT.Controls.Slider.dll" xmlCommentsPath="..\Controls\Slider\KineticaRT.Controls.Slider.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Tab\bin\Debug\KineticaRT.Controls.Tab.dll" xmlCommentsPath="..\Controls\Tab\KineticaRT.Controls.Tab.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\TimeGraph\bin\Debug\KineticaRT.Controls.TimeGraph.dll" xmlCommentsPath="..\Controls\TimeGraph\KineticaRT.Controls.TimeGraph.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\Trend\bin\Debug\KineticaRT.Controls.Trend.dll" xmlCommentsPath="..\Controls\Trend\KineticaRT.Controls.Trend.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Controls\XYGraph\bin\Debug\KineticaRT.Controls.XYGraph.dll" xmlCommentsPath="..\Controls\XYGraph\KineticaRT.Controls.XYGraph.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\bin\Debug\KineticaRT.dll" xmlCommentsPath="..\KineticaRT.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.dll" xmlCommentsPath="..\Logic\Channels\KineticaRT.Logic.Channels.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.dll" xmlCommentsPath="..\Logic\Expressions\bin\Debug\KineticaRT.Logic.Expressions.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Logic\Filters\bin\Debug\KineticaRT.Logic.Filters.dll" xmlCommentsPath="..\Logic\Filters\bin\Debug\KineticaRT.Logic.Filters.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Logic\Message\bin\Debug\KineticaRT.Logic.Message.dll" xmlCommentsPath="..\Logic\Message\KineticaRT.Logic.Message.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Logic\Test\bin\Debug\KineticaRT.Logic.Test.dll" xmlCommentsPath="..\Logic\Test\bin\Debug\KineticaRT.Logic.Test.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Logic\Test\bin\Debug\KineticaRT.Logic.Test.dll" xmlCommentsPath="..\Logic\Test\bin\Debug\KineticaRT.Logic.Test.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.dll" xmlCommentsPath="..\Logic\Timing\bin\Debug\KineticaRT.Logic.Timing.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Sequence\bin\Debug\KineticaRT.Sequence.dll" xmlCommentsPath="..\Sequence\KineticaRT.Sequence.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\Casella\Sensus\bin\Debug\KineticaRT.Servers.Casella.Sensus.dll" xmlCommentsPath="..\Servers\Casella\Sensus\bin\Debug\KineticaRT.Servers.Casella.Sensus.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\Exchange\bin\Debug\KineticaRT.Servers.Exchange.dll" xmlCommentsPath="..\Servers\Exchange\bin\Debug\KineticaRT.Servers.Exchange.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.dll" xmlCommentsPath="..\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\Log\bin\Debug\KineticaRT.Servers.Log.dll" xmlCommentsPath="..\Servers\Log\bin\Debug\KineticaRT.Servers.Log.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\OpcClient\bin\Debug\KineticaRT.Servers.OpcClient.dll" xmlCommentsPath="..\Servers\OpcClient\KineticaRT.Servers.OpcClient.xml" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\Power\bin\Debug\KineticaRT.Servers.Power.dll" xmlCommentsPath="..\Servers\Power\bin\Debug\KineticaRT.Servers.Power.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\ScreenSaver\bin\Debug\KineticaRT.Servers.ScreenSaver.dll" xmlCommentsPath="..\Servers\ScreenSaver\bin\Debug\KineticaRT.Servers.ScreenSaver.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\Simulate\bin\Debug\KineticaRT.Servers.Simulate.dll" xmlCommentsPath="..\Servers\Simulate\bin\Debug\KineticaRT.Servers.Simulate.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\StorageKey\bin\Debug\KineticaRT.Servers.StorageKey.dll" xmlCommentsPath="..\Servers\StorageKey\bin\Debug\KineticaRT.Servers.StorageKey.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\Servers\Vaisala\Humicap\bin\Debug\KineticaRT.Servers.Vaisala.Humicap.dll" xmlCommentsPath="..\Servers\Vaisala\Humicap\bin\Debug\KineticaRT.Servers.Vaisala.Humicap.XML" commentsOnly="False" />
+        <assembly assemblyPath=".\Application\bin\Debug\KineticaRT.Studio.Application.dll" xmlCommentsPath=".\Application\bin\Debug\KineticaRT.Studio.Application.XML" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\BarGraph\bin\Debug\KineticaRT.Studio.Controls.BarGraph.dll" xmlCommentsPath=".\Controls\BarGraph\KineticaRT.Studio.Controls.BarGraph.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\Button\bin\Debug\KineticaRT.Studio.Controls.Button.dll" xmlCommentsPath=".\Controls\Button\KineticaRT.Studio.Controls.Button.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\ChannelSelector\bin\Debug\KineticaRT.Studio.Controls.ChannelSelector.dll" xmlCommentsPath=".\Controls\ChannelSelector\KineticaRT.Studio.Controls.ChannelSelector.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\Checkbox\bin\Debug\KineticaRT.Studio.Controls.Checkbox.dll" xmlCommentsPath=".\Controls\Checkbox\KineticaRT.Studio.Controls.Checkbox.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\Dial\bin\Debug\KineticaRT.Studio.Controls.Dial.dll" xmlCommentsPath=".\Controls\Dial\KineticaRT.Studio.Controls.Dial.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\Display\bin\Debug\KineticaRT.Studio.Controls.Display.dll" xmlCommentsPath=".\Controls\Display\KineticaRT.Studio.Controls.Display.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\bin\Debug\KineticaRT.Studio.Controls.dll" xmlCommentsPath=".\Controls\KineticaRT.Studio.Controls.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\ErrorLinear\bin\Debug\KineticaRT.Studio.Controls.ErrorLinear.dll" xmlCommentsPath=".\Controls\ErrorLinear\KineticaRT.Studio.Controls.ErrorLinear.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\LampIndicator\bin\Debug\KineticaRT.Studio.Controls.LampIndicator.dll" xmlCommentsPath=".\Controls\LampIndicator\KineticaRT.Studio.Controls.LampIndicator.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\Linear\bin\Debug\KineticaRT.Studio.Controls.Linear.dll" xmlCommentsPath=".\Controls\Linear\KineticaRT.Studio.Controls.Linear.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\RadioButton\bin\Debug\KineticaRT.Studio.Controls.RadioButton.dll" xmlCommentsPath=".\Controls\RadioButton\KineticaRT.Studio.Controls.RadioButton.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\SetPointDial\bin\Debug\KineticaRT.Studio.Controls.SetPointDial.dll" xmlCommentsPath=".\Controls\SetPointDial\KineticaRT.Studio.Controls.SetPointDial.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Controls\SetPointLinear\bin\Debug\KineticaRT.Studio.Controls.SetPointLinear.dll" xmlCommentsPath=".\Controls\SetPointLinear\KineticaRT.Studio.Controls.SetPointLinear.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\Splash\bin\Debug\KineticaRT.Studio.Splash.dll" xmlCommentsPath=".\Splash\bin\Debug\KineticaRT.Studio.Splash.XML" commentsOnly="False" />
+    </assemblies>
+    <namespaceSummaries>
+        <namespaceSummaryItem name="" isDocumented="False" />
+        <namespaceSummaryItem name="FroudeTexcelT100AVmeInterface" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT" isDocumented="True">Root namespace for KineticaRT.
+
+This namespace contains the base classes from which all other KineticaRT components are derived.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Audio" isDocumented="True">This namespace contains classes for the transfer of Audio via the KineticaRTAudio web service including classes to provide a user interface for an intercom communication system.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Audio.KineticaRTAudio" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Audio.Properties" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Channels" isDocumented="True">This namespace contains the basic live data channel classes used by KineticaRT, additional classes may be based on these.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Controls" isDocumented="True">Namespace for user interface controls used by KineticaRT.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Controls.Aircraft" isDocumented="True">Contains specialised controls simulating real Aircraft displays.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Controls.Aircraft.Properties" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Controls.Compass" isDocumented="True">Contains classes for Compass (direction display) controls.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Logic.Channels" isDocumented="True">This namespace extends the KineticaRT.Channels namespace with classes that process the live data.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Logic.Expressions" isDocumented="True">Provides live expression processing, used mainly by the classes in the KineticaRT.Logic.Channels class.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Logic.Expressions.Design" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Logic.Filters" isDocumented="True">Provides classes to filter live data channels.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Logic.Message" isDocumented="True">This namespace contains classes to handle and process, display, read etc.  messages such as threshold and error messages.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Logic.Test" isDocumented="True">This namespace contains classes to implement sequencial testing controlled by test script files.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Logic.Timing" isDocumented="True">This namespace extends the KineticaRT.Channels namespace with classes for timing of events.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Sequence" isDocumented="True">This namespace allows for control sequences to be written and incorportated into the KineticaRT application using both the C# and Visual Basic languages.  It contains a compiler for compiling these sequences.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.BallardOmnibox" isDocumented="True">This namespace provides an interface to provide live data from and contol of Ballard Omnibox1553 avionics bus interface devices.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Casella" isDocumented="True">This namespace provides an interface to provide live data from and contol of Casella Sensus weather station devices.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Exchange" isDocumented="True">This namespace provides an interface to provide transfer of live data via a KineticaRT Exchange web service, both between applications on different computers and between applications on the same computer.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Exchange.Exchange" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Servers.Exchange.Properties" isDocumented="True" />
+        <namespaceSummaryItem name="KineticaRT.Servers.Froude" isDocumented="True">This namespace provides an interface to provide live data from Froude Texcel T100A dynamometer controller devices.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Intercom" isDocumented="True">This namespace provides an interface to provide live data from and contol of Barix Annuncicom, Exstreamer and Instreamer intercom devices.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Log" isDocumented="True">This namespace provides logging and playback of data to/from the filesystem.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.OpcClient" isDocumented="True">This namespace provides an interface to provide live data from OPC DA 2.0 servers.  
+
+The OPC protocol provides for communication with a vast number of devices.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.OpcClient.Design" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Servers.Power" isDocumented="True">This namespace provides an interface to provide live data from Windows compatible uninteruptable power supply (UPS)  devices.  It also provides for shutdown of the application/computer.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.ScreenSaver" isDocumented="True">This namespace provides an imitation screen saver display which can be controlled from the KineticaRT application.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Security" isDocumented="True">This namespace provides an interface to USB data key devices to allow their use as keys for a security/user identification system.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Security.KineticaRTSafe" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Servers.Security.Properties" isDocumented="True" />
+        <namespaceSummaryItem name="KineticaRT.Servers.Simulate" isDocumented="True">This namespace provides simulated live data for test purposes.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.TC65TModem" isDocumented="True">This namespace provides an interface to contol TC65T GPRS modem devices for sending of text messages and pre recorded audio messages.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Vaisala.Humicap" isDocumented="True">This namespace provides an interface to provide live data from Vaisala Humicap humidity sensor devices.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Servers.Video" isDocumented="True">This namespace provides an interface to provide contol of Axis video server devices and Mic400 pan tilt zoom cameras, also contains video display components for the Axis video servers.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Studio" isDocumented="True">This namespace provides the KineticaRT Studio application in which KineticaRT live data channels and live data displays can be configured and  used.
+
+KineticaRT live data channels and live data displays can also be used in other applications.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Studio.Application" isDocumented="True">This namespace provides control of the KineticaRT Studio application and allows for run time reconfiguration.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Studio.Controls" isDocumented="True">This namespace provides extended, more specialised controls based on the classes of the KineticaRT.Controls namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="KineticaRT.Studio.Properties" isDocumented="False" />
+        <namespaceSummaryItem name="KineticaRT.Values" isDocumented="True">This namespace provides the Value classes used as live data values by the other KineticaRT components.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Sis3150usbVmeWin" isDocumented="False" />
+        <namespaceSummaryItem name="StreamComputers.Riff" isDocumented="False" />
+        <namespaceSummaryItem name="Test" isDocumented="False" />
+    </namespaceSummaries>
+    <dependencies>
+        <dependencyItem depPath=".\bin\Debug\*.*" />
+        <dependencyItem depPath=".\bin\Debug\KineticaRT.Compact.dll" />
+    </dependencies>
+    <ProjectSummary>KineticaRT Real Time Graphical User Interface.</ProjectSummary>
+    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, Namespace, TypeParameter</MissingTags>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
+    <HtmlHelp1xCompilerPath path="" />
+    <HtmlHelp2xCompilerPath path="" />
+    <OutputPath>.\Help\</OutputPath>
+    <SandcastlePath path="" />
+    <WorkingPath path="" />
+    <CleanIntermediates>False</CleanIntermediates>
+    <KeepLogFile>True</KeepLogFile>
+    <BuildLogFile path="" />
+    <HelpFileFormat>Help1xAndWebsite</HelpFileFormat>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <FrameworkVersion>2.0.50727</FrameworkVersion>
+    <IndentHtml>False</IndentHtml>
+    <Preliminary>True</Preliminary>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle />
+    <HelpTitle>KineticaRT Studio Reference Manual</HelpTitle>
+    <HtmlHelpName>KineticaRT Studio Reference Manual</HtmlHelpName>
+    <Language>en-US</Language>
+    <CopyrightHref />
+    <CopyrightText>KineticaRT Ltd 2008</CopyrightText>
+    <FeedbackEMailAddress>Support@KineticaRT.co.uk</FeedbackEMailAddress>
+    <FeedbackEMailLinkText />
+    <HeaderText />
+    <FooterText>KineticaRT Studio Programming Reference</FooterText>
+    <ProjectLinkType>Local</ProjectLinkType>
+    <SdkLinkType>Msdn</SdkLinkType>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <PresentationStyle>vs2005</PresentationStyle>
+    <NamingMethod>MemberName</NamingMethod>
+    <SyntaxFilters>CSharp</SyntaxFilters>
+    <ShowFeedbackControl>False</ShowFeedbackControl>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <CollectionTocStyle>Hierarchical</CollectionTocStyle>
+    <IncludeStopWordList>True</IncludeStopWordList>
+    <PlugInNamespaces>ms.vsipcc+, ms.vsexpresscc+</PlugInNamespaces>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+</project>

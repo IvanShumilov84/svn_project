@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86B17DA9-643B-4C90-B4A9-FE92516E1ADF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CEL.Data</RootNamespace>
+    <AssemblyName>CEL.Data</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CEL.Data.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CEL.Data.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>CEL.Data.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>CEL.Data.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>CEL.Data.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>CEL.Data.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom\ArchiveReportDetail.vb" />
+    <Compile Include="Custom\ArchiveReportDetailCollection.vb" />
+    <Compile Include="Custom\ArchiveReportDetailQuery.vb" />
+    <Compile Include="Custom\ARINC429DiscreteTemplate.vb" />
+    <Compile Include="Custom\ARINC429DiscreteTemplateCollection.vb" />
+    <Compile Include="Custom\ARINC429DiscreteTemplateQuery.vb" />
+    <Compile Include="Custom\ARINC429LabelTemplate.vb" />
+    <Compile Include="Custom\ARINC429LabelTemplateCollection.vb" />
+    <Compile Include="Custom\ARINC429LabelTemplateQuery.vb" />
+    <Compile Include="Custom\ARINC429LRUCodesTemplate.vb" />
+    <Compile Include="Custom\ARINC429LRUCodesTemplateCollection.vb" />
+    <Compile Include="Custom\ARINC429LRUCodesTemplateQuery.vb" />
+    <Compile Include="Custom\AxisType.vb" />
+    <Compile Include="Custom\AxisTypeCollection.vb" />
+    <Compile Include="Custom\AxisTypeQuery.vb" />
+    <Compile Include="Custom\BooleanState.vb" />
+    <Compile Include="Custom\BooleanStateCollection.vb" />
+    <Compile Include="Custom\BooleanStateQuery.vb" />
+    <Compile Include="Custom\CustomParameters.vb" />
+    <Compile Include="Custom\CustomParametersCollection.vb" />
+    <Compile Include="Custom\CustomParametersQuery.vb" />
+    <Compile Include="Custom\Dacn1Afdx.vb" />
+    <Compile Include="Custom\Dacn1AfdxMessage.vb" />
+    <Compile Include="Custom\Dacn1AfdxMessageCollection.vb" />
+    <Compile Include="Custom\Dacn1AfdxMessageQuery.vb" />
+    <Compile Include="Custom\Dacn1AfdxPort.vb" />
+    <Compile Include="Custom\Dacn1AfdxPortCollection.vb" />
+    <Compile Include="Custom\Dacn1AfdxPortQuery.vb" />
+    <Compile Include="Custom\Dacn1AfdxSignal.vb" />
+    <Compile Include="Custom\Dacn1AfdxSignalCollection.vb" />
+    <Compile Include="Custom\Dacn1AfdxSignalEnumeration.vb" />
+    <Compile Include="Custom\Dacn1AfdxSignalEnumerationCollection.vb" />
+    <Compile Include="Custom\Dacn1AfdxSignalEnumerationQuery.vb" />
+    <Compile Include="Custom\Dacn1AfdxSignalQuery.vb" />
+    <Compile Include="Custom\Dacn1AfdxVirtualLink.vb" />
+    <Compile Include="Custom\Dacn1AfdxVirtualLinkCollection.vb" />
+    <Compile Include="Custom\Dacn1AfdxVirtualLinkQuery.vb" />
+    <Compile Include="Custom\Dacn1Arinc429FaultCode.vb" />
+    <Compile Include="Custom\Dacn1Arinc429FaultCodeCollection.vb" />
+    <Compile Include="Custom\Dacn1Arinc429FaultCodeQuery.vb" />
+    <Compile Include="Custom\Dacn1CanbusLabel.vb" />
+    <Compile Include="Custom\Dacn1CanbusLabelCollection.vb" />
+    <Compile Include="Custom\Dacn1CanbusLabelQuery.vb" />
+    <Compile Include="Custom\DACN1OmniBusBoxIOMGR.vb" />
+    <Compile Include="Custom\DACN1OmniBusBoxIOMGRCollection.vb" />
+    <Compile Include="Custom\DACN1OmniBusBoxIOMGRQuery.vb" />
+    <Compile Include="Custom\DACN1OmniBusBoxIOMGRUart.vb" />
+    <Compile Include="Custom\DACN1OmniBusBoxIOMGRUartCollection.vb" />
+    <Compile Include="Custom\DACN1OmniBusBoxIOMGRUartQuery.vb" />
+    <Compile Include="Custom\DACN1PowerDNAIOMGRReal1.vb" />
+    <Compile Include="Custom\DACN1PowerDNAIOMGRReal1Collection.vb" />
+    <Compile Include="Custom\DACN1PowerDNAIOMGRReal1Query.vb" />
+    <Compile Include="Custom\DacnMap.vb" />
+    <Compile Include="Custom\DacnMapCollection.vb" />
+    <Compile Include="Custom\DacnMapQuery.vb" />
+    <Compile Include="Custom\DacnTemplateBool.vb" />
+    <Compile Include="Custom\DacnTemplateBoolCollection.vb" />
+    <Compile Include="Custom\DacnTemplateBoolQuery.vb" />
+    <Compile Include="Custom\DacnTemplateReal.vb" />
+    <Compile Include="Custom\DacnTemplateRealCollection.vb" />
+    <Compile Include="Custom\DacnTemplateRealQuery.vb" />
+    <Compile Include="Custom\DynamicCollection.vb" />
+    <Compile Include="Custom\DynamicCollectionCollection.vb" />
+    <Compile Include="Custom\DynamicCollectionQuery.vb" />
+    <Compile Include="Custom\EngineeringUnit.vb" />
+    <Compile Include="Custom\EngineeringUnitCollection.vb" />
+    <Compile Include="Custom\EngineeringUnitQuery.vb" />
+    <Compile Include="Custom\EngineGraphPreset.vb" />
+    <Compile Include="Custom\EngineGraphPresetCollection.vb" />
+    <Compile Include="Custom\EngineGraphPresetQuery.vb" />
+    <Compile Include="Custom\EngineInfo.vb" />
+    <Compile Include="Custom\EngineInfoCollection.vb" />
+    <Compile Include="Custom\EngineInfoQuery.vb" />
+    <Compile Include="Custom\EngineManufacturer.vb" />
+    <Compile Include="Custom\EngineManufacturerCollection.vb" />
+    <Compile Include="Custom\EngineManufacturerQuery.vb" />
+    <Compile Include="Custom\EnginePwBuildSpecification.vb" />
+    <Compile Include="Custom\EnginePwBuildSpecificationCollection.vb" />
+    <Compile Include="Custom\EnginePwBuildSpecificationQuery.vb" />
+    <Compile Include="Custom\EnginePwServiceBulletin.vb" />
+    <Compile Include="Custom\EnginePwServiceBulletinCollection.vb" />
+    <Compile Include="Custom\EnginePwServiceBulletinQuery.vb" />
+    <Compile Include="Custom\EngineSeries.vb" />
+    <Compile Include="Custom\EngineSeriesCollection.vb" />
+    <Compile Include="Custom\EngineSeriesQuery.vb" />
+    <Compile Include="Custom\Flowmeter.vb" />
+    <Compile Include="Custom\FlowmeterCollection.vb" />
+    <Compile Include="Custom\FlowmeterDetail.vb" />
+    <Compile Include="Custom\FlowmeterDetailCollection.vb" />
+    <Compile Include="Custom\FlowmeterDetailQuery.vb" />
+    <Compile Include="Custom\FlowMeterInputUnit.vb" />
+    <Compile Include="Custom\FlowMeterInputUnitCollection.vb" />
+    <Compile Include="Custom\FlowMeterInputUnitQuery.vb" />
+    <Compile Include="Custom\FlowmeterMap.vb" />
+    <Compile Include="Custom\FlowmeterMapCollection.vb" />
+    <Compile Include="Custom\FlowmeterMapQuery.vb" />
+    <Compile Include="Custom\FlowmeterMaster.vb" />
+    <Compile Include="Custom\FlowmeterMasterCollection.vb" />
+    <Compile Include="Custom\FlowmeterMasterQuery.vb" />
+    <Compile Include="Custom\FlowMeterOutputUnit.vb" />
+    <Compile Include="Custom\FlowMeterOutputUnitCollection.vb" />
+    <Compile Include="Custom\FlowMeterOutputUnitQuery.vb" />
+    <Compile Include="Custom\FlowmeterQuery.vb" />
+    <Compile Include="Custom\GraphAxis.vb" />
+    <Compile Include="Custom\GraphAxisCollection.vb" />
+    <Compile Include="Custom\GraphAxisQuery.vb" />
+    <Compile Include="Custom\GraphParameter.vb" />
+    <Compile Include="Custom\GraphParameterCollection.vb" />
+    <Compile Include="Custom\GraphParameterQuery.vb" />
+    <Compile Include="Custom\Gtcp85129.vb" />
+    <Compile Include="Custom\Gtcp85129Collection.vb" />
+    <Compile Include="Custom\Gtcp85129Query.vb" />
+    <Compile Include="Custom\GTCP85129RepairType.vb" />
+    <Compile Include="Custom\GTCP85129RepairTypeCollection.vb" />
+    <Compile Include="Custom\GTCP85129RepairTypeQuery.vb" />
+    <Compile Include="Custom\Gtcp8598.vb" />
+    <Compile Include="Custom\Gtcp8598Collection.vb" />
+    <Compile Include="Custom\Gtcp8598Query.vb" />
+    <Compile Include="Custom\GTCP8598RepairType.vb" />
+    <Compile Include="Custom\GTCP8598RepairTypeCollection.vb" />
+    <Compile Include="Custom\GTCP8598RepairTypeQuery.vb" />
+    <Compile Include="Custom\HMIBooleanChannels.vb" />
+    <Compile Include="Custom\HMIBooleanChannelsCollection.vb" />
+    <Compile Include="Custom\HMIBooleanChannelsQuery.vb" />
+    <Compile Include="Custom\HMIChannelsMapping.vb" />
+    <Compile Include="Custom\HMIChannelsMappingCollection.vb" />
+    <Compile Include="Custom\HMIChannelsMappingQuery.vb" />
+    <Compile Include="Custom\HMINumericChannels.vb" />
+    <Compile Include="Custom\HMINumericChannelsCollection.vb" />
+    <Compile Include="Custom\HMINumericChannelsQuery.vb" />
+    <Compile Include="Custom\HMIPageMapping.vb" />
+    <Compile Include="Custom\HMIPageMappingCollection.vb" />
+    <Compile Include="Custom\HMIPageMappingQuery.vb" />
+    <Compile Include="Custom\HMITextChannels.vb" />
+    <Compile Include="Custom\HMITextChannelsCollection.vb" />
+    <Compile Include="Custom\HMITextChannelsQuery.vb" />
+    <Compile Include="Custom\LoadCells.vb" />
+    <Compile Include="Custom\LoadCellsCollection.vb" />
+    <Compile Include="Custom\LoadCellsQuery.vb" />
+    <Compile Include="Custom\LogReport.vb" />
+    <Compile Include="Custom\LogReportCategories.vb" />
+    <Compile Include="Custom\LogReportCategoriesCollection.vb" />
+    <Compile Include="Custom\LogReportCategoriesQuery.vb" />
+    <Compile Include="Custom\LogReportCollection.vb" />
+    <Compile Include="Custom\LogReportDetail.vb" />
+    <Compile Include="Custom\LogReportDetailCollection.vb" />
+    <Compile Include="Custom\LogReportDetailQuery.vb" />
+    <Compile Include="Custom\LogReportQuery.vb" />
+    <Compile Include="Custom\OmniBusBoxUartDiscreteTemplate.vb" />
+    <Compile Include="Custom\OmniBusBoxUartDiscreteTemplateCollection.vb" />
+    <Compile Include="Custom\OmniBusBoxUartDiscreteTemplateQuery.vb" />
+    <Compile Include="Custom\OmniBusBoxUartTemplate.vb" />
+    <Compile Include="Custom\OmniBusBoxUartTemplateCollection.vb" />
+    <Compile Include="Custom\OmniBusBoxUartTemplateQuery.vb" />
+    <Compile Include="Custom\ProjectInfo.vb" />
+    <Compile Include="Custom\ProjectInfoCollection.vb" />
+    <Compile Include="Custom\ProjectInfoQuery.vb" />
+    <Compile Include="Custom\RetainVariables.vb" />
+    <Compile Include="Custom\RetainVariablesCollection.vb" />
+    <Compile Include="Custom\RetainVariablesQuery.vb" />
+    <Compile Include="Custom\SecurityLevel.vb" />
+    <Compile Include="Custom\SecurityLevelCollection.vb" />
+    <Compile Include="Custom\SecurityLevelQuery.vb" />
+    <Compile Include="Custom\TestProgressCheckListItem.vb" />
+    <Compile Include="Custom\TestProgressCheckListItemCollection.vb" />
+    <Compile Include="Custom\TestProgressCheckListItemQuery.vb" />
+    <Compile Include="Custom\TestProgressCheckType.vb" />
+    <Compile Include="Custom\TestProgressCheckTypeCollection.vb" />
+    <Compile Include="Custom\TestProgressCheckTypeQuery.vb" />
+    <Compile Include="Custom\TestProgressStepType.vb" />
+    <Compile Include="Custom\TestProgressStepTypeCollection.vb" />
+    <Compile Include="Custom\TestProgressStepTypeQuery.vb" />
+    <Compile Include="Custom\TestProgressTestStep.vb" />
+    <Compile Include="Custom\TestProgressTestStepCollection.vb" />
+    <Compile Include="Custom\TestProgressTestStepQuery.vb" />
+    <Compile Include="Custom\Users.vb" />
+    <Compile Include="Custom\UsersCollection.vb" />
+    <Compile Include="Custom\UsersQuery.vb" />
+    <Compile Include="Custom\Uut.vb" />
+    <Compile Include="Custom\UUTChoice.vb" />
+    <Compile Include="Custom\UUTChoiceCollection.vb" />
+    <Compile Include="Custom\UUTChoiceItems.vb" />
+    <Compile Include="Custom\UUTChoiceItemsCollection.vb" />
+    <Compile Include="Custom\UUTChoiceItemsQuery.vb" />
+    <Compile Include="Custom\UUTChoiceQuery.vb" />
+    <Compile Include="Custom\UutCollection.vb" />
+    <Compile Include="Custom\UUTDynamicChannelCollection.vb" />
+    <Compile Include="Custom\UUTDynamicChannelCollectionCollection.vb" />
+    <Compile Include="Custom\UUTDynamicChannelCollectionQuery.vb" />
+    <Compile Include="Custom\UUTEngineSeries.vb" />
+    <Compile Include="Custom\UUTEngineSeriesCollection.vb" />
+    <Compile Include="Custom\UUTEngineSeriesQuery.vb" />
+    <Compile Include="Custom\UUTGenericInfo.vb" />
+    <Compile Include="Custom\UUTGenericInfoCollection.vb" />
+    <Compile Include="Custom\UUTGenericInfoQuery.vb" />
+    <Compile Include="Custom\UUTHMIWindow.vb" />
+    <Compile Include="Custom\UUTHMIWindowCollection.vb" />
+    <Compile Include="Custom\UUTHMIWindowQuery.vb" />
+    <Compile Include="Custom\UUTLimit.vb" />
+    <Compile Include="Custom\UUTLimitCollection.vb" />
+    <Compile Include="Custom\UUTLimitQuery.vb" />
+    <Compile Include="Custom\UUTOption.vb" />
+    <Compile Include="Custom\UUTOptionCollection.vb" />
+    <Compile Include="Custom\UUTOptionQuery.vb" />
+    <Compile Include="Custom\UutQuery.vb" />
+    <Compile Include="Custom\UUTQuestion.vb" />
+    <Compile Include="Custom\UUTQuestionCollection.vb" />
+    <Compile Include="Custom\UUTQuestionQuery.vb" />
+    <Compile Include="Custom\UUTStaticChannelCollection.vb" />
+    <Compile Include="Custom\UUTStaticChannelCollectionCollection.vb" />
+    <Compile Include="Custom\UUTStaticChannelCollectionQuery.vb" />
+    <Compile Include="Custom\UUTTrip.vb" />
+    <Compile Include="Custom\UUTTripCollection.vb" />
+    <Compile Include="Custom\UUTTripQuery.vb" />
+    <Compile Include="Custom\UUTTripType.vb" />
+    <Compile Include="Custom\UUTTripTypeCollection.vb" />
+    <Compile Include="Custom\UUTTripTypeQuery.vb" />
+    <Compile Include="Generated\ArchiveReportDetail.vb" />
+    <Compile Include="Generated\ARINC429DiscreteTemplate.vb" />
+    <Compile Include="Generated\ARINC429LabelTemplate.vb" />
+    <Compile Include="Generated\ARINC429LRUCodesTemplate.vb" />
+    <Compile Include="Generated\AxisType.vb" />
+    <Compile Include="Generated\BooleanState.vb" />
+    <Compile Include="Generated\CustomParameters.vb" />
+    <Compile Include="Generated\Dacn1AfdxMessage.vb" />
+    <Compile Include="Generated\Dacn1AfdxPort.vb" />
+    <Compile Include="Generated\Dacn1AfdxSignal.vb" />
+    <Compile Include="Generated\Dacn1AfdxSignalEnumeration.vb" />
+    <Compile Include="Generated\Dacn1AfdxVirtualLink.vb" />
+    <Compile Include="Generated\Dacn1Arinc429FaultCode.vb" />
+    <Compile Include="Generated\Dacn1CanbusLabel.vb" />
+    <Compile Include="Generated\DACN1OmniBusBoxIOMGR.vb" />
+    <Compile Include="Generated\DACN1OmniBusBoxIOMGRUart.vb" />
+    <Compile Include="Generated\DACN1PowerDNAIOMGRReal1.vb" />
+    <Compile Include="Generated\DacnMap.vb" />
+    <Compile Include="Generated\DacnTemplateBool.vb" />
+    <Compile Include="Generated\DacnTemplateReal.vb" />
+    <Compile Include="Generated\DynamicCollection.vb" />
+    <Compile Include="Generated\EngineeringUnit.vb" />
+    <Compile Include="Generated\EngineeringUnitConversion.vb" />
+    <Compile Include="Generated\EngineGraphPreset.vb" />
+    <Compile Include="Generated\EngineInfo.vb" />
+    <Compile Include="Generated\EngineManufacturer.vb" />
+    <Compile Include="Generated\EnginePwBuildSpecification.vb" />
+    <Compile Include="Generated\EnginePwServiceBulletin.vb" />
+    <Compile Include="Generated\EngineSeries.vb" />
+    <Compile Include="Generated\Flowmeter.vb" />
+    <Compile Include="Generated\FlowmeterDetail.vb" />
+    <Compile Include="Generated\FlowMeterInputUnit.vb" />
+    <Compile Include="Generated\FlowmeterMap.vb" />
+    <Compile Include="Generated\FlowmeterMaster.vb" />
+    <Compile Include="Generated\FlowMeterOutputUnit.vb" />
+    <Compile Include="Generated\GraphAxis.vb" />
+    <Compile Include="Generated\GraphParameter.vb" />
+    <Compile Include="Generated\Gtcp85129.vb" />
+    <Compile Include="Generated\GTCP85129RepairType.vb" />
+    <Compile Include="Generated\Gtcp8598.vb" />
+    <Compile Include="Generated\GTCP8598RepairType.vb" />
+    <Compile Include="Generated\HMIBooleanChannels.vb" />
+    <Compile Include="Generated\HMIChannelsMapping.vb" />
+    <Compile Include="Generated\HMINumericChannels.vb" />
+    <Compile Include="Generated\HMIPageMapping.vb" />
+    <Compile Include="Generated\HMITextChannels.vb" />
+    <Compile Include="Generated\LoadCells.vb" />
+    <Compile Include="Generated\LogReport.vb" />
+    <Compile Include="Generated\LogReportCategories.vb" />
+    <Compile Include="Generated\LogReportDetail.vb" />
+    <Compile Include="Generated\MeasurementUnit.vb" />
+    <Compile Include="Generated\OmniBusBoxUartDiscreteTemplate.vb" />
+    <Compile Include="Generated\OmniBusBoxUartTemplate.vb" />
+    <Compile Include="Generated\ProjectInfo.vb" />
+    <Compile Include="Generated\RetainVariables.vb" />
+    <Compile Include="Generated\SecurityLevel.vb" />
+    <Compile Include="Generated\TestProgressCheckListItem.vb" />
+    <Compile Include="Generated\TestProgressCheckType.vb" />
+    <Compile Include="Generated\TestProgressStepType.vb" />
+    <Compile Include="Generated\TestProgressTestStep.vb" />
+    <Compile Include="Generated\Users.vb" />
+    <Compile Include="Generated\Uut.vb" />
+    <Compile Include="Generated\UUTChoice.vb" />
+    <Compile Include="Generated\UUTChoiceItems.vb" />
+    <Compile Include="Generated\UUTDynamicChannelCollection.vb" />
+    <Compile Include="Generated\UUTEngineSeries.vb" />
+    <Compile Include="Generated\UUTGenericInfo.vb" />
+    <Compile Include="Generated\UUTHMIWindow.vb" />
+    <Compile Include="Generated\UUTLimit.vb" />
+    <Compile Include="Generated\UUTOption.vb" />
+    <Compile Include="Generated\UUTQuestion.vb" />
+    <Compile Include="Generated\UUTStaticChannelCollection.vb" />
+    <Compile Include="Generated\UUTTrip.vb" />
+    <Compile Include="Generated\UUTTripType.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pivot.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.Core\EntitySpaces.Core45.csproj">
+      <Project>{81b80c15-74f7-480a-b3c1-d8792785b357}</Project>
+      <Name>EntitySpaces.Core45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.DebuggerVisualizer\EntitySpaces.DebuggerVisualizer45.csproj">
+      <Project>{a82a0bf9-2c70-4396-bd4b-9f287b0b347d}</Project>
+      <Name>EntitySpaces.DebuggerVisualizer45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.DynamicQuery\EntitySpaces.DynamicQuery45.csproj">
+      <Project>{9aa003d3-6dbb-4c6c-bdc5-f3e1f3bbb0dd}</Project>
+      <Name>EntitySpaces.DynamicQuery45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.Interfaces\EntitySpaces.Interfaces45.csproj">
+      <Project>{b13ac54d-1cee-4b91-beae-98cf0a4aa180}</Project>
+      <Name>EntitySpaces.Interfaces45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.LoaderMT\EntitySpaces.LoaderMT45.csproj">
+      <Project>{646de25e-4951-4174-b8e2-16e6d6d5008a}</Project>
+      <Name>EntitySpaces.LoaderMT45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\EntitySpaces.Loader\EntitySpaces.Loader45.csproj">
+      <Project>{7dff20d6-c320-4920-ae92-4f096d8dfe61}</Project>
+      <Name>EntitySpaces.Loader45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntitySpaces\Providers\EntitySpaces.MSAccessProvider\EntitySpaces.MSAccessProvider45.csproj">
+      <Project>{d39c62ac-c3be-433f-95db-6175703b092e}</Project>
+      <Name>EntitySpaces.MSAccessProvider45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

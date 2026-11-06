@@ -1,0 +1,108 @@
+FUNCTION_BLOCK open_User_Interface_FB
+(************************************************************************************************************************************************
+	Name :		open_User_Interface_FB									
+														
+	Description :	 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         				
+ 
+
+************************************************************************************************************************************************)	
+
+	status 	:= OPENING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: OPENING');
+	err_code 	:= OK;
+	XMLError	:= False;
+	FlapPosition:= 0;
+
+
+	XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+	hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+	IF hCfgSettings <> 0 THEN
+
+		PROJECT_NUMBER 		 := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.PROJECT_NUMBER', '0');
+		FACILITY_FIRE_INDEX	 := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.FACILITY_FIRE_INDEX', '0');
+
+		IF PROJECT_NUMBER = 15234 THEN
+			E_STOP_DAS_CMD_INDEX1 := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.E_STOP_DAS_CMD_INDEX1', '0');
+			E_STOP_DAS_CMD_INDEX2 := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.E_STOP_DAS_CMD_INDEX2', '0');
+			MUSHROOM_INDEX1	 	  := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.MUSHROOM_INDEX1', '0');
+			MUSHROOM_INDEX2	 	  := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.MUSHROOM_INDEX2', '0');
+			CUSTOMER_ESTOP_INDEX  := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.CUSTOMER_ESTOP_INDEX', '0');
+		ELSIF PROJECT_NUMBER = 14105 THEN
+			E_STOP_DAS_CMD_INDEX1 := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.E_STOP_DAS_CMD_INDEX1', '0');
+		ELSIF PROJECT_NUMBER = 18957 THEN
+			E_STOP_DAS_CMD_INDEX1 := ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.E_STOP_DAS_CMD_INDEX1', '0');
+		ELSE
+			E_STOP_DAS_CMD_INDEX  			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.E_STOP_DAS_CMD_INDEX', '0');
+			MUSHROOM_INDEX	    			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.MUSHROOM_INDEX', '0');
+			EMERGENCY_STOP_REARM_CMD_INDEX	:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.EMERGENCY_STOP_REARM_CMD_INDEX', '0');
+			ENGINE_STOP_REARM_CMD_INDEX		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.ENGINE_STOP_REARM_CMD_INDEX', '0');
+		END_IF;
+
+		IF TM_UUT_Info.Family = 'APS2X00' THEN
+			ECB_EMERGENCY_INDEX :=	ReadOneIntegerConfigItemST( 'ConfigurationSettings.APS2X00.ECB_EMERGENCY_INDEX', '0');
+		ELSIF TM_UUT_Info.Model = 'GTCP331-200' THEN 
+		(* Facility Fire is linked to a specific DOUT that sets the ECB in Fire Alarm Specific State *)
+		(* From 49-61-26, Page 69, 31 Mar 2011 : (20) (Fire emergency) A fire emergency protective shutdown occurs when the fire shutdown signal is grounded for 50 ms *)
+			ECB_FIRE_INDEX :=	ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-200-ACER.ECB_FIRE_INDEX', '0');
+		ELSIF TM_UUT_Info.Model = 'GTCP331-250' THEN 
+		(* Any Emergency Stop is linked to a specific DOUT that sets the ECB in Emergency Shutdown Specific State *)
+		(* From 49-61-12, Page 9, 2 Oct 2007 : Emergency Switch : Ground or Open : Ground Initiates an emergency shutdown of the APU *)
+			ECB_EMERGENCY_INDEX :=	ReadOneIntegerConfigItemST( 'ConfigurationSettings.GTCP331-250.ECB_EMERGENCY_INDEX', '0');
+		END_IF;
+
+		IF PROJECT_NUMBER = 14085 THEN
+
+			LUBE_PACK_PRESSURE_SWITCH :=	ReadOneIntegerConfigItemST( 'ConfigurationSettings.FACILITY.LUBE_PACK_PRESSURE_SWITCH', '0');
+
+		END_IF;
+
+		XMLCFGSETTINGS_CLOSE(hCfgSettings);
+		hCfgSettings := 0;
+
+	ELSE
+		err_code := ERROR_ON_OPENING;
+		dummy := LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+
+	END_IF;
+
+
+	IF (err_code <> OK) Or (XMLError = True) THEN 
+		err_code	:= ERROR_ON_OPENING;
+		status 	:= ERROR_ON_OPENING;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: ERROR ON OPENING');
+	ELSE 
+		status	:= OPENED;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: OPENED');
+	END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,129 @@
+PROGRAM MAIN
+
+IF (First_Time_Trough = TRUE) THEN 
+
+    First_Time_Trough          := FALSE;
+    In_NIDAQ_IOMgr.command     := IDLE;
+    Out_NIDAQ_IOMgr.status     := IDLING;
+    First_Time_Open            := TRUE;     
+    count_Xfer                 := 0;
+    count_Set_Speed            := 0;
+    count_Req_Set_Speed        := 0;
+    In_NIDAQ_IOMgr.sub_command := SUB_IDLE;
+
+END_IF; 
+
+CASE (In_NIDAQ_IOMgr.command) OF
+    
+    OPEN:
+
+        IF ((Out_NIDAQ_IOMgr.status = OPENING) OR (Out_NIDAQ_IOMgr.status = IDLING)) THEN  (* Opening = 1, Idling = -999 *)
+
+            open_NIDAQ_IOMgr(In_NIDAQ_IOMgr.number_of_rdata);
+    
+            Out_NIDAQ_IOMgr.err_code := open_NIDAQ_IOMgr.err_code;    
+            Out_NIDAQ_IOMgr.status   := open_NIDAQ_IOMgr.status;    
+            current_FV               := 0;
+
+        END_IF; 
+
+    LOAD:
+
+        IF ((Out_NIDAQ_IOMgr.status = OPENED) OR (Out_NIDAQ_IOMgr.status =  LOADING)) THEN (* Opened = 2, Loading = 3 *)
+
+            load_NIDAQ_IOMgr(In_NIDAQ_IOMgr.number_of_variables, rdata_base, In_rdata_user);
+
+            Out_NIDAQ_IOMgr.status   := load_NIDAQ_IOMgr.status;    
+            Out_NIDAQ_IOMgr.err_code := load_NIDAQ_IOMgr.err_code;    
+
+        END_IF; 
+
+    INITIALIZE:
+
+        IF (Out_NIDAQ_IOMgr.status = LOADED) THEN  (* Loaded = 4 *)
+
+            initialize_NIDAQ_IOMgr( );
+
+            Out_NIDAQ_IOMgr.status   := initialize_NIDAQ_IOMgr.status;    
+            Out_NIDAQ_IOMgr.err_code := initialize_NIDAQ_IOMgr.err_code;    
+
+        END_IF; 
+
+
+    RUN:
+
+        (* nouveau code speed selection for calibration 030115 *)
+        IF  ((Out_NIDAQ_IOMgr.status =  INITIALIZED) OR (Out_NIDAQ_IOMgr.status = RUNNING) OR (Out_NIDAQ_IOMgr.status = ERROR_ON_RUNNING)) THEN (* Initialized = 6, Running = 7, ERROR_ON_RUNNING = -4*)
+
+             run_NIDAQ_IOMgr(number_of_var);
+
+            Out_NIDAQ_IOMgr.status    := run_NIDAQ_IOMgr.status;        
+            Out_NIDAQ_IOMgr.err_code  := run_NIDAQ_IOMgr.err_code;      
+                                              
+            CASE (In_NIDAQ_IOMgr.sub_command) OF 
+                     
+                XFER_COEFF:
+
+                    IF In_NIDAQ_IOMgr.sub_command <> COEFF_XFERED THEN
+
+                        xfer_coefficients();
+                        Out_NIDAQ_IOMgr.sub_status := xfer_coefficients.sub_status;
+
+                    END_IF;
+
+                CALIB:
+
+                    Cal_Update(FALSE);
+                    Out_NIDAQ_IOMgr.sub_status := Cal_Update.sub_status;
+                    Out_NIDAQ_IOMgr.Cal_Raw    := Cal_Update.Cal_Raw;
+
+                REQ_XFER_COEFF:
+
+                    XFER_COEFF_FLAG := XFER_COEFF_FLAG XOR TRUE;
+                    sub_command     := SUB_IDLE;
+                              
+                ELSE
+
+			IF UUT_INFO.MODEL = 'DAS CALIBRATION' THEN
+	            	OS_BOARD_ENGINE_CFG_NO := 32;
+			END_IF;
+
+                  Out_NIDAQ_IOMgr.sub_status := 0;
+            END_CASE;
+        END_IF;
+
+     
+    CLOSE:
+
+        IF  (Out_NIDAQ_IOMgr.status <> CLOSED) THEN (* Closed = 9 *)
+
+            close_NIDAQ_IOMgr(rdata_base);
+
+            Out_NIDAQ_IOMgr.status   := close_NIDAQ_IOMgr.status;    
+            Out_NIDAQ_IOMgr.err_code := close_NIDAQ_IOMgr.err_code;    
+
+        END_IF; 
+
+    IDLE:
+
+        Out_NIDAQ_IOMgr.status := IDLING;
+
+END_CASE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_PROGRAM

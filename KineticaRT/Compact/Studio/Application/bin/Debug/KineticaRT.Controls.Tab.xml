@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Tab</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.Tab">
+            <summary>
+            The KineticaRT Tab Control combines the features of a KineticaRT Frame and a
+            Tab control. Thus allowing run-time editing of multiple pages of controls.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Tab.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.#ctor">
+            <summary>
+            Initialises a new instance of the Tab class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.EndInit">
+            <summary>
+            Initialization is complete
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.GetBasicPropertiesObject">
+            <summary>
+            Returns an object for which to show the properties
+            </summary>
+            <returns>Object to show the properties of</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.SavePanel">
+            <summary>
+            Saves the current Panel to the relevant named dll. Does nothing if no dll name, or no current panel.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.CanSave">
+            <summary>
+            Returns whether the Current Panel can be saved.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.SetCurrentPanelByText(System.String)">
+            <summary>
+            Finds the first panel with matching text and sets that as the current page
+            </summary>
+            <param name="Text">Header text to search for</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            Called from OnPaint and the Control's event pool Update
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.CalculateDisplayRectangle">
+            <summary>
+            Recalculates the DisplayRectangle based on the current ClientRectangle
+            and Appearance.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.DrawTitle(System.Drawing.Graphics)">
+            <summary>
+            Draws the tab headings
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.LoadPanel">
+            <summary>
+            Loads the current panel using the current PanelInfo
+            </summary>
+            <returns>True if succeeded and got a new Panel</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.LoadAllPanels(System.Boolean)">
+            Loads all the panels, including or excluding the current one
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.OnControlAdded(System.Windows.Forms.ControlEventArgs)">
+            <summary>
+            ControlAdded event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.OnControlRemoved(System.Windows.Forms.ControlEventArgs)">
+            <summary>
+            ControlRemoved event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.Connect2">
+            <summary>
+            Connects this object to others, stage 2.
+            </summary>
+            <remarks>This will be called after all objects have recieved a Connect call.</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Tab.FindObject(System.String)">
+            <summary>
+            Returns the named object or null if it does not exist.
+            </summary>
+            <param name="objectName">Name of object to find</param>
+            <returns>Named object, or null if not found</returns>
+        </member>
+        <member name="P:KineticaRT.Controls.Tab.Compact">
+            <summary>
+            Set to true before creating any panels if the Tab is to be used on the Compact Framework.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Tab.Panels">
+            <summary>
+            Gets or sets a Collection of PanelInfo objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Tab.CurrentPanelIndex">
+            <summary>
+            Gets or sets the zero-based index of the current panel
+            </summary>
+            <remarks>'-1' if no panels exist</remarks>
+        </member>
+        <member name="T:KineticaRT.Controls.PanelCollection">
+            <summary>
+            Collection of Panel objects and associated information 
+            designed for use with a KineticaRT Tab control
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.#ctor">
+            <summary>
+            Initialises a new instance of the PanelCollection class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.#ctor(KineticaRT.Controls.PanelInfo[])">
+            <summary>
+            Initialises a new instance of the PanelCollection class containing the specified PanelInfo objects
+            </summary>
+            <param name="panelInfo">Array of PanelInfo objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.AddPanel(System.String)">
+            <summary>
+            Adds a new PanelInfo object with the specified Panel to the collection
+            </summary>
+            <param name="Text">Text of new Panel</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.AddRange(KineticaRT.Controls.PanelInfo[])">
+            <summary>
+            Adds an array of PanelInfo objects to the collection
+            </summary>
+            <param name="newInfo">Array of PanelInfo objects to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            List InsertComplete Event
+            </summary>
+            <param name="Index">Index of inserted object</param>
+            <param name="Value">Inserted object</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.OnClear">
+            <summary>
+            Clear Event
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.OnRemoveComplete(System.Int32,System.Object)">
+            <summary>
+            List RemoveComplete Event
+            </summary>
+            <param name="Index">Index of removed object</param>
+            <param name="Value">Removed object</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelCollection.FindObject(System.String)">
+            <summary>
+            Looks for the named object
+            </summary>
+            <param name="objectName">Name of Object to find</param>
+            <returns>Always returns null</returns>
+        </member>
+        <member name="E:KineticaRT.Controls.PanelCollection.PanelAdded">
+            <summary>
+            Event generated when a panel is added to the collection
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Controls.PanelCollection.PanelRemoved">
+            <summary>
+            Event generated when a panel is removed from the collection
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PanelCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the PanelInfo object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.PanelCollection.PanelChangedEventHandler">
+            <summary>Event Handler for Panel added / removed events</summary>
+            <param name="sender">The source of the event.</param>
+        </member>
+        <member name="T:KineticaRT.Controls.PanelInfo">
+            <summary>
+            PanelInfo object containing information about Panel objects.
+            Designed for use with a KineticaRT Tab control
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelInfo.FindObject(System.String)">
+            <summary>
+            Looks for the named object
+            </summary>
+            <param name="objectName">Name of Object to find</param>
+            <returns>Object which matches objectName or null if not found.</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelInfo.#ctor">
+            <summary>
+            Initialises a new instance of the PanelInfo class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelInfo.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the PanelInfo class with the specified name and Text
+            </summary>
+            <param name="Text">Associated Text</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelInfo.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelInfo.Connect2">
+            <summary>
+            Connects this object to others, stage 2.
+            </summary>
+            <remarks>This will be called after all objects have recieved a Connect call.</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelInfo.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PanelInfo.Text">
+            <summary>
+             Gets or sets the Text associated with the Panel
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.PanelInfo.DllName">
+            <summary>
+             Gets or sets the DLL Name from which the Panel is loaded
+            </summary>
+             <remarks>
+             Extensions other than '.dll' will be changed to '.dll'.
+             If path is not specified, the file is relative to the path specified in the SystemDirectory property.
+             If the specified file exists it will be loaded, and current controls
+             will be unloaded. If the file does not exist the current controls will
+             remain unchanged. When the frame is saved, current controls will be saved
+             to the file specified here, and the object saved within the dll will be
+             case sensitively named after the dll. Note that save will not be available if no 
+             DllName is specified.
+             </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.PanelInfo.Panel">
+            <summary>
+            Gets or sets the PanelBase object associated with this page
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,75 @@
+FUNCTION ConvertBindingSourceStringToDint
+
+(************************************************************************************************************************************************
+
+	Function ReadOneRealConfigItem									
+														
+************************************************************************************************************************************************)	
+ (* ATTENTION Les BINDING SOURCE sont les variables sources à utiliser dans le workbench d'ou provient la données
+			Elles sont definies comme constantes dans le dictionnaire et ont le PREFIXE "BINDING_DACN1" 
+			Les constantes BINDING_DACN1_XXXXXX doivent etre unique et sa valeur comme suit  
+				de 1 a 20 Pour DACN1_SERIAL_XXXXXX
+				de 21 a 40 Pour DACN1_POWERDNA_XXXXX
+				de 41 a 60 Pour DACN1_NIDAQ_XXXXXX 
+*)
+
+	IF BindingSourceString = 'DACN1_NIDAQ_IOMGR_F' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_NIDAQ_IOMGR_F;
+	ELSIF BindingSourceString =  'DACN1_NIDAQ_IOMGR_P'THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_NIDAQ_IOMGR_P;
+	ELSIF BindingSourceString = 'DACN1_NIDAQ_IOMGR_T' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_NIDAQ_IOMGR_T;
+	ELSIF BindingSourceString = 'DACN1_NIDAQ_IOMGR_VIN' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_NIDAQ_IOMGR_VIN;
+	ELSIF BindingSourceString = 'DACN1_NIDAQ_IOMGR_VIB' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_NIDAQ_IOMGR_VIB;
+	ELSIF BindingSourceString = 'DACN1_NIDAQ_IOMGR_DIN' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_NIDAQ_IOMGR_DIN;
+	ELSIF BindingSourceString = 'DACN1_POWERDNA_IOMGR_P'THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_POWERDNA_IOMGR_P;
+	ELSIF BindingSourceString = 'DACN1_POWERDNA_IOMGR_T' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_POWERDNA_IOMGR_T;
+	ELSIF BindingSourceString = 'DACN1_POWERDNA_IOMGR_VIN' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_POWERDNA_IOMGR_VIN;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_DOUT' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_DOUT;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_DIN' THEN 
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_DIN;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_DIN64' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_DIN64;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_DOUT64' THEN
+		 ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_DOUT64;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_F' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_F;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_IIN' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_IIN;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_IOUT' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_IOUT; 
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_P' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_P;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_R' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_R;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_T' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_T;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_VIB' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_VIB;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_VIN' THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_VIN;
+	ELSIF BindingSourceString = 'DACN1_SERIAL_IOMGR_VOUT'THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SERIAL_IOMGR_VOUT;
+	ELSIF BindingSourceString = 'DACN1_SCANIVALVE_IOMGR_P'THEN
+		ConvertBindingSourceStringToDint := BINDING_DACN1_SCANIVALVE_IOMGR_P;
+	ELSE
+		XMLError := True;
+		dummy := LOG_MSG('ErrLog', 'DACN1_NIDAQ_IOMGR:ERROR: CANNOT CONVERT BINDING SOURCE' );
+	END_IF;
+
+								
+
+
+
+
+
+
+
+END_FUNCTION

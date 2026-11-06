@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head>
+		<title>KineticaRT Message</title>
+<meta content="Microsoft Visual Studio .NET 7.1" name=GENERATOR>
+<meta content=VisualStudio.HTML name=ProgId>
+<meta content="Microsoft Visual Studio .NET 7.1" name=Originator><LINK href="Manual.css" rel=Stylesheet ></HEAD>
+<body>
+<h2>KineticaRT Message</H2>
+<H3>Features</H3>
+<P>The KineticaRT Message components provide a way of 
+generating, handling, logging and displaying text messages for the user.</P>
+<P>There are several message components:</P>
+<UL>
+  <LI>Display - displays messages in a listbox on the 
+  screen 
+  <LI>Event - generates a message when a condition becomes 
+  true 
+  <LI>Recorder - records all changes to a given channel 
+  <LI>Sound - generates a sound when messages are generated 
+
+  <LI>TextLog -&nbsp;writes the messages to a text file 
+  <LI>Threshold - generates a message when a channel 
+  reaches a given value 
+  <LI>Voice - reads messages out via the speakers</LI></UL>
+<H3>Display</H3>
+<P><IMG src="MessageDisplay.gif" ></P>
+<P>The <STRONG>Message</STRONG> 
+<STRONG>Display</STRONG> component connects to a channel 
+and displays the value of that channel in a listbox.&nbsp; Whenever the channel 
+updates, it adds a line to its listbox showing the new value.&nbsp; Normally it 
+is connected to a channel containing <STRONG>Messages</STRONG>.</P>
+<H3>Message</H3>
+		<P>A <STRONG>Message</STRONG> is an object with the base class <STRONG>Value </STRONG>
+			similar to the Text, Boolean and Double values.&nbsp; It can be stored in 
+			channels, displayed like any other value and it contains The following 
+			properties:</P>
+		<UL>
+			<LI>
+			Text - the message text.
+			<LI>
+			Source - text used for grouping messages - normally used to explain where the 
+			message came from.
+			<LI>
+			Priority - Value defining how important the message is - can be used to filter 
+			out unimportant messages on a message display.
+			<LI>
+				Timestamp - The time the message was generated.</LI></UL>
+		<P></P>
+		<H3>Event</H3>
+		<P>The <STRONG>Message</STRONG> <STRONG>Event</STRONG> component connects to a 
+			channel and generates a <STRONG>Message</STRONG> whenever the Boolean state of 
+			that channel changes.&nbsp;&nbsp; The text of the message is defined by the <STRONG>
+				Text</STRONG> and <STRONG>ReturnText</STRONG> properties.</P>
+		<H3>Threshold</H3>
+		<P>The <STRONG>Threshold </STRONG>component connects to a channel and generates a <STRONG>
+				Message </STRONG>whenever the value of that channel passes a given 
+			threshold value.&nbsp; The text of the message is defined by the <STRONG>Text</STRONG>
+			and <STRONG>ReturnText</STRONG> properties.</P>
+		<H3>Recorder</H3>
+		<P>The <STRONG>Recorder</STRONG> component connects to a channel and generates a 
+			message whenever the value of that channel changes.&nbsp; The text of the 
+			message is the new value of the channel.</P>
+		<H3>Sound</H3>
+		<P>The <STRONG>Sound</STRONG> component connects to 
+			a channel containing messages and plays a sound whenever a new message is 
+			received.&nbsp; You can restrict the sound to only play messages at given priorities.</P>
+		<P>The sounds can either be system sounds or sounds from .wav files.</P>
+		<H3>TextLog</H3>
+		<P>The <STRONG>TextLog</STRONG> component connects to a channel containing messages 
+			and whenever a new message is recieved, it is written to a text file.</P>
+		<H3>Voice</H3>
+		<P>The <STRONG>Voice </STRONG>component 
+connects to a channel containing messages and whenever a new message is 
+received, it reads it out using speech.&nbsp; You can restrict the 
+<STRONG>Voice</STRONG> to only read messages at given 
+			priorities.</P>
+		<P>If there is more than one voice installed on your computer then the voice used 
+			by the Voice component can be specifed and you can have different voices for 
+			differenent priority messages or messages from different sources.</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body></HTML>

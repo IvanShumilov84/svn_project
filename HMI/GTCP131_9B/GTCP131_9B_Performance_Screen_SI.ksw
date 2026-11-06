@@ -1,0 +1,3 @@
+<Window BackColor="Black" Font="Microsoft Sans Serif, 8.25pt" ForeColor="SteelBlue" RightToLeft="0" TabIndex="0" BorderColor="LightSteelBlue" BorderStyle="1" BorderWidth="0.1" Name="tab" Shape="0" ToolTipText="" UpdateSpeed="1" HorizontalGrid.Size="2" HorizontalGrid.Spacing="2" VerticalGrid.Size="2" VerticalGrid.Spacing="2" TitleEnabled="false" Title="GTCP131-9B - Performance" WindowState="0" Left="300" Top="50" Width="800" Height="650" CurrentPanelIndex="0">
+  <Panel File="GTCP131_9B\GTCP131_9B_Performance_Panel_SI.dll" Text="Panel 1" />
+</Window>

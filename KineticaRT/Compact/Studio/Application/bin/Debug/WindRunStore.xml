@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WindRunStore>
+    <Reset Time="29/09/2006 12:21:58.279">
+        <Bucket Direction="N" Duration="0">0</Bucket>
+        <Bucket Direction="NNE" Duration="0">0</Bucket>
+        <Bucket Direction="NE" Duration="0">0</Bucket>
+        <Bucket Direction="ENE" Duration="0">0</Bucket>
+        <Bucket Direction="E" Duration="0">0</Bucket>
+        <Bucket Direction="ESE" Duration="0">0</Bucket>
+        <Bucket Direction="SE" Duration="0">0</Bucket>
+        <Bucket Direction="SSE" Duration="0">0</Bucket>
+        <Bucket Direction="S" Duration="0">0</Bucket>
+        <Bucket Direction="SSW" Duration="0">0</Bucket>
+        <Bucket Direction="SW" Duration="0">0</Bucket>
+        <Bucket Direction="WSW" Duration="0">0</Bucket>
+        <Bucket Direction="W" Duration="0">0</Bucket>
+        <Bucket Direction="WNW" Duration="0">0</Bucket>
+        <Bucket Direction="NW" Duration="0">0</Bucket>
+        <Bucket Direction="NNW" Duration="0">0</Bucket>
+    </Reset>
+</WindRunStore>

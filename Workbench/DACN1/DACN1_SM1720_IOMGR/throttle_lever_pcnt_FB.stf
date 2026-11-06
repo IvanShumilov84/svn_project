@@ -1,0 +1,16 @@
+FUNCTION_BLOCK throttle_lever_pcnt_FB
+
+
+	IF (Vref_in <> 0.0) THEN (* Vref_in  = Voltage de référence pour la lecture de la position Vsig_in  *)
+
+		value := Vsig_in / Vref_in  * 100.0; (* Calcul de la position du levier en pourcentage selon la lecture du potentiometre du levier *)	
+
+	END_IF; 
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

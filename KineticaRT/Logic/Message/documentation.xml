@@ -1,0 +1,864 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Logic.Message</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Logic.Message.Display">
+            <summary>
+            List of messages from a source.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Logic.Message.Display.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.#ctor">
+            <summary>
+            Initialises a new instance of the Display class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.Clear">
+            <summary>
+            Clears all messages out of the Display
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.OnBackColorChanged(System.EventArgs)">
+            <summary>
+            BackColorChanged Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.OnForeColorChanged(System.EventArgs)">
+            <summary>
+            ForeColorChanged Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.SetFormat">
+            <summary>
+            Sets up the tool tip based on the Source channel
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than,
+            equal to or greater than the other
+            </summary>
+            <param name="x">First object to compare</param>
+            <param name="y">Second object to compare</param>
+            <returns>
+            Less than zero if x is less than y.
+            Zero if x equals y.
+            Greater han zero if x is greater than y.
+            </returns>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Display.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.Value">
+            <summary>
+            Current Message
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.SourceChannel">
+            <summary>
+            Source of messages
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.Source">
+            <summary>
+            Name of object to be the Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.MaximumMessages">
+            <summary>
+            Maximum number of messages held in the list before old ones are replaced
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.Gridlines">
+            <summary>
+            Gridlines enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.Headings">
+            <summary>
+            Column headings enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.SourceFilter">
+            <summary>
+            Array of valid Source strings. All Sources are accepted if this property is null
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.ToolTipText">
+            <summary>
+            Tool Tip Text that appears when hovering over the control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.BorderStyle">
+            <summary>
+            Border Style of the Control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.BorderWidth">
+            <summary>
+            Border width of the Control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.Priorities">
+            <summary>
+            Definition of priority colors and text
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.Shape">
+            <summary>
+            The Shape of the control (Rectangle, Rounded Rectangle, Ellipse)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.CornerRadius">
+            <summary>
+            Corner radius (pixels) of the rounded rectangular shape
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Display.UseSourceFormat">
+            <summary>
+            If true, the Display gets its ToolTip from its Source channel
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Event">
+            <summary>
+            KineticaRT Channel that records when another channel changes state.<br/>
+            </summary>
+            <remarks>A message is created for each change of state value.  The message may be passed to other Message components for display, logging etc.</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Event.#ctor">
+            <summary>
+            Initialises a new instance of the class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Event.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Event.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Event.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Event.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Event.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Event.Source">
+            <summary>
+            Gets or sets the name of the channel to be recorded.
+            </summary>
+            <value>The name of the source channel.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Event.Destination">
+            <summary>
+            Gets or sets the name of the destination channel.
+            </summary>
+            <value>The name of the destination <see cref="T:KineticaRT.Channels.Channel"/>.</value>
+            <remarks>
+            Each message created will be placed in this channel.
+            <para>This property may be left blank in which case the messages will only be available via the <see cref="P:KineticaRT.Channels.Channel.Value"/> property.</para>
+            </remarks> 
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Event.SourceText">
+            <summary>
+            Gets or sets the text for the <see cref="P:KineticaRT.Logic.Message.Message.Source"/> property of recorded messages.
+            </summary>
+            <value>The text for the <see cref="P:KineticaRT.Logic.Message.Message.Source"/> property of recorded messages.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Event.Priority">
+            <summary>
+            Gets or sets the value for the <see cref="P:KineticaRT.Logic.Message.Message.Priority"/> property of recorded messages.
+            </summary>
+            <value>The value for the <see cref="P:KineticaRT.Logic.Message.Message.Priority"/> property of recorded messages.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Event.Text">
+            <summary>
+            Gets or sets the message text
+            </summary>
+            <value>The message text.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Event.ReturnText">
+            <summary>
+            Gets or sets the text for the return message
+            </summary>
+            <value>The return message text.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Message">
+            <summary>
+            A single message.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Message.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Initialises a new instance of the class using the specified values.<br/>
+            The message is stamped with the current time.
+            </summary>
+            <param name="text">Text of the message.</param>
+            <param name="source">Text describing the source of the message.</param>
+            <param name="priority">Integer specifying the priority of the message.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Message.#ctor(System.String,System.String,System.Int32,System.DateTime)">
+            <summary>
+            Initialises a new instance of the class using the specified values.
+            </summary>
+            <param name="text">Text of the message.</param>
+            <param name="source">Text describing the source of the message.</param>
+            <param name="priority">Integer specifying the priority of the message.</param>
+            <param name="timestamp">The timestamp for the message.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Message.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Message.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Message.Text">
+            <summary>Gets the text of this message object.</summary>
+            <value>A string containing the text of this message.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Message.Source">
+            <summary>Gets the text describing the source of this message object.</summary>
+            <value>A string containing a decription of the source of this message.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Message.Priority">
+            <summary>Gets the priority of this message object.</summary>
+            <value>A integer specifying the priority of this message.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Message.Timestamp">
+            <summary>Gets the timestamp of this message object.</summary>
+            <value>A DateTime object containing the timestamp for this message.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.PriorityCollection">
+            <summary>
+            Collection of Priority objects used by the Message Display controls
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.PriorityCollection.#ctor">
+            <summary>
+            Initialises a new instance of the PriorityCollection class containing a single Priority
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.PriorityCollection.#ctor(KineticaRT.Logic.Message.Priority[])">
+            <summary>
+            Initialises a new instance of the PriorityCollection class containing the specified Priority objects
+            </summary>
+            <param name="priorities">Array of Priority objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.PriorityCollection.AddPriority">
+            <summary>
+            Adds a new Priority object to the collection
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.PriorityCollection.AddRange(KineticaRT.Logic.Message.Priority[])">
+            <summary>
+            Adds an array of Priority objects to the collection
+            </summary>
+            <param name="newPriorities">Array of Priorities to add</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.PriorityCollection.GetPriorityInfo(System.Int64,System.Drawing.Color@,System.Drawing.Color@,System.String@)">
+            <summary>
+            Returns information about a specified priority number
+            </summary>
+            <param name="Priority">Priority number to find</param>
+            <param name="BackColor">(out) BackColor associated with the Priority (or Color.Empty if not found)</param>
+            <param name="TextColor">(out) TextColor associated with the Priority (or Color.Empty if not found)</param>
+            <param name="Text">(out) Text associated with the Priority (or an empty strung if not found)</param>
+            <returns>True if a Priority object that covers the Priority number has been found</returns>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.PriorityCollection.Item(System.Int32)">
+            <summary>
+            Priority object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Priority">
+            <summary>
+            Message Display Priority
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Priority.#ctor">
+            <summary>
+            Initialises a new instance of the Priority class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Priority.ResetBackColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Priority.ResetTextColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Priority.IsInRange(System.Int64,System.String)">
+             <summary>
+             Checks if the specified Priority number is within the specified Range string
+             </summary>
+             <param name="Priority">Priority number to check</param>
+             <param name="Range">Range of priorities covered</param>
+             <returns>True if in Range, else false</returns>
+             <remarks>'Range' is comma-sepatated single values or hyphenated ranges</remarks>
+            <example><ul>
+             <li>"1-4,6,12" covers the numbers 1, 2, 3, 4, 6 and 12</li>
+             <li>"0,6-" covers the numbers 0 and everything greater than or equal to 6</li>
+            </ul></example>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Priority.IsInRange(System.Int64)">
+            <summary>
+            Checks if the specified Priority number is within the range
+            specified by this object's Range string.
+            </summary>
+            <param name="PriorityValue">Priority number to check</param>
+            <returns>True if in Range, else false</returns>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Priority.BackColor">
+            <summary>
+            Message Back Color
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Priority.TextColor">
+            <summary>
+            Message Text Color
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Priority.Range">
+            <summary>
+            Gets or sets the string defining which Priority values are covered
+            <remarks>Strings are comma-separated inclusive ranges or single values</remarks>
+            </summary>
+            <example><ul>
+             <li>"1-4,6,12" covers the numbers 1, 2, 3, 4, 6 and 12</li>
+             <li>"0,6-" covers the numbers 0 and everything greater than or equal to 6</li>
+            </ul></example>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Priority.Text">
+            <summary>
+            Priority text
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Recorder">
+            <summary>
+            KineticaRT Channel that Records every change in a source channel.<br/>
+            </summary>
+            <remarks>
+            A message is created for each change.  The message may be passed to other Message components for display, logging etc.
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.#ctor">
+            <summary>
+            Initialises a new instance of the class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Recorder.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.Source">
+            <summary>
+            Gets or sets the name of the channel to be recorded.
+            </summary>
+            <value>The name of the source channel.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.Destination">
+            <summary>
+            Gets or sets the name of the destination channel.
+            </summary>
+            <value>The name of the destination <see cref="T:KineticaRT.Channels.Channel"/>.</value>
+            <remarks>
+            Each message created will be placed in this channel.
+            <para>This property may be left blank in which case the messages will only be available via the <see cref="P:KineticaRT.Channels.Channel.Value"/> property.</para>
+            </remarks> 
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.SourceText">
+            <summary>
+            Gets or sets the text for the <see cref="P:KineticaRT.Logic.Message.Message.Source"/> property of recorded messages.
+            </summary>
+            <value>The text for the <see cref="P:KineticaRT.Logic.Message.Message.Source"/> property of recorded messages.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Recorder.Priority">
+            <summary>
+            Gets or sets the value for the <see cref="P:KineticaRT.Logic.Message.Message.Priority"/> property of recorded messages.
+            </summary>
+            <value>The value for the <see cref="P:KineticaRT.Logic.Message.Message.Priority"/> property of recorded messages.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Sound">
+            <summary>
+            A Component that makes a sound when the Value of the Channel to which
+            it is connected becomes True
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Logic.Message.Sound.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initialises a new instance of the Sound class with the specified Container
+            </summary>
+            <param name="container">Container that holds this component</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.#ctor">
+            <summary>
+            Initialises a new instance of the Sound class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.OnPropertyChanged(System.String)">
+            <summary>
+            The named property has changed: generate the PropertyChanged event
+            </summary>
+            <param name="propertyName">Name of property that has changed</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.OnObjectSearch(System.String)">
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.FindObject(System.String)">
+            <summary>
+            Looks for the named object
+            </summary>
+            <param name="ObjectName">Name of Object to find</param>
+            <returns>Always returns null</returns>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+            <remarks>Any buttons added by name are sought and connected to if possible</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Sound.Value">
+            <summary>
+            Gets or sets the current Value
+            </summary>
+            <remarks>A sound is played when the Value becomes True</remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Sound.SoundFile">
+            <summary>
+            Gets or sets the file from which the object's Sound is generated
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Sound.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the object's Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Sound.Source">
+            <summary>
+            Gets or sets the name of the channel to be the object's Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Sound.Mute">
+            <summary>
+            Gets or sets whether sound is muted
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Sound.Repeat">
+            <summary>
+            Gets or sets whether the sound is played repeatedly whilst the Value is 'True'
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Sound.Range">
+            <summary>
+            Gets or sets the string defining which Priority values are covered
+            <remarks>Strings are comma-separated inclusive ranges or single values</remarks>
+            </summary>
+            <example><ul>
+             <li>"1-4,6,12" covers the numbers 1, 2, 3, 4, 6 and 12</li>
+             <li>"0,6-" covers the numbers 0 and everything greater than or equal to 6</li>
+            </ul></example>
+        </member>
+        <member name="E:KineticaRT.Logic.Message.Sound.PropertyChanged">
+            <summary>
+            Event which fires when the value of a property has changed.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Logic.Message.Sound.ObjectSearch">
+            <summary>
+            Event for requests to find an object by name.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.SoundModule.#ctor">
+            <summary>
+            Constructor method - creates a single soundmodule for stand alone use
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.SoundModule.SetUpFile(System.String)">
+            <summary>
+            Sets up a file
+            </summary>
+            <param name="file">File to be played</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.SoundModule.Play">
+            <summary>
+            Plays a sound
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Sound.SoundModule.Stop">
+            <summary>
+            Stops playing
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.TextLog">
+            <summary>
+            Logs messages into a text file.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.#ctor">
+            <summary>
+            Initialises a new instance of the class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.TextLog.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.TextLog.Format">
+            <summary>
+            Gets or sets the format of the channel when viewed as text.
+            </summary>
+            <value>A string describing the display format of the channel.</value>
+            <remarks>The following formats can be used:
+            <ul>
+            <li>"d" - Short date</li>
+            <li>"D" - Long date</li>
+            <li>"f" - Long date, short time</li>
+            <li>"F" - Long date, long time</li>
+            <li>"g" - short date, short time</li>
+            <li>"G" - short date, long time</li>
+            <li>"t" - short time</li>
+            <li>"T" - Long time</li>
+            <li>"u" - Universal time (sortable)</li>
+            <li>"U" - Universal time</li>
+            <li>"dddd yyyy/MM/dd hh:mm:ss fff" - Custom</li>
+            </ul>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.TextLog.Source">
+            <summary>Gets or sets the name of the channel to be logged.</summary>
+            <value>A string containing the name of the channel to be logged.</value>
+            <summary>
+            Name of Channel to be logged.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.TextLog.FilePath">
+            <summary>Gets or sets the path and name of the file to log to.</summary>
+            <value>A string representing the path and name of file to log to.</value>
+            <example>"C:\Logs\MyLog.txt"</example>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.TextLog.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+            <remarks>Setting Value will cause the new value to be logged to the file.</remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Threshold">
+            <summary>
+            KineticaRT Channel that records when another channel passes a threshold value.<br/>
+            </summary>
+            <remarks>A message is created for each pass of the threshold value.  The message may be passed to other Message components for display, logging etc.</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Threshold.#ctor">
+            <summary>
+            Initialises a new instance of the class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Threshold.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Threshold.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Threshold.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Threshold.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Threshold.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Threshold.Source">
+            <summary>
+            Gets or sets the name of the channel to be recorded.
+            </summary>
+            <value>The name of the source channel.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Threshold.Destination">
+            <summary>
+            Gets or sets the name of the destination channel.
+            </summary>
+            <value>The name of the destination <see cref="T:KineticaRT.Channels.Channel"/>.</value>
+            <remarks>
+            Each message created will be placed in this channel.
+            <para>This property may be left blank in which case the messages will only be available via the <see cref="P:KineticaRT.Channels.Channel.Value"/> property.</para>
+            </remarks> 
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Threshold.SourceText">
+            <summary>
+            Gets or sets the text for the <see cref="P:KineticaRT.Logic.Message.Message.Source"/> property of recorded messages.
+            </summary>
+            <value>The text for the <see cref="P:KineticaRT.Logic.Message.Message.Source"/> property of recorded messages.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Threshold.Priority">
+            <summary>
+            Gets or sets the value for the <see cref="P:KineticaRT.Logic.Message.Message.Priority"/> property of recorded messages.
+            </summary>
+            <value>The value for the <see cref="P:KineticaRT.Logic.Message.Message.Priority"/> property of recorded messages.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Threshold.Level">
+            <summary>
+            Gets or sets the threshold value
+            </summary>
+            <value>The threshold value.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Threshold.Text">
+            <summary>
+            Gets or sets the message text
+            </summary>
+            <value>The message text.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Threshold.ReturnText">
+            <summary>
+            Gets or sets the text for the return message
+            </summary>
+            <value>The return message text.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Message.Voice">
+            <summary>
+            A Component that speaks the Value of the Channel to which
+            it is connected whenever that Value changes
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Logic.Message.Voice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initialises a new instance of the Voice class with the specified Container
+            </summary>
+            <param name="container">Container that holds this component</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.#ctor">
+            <summary>
+            Initialises a new instance of the Voice class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.OnPropertyChanged(System.String)">
+            <summary>
+            The named property has changed: generate the PropertyChanged event
+            </summary>
+            <param name="propertyName">Name of property that has changed</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.OnObjectSearch(System.String)">
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.FindObject(System.String)">
+            <summary>
+            Looks for the named object
+            </summary>
+            <param name="ObjectName">Name of Object to find</param>
+            <returns>Always returns null</returns>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+            <remarks>Any buttons added by name are sought and connected to if possible</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Message.Voice.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Voice.Value">
+            <summary>
+            Gets or sets the current Value
+            </summary>
+            <remarks>A sound is played when the Value becomes True</remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Voice.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the object's Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Voice.Source">
+            <summary>
+            Gets or sets the name of the channel to be the object's Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Voice.VoiceName">
+            <summary>
+            Gets or sets the name of the Voice used to speak the Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Voice.Mute">
+            <summary>
+            Gets or sets whether the voice is muted
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Message.Voice.Range">
+            <summary>
+            Gets or sets the string defining which Priority values are covered
+            <remarks>Strings are comma-separated inclusive ranges or single values</remarks>
+            </summary>
+            <example><ul>
+             <li>"1-4,6,12" covers the numbers 1, 2, 3, 4, 6 and 12</li>
+             <li>"0,6-" covers the numbers 0 and everything greater than or equal to 6</li>
+            </ul></example>
+        </member>
+        <member name="E:KineticaRT.Logic.Message.Voice.PropertyChanged">
+            <summary>
+            Event which fires when the value of a property has changed.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Logic.Message.Voice.ObjectSearch">
+            <summary>
+            Event for requests to find an object by name.
+            </summary>
+        </member>
+    </members>
+</doc>

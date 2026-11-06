@@ -1,0 +1,83 @@
+FUNCTION_BLOCK initialize_Serial_FB
+(************************************************************************************************************************************************
+    Name :    initialize_Serial_IOMgr_FB                    
+                            
+    Description :    One shot initialization prior to run                       
+
+    Dependacy :     
+            HYSTORY
+
+    Rev    Date    Name    Description
+            (YYYY/MM/DD)
+
+    1.0             2001/05/12    M.Morisset    First Release
+
+************************************************************************************************************************************************)    
+
+    status    	:= INITIALIZING;
+    dummy     	:= LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: INITIALIZING');
+    err_code  	:= OK;
+    err_message :=  ' ';
+
+	(* Request the first scan and prepare the next scan *)
+
+    FOR i:= 1 TO MAX_PORTS BY 1 DO
+
+		IF(ser_ports[i].fd <> SPARE) THEN  
+    
+        	ser_ports[i].next_channel    := 1;
+            ser_ports[i].current_channel := 1;
+
+            SEND_REQUEST(i);
+		    ser_ports[i].next_channel := ser_ports[i].next_channel + 1;
+
+		
+
+	 		IF (SEND_REQUEST.ERR_CODE <> OK) THEN 
+				err_code 		:= SEND_REQUEST.ERR_CODE;
+				err_message 	:= 'DACN1_SERIAL_IOMGR: ERROR ON INITIALIZING ' + ser_ports[i].port_description + ' REQ.SENT: ' + FV[ser_ports[i].current_FV_index].request;
+				dummy   		:= LOG_MSG('ErrLog', err_message );
+			END_IF;
+
+		END_IF; 
+
+    END_FOR;
+
+    IF (err_code <> OK) THEN 
+
+        status := ERROR_ON_INITIALIZING;
+        dummy  := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: ERROR ON INITIALIZING');
+
+    ELSE
+
+        status := INITIALIZED;
+        dummy  := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: INITIALIZED');
+
+    END_IF; 
+
+    GOOD_COUNT := 0.0;
+    BAD_COUNT  := 0.0;
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

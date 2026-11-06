@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Panels - KineticaRT Studio</title>
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+		<meta content="FrontPage.Editor.Document" name="ProgId">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator">
+		<LINK href="Manual.css" rel="Stylesheet"></head>
+	<body>
+		<H2>Panels</H2>
+		<H3>Introduction</H3>
+		<P>KineticaRT Studio panels can be added, created and removed from windows using 
+			the <STRONG>Advanced Properties</STRONG> menu, see&nbsp;<A href="ConfiguringWindows.htm">Configuring&nbsp;Windows</A>
+		, and provide a place to display data and accept user input.
+		<P><IMG src="Panels.gif" width="273" height="153"></P>
+		<P>There can be any number of panels in a KineticaRT Window and panels can be 
+			shared between windows.</P>
+		<P>
+			Each panel contains an number of controls for data display and user input.</P>
+		<P>See <A href="ConfiguringControls.htm">Configuring&nbsp;Controls</A>&nbsp;for 
+			details on how to configure the controls in the panels.</P>
+		<P>Each panel may also contain a number of components.&nbsp; These are objects 
+			which do not have a display and do not accept user input.&nbsp; They are 
+			normally placed on the panel because they interact with the controls on the 
+			panel.&nbsp; For example the <STRONG>ButonInterlock </STRONG>component does not 
+			have a display but monitors a group of buttons and when one is pressed, it 
+			releases the others.</P>
+		<P>See <A href="ConfiguringComponents.htm">Configuring&nbsp;Components</A>&nbsp;for 
+			details on how to configure the components on the panels.</P>
+		<P>Note that components which interact with the channels rather than display 
+			components should not be placed on the panels.&nbsp; They should either be in 
+			the channels or declared in a sequence so that if a panel is removed from the 
+			display or&nbsp;placed in more than one window then the component will not also 
+			be removed/duplicated.</P>
+		<H3>Configuring Panels</H3>
+		<P>After added a panel to the Window, it can be configured by right clicking either 
+			on the tabs at the top of the panel or on an empty area of the panel and 
+			selecting <STRONG>Enter Edit Mode,</STRONG> then right clicking again and 
+			selecting <STRONG>Properties.&nbsp;</STRONG> The rest of the options on the 
+			right click menu are for configuring the controls on the panel.</P>
+		<P>This displays the <STRONG>Panel Properties</STRONG> editor as follows:</P>
+		<P><IMG src="PanelPropertiesEditor.gif" width="387" height="244"></P>
+		<UL>
+			<LI>
+				The <STRONG>DllName</STRONG> property is the name of the file used to store the 
+				selected panel.&nbsp; This must be set before you can use the panels right 
+				click <STRONG>Save</STRONG>
+			menu.&nbsp; This name must not contain any spaces.
+			<LI>
+				The <STRONG>Panel </STRONG>
+			property, when expanded, gives access to all of the panels properties.
+			<LI>
+				The <STRONG>Text </STRONG>property specifies the text to appear on the 
+				selection tab at the top of the panel.</LI></UL>
+		<P><FONT color="#000066">The DllName and Text properties are stored in the Window file 
+				and all the properties under Panel are stored in the Panel (DllName) file.</FONT></P>
+		<H3>Panel Properties</H3>
+		<P>Most of the properties under Panel can normally be left at their default values.</P>
+		<P>The color and font properties set the default colors / font for all the controls 
+			in the panel.&nbsp; Setting these values instead of setting the same properties 
+			on each control makes it far easier to change the color scheme / font for 
+			the&nbsp;panel in future however if they are not set then they will inherit the 
+			default values from the Window allowing all panels in the window to be changed 
+			by setting the window color/font properties.
+		</P>
+		<DIV class="footer">
+			KineticaRT Studio User Manual Version 1.2<BR>
+			Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2004. All 
+			rights reserved.
+		</DIV>
+	</body>
+</html>

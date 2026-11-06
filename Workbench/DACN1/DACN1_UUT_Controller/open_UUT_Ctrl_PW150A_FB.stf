@@ -1,0 +1,86 @@
+FUNCTION_BLOCK open_UUT_Ctrl_PW150A_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_PW150A_FB									
+														
+************************************************************************************************************************************************)	
+
+
+		(* SPEED *)
+
+		NL_INDEX 			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.NL_INDEX', '0');
+		NL_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.PW150A.NL_BINDING_SOURCE', '0'));
+		NL_100_RPM 			:= ReadOneRealConfigItemST( 'ConfigurationSettings.PW150A.NL_100_RPM_CONSTANT', '0');
+		NL_100_FREQ 		:= ReadOneRealConfigItemST( 'ConfigurationSettings.PW150A.NL_100_FREQ_CONSTANT', '0');
+
+		NH_INDEX 			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.NH_INDEX', '0');
+		NH_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.PW150A.NH_BINDING_SOURCE', '0'));
+		NH_100_RPM 			:= ReadOneRealConfigItemST( 'ConfigurationSettings.PW150A.NH_100_RPM_CONSTANT', '0');
+		NH_100_FREQ 		:= ReadOneRealConfigItemST( 'ConfigurationSettings.PW150A.NH_100_FREQ_CONSTANT', '0');
+
+		NPT_INDEX 			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.NPT_INDEX', '0');
+		NPT_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.PW150A.NPT_BINDING_SOURCE', '0'));
+		NPT_100_RPM 		:= ReadOneRealConfigItemST( 'ConfigurationSettings.PW150A.NPT_100_RPM_CONSTANT', '0');
+		NPT_100_FREQ 		:= ReadOneRealConfigItemST( 'ConfigurationSettings.PW150A.NPT_100_FREQ_CONSTANT', '0');
+
+		(* ITT ARINC INDEX *)
+
+		ITT_ARINC_INDEX 		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.ITT_ARINC_INDEX', '0');
+
+		(* T_INLET *)
+		T_INLET_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.PW150A.T_INLET_PROBE_BINDING_SOURCE', '0'));
+		T_INLET_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_INLET_NUMBER_PROBE', '0');
+
+		T_INLET_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_INLET_PROBE_INDEX1', '0');
+		T_INLET_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_INLET_PROBE_INDEX2', '0');
+		T_INLET_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_INLET_PROBE_INDEX3', '0');
+		T_INLET_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_INLET_PROBE_INDEX4', '0');
+		T_INLET_PROBE_INDEX[5] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_INLET_PROBE_INDEX5', '0');
+
+		(* TT2.5 *)
+		T_T25_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.PW150A.T_T25_PROBE_BINDING_SOURCE', '0'));
+		T_T25_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T25_NUMBER_PROBE', '0');
+
+		T_T25_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T25_PROBE_INDEX1', '0');
+		T_T25_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T25_PROBE_INDEX2', '0');
+		T_T25_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T25_PROBE_INDEX3', '0');
+
+		(* TT3 *)
+		T_T3_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.PW150A.T_T3_PROBE_BINDING_SOURCE', '0'));
+		T_T3_NUMBER_PROBE 		:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T3_NUMBER_PROBE', '0');
+
+		T_T3_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T3_PROBE_INDEX1', '0');
+		T_T3_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T3_PROBE_INDEX2', '0');
+		T_T3_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_T3_PROBE_INDEX3', '0');
+
+		(* T_EGT *)
+		T_EGT_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_BINDING_SOURCE', '0'));
+		T_EGT_NUMBER_PROBE   := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_NUMBER_PROBE', '0');
+
+		T_EGT_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX1', '0');
+		T_EGT_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX2', '0');
+		T_EGT_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX3', '0');
+		T_EGT_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX4', '0');
+		T_EGT_PROBE_INDEX[5] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX5', '0');
+		T_EGT_PROBE_INDEX[6] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX6', '0');
+		T_EGT_PROBE_INDEX[7] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX7', '0');
+		T_EGT_PROBE_INDEX[8] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX8', '0');
+		T_EGT_PROBE_INDEX[9] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX9', '0');
+		T_EGT_PROBE_INDEX[10] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX10', '0');
+		T_EGT_PROBE_INDEX[11] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX11', '0');
+		T_EGT_PROBE_INDEX[12] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX12', '0');
+		T_EGT_PROBE_INDEX[13] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX13', '0');
+		T_EGT_PROBE_INDEX[14] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX14', '0');
+		T_EGT_PROBE_INDEX[15] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX15', '0');
+		T_EGT_PROBE_INDEX[16] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX16', '0');
+		T_EGT_PROBE_INDEX[17] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX17', '0');
+		T_EGT_PROBE_INDEX[18] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX18', '0');
+		T_EGT_PROBE_INDEX[19] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX19', '0');
+		T_EGT_PROBE_INDEX[20] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX20', '0');
+		T_EGT_PROBE_INDEX[21] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX21', '0');
+		T_EGT_PROBE_INDEX[22] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX22', '0');
+		T_EGT_PROBE_INDEX[23] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX23', '0');
+		T_EGT_PROBE_INDEX[24] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.PW150A.T_EGT_PROBE_INDEX24', '0');
+
+
+
+END_FUNCTION_BLOCK

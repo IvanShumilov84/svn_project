@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Logic.Filters</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Logic.Filters.HighPass">
+            <summary>
+            Performs a High pass first order linear filter on values it is set to or on values from a Source channel.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Filters.LowPass">
+            <summary>
+            Performs a low pass first order linear filter on values it is set to or on values from a Source channel.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Logic.Filters.LowPass.currentValue">
+            <summary>Current value of Source channel.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.LowPass.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.LowPass.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.LowPass.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.LowPass.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.LowPass.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.LowPass.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.LowPass.SetValue(System.Double)">
+            <summary>
+            Called to set the current value of the object to a new value.
+            </summary>
+            <param name="newVal">The new value of the object.</param>
+        </member>
+        <member name="P:KineticaRT.Logic.Filters.LowPass.Source">
+            <summary>
+            Gets or sets the name of the source channel.
+            </summary>
+            <value>The name of the source channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a source channel.
+            <para>The channel will not connect to the source until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Filters.LowPass.Destination">
+            <summary>
+            Gets or sets the name of the destination channel.
+            </summary>
+            <value>The name of the destination channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a destination channel.
+            <para>The channel will not connect to the destination until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Filters.LowPass.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Filters.LowPass.T">
+            <summary>
+            Gets or sets the time constant T.
+            </summary>
+            <value>The value of T.</value>
+            <remarks>A typical value for T is 1.0 seconds.
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.HighPass.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.HighPass.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.HighPass.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.HighPass.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Filters.HighPass.SetValue(System.Double)">
+            <summary>
+            Called to set the current value of the object to a new value.
+            </summary>
+            <param name="newVal">The new value of the object.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,36 @@
+FUNCTION_BLOCK xfer_coeff_FB
+(* New Code for calibration Nadia S. 2002/10/21*)
+
+	sub_status := Coeff_Xfer_Failed;
+
+	FV_EXTRACT(INSERT(ANY_TO_STRING(In_TM_Calib.Index), In_TM_Calib.Prefix,1));
+
+(* TODO: le for ici devrait être identique au FV Size *)
+	FOR idx := 1 to 216(*100*) DO 	(* Max FV is 50*)
+		IF FV[idx].FV_type = FV_EXTRACT.FV_TYPE AND FV[idx].FV_index = FV_EXTRACT.FV_INDEX THEN
+			Write_Coeff(	rdata_base,
+					FV[idx].data_handle,
+					In_TM_Calib.degree,
+					In_TM_Calib.coeffs[1],
+					In_TM_Calib.coeffs[2],
+					In_TM_Calib.coeffs[3],
+					In_TM_Calib.coeffs[4],
+					In_TM_Calib.coeffs[5],
+					In_TM_Calib.coeffs[6]	);
+			sub_status := Coeff_XFERED;
+			idx := 216;
+		END_IF;
+	END_FOR;
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

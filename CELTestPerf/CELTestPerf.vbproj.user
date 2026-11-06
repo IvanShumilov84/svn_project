@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\My Projects\CELDAS 200\CELTestPerf\CELTestPerf.exe</StartProgram>
+    <StartWorkingDirectory>C:\My Projects\CELDAS 200\CELTestPerf\</StartWorkingDirectory>
+    <StartArguments>/master /simulation /debug /password=13015 /ksp="C:\My Projects\CELDAS 200\CELTestPerf\CelTestPerf.ksp"  /config="C:\My Projects\13015 THY\CustomPrj\Config\Prj13015_HMI.exe.config"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>/simulation /master /password=11894 /ksp=Prj12917_HMI.ksp /engine=TSCP700-4E /config=Prj12917_HMI.exe.config</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <StartProgram>C:\My Projects\CELDAS 200\CELTestPerf\CELTestPerf.exe</StartProgram>
+    <StartWorkingDirectory>C:\My Projects\CELDAS 200\CELTestPerf\</StartWorkingDirectory>
+    <StartArguments>/simulation /master /password=12958 /config=CELTestPerf.exe.config
+</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\My Projects\CELDAS 200\CELTestPerf\CELTestPerf.exe</StartProgram>
+    <StartArguments>
+    </StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\My Projects\CELDAS 200\CELTestPerf\CELTestPerf.exe</StartProgram>
+    <StartWorkingDirectory>C:\My Projects\CELDAS 200\CELTestPerf\</StartWorkingDirectory>
+  </PropertyGroup>
+</Project>

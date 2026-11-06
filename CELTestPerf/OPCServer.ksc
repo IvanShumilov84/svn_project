@@ -1,0 +1,28 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Enabled>true</Enabled>
+<AlternateNames xsi:type="xsd:anyType" xsi:null="1"/>
+<Client_IsaGRAF href="#ref-5"/>
+<Group_Fast href="#ref-6"/>
+<Now href="#ref-7"/>
+</a1:ChannelCollection>
+<a3:Client id="ref-5" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-8">Client_IsaGRAF</Name>
+<Server id="ref-9">ISaGRAF.StandAlone.OPC.DA30.3</Server>
+<Machine xsi:type="xsd:anyType" xsi:null="1"/>
+</a3:Client>
+<a3:Group id="ref-6" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-10">Group_Fast</Name>
+<Client id="ref-11">Client_IsaGRAF</Client>
+<UpdateRate>0.05</UpdateRate>
+<DeadBand>0</DeadBand>
+</a3:Group>
+<a4:Now id="ref-7" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Channels/KineticaRT.Logic.Channels%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Format id="ref-12">G</Format>
+<Name id="ref-13">Now</Name>
+<Description id="ref-14"></Description>
+<ToolTip href="#ref-14"/>
+</a4:Now>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

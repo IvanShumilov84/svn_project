@@ -1,0 +1,52 @@
+FUNCTION_BLOCK Calib_FB
+(************************************************************************************************************************************************
+	Name :		Calib_FB									
+														
+	Description :	Take the mean value of the selected FV in calibration 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2002/10/10		N. Sangiovanni	First Release
+
+************************************************************************************************************************************************)	
+
+	IF (In_TM_Calib.Prefix = 'T') THEN
+
+		Cal_Raw := T[In_TM_Calib.Index].mean_value;
+ 
+	ELSIF (In_TM_Calib.Prefix = 'P') THEN
+
+		Cal_Raw := P[In_TM_Calib.Index].mean_value; 
+
+	ELSE
+
+		Cal_Raw:= 123456.789;
+	
+	END_IF;
+	
+	sub_status := CALIBRATING;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

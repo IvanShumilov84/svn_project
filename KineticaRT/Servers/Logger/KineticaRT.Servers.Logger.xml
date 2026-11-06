@@ -1,0 +1,1132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Servers.Logger</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Servers.Logging.BooleanChannel">
+            <summary>
+            Logging channel for recording / playback of numeric data.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.ILoggerChannel">
+            <summary>
+            Provides access to standard OPC parameters for all OPC item classes.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.ILoggerChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.ILoggerChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.ILoggerChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.ILoggerChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.ILoggerChannel.LowTriggered">
+            <summary>
+            Gets the low triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is below the LowTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.ILoggerChannel.HighTriggered">
+            <summary>
+            Gets the High triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is above the HighTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.BooleanChannel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.BooleanChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.BooleanChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.BooleanChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.BooleanChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.BooleanChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.BooleanChannel.KineticaRT#Servers#Logging#ILoggerChannel#LowTriggered">
+            <summary>
+            Gets the low triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is below the LowTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.BooleanChannel.KineticaRT#Servers#Logging#ILoggerChannel#HighTriggered">
+            <summary>
+            Gets the High triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is above the HighTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="E:KineticaRT.Servers.Logging.BooleanChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.BooleanChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.BooleanChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.BooleanChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.BooleanChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.CsvFile">
+            <summary>
+            Records data to a CSV format file and replays it.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.Logger">
+            <summary>
+            Base class for all logger classes.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Logger.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Logger.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Logger.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Logger.AddChannel(KineticaRT.Servers.Logging.ILoggerChannel)">
+            <summary>
+            Adds a channel to the channel list for recording / playback.
+            </summary>
+            <param name="channel">The channel to add.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Logger.RemoveChannel(KineticaRT.Servers.Logging.ILoggerChannel)">
+            <summary>
+            Removes a channel from the list of channels for recording / playback
+            </summary>
+            <param name="channel">The channel to remove.</param>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.Logger.CurrentMode">
+            <summary>
+            The current Mode of this logger
+            </summary>
+            <value>
+            A Mode representing the current state.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.Logger.Mode">
+            <summary>
+            The current state of the recorder.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Logging.Logger.Mode.Stop">
+            <summary>
+            The recorder is currently stopped.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Logging.Logger.Mode.Play">
+            <summary>
+            The recorder is currently replaying data.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Logging.Logger.Mode.Record">
+            <summary>
+            The recorder is currently recording data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.#ctor">
+            <summary>
+            Constructor for the class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.Initialise">
+            <summary>
+            Called during construction including ISerialisable construction.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.Dispose">
+            <summary>
+            Releases all resources that are in use.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.FindObject(System.String)">
+            <summary>
+            Returns the named child object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.AddChannel(KineticaRT.Servers.Logging.ILoggerChannel)">
+            <summary>
+            Adds a channel to the channel list for recording / playback.
+            </summary>
+            <param name="channel">The channel to add.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.CsvFile.RemoveChannel(KineticaRT.Servers.Logging.ILoggerChannel)">
+            <summary>
+            Removes a channel from the list of channels for recording / playback
+            </summary>
+            <param name="channel">The channel to remove.</param>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.LatchedTrigger">
+            <summary>
+            Gets or sets if the trigger will stay set or release itself (return to false) automatically after being set to true.
+            </summary>
+            <value>If true then the trigger will stay set to true until manualy set back to false.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.PreTriggerPeriod">
+            <summary>
+            Period of time before the trigger is set for which to record data.
+            </summary>
+            <value>Int32 giving the time period in seconds.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.PostTriggerPeriod">
+            <summary>
+            Period of time after the trigger is cleared for which to record data.
+            </summary>
+            <value>Int32 giving the time period in seconds.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Triggered">
+            <summary>
+            Gets or sets if the recording has been triggered.  Recording will only take place when in the record state and the Triggered is true or during the pre and post trigger periods.
+            </summary>
+            <value>Boolean value, if true then recording will occur and if false no recording will take place except in the pre and post trigger periods.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.CurrentMode">
+            <summary>
+            The current Mode of this logger
+            </summary>
+            <value>
+            A Mode representing the current state.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.FileName">
+            <summary>
+            The name, and optional path, of the file to record to or read from.
+            </summary>
+            <value>
+            A string representing the name, and optional path, of the file to record to or read from.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.RecordSpeed">
+            <summary>
+            Indicates how fast to record the data in Hz.
+            </summary>
+            <value>
+            A float representing the number of records per second to be written to the file during recording.
+            0 = single step.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.MaxFileSize">
+            <summary>
+            Recording will stop just before the file reaches this size.  This is for protection against accidentally using excessive disk space.
+            </summary>
+            <value>
+            An Int64 representing the maximum number of MBytes to be written to the file before recording terminates automatically.
+            A value of zero indicates no limit.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Record">
+            <summary>
+            Name of Boolean channel, the logger will record while this is set true.
+            </summary>
+            <value>
+            A string representing the name, of the channel controling recording.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Play">
+            <summary>
+            Name of Boolean channel, the logger will play while this is set true.
+            </summary>
+            <value>
+            A string representing the name of the channel controlling playback.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.PlayReverse">
+            <summary>
+            Name of Boolean channel, the logger will play while this is set true.
+            </summary>
+            <value>
+            A string representing the name of the channel controlling playback.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Pause">
+            <summary>
+            Optional - Name of Boolean channel, the logger will pause recording/playback while this is set true.
+            </summary>
+            <value>
+            A string representing the name of the channel controlling pause of playback.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Comment">
+            <summary>
+            Optional - Name of channel for comments, the logger will write new values in this channel to the file if logging.
+            </summary>
+            <value>
+            A string representing the name of the channel containing comments.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Step">
+            <summary>
+            Optional - Name of Boolean channel, the logger will record/play a single record when this is set true and RecordSpeed is set to 0.
+            </summary>
+            <value>
+            A string representing the name of the channel that will cause a record to be written when recording.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Stop">
+            <summary>
+            Name of Boolean channel, the logger will stop playing or recording when this is set true.
+            </summary>
+            <value>
+            A string representing the name of the channel controling the end of record or playback.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.PlaySpeed">
+            <summary>
+            Name of a numeric channel, the logger will replay data at the speed indicated by this channel.
+            </summary>
+            <value>
+            A string representing the name of the channel controling the playback speed.
+            A value of 1 indicates real time, 2 twice real time etc.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.Time">
+            <summary>
+            During playback this contains the record time of the current data.
+            </summary>
+            <value>
+            A DateTime representing the recording time of the current data record.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.CsvFile.RecordList">
+            <summary>
+            Names of channels to be recorded.
+            </summary>
+            <value>
+            A string giving the names of the channels to be recorded.
+            </value>
+            <remarks>Seperate channel names by commas (","). They will be recorded in the same order they appear in the string.</remarks>
+        </member>
+        <member name="T:KineticaRT.Servers.Logger.BooleanChannel">
+            <summary>
+            Logging channel for recording / playback of numeric data.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Logger.ILoggerChannel">
+            <summary>
+            Provides access to standard OPC parameters for all OPC item classes.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.ILoggerChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.ILoggerChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.BooleanChannel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.BooleanChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.BooleanChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.BooleanChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.BooleanChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.BooleanChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.Logger.BooleanChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.BooleanChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.BooleanChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.BooleanChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.BooleanChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.Design.ItemEditorControl">
+            <summary>
+            Editor control for a <paramref name="Item"/>.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Logging.Design.ItemEditorControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Design.ItemEditorControl.#ctor">
+            <summary>
+            Initialises an instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Design.ItemEditorControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Design.ItemEditorControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Design.ItemEditorControl.OnDone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.Design.ItemEditorControl.Item">
+            <summary>
+            Sets the <paramref name="Item"/> to be edited.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.Logging.Design.ItemEditorControl.Done">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.Design.ItemEditorControl.DoneEventHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.Design.ItemEditor">
+            <summary>
+            UITypeEditor for a <paramref name="Item"/> .
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Design.ItemEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits the specified <paramref name="Item"/>.
+            </summary>
+            <param name="context"></param>
+            <param name="provider"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.Design.ItemEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets the style of the editor.
+            </summary>
+            <param name="context"></param>
+            <returns>UITypeEditorEditStyle specifying the style.</returns>
+        </member>
+        <member name="T:KineticaRT.Servers.Logger.Logger">
+            <summary>
+            Base class for all logger classes.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.Logger.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.Logger.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.Logger.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.Logger.AddChannel(KineticaRT.Servers.Logger.ILoggerChannel)">
+            <summary>
+            Adds a channel to the channel list for recording / playback.
+            </summary>
+            <param name="channel">The channel to add.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.Logger.RemoveChannel(KineticaRT.Servers.Logger.ILoggerChannel)">
+            <summary>
+            Removes a channel from the list of channels for recording / playback
+            </summary>
+            <param name="channel">The channel to remove.</param>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.Logger.CurrentMode">
+            <summary>
+            The current Mode of this logger
+            </summary>
+            <value>
+            A Mode representing the current state.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logger.Logger.Mode">
+            <summary>
+            The current state of the recorder.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Logger.Logger.Mode.Stop">
+            <summary>
+            The recorder is currently stopped.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Logger.Logger.Mode.Play">
+            <summary>
+            The recorder is currently replaying data.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.Logger.Logger.Mode.Record">
+            <summary>
+            The recorder is currently recording data.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.Logger.NumericChannel">
+            <summary>
+            Logging channel for recording / playback of numeric data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericChannel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.Logger.NumericChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logger.NumericThresholdChannel">
+            <summary>
+            Logging channel for recording / playback of numeric data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericThresholdChannel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericThresholdChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericThresholdChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericThresholdChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericThresholdChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.NumericThresholdChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.Logger.NumericThresholdChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericThresholdChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericThresholdChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericThresholdChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.NumericThresholdChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logger.TextChannel">
+            <summary>
+            Logging channel for recording / playback of text data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.TextChannel.#ctor">
+            <summary>
+            Constructor for the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.TextChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.TextChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.TextChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.TextChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logger.TextChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.Logger.TextChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.TextChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.TextChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.TextChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logger.TextChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.NumericChannel">
+            <summary>
+            Logging channel for recording / playback of numeric data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericChannel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.Logging.NumericChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.KineticaRT#Servers#Logging#ILoggerChannel#LowTriggered">
+            <summary>
+            Gets the low triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is below the LowTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.KineticaRT#Servers#Logging#ILoggerChannel#HighTriggered">
+            <summary>
+            Gets the High triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is above the HighTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.LowTrigger">
+            <summary>
+            Gets or sets the Low trigger value of the channel.
+            </summary>
+            <value>Double value for the Low trigger value of the channel.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Set to System.Double.NegativeInfinity if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.HighTrigger">
+            <summary>
+            Gets or sets the High trigger value of the channel.
+            </summary>
+            <value>Double value for the High trigger value of the channel.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Set to System.Double.PositiveInfinity if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.NumericThresholdChannel">
+            <summary>
+            Logging channel for recording / playback of numeric data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericThresholdChannel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericThresholdChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericThresholdChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericThresholdChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericThresholdChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.NumericThresholdChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.Logging.NumericThresholdChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.KineticaRT#Servers#Logging#ILoggerChannel#LowTriggered">
+            <summary>
+            Gets the low triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is below the LowTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.KineticaRT#Servers#Logging#ILoggerChannel#HighTriggered">
+            <summary>
+            Gets the High triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is above the HighTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.LowTrigger">
+            <summary>
+            Gets or sets the Low trigger value of the channel.
+            </summary>
+            <value>Double value for the Low trigger value of the channel.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Set to System.Double.NegativeInfinity if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.HighTrigger">
+            <summary>
+            Gets or sets the High trigger value of the channel.
+            </summary>
+            <value>Double value for the High trigger value of the channel.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Set to System.Double.PositiveInfinity if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.NumericThresholdChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+        <member name="T:KineticaRT.Servers.Logging.TextChannel">
+            <summary>
+            Logging channel for recording / playback of text data.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.TextChannel.#ctor">
+            <summary>
+            Constructor for the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.TextChannel.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.TextChannel.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.TextChannel.OnEnabledChanged">
+            <summary>Called when the value of the Value property changes.</summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.TextChannel.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.Logging.TextChannel.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.TextChannel.KineticaRT#Servers#Logging#ILoggerChannel#LowTriggered">
+            <summary>
+            Gets the low triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is below the LowTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.TextChannel.KineticaRT#Servers#Logging#ILoggerChannel#HighTriggered">
+            <summary>
+            Gets the High triggered value of the channel.
+            </summary>
+            <value>Boolean value indicating if the current value is above the HighTrigger value.</value>
+            <remarks>
+            This value is used for triggering the logging when the associated logger is in Record mode.
+            <para>Return false if not required.</para>
+            </remarks>
+        </member>
+        <member name="E:KineticaRT.Servers.Logging.TextChannel.EnabledChanged">
+            <summary>Occurs when the value of the Value property changes.</summary>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.TextChannel.Enabled">
+            <summary>Gets or sets the Enabled property.</summary>
+            <value>true to enable or false to disable.</value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.TextChannel.Index">
+            <summary>
+            Indicates the ordering of the channels in the data file.
+            </summary>
+            <value>
+            -x - place in header in reverse numerical order,
+            0  - don't use,
+            +x - place in each record in numerical order.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.TextChannel.Logger">
+            <summary>
+            The name of the Logger.CsvFile component which records/replays data from/to this channel.
+            </summary>
+            <value>
+            A string representing the name of the logger component to use.
+            </value>
+        </member>
+        <member name="P:KineticaRT.Servers.Logging.TextChannel.Source">
+            <summary>
+            The name of the channel to be logged/replayed.
+            </summary>
+            <value>
+            A string representing the name of the channel to be logged/replayed.
+            </value>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>SharedItems</name>
+  </assembly>
+  <members>
+    <member name="R:Project">
+      <summary>
+        KineticaRT Components - For live data display.
+      </summary>
+    </member>
+    <member name="N:Interop.SpeechLib">
+      <exclude />
+    </member>
+    <member name="N:KineticaRT.Studio">
+      <exclude />
+    </member>
+    <member name="N:KineticaRT.Logic.Message">
+      <summary>
+        KineticaRT components for handling information messages.
+      </summary>
+    </member>
+    <member name="N:KineticaRT.Channels">
+      <exclude />
+    </member>
+    <member name="N:KineticaRT.Logic.Channels">
+      <summary>
+        More complex KineticaRT channel components.
+      </summary>
+    </member>
+    <member name="N:KineticaRT.Logic.Expressions">
+      <summary>
+        KineticaRT calculation channel components.
+      </summary>
+    </member>
+    <member name="N:KineticaRT.Logic.Filters">
+      <summary>
+        KineticaRT filter channel components.
+      </summary>
+    </member>
+    <member name="N:KineticaRT.Servers.OpcClient">
+      <summary>
+        KineticaRT components for communication with OPC servers.
+      </summary>
+    </member>
+    <member name="N:KineticaRT.Servers.Simulate">
+      <summary>
+        KineticaRT channels that simulate live data.
+      </summary>
+    </member>
+    <member name="N:KineticaRT">
+      <summary>
+        Root namespace for all KineticaRT components.
+      </summary>
+    </member>
+    <member name="N:KineticaRT.Controls">
+      <summary>
+        Windows Forms Controls for display of live data.
+      </summary>
+    </member>
+    <member name="N:KineticaRT.Values">
+      <summary>
+        Classes used within KineticaRT as values of channels and Controls.
+      </summary>
+    </member>
+  </members>
+</doc>

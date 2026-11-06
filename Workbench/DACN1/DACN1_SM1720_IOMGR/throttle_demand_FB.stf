@@ -1,0 +1,73 @@
+FUNCTION_BLOCK throttle_demand_FB
+
+(* Transforme la position du levier de pourcentage a degre *)
+lever_angle(lever_pcnt, throttle_info.lever_slope,  throttle_info.lever_offset);
+
+IF (throttle_info.Estop_enable = TRUE) AND (throttle_info.Estop_cmd = TRUE) AND (throttle_info.mode = ACTIVE_MODE) THEN 
+		
+	IF(lever_angle.value > throttle_info.Estop_angle)THEN
+		lever_angle_demand := throttle_info.Estop_angle;
+	ELSE
+		lever_angle_demand := lever_angle.value; (* Permet d'abaisser la vitesse du moteur en dessous du Estop Angle *)
+	END_IF;
+
+	E_STOP_Trip_Latch(	throttle_info.Estop_cmd, FALSE);
+
+ELSE
+
+	lever_angle_demand := lever_angle.value;
+
+
+	IF( throttle_info.mode = ACTIVE_MODE )THEN
+		IF( lever_angle_demand > throttle_info.Max_Stop_Point.Position_degree AND throttle_info.Max_Stop_Point.Enabled AND throttle_info.Max_Stop_Point.Capture_done )THEN
+	
+			lever_angle_demand := throttle_info.Max_Stop_Point.Position_degree; 
+
+		ELSIF( lever_angle_demand < throttle_info.Min_Stop_Point.Position_degree AND throttle_info.Min_Stop_Point.Enabled AND throttle_info.Min_Stop_Point.Capture_done ) THEN
+
+			lever_angle_demand := throttle_info.Min_Stop_Point.Position_degree;
+
+		END_IF;
+	END_IF;
+
+	IF ( E_STOP_Trip_Latch.Q1 = TRUE ) THEN
+
+		(* Force l'usager a abaisser le levier a la position securitaire. Et en cas de reset trips le moteur restera a idle. *)
+		
+		IF ( lever_angle_demand > throttle_info.Estop_angle ) THEN
+
+			lever_angle_demand := throttle_info.Estop_angle;
+
+		ELSE
+
+			E_STOP_Trip_Latch(FALSE, TRUE); (* Reset Latch *)
+
+		END_IF;
+
+	END_IF; 
+
+
+END_IF; 
+
+
+
+
+
+(* Transforme la position (degre) du levier en count/pas de moteur *)
+actuator_position(lever_angle_demand, throttle_info.actuator_slope,  throttle_info.actuator_offset);
+
+(* retourne la nouvelle postion commande en count *)
+actuator_position_demand := ANY_TO_DINT(actuator_position.value);
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,3623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.32" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">e:\program files\microsoft fxcop 1.32 beta 1\Xml\FxCopReport.Xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>100</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>10</RuleExceptionsThreshold>
+  <Spelling Locale="en-us" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/bin/Debug/DemoSequence.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/DialPanel.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Logic.Channels.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Logic.Expressions.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Logic.Message.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Servers.Logger.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Servers.OpcClient.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Studio.Controls.Linear.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.32">
+  <Namespaces>
+   <Namespace Name="KineticaRT.Logic.Expressions">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2005-04-27 15:22:02Z">
+      <Issue>
+       <Item>KineticaRT.Logic.Expressions</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="KineticaRT.Panel">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2005-04-27 15:22:02Z">
+      <Issue>
+       <Item>KineticaRT.Panel</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="KineticaRT.Servers.OpcClient">
+    <Messages>
+     <Message Id="Opc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-04-22 15:54:10Z">
+      <Issue Name="Namespace">
+       <Item>Opc</Item>
+       <Item>KineticaRT.Servers.OpcClient</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="KineticaRT.Servers.OpcClient.Design">
+    <Messages>
+     <Message Id="Opc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-04-22 15:54:10Z">
+      <Issue Name="Namespace">
+       <Item>Opc</Item>
+       <Item>KineticaRT.Servers.OpcClient.Design</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="KineticaRT.Studio.Controls">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2005-04-08 18:27:00Z">
+      <Issue>
+       <Item>KineticaRT.Studio.Controls</Item>
+      </Issue>
+      <Notes>
+       <User Name="Nigel">
+        <Note Id="2" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="StudioDemonstration">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2005-04-27 15:22:02Z">
+      <Issue>
+       <Item>StudioDemonstration</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/bin/Debug/DemoSequence.dll">
+    <Modules>
+     <Module Name="demosequence.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldDeclareMinimumSecurity" Category="Microsoft.Usage" CheckId="CA2209" Created="2005-04-27 15:22:02Z">
+        <Issue>
+         <Item>DemoSequence</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoStrongName">
+         <Item>DemoSequence</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Created="2005-04-27 15:22:02Z">
+        <Issue>
+         <Item>DemoSequence</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttr">
+         <Item>DemoSequence</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttribute" Level="CriticalError">
+         <Item>DemoSequence</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="StudioDemonstration">
+        <Types>
+         <Type Name="DemoSequence">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>DemoSequence..ctor()</Item>
+               <Item>excelApp</Item>
+               <Item>Excel.Application</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>DemoSequence..ctor()</Item>
+               <Item>excelWorkbook</Item>
+               <Item>Excel.Workbook</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Connect():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String,System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>DemoSequence.Connect():Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String, String):DialogResult</Item>
+               <Item>Connecting - missing channels</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>DemoSequence.Connect():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'this.openExcel'</Item>
+               <Item>DemoSequence.Connect():Void</Item>
+              </Issue>
+              <Issue>
+               <Item>'this.readDatabase'</Item>
+               <Item>DemoSequence.Connect():Void</Item>
+              </Issue>
+              <Issue>
+               <Item>'this.showControls'</Item>
+               <Item>DemoSequence.Connect():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OnOpenExcel(KineticaRT.Channels.IChannel,KineticaRT.Values.Value):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>DemoSequence.OnOpenExcel(IChannel, Value):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>DemoSequence.OnOpenExcel(IChannel, Value):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OnReadDatabase(KineticaRT.Channels.IChannel,KineticaRT.Values.Value):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>DemoSequence.OnReadDatabase(IChannel, Value):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/DialPanel.dll">
+    <Modules>
+     <Module Name="dialpanel.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldDeclareMinimumSecurity" Category="Microsoft.Usage" CheckId="CA2209" Created="2005-04-27 15:22:02Z">
+        <Issue>
+         <Item>DialPanel</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoStrongName">
+         <Item>DialPanel</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Created="2005-04-27 15:22:02Z">
+        <Issue>
+         <Item>DialPanel</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttr">
+         <Item>DialPanel</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttribute" Level="CriticalError">
+         <Item>DialPanel</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="KineticaRT.Panel">
+        <Types>
+         <Type Name="DialPanel">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Panel.DialPanel</Item>
+             <Item> System.Windows.Forms.UserControl, System.Windows.Forms.ContainerControl, System.Windows.Forms.ScrollableControl, System.Windows.Forms.Control, System.ComponentModel.Component</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="InitializePanel():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>DialPanel.InitializePanel():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>New channels can be drag and dropped either from the Explorer window or from the numeric channel selector available from the controls window.</Item>
+              </Issue>
+              <Issue>
+               <Item>DialPanel.InitializePanel():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>The values and colors for the threshold marks and fill are also automatically configured from the values in the connected channel if the channel has thresholds.  If the channel does not have thresholds then the marks and fill are disabled.</Item>
+              </Issue>
+              <Issue>
+               <Item>DialPanel.InitializePanel():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>These Dials are connected to numeric channels.  The scales are adjusted automatically to match the channels Minimum and Maximum properties. The channel description, toolltip and units are also taken from the properties off the connected channel and updated when new channels are selected through drag and drop.</Item>
+              </Issue>
+             </Message>
+             <Message Id="toolltip" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>toolltip</Item>
+               <Item>These Dials are connected to numeric channels.  The scales are adjusted automatically to match the channels Minimum and Maximum properties. The channel description, toolltip and units are also taken from the properties off the connected channel and updated when new channels are selected through drag and drop.</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.dll">
+    <Modules>
+     <Module Name="kineticart.dll">
+      <Namespaces>
+       <Namespace Name="KineticaRT">
+        <Types>
+         <Type Name="ChannelCollection">
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="CallBaseClassMethodsOnISerializableTypes" Category="Microsoft.Usage" CheckId="CA2236" Created="2005-04-22 09:30:27Z">
+              <Issue>
+               <Item>ChannelCollection..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ObjectSearch" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-22 09:30:27Z">
+              <Issue Name="First">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Return">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="CallBaseClassMethodsOnISerializableTypes" Category="Microsoft.Usage" CheckId="CA2236" Created="2005-04-22 11:53:00Z">
+              <Issue>
+               <Item>ChannelCollection.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Collection">
+          <Messages>
+           <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Status="Excluded" Created="2005-04-22 09:30:27Z">
+            <Issue>
+             <Item>KineticaRT.Collection</Item>
+             <Item>Collection</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="IConnectable">
+          <Members>
+           <Member Name="ObjectSearch" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-22 09:30:27Z">
+              <Issue Name="First">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Return">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Object">
+          <Messages>
+           <Message TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Status="Excluded" Created="2005-04-22 09:30:27Z">
+            <Issue Name="Type">
+             <Item>Object</Item>
+             <Item>Object</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="ObjectSearch" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-22 09:30:27Z">
+              <Issue Name="First">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Return">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Services">
+          <Messages>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Excluded" Created="2005-04-22 09:30:27Z">
+            <Issue>
+             <Item>Services</Item>
+             <Item>System.Web.Services.Protocols</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="Updater">
+          <Members>
+           <Member Name="Update" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-22 09:30:27Z">
+              <Issue Name="First">
+               <Item>UpdateEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>UpdateEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="KineticaRT.Channels">
+        <Types>
+         <Type Name="Channel">
+          <Members>
+           <Member Name="ValueChanged" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-22 09:30:27Z">
+              <Issue Name="First">
+               <Item>ValueChangedEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>ValueChangedEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="IChannel">
+          <Members>
+           <Member Name="ValueChanged" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-22 09:30:27Z">
+              <Issue Name="First">
+               <Item>ValueChangedEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>ValueChangedEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NumericThresholdChannel">
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)" TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808" Status="Excluded" Created="2005-04-22 09:30:27Z">
+              <Issue>
+               <Item>NumericThresholdChannel..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Color</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericThresholdChannel..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Color</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericThresholdChannel..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Color</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericThresholdChannel..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Color</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericThresholdChannel..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Color</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="KineticaRT.Values">
+        <Types>
+         <Type Name="Boolean">
+          <Messages>
+           <Message TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Status="Excluded" Created="2005-04-22 09:30:27Z">
+            <Issue Name="Type">
+             <Item>Boolean</Item>
+             <Item>Boolean</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="Double">
+          <Messages>
+           <Message TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Status="Excluded" Created="2005-04-22 09:30:27Z">
+            <Issue Name="Type">
+             <Item>Double</Item>
+             <Item>Double</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="Text">
+          <Messages>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Excluded" Created="2005-04-22 09:30:27Z">
+            <Issue>
+             <Item>Text</Item>
+             <Item>System.Text.RegularExpressions</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="Values">
+          <Messages>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Excluded" Created="2005-04-22 09:30:27Z">
+            <Issue>
+             <Item>Values</Item>
+             <Item>KineticaRT.Values</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Logic.Channels.dll">
+    <Modules>
+     <Module Name="kineticart.logic.channels.dll">
+      <Messages>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttr">
+         <Item>KineticaRT.Logic.Channels</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttribute" Level="CriticalError">
+         <Item>KineticaRT.Logic.Channels</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="KineticaRT.Logic.Channels">
+        <Types>
+         <Type Name="BooleanConstant">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.BooleanConstant</Item>
+             <Item> KineticaRT.Channels.BooleanChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>BooleanConstant</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanConstant..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Double.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanConstant..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Double.Parse(System.String)</Item>
+               <Item>System.Double.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanConstant..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanConstant.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanConstant.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>BooleanConstant.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="BooleanExpression">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.BooleanExpression</Item>
+             <Item> KineticaRT.Channels.BooleanChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>BooleanExpression</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanExpression..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>BooleanExpression.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="BooleanLink">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.BooleanLink</Item>
+             <Item> KineticaRT.Channels.BooleanChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>BooleanLink</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanLink..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>BooleanLink..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanLink..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanLink.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanLink.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>BooleanLink.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="BooleanVariable">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.BooleanVariable</Item>
+             <Item> KineticaRT.Channels.BooleanChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>BooleanVariable</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Double.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Double.Parse(System.String)</Item>
+               <Item>System.Double.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanVariable..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BooleanVariable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>BooleanVariable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>BooleanVariable.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Now">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.Now</Item>
+             <Item> KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>Now</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Now.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>Now.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NumericConstant">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.NumericConstant</Item>
+             <Item> KineticaRT.Channels.NumericChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>NumericConstant</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)" TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericConstant..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Double</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericConstant..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;NumericConstant..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericConstant..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;NumericConstant..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void&#xD;&#xA;Object.OnPropertyChanged(PropertyChangedEventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericConstant..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericConstant.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericConstant.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>NumericConstant.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NumericExpression">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.NumericExpression</Item>
+             <Item> KineticaRT.Channels.NumericChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>NumericExpression</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>NumericExpression.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NumericLink">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.NumericLink</Item>
+             <Item> KineticaRT.Channels.NumericChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>NumericLink</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericLink..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericLink..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericLink..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericLink.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericLink.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>NumericLink.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NumericVariable">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.NumericVariable</Item>
+             <Item> KineticaRT.Channels.NumericChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>NumericVariable</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)" TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Double</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericVariable..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;NumericVariable..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;NumericVariable..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void&#xD;&#xA;Object.OnPropertyChanged(PropertyChangedEventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericVariable..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericVariable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericVariable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>NumericVariable.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextConstant">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.TextConstant</Item>
+             <Item> KineticaRT.Channels.TextChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>TextConstant</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextConstant..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TextConstant..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void</Item>
+              </Issue>
+              <Issue>
+               <Item>TextConstant..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TextConstant..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void&#xD;&#xA;Object.OnPropertyChanged(PropertyChangedEventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextConstant..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextConstant.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextConstant.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>TextConstant.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextExpression">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.TextExpression</Item>
+             <Item> KineticaRT.Channels.TextChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>TextExpression</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextExpression..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>TextExpression.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextLink">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.TextLink</Item>
+             <Item> KineticaRT.Channels.TextChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>TextLink</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextLink..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>TextLink..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextLink..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextLink.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextLink.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>TextLink.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextVariable">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Channels.TextVariable</Item>
+             <Item> KineticaRT.Channels.TextChannel, KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>TextVariable</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TextVariable..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void</Item>
+              </Issue>
+              <Issue>
+               <Item>TextVariable..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TextVariable..ctor(SerializationInfo, StreamingContext)&#xD;&#xA;Channel.set_Value(Value):Void&#xD;&#xA;Object.OnPropertyChanged(PropertyChangedEventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextVariable..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextVariable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextVariable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>TextVariable.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Logic.Expressions.dll">
+    <Modules>
+     <Module Name="kineticart.logic.expressions.dll">
+      <Messages>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttr">
+         <Item>KineticaRT.Logic.Expressions</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttribute" Level="CriticalError">
+         <Item>KineticaRT.Logic.Expressions</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="KineticaRT.Logic.Expressions">
+        <Types>
+         <Type Name="Expression">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Expressions.Expression</Item>
+             <Item> KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>Expression</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Expression..ctor()</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Expression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Expression..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="AddFunction(System.String):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Expression.AddFunction(String):Void</Item>
+              </Issue>
+             </Message>
+             <Message Id="functionName" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Created="2005-04-27 15:22:02Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>functionName</Item>
+               <Item>Expression.AddFunction(String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="get_name(System.String,System.Int32&amp;):System.String">
+            <Messages>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Created="2005-04-27 15:22:02Z" FixCategory="NonBreaking">
+              <Issue Name="MarkAsStatic">
+               <Item>Expression.get_name(String, Int32&amp;):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Expression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Expression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="is_constant(System.String,System.Int32&amp;,System.String&amp;):System.Boolean">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Expression.is_constant(String, Int32&amp;, String&amp;):Boolean</Item>
+              </Issue>
+             </Message>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Created="2005-04-27 15:22:02Z" FixCategory="NonBreaking">
+              <Issue Name="MarkAsStatic">
+               <Item>Expression.is_constant(String, Int32&amp;, String&amp;):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="is_variable(System.String,System.Int32&amp;,System.String&amp;):System.Boolean">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Expression.is_variable(String, Int32&amp;, String&amp;):Boolean</Item>
+              </Issue>
+             </Message>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Created="2005-04-27 15:22:02Z" FixCategory="NonBreaking">
+              <Issue Name="MarkAsStatic">
+               <Item>Expression.is_variable(String, Int32&amp;, String&amp;):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>Expression.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+AndOperator">
+          <Members>
+           <Member Name="Calculate():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>AndOperator.Calculate():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>AndOperator.Calculate():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>AndOperator.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>AndOperator.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+ChooseFunction">
+          <Members>
+           <Member Name="Calculate():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ChooseFunction.Calculate():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ChooseFunction.Calculate():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ChooseFunction.Calculate():Void</Item>
+               <Item>System.Convert.ToInt32(System.Object)</Item>
+               <Item>System.Convert.ToInt32(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+FilterFunction">
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>FilterFunction..cctor()</Item>
+               <Item>old_value</Item>
+               <Item>System.Double</Item>
+               <Item>0.0</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>FilterFunction..ctor()</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+IfFunction">
+          <Members>
+           <Member Name="Calculate():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>IfFunction.Calculate():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>IfFunction.Calculate():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>IfFunction.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+NotOperator">
+          <Members>
+           <Member Name="Calculate():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NotOperator.Calculate():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NotOperator.Calculate():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NotOperator.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+OrOperator">
+          <Members>
+           <Member Name="Calculate():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>OrOperator.Calculate():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>OrOperator.Calculate():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>OrOperator.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>OrOperator.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+RollingSD">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>RollingSD..ctor()</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Expression+XorOperator">
+          <Members>
+           <Member Name="Calculate():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>XorOperator.Calculate():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>XorOperator.Calculate():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>XorOperator.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>XorOperator.Calculate():Void</Item>
+               <Item>System.Convert.ToBoolean(System.Object)</Item>
+               <Item>System.Convert.ToBoolean(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NumericExpression">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Expressions.NumericExpression</Item>
+             <Item> KineticaRT.Channels.InfoChannel, KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>NumericExpression</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericExpression..ctor()</Item>
+               <Item>min</Item>
+               <Item>System.Double</Item>
+               <Item>0.0</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)" TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Double</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Double</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Int32</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>min</Item>
+               <Item>System.Double</Item>
+               <Item>0.0</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericExpression..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>NumericExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>NumericExpression.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Maximum">
+            <Accessors>
+             <Accessor Name="set_Maximum(System.Double):System.Void">
+              <Messages>
+               <Message TypeName="AvoidTestingForFloatingPointEquality" Category="Microsoft.Portability" CheckId="CA1902" Created="2005-04-27 15:22:02Z">
+                <Issue>
+                 <Item>NumericExpression.set_Maximum(Double):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="Minimum">
+            <Accessors>
+             <Accessor Name="set_Minimum(System.Double):System.Void">
+              <Messages>
+               <Message TypeName="AvoidTestingForFloatingPointEquality" Category="Microsoft.Portability" CheckId="CA1902" Created="2005-04-27 15:22:02Z">
+                <Issue>
+                 <Item>NumericExpression.set_Minimum(Double):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>NumericExpression.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="KineticaRT.Logic.Expressions.Design">
+        <Types>
+         <Type Name="ExpressionEditor">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Expressions.Design.ExpressionEditor</Item>
+             <Item> System.Drawing.Design.UITypeEditor</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ExpressionEditor..ctor()</Item>
+               <Item>UITypeEditor..ctor()</Item>
+               <Item>&#xD;&#xA;-&gt;System.Drawing.Design.UITypeEditor.#ctor : Void&#xD;&#xA;-&gt;KineticaRT.Logic.Expressions.Design.ExpressionEditor.#ctor : Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ExpressionEditor..ctor()</Item>
+               <Item>edSvc</Item>
+               <Item>System.Windows.Forms.Design.IWindowsFormsEditorService</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object):System.Object">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>UITypeEditor.EditValue(ITypeDescriptorContext, IServiceProvider, Object):Object</Item>
+               <Item>System.Drawing.Design.UITypeEditor</Item>
+               <Item>ExpressionEditor.EditValue(ITypeDescriptorContext, IServiceProvider, Object):Object</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetEditStyle(System.ComponentModel.ITypeDescriptorContext):System.Drawing.Design.UITypeEditorEditStyle">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>UITypeEditor.GetEditStyle(ITypeDescriptorContext):UITypeEditorEditStyle</Item>
+               <Item>System.Drawing.Design.UITypeEditor</Item>
+               <Item>ExpressionEditor.GetEditStyle(ITypeDescriptorContext):UITypeEditorEditStyle</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ExpressionEditorControl">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Expressions.Design.ExpressionEditorControl</Item>
+             <Item> System.Windows.Forms.UserControl, System.Windows.Forms.ContainerControl, System.Windows.Forms.ScrollableControl, System.Windows.Forms.Control, System.ComponentModel.Component</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="Connect_button_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ExpressionEditorControl.Connect_button_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item />
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>(</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>)</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>,</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>.</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>+</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>−</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>−</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>&lt;</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>=</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>&gt;</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>×</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>÷</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>√</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>≠</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>≤</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>≥</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>0</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>1</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>2</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>3</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>4</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>5</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>6</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>7</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>8</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>9</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>∞</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Abs</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>And</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Atan</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Cos</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Exp</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Floor</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Functions</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>If</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Limit</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Log</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Max</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Mean</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Min</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Not</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Numbers</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Operators</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Or</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Pow</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Sin</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Tan</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>true</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Xor</Item>
+              </Issue>
+              <Issue>
+               <Item>ExpressionEditorControl.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>π</Item>
+              </Issue>
+             </Message>
+             <Message Id="Atan" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Atan</Item>
+               <Item>Atan</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Logic.Message.dll">
+    <Modules>
+     <Module Name="kineticart.logic.message.dll">
+      <Messages>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttr">
+         <Item>KineticaRT.Logic.Message</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Created="2005-04-27 15:22:02Z">
+        <Issue Name="NoAttribute" Level="CriticalError">
+         <Item>KineticaRT.Logic.Message</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="KineticaRT.Logic.Message">
+        <Types>
+         <Type Name="Display">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.Display</Item>
+             <Item> System.Windows.Forms.UserControl, System.Windows.Forms.ContainerControl, System.Windows.Forms.ScrollableControl, System.Windows.Forms.Control, System.ComponentModel.Component</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>demoMode</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>demoMsgCount</Item>
+               <Item>System.Int32</Item>
+               <Item>0</Item>
+              </Issue>
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>prtyChanged</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>sortReversed</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>sourceChannel</Item>
+               <Item>KineticaRT.Channels.Channel</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>sourceFilter</Item>
+               <Item>System.String[]</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>value</Item>
+               <Item>KineticaRT.Logic.Message.Message</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.ListViewItem.#ctor(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Display..ctor()</Item>
+               <Item>1</Item>
+               <Item>ListViewItem..ctor(String)</Item>
+               <Item>-</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Compare(System.Object,System.Object):System.Int32">
+            <Messages>
+             <Message Id="System.DateTime.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Display.Compare(Object, Object):Int32</Item>
+               <Item>System.DateTime.Parse(System.String)</Item>
+               <Item>System.DateTime.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>Display.Compare(Object, Object):Int32</Item>
+               <Item>System.DateTime.Parse(System.String)</Item>
+               <Item>System.DateTime.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>Display.Compare(Object, Object):Int32</Item>
+               <Item>System.DateTime.Parse(System.String)</Item>
+               <Item>System.DateTime.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>Display.Compare(Object, Object):Int32</Item>
+               <Item>System.DateTime.Parse(System.String)</Item>
+               <Item>System.DateTime.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.ColumnHeader.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Display.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ColumnHeader.set_Text(String):Void</Item>
+               <Item>Date</Item>
+              </Issue>
+              <Issue>
+               <Item>Display.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ColumnHeader.set_Text(String):Void</Item>
+               <Item>Message</Item>
+              </Issue>
+              <Issue>
+               <Item>Display.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ColumnHeader.set_Text(String):Void</Item>
+               <Item>Priority</Item>
+              </Issue>
+              <Issue>
+               <Item>Display.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ColumnHeader.set_Text(String):Void</Item>
+               <Item>Source</Item>
+              </Issue>
+              <Issue>
+               <Item>Display.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>ColumnHeader.set_Text(String):Void</Item>
+               <Item>Time</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OnDragDrop(System.Windows.Forms.DragEventArgs):System.Void">
+            <Messages>
+             <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>e</Item>
+               <Item>drgevent</Item>
+               <Item>Display.OnDragDrop(DragEventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'e'</Item>
+               <Item>Display.OnDragDrop(DragEventArgs):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OnDragEnter(System.Windows.Forms.DragEventArgs):System.Void">
+            <Messages>
+             <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>e</Item>
+               <Item>drgevent</Item>
+               <Item>Display.OnDragEnter(DragEventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'e'</Item>
+               <Item>Display.OnDragEnter(DragEventArgs):Void</Item>
+              </Issue>
+              <Issue>
+               <Item>'e'</Item>
+               <Item>Display.OnDragEnter(DragEventArgs):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OnNewMessage(KineticaRT.Channels.IChannel,KineticaRT.Values.Value):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>v</Item>
+               <Item>KineticaRT.Logic.Message.Message</Item>
+               <Item>Display.OnNewMessage(IChannel, Value):Void</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Priorities">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Priorities</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ShouldSerializeSourceChannel():System.Boolean">
+            <Messages>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Created="2005-04-27 15:22:02Z" FixCategory="NonBreaking">
+              <Issue Name="MarkAsStatic">
+               <Item>Display.ShouldSerializeSourceChannel():Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Source">
+            <Accessors>
+             <Accessor Name="set_Source(System.String):System.Void">
+              <Messages>
+               <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+                <Issue>
+                 <Item>'this.source'</Item>
+                 <Item>Display.set_Source(String):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="SourceFilter">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Display.SourceFilter:String[]</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="UpdateListItems():System.Void">
+            <Messages>
+             <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Display.UpdateListItems():Void</Item>
+               <Item>System.Convert.ToInt32(System.Object)</Item>
+               <Item>System.Convert.ToInt32(System.Object,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Value">
+            <Accessors>
+             <Accessor Name="set_Value(KineticaRT.Logic.Message.Message):System.Void">
+              <Messages>
+               <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+                <Issue>
+                 <Item>'value'</Item>
+                 <Item>Display.set_Value(Message):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Event">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.Event</Item>
+             <Item> KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Created="2005-04-27 15:22:02Z">
+            <Issue Name="Type">
+             <Item>Event</Item>
+             <Item>Event</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>Event</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Event..ctor()</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Event..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Event..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Configuration is missing a property for __</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Event..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Event..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Event.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Event.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>Event.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Message">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.Message</Item>
+             <Item> KineticaRT.Values.Value</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>Message</Item>
+             <Item>KineticaRT.Logic.Message</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="ToString():System.String">
+            <Messages>
+             <Message Id="System.DateTime.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Message.ToString():String</Item>
+               <Item>System.DateTime.ToString</Item>
+               <Item>System.DateTime.ToString(System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Message.ToString():String</Item>
+               <Item>System.Int32.ToString</Item>
+               <Item>System.Int32.ToString(System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Priority">
+          <Members>
+           <Member Name="IsInRange(System.Int64):System.Boolean">
+            <Messages>
+             <Message Id="0#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>PriorityValue</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="IsInRange(System.Int64,System.String):System.Boolean">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Priority.IsInRange(Int64, String):Boolean</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message Id="0#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>Priority</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>Range</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Priority.IsInRange(Int64, String):Boolean</Item>
+               <Item>System.Int32.Parse(System.String)</Item>
+               <Item>System.Int32.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>Priority.IsInRange(Int64, String):Boolean</Item>
+               <Item>System.Int32.Parse(System.String)</Item>
+               <Item>System.Int32.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+              <Issue>
+               <Item>Priority.IsInRange(Int64, String):Boolean</Item>
+               <Item>System.Int32.Parse(System.String)</Item>
+               <Item>System.Int32.Parse(System.String,System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>op_Equality</Item>
+               <Item>""</Item>
+               <Item>Priority.IsInRange(Int64, String):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PriorityCollection">
+          <Messages>
+           <Message TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>PriorityCollection</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ListsAreStronglyTyped" Category="Microsoft.Design" CheckId="CA1039" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>PriorityCollection</Item>
+             <Item>Add</Item>
+            </Issue>
+            <Issue>
+             <Item>PriorityCollection</Item>
+             <Item>Contains</Item>
+            </Issue>
+            <Issue>
+             <Item>PriorityCollection</Item>
+             <Item>IndexOf</Item>
+            </Issue>
+            <Issue>
+             <Item>PriorityCollection</Item>
+             <Item>Insert</Item>
+            </Issue>
+            <Issue>
+             <Item>PriorityCollection</Item>
+             <Item>Remove</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="GetPriorityInfo(System.Int64,System.Drawing.Color&amp;,System.Drawing.Color&amp;,System.String&amp;):System.Boolean">
+            <Messages>
+             <Message Id="1#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>BackColor</Item>
+              </Issue>
+             </Message>
+             <Message Id="2#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextColor</Item>
+              </Issue>
+             </Message>
+             <Message Id="3#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Text</Item>
+              </Issue>
+             </Message>
+             <Message Id="0#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>Priority</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>BackColor</Item>
+              </Issue>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>TextColor</Item>
+              </Issue>
+             </Message>
+             <Message Id="3#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Parameter">
+               <Item>Text</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Int64.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>PriorityCollection.GetPriorityInfo(Int64, Color&amp;, Color&amp;, String&amp;):Boolean</Item>
+               <Item>System.Int64.ToString</Item>
+               <Item>System.Int64.ToString(System.IFormatProvider)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Item[System.Int32]">
+            <Accessors>
+             <Accessor Name="get_Item(System.Int32):KineticaRT.Logic.Message.Priority">
+              <Messages>
+               <Message Id="0#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+                <Issue Name="Parameter">
+                 <Item>Index</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+             <Accessor Name="set_Item(System.Int32,KineticaRT.Logic.Message.Priority):System.Void">
+              <Messages>
+               <Message Id="0#" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2005-04-27 15:22:02Z">
+                <Issue Name="Parameter">
+                 <Item>Index</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Recorder">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.Recorder</Item>
+             <Item> KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>Recorder</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)" TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Recorder..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Int32</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Recorder..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>Recorder..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>Recorder..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Issue>
+               <Item>Recorder..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Recorder..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Recorder.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Recorder.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>Recorder.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Sound">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.Sound</Item>
+             <Item> System.ComponentModel.Component</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Sound..ctor()</Item>
+               <Item>components</Item>
+               <Item>System.ComponentModel.Container</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor(System.ComponentModel.IContainer)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Sound..ctor(IContainer)</Item>
+               <Item>components</Item>
+               <Item>System.ComponentModel.Container</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'container'</Item>
+               <Item>Sound..ctor(IContainer)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Connect():System.Void">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>op_Inequality</Item>
+               <Item>""</Item>
+               <Item>Sound.Connect():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ObjectSearch" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-27 15:22:02Z">
+              <Issue Name="First">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Return">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="PlaySound(System.String,System.IntPtr,KineticaRT.Logic.Message.Sound+SoundFlags):System.Boolean">
+            <Messages>
+             <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Created="2005-04-27 15:22:02Z">
+              <Issue Name="Return">
+               <Item>Sound.PlaySound(String, IntPtr, SoundFlags):Boolean</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Sound.PlaySound(String, IntPtr, SoundFlags):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextLog">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.TextLog</Item>
+             <Item> KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>TextLog</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2005-04-27 15:22:02Z" FixCategory="Breaking">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.TextLog</Item>
+             <Item>System.IO.StreamWriter</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextLog..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Connect():System.Void">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>op_Inequality</Item>
+               <Item>""</Item>
+               <Item>TextLog.Connect():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>TextLog.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>TextLog.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>TextLog.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Value">
+            <Accessors>
+             <Accessor Name="set_Value(KineticaRT.Values.Value):System.Void">
+              <Messages>
+               <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+                <Issue>
+                 <Item>'value'</Item>
+                 <Item>TextLog.set_Value(Value):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Threshold">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.Threshold</Item>
+             <Item> KineticaRT.Channels.Channel, KineticaRT.Object</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Created="2005-04-27 15:22:02Z">
+            <Issue Name="MakeOverridable">
+             <Item>Threshold</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Threshold..ctor()</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)" TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Threshold..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>SerializationInfo.GetValue(String, Type):Object</Item>
+               <Item>Double</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Threshold..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>connected</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Threshold..ctor(SerializationInfo, StreamingContext)</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Configuration is missing a property for __</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Threshold..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Threshold..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Threshold.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'info'</Item>
+               <Item>Threshold.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Level">
+            <Accessors>
+             <Accessor Name="set_Level(System.Double):System.Void">
+              <Messages>
+               <Message TypeName="AvoidTestingForFloatingPointEquality" Category="Microsoft.Portability" CheckId="CA1902" Created="2005-04-27 15:22:02Z">
+                <Issue>
+                 <Item>Threshold.set_Level(Double):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):System.Void">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+               <Item>System.Runtime.Serialization.ISerializable</Item>
+               <Item>Threshold.System.Runtime.Serialization.ISerializable.GetObjectData(SerializationInfo, StreamingContext):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Voice">
+          <Messages>
+           <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Created="2005-04-27 15:22:02Z">
+            <Issue>
+             <Item>KineticaRT.Logic.Message.Voice</Item>
+             <Item> System.ComponentModel.Component</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Voice..ctor()</Item>
+               <Item>components</Item>
+               <Item>System.ComponentModel.Container</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor(System.ComponentModel.IContainer)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Voice..ctor(IContainer)</Item>
+               <Item>components</Item>
+               <Item>System.ComponentModel.Container</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>'container'</Item>
+               <Item>Voice..ctor(IContainer)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Connect():System.Void">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>op_Inequality</Item>
+               <Item>""</Item>
+               <Item>Voice.Connect():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ObjectSearch" Kind="Event">
+            <Messages>
+             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Created="2005-04-27 15:22:02Z">
+              <Issue Name="First">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Return">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+              <Issue Name="Second">
+               <Item>ObjectSearchEventHandler</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Initialise():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Voice.Initialise():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Voice.Initialise():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Voice.Initialise():Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>An error has occurred while trying to initialize SAPI 5.1.</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>Voice.Initialise():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Value">
+            <Accessors>
+             <Accessor Name="set_Value(KineticaRT.Values.Value):System.Void">
+              <Messages>
+               <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-04-27 15:22:02Z">
+                <Issue>
+                 <Item>'value'</Item>
+                 <Item>Voice.set_Value(Value):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/bin/Debug/KineticaRT.Servers.OpcClient.dll">
+    <Modules>
+     <Module Name="kineticart.servers.opcclient.dll">
+      <Namespaces>
+       <Namespace Name="KineticaRT.Servers.OpcClient">
+        <Types>
+         <Type Name="Group">
+          <Members>
+           <Member Name="DeadBand">
+            <Accessors>
+             <Accessor Name="set_DeadBand(System.Double):System.Void">
+              <Messages>
+               <Message TypeName="AvoidTestingForFloatingPointEquality" Category="Microsoft.Portability" CheckId="CA1902" Created="2005-04-22 15:54:10Z">
+                <Issue>
+                 <Item>Group.set_DeadBand(Double):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="UpdateRate">
+            <Accessors>
+             <Accessor Name="set_UpdateRate(System.Double):System.Void">
+              <Messages>
+               <Message TypeName="AvoidTestingForFloatingPointEquality" Category="Microsoft.Portability" CheckId="CA1902" Created="2005-04-22 15:54:10Z">
+                <Issue>
+                 <Item>Group.set_UpdateRate(Double):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="IOPCItem">
+          <Messages>
+           <Message TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Created="2005-04-22 15:54:10Z">
+            <Issue Name="Type">
+             <Item>IOPCItem</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="ItemID">
+            <Messages>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Created="2005-04-22 15:54:10Z">
+              <Issue Name="MemberId">
+               <Item>IOPCItem.ItemID:String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="OpcGroup">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2005-04-25 17:23:54Z" FixCategory="Breaking">
+            <Issue>
+             <Item>KineticaRT.Servers.OpcClient.OpcGroup</Item>
+             <Item>KineticaRT.Updater</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="DeadBand">
+            <Accessors>
+             <Accessor Name="set_DeadBand(System.Single):System.Void">
+              <Messages>
+               <Message TypeName="AvoidTestingForFloatingPointEquality" Category="Microsoft.Portability" CheckId="CA1902" Created="2005-04-25 17:23:54Z">
+                <Issue>
+                 <Item>OpcGroup.set_DeadBand(Single):Void</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="opcGroup">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2005-04-25 17:23:54Z">
+              <Issue>
+               <Item>opcGroup</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Update(System.Object,System.Object):System.Void">
+            <Messages>
+             <Message Id="System.Array.GetValue(System.Int64,System.Int64)" TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808" Created="2005-04-25 17:23:54Z">
+              <Issue>
+               <Item>OpcGroup.Update(Object, Object):Void</Item>
+               <Item>Array.GetValue(Int64, Int64):Object</Item>
+               <Item>UInt32</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="updater_Update():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-04-25 17:23:54Z">
+              <Issue>
+               <Item>OpcGroup.updater_Update():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+              <Issue>
+               <Item>OpcGroup.updater_Update():Void</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextItem">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2005-04-22 15:54:10Z">
+              <Issue>
+               <Item>TextItem..ctor()</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;TextItem..ctor()&#xD;&#xA;Channel.set_Value(Value):Void&#xD;&#xA;Object.OnPropertyChanged(PropertyChangedEventArgs):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="KineticaRT.Servers.OpcClient.Design">
+        <Types>
+         <Type Name="ItemEditor">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Created="2005-04-22 15:54:10Z">
+              <Issue>
+               <Item>ItemEditor..ctor()</Item>
+               <Item>UITypeEditor..ctor()</Item>
+               <Item>&#xD;&#xA;-&gt;System.Drawing.Design.UITypeEditor.#ctor : Void&#xD;&#xA;-&gt;KineticaRT.Servers.OpcClient.Design.ItemEditor.#ctor : Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object):System.Object">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>UITypeEditor.EditValue(ITypeDescriptorContext, IServiceProvider, Object):Object</Item>
+               <Item>System.Drawing.Design.UITypeEditor</Item>
+               <Item>ItemEditor.EditValue(ITypeDescriptorContext, IServiceProvider, Object):Object</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetEditStyle(System.ComponentModel.ITypeDescriptorContext):System.Drawing.Design.UITypeEditorEditStyle">
+            <Messages>
+             <Message TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123" Created="2005-04-27 15:22:02Z">
+              <Issue>
+               <Item>UITypeEditor.GetEditStyle(ITypeDescriptorContext):UITypeEditorEditStyle</Item>
+               <Item>System.Drawing.Design.UITypeEditor</Item>
+               <Item>ItemEditor.GetEditStyle(ITypeDescriptorContext):UITypeEditorEditStyle</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="Nigel">
+    <Note Id="2" Modified="2005-04-08 18:29:43Z">There are lots of types!</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldDeclareMinimumSecurity" Category="Microsoft.Usage" CheckId="CA2209">
+    <Resolution Name="Default">No valid permission requests were found for assembly '{0}'. You should always specify the minimum security permissions using SecurityAction.RequestMinimum. If assembly permission requests have been specified, they are not enforceable; use the PermView.exe tool to view the assembly's permissions. Whidbey customers can use PermCalc.exe which gives even more detailed information.</Resolution>
+   </Rule>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Resolution Name="NoStrongName">Sign '{0}' with a strong name key.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidCallsThatRequireUnboxing" Category="Microsoft.Performance" CheckId="CA1808">
+    <Resolution Name="Default">{0} calls {1}, a weakly-typed method, and unboxes the result as {2}, a value type.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021">
+    <Resolution Name="Default">Consider a design that does not require that '{0}' be an out parameter.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidTestingForFloatingPointEquality" Category="Microsoft.Portability" CheckId="CA1902">
+    <Resolution Name="Default">Replace the test for floating-point equality in {0} with a test that can tolerate differences that may occur due to a lack of precision.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">'{0}' appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801">
+    <Resolution Name="Default">Parameter '{0}' of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+    <Resolution Name="MarkAsStatic">The 'this' parameter (or 'Me' in VB) of {0} is never used. Mark the method as static (or Shared in VB) or use 'this'/Me in the method body.</Resolution>
+   </Rule>
+   <Rule TypeName="CallBaseClassMethodsOnISerializableTypes" Category="Microsoft.Usage" CheckId="CA2236">
+    <Resolution Name="Default">Method {0} should be modified to call its base class implementation.</Resolution>
+   </Rule>
+   <Rule TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102">
+    <Resolution Name="Default">{0} contains a catch(Exception) handler that is not matched with a generic catch clause (catch{{}} in C#, catch(System::Object*){{}} in mc++) for non-CLSCompliant exception. Eliminate the catch(Exception) clause by catching a specific set of Exceptions or add a generic catch (catch() in C#) that duplicates the code contained within the catch(Exception) handler.</Resolution>
+   </Rule>
+   <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+    <Resolution Name="Default">Change '{0}' to be read-only by removing the property setter.</Resolution>
+   </Rule>
+   <Rule TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405">
+    <Resolution Name="Default">'{0}' is marked ComVisible(true) but has the following ComVisible(false) types in its object hierarchy: {1}</Resolution>
+   </Rule>
+   <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+    <Resolution Name="First">Declare the first parameter of '{0}' as an object named 'sender'.</Resolution>
+    <Resolution Name="Return">Change '{0}' to return void.</Resolution>
+    <Resolution Name="Second">Declare the second parameter of '{0}' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+    <Resolution Name="Default">'{0}' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Resolution Name="Parameter">'{0}', a parameter, is cast to type '{1}' multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify '{0}' to catch a more specific exception than '{1}' or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+    <Resolution Name="Default">Make '{0}' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122">
+    <Resolution Name="Default">{0} calls into {1} which has a LinkDemand. By making this call, {1} is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: {2}</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+    <Resolution Name="Default">{0} initializes field {1} of type {2} to {3}. Remove this initialization as it will be done automatically by the runtime.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303">
+    <Resolution Name="Default">{0} passes a literal as parameter {1} of a call to {2}. Retrieve the following string argument from a resource table instead: '{3}'</Resolution>
+   </Rule>
+   <Rule TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035">
+    <Resolution Name="Default">'{0}' should provide a strongly typed implementation of ICollection.CopyTo.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+    <Resolution Name="Parameter">Correct the casing of parameter name '{0}'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Namespace" />
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711">
+    <Resolution Name="Default">Rename '{0}' so that it does not end in '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716">
+    <Resolution Name="Type">Change type name '{0}' so that it does not conflict with reserved keyword:'{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+    <Resolution Name="MakeOverridable">Make {0}.GetObjectData virtual and overridable.</Resolution>
+   </Rule>
+   <Rule TypeName="ListsAreStronglyTyped" Category="Microsoft.Design" CheckId="CA1039">
+    <Resolution Name="Default">'{0}' should provide a strongly typed implementation of IList.{1}.</Resolution>
+   </Rule>
+   <Rule TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204">
+    <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705">
+    <Resolution Name="Type">Correct the capitalization of type name '{0}'.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016">
+    <Resolution Name="Default">Add an AssemblyVersion attribute to '{0}'.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+    <Resolution Name="NoAttr">'{0}' should be marked with CLSCompliantAttribute and its value should be true.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017">
+    <Resolution Name="NoAttribute">Mark '{0}' as ComVisible(false) at the assembly level, then mark all types within the assembly that should be exposed to Com clients as ComVisible(true).</Resolution>
+   </Rule>
+   <Rule TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414">
+    <Resolution Name="Return">Add the MarshalAsAttribute to the return type of PInvoke {0}. If the corresponding unmanaged return type is a 4-byte Win32 'BOOL', use MarshalAs(UnmanagedType.Bool). For a 1-byte C++ 'bool', use MarshalAs(UnmanagedType.U1).</Resolution>
+   </Rule>
+   <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+    <Resolution Name="Default">Because it is a DllImport method, {0} should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Resolution>
+   </Rule>
+   <Rule TypeName="OverrideLinkDemandsShouldBeIdenticalToBase" Category="Microsoft.Security" CheckId="CA2123">
+    <Resolution Name="Default">The virtual method {0} defined by type '{1}' and its override {2} do not have the same LinkDemand status. Add a LinkDemand where required.</Resolution>
+   </Rule>
+   <Rule TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725">
+    <Resolution Name="Default">Change parameter name '{0}' to '{1}' in order to match the base declaration of overridden method {2}.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
+   <Rule TypeName="SecureGetObjectDataOverrides" Category="Microsoft.Security" CheckId="CA2110">
+    <Resolution Name="Default">Add the following declarative security to {0}: [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter=true)]</Resolution>
+   </Rule>
+   <Rule TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706">
+    <Resolution Name="MemberId">'Id' is an abbreviation and therefore is not subject to acronym casing guidelines. Correct the capitalization of 'ID' in member name '{0}' by changing it to 'Id'.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide an IFormatProvider. This should be replaced with a call to {2}.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+    <Resolution Name="Default">Change {0} to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control. If it is set to RightTolLeft.Inherit, check its parent until a value indicating Yes or No is found.</Resolution>
+   </Rule>
+   <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+    <Resolution Name="Default">Replace the call to String.{0}({1}) in '{2}' with a check for non-null and Length == 0.</Resolution>
+   </Rule>
+   <Rule TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724">
+    <Resolution Name="Default">The type name '{0}' conflicts in whole or in part with the namespace name '{1}'. Change either name to eliminate the conflict.</Resolution>
+   </Rule>
+   <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+    <Resolution Name="Default">Implement IDisposable on '{0}' as it instantiates members of the following IDisposable types: {1}</Resolution>
+   </Rule>
+   <Rule TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062">
+    <Resolution Name="Default">Validate parameter {0} passed to externally visible method {1}.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Logic.Channels</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Logic.Channels.BooleanConstant">
+            <summary>
+            Constant Channel containing a boolean (True/False) value.
+            </summary>
+            <remarks>Constants have no method for changing their 'Value' property. They are normally used to prevent users accidentally changing values by connecting a control such as a slider to them.  The value property may be configured using the 'Constant' property,</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanConstant.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanConstant.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanConstant.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanConstant.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.BooleanConstant.Constant">
+            <summary>Gets or sets the constant value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.BooleanConstant.Value">
+            <summary>Gets the value of this channel.</summary>
+            <value>A Value object representing the result of evaluating the expression.</value>
+            <remarks>The Value is not necessarily a Boolean value. It may be, for example, an error value or a Text value.</remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.BooleanExpression">
+            <summary>
+            Channel containing an expression which evaluates to a boolean (True/False) value.<br/>
+            </summary>
+            <remarks>
+            This class makes use of the <see cref="T:KineticaRT.Logic.Expressions.Expression"/> class which must be purchased separately.
+            <para>If the expression evaluates to a type other than boolean then this class makes no attempt to convert it.  The Value property may for example contain error values or text values.</para>
+            </remarks>
+            <seealso cref="T:KineticaRT.Logic.Expressions.Expression"/>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanExpression.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanExpression.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanExpression.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanExpression.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanExpression.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanExpression.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.BooleanExpression.Text">
+            <summary>
+            Expression text, see KineticaRT.Expression.<see cref="P:KineticaRT.Logic.Expressions.Expression.Text"/>.
+            </summary>
+            <value>The text of the expression to be evaluated.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.BooleanExpression.Value">
+            <summary>Gets the value of this channel.</summary>
+            <value>A Value object representing the result of evaluating the expression.</value>
+            <remarks>The Value is not necessarily a Boolean value. It may be, for example, an error value or a Text value.</remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.BooleanLink">
+            <summary>
+            Channel containing a link to another Channel containing a boolean (True/False) value.<br/>
+            </summary>
+            <remarks>
+            Can be connected to a Source channel from where it will receive its value.<br/>
+            Can be connected to a Destination channel into which it will place its value.
+            <para>If the Value is a type other than boolean then this class makes no attempt to convert it.  The Value property may for example contain error values or text values.</para>
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanLink.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanLink.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanLink.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanLink.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanLink.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanLink.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.BooleanLink.Source">
+            <summary>
+            Gets or sets the name of the source channel.
+            </summary>
+            <value>The name of the source channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a source channel.
+            <para>The channel will not connect to the source until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.BooleanLink.Destination">
+            <summary>
+            Gets or sets the name of the destination channel.
+            </summary>
+            <value>The name of the destination channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a destination channel.
+            <para>The channel will not connect to the destination until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.BooleanLink.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.BooleanVariable">
+            <summary>
+            Channel containing a boolean (True/False) value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanVariable.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanVariable.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanVariable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.BooleanVariable.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.NumericConstant">
+            <summary>
+            Constant channel containing a numeric value.
+            </summary>
+            <remarks>Constants have no method for changing their 'Value' property. They are normally used to prevent users accidentally changing values by connecting a control such as a slider to them.  The value property may be configured using the 'Constant' property,</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericConstant.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericConstant.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericConstant.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericConstant.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericConstant.Constant">
+            <summary>Gets or sets the constant value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericConstant.Value">
+            <summary>Gets the value of this channel.</summary>
+            <value>A Value object representing the result of evaluating the expression.</value>
+            <remarks>The Value is not necessarily a numeric value. It may be, for example, an error value or a Text value.</remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.NumericExpression">
+            <summary>
+            Channel containing an expression which evaluates to a numeric value.<br/>
+            </summary>
+            <remarks>
+            This class makes use of the <see cref="T:KineticaRT.Logic.Expressions.Expression"/> class which must be purchased separately.<br/>
+            <para>If the expression evaluates to a type other than numeric then this class makes no attempt to convert it.  The Value property may for example contain error values or text values.</para>
+            </remarks>
+            <seealso cref="T:KineticaRT.Logic.Expressions.Expression"/>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericExpression.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericExpression.Text">
+            <summary>
+            Expression text, see KineticaRT.Expression.<see cref="P:KineticaRT.Logic.Expressions.Expression.Text"/>.
+            </summary>
+            <value>The text of the expression to be evaluated.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericExpression.Value">
+            <summary>Gets the value of this channel.</summary>
+            <value>A Value object representing the result of evaluating the expression.</value>
+            <remarks>The Value is not necessarily a numeric value. It may be, for example, an error value or a Text value.</remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.NumericLink">
+            <summary>
+            Channel containing a link to another Channel containing a numeric value.<br/>
+            </summary>
+            <remarks>
+            Can be connected to a Source channel from where it will receive its value.<br/>
+            Can be connected to a Destination channel into which it will place its value.
+            <para>If the Value is a type other than numeric then this class makes no attempt to convert it.  The Value property may for example contain error values or text values.</para>
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericLink.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericLink.Source">
+            <summary>
+            Gets or sets the name of the source channel.
+            </summary>
+            <value>The name of the source channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a source channel.
+            <para>The channel will not connect to the source until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericLink.Destination">
+            <summary>
+            Gets or sets the name of the destination channel.
+            </summary>
+            <value>The name of the destination channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a destination channel.
+            <para>The channel will not connect to the destination until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.NumericLink.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.NumericVariable">
+            <summary>
+            Channel containing a numeric value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericVariable.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericVariable.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericVariable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.NumericVariable.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.TextConstant">
+            <summary>
+            Constant channel containing a text (string) value.
+            </summary>
+            <remarks>Constants have no method for changing their 'Value' property. They are normally used to prevent users accidentally changing values by connecting a control such as a slider to them.  The value property may be configured using the 'Constant' property,</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextConstant.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextConstant.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextConstant.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextConstant.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.TextConstant.Constant">
+            <summary>Gets or sets the constant value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.TextConstant.Value">
+            <summary>Gets the value of this channel.</summary>
+            <value>A Value object representing the result of evaluating the expression.</value>
+            <remarks>The Value is not necessarily a Text value. It may be, for example, an error value or a Text value.</remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.TextExpression">
+            <summary>
+            Channel containing an expression which evaluates to a text (string) value.<br/>
+            </summary>
+            <remarks>
+            This class makes use of the <see cref="T:KineticaRT.Logic.Expressions.Expression"/> class which must be purchased separately.
+            <para>If the expression evaluates to a type other than text then this class makes no attempt to convert it.  The Value property may for example contain error values or boolean values.</para>
+            </remarks>
+            <seealso cref="T:KineticaRT.Logic.Expressions.Expression"/>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextExpression.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextExpression.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextExpression.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextExpression.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextExpression.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextExpression.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.TextExpression.Text">
+            <summary>
+            Expression text, see KineticaRT.Expression.<see cref="P:KineticaRT.Logic.Expressions.Expression.Text"/>.
+            </summary>
+            <value>The text of the expression to be evaluated.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.TextExpression.Value">
+            <summary>Gets the value of this channel.</summary>
+            <value>A Value object representing the result of evaluating the expression.</value>
+            <remarks>The Value is not necessarily a Text value. It may be, for example, an error value or a Text value.</remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.TextLink">
+            <summary>
+            Channel containing a link to another Channel containing a text (string) value.<br/>
+            </summary>
+            <remarks>
+            Can be connected to a Source channel from where it will receive its value.<br/>
+            Can be connected to a Destination channel into which it will place its value.
+            <para>If the Value is a type other than text then this class makes no attempt to convert it.  The Value property may for example contain error values or boolean values.</para>
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextLink.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextLink.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextLink.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextLink.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextLink.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextLink.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.TextLink.Source">
+            <summary>
+            Gets or sets the name of the source channel.
+            </summary>
+            <value>The name of the source channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a source channel.
+            <para>The channel will not connect to the source until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.TextLink.Destination">
+            <summary>
+            Gets or sets the name of the destination channel.
+            </summary>
+            <value>The name of the destination channel.</value>
+            <remarks>Leave the name blank (Empty string) if you don't want to use a destination channel.
+            <para>The channel will not connect to the destination until the Connect method is called.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.TextLink.Value">
+            <summary>Gets or sets the value of this channel.</summary>
+            <value>A Value object representing the value of the channel.</value>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.TextVariable">
+            <summary>
+            Channel containing a text (string) value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextVariable.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextVariable.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextVariable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.TextVariable.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Channels.Now">
+            <summary>
+            Channel which has the current time as its Value.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Now.#ctor">
+            Initialises a new instance of the class.
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Now.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Now.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Now.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Channels.Now.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="P:KineticaRT.Logic.Channels.Now.Format">
+            <summary>
+            Gets or sets the format of the channel when viewed as text.
+            </summary>
+            <value>A string describing the display format of the channel.</value>
+            <remarks>The following formats can be used:
+            <ul>
+            <li>"d" - Short date</li>
+            <li>"D" - Long date</li>
+            <li>"f" - Long date, short time</li>
+            <li>"F" - Long date, long time</li>
+            <li>"g" - short date, short time</li>
+            <li>"G" - short date, long time</li>
+            <li>"t" - short time</li>
+            <li>"T" - Long time</li>
+            <li>"u" - Universal time (sortable)</li>
+            <li>"U" - Universal time</li>
+            <li>"dddd yyyy/MM/dd hh:mm:ss fff" - Custom</li>
+            </ul>
+            </remarks>
+        </member>
+    </members>
+</doc>

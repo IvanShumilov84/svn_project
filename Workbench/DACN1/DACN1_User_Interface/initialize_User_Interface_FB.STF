@@ -1,0 +1,49 @@
+FUNCTION_BLOCK initialize_User_Interface_FB
+(************************************************************************************************************************************************
+	Name :		initialize_User_Interface									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	       					First Release
+
+
+************************************************************************************************************************************************)	
+
+	status 		:= INITIALIZING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: INITIALIZING');
+	err_code 	:= OK;
+
+	
+	IF (TM_UUT_Info.Model		= 'PW127E') THEN
+		Accel_Delta_Deg := 5.0;
+	END_IF;
+
+	ECS_Enable := FALSE;(* Prj07530*)
+
+	LB_Cooldown_Timer := 300000; (* Set value to avoid to start the Fan at opening *)
+
+	IF (err_code <> OK) THEN 
+		status	:= ERROR_ON_INITIALIZING;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: ERROR ON INITIALIZING');
+	ELSE
+		status 	:= INITIALIZED;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_USER_INTERFACE: INITIALIZED');
+	END_IF;
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

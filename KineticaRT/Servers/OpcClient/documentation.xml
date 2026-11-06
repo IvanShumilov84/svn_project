@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Servers.OpcClient</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Servers.OpcClient.Client">
+            <summary>
+            KineticaRT OPC client.<br/>
+            Connects to any OPC server to send and recieve data values.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Client.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Client.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Client.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Client.#ctor">
+            <summary>
+            Initialises an instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Client.Connect">
+            <summary>
+            Connect to other Objects.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Client.Disconnect">
+            <summary>
+            Disconnect from other Objects.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Client.OpcClient">
+            <summary>
+            The COM client object.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Client.Machine">
+            <summary>
+            Name of Machine.
+            Set this before a Connect.
+            Use "" for local machine
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Client.Server">
+            <summary>
+            Name of OPC Server.
+            Set this before doing a Connect.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Client.VendorInfo">
+            <summary>
+            VendorInfo string from the OPC Server.
+            Only set after Connection - If it is set then you are connected.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.OpcClient.Group">
+            <summary>
+            An OPC Group.
+            Needs to be connected to a Client in order to work.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Group.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Group.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Group.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Group.#ctor">
+            <summary>
+            Initialises an instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Group.Connect">
+            <summary>
+            Connects this object to the specified <paramref name="Client"/>.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Group.Disconnect">
+            <summary>
+            Disconnects this object from its <paramref name="KineticaRT.Servers.OpcClient.Client"/>.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Group.OpcGroup">
+            <summary>
+            The COM group object.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Group.Client">
+            <summary>
+            Name of Client.
+            Set this before a Connect.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Group.UpdateRate">
+            <summary>
+            Update rate.
+            Rate at which updates are transmitted to/from the OPC Server.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Group.DeadBand">
+            <summary>
+            Deadband.
+            Percentage change required in order to trigger an update to/from the OPC Server.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.OpcClient.Item">
+            <summary>
+            An OPC Item.
+            Needs to be connected to a Group in order to work.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Item.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Item.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Item.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Item.#ctor">
+            <summary>
+            Initialises an instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Item.Connect">
+            <summary>
+            Connects this object to the specified <paramref name="Group"/>.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Item.Disconnect">
+            <summary>
+            Disconnects this object from its <paramref name="Group"/>.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Item.ItemID">
+            <summary>
+            ID of OPC Item.
+            See OPC Server documentation for item ID's.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Item.Group">
+            <summary>
+            Name of Group.
+            Set this before a Connect
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Item.Value">
+            <summary>
+            Value of OPC item.
+            Note that when set, the Value will not change until the OPC server reports that it has actually done so.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.OpcClient.Design.ItemEditorControl">
+            <summary>
+            Editor control for a <paramref name="Item"/>.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.#ctor">
+            <summary>
+            Initialises an instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.OnDone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.Item">
+            <summary>
+            Sets the <paramref name="Item"/> to be edited.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.Done">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.OpcClient.Design.ItemEditorControl.DoneEventHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Servers.OpcClient.Design.ItemEditor">
+            <summary>
+            UITypeEditor for a <paramref name="Item"/> .
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Design.ItemEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits the specified <paramref name="Item"/>.
+            </summary>
+            <param name="context"></param>
+            <param name="provider"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.Design.ItemEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets the style of the editor.
+            </summary>
+            <param name="context"></param>
+            <returns>UITypeEditorEditStyle specifying the style.</returns>
+        </member>
+        <member name="T:KineticaRT.Servers.OpcClient.TextItem">
+            <summary>
+            An OPC Item which has a string value.
+            Needs to be connected to a Group in order to work.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.TextItem.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.TextItem.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.TextItem.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.TextItem.#ctor">
+            <summary>
+            Initialises an instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.TextItem.Connect">
+            <summary>
+            Connects this object to the specified <paramref name="Group"/>.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Servers.OpcClient.TextItem.Disconnect">
+            <summary>
+            Disconnects this object from its <paramref name="Group"/>.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.TextItem.ItemID">
+            <summary>
+            ID of OPC Item.
+            See OPC Server documentation for item ID's.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.TextItem.Group">
+            <summary>
+            Name of Group.
+            Set this before a Connect
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Servers.OpcClient.TextItem.Value">
+            <summary>
+            Value of OPC item.
+            Note that when set, the Value will not change until the OPC server reports that it has actually done so.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,117 @@
+FUNCTION_BLOCK close_PowerDNA_FB
+(************************************************************************************************************************************************
+	Name :		close_PowerDNA_FB									
+														
+	Description :	Close communication with powerdna box and rdata 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2009/02/15		J.Hamelin	First Release
+	
+************************************************************************************************************************************************)	
+
+err_code := OK;
+status := CLOSING;
+	
+IF First_Time_Close = TRUE THEN
+
+	err_code 	:= OK;
+    dummy  := LOG_MSG('ErrLog', 'DACN1_PowerDNA_TEMPERATURE_IOMGR: CLOSING');
+
+
+	IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+
+		FOR i:=1 TO NUMBER_OF_POWERDNAS DO
+
+			IF ((PowerDNA_Structure[i].handle <> -1) AND (PowerDNA_Structure[i].Status = RUN)) THEN
+				
+				POWERDNA_CLOSE(PowerDNA_Structure[i].handle);
+ 
+				IF (POWERDNA_CLOSE.ERR_CODE <> 0) THEN
+
+					err_code := POWERDNA_CLOSE.ERR_CODE ;
+
+				END_IF;
+ 
+				PowerDNA_Structure[i].handle := -1;
+
+			END_IF;
+
+		END_FOR;
+		POWERDNA_CLEANUPLIB();
+
+	END_IF; 
+		
+
+
+	IF err_code = OK THEN 
+
+		wait_for_File_Closed(FALSE, t#8s);
+
+		IF (rdata_base <> 0) THEN
+	
+			CLOSE_RDATA(rdata_base);
+
+			err_code   := CLOSE_RDATA.ERR_CODE;
+			rdata_base := 0;
+
+		END_IF;
+
+		Out_PowerDNA_IOMgr.previous_index := 0;
+
+	END_IF; 
+
+	First_Time_Close := FALSE;
+	
+END_IF;
+
+wait_for_File_Closed(TRUE, t#8s);
+
+IF (wait_for_File_Closed.Q = TRUE) AND (err_code = OK) THEN
+
+	status 	:= CLOSED;
+	dummy	:= LOG_MSG('ErrLog', 'DACN1_PowerDNA_TEMPERATURE_IOMGR: CLOSED');
+
+	FOR i:= 1 TO NUMBER_OF_POWERDNAS DO
+
+		PowerDNA_Structure[i].status := CLOSED;
+
+	END_FOR;
+
+
+ELSIF (wait_for_File_Closed.Q = TRUE) AND (err_code <> OK) THEN
+
+	status	:= ERROR_ON_CLOSING;	
+	dummy	:= LOG_MSG('ErrLog', 'DACN1_PowerDNA_IOMGR: ERROR_ON_CLOSING');
+
+END_IF; 
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

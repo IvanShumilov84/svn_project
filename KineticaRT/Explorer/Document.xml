@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Explorer</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Explorer.Explorer">
+            <summary>
+            Summary description for UserControl1.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Explorer.Explorer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Explorer.Explorer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Explorer.Explorer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Explorer.Explorer.System#ComponentModel#ITypeDescriptorContext#get_Container">
+            <summary>
+            Summary description for UserControl1.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Explorer.Explorer.ExtNode">
+            <summary>
+            Extension of TreeNode to contain an Object which the node represents
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Explorer.ExplorerForm">
+            <summary>
+            Summary description for ExplorerForm.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Explorer.ExplorerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Explorer.ExplorerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Explorer.ExplorerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

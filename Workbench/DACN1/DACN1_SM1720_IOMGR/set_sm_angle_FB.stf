@@ -1,0 +1,12 @@
+FUNCTION_BLOCK set_sm_angle_FB
+
+
+	local_position := ANY_TO_DINT(angle_in * STEP_PER_DEGREE);
+
+	set_sm_position(fd_in, motor_adress_in, accel, velocity, local_position);
+
+
+
+
+
+END_FUNCTION_BLOCK

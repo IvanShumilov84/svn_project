@@ -1,0 +1,289 @@
+FUNCTION_BLOCK run_UUT_Ctrl_HTS900_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_HTS900_FB									
+														
+	Description :	Routine for  UUT Controller HTS900
+	Dependacy : 	
+
+					HISTORY
+	Rev			Date (YYYY/MM/DD)		Name				Description
+	1.0	         	2020/01/08 			Shahbaz Haider		First Release
+	
+************************************************************************************************************************************************)	
+
+
+	status	:= RUNNING;
+	err_code 	:= OK;
+
+
+	(*~~ NG  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*)
+	CASE 	ANY_TO_DINT ( NG_BINDING_SOURCE ) OF
+
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			NG_HZ	:=DACN1_NIDAQ_IOMGR_F[ NG_INDEX ].Mean_Value; 		
+	ELSE
+		err_code := -1;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_HTS900: NG_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;   
+      
+	NG_Speed_RPM	:= (NG_HZ * NG_100_RPM) / NG_100_FREQ;
+	NG_Speed_PCT	:= (NG_HZ / NG_100_FREQ ) * 100.0;
+
+	(*~~ NP  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*)
+
+	CASE 	ANY_TO_DINT ( NP_BINDING_SOURCE ) OF
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			NP_HZ :=DACN1_NIDAQ_IOMGR_F[ NP_INDEX ].Mean_Value; 		
+	ELSE
+		err_code := -2;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_HTS900: NP_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;   
+      
+	NP_Speed_RPM	:= (NP_HZ * NP_100_RPM) / NP_100_FREQ;
+	NP_Speed_PCT	:= (NP_HZ / NP_100_FREQ ) * 100.0;
+
+
+	(*~~ T MGT  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*)
+
+	CASE 	ANY_TO_DINT (MGT_PROBE_BINDING_SOURCE) OF
+		
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			MGT_DegF		:= DACN1_POWERDNA_IOMGR_T[MGT_index].Mean_Value;
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+			MGT_DegF		:= DACN1_NIDAQ_IOMGR_VIN[MGT_index].Mean_Value;
+		BINDING_DACN1_SERIAL_IOMGR_T:
+			MGT_DegF		:= DACN1_SERIAL_IOMGR_T[MGT_index].Mean_Value;
+
+	ELSE
+		err_code := -4;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_HTS900: MGT_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE;
+
+	(*~~ TORQUE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*)
+
+	CASE 	ANY_TO_DINT (TORQUE_BINDING_SOURCE) OF
+		
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+			Torque_Source	:= DACN1_NIDAQ_IOMGR_VIN[TORQUE_INDEX].Mean_Value;
+	ELSE
+		err_code := -4;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_HTS900: TORQUE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE;
+
+
+	(*~~ T INLET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*)
+	
+	TInlet_Avg 			:= 0.0;
+	TInlet_Avg_Nb_Of_Probe	:= 0.0;
+
+	CASE 	ANY_TO_DINT ( T_INLET_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			
+			FOR i:= 1 TO T_INLET_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TInlet_Avg := TInlet_Avg  + (DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value);
+						TInlet_Avg_Nb_Of_Probe := TInlet_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+
+			FOR i:= 1 TO T_INLET_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_NIDAQ_IOMGR_VIN[ T_INLET_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_NIDAQ_IOMGR_VIN[ T_INLET_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_NIDAQ_IOMGR_VIN[ T_INLET_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TInletP_Avg := TInletP_Avg  + (DACN1_NIDAQ_IOMGR_VIN[ T_INLET_PROBE_INDEX[i] ].Mean_Value);
+						TInletP_Avg_Nb_Of_Probe := TInletP_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+		BINDING_DACN1_SERIAL_IOMGR_T:
+
+			FOR i:= 1 TO T_INLET_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_SERIAL_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_SERIAL_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_SERIAL_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TInletP_Avg := TInletP_Avg  + (DACN1_SERIAL_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value);
+						TInletP_Avg_Nb_Of_Probe := TInletP_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+	ELSE
+		err_code := -6;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_HTS900: T_INLET_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE;   
+
+	IF (TInlet_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TInlet_Avg	:= TInlet_Avg / TInlet_Avg_Nb_Of_Probe;
+	END_IF;
+
+
+	(*~~ T EXHAUST  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*)
+	
+	TEgt_Avg 			:= 0.0;
+	TEgt_Avg_Nb_Of_Probe	:= 0.0;
+
+	CASE 	ANY_TO_DINT ( T_EGT_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			
+			FOR i:= 1 TO T_EGT_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TEgt_Avg := TEgt_Avg  + (DACN1_POWERDNA_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value);
+						TEgt_Avg_Nb_Of_Probe := TEgt_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+			
+			FOR i:= 1 TO T_EGT_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TEgt_Avg := TEgt_Avg  + (DACN1_NIDAQ_IOMGR_VIN[ T_EGT_PROBE_INDEX[i] ].Mean_Value);
+						TEgt_Avg_Nb_Of_Probe := TEgt_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+		BINDING_DACN1_SERIAL_IOMGR_T:
+			
+			FOR i:= 1 TO T_EGT_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_SERIAL_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_SERIAL_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_SERIAL_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TEgt_Avg := TEgt_Avg  + (DACN1_SERIAL_IOMGR_T[ T_EGT_PROBE_INDEX[i] ].Mean_Value);
+						TEgt_Avg_Nb_Of_Probe := TEgt_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+	ELSE
+		err_code := -7;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_HTS900: T_EGT_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE; 
+	
+
+
+
+
+	(*~~ TRIP POINTS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*)
+	
+	(* Limits are based if ENGINE is in start / steady state : monitoring if NG has reached a speed equal or higher than Ground Idle (GI)*)
+	IF (NG_Speed_RPM < NG_SPEED_AT_GI) THEN
+		MGT_TRIP_LIMIT		:=	UUT_Info.UUT_TripPoints.T1;
+	ELSIF	(NG_Speed_RPM >= NG_SPEED_AT_GI) THEN
+		MGT_TRIP_LIMIT		:=	UUT_Info.UUT_TripPoints.T2;
+	END_IF;
+	
+	UUT_Trip_T[1].Trip_Point	:=	MGT_TRIP_LIMIT;
+	UUT_Trip_T[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;
+	UUT_Trip_T[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.T3;
+	UUT_Trip_T[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.T4;
+
+	UUT_Trip_F[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.F1;
+	UUT_Trip_F[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.F2;
+	UUT_Trip_F[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.F3;
+	UUT_Trip_F[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.F4;
+
+	UUT_Trip_N[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.N1;
+	UUT_Trip_N[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.N2;
+	UUT_Trip_N[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.N3;
+	UUT_Trip_N[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.N4;
+
+	UUT_Trip_P[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.P1;
+	UUT_Trip_P[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.P2;
+	UUT_Trip_P[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.P3;
+	UUT_Trip_P[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.P4;
+
+	UUT_Trip_Q[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q1;
+	UUT_Trip_Q[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q2;
+	UUT_Trip_Q[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q3;
+	UUT_Trip_Q[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q4;
+
+	UUT_Trip_V[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.V1;
+	UUT_Trip_V[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.V2;
+	UUT_Trip_V[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.V3;
+	UUT_Trip_V[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.V4;
+
+	UUT_Trip_VIB[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB1;
+	UUT_Trip_VIB[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB2;
+	UUT_Trip_VIB[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB3;
+	UUT_Trip_VIB[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB4;
+
+
+	UUT_Trip_T[1].Trip_Source	:=	MGT_DegF;
+(*	UUT_Trip_T[2].Trip_Source	:=	;*)
+(*	UUT_Trip_T[3].Trip_Source	:=	;*)
+(*	UUT_Trip_T[4].Trip_Source	:=	;*)
+
+
+(*	UUT_Trip_F[1].Trip_Source	:=	;*)
+(*	UUT_Trip_F[2].Trip_Source	:=	;*)
+(*	UUT_Trip_F[3].Trip_Source	:=	;*)
+(*	UUT_Trip_F[4].Trip_Source	:=	;*)
+
+	UUT_Trip_N[1].Trip_Source	:=	NG_Speed_RPM;
+	UUT_Trip_N[2].Trip_Source	:=	NP_Speed_RPM;
+(*	UUT_Trip_N[3].Trip_Source	:=	;*)
+(*	UUT_Trip_N[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_P[1].Trip_Source	:=	;*)
+(*	UUT_Trip_P[2].Trip_Source	:=	;*)
+(*	UUT_Trip_P[3].Trip_Source	:=	;*)
+(*	UUT_Trip_P[4].Trip_Source	:=	;*)
+
+	UUT_Trip_Q[1].Trip_Source	:=	Torque_Source;
+(*	UUT_Trip_Q[2].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[3].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_V[1].Trip_Source	:=	;*)
+(*	UUT_Trip_V[2].Trip_Source	:=	;*)
+(*	UUT_Trip_V[3].Trip_Source	:=	;*)
+(*	UUT_Trip_V[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_VIB[1].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[2].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[3].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[4].Trip_Source	:=	;*)
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

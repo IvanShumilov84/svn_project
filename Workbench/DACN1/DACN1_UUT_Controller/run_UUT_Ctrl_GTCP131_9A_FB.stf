@@ -1,0 +1,457 @@
+FUNCTION_BLOCK run_UUT_Ctrl_GTCP131_9A_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_GTCP131_9A_FB									
+														
+************************************************************************************************************************************************)	
+
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: RUNNING');*)
+	err_code 	:= OK;
+
+	(* Definition des signaux *)
+	
+	(* ETC TEMPERATURE *)
+	FOR i:= 1 TO ETC_NUMBER_PROBE BY 1 DO
+		CASE 	ANY_TO_DINT ( ETC_PROBE_BINDING_SOURCE ) OF
+			BINDING_DACN1_NIDAQ_IOMGR_VIN:
+				ETC_ENGINE_PROBE[i] := DACN1_NIDAQ_IOMGR_VIN[ ETC_ENGINE_PROBE_INDEX[i] ].Mean_Value;
+
+			BINDING_DACN1_POWERDNA_IOMGR_T:
+				ETC_ENGINE_PROBE[i] := DACN1_POWERDNA_IOMGR_T[ ETC_ENGINE_PROBE_INDEX[i] ].Mean_Value;
+
+			BINDING_DACN1_SERIAL_IOMGR_T:
+				ETC_ENGINE_PROBE[i] := DACN1_SERIAL_IOMGR_T[ ETC_ENGINE_PROBE_INDEX[i] ].Mean_Value;
+		ELSE
+			err_code := -2;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_GTCP131_9A: ETC_PROBE_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+		END_CASE;         
+	END_FOR;
+
+	(* TInlet TEMPERATURE *)
+	FOR i:= 1 TO T_INLET_NUMBER_PROBE BY 1 DO
+		CASE 	ANY_TO_DINT ( T_INLET_PROBE_BINDING_SOURCE ) OF
+			BINDING_DACN1_NIDAQ_IOMGR_VIN:
+				T_INLET_PROBE[i] := DACN1_NIDAQ_IOMGR_VIN[ T_INLET_PROBE_INDEX[i] ].Mean_Value;
+				T_INLET_OOS_PROBE[i] := DACN1_NIDAQ_IOMGR_VIN[ T_INLET_PROBE_INDEX[i] ].Out_Of_Service;
+
+			BINDING_DACN1_POWERDNA_IOMGR_T:
+				T_INLET_PROBE[i] := DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value;
+				T_INLET_OOS_PROBE[i] := DACN1_POWERDNA_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Out_Of_Service;
+
+			BINDING_DACN1_SERIAL_IOMGR_T:
+				T_INLET_PROBE[i] := DACN1_SERIAL_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Mean_Value;
+				T_INLET_OOS_PROBE[i] := DACN1_SERIAL_IOMGR_T[ T_INLET_PROBE_INDEX[i] ].Out_Of_Service;
+		ELSE
+			err_code := -3;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_GTCP131_9A: T_INLET_PROBE_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+		END_CASE;         
+	END_FOR;
+
+	(* TOIL *)
+	CASE 	ANY_TO_DINT ( T_OIL_PROBE_BINDING_SOURCE ) OF
+			BINDING_DACN1_POWERDNA_IOMGR_T:
+				T_OIL := DACN1_POWERDNA_IOMGR_T[ T_OIL_PROBE_INDEX ].Mean_Value;
+	ELSE
+			err_code := -4;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_GTCP131_9A: T_OIL_PROBE_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+	END_CASE;         
+
+        
+
+	(* N1 Speed *)
+	CASE 	ANY_TO_DINT ( N1_BINDING_SOURCE ) OF
+			BINDING_DACN1_NIDAQ_IOMGR_F:
+				N1_Freq := DACN1_NIDAQ_IOMGR_F[N1_INDEX].Mean_Value;
+	ELSE
+			err_code := -1;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_GTCP131_9A: N1_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+	END_CASE;         
+
+
+	(* P_OIL *)
+	CASE 	ANY_TO_DINT ( P_OIL_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_P:
+			P_OIL		:= DACN1_POWERDNA_IOMGR_P[ P_OIL_PROBE_INDEX ].Mean_Value;
+
+	ELSE
+		err_code := -6;
+		dummy    := LOG_MSG('ErrLog', 'UUT_CTRL_GTCP131_9A: P_OIL_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	END_CASE;         
+
+	(* RTL *)
+	CASE 	ANY_TO_DINT ( RTL_DIN_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DIN:
+			RTL	:= DACN1_SERIAL_IOMGR_DIN[ RTL_DIN_INDEX ]; (* APU Available same thing different name *)
+	ELSE
+		err_code := -7;
+		dummy    := LOG_MSG('ErrLog', 'UUT_CTRL_GTCP131_9A: RTL_DIN_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* VIB_TURBINE ****************************)
+	CASE 	ANY_TO_DINT ( VIB_TURBINE_BINDING_SOURCE ) OF
+		BINDING_DACN1_NIDAQ_IOMGR_VIB:
+			VIB_TURBINE	:= DACN1_NIDAQ_IOMGR_VIB[ VIB_TURBINE_INDEX ].Mean_Value;
+	ELSE
+		err_code := -8;
+		dummy    := LOG_MSG('ErrLog', 'UUT_CTRL_GTCP131_9A: VIB_TURBINE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* VIB_GEARBOX ****************************)
+	CASE 	ANY_TO_DINT ( VIB_GEARBOX_BINDING_SOURCE ) OF
+		BINDING_DACN1_NIDAQ_IOMGR_VIB:
+			VIB_GEARBOX	:= DACN1_NIDAQ_IOMGR_VIB[ VIB_GEARBOX_INDEX ].Mean_Value;
+	ELSE
+		err_code := -9;
+		dummy    := LOG_MSG('ErrLog', 'UUT_CTRL_GTCP131_9A: VIB_GEARBOX_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* VIB_COOLING_FAN ****************************)
+	CASE 	ANY_TO_DINT ( VIB_COOLING_BINDING_SOURCE ) OF
+		BINDING_DACN1_NIDAQ_IOMGR_VIB:
+			VIB_COOLING	:= DACN1_NIDAQ_IOMGR_VIB[ VIB_COOLING_INDEX ].Mean_Value;
+	ELSE
+		err_code := -10;
+		dummy    := LOG_MSG('ErrLog', 'UUT_CTRL_GTCP131_9A: VIB_COOLING_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+	(* ECB_POWER_CMD  ****************************)
+	CASE 	ANY_TO_DINT ( ECB_POWER_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+		ECB_POWER_CMD	:= DACN1_SERIAL_IOMGR_DOUT[ ECB_POWER_CMD_INDEX ];
+
+	ELSE
+		err_code := -11;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_GTCP131-9A: APU_RUN_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+	(* APU_RUN_STOP_CMD  ****************************)
+	CASE 	ANY_TO_DINT ( APU_RUN_STOP_CMD_BINDING_SOURCE ) OF
+		BINDING_DACN1_SERIAL_IOMGR_DOUT:
+		APU_RUN_STOP_CMD	:= DACN1_SERIAL_IOMGR_DOUT[ APU_RUN_STOP_CMD_INDEX ];
+
+		APU_RUN_CMD	:= NOT APU_RUN_STOP_CMD;
+
+	ELSE
+		err_code := -12;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_GTCP131-9A: APU_RUN_CMD_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;
+
+
+    (* Fin definition des signaux *)
+
+
+	(* The ECB performs a speed test when they RUN_STOP is ON and also when the STARTS COMMAND up, and during this test the OVERSPEED is TRIGGERED *)
+    (* So in the 5 second following the power on, the speed is going to it's maximum for one seconds *)
+	
+	ApuRunCmd_Latch(APU_RUN_CMD, NOT ECB_POWER_CMD);  (* Starts when ApuRunCmdOn is applied. Resets when EcbPowerCmd is Off. *)
+ 
+	IF (ECB_POWER_CMD = TRUE) AND (ApuRunCmd_Latch.Q1 = TRUE) THEN
+		ApuRunCmd_Timer(TRUE, t#15s);
+	ELSIF ( ECB_POWER_CMD = FALSE ) THEN
+		ApuRunCmd_Timer(FALSE, t#15s); (* Reset Timer only When Ecb Power is OFF*)
+	END_IF;
+ 
+	ActivateSpeedAcquisition := NOT ECB_POWER_CMD OR (ANY_TO_REAL(ApuRunCmd_Timer.ET) / 1000.0) > 7.0;
+                 
+    IF ActivateSpeedAcquisition THEN
+		IF (N1_Freq < 100.0) THEN
+
+			N1_Speed 		:= 0.0;
+			N1_Speed_PCT 	:= 0.0;
+
+		ELSE 
+
+			N1_Speed		:= (N1_Freq * N1_100_RPM) / N1_100_FREQ;
+			N1_Speed_PCT	:= (N1_Freq / N1_100_FREQ ) * 100.0;
+
+		END_IF;
+	ELSE
+		N1_Speed 		:= 0.0;
+		N1_Speed_PCT 	:= 0.0;
+	END_IF;
+
+    IF VIB_GEARBOX_RESET Or OPC_PERF_NEW_TEST THEN
+          VibGearboxMax_Value := 0.0;
+    ELSIF VIB_GEARBOX > VibGearboxMax_Value THEN
+          VibGearboxMax_Value := VIB_GEARBOX;
+    END_IF;
+
+    IF VIB_COOLING_RESET Or OPC_PERF_NEW_TEST THEN
+          VibCoolingMax_Value := 0.0;
+    ELSIF VIB_COOLING > VibCoolingMax_Value THEN
+          VibCoolingMax_Value := VIB_COOLING;
+    END_IF;
+
+    IF VIB_TURBINE_RESET Or OPC_PERF_NEW_TEST THEN
+          VibTurbineMax_Value := 0.0;
+    ELSIF  VIB_TURBINE > VibTurbineMax_Value THEN
+          VibTurbineMax_Value := VIB_TURBINE;
+    END_IF;
+
+	TExhaust 	:= 0.0;
+	TExhaust_Avg_Nb_Of_Probe := 0.0; 
+
+	FOR i:= 1 TO ETC_NUMBER_PROBE BY 1 DO
+		(*IF (ETC_ENGINE_PROBE[i] < 3000.0 And ETC_ENGINE_PROBE[i]  > -460.0) THEN*) (* Validate if the reading is OK *)
+			TExhaust := TExhaust + ETC_ENGINE_PROBE[i] ;
+			TExhaust_Avg_Nb_Of_Probe := TExhaust_Avg_Nb_Of_Probe + 1.0;
+		(*END_IF;*)
+	END_FOR;
+
+	IF (TExhaust_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TExhaust	:= TExhaust / TExhaust_Avg_Nb_Of_Probe;
+	ELSE
+		TExhaust	:= 3000.0;(* FORCE A TRIPPER *)
+	END_IF;
+
+	(* WARNING It is possible to delete some probes in the HMI which is affecting the calculation *)
+	TInlet_Avg 	:= 0.0;
+	TInlet_Avg_Nb_Of_Probe := 0.0;
+ 
+	FOR i:= 1 TO T_INLET_NUMBER_PROBE BY 1 DO
+		IF (T_INLET_OOS_PROBE[i] = FALSE ) THEN
+			TInlet_Avg := TInlet_Avg  + T_INLET_PROBE[i] ;
+			TInlet_Avg_Nb_Of_Probe := TInlet_Avg_Nb_Of_Probe + 1.0;
+		END_IF;
+	END_FOR;
+
+	IF (TInlet_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TInlet_Avg	:= TInlet_Avg / TInlet_Avg_Nb_Of_Probe;
+	ELSE
+		TInlet_Avg	:= 0.0;
+	END_IF;
+
+(* For the GTCP131-9A EGT Overtemperature Limits:  when starting (N < 95%) : depend on the speed and Inlet Compressor temperature (T2)  
+                                                   when steady state: TInlet Temperature in steady-state *)
+(*	Ref. EM page 1338 Figure 1305: 100% RPM = 48800 rpm	*)
+
+(*	Starting		*)
+(*	RPM		RPM		EGT (DegF)			EGT (DegF)			EGT (DegF)			EGT (DegF)
+    (%)		(rpm)		@T2 = -100 DegF		@ T2 = 0 DegF		@ T2 = 59 DegF		@ T2 = 130 DegF
+	0	    	0.0			1910				1950				1970				2000
+	10.7		5221.6		1910				1950				1970				2000
+	13.6		6636.8		1810				1850				1875				1900
+	20.7		10101.6		1760				1800				1825				1855
+	41.4		20203.2		1675				1720				1740				1770
+	51.8		25278.4		1580				1625				1650				1675
+	61.8		30158.4		1580				1625				1650				1675
+	72.1		35184.8		1475				1520				1540				1570
+	82.1		40064.8		1355				1400				1420				1450
+	90.4		44115.2		1260				1295				1325				1350
+	95		46360.0		1225				1265				1290				1315		*)
+
+
+
+(*	Steady-state		*)
+
+(* 	TInlet (DegF)		EGT (DegF)
+	-40			1270
+	20			1285
+	50			1302
+	80			1320
+	130			1360		*)
+
+
+      (* Note: Lowest speed can be 0 because we filtered it before in this code *)
+
+	IF N1_Speed > EGT_LIMIT_STARTING_SPEED[EGT_NUMBER_SPEED] THEN
+
+
+
+		IF (TInlet_Avg <= EGT_STEADY_TINLET[1] ) THEN
+			UUT_Trip_T[1].Trip_Point := EGT_STEADY_LIMIT[1];
+
+		ELSIF (TInlet_Avg >= EGT_STEADY_TINLET[EGT_NUMBER_STEADY_POINT]) THEN
+			UUT_Trip_T[1].Trip_Point := EGT_STEADY_LIMIT[EGT_NUMBER_STEADY_POINT];
+
+		ELSE 
+			FOR i:= 1 TO EGT_NUMBER_STEADY_POINT - 1 BY 1 DO
+
+				IF (TInlet_Avg >= EGT_STEADY_TINLET[i]  AND TInlet_Avg <= EGT_STEADY_TINLET[i+1]  ) THEN
+
+					Slope	:= (EGT_STEADY_LIMIT[i+1]-EGT_STEADY_LIMIT[i])/(EGT_STEADY_TINLET[i+1] - EGT_STEADY_TINLET[i]);
+
+					Offset := EGT_STEADY_LIMIT[i]  - (Slope * EGT_STEADY_TINLET[i]);  
+
+					UUT_Trip_T[1].Trip_Point := TInlet_Avg * Slope + Offset;
+				END_IF;
+			END_FOR;
+		END_IF;
+
+
+
+	ELSE
+		FOR i:= 1 TO EGT_NUMBER_SPEED - 1 BY 1 DO
+			IF  (N1_Speed >= EGT_LIMIT_STARTING_SPEED[i] AND N1_Speed <= EGT_LIMIT_STARTING_SPEED[i+1])THEN
+
+				IF (TInlet_Avg <= EGT_LIMIT_STARTING_TINLET[1]) THEN
+					Slope	:= (EGT_LIMIT_STARTING_TABLE[1,i+1] - EGT_LIMIT_STARTING_TABLE[1,i]) / (EGT_LIMIT_STARTING_SPEED[i+1] - EGT_LIMIT_STARTING_SPEED[i]);
+					Offset	:= EGT_LIMIT_STARTING_TABLE[1,i] - (Slope * EGT_LIMIT_STARTING_SPEED[i]);
+
+					UUT_Trip_T[1].Trip_Point := N1_Speed * Slope + Offset;
+
+				ELSIF (TInlet_Avg >= EGT_LIMIT_STARTING_TINLET[EGT_NUMBER_CURVE]) THEN
+					Slope 	:= (EGT_LIMIT_STARTING_TABLE[EGT_NUMBER_CURVE,i+1]  - EGT_LIMIT_STARTING_TABLE[EGT_NUMBER_CURVE,i] ) / (EGT_LIMIT_STARTING_SPEED[i+1] - EGT_LIMIT_STARTING_SPEED[i]);
+					Offset	:= EGT_LIMIT_STARTING_TABLE[EGT_NUMBER_CURVE,i]  - (Slope * EGT_LIMIT_STARTING_SPEED[i]);
+
+					UUT_Trip_T[1].Trip_Point := N1_Speed * Slope + Offset;
+
+                		ELSE 
+					FOR j:= 1 TO EGT_NUMBER_CURVE - 1 BY 1 DO
+
+						IF (TInlet_Avg >= EGT_LIMIT_STARTING_TINLET[j]  AND TInlet_Avg <= EGT_LIMIT_STARTING_TINLET[j+1]  ) THEN
+						
+							interpolation_2D(EGT_LIMIT_STARTING_SPEED[i], EGT_LIMIT_STARTING_SPEED[i+1], EGT_LIMIT_STARTING_TINLET[j], EGT_LIMIT_STARTING_TINLET[j+1], EGT_LIMIT_STARTING_TABLE[j,i] , EGT_LIMIT_STARTING_TABLE[j,i+1], EGT_LIMIT_STARTING_TABLE[j+1,i], EGT_LIMIT_STARTING_TABLE[j+1,i+1], N1_Speed, TInlet_Avg);
+
+							UUT_Trip_T[1].Trip_Point := interpolation_2D.Lim_EGT;
+
+						END_IF;
+
+					END_FOR;
+               		END_IF;
+			END_IF;
+		END_FOR;
+	END_IF;
+
+
+
+(*	UUT_Trip_T[1].Trip_Point	:=	;*)
+	UUT_Trip_T[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;
+	UUT_Trip_T[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.T3;
+	UUT_Trip_T[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.T4;
+
+	UUT_Trip_F[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.F1;
+	UUT_Trip_F[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.F2;
+	UUT_Trip_F[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.F3;
+	UUT_Trip_F[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.F4;
+
+	UUT_Trip_N[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.N1;
+	UUT_Trip_N[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.N2;
+	UUT_Trip_N[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.N3;
+	UUT_Trip_N[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.N4;
+
+	UUT_Trip_P[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.P1;
+	UUT_Trip_P[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.P2;
+	UUT_Trip_P[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.P3;
+	UUT_Trip_P[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.P4;
+
+	UUT_Trip_Q[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q1;
+	UUT_Trip_Q[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q2;
+	UUT_Trip_Q[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q3;
+	UUT_Trip_Q[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q4;
+
+	UUT_Trip_V[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.V1;
+	UUT_Trip_V[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.V2;
+	UUT_Trip_V[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.V3;
+	UUT_Trip_V[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.V4;
+
+	UUT_Trip_VIB[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB1;
+	UUT_Trip_VIB[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB2;
+	UUT_Trip_VIB[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB3;
+	UUT_Trip_VIB[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB4;
+
+
+
+	IF T_EGT_TRIP_TYPE = 1 THEN
+		UUT_Trip_T[1].Trip_Source	:= 	ANY_TO_REAL(MAX(ANY_TO_DINT(ETC_ENGINE_PROBE[1] ),ANY_TO_DINT(ETC_ENGINE_PROBE[2] )));
+	ELSIF T_EGT_TRIP_TYPE = 2 THEN
+		UUT_Trip_T[1].Trip_Source	:=	TExhaust;
+	ELSE (*NOT SUPPORTED*)
+		UUT_Trip_T[1].Trip_Source := 9999.0;
+	END_IF;
+		
+
+(*	UUT_Trip_T[2].Trip_Source	:=	;*)
+
+
+	(* oil overtemp trip *)
+   	IF ( Trip_Shutdown_Bypass ) THEN
+	    UUT_Trip_T[3].Trip_Source	:=	-5000.0;  (* arbitrary high number *)
+        ELSE
+	    UUT_Trip_T[3].Trip_Source	:=	T_OIL;
+        END_IF;
+
+(*	UUT_Trip_T[4].Trip_Source	:=	;*)
+
+
+(*	UUT_Trip_F[1].Trip_Source	:=	;*)
+(*	UUT_Trip_F[2].Trip_Source	:=	;*)
+(*	UUT_Trip_F[3].Trip_Source	:=	;*)
+(*	UUT_Trip_F[4].Trip_Source	:=	;*)
+
+	UUT_Trip_N[1].Trip_Source	:=	N1_Speed;
+(*	UUT_Trip_N[2].Trip_Source	:=	;*)
+(*	UUT_Trip_N[3].Trip_Source	:=	;*)
+(*	UUT_Trip_N[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_P[1].Trip_Source	:=	;*)
+(*	UUT_Trip_P[2].Trip_Source	:=	;*)
+(*	UUT_Trip_P[3].Trip_Source	:=	;*)
+(*	UUT_Trip_P[4].Trip_Source	:=	;*)
+
+UUT_Trip_P[1].Trip_High := FALSE; (* il s'agit d'un low pressure *)
+
+IF	( RTL AND NOT Trip_Shutdown_Bypass) THEN
+	UUT_Trip_P[1].Trip_Source 	:= 	P_OIL;
+ELSE
+	UUT_Trip_P[1].Trip_Source 	:= 	3000.0; (* arbitrary high value, no trip will be detected *)
+
+END_IF;
+
+
+(*	UUT_Trip_Q[1].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[2].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[3].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_V[1].Trip_Source	:=	;*)
+(*	UUT_Trip_V[2].Trip_Source	:=	;*)
+(*	UUT_Trip_V[3].Trip_Source	:=	;*)
+(*	UUT_Trip_V[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_VIB[1].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[2].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[3].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[4].Trip_Source	:=	;*)
+
+
+EGT_Limit := UUT_Trip_T[1].Trip_Point;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

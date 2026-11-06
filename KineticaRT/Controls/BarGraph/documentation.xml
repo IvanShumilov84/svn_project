@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.BarGraph</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.BarGraph">
+            <summary>
+            Graph control which displays an array of values as bars
+            </summary>
+            <remarks>Uses values from a KineticaRT.Values.DoubleArray</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.#ctor">
+            <summary>
+            Initialises a new instance of the BarGraph class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.ResetLeftScale">
+            <summary>
+            Resets the Scale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.ResetRightScale">
+            <summary>
+            Resets the Scale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.ResetLabelColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.ResetBarColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.ResetNumberColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.SetFormat">
+            <summary>
+            Sets up the tool tip and scale range based on the Source channel
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.OnPropertyChanged(System.String)">
+            <summary>
+            The named property has changed: generate the PropertyChanged event
+            </summary>
+            <param name="propertyName">Name of property that has changed</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.BarGraph.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.BorderStyle">
+            <summary>
+            Gets or sets the style of the Control's border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.BorderWidth">
+            <summary>
+            Gets or Sets the width of the Control's Border
+            </summary>
+            <remarks>
+            Values between 0 and 0.5 represent a proportion of the width of the Control.
+            Values greater than or equal to 1 represent the number of pixels
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.BarCount">
+            <summary>
+            Gets the number of bars currently available
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.ScaleWidthIsPercent">
+            <summary>
+            Gets or sets whether the ScaleWidth property refers to pixels or a percentage of the total width of the Control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.ScaleWidth">
+            <summary>
+            Gets or sets the width of the scales (pixels or percent depending on ScaleWidthIsPercent)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.LeftScale">
+            <summary>
+            Gets the Left hand Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.RightScale">
+            <summary>
+            Gets the Right hand Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the graph's values
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.Source">
+            <summary>
+            Gets or sets the name of the object to be the Source of the graph's values
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.Value">
+            <summary>
+            Gets or sets the current value of the graph
+            </summary>
+            <remarks>Only KineticaRT.Values.DoubleArray objects are understood</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.Gap">
+            <summary>
+            Gets or sets the number of pixels gap between bars
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.DividerEvery">
+            <summary>
+            Gets or sets the number of bars between dividers
+            </summary>
+            <remarks>'Dividers' take the form of simplified versions of a Scale</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.BarWidth">
+            <summary>
+            Gets or sets the width of each bar in pixels. 
+            </summary>
+            <remarks>'0' means the bars are sized to fit the Control.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.LabelsEnabled">
+            <summary>
+            Gets or sets whether individual bars are labelled
+            </summary>
+            <remarks>Labels are the numeric index of the bar</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.NumbersEnabled">
+            <summary>
+            Gets or sets whether the current value of each bar is displayed as a number
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.LabelColor">
+            <summary>
+            Gets or sets the color of the Labels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.BarColor">
+            <summary>
+            Gets or sets the color of the Bars
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.NumberColor">
+            <summary>
+            Gets or sets the color of the Numbers
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.BarGraph.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Graph gets its ToolTip and scale ranges
+             from its Source channel
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,3 @@
+FUNCTION_BLOCK Round_FB
+Data_Out	:= ANY_TO_STRING(Data_In)  + char(46) + ANY_TO_STRING(ANY_TO_DINT(Data_In * 100.00) - (ANY_TO_DINT(Data_In) * 100)); 
+END_FUNCTION_BLOCK

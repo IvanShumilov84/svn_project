@@ -1,0 +1,59 @@
+FUNCTION_BLOCK load_SM1720_FB
+status := LOADING;
+
+err_code := OK;
+
+IF (err_code <> OK) THEN 
+
+	status := ERROR_ON_LOADING;
+
+ELSE 
+
+	status := LOADED;
+
+END_IF; 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

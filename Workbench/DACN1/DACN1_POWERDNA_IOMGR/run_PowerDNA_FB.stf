@@ -1,0 +1,403 @@
+FUNCTION_BLOCK run_PowerDNA_FB
+(************************************************************************************************************************************************
+	Name :		run_PowerDNA_FB									
+														
+	Description :	read temperatures from the powerdna 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         2009/02/12		J.Hamelin		First Release
+	2.0	         2009/04/10		J.Hamelin		verify sate of the handle prior to a reading 
+	
+
+************************************************************************************************************************************************)	
+
+err_code := OK;
+status   := RUNNING;
+(* CODE FROM 05288  Log message every 15 minutes. 900 000 ms *)
+(*IF  (modulo_rest= 0) THEN
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_POWERDNA_IOMGR: RUNNING');
+END_IF;
+
+modulo_rest:= MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+*)
+err_code := OK;
+
+
+
+	
+FOR i:= 1 TO number_of_powerdnas DO (* number_of_powerdnas calculated from CSV see Initializing sequence*)
+
+	PowerDNA_Structure[i].status := RUNNING;
+	
+END_FOR;
+
+
+	IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN
+
+	(* Read the current scan *)
+
+		FOR powerdna := 1 TO number_of_powerdnas DO
+	
+
+			IF ( PowerDNA_Structure[ powerdna ].handle <> -1 ) THEN
+
+				FOR layer := 0 to ( PowerDNA_Structure[ powerdna ].number_of_layers - 1 ) DO
+					
+					IF 	PowerDNA_Structure[ powerdna ].layer[ layer ].Reinit_Clock_ScanRate = TRUE THEN 
+						PowerDNA_Structure[ powerdna ].layer[ layer ].Reinit_Clock_ScanRate := FALSE;
+
+						IF 'DNA-AI-225' = (PowerDNA_Structure[ powerdna ].layer[ layer ].layer_name) THEN
+	
+							POWERDNA_SETRATE( PowerDNA_Structure[ powerdna ].handle , layer, POWERDNA_SCAN_RATE);
+							PowerDNA_Structure[ powerdna ].err_code := POWERDNA_SETRATE.ERR_CODE;
+							PowerDNA_Structure[ powerdna ].layer[ layer ].err_code := POWERDNA_SETRATE.ERR_CODE;
+
+						ELSE
+
+							POWERDNA_SETCLOCK(PowerDNA_Structure[ powerdna ].handle , layer, 200.0); (* FREQUENCY 200 Hz*)
+							PowerDNA_Structure[ powerdna ].err_code := POWERDNA_SETCLOCK.ERR_CODE;
+							PowerDNA_Structure[ powerdna ].layer[ layer ].err_code :=  POWERDNA_SETCLOCK.ERR_CODE;
+
+						END_IF;
+
+						
+						IF (PowerDNA_Structure[powerdna].err_code <> OK) THEN
+
+							POWERDNA_CLOSE(PowerDNA_Structure[ powerdna ].handle); 
+ 							
+							PowerDNA_Structure[powerdna].handle := -1;
+							err_code                            := PowerDNA_Structure[powerdna].err_code;
+
+						ELSE
+
+							PowerDNA_Structure[powerdna].status := RUNNING;
+	
+						END_IF;
+
+					END_IF;
+
+
+					IF 'DNA-AI-225' = (PowerDNA_Structure[ powerdna ].layer[ layer ].layer_name) THEN
+
+						FOR channel := 0 TO ( PowerDNA_Structure[ powerdna ].layer[ layer ].CLSize - 1 )  DO
+					
+							clgeneric[ channel ] := ( OR_MASK ( DQ_LNCL_DIFF, channel )); 
+							TCtype_Current[ channel ] := ( PowerDNA_Structure[ powerdna ].layer[ layer ].channel[ channel ].tctype );
+
+						END_FOR;
+
+						(* TODO ici ca marche pas pour le clgeneric, cette variable doit etre par layer *)
+						POWERDNA_READ(PowerDNA_Structure[powerdna].handle, layer, (PowerDNA_Structure[powerdna].layer[layer].clsize), clgeneric, TCtype_Current);
+						PowerDNA_Structure[ powerdna ].err_code 				:= PowerDNA_READ.ERR_CODE;
+						PowerDNA_Structure[ powerdna ].layer[ layer ].err_code 	:= PowerDNA_READ.ERR_CODE;
+
+	
+					ELSIF 'DNA-AI-201-100' = (PowerDNA_Structure[ powerdna ].layer[ layer ].layer_name) THEN
+	
+						(* set up  a channel list in order we want it.  Setup all channels in differential mode *)
+						(* the same channel list will be used because all channel on all layer are in differential mode *)
+	
+						FOR channel := 0 TO ( PowerDNA_Structure[ powerdna ].layer[ layer ].CLSize - 1 ) DO
+
+					    	clgeneric[ channel ] := ( OR_MASK ( DQ_LNCL_DIFF, channel )); 
+							
+							minDCValue := PowerDNA_Structure[ powerdna ].layer[ layer ].channel[ channel ].minDCValue;
+							maxDCValue := PowerDNA_Structure[ powerdna ].layer[ layer ].channel[ channel ].maxDCValue;
+
+							(* DQ_AI201_GAIN_10_100 Range of +or- 1.5V	*)
+							(* DQ_AI201_GAIN_5_100 	Range of +or- 3V 	*)
+							(* DQ_AI201_GAIN_2_100 	Range of +or- 7.5V	*)
+							(* DQ_AI201_GAIN_1  	Range of +or- 15 V	*)
+	
+							IF (minDCValue >= -1.5 AND	maxDCValue <= 1.5) THEN
+								clgeneric[ channel ] := ( OR_MASK ( DQ_AI201_GAIN_10_100 , clgeneric[ channel ]  )); 
+	
+							ELSIF (minDCValue >= -3.0) AND (maxDCValue <= 3.0) THEN
+								clgeneric[ channel ] := ( OR_MASK ( DQ_AI201_GAIN_5_100 , clgeneric[ channel ]  )); 
+	
+							ELSIF (minDCValue >= -7.5) AND (maxDCValue <= 7.5) THEN
+								clgeneric[ channel ] := ( OR_MASK ( DQ_AI201_GAIN_2_100 , clgeneric[ channel ]  )); 
+	
+							ELSIF (minDCValue >= -15.0) AND (maxDCValue <= 15.0) THEN
+								clgeneric[ channel ] := ( OR_MASK ( DQ_AI201_GAIN_1 , clgeneric[ channel ]  )); 
+	
+							ELSE  	
+								(* CONFIGURATION OUT OF RANGE FOR CARD DNA-AI-201-100 *)
+								clgeneric[ channel ] := ( OR_MASK ( DQ_AI201_GAIN_1 , clgeneric[ channel ]  )); (* +or- 15V is the maximum *)
+								dummy	:= LOG_MSG('ErrLog', 'DACN1_PowerDNA: AI201 CHANNEL CONFIG ERROR ERROR_ON_INITIALIZING');
+	
+							END_IF;
+
+   
+						END_FOR;   
+	
+						DEVICE_NAME := 'DNA-AI-201-100';
+						
+						POWERDNA_READ_AI( PowerDNA_Structure[ powerdna ].handle , layer, DEVICE_NAME ,PowerDNA_Structure[ powerdna ].layer[ layer ].CLSize, clgeneric);
+						PowerDNA_Structure[ powerdna ].err_code 				:= PowerDNA_READ_AI.ERR_CODE;
+						PowerDNA_Structure[ powerdna ].layer[ layer ].err_code 	:= PowerDNA_READ_AI.ERR_CODE;
+
+				
+					END_IF;
+				
+					IF (PowerDNA_Structure[ powerdna ].err_code <> OK) THEN
+					
+				      	CASE ANY_TO_INT (PowerDNA_Structure[powerdna].IOMname) OF
+	
+				           	1: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 1 LOST CONNECTION');
+					        2: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 2 LOST CONNECTION');
+					        3: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 3 LOST CONNECTION');
+					        4: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 4 LOST CONNECTION');
+				   	    END_CASE;         
+	
+						POWERDNA_CLOSE(PowerDNA_Structure[ powerdna ].handle); 
+ 						
+						PowerDNA_Structure[ powerdna ].handle := -1;
+						PowerDNA_Structure[ powerdna ].status := RUN;
+						(*powerdna	                          := number_of_powerdnas; ne  pas faire ca pcq lorsque 2 powerdna et que 1 seul disconnect plus bas faut reconnecter le bon... le pas briser l'ordre des index *)   (* force the exit of for loop *)
+						channel 	                          := PowerDNA_Structure[ powerdna ].layer[ layer ].CLSize;
+						layer		                          := PowerDNA_Structure[ powerdna ].number_of_layers;       (* force the exit of for loop *)
+						err_code 	                          := PowerDNA_READ.ERR_CODE; (* force the exit of for loop *)
+						
+					ELSE	
+
+
+						FOR channel := 0 to ( PowerDNA_Structure[ powerdna ].layer[ layer ].CLSize - 1 ) DO
+
+					
+							IF 'DNA-AI-225' = (PowerDNA_Structure[ powerdna ].layer[ layer ].layer_name) THEN
+				
+								PowerDNA_Structure[ powerdna ].layer[ layer ].channel[ channel ].value  := PowerDNA_READ.TEMPC[ channel ];
+					
+							
+							ELSIF 'DNA-AI-201-100' = (PowerDNA_Structure[ powerdna ].layer[ layer ].layer_name) THEN
+
+								PowerDNA_Structure[ powerdna ].layer[ layer ].channel[ channel ].value  := POWERDNA_READ_AI.ANALOG_VALUE[ channel ];
+					
+							END_IF;
+
+						END_FOR;
+
+					END_IF;
+
+				END_FOR;
+
+			END_IF;
+	
+
+			IF ( PowerDNA_Structure[ powerdna ].handle = -1 ) THEN
+				
+					
+				POWERDNA_OPEN(PowerDNA_Structure[ powerdna ].IPaddress);
+				
+
+ 				PowerDNA_Structure[ powerdna ].err_code := POWERDNA_OPEN.ERR_CODE;
+				
+				IF (PowerDNA_Structure[ powerdna ].err_code <> OK) THEN
+
+					PowerDNA_Structure[ powerdna ].handle 	:= -1;
+					PowerDNA_Structure[ powerdna ].status 	:= RUN;
+					err_code                            	:= PowerDNA_Structure[powerdna].err_code;
+
+				ELSE
+
+					PowerDNA_Structure[powerdna].handle := POWERDNA_OPEN.HANDLE; 
+
+					POWERDNA_GETNAME(PowerDNA_Structure[powerdna].handle);
+						
+					IF  ( PowerDNA_Structure[ powerdna ].IOMname = POWERDNA_GETNAME.BUFFER ) THEN
+							
+						Log_Not_Done := TRUE;
+
+						CASE ANY_TO_INT (PowerDNA_Structure[powerdna].IOMname) OF
+	
+					    	1: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 1 RECONNECTION SUCCESSFUL');
+					        2: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 2 RECONNECTION SUCCESSFUL');
+					        3: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 3 RECONNECTION SUCCESSFUL');
+				            4: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK 4 RECONNECTION SUCCESSFUL');
+			    
+				       	END_CASE;  
+				
+						FOR layer := 0 to ( PowerDNA_Structure[ powerdna ].number_of_layers - 1 ) DO
+
+							PowerDNA_Structure[ powerdna ].layer[ layer ].Reinit_Clock_ScanRate := TRUE;
+
+						END_FOR;
+
+					ELSE
+						POWERDNA_CLOSE(PowerDNA_Structure[ powerdna ].handle); 
+ 						
+					    PowerDNA_Structure[ powerdna ].handle := -1;
+						PowerDNA_Structure[ powerdna ].status := RUN;
+							
+						IF ( Log_Not_Done ) THEN
+
+			                CASE ANY_TO_INT (PowerDNA_Structure[powerdna].IOMname) OF
+
+					        	1: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK1 WAS SWAPPED WITHOUT CLOSING');
+					            2: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK2 WAS SWAPPED WITHOUT CLOSING');
+					            3: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK3 WAS SWAPPED WITHOUT CLOSING');
+					            4: dummy := LOG_MSG('ErrLog', 'POWERDNA: STRONGBACK4 WAS SWAPPED WITHOUT CLOSING');
+		
+							END_CASE;         
+
+							Log_Not_Done := FALSE;
+
+						END_IF;
+
+					END_IF;
+
+				END_IF;
+
+			END_IF;
+
+		END_FOR;
+
+
+
+		
+		FOR index := 1 TO number_of_variables BY 1 DO
+		
+			IF ( PowerDNA_Structure[i].err_code = OK ) THEN
+
+				PROC_RFV( rdata_base, FV[index].Data_Handle, ANY_TO_REAL ( PowerDNA_Structure[FV[index].Powerdna].layer[ FV[index].Layer ].channel[ FV[index].Channel ].value ) );
+
+			END_IF;
+
+
+			CASE ANY_TO_INT ( FV[index].FV_type ) OF
+				FV_T:
+					IF ((PowerDNA_Structure[FV[index].Powerdna].err_code = OK) AND (PowerDNA_Structure[FV[index].Powerdna].Status = RUNNING)) THEN
+
+						T[FV[index].FV_index].out_of_service 	:= T_OUT_OF_SERVICE[FV[index].FV_index]; 		(* value from HMI by user *)
+						T[FV[index].FV_index].value        		:= PROC_RFV.VALUE;
+        				T[FV[index].FV_index].mean_value   		:= PROC_RFV.MEAN_VALUE;
+
+					ELSE
+	
+						(* Force value to -9999 for bad powerdna reading*)
+						T[FV[index].FV_index].value      := -9999;
+						T[FV[index].FV_index].mean_value := -9999;
+				
+					END_IF;
+
+				FV_P:
+					IF ((PowerDNA_Structure[FV[index].Powerdna].err_code = OK) AND (PowerDNA_Structure[FV[index].Powerdna].Status = RUNNING)) THEN
+	
+						P[FV[index].FV_index].value        	:= PROC_RFV.VALUE;
+		        		P[FV[index].FV_index].mean_value   	:= PROC_RFV.MEAN_VALUE;
+	
+					ELSE
+
+						(* Force value to -9999 for bad powerdna reading*)
+						P[FV[index].FV_index].value      := -9999;
+						P[FV[index].FV_index].mean_value := -9999;
+				
+					END_IF;
+
+			END_CASE;
+			
+		END_FOR;
+
+	ELSE (* RUN_FOR_TRUE *)
+
+		(* A small fix to test deleted channel used in UUT_Controller for GTCP131-9A  when in mode SIMULATION *)
+		FOR index := 1 TO number_of_variables BY 1 DO
+			
+			T[FV[index].FV_index].out_of_service := T_OUT_OF_SERVICE[FV[index].FV_index]; 		(* value from HMI by user *)
+	
+		END_FOR;
+
+		(* we are in simulation mode and we want to simulation value changing *)
+    	IF Simulation_Data_Enable THEN
+
+			(* Make the temperture change for all channels *)
+			FOR i:= 1 TO NUMBER_OF_POWERDNAS DO
+
+				FOR index := 1 TO number_of_variables BY 1 DO
+				
+
+					T[FV[index].FV_index].value      := T[FV[index].FV_index].value + Simulation_Data_Variation_Increment_Value;
+					T[FV[index].FV_index].mean_value := T[FV[index].FV_index].value;
+
+					IF T[FV[index].FV_index].value > Simulation_Data_Variation_Hi_Value THEN
+
+						T[FV[index].FV_index].value      := Simulation_Data_Variation_Low_Value ;
+						T[FV[index].FV_index].mean_value := T[FV[index].FV_index].value;
+					END_IF;
+
+				END_FOR;
+
+			END_FOR;
+
+		END_IF;
+
+	END_IF; 
+
+	
+
+
+(* Log administration *)
+IF Update_RDATA_Flag = TRUE THEN
+
+	xfer_RData();
+	Update_RDATA_Flag := FALSE;
+
+END_IF;
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

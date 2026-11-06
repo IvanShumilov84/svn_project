@@ -1,0 +1,44 @@
+FUNCTION_BLOCK close_Serial_Arinc_FB
+(************************************************************************************************************************************************
+	Name :		close_Serial_Arinc_FB									
+														
+	Description :	 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/13		N. Sangiovanni	First Release
+
+************************************************************************************************************************************************)	
+
+status := CLOSING;
+err_code := OK;
+
+	
+IF(In_Serial_Arinc_IOMgr.mode = RUN_FOR_TRUE) THEN
+
+
+	CLOSE_SER_PORT(fd);
+	err_code := CLOSE_SER_PORT.ERR_CODE;
+
+	IF(err_code = -1) THEN (* Fix un bug pcq une fois le port ferme le err_code sera -1 au lieu de 0 *)
+		err_code := 0;
+	END_IF;
+
+END_IF; 
+
+(*	IF ((err_code = OK) AND (status = CLOSING)) THEN *)
+IF ((status = CLOSING)) THEN 
+
+	status := CLOSED;
+
+END_IF; 
+
+
+
+
+
+END_FUNCTION_BLOCK

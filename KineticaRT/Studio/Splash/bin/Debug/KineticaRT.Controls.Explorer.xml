@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Explorer</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.ExplorerForm">
+            <summary>
+            Basic container form for a KineticaRT Explorer control
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ExplorerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExplorerForm.#ctor">
+            <summary>
+            Initialises an new instance of the ExplorerForm class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExplorerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExplorerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ExplorerForm.SelectObject(System.Object)">
+            <summary>
+            Sets the given object to be the Root of the Explorer
+            </summary>
+            <param name="newObj">Object to set as the Root object</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ExplorerForm.OnClosed(System.EventArgs)">
+            <summary>
+            Closed Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="T:KineticaRT.Controls.Explorer">
+            <summary>
+            KineticaRT Explorer control.
+            Used for viewing and editing controls and components at runtime
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Explorer.treeView">
+            <summary>Tree forming the left hand side of the Explorer</summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.#ctor">
+            <summary>
+            Initialises an new instance of the Explorer class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.AddRootObject(System.Object)">
+            <summary>
+            Adds the given object to the root of the Explorer tree
+            </summary>
+            <param name="NewRootObject">Object to add</param>
+            <remarks>The new object will appear named according to its Type</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.AddRootObject(System.String,System.Object)">
+            <summary>
+            Adds the given object to the root of the Explorer tree
+            </summary>
+            <param name="NewRootObject">Object to add</param>
+            <param name="Name">Name of object as it will appear in the Tree</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.Clear">
+            <summary>
+            Removes all objects from the Explorer
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.RemoveObject(System.Object)">
+            <summary>
+            Removes the given object from the root level of the Tree, if it was there
+            </summary>
+            <param name="Object">Object to be removed</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.OnMenuPopup(System.Object,System.EventArgs)">
+            <summary>
+            Menu Popup event handler
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.OnMenuShowProperties(System.Object,System.EventArgs)">
+            <summary>
+            Show Properties has been selected from the menu
+            </summary>
+            <param name="sender">Menu item that generated the event</param>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.OnMenuConnect(System.Object,System.EventArgs)">
+            <summary>
+            Connect has been selected from the menu
+            </summary>
+            <param name="sender">Menu item that generated the event</param>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.OnMenuDisconnect(System.Object,System.EventArgs)">
+            <summary>
+            Disconnect has been selected from the menu
+            </summary>
+            <param name="sender">Menu item that generated the event</param>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.OnResize(System.EventArgs)">
+            <summary>
+            Resize Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.OnComponentChanged">
+            <summary>
+            Raises the ComponentChanged event.
+            Part of the ITypeDescriptorContext interface
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.OnComponentChanging">
+            <summary>
+            Returns a value indicating whether this object can be changed.
+            Part of the ITypeDescriptorContext interface
+            </summary>
+            <returns>true if this object can be changed; otherwise, false</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type.
+            Part of the IServiceProvider interface
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get</param>
+            <returns>A service object of type serviceType or 'null' or if there is no service object of type serviceType</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.CloseDropDown">
+            <summary>
+            Closes any previously opened drop down control.
+            Part of the IWindowsFormsEditorService interface
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.DropDownControl(System.Windows.Forms.Control)">
+            <summary>
+            Opens the specified drop down list control.
+            Part of the IWindowsFormsEditorService interface
+            </summary>
+            <param name="control">The drop down list Control to open</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ShowDialog(System.Windows.Forms.Form)">
+            <summary>
+            Shows the specified Form.
+            Part of the IWindowsFormsEditorService interface
+            </summary>
+            <param name="form">The Form to display</param>
+            <returns>A DialogResult indicating the result code returned by the dialog box</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.System#ComponentModel#ITypeDescriptorContext#get_Container">
+            <summary>
+            KineticaRT Explorer control.
+            Used for viewing and editing controls and components at runtime
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Explorer.Instance">
+            <summary>
+            Gets the instance of the object that is connected with this TypeDescriptor request.
+            Part of the ITypeDescriptorContext interface
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Explorer.PropertyDescriptor">
+            <summary>
+            Gets the PropertyDescriptor that describes the given context item.
+            Part of the ITypeDescriptorContext interface
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Explorer.ExtNode">
+            <summary>
+            Extension of TreeNode to contain an Object which the node represents
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ExtNode.#ctor(System.String,System.Object)">
+            <summary>
+            Initialises a new instance of the ExtNode class
+            </summary>
+            <param name="name">Name of object held by the Node</param>
+            <param name="Object">Object held by the Node</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ExtNode.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            Initialises a new instance of the ExtNode class
+            </summary>
+            <param name="name">Name of object held by the Node</param>
+            <param name="Object">Object held by the Node</param>
+            <param name="path">Path to object held by the Node</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ExtNode.AddChildren">
+            <summary>
+            Adds nodes for any sub-objects / collections held by the object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ExtNode.AddChildren(System.String)">
+            <summary>
+            Adds nodes for any sub-objects / collections held by the object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ExtNode.RemoveChildren">
+            <summary>
+            Removes child nodes from the tree
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ExtNode.Connect">
+            <summary>
+            Connects the PropertyChanged watch
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Explorer.ExtNode.Disconnect">
+            <summary>
+            Disconnects the PropertyChanged watch
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Explorer.ExtNode.Object">
+            <summary>
+            Gets or sets the Object held by the Node
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Explorer.ExtNode.IsCollection">
+            <summary>
+            Gets whether the Object is a collectino (supports the ICollection interface)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Explorer.ExtNode.SpecialEditor">
+            <summary>
+            Gets or sets whether the Object has a special editor
+            </summary>
+            <remarks>Objects without special editors use the PropertyGrid</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Explorer.ExtNode.Name">
+            <summary>
+            Gets the name of the Object associated with this Node
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Explorer.ExtNode.Path">
+            <summary>
+            Gets the path of the Object associated with this Node
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.ControlExplorerForm">
+            <summary>
+            Form that displays a Property Grid for te properties of a Control or set of controls.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.ControlExplorerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ControlExplorerForm.#ctor">
+            <summary>
+            Initialises an new instance of the ControlExplorerForm class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ControlExplorerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ControlExplorerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ControlExplorerForm.SelectObjects(System.Object[])">
+            <summary>
+            Displays the given objects in the Property Grid
+            </summary>
+            <param name="newObjects">Objects to view the properties of</param>
+        </member>
+    </members>
+</doc>

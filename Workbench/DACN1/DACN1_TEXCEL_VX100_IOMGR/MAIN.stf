@@ -1,0 +1,127 @@
+PROGRAM MAIN
+
+IF (First_Time_Trough = TRUE) THEN 
+
+	First_Time_Trough := FALSE;
+	Out_Texcel_VX100_IOMgr.status := IDLING;
+	First_Time_Open := TRUE;
+	First_Time_Set :=	TRUE ;
+
+END_IF; 
+
+CASE  In_Texcel_VX100_IOMgr.command OF
+	
+	OPEN:
+
+		IF ((Out_Texcel_VX100_IOMgr.status = IDLING) OR (Out_Texcel_VX100_IOMgr.status = OPENING)) THEN  
+
+			IF (	(UUT_Info.Model <> 'GTCP331-250H')    AND
+				(UUT_Info.Model <> 'GTCP331-500B')    AND
+				(UUT_Info.Model <> 'DAS CALIBRATION') AND
+				(UUT_Info.Model <> 'SYSTEM CHECK')		) THEN
+
+				open_VX100_IOMgr(UUT_Info);
+	
+				Out_Texcel_VX100_IOMgr.status			:= open_VX100_IOMgr.status;	
+				Out_Texcel_VX100_IOMgr.err_code		:= open_VX100_IOMgr.err_code;	
+				rdata_base					:= open_VX100_IOMgr.rdata_base_handle;
+				Out_Texcel_VX100_IOMgr.previous_index	:= In_Texcel_VX100_IOMgr.current_index;
+			ELSE
+				Out_Texcel_VX100_IOMgr.status			:= OPENED;
+				Out_Texcel_VX100_IOMgr.err_code		:= OK;
+			END_IF;
+		END_IF; 
+
+	LOAD:
+
+		IF ((Out_Texcel_VX100_IOMgr.status = OPENED) OR (Out_Texcel_VX100_IOMgr.status = LOADING)) THEN 
+
+
+			IF (	(UUT_Info.Model <> 'GTCP331-250H')    AND
+				(UUT_Info.Model <> 'GTCP331-500B')    AND
+				(UUT_Info.Model <> 'DAS CALIBRATION') AND
+				(UUT_Info.Model <> 'SYSTEM CHECK')		) THEN
+
+				load_VX100_IOMgr(UUT_Info, In_rdata_user);
+
+				Out_Texcel_VX100_IOMgr.status			:= load_VX100_IOMgr.status;	
+				Out_Texcel_VX100_IOMgr.err_code		:= load_VX100_IOMgr.err_code;	
+			ELSE
+				Out_Texcel_VX100_IOMgr.status			:= LOADED;
+				Out_Texcel_VX100_IOMgr.err_code		:= OK;
+			END_IF;
+		END_IF; 
+
+	INITIALIZE:
+
+		IF (Out_Texcel_VX100_IOMgr.status = LOADED) THEN 
+
+			IF (	(UUT_Info.Model <> 'GTCP331-250H')    AND
+				(UUT_Info.Model <> 'GTCP331-500B')    AND
+				(UUT_Info.Model <> 'DAS CALIBRATION') AND
+				(UUT_Info.Model <> 'SYSTEM CHECK')		) THEN
+
+				initialize_VX100_IOMgr(UUT_Info);
+
+				Out_Texcel_VX100_IOMgr.status			:= initialize_VX100_IOMgr.status;	
+				Out_Texcel_VX100_IOMgr.err_code		:= initialize_VX100_IOMgr.err_code;	
+			ELSE
+				Out_Texcel_VX100_IOMgr.status			:= INITIALIZED;	
+				Out_Texcel_VX100_IOMgr.err_code		:= OK;
+			END_IF;				
+		END_IF; 
+
+	RUN:
+
+		IF  ((Out_Texcel_VX100_IOMgr.status =  INITIALIZED)  OR (Out_Texcel_VX100_IOMgr.status = RUNNING)) THEN 
+
+			IF (	(UUT_Info.Model <> 'GTCP331-250H')    AND
+				(UUT_Info.Model <> 'GTCP331-500B')    AND
+				(UUT_Info.Model <> 'DAS CALIBRATION') AND
+				(UUT_Info.Model <> 'SYSTEM CHECK')		) THEN
+
+				run_VX100_IOMgr(UUT_Info);
+
+				Out_Texcel_VX100_IOMgr.status			:= run_VX100_IOMgr.status;	
+				Out_Texcel_VX100_IOMgr.err_code		:= run_VX100_IOMgr.err_code;	
+			ELSE
+				Out_Texcel_VX100_IOMgr.status			:= RUNNING;	
+				Out_Texcel_VX100_IOMgr.err_code		:= OK;	
+			END_IF;
+		END_IF; 
+	 
+	CLOSE:
+
+		IF  (Out_Texcel_VX100_IOMgr.status <> CLOSED) THEN 
+
+			IF (	(UUT_Info.Model <> 'GTCP331-250H')    AND
+				(UUT_Info.Model <> 'GTCP331-500B')    AND
+				(UUT_Info.Model <> 'DAS CALIBRATION') AND
+				(UUT_Info.Model <> 'SYSTEM CHECK')		) THEN
+
+				close_VX100_IOMgr(UUT_Info);
+
+				Out_Texcel_VX100_IOMgr.status			:= close_VX100_IOMgr.status;	
+				Out_Texcel_VX100_IOMgr.err_code		:= close_VX100_IOMgr.err_code;	
+			ELSE
+				Out_Texcel_VX100_IOMgr.status			:= CLOSED;	
+				Out_Texcel_VX100_IOMgr.err_code		:= OK;	
+			END_IF;
+		END_IF; 
+
+	IDLE:
+
+		Out_Texcel_VX100_IOMgr.status := IDLING;
+
+END_CASE; 
+
+
+
+
+
+
+
+
+
+
+END_PROGRAM

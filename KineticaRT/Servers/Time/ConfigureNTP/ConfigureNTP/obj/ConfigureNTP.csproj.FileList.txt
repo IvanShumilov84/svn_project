@@ -1,0 +1,8 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ConfigureNTP.Form1.resources
+obj\Debug\ConfigureNTP.Properties.Resources.resources
+obj\Debug\ConfigureNTP.csproj.GenerateResource.Cache
+bin\Debug\ConfigureNTP.exe
+bin\Debug\ConfigureNTP.pdb
+obj\Debug\ConfigureNTP.exe
+obj\Debug\ConfigureNTP.pdb

@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Logic.Expressions</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Logic.Expressions.NumericExpression">
+            <summary>
+            KineticaRT Channel that evaluates expressions containing other Channels to produce a numeric result.
+            </summary>
+            <remarks>
+            The difference between this and the Expression class is that this class has some extra properties such as Minimum, Maximum and Units.  The logic is the same.
+            Expressions can include other channels such as expressions and driver channels. The value of the expression will be re-evaluated as and when the channels change.
+            <p>Unlike other real-time systems which continually evaluate all expressions, a KineticaRT expression object will only use processor time
+            when the inputs to the expression actually change and even then will only re-evaluate the parts of the expression which need re-evaluation.
+            <br/>This makes it especially suitable for use with drivers with different update rates and digital inputs which rarely change.
+            </p>
+            <p>The expression object supports standard mathamatical operators and functions plus a selection of time based functions such as the RollingSD function.</p>
+            <p>For a list of operators and functions supported, see <see cref="P:KineticaRT.Logic.Expressions.Expression.Text"/></p>
+            </remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Expressions.Expression">
+            <summary>
+            KineticaRT Channel that evaluates expressions containing other Channels.
+            </summary>
+            <remarks>
+            Expressions can include other channels such as expressions and driver channels. The value of the expression will be re-evaluated as and when the channels change.
+            <p>Unlike other real-time systems which continually evaluate all expressions, a KineticaRT expression object will only use processor time
+            when the inputs to the expression actually change and even then will only re-evaluate the parts of the expression which need re-evaluation.
+            <br/>This makes it especially suitable for use with drivers with different update rates and digital inputs which rarely change.
+            </p>
+            <p>The expression object supports standard mathamatical operators and functions plus a selection of time based functions such as the RollingSD function.</p>
+            <p>For a list of operators and functions supported, see <see cref="P:KineticaRT.Logic.Expressions.Expression.Text"/></p>
+            </remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Expression.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Expression.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Expression.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable interface.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Expression.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Expression.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Expression.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Expression.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Expressions.Expression.Text">
+            <summary>
+            Gets or sets the expression to be evaluated.
+            </summary>
+            <value>Expression text.</value>
+            <remarks>This should be set to the text of the mathematical expression. The text may include channel names, brackets and the following operators and functions:
+            <h2>Unary Operators</h2>
+            <p>
+            <table  style="font-family:Arial,sans-serif; font-size:9pt; margin-left:10px; color:#660000">
+            <tr><td>+</td><td> - Positive.</td></tr>
+            <tr><td>-</td><td> - Negative</td></tr>
+            </table>
+            </p>
+            <h2>Binary Operators</h2>
+            <p>
+            <table  style="font-family:Arial,sans-serif; font-size:9pt; margin-left:10px; color:#660000">
+            <tr><td>+</td><td> - Addition.</td></tr>
+            <tr><td>-</td><td> - Subtraction</td></tr>
+            <tr><td>*</td><td> - Multiplication</td></tr>
+            <tr><td>/</td><td> - Division</td></tr>
+            <tr><td>÷</td><td> - Division</td></tr>
+            </table>
+            </p>
+            <h2>Comparison Operators</h2>
+            <p>
+            <table  style="font-family:Arial,sans-serif; font-size:9pt; margin-left:10px; color:#660000">
+            <tr><td>&lt;</td><td> - Less than</td></tr>
+            <tr><td>≤</td><td> - Less than or equal to</td></tr>
+            <tr><td>≥</td><td> - Greater than or equal to</td></tr>
+            <tr><td>&lt;=</td><td> - Less than or equal to</td></tr>
+            <tr><td>&gt;=</td><td> - Greater than or equal to</td></tr>
+            <tr><td>&gt;</td><td> - Greater than</td></tr>
+            <tr><td>≠</td><td> - Not equal to</td></tr>
+            <tr><td>&lt;&gt;</td><td> - Not equal to</td></tr>
+            <tr><td>=</td><td> - Equal to</td></tr>
+            </table>
+            </p>
+            <h2>Logical Operators</h2>
+            <p>
+            <table  style="font-family:Arial,sans-serif; font-size:9pt; margin-left:10px; color:#660000">
+            <tr><td>NOT</td><td> - Logical Not</td></tr>
+            <tr><td>AND</td><td> - Logical And</td></tr>
+            <tr><td>OR</td><td> - Logical Or</td></tr>
+            <tr><td>XOR</td><td> - Logical Xor</td></tr>
+            </table>
+            </p>
+            <h2>Functions</h2>
+            <p>
+            <table  style="font-family:Arial,sans-serif; font-size:9pt; margin-left:10px; color:#660000">
+            <tr><td>Abs(a)</td><td> - Absolute Value</td></tr>
+            <tr><td>Atan(a)</td><td> - Arctangent (Radians)</td></tr>
+            <tr><td>Choose(a,b[,c...])</td><td> - If a = 1 then result = b. If a = 2 then result = c etc.</td></tr>
+            <tr><td>Cos(a)</td><td> - Cosine (Radians)</td></tr>
+            <tr><td>Exp(a)</td><td> - Exponential</td></tr>
+            <tr><td>Filter(a, t)</td><td> - a low pass filtered using time constant t</td></tr>
+            <tr><td>Floor (a)</td><td> - Largest integer less than or equal to a</td></tr>
+            <tr><td>If (a,b,c)</td><td> - If a = true then result = b else result = c</td></tr>
+            <tr><td>Limit (a,min,max)</td><td> - Constrain within man/max values</td></tr>
+            <tr><td>Log(a[,base])</td><td> - Natural logarithm / Logarithm to specified base</td></tr>
+            <tr><td>Max(a,b[,c...])</td><td> - Maximam of series</td></tr>
+            <tr><td>Mean(a,b[,c...])</td><td> - Mean of a series</td></tr>
+            <tr><td>Min(a,b[,c...])</td><td> - Minimum of a series</td></tr>
+            <tr><td>Pow(a,b)</td><td> - a raised to the power b</td></tr>
+            <tr><td>RollingMean(a,period)</td><td> - Mean over a rolling time period</td></tr>
+            <tr><td>RollingSD(a,period)</td><td> - Standard Deviation over a rolling time period</td></tr>
+            <tr><td>Sin(a)</td><td> - Sine (Radians)</td></tr>
+            <tr><td>Sqrt(a)</td><td> - Square root</td></tr>
+            <tr><td>Tan(a)</td><td> - Tangent (Radians)</td></tr>
+            </table>
+            </p>
+            <p>Each of the parameters is treated as a sub-expression and is evaluated before being operated on by the function.</p>
+            <p>All time periods are in seconds.</p>
+            </remarks>
+            <example>"Sin (3.142)"<br/>"Mean (a, b, (c+d)*e)"</example>
+        </member>
+        <member name="T:KineticaRT.Logic.Expressions.Expression.Node.ValueChangedEventHandler">
+            <summary>Represents the method that will handle the ValueChanged event raised when the Value is changed on a Node object.</summary>
+            <param name="index">The source of the event.</param>
+            <param name="newVal">The new value.</param>
+            <remarks>This is currently for internal use by the Expression class only.</remarks>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.NumericExpression.#ctor">
+            <summary>Initializes a new instance of the class.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.NumericExpression.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.NumericExpression.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object
+            </summary>
+            <param name="info">The SerializationInfo to populate with data.</param>
+            <param name="context">The destination for this serialization.</param>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.NumericExpression.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Constructor for the ISerializable interface.</summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.NumericExpression.ToString">
+            <summary>
+            Converts this Value to a System.String.
+            </summary>
+            <returns>The result.</returns>
+        </member>
+        <member name="P:KineticaRT.Logic.Expressions.NumericExpression.Units">
+            <summary>
+            Gets or sets the units string for a channel.
+            </summary>
+            <value>A string representing the units of the channel.</value>
+            <remarks>This property is normally used to put a units label on display controls such as the Dial.</remarks>
+            <example>"Km"</example>
+        </member>
+        <member name="P:KineticaRT.Logic.Expressions.NumericExpression.DecimalDigits">
+            <summary>
+            Gets or sets the number of decimal digits to be displayed if displayed in number format or fixed point format.
+            </summary>
+            <value>The number of decimal digits to be displayed.</value>
+        </member>
+        <member name="P:KineticaRT.Logic.Expressions.NumericExpression.Minimum">
+            <summary>
+            Gets or sets the minimum value of channel.
+            </summary>
+            <value>The minimum value of the channel.</value>
+            <remarks>
+            This value is normally used for setting the minimum value on a display scale.
+            <para>No limit checking is performed so the actual Value may be lower.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Expressions.NumericExpression.Maximum">
+            <summary>
+            Gets or sets the maximum value of channel.
+            </summary>
+            <value>The maximum balue of the channel.</value>
+            <remarks>
+            This value is normally used for setting the maximum value on a display scale.
+            <para>No limit checking is performed so the actual Value may be higher.</para>
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Logic.Expressions.NumericExpression.Format">
+            <summary>
+            Gets or sets the format of the channel when viewed as text.
+            </summary>
+            <value>A string describing the display format of the channel.</value>
+            <remarks>The following formats can be used:
+            <ul>
+            <li>"C" - Currency</li>
+            <li>"D" - Decimal</li>
+            <li>"E" - Exponential</li>
+            <li>"F" - Fixed Point</li>
+            <li>"G" - General</li>
+            <li>"N" - Number</li>
+            <li>"P" - Percentage</li>
+            <li>"X" - Hexadecimal</li>
+            <li>"0.00" - Zero padding</li>
+            <li>"#.##" - Blank padding</li>
+            </ul>
+            </remarks>
+        </member>
+        <member name="T:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl">
+            <summary>
+            Summary description for UserControl1.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.#ctor">
+            <summary>
+            Initialises a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.OnDone">
+            <summary>Called when the editing is complete.</summary>
+        </member>
+        <member name="P:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.Expression">
+            <summary>
+            Sets the expression to be edited.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.Done">
+            <summary>Occurs when the editing is complete.</summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Expressions.Design.ExpressionEditorControl.DoneEventHandler">
+            <summary>
+            Represents the method that will handle the Done event raised when the editing is complete.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Logic.Expressions.Design.ExpressionEditor">
+            <summary>
+            UITypeEditor for the expression class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Design.ExpressionEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits the value of the specified object.
+            </summary>
+            <param name="context"></param>
+            <param name="provider"></param>
+            <param name="value">The object to edit.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KineticaRT.Logic.Expressions.Design.ExpressionEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets the editor style used by the EditValue method.
+            </summary>
+            <param name="context"></param>
+            <returns>A UITypeEditorEditStyle value that indicates the style of editor used by EditValue. If the UITypeEditor does not support this method, then GetEditStyle will return None.</returns>
+        </member>
+    </members>
+</doc>

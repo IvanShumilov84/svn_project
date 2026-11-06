@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Indicator</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.Indicator">
+            <summary>
+            The KineticaRT Indicator control displays a boolean or numeric value, with
+            different colors corresponding to different values.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Indicator.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.#ctor">
+            <summary>
+            Initialises a new instance of the Indicator class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.SetFormat">
+            <summary>
+            Sets up the tool tip based on the Source channel
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Indicator.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.Shape">
+            <summary>
+            Gets or sets the Shape of the control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.CurrentBackColor">
+            <summary>
+            Gets the Background Color that corresponds to the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.CurrentBorderColor">
+            <summary>
+            Gets the Border Color that corresponds to the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.Value">
+            <summary>
+            Gets or sets the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the indicator's value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.Source">
+            <summary>
+            Gets or sets the name of the object to be the Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.States">
+            <summary>
+            Gets or sets a collection of State objects that define color/value correspondance
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Indicator gets its ToolTip and Text from its Source channel
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Indicator.Text">
+            <summary>
+            Gets or sets the Text displayed on the Indicator
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.StateCollection">
+            <summary>
+            Collection of State objects used by the Indicator control
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.StateCollection.#ctor">
+            <summary>
+            Initialises a new instance of the StateCollection class
+            </summary>
+            <remarks>The collection defaults to containing one State.</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.StateCollection.#ctor(KineticaRT.Controls.State[])">
+            <summary>
+            Initialises a new instance of the StateCollection class containing the specified State objects
+            </summary>
+            <param name="states">Array of State objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.StateCollection.AddState(System.Drawing.Color)">
+            <summary>
+            Adds a new State object of the specified color to the collection
+            </summary>
+            <param name="StateColor">Color of new State</param>
+        </member>
+        <member name="M:KineticaRT.Controls.StateCollection.AddRange(KineticaRT.Controls.State[])">
+            <summary>
+            Adds an array of State objects to the collection
+            </summary>
+            <param name="newStates">Array of States to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.StateCollection.FindCurrentColors(System.Double,System.Drawing.Color@,System.Drawing.Color@)">
+            <summary>
+            Finds the colors that relate to the given Value
+            </summary>
+            <param name="Value">Value to find colors for</param>
+            <param name="clrBack">BackColor of State that covers the given Value, or Color.Empty if not found</param>
+            <param name="clrBorder">BorderColor of State that covers the given Value, or Color.Empty if not found</param>
+            <returns>True if found a State that covers the given value, else false</returns>
+            <remarks>
+            If more than one State covers a given value, the colors defined by the first one found will be used.
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.StateCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the State object at the given zero-based index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.State">
+            <summary>
+            State object that defines a correspondance between a value or range of values
+            and a color.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.State.#ctor">
+            <summary>
+            Initialises a new instance of the State class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.State.#ctor(System.Drawing.Color)">
+            <summary>
+            Initialises a new instance of the State class with the specified color
+            </summary>
+            <param name="StateColor">Color of new State (Back and Border)</param>
+        </member>
+        <member name="M:KineticaRT.Controls.State.ResetBackColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.State.ResetBorderColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.State.FindCurrentColors(System.Double,System.Drawing.Color@,System.Drawing.Color@)">
+            <summary>
+            If the specified value is covered by this State, returns the Back and Border Colors
+            </summary>
+            <param name="Value">Value to check</param>
+            <param name="clrBack">BackColor returned if found, else Color.Empty</param>
+            <param name="clrBorder">BorderColor returned if found, else Color.Empty</param>
+            <returns>True if Value is covered by this state, else False</returns>
+        </member>
+        <member name="P:KineticaRT.Controls.State.BackColor">
+            <summary>
+            Gets or sets the Back Color associated with this State's value(s)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.State.BorderColor">
+            <summary>
+            Gets or sets the Border Color associated with this State's value(s)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.State.Enabled">
+            <summary>
+            Gets or sets whether the State is enabled
+            </summary>
+            <remarks>Disabled States are ignored when a value/color correspondance is being sought</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.State.RangeMinimum">
+            <summary>
+            Gets or sets the minimum value included in a range
+            </summary>
+            <remarks>This applies to range-type States only. The minumum value is included in the range, but the maximum value is excluded.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.State.RangeMaximum">
+            <summary>
+            Gets or sets the maximum value in a range
+            </summary>
+            <remarks>This applies to range-type States only. The minumum value is included in the range, but the maximum value is excluded.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.State.SingleValue">
+            <summary>
+            Gets or sets the exact value to match for a single value State.
+            </summary>
+            <remarks>This applies to single-value-type States only.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.State.SingleValueType">
+            <summary>
+            Gets or sets the type of state.
+            </summary>
+            <remarks>Single-value states use the SinglValue property, and range states use the RamgeMinimum and RangeMaximum properties.</remarks>
+        </member>
+    </members>
+</doc>

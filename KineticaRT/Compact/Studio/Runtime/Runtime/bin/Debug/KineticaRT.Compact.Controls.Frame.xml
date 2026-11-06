@@ -1,0 +1,537 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Compact.Controls.Frame</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Compact.Controls.PanelBase">
+            <summary>
+            Panel control. This is the part of the Frame that actually holds the contained controls.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.PanelBase.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initialises a new instance of the PanelBase class with the specified Container
+            </summary>
+            <param name="container">IContainer to which the PanelBase is added</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.#ctor">
+            <summary>
+            Initialises a new instance of the PanelBase class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the PanelBase class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.InitializePanel">
+            <summary>
+            Initialize the panel.
+            </summary>
+            <remarks>This should be overriden in the derived classes to initialise the properties and create the child controls.</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.GetUniqueName(System.String)">
+            <summary>
+            Returns a name that does not currently exist in the Controls collection.
+            Returns BaseName if that does not exist, else a numeric increment of BaseName
+            </summary>
+            <param name="BaseName">Name to test and increment if required</param>
+            <returns>Name that does not currently exist in the Controls Collection</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.FindControl(System.String)">
+            <summary>
+            Finds the control with the specified name
+            </summary>
+            <param name="CtrlName">Name of control to find</param>
+            <returns>Named Control or null if not found</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.AddComponent(System.Type)">
+            <summary>
+            Adds a component of the specified type
+            </summary>
+            <param name="ComponentType">Type of component to add</param>
+            <returns>New Component (or null if failed)</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.OnObjectSearch(System.String)">
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.FindObject(System.String)">
+            <summary>
+            Looks for the named object amongst local controls and components
+            </summary>
+            <param name="objectName">Name of Object to find</param>
+            <returns>object or null if not found</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.SearchObject(System.String)">
+            <summary>
+            Looks for the named object amongst controls and components
+            </summary>
+            <param name="objectName">Name of Object to find</param>
+            <returns>object or null if not found</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.Connect2">
+            <summary>
+            Connects this object to others, Stage 2.
+            </summary>
+            <remarks>This will be called after all objects have recieved a Connect call.</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.PanelBase.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.PanelBase.GetAddList">
+            <summary>
+            Event generated to retrieve AddList
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.PanelBase.PropertyChanged">
+            <summary>
+            Event which fires when the value of a property has changed.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.PanelBase.ObjectSearch">
+            <summary>
+            Event for requests to find an object by name.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.Frame">
+            <summary>
+            The KineticaRT Frame is a Control Container, which allows run-time editing
+            of control layout and properties.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.FrameBase">
+            <summary>
+            The KineticaRT Frame is a Control Container, which allows run-time editing
+            of control layout and properties.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FrameBase.titleHeight">
+            <summary>Vertical space required by Title</summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FrameBase.titleRect">
+            <summary>Rectangle in which to draw the Title</summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FrameBase.needCalcTitle">
+            <summary>True if the title / header bar needs recalculating</summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FrameBase.initialising">
+            <summary>True if frame is being initialised (ISupportInitialize interface)</summary>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.FrameBase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.#ctor">
+            <summary>
+            Initialises a new instance of the FrameBase class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.BeginInit">
+            <summary>
+            Initialization is beginning
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.EndInit">
+            <summary>
+            Initialization is complete
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            Called from OnPaint and the Control's event pool Update
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.CalculateTitleHeight">
+            <summary>
+            Calculates the vertical space needed for the title
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.DrawTitle(System.Drawing.Graphics)">
+            <summary>
+            Draws the title bar
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.GetBasicPropertiesObject">
+            <summary>
+            Returns an object for which to show the properties
+            </summary>
+            <returns>Object to show the properties of</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.Add(System.String)">
+            <summary>
+            Adds a control from the add list
+            </summary>
+            <param name="Name">Name in add list</param>
+            <returns>New Control (or null if failed)</returns>
+            <remarks>Only controls identified in the add list can be added to a Frame</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.Add(System.Int32)">
+            <summary>
+            Adds a control from the add list by index
+            </summary>
+            <param name="Index">Zero-based index in add list</param>
+            <returns>New Control (or null if failed)</returns>
+            <remarks>Only controls identified in the add list can be added to a Frame</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.AddComponent(System.String)">
+            <summary>
+            Adds a component from the component add list
+            </summary>
+            <param name="Name">Name in add list</param>
+            <returns>New Component (or null if failed)</returns>
+            <remarks>Only Components identified in the component add list can be added to a Frame</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.AddComponent(System.Int32)">
+            <summary>
+            Adds a component from the component add list by index
+            </summary>
+            <param name="Index">Zero-based index in add list</param>
+            <returns>New Component (or null if failed)</returns>
+            <remarks>Only Components identified in the component add list can be added to a Frame</remarks>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.SetAddList(System.Xml.XmlElement)">
+            <summary>
+            Defines an add list from a given XmlElement, in the same format as an
+            AddList File.
+            </summary>
+            <remarks>
+            If an AddListFile has been specified, this call does nothing.
+            i.e. an AddList specified by file takes precedence over any other one.
+            </remarks>
+            <param name="Root">The root element of the Add List</param>
+            <returns>True if accepted new add list, False if ignored it becuse the one specified by File takes precedence</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.LoadPanelFromName(System.String,System.Boolean)">
+            <summary>
+            Loads a panel from the given DLL. Object type is 'KineticaRT.Panel.xxx'
+            where xxx is Name without the path or extension
+            </summary>
+            <param name="newName">Dll name and path</param>
+            <param name="compact">Uses the compact framework if true.</param>
+            <returns>New Panel or null if failed</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.NewPanel(KineticaRT.Compact.Controls.PanelBase,System.Boolean)">
+             <summary>
+             Makes the given panel into the current Panel
+            'ReplaceOld' means throw old one away (disconnect and dispose)
+            otherwise simply point to the new one
+             </summary>
+             <param name="newPanel">New Panel to use</param>
+             <param name="ReplaceOld">Whether to discard the old one or just use the new one</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.ReplacePanel(KineticaRT.Compact.Controls.PanelBase,KineticaRT.Compact.Controls.PanelBase)">
+            <summary>
+            Replaces the oldPanel in the Controls collection with the newPanel
+            </summary>
+            <param name="oldPanel">Panel to be removed, or null</param>
+            <param name="newPanel">Panel to be added</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.FindObject(System.String)">
+            <summary>
+            Returns the named object or null if it does not exist.
+            </summary>
+            <param name="objectName">Name of object to find</param>
+            <returns>Named object, or null if not found</returns>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.OnChildObjectSearch(System.String)">
+            <summary>
+            Event handler for requests from the objects children to find another object for them by name.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.Connect2">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.FrameBase.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.FrameBase.GetAddList">
+            <summary>
+            Event generated to retrieve AddList from parent Frame
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.FrameBase.ContextMenu">
+            <summary>
+            Gets or sets the shortcut menu associated with the control.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.FrameBase.AddListFile">
+            <summary>
+            Gets or sets the name of a file containing information about addable controls
+            </summary>
+            <remarks>
+            If a full path is not specified, the file is relative to the path 
+            specified in the SystemDirectory property
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.FrameBase.SystemDirectory">
+            <summary>
+            Gets or sets the Path to the System Directory, where Panel dlls and AddList files are sought.
+            </summary>
+            <remarks>Defaults to Application Startup path</remarks>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.FrameBase.TitleEnabled">
+            <summary>
+            Gets or sets whether the Title bar is enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.FrameBase.HorizontalGrid">
+            <summary>
+            Gets or sets the Horizontal Grid settings
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.FrameBase.VerticalGrid">
+            <summary>
+            Gets or sets the Vertical Grid settings
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.FrameBase.GetAddListEventHandler">
+            <summary>
+            Handler for GetAddList event
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.#ctor">
+            <summary>
+            Initialises a new instance of the Frame class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.EndInit">
+            <summary>
+            Initialization is complete
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.ResetTitleLeftColor">
+            <summary>
+            Reset the Color to its default value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.ResetTitleRightColor">
+            <summary>
+            Reset the Color to its default value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.ResetTitleUnderlineColor">
+            <summary>
+            Reset the Color to its default value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.CalculateTitleHeight">
+            <summary>
+            Calculates the vertical space needed for the title
+            - includes the underline if required
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.DrawTitle(System.Drawing.Graphics)">
+            <summary>
+            Draws the title bar
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.LoadPanel">
+            <summary>
+            Loads a new panel using the PanelName property
+            </summary>
+            <returns>True if succeeded and got a new Panel</returns>
+        </member>
+        <member name="F:KineticaRT.Compact.Controls.Frame.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Frame.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.Font">
+            <summary>
+            Gets or sets the Controls font.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.FontSize">
+            <summary>
+            Gets or sets the Controls FontSize.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.Panel">
+            <summary>
+            Gets the PanelBase object in which the controls are held
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.TitleUnderlined">
+            <summary>
+            Gets or sets whether the Title bar is underlined
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.TitleText">
+            <summary>
+            Gets or sets the Text in the Title bar
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.TitleLeftColor">
+            <summary>
+            Gets or sets the Color at the left hand side of the title bar
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.TitleRightColor">
+            <summary>
+            Gets or sets the Color at the right hand side of the title bar
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.TitleUnderlineColor">
+            <summary>
+            Gets or sets the Color in which the title bar is underlined
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Frame.PanelName">
+            <summary>
+            Gets or sets the name of the current Panel dll
+            </summary>
+            <remarks>
+            Extensions other than '.dll' will be changed to '.dll'.
+            If path is not specified, the file is relative to the path specified in the SystemDirectory property.
+            If the specified file exists it will be loaded, and current controls
+            will be unloaded. If the file does not exist the current controls will
+            remain unchanged. When the frame is saved, current controls will be saved
+            to the file specified here, and the object saved within the dll will be
+            case sensitively named after the dll. Note that save will not be available if no 
+            PanelName is specified.
+            </remarks>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.Addable">
+            <summary>
+            Addable Class - information about objects that can be added to a Frame
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Addable.#ctor(System.String,System.String)">
+            <summary>
+            Initialise an Addable
+            </summary>
+            <param name="Name">Friendly name of control</param>
+            <param name="Typename">Typename of control</param>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Addable.Name">
+            <summary>
+            Gets the Friendly name of the control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Addable.Typename">
+            <summary>
+            Gets the Typename of the control (including assembly definition)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Addable.Type">
+            <summary>
+            Gets the Type of the control
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Compact.Controls.Grid">
+            <summary>
+            Information about a Grid for positioning controls on a Frame
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Grid.#ctor">
+            <summary>
+            Creates a new instance of the Grid class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Compact.Controls.Grid.#ctor(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of the grid class with the given Size and Spacing
+            </summary>
+            <param name="Enabled">Value of Enabled property</param>
+            <param name="Size">Value of Size property</param>
+            <param name="Spacing">Value of Spacing property</param>
+        </member>
+        <member name="E:KineticaRT.Compact.Controls.Grid.PropertyChanged">
+            <summary>
+            Property Changed Event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Grid.Size">
+            <summary>
+            Gets or sets the Size of the grid in pixels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Grid.Spacing">
+            <summary>
+            Gets or sets the Space between objects on the grid in pixels
+            </summary>
+            <remarks>This means that the actual width or height of controls is [(n * Size) - Spacing] pixels</remarks>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Grid.Enabled">
+            <summary>
+            Gets or sets whether the grid is enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Grid.Pixels">
+            <summary>
+            Gets the number of pixels in one grid unit
+            </summary>
+            <remarks>This will be the Size if the grid is enabled, else 1</remarks>
+        </member>
+        <member name="P:KineticaRT.Compact.Controls.Grid.MinSize">
+            <summary>
+            Gets the Minimum number of pixels that a control can be
+            </summary>
+            <remarks>This will be (Size - Spacing) or 0 if (Spacing > Size)</remarks>
+        </member>
+    </members>
+</doc>

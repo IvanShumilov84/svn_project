@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigureNTP11", "ConfigureNTP11.csproj", "{22FC137D-0AEF-42F2-9172-D9148129C020}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{22FC137D-0AEF-42F2-9172-D9148129C020}.Debug.ActiveCfg = Debug|.NET
+		{22FC137D-0AEF-42F2-9172-D9148129C020}.Debug.Build.0 = Debug|.NET
+		{22FC137D-0AEF-42F2-9172-D9148129C020}.Release.ActiveCfg = Release|.NET
+		{22FC137D-0AEF-42F2-9172-D9148129C020}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

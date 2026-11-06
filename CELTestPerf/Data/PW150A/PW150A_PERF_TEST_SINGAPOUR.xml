@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>PW150A</Model>
+    <SN>FA9999</SN>
+    <TESTDATE>12/05/2012</TESTDATE>
+  </Engine>
+  <ChannelMap>
+    <Channel>
+      <Parameter>FADEC_CHNA_SELECTED</Parameter>
+      <Name>UART_NORM_DISC2_CHA</Name>
+      <FVName>User_Int_Uart_CHA_31</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[31].engunit</ItemID>
+      <Units></Units>
+    </Channel>
+    <Channel>
+      <Parameter>NH</Parameter>
+      <Name>NH_RPM</Name>
+      <FVName>F1</FVName>
+      <Units>HZ</Units>
+      <!-- 6987.0Hz @31150.0RPM -->
+      <Slope>4.45827966</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>FM1</Parameter>
+      <Name>WF1_PPH</Name>
+      <FVName>FM1_WF_PPH_OPC</FVName>
+      <Units>PPH</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_mass_fuel_flow.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TF</Parameter>
+      <Name>TF</Name>
+      <FVName>FM1_TF_DEGF_OPC</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_t_fuel.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>SG</Parameter>
+      <Name>SG</Name>
+      <FVName>FM1_SG_OPC</FVName>
+      <Units>None</Units>
+      <ItemID>dacn1.dacn1_uut_controller.fm_sg_fuel.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>F5_RAW</Parameter>
+      <Name>F5_RAW</Name>
+      <FVName>F5</FVName>
+      <Units>HZ</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[5].mean_value</ItemID>
+    </Channel>
+     <Channel>
+      <Parameter>MOT</Parameter>
+      <Name>T_MOT_DEGF</Name>
+      <FVName>T16</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[16].mean_value</ItemID>
+    </Channel>
+   <Channel>
+      <Parameter>P1T</Parameter>
+      <Name>P_P1T_PSIA</Name>
+      <FVName>P5</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>NPT</Parameter>
+      <Name>NPT_RPM</Name>
+      <FVName>F3</FVName>
+      <Units>HZ</Units>
+      <!-- 1486.0Hz @17501.0RPM -->
+      <Slope>11.777254374</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TSG</Parameter>
+      <Name>T_FUEL_DEGF</Name>
+      <FVName>T14</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[14].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TMEEC</Parameter>
+      <Name>A429IN_Q_CHA</Name>
+      <FVName>User_Int_A429IN_CHA_24</FVName>
+      <!-- 26113.0Hz @100.0% -->
+      <Slope>261.13</Slope>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[24].engunit</ItemID>
+      <Units>LBSFT</Units>
+    </Channel>
+    <Channel>
+      <Parameter>ITT</Parameter>
+      <Name>A429IN_ITT_CHA</Name>
+      <FVName>User_Int_A429IN_CHA_7</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[7].engunit</ItemID>
+      <Units>DEGC</Units>
+    </Channel>
+    <Channel>
+      <Parameter>P25</Parameter>
+      <Name>P_P25_PSIA</Name>
+      <FVName>P3</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>DYNO_TQ</Parameter>
+      <Name>DYNO_TORQUE_LBSFT</Name>
+      <FVName>DYNO_TORQUE_LBSFT_OPC</FVName>
+      <ItemID>dacn1.dacn1_texcel_vx100_iomgr.dyno_tr_lbsft</ItemID>
+      <Units>LBSFT</Units>
+    </Channel>
+    <Channel>
+      <Parameter>NL</Parameter>
+      <Name>NL_RPM</Name>
+      <FVName>F2</FVName>
+      <Units>HZ</Units>
+      <!-- 9000.0Hz @27000.0RPM -->
+      <Slope>3.0</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>HPITM</Parameter>
+      <Name>UART_HPITM_CHA</Name>
+      <FVName>User_Int_Uart_CHA_18</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[18].engunit</ItemID>
+      <Units>MA</Units>
+    </Channel>
+    <Channel>
+      <Parameter>PAGB</Parameter>
+      <Name>P_RGB_PSIG</Name>
+      <FVName>P17</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[17].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PRGB</Parameter>
+      <Name>P_RGBOIL_PSIA</Name>
+      <FVName>P13</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[13].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>BARO</Parameter>
+      <Name>P_BARO_PSIA</Name>
+      <FVName>P4</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>EGT</Parameter>
+      <Name>UART_T6_CHA</Name>
+      <FVName>User_Int_Uart_CHA_25</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[25].engunit</ItemID>
+      <Units>DEGC</Units>
+    </Channel>
+    <Channel>
+      <Parameter>P2.7</Parameter>
+      <Name>P_P27_PSIA</Name>
+      <FVName>P2</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P7S</Parameter>
+      <Name>P_P7S_PSID</Name>
+      <FVName>P12</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[12].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>LPBOV</Parameter>
+      <Name>UART_LPBOV_CHA</Name>
+      <FVName>User_Int_Uart_CHA_16</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.uart_cha[16].engunit</ItemID>
+      <Units></Units>
+    </Channel>
+    <Channel>
+      <Parameter>T2.2</Parameter>
+      <Name>T_T22_DEGF</Name>
+      <FVName>T6</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[6].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T2.7</Parameter>
+      <Name>T_T27_DEGF</Name>
+      <FVName>T10</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[10].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P3S</Parameter>
+      <Name>P_P3S_PSIA</Name>
+      <FVName>P11</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.p[11].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T1.0001</Parameter>
+      <Name>T_T1_1_SOURCE_DEGF</Name>
+      <FVName>T1</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T1.0002</Parameter>
+      <Name>T_T1_2_SOURCE_DEGF</Name>
+      <FVName>T2</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T1.0003</Parameter>
+      <Name>T_T1_3_SOURCE_DEGF</Name>
+      <FVName>T3</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T1.0004</Parameter>
+      <Name>T_T1_4_SOURCE_DEGF</Name>
+      <FVName>T4</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T1.0005</Parameter>
+      <Name>T_T1_5_SOURCE_DEGF</Name>
+      <FVName>T5</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T25.0001</Parameter>
+      <Name>T_T25_1_SOURCE_DEGF</Name>
+      <FVName>T7</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[7].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T25.0002</Parameter>
+      <Name>T_T25_2_SOURCE_DEGF</Name>
+      <FVName>T8</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[8].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T25.0003</Parameter>
+      <Name>T_T25_3_SOURCE_DEGF</Name>
+      <FVName>T9</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[9].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T3.0001</Parameter>
+      <Name>T_T3_1_SOURCE_DEGF</Name>
+      <FVName>T11</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[11].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T3.0002</Parameter>
+      <Name>T_T3_2_SOURCE_DEGF</Name>
+      <FVName>T12</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[12].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T3.0003</Parameter>
+      <Name>T_T3_3_SOURCE_DEGF</Name>
+      <FVName>T13</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[13].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0001</Parameter>
+      <Name>T_T7_1_SOURCE_DEGF</Name>
+      <FVName>T25</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[25].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0002</Parameter>
+      <Name>T_T7_2_SOURCE_DEGF</Name>
+      <FVName>T26</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[26].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0003</Parameter>
+      <Name>T_T7_3_SOURCE_DEGF</Name>
+      <FVName>T27</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[27].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0004</Parameter>
+      <Name>T_T7_4_SOURCE_DEGF</Name>
+      <FVName>T28</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[28].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0005</Parameter>
+      <Name>T_T7_5_SOURCE_DEGF</Name>
+      <FVName>T29</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[29].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0006</Parameter>
+      <Name>T_T7_6_SOURCE_DEGF</Name>
+      <FVName>T30</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[30].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0007</Parameter>
+      <Name>T_T7_7_SOURCE_DEGF</Name>
+      <FVName>T31</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[31].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0008</Parameter>
+      <Name>T_T7_8_SOURCE_DEGF</Name>
+      <FVName>T32</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[32].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0009</Parameter>
+      <Name>T_T7_9_SOURCE_DEGF</Name>
+      <FVName>T33</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[33].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0010</Parameter>
+      <Name>T_T7_10_SOURCE_DEGF</Name>
+      <FVName>T34</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[34].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0011</Parameter>
+      <Name>T_T7_11_SOURCE_DEGF</Name>
+      <FVName>T35</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[35].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0012</Parameter>
+      <Name>T_T7_12_SOURCE_DEGF</Name>
+      <FVName>T36</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[36].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0013</Parameter>
+      <Name>T_T7_13_SOURCE_DEGF</Name>
+      <FVName>T37</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[37].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0014</Parameter>
+      <Name>T_T7_14_SOURCE_DEGF</Name>
+      <FVName>T38</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[38].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0015</Parameter>
+      <Name>T_T7_15_SOURCE_DEGF</Name>
+      <FVName>T39</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[39].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0016</Parameter>
+      <Name>T_T7_16_SOURCE_DEGF</Name>
+      <FVName>T40</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[40].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0017</Parameter>
+      <Name>T_T7_17_SOURCE_DEGF</Name>
+      <FVName>T41</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[41].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0018</Parameter>
+      <Name>T_T7_18_SOURCE_DEGF</Name>
+      <FVName>T42</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[42].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0019</Parameter>
+      <Name>T_T7_19_SOURCE_DEGF</Name>
+      <FVName>T43</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[43].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0020</Parameter>
+      <Name>T_T7_20_SOURCE_DEGF</Name>
+      <FVName>T44</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[44].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0021</Parameter>
+      <Name>T_T7_21_SOURCE_DEGF</Name>
+      <FVName>T45</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[45].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0022</Parameter>
+      <Name>T_T7_22_SOURCE_DEGF</Name>
+      <FVName>T46</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[46].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0023</Parameter>
+      <Name>T_T7_23_SOURCE_DEGF</Name>
+      <FVName>T47</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[47].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T7.0024</Parameter>
+      <Name>T_T7_24_SOURCE_DEGF</Name>
+      <FVName>T48</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[48].mean_value</ItemID>
+    </Channel>
+      <!-- THIS IS NOT WORKING
+    <TurbineFlowMeter>
+      <Parameter>WF2</Parameter>
+      <Name>WF2</Name>
+      <Units>USGPM</Units>
+      <Input>F5_RAW</Input>
+      <SGSampleChannel>SAMPLE_SG_FUEL</SGSampleChannel>
+      <TSGSampleChannel>SAMPLE_T_FUEL</TSGSampleChannel>
+      <TFuelChannel>T_FUEL_DEGF</TFuelChannel>
+    </TurbineFlowMeter> -->
+  </ChannelMap>
+  <Conditions>
+
+<Condition>
+<NO>1</NO>
+<Description>COND 0004</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>28752.34375</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>FM1</Name><Value>2122.74561</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>F5_RAW</Name><Value>1245.63820</Value><Units>Hz</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>648.72687</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.37974</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17499.80273</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TSG</Name><Value>62.38310</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>SG</Name><Value>0.79730</Value><Units>None</Units></Parameter>
+<Parameter><Name>TF</Name><Value>42.7696</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>26095.96680</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1726.32776</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>74.18979</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>25147.76562</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>24698.33398</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>5.84961</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>140.37337</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.69432</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1507.24011</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>81.62431</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.52781</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>-1.08422</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>627.97668</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>686.24243</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>242.90570</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>496.39447</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>496.93411</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>496.99637</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>497.02551</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>496.83661</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>844.32880</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>852.11401</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>875.49536</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1247.51367</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1249.97583</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1247.95288</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1508.93762</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1470.97327</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1514.99231</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1491.62878</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1534.28601</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1500.37488</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1498.51575</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1488.63245</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1509.88904</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1498.47607</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1526.28906</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1509.09497</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1517.95984</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1502.55859</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1499.19568</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1512.79272</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1513.67761</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1522.93188</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1551.78992</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1522.55786</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1503.07764</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1522.86340</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1525.19153</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>2</NO>
+<Description>COND 0005</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>26781.98438</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>WF1</Name><Value>1339.29077</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>WF2</Name><Value>1337.50867</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>651.18890</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.50802</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17500.32617</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TF</Name><Value>61.37040</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>12875.43066</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1391.13489</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>57.84265</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>12287.63867</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>21931.35742</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>3.25793</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>122.79564</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.70402</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1391.16711</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>63.06736</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.61646</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>20.29310</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>732.18927</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>643.10553</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>175.69826</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>497.62253</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>497.98535</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>497.98157</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>498.06403</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>497.92267</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>777.05817</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>780.70508</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>799.47278</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1129.83276</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1132.17175</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1129.53076</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1404.28491</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1371.65698</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1369.98145</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1376.87134</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1381.85266</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1395.71790</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1400.59521</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1388.59241</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1384.68066</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1389.04932</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1392.85034</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1407.77112</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1407.62976</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1410.21973</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1398.29089</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1400.45862</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1404.46948</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1411.07642</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1413.51978</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1430.90625</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1408.33130</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1409.35071</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1415.00305</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>3</NO>
+<Description>COND 0006</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>26867.22852</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>WF1</Name><Value>1375.91187</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>WF2</Name><Value>1373.89575</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>648.64795</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.51058</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17500.27930</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TF</Name><Value>60.01330</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>12864.81348</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1396.62500</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>58.96644</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>12876.73340</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>22060.55273</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>3.41869</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>123.44176</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.70802</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1396.64526</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>64.25586</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.61585</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>15.24607</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>734.08716</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>652.33820</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>179.14221</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>496.99655</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>497.42538</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>497.43747</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>497.46497</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>497.34384</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>781.73401</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>786.15491</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>805.53815</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1136.75989</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1139.15955</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1136.62036</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1410.82227</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1375.18433</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1373.19275</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1382.79517</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1386.49976</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1401.48975</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1406.49292</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1391.27600</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1387.55273</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1394.13477</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1397.01440</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1413.24316</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1414.04358</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1413.41553</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1401.88879</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1404.20276</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1408.72351</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1415.84033</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1418.92273</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1434.97302</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1412.29626</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1412.60120</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1419.35242</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>4</NO>
+<Description>COND 0007</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>28890.64648</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>WF1</Name><Value>2187.68799</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>WF2</Name><Value>2181.42480</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>650.84473</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.37545</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17500.42969</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TF</Name><Value>59.48170</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>26098.14062</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1732.06201</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>75.35539</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>26154.09570</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>24900.96094</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>6.12772</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>141.63454</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.70022</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1517.72937</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>82.91343</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.52537</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>-1.16554</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>657.94250</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>679.75336</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>247.96521</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>496.27606</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>496.74506</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>496.76025</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>496.81573</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>496.64105</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>848.79785</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>856.22998</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>879.56000</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1255.47461</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1257.99646</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1255.98889</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1519.35547</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1478.72510</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1522.44287</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1501.82434</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1544.72632</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1510.28577</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1509.08459</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1499.97192</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1520.23926</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1511.77026</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1534.70789</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1523.74023</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1526.91711</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1512.23206</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1510.60974</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1520.91553</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1523.91418</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1535.91406</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1556.52625</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1529.11670</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1513.49634</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1531.53333</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1534.06311</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>5</NO>
+<Description>COND 0008</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>28839.43555</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>WF1</Name><Value>2182.55664</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>WF2</Name><Value>2176.33276</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>648.63269</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.40596</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17499.95703</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TF</Name><Value>58.43390</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>26099.81250</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1700.36804</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>75.62409</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>26217.615</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>24852.55273</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>6.14353</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>141.35374</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.73154</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1510.27930</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>83.26295</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.55667</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>-1.11912</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>635.40778</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>679.55237</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>249.05249</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>493.50037</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>494.16779</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>494.13983</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>494.20203</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>494.04013</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>845.06885</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>852.58813</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>875.81238</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1250.02429</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1252.47888</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1250.55090</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1512.45300</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1470.79468</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1514.17310</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1494.91370</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1537.46851</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1502.44519</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1500.09070</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1492.58215</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1511.36536</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1503.96936</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1526.51208</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1516.14868</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1517.76672</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1503.75500</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1502.34460</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1512.06128</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1515.88110</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1527.53357</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1548.77087</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1521.41614</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1505.73254</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1522.45569</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1526.22595</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>6</NO>
+<Description>COND 0009</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>26809.13477</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>WF1</Name><Value>1370.86292</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>WF2</Name><Value>1369.13098</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>651.20264</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.54450</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17500.26172</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TF</Name><Value>57.35460</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>12859.43457</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1386.96594</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>59.11362</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>12894.15039</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>21991.78125</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>3.42322</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>124.12232</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.74124</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1386.97644</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>64.43298</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.64892</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>15.05253</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>730.16638</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>651.41919</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>179.90960</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>493.41144</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>493.97934</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>494.07703</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>493.99298</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>493.80551</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>776.01721</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>780.61829</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>800.14624</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1130.28394</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1132.47009</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1130.12463</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1401.32190</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1366.57446</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1365.22534</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1373.95386</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1378.20581</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1392.14832</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1396.80762</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1382.23425</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1379.76270</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1385.52869</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1388.11694</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1404.09021</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1404.10278</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1403.62488</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1393.82288</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1395.91821</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1399.36475</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1407.02515</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1409.18970</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1424.83276</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1403.86646</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1404.57642</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1410.16992</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>7</NO>
+<Description>COND 0010</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>28188.92773</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>WF1</Name><Value>1897.06250</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>WF2</Name><Value>1892.21326</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>651.39520</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.46133</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17500.07812</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TF</Name><Value>56.50870</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>21617.01367</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1566.40332</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>70.52260</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>21658.89258</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>23904.08398</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>5.31155</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>136.06596</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.73812</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1461.94995</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>77.51184</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.59298</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>-1.04403</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>647.30804</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>671.72021</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>226.59964</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>493.16620</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>493.67905</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>493.75110</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>493.74591</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>493.56659</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>823.71075</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>829.70618</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>851.96002</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1212.53564</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1214.92639</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1212.74719</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1456.89368</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1428.34399</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1455.59119</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1457.40381</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1479.58252</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1444.95898</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1455.48364</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1441.33362</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1454.27942</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1459.47217</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1484.23254</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1461.41724</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1484.64160</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1461.71741</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1449.94312</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1472.92297</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1468.36609</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1476.69641</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1507.18713</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1474.13171</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1462.81970</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1473.80725</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1472.39453</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+
+<Condition>
+<NO>8</NO>
+<Description>COND 0011</Description>
+  <Parameters>
+<Parameter><Name>FADEC_CHNA_SELECTED</Name><Value>32</Value><Units></Units></Parameter>
+<Parameter><Name>NH</Name><Value>28457.52734</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>FM1</Name><Value>2017.61011</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>F5_RAW</Name><Value>1180.74420</Value><Units>Hz</Units></Parameter>
+<Parameter><Name>MOT</Name><Value>648.94287</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P1T</Name><Value>14.44024</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>NPT</Name><Value>17500.63867</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>TSG</Name><Value>55.81010</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>SG</Name><Value>0.80030</Value><Units>None</Units></Parameter>
+<Parameter><Name>TF</Name><Value>47.79838</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TMEEC</Name><Value>23570.59570</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>ITT</Name><Value>1622.32800</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P25</Name><Value>72.73193</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>DYNO_TQ</Name><Value>23609.88867</Value><Units>LBSFT</Units></Parameter>
+<Parameter><Name>NL</Name><Value>24301.79102</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>HPITM</Name><Value>0.00000</Value><Units>MA</Units></Parameter>
+<Parameter><Name>PAGB</Name><Value>5.65060</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PRGB</Name><Value>137.93710</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>BARO</Name><Value>14.73932</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>EGT</Name><Value>1479.77222</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P2.7</Name><Value>80.04295</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P7S</Name><Value>14.58445</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>LPBOV</Name><Value>-1.04664</Value><Units></Units></Parameter>
+<Parameter><Name>T2.2</Name><Value>628.07178</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T2.7</Name><Value>686.26306</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>P3S</Name><Value>236.32289</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>T1.0001</Name><Value>493.04068</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0002</Name><Value>493.60419</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0003</Name><Value>493.67554</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0004</Name><Value>493.62399</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T1.0005</Name><Value>493.43448</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0001</Name><Value>831.95245</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0002</Name><Value>839.21179</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T25.0003</Name><Value>862.14258</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0001</Name><Value>1227.90063</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0002</Name><Value>1230.20728</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T3.0003</Name><Value>1228.22363</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0001</Name><Value>1478.02551</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0002</Name><Value>-10460.67</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0003</Name><Value>1444.94775</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0004</Name><Value>1481.12354</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0005</Name><Value>1471.38293</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0006</Name><Value>1504.89185</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0007</Name><Value>1467.85095</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0008</Name><Value>1471.42407</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0009</Name><Value>1456.22705</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0010</Name><Value>1477.59534</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0011</Name><Value>1472.52942</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0012</Name><Value>1500.72632</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0013</Name><Value>1476.56311</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0014</Name><Value>1495.49219</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0015</Name><Value>1475.28699</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0016</Name><Value>1469.43982</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0017</Name><Value>1486.71851</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0018</Name><Value>1487.57458</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0019</Name><Value>1492.98889</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0020</Name><Value>1530.00549</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0021</Name><Value>1493.19910</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0022</Name><Value>1477.04529</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0023</Name><Value>1492.82776</Value><Units>DEGR</Units></Parameter>
+<Parameter><Name>T7.0024</Name><Value>1492.68799</Value><Units>DEGR</Units></Parameter>
+  </Parameters>
+</Condition>
+</Conditions>
+</Performance>

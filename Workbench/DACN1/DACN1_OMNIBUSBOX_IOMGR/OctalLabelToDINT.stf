@@ -1,0 +1,34 @@
+FUNCTION OCTALLABELTODINT
+(************************************************************************************************************************************************
+	Name :		OctalLabelToDINT()									
+														
+	Description :	Convert a string containing an octal number to a DINT
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/05/12	Danny Lepage	First Release
+
+************************************************************************************************************************************************)
+acc := 0;
+
+FOR digit := 1 TO MLEN(OctalString) DO
+
+	IF (digit > 1) THEN
+		acc := acc * 8;
+	END_IF;
+
+	IF ((ASCII(OctalString,digit) >= ASCII('0', 1)) AND (ASCII(OctalString,digit) <= ASCII('9', 1))) THEN
+		acc := acc + (ASCII(OctalString,digit) - ASCII('0', 1));
+	ELSE
+		EXIT;
+	END_IF;
+END_FOR;
+
+OctalLabelToDINT := acc;
+
+
+END_FUNCTION

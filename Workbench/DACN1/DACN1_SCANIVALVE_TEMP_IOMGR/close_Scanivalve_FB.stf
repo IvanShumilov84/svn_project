@@ -1,0 +1,63 @@
+FUNCTION_BLOCK close_Scanivalve_FB
+(************************************************************************************************************************************************
+	Name :		close_DTS3250_IOMgr_FB									
+														
+	Description :	Close all serial port of networked system and rdata 							      
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2001/11/05		P.Dextraze	Add CLOSE_RDATA CALL 
+	3.0	         2004/12/08		N. Sangiovanni	Adapt for CELDAS200 Generation
+	3.1		 2005/03/01		D. Lepage	REAL_DATA is now close as soon as we have finished reading it
+								Don't try to close RDATA if it hasn't been open
+
+************************************************************************************************************************************************)	
+	status 		:= CLOSING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: CLOSING');
+	err_code 	:= OK;
+
+	IF First_Time_Close = TRUE THEN
+		FOR i:=1 TO Number_of_Scanivalve DO
+			IF ((ScaniValve_Structure[i].Sock <> -1) AND (ScaniValve_Structure[i].Status = RUN)) THEN
+				SCANIVALVE_CLOSE(ScaniValve_Structure[i].Sock); 
+				(* err_code := SCANIVALVE_CLOSE.ERR_CODE; *)
+				ScaniValve_Structure[i].Sock := -1;
+			END_IF;
+		END_FOR;
+
+
+		IF err_code = OK THEN 
+			wait_for_File_Closed(FALSE, t#8s);
+
+			IF (rdata_base <> 0) THEN	
+				CLOSE_RDATA(rdata_base);
+				err_code := CLOSE_RDATA.ERR_CODE;
+			END_IF;
+
+			Out_Scanivalve_Temp_IOMgr.previous_index := 0;
+
+			First_Time_Close := FALSE;	
+		END_IF; 
+	END_IF;
+
+	wait_for_File_Closed(TRUE, t#8s);
+
+	IF (wait_for_File_Closed.Q = TRUE) AND (err_code = OK) THEN 
+		status 	:= CLOSED;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: CLOSED');
+	END_IF; 
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,111 @@
+FUNCTION_BLOCK open_UUT_Ctrl_RE220_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_RE220									
+														
+************************************************************************************************************************************************)	
+
+	Prefix_String := 'ConfigurationSettings.RE220.';
+
+	T_EGT_TRIP_TYPE				:=  ReadOneIntegerConfigItemST( Prefix_String + 'T_EGT_TRIP_TYPE' , '0');
+
+	(* T_ETC *)
+	ETC_PROBE_BINDING_SOURCE 		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'ETC_PROBE_BINDING_SOURCE', '0'));
+	ETC_NUMBER_PROBE 				:= ReadOneIntegerConfigItemST( Prefix_String + 'ETC_NUMBER_PROBE', '2');
+
+	FOR i:= 1 TO ETC_NUMBER_PROBE BY 1 DO
+		ETC_ENGINE_PROBE_INDEX[i] 	:= ReadOneIntegerConfigItemST( Prefix_String + 'ETC_PROBE_INDEX'+ ANY_TO_STRING(i), '0');
+	END_FOR;
+
+	(* T_INLET *)
+	T_INLET_PROBE_BINDING_SOURCE 		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_INLET_PROBE_BINDING_SOURCE', '0'));
+	T_INLET_NUMBER_PROBE 			:= ReadOneIntegerConfigItemST( Prefix_String + 'T_INLET_NUMBER_PROBE', '0');
+
+	FOR i:= 1 TO T_INLET_NUMBER_PROBE BY 1 DO
+		T_INLET_PROBE_INDEX[i]		:= ReadOneIntegerConfigItemST( Prefix_String + 'T_INLET_PROBE_INDEX'+ ANY_TO_STRING(i), '0');
+	END_FOR;
+
+	(* T_OIL *)
+	T_OIL_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'T_OIL_PROBE_BINDING_SOURCE', '0'));
+	T_OIL_PROBE_INDEX := ReadOneIntegerConfigItemST( Prefix_String + 'T_OIL_PROBE_INDEX', '0');
+
+	(* P_OIL *)
+	P_OIL_PROBE_BINDING_SOURCE 		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'P_OIL_PROBE_BINDING_SOURCE', '0'));
+	P_OIL_PROBE_INDEX				:= ReadOneIntegerConfigItemST( Prefix_String +'P_OIL_PROBE_INDEX', '0');
+
+	(* RTL *)
+	RTL_DIN_BINDING_SOURCE			:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String +'RTL_DIN_BINDING_SOURCE', '0'));
+	RTL_DIN_INDEX				:= ReadOneIntegerConfigItemST( Prefix_String +'RTL_DIN_INDEX', '0');
+
+	(* VIB_TURBINE *)
+	VIB_TURBINE_BINDING_SOURCE		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'VIB_TURBINE_BINDING_SOURCE', '0'));
+	VIB_TURBINE_INDEX				:= ReadOneIntegerConfigItemST( Prefix_String + 'VIB_TURBINE_INDEX', '0');
+
+	(* VIB_GEARBOX *)
+	VIB_GEARBOX_BINDING_SOURCE		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'VIB_GEARBOX_BINDING_SOURCE', '0'));
+	VIB_GEARBOX_INDEX				:= ReadOneIntegerConfigItemST( Prefix_String + 'VIB_GEARBOX_INDEX', '0');
+
+	(* ECB_POWER_CMD *)
+	ECB_POWER_CMD_BINDING_SOURCE		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'ECB_POWER_CMD_BINDING_SOURCE', '0'));
+	ECB_POWER_CMD_INDEX			:= ReadOneIntegerConfigItemST( Prefix_String + 'ECB_POWER_CMD_INDEX', '0');
+
+	(* APU_RUN_CMD *)
+	APU_RUN_STOP_CMD_BINDING_SOURCE	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'APU_RUN_STOP_CMD_BINDING_SOURCE', '0'));
+	APU_RUN_STOP_CMD_INDEX			:= ReadOneIntegerConfigItemST( Prefix_String + 'APU_RUN_STOP_CMD_INDEX', '0');
+
+	(* NG Speed *)
+	N1_BINDING_SOURCE 			:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N1_BINDING_SOURCE', '0'));
+	N1_INDEX 					:= ReadOneIntegerConfigItemST( Prefix_String + 'N1_INDEX', '0');
+
+	N1_100_RPM 					:= ReadOneRealConfigItemST( Prefix_String + 'N1_100_RPM_CONSTANT', '0');
+	N1_100_FREQ 				:= ReadOneRealConfigItemST( Prefix_String + 'N1_100_FREQ_CONSTANT', '0');
+
+	(* Table EGT shutdown limit for Starting Period
+         Ref. 49-24-50, page 120 Figure 103 *)
+
+
+	EGT_NUMBER_CURVE := ReadOneIntegerConfigItemST( Prefix_String + 'EGT_NUMBER_CURVE', '0');
+	EGT_NUMBER_SPEED := ReadOneIntegerConfigItemST( Prefix_String + 'EGT_NUMBER_SPEED', '0');
+
+
+
+	FOR i:= 1 TO EGT_NUMBER_CURVE BY 1 DO
+
+		EGT_LIMIT_STARTING_TINLET[i] := ReadOneRealConfigItemST( Prefix_String + 'EGT_T' + ANY_TO_STRING(i), '0');
+
+		FOR j:= 1 TO EGT_NUMBER_SPEED BY 1 DO
+
+			EGT_LIMIT_STARTING_SPEED[j] 	:= ReadOneRealConfigItemST( Prefix_String + 'EGT_SPEED_' + ANY_TO_STRING(j), '0');
+			EGT_LIMIT_STARTING_TABLE[i,j] := ReadOneRealConfigItemST( Prefix_String + 'EGT_T' + ANY_TO_STRING(i) + '_' + ANY_TO_STRING(j), '0');
+
+		END_FOR;
+	END_FOR;
+
+
+	(* Table EGT shutdown limit for Starting Period
+         Ref. 49-24-50, page 124 Figure 104 
+         Upper curve MES MODE F *)
+
+	EGT_NUMBER_STEADY_POINT := ReadOneIntegerConfigItemST( Prefix_String + 'EGT_NUMBER_STEADY_POINT', '0');
+
+
+
+	FOR i:= 1 TO EGT_NUMBER_STEADY_POINT BY 1 DO
+
+		EGT_STEADY_TINLET[i] 	:= ReadOneRealConfigItemST( Prefix_String + 'EGT_TIN' + ANY_TO_STRING(i) + '_STEADY', '0');
+		EGT_STEADY_LIMIT[i] 	:= ReadOneRealConfigItemST( Prefix_String + 'EGT_LIMIT' + ANY_TO_STRING(i)+ '_STEADY', '0');
+
+	END_FOR;
+
+
+	VibGearboxMax_Value     := 0.0;
+	VibTurbineMax_Value     := 0.0;
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,25 @@
+#Begin
+#FORMAT;Producer;Revision;Author;Equipment name;
+FORMAT;UEI;V1.0;UEI ISCD Converter;DU_ONE;
+#End
+
+#Begin
+#INPUT_VL;VLID;frag_en;ICMP_en;mode;bag;mtu;max_jitter;skew_max;skew_delay;prev_sn_range;ede_en;ede_sid;ede_skew_max;ede_age_max;ede_lag_max;
+INPUT_VL;8450;0;0;0000010F;0;1518;0;65500000;0;0;0;0;0;0;0;
+INPUT_VL;8451;0;0;0000010F;0;1518;0;65500000;0;0;0;0;0;0;0;
+#End
+
+#Begin
+#OUTPUT_VL;VLID;n_subVL;frag_en;ICMP_en;mode;bag;mtu;max_jitter;skew_max;skew_delay;prev_sn_range;ede_en;ede_sid;ede_skew_max;ede_age_max;ede_lag_max;
+#End
+
+#Begin
+#INPUT_PORT;mode;portID;VLID;period;period_skew;endsys_src;part_src;endsys_dst;part_dst;subvl_id;udp_src_port;udp_dst_port;port_mode;d_size;depth;
+INPUT_PORT;00000000;1;8450;0;0;377;1;33;2;0;12080;12080;1;1518;0;
+INPUT_PORT;00000000;2;8451;0;0;377;1;33;3;0;12090;12090;1;1518;0;
+#End
+
+#Begin
+#OUTPUT_PORT;mode;portID;VLID;period;period_skew;endsys_src;part_src;endsys_dst;part_dst;subvl_id;udp_src_port;udp_dst_port;port_mode;d_size;depth;
+#End
+

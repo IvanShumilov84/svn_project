@@ -1,0 +1,1048 @@
+FUNCTION_BLOCK open_SM1720_FB
+(************************************************************************************************************************************************
+	Name :		open_SM1720_FB									
+														
+	Description :	Setup Smart Actuator SM1720 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2002/08/19		S.Lepage		Add P&WC Engines for Grece project 
+
+************************************************************************************************************************************************)	
+
+
+
+
+(*********** Open throttle actuator **********) 
+
+status := OPENING;
+err_code := OK;
+
+(* Default Throttles Initialization / Reset *)
+
+	(*** FCU Throttle ***)
+	FCU_required 			:= FALSE;
+	FCU_rigged 				:= FALSE;
+	FCU_calib_done 			:= FALSE;
+	FCU_flightsim_required 	:=	FALSE; (* flight simulator for TEXCEL v100 is not active *)
+	FCU_ADDRESS 			:= '1';
+	FCU_position			:= 0;	(* Empecher le moteur de se deplacer apres un reload d'un autre moteur *)
+
+
+	FCU_throttle_info.mode 						:= RIG_MODE;	
+	
+	FCU_throttle_info.default_lever_slope 		:= -10.0;
+	FCU_throttle_info.default_lever_offset 		:= 0.0;
+	FCU_throttle_info.default_actuator_slope 	:= STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset 	:= 0.0;
+	FCU_throttle_info.flightsim_slope 			:= 1.0; (* flight simulator *)
+	FCU_throttle_info.flightsim_offset 			:= 0.0;
+
+
+	FCU_throttle_info.sm_datum.kp := 50;
+	FCU_throttle_info.sm_datum.ki := 120;
+	FCU_throttle_info.sm_datum.kd := 10;
+	FCU_throttle_info.sm_datum.kl := 1000;
+	FCU_throttle_info.sm_datum.ks := 10;
+	FCU_throttle_info.sm_datum.kv := 100;
+	FCU_throttle_info.sm_datum.ka := 10;
+	FCU_throttle_info.sm_datum.kg := 1;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity 	:= 1000000;
+	FCU_throttle_info.sm_datum.max_amps 		:= 1023;
+	FCU_throttle_info.sm_datum.max_error 		:= 1000;
+
+	(**** 	Emergency Trips/ Return to idle ****
+		Dans l'initialisation on peut setter un angle fixe par le code pour pour forcer le moteur a revenir a cet angle lors emergency trips 
+	   	Mais on peut aussi faire la capture de l'angle avec le throttle via le Idle_Point.  Pour ce faire il faut avoir dans la section 
+		initialise du moteur (plus bas):
+			FCU_throttle_info.Estop_enable 						:= TRUE;
+			FCU_throttle_info.Idle_Point.Enabled 				:= TRUE;
+			FCU_throttle_info.Idle_Point.Capture_required 		:= TRUE;
+			FCU_throttle_info.Idle_Point.Capture_done 			:= FALSE;	*)
+
+	FCU_throttle_info.Estop_enable 						:= FALSE;	
+
+	FCU_throttle_info.Min_Stop_Point.Enabled 			:= TRUE;(* Pour des raisons de securite, on active toujours les maxstop et minstop *)
+	FCU_throttle_info.Min_Stop_Point.Capture_required 	:= TRUE;
+	FCU_throttle_info.Min_Stop_Point.Capture_done 		:= FALSE;
+
+	FCU_throttle_info.Idle_Point.Enabled 				:= FALSE;
+	FCU_throttle_info.Idle_Point.Capture_required 		:= FALSE;
+	FCU_throttle_info.Idle_Point.Capture_done 			:= FALSE;
+
+	FCU_throttle_info.Max_Stop_Point.Enabled 			:= TRUE;(* Pour des raisons de securite, on active toujours les maxstop et minstop *)
+	FCU_throttle_info.Max_Stop_Point.Capture_required 	:= TRUE;
+	FCU_throttle_info.Max_Stop_Point.Capture_done 		:= FALSE;
+
+	(* Used for Flight Simulator Mode on Texcel V100 *)
+    (*  
+		L’important est que le VOUT du channel Flight Simulator représente la position du « fuel coordinator », c'est-à-dire la position du Smart 
+		Motor (et non la position du levier dans la control-room).  Ceci nous assure quela consigne du dyno sera correcte quand nous faisons
+		un « Return to Idle » à cause d’un overtemp, d’un overtorque ou d’un overspeed soft. 
+
+		La fonction de rigging doit calculer une pente et un offset propres au VOUT Flight Simulator Mode.  Le 0° du « fuel coordinator » doit
+		correspondre à 0 VDC sur le VOUT.  Le 90° du « fuel coordinator » doitcorrespondre à 9 VDC sur le VOUT.  Prendre note que le rigging ne se fait
+		pas nécessairement aux points 0° et 90°.
+
+		En mode opération, le VOUT doit varier selon la position du Smart Motor.   Donc, quand on envoie une commande au Smart Motor, il faut envoyer 
+		en même temps une commande avec la position correspondante au puck bleu VOUT du Flight Simulator.
+
+		Bref... 0 - 90 degre du servo moteur doit correspondre a 0 - 9 VDC sur le VOUT
+
+	*)
+
+	FCU_throttle_info.FlightSim_Min_Point.Enabled 			:= FALSE;
+	FCU_throttle_info.FlightSim_Min_Point.Capture_required 	:= FALSE;
+	FCU_throttle_info.FlightSim_Min_Point.Capture_done 		:= FALSE;
+	FCU_throttle_info.FlightSim_Max_Point.Position_degree	:= 0.0;
+	FCU_throttle_info.Vout_Min_Point.Enabled 				:= FALSE;
+	FCU_throttle_info.Vout_Min_Point.Capture_required 		:= FALSE;
+	FCU_throttle_info.Vout_Min_Point.Position_degree		:= FCU_throttle_info.FlightSim_Min_Point.Position_degree;
+	FCU_throttle_info.Vout_Min_Point.Position_vdc			:= 0.0;
+
+
+	FCU_throttle_info.FlightSim_Max_Point.Enabled 			:= FCU_throttle_info.FlightSim_Min_Point.Enabled;
+	FCU_throttle_info.FlightSim_Max_Point.Capture_required 	:= FALSE;
+	FCU_throttle_info.FlightSim_Max_Point.Capture_done 		:= FALSE;
+	FCU_throttle_info.FlightSim_Max_Point.Position_degree	:= 90.0;
+	FCU_throttle_info.Vout_Max_Point.Enabled 				:= FCU_throttle_info.FlightSim_Max_Point.Enabled;
+	FCU_throttle_info.Vout_Max_Point.Capture_required 		:= FALSE;
+	FCU_throttle_info.Vout_Max_Point.Position_degree		:= FCU_throttle_info.FlightSim_Max_Point.Position_degree; 
+	FCU_throttle_info.Vout_Max_Point.Position_vdc			:= 9.0; 
+
+
+	(*** GOV Throttle ***)
+	GOV_required 	:= FALSE;
+	GOV_rigged 		:= FALSE;
+	GOV_calib_done 	:= FALSE;
+	GOV_ADDRESS 	:= '2';
+	GOV_position	:= 0;	(* Empecher le moteur de se deplacer apres un reload d'un autre moteur *)
+
+	GOV_throttle_info.mode 						:= RIG_MODE;		
+	GOV_throttle_info.default_lever_slope 		:= -10.0;
+	GOV_throttle_info.default_lever_offset 		:= 0.0;
+	GOV_throttle_info.default_actuator_slope 	:= STEP_PER_DEGREE;
+	GOV_throttle_info.default_actuator_offset 	:= 0.0;
+	GOV_throttle_info.flightsim_slope 			:= 1.0;
+	GOV_throttle_info.flightsim_offset 			:= 0.0;
+
+
+
+	GOV_throttle_info.sm_datum.kp := 50;
+	GOV_throttle_info.sm_datum.ki := 120;
+	GOV_throttle_info.sm_datum.kd := 10;
+	GOV_throttle_info.sm_datum.kl := 1000;
+	GOV_throttle_info.sm_datum.ks := 10;
+	GOV_throttle_info.sm_datum.kv := 100;
+	GOV_throttle_info.sm_datum.ka := 10;
+	GOV_throttle_info.sm_datum.kg := 1;
+	GOV_throttle_info.sm_datum.max_acceleration := 20000;
+	GOV_throttle_info.sm_datum.max_velocity 	:= 1000000;
+	GOV_throttle_info.sm_datum.max_amps 		:= 1023;
+	GOV_throttle_info.sm_datum.max_error 		:= 1000;
+
+	(**** 	Emergency Trips/ Return to idle ****
+		Dans l'initialisation on peut setter un angle fixe par le code pour pour forcer le moteur a revenir a cet angle lors emergency trips 
+	   	Mais on peut aussi faire la capture de l'angle avec le throttle via le Idle_Point.  Pour ce faire il faut avoir dans la section 
+		initialisation du Throttle par moteur (plus bas):
+			FCU_throttle_info.Estop_enable 						:= TRUE;
+			FCU_throttle_info.Idle_Point.Enabled 				:= TRUE;
+			FCU_throttle_info.Idle_Point.Capture_required 		:= TRUE;
+			FCU_throttle_info.Idle_Point.Capture_done 			:= FALSE;	*)
+
+	GOV_throttle_info.Estop_enable 						:= FALSE;	
+
+	GOV_throttle_info.Min_Stop_Point.Enabled 			:= TRUE;	(* Pour des raisons de securite, on active toujours les maxstop et minstop *)
+	GOV_throttle_info.Min_Stop_Point.Capture_required 	:= TRUE;
+	GOV_throttle_info.Min_Stop_Point.Capture_done 		:= FALSE;
+
+	GOV_throttle_info.Idle_Point.Enabled 				:= FALSE;
+	GOV_throttle_info.Idle_Point.Capture_required 		:= FALSE;
+	GOV_throttle_info.Idle_Point.Capture_done 			:= FALSE;
+
+	GOV_throttle_info.Max_Stop_Point.Enabled 			:= TRUE;	(* Pour des raisons de securite, on active toujours les maxstop et minstop *)
+	GOV_throttle_info.Max_Stop_Point.Capture_required 	:= TRUE;
+	GOV_throttle_info.Max_Stop_Point.Capture_done 		:= FALSE;
+
+	(* Used for Flight Simulator Mode on Texcel V100 *)
+	GOV_throttle_info.FlightSim_Min_Point.Enabled 			:= FALSE;
+	GOV_throttle_info.FlightSim_Min_Point.Capture_required 	:= FALSE;
+	GOV_throttle_info.FlightSim_Min_Point.Capture_done 		:= FALSE;
+
+	GOV_throttle_info.FlightSim_Max_Point.Enabled 			:= FALSE;
+	GOV_throttle_info.FlightSim_Max_Point.Capture_required 	:= FALSE;
+	GOV_throttle_info.FlightSim_Max_Point.Capture_done 		:= FALSE;
+
+
+
+IF UUT_Info.Model = 'PW123AF' THEN 
+
+	FCU_required := TRUE;
+
+	GOV_required := TRUE;
+
+	FCU_ADDRESS := '1';
+
+	GOV_ADDRESS := '2';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', RAW_PORT);
+		fd1 := OPEN_SER_PORT.FD;
+
+		OPEN_SER_PORT('/dev/ser8', 38400, 8, 1, 'none', RAW_PORT);
+		fd2 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := FALSE;		
+
+	FCU_throttle_info.default_lever_slope := -10.0;
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;
+	FCU_throttle_info.sm_datum.ki :=  120  ;
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+
+	GOV_throttle_info.mode := RIG_MODE;		
+
+	GOV_throttle_info.Estop_enable := FALSE;		
+
+	GOV_throttle_info.default_lever_slope := -10.0;
+	GOV_throttle_info.default_lever_offset := 0.0;
+
+	GOV_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	GOV_throttle_info.default_actuator_offset := 0.0;
+
+	GOV_throttle_info.sm_datum.kp := 50    ;
+	GOV_throttle_info.sm_datum.ki :=  120  ;
+	GOV_throttle_info.sm_datum.kd := 10    ;
+	GOV_throttle_info.sm_datum.kl :=  1000;
+	GOV_throttle_info.sm_datum.ks := 10    ;
+	GOV_throttle_info.sm_datum.kv := 100  ;
+	GOV_throttle_info.sm_datum.ka := 10    ;
+	GOV_throttle_info.sm_datum.kg := 1      ;
+	GOV_throttle_info.sm_datum.max_acceleration := 20000;
+	GOV_throttle_info.sm_datum.max_velocity := 1000000;
+	GOV_throttle_info.sm_datum.max_amps := 1023;
+	GOV_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd2
+			, GOV_ADDRESS
+			, GOV_throttle_info.sm_datum.kp			
+			, GOV_throttle_info.sm_datum.ki			
+			, GOV_throttle_info.sm_datum.kd			
+			, GOV_throttle_info.sm_datum.kl			
+			, GOV_throttle_info.sm_datum.ks			
+			, GOV_throttle_info.sm_datum.kv			
+			, GOV_throttle_info.sm_datum.ka			
+			, GOV_throttle_info.sm_datum.kg			
+			, GOV_throttle_info.sm_datum.max_acceleration			
+			, GOV_throttle_info.sm_datum.max_velocity			
+			, GOV_throttle_info.sm_datum.max_amps			
+			, GOV_throttle_info.sm_datum.max_error			
+		            		);	
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+	rig_GOV_throttle(TRUE, 0.0, GOV_position, GOV_throttle_info);
+
+	FCU_rigged 		:= FALSE;
+	FCU_calib_done 	:= FALSE;
+
+	GOV_rigged 		:= FALSE;
+	GOV_calib_done 	:= FALSE;
+
+
+ELSIF (UUT_Info.Model = 'PT6A-68') THEN
+
+	FCU_required := TRUE;
+
+	GOV_required := FALSE;
+
+	FCU_ADDRESS := '1';
+
+	GOV_ADDRESS := '2';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', RAW_PORT);
+		fd1 := OPEN_SER_PORT.FD;
+
+		OPEN_SER_PORT('/dev/ser8', 38400, 8, 1, 'none', RAW_PORT);
+		fd2 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := FALSE;		
+
+	FCU_throttle_info.default_lever_slope := -10.0;
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;
+	FCU_throttle_info.sm_datum.ki :=  120  ;
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+			);
+	END_IF; 
+
+	GOV_throttle_info.mode := RIG_MODE;		
+
+	GOV_throttle_info.Estop_enable := FALSE;		
+
+	GOV_throttle_info.default_lever_slope := -1.0;
+	GOV_throttle_info.default_lever_offset := 0.0;
+
+	GOV_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	GOV_throttle_info.default_actuator_offset := 0.0;
+
+	GOV_throttle_info.sm_datum.kp := 50    ;
+	GOV_throttle_info.sm_datum.ki :=  120  ;
+	GOV_throttle_info.sm_datum.kd := 10    ;
+	GOV_throttle_info.sm_datum.kl :=  1000;
+	GOV_throttle_info.sm_datum.ks := 10    ;
+	GOV_throttle_info.sm_datum.kv := 100  ;
+	GOV_throttle_info.sm_datum.ka := 10    ;
+	GOV_throttle_info.sm_datum.kg := 1      ;
+	GOV_throttle_info.sm_datum.max_acceleration := 20000;
+	GOV_throttle_info.sm_datum.max_velocity := 1000000;
+	GOV_throttle_info.sm_datum.max_amps := 1023;
+	GOV_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd2
+			, GOV_ADDRESS
+			, GOV_throttle_info.sm_datum.kp			
+			, GOV_throttle_info.sm_datum.ki			
+			, GOV_throttle_info.sm_datum.kd			
+			, GOV_throttle_info.sm_datum.kl			
+			, GOV_throttle_info.sm_datum.ks			
+			, GOV_throttle_info.sm_datum.kv			
+			, GOV_throttle_info.sm_datum.ka			
+			, GOV_throttle_info.sm_datum.kg			
+			, GOV_throttle_info.sm_datum.max_acceleration			
+			, GOV_throttle_info.sm_datum.max_velocity			
+			, GOV_throttle_info.sm_datum.max_amps			
+			, GOV_throttle_info.sm_datum.max_error			
+		            		);	
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+	rig_GOV_throttle(TRUE, 0.0, GOV_position, GOV_throttle_info);
+
+	FCU_rigged := FALSE;
+	FCU_calib_done := FALSE;
+
+	GOV_rigged := FALSE;
+	GOV_calib_done 	:= FALSE;
+
+ELSIF ((UUT_Info.Model = 'PT6A-41') OR (UUT_Info.Model = 'PT6A-42')) THEN 
+
+	FCU_required := TRUE;
+
+	GOV_required := TRUE;
+
+	FCU_ADDRESS := '1';
+
+	GOV_ADDRESS := '2';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', RAW_PORT);
+		fd1 := OPEN_SER_PORT.FD;
+
+		OPEN_SER_PORT('/dev/ser8', 38400, 8, 1, 'none', RAW_PORT);
+		fd2 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := FALSE;		
+
+	FCU_throttle_info.default_lever_slope := -10.0;
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;
+	FCU_throttle_info.sm_datum.ki :=  120  ;
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+
+	GOV_throttle_info.mode := RIG_MODE;		
+
+	GOV_throttle_info.Estop_enable := FALSE;		
+
+	GOV_throttle_info.default_lever_slope := -10.0;
+	GOV_throttle_info.default_lever_offset := 0.0;
+
+	GOV_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	GOV_throttle_info.default_actuator_offset := 0.0;
+
+	GOV_throttle_info.sm_datum.kp := 50    ;
+	GOV_throttle_info.sm_datum.ki :=  120  ;
+	GOV_throttle_info.sm_datum.kd := 10    ;
+	GOV_throttle_info.sm_datum.kl :=  1000;
+	GOV_throttle_info.sm_datum.ks := 10    ;
+	GOV_throttle_info.sm_datum.kv := 100  ;
+	GOV_throttle_info.sm_datum.ka := 10    ;
+	GOV_throttle_info.sm_datum.kg := 1      ;
+	GOV_throttle_info.sm_datum.max_acceleration := 20000;
+	GOV_throttle_info.sm_datum.max_velocity := 1000000;
+	GOV_throttle_info.sm_datum.max_amps := 1023;
+	GOV_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd2
+			, GOV_ADDRESS
+			, GOV_throttle_info.sm_datum.kp			
+			, GOV_throttle_info.sm_datum.ki			
+			, GOV_throttle_info.sm_datum.kd			
+			, GOV_throttle_info.sm_datum.kl			
+			, GOV_throttle_info.sm_datum.ks			
+			, GOV_throttle_info.sm_datum.kv			
+			, GOV_throttle_info.sm_datum.ka			
+			, GOV_throttle_info.sm_datum.kg			
+			, GOV_throttle_info.sm_datum.max_acceleration			
+			, GOV_throttle_info.sm_datum.max_velocity			
+			, GOV_throttle_info.sm_datum.max_amps			
+			, GOV_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+	rig_GOV_throttle(TRUE, 0.0, GOV_position, GOV_throttle_info);
+
+	FCU_rigged := FALSE;
+	FCU_calib_done := FALSE;
+
+
+	GOV_rigged := FALSE;
+	GOV_calib_done 	:= FALSE;
+
+
+ELSIF (UUT_Info.Model = 'PT6T-3B') OR (UUT_Info.Model = 'PT6T-6_SIKOR') OR (UUT_Info.Model = 'PT6T-6_BELL') OR (UUT_Info.Model = 'PT6T-6B') THEN
+
+	FCU_required := TRUE; (* used for port engine *)
+
+	GOV_required := TRUE;  (* used for stbd engine *)
+
+	FCU_ADDRESS := '1';
+
+	GOV_ADDRESS := '2';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', RAW_PORT);
+		fd1 := OPEN_SER_PORT.FD;
+
+		OPEN_SER_PORT('/dev/ser8', 38400, 8, 1, 'none', RAW_PORT);
+		fd2 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := FALSE;		
+
+	FCU_throttle_info.default_lever_slope := 10.0;
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;
+	FCU_throttle_info.sm_datum.ki :=  120  ;
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+	            		);	
+
+	END_IF; 
+
+	GOV_throttle_info.mode := RIG_MODE;		
+
+	GOV_throttle_info.Estop_enable := FALSE;		
+
+	GOV_throttle_info.default_lever_slope := -10.0;
+	GOV_throttle_info.default_lever_offset := 0.0;
+
+	GOV_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	GOV_throttle_info.default_actuator_offset := 0.0;
+
+	GOV_throttle_info.sm_datum.kp := 50    ;
+	GOV_throttle_info.sm_datum.ki :=  120  ;
+	GOV_throttle_info.sm_datum.kd := 10    ;
+	GOV_throttle_info.sm_datum.kl :=  1000;
+	GOV_throttle_info.sm_datum.ks := 10    ;
+	GOV_throttle_info.sm_datum.kv := 100  ;
+	GOV_throttle_info.sm_datum.ka := 10    ;
+	GOV_throttle_info.sm_datum.kg := 1      ;
+	GOV_throttle_info.sm_datum.max_acceleration := 20000;
+	GOV_throttle_info.sm_datum.max_velocity := 1000000;
+	GOV_throttle_info.sm_datum.max_amps := 1023;
+	GOV_throttle_info.sm_datum.max_error := 1000;
+
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd2
+			, GOV_ADDRESS
+			, GOV_throttle_info.sm_datum.kp			
+			, GOV_throttle_info.sm_datum.ki			
+			, GOV_throttle_info.sm_datum.kd			
+			, GOV_throttle_info.sm_datum.kl			
+			, GOV_throttle_info.sm_datum.ks			
+			, GOV_throttle_info.sm_datum.kv			
+			, GOV_throttle_info.sm_datum.ka			
+			, GOV_throttle_info.sm_datum.kg			
+			, GOV_throttle_info.sm_datum.max_acceleration			
+			, GOV_throttle_info.sm_datum.max_velocity			
+			, GOV_throttle_info.sm_datum.max_amps			
+			, GOV_throttle_info.sm_datum.max_error			
+		            		);	
+
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+	rig_GOV_throttle(TRUE, 0.0, GOV_position, GOV_throttle_info);
+		
+	FCU_rigged := FALSE;
+	FCU_calib_done := FALSE;
+
+
+	GOV_rigged := FALSE;
+	GOV_calib_done 	:= FALSE;
+
+
+ELSIF UUT_Info.Model = 'T53-L-13B' THEN 
+
+	FCU_required := TRUE;
+
+	GOV_required := TRUE;
+
+	FCU_ADDRESS := '4';
+
+	GOV_ADDRESS := '3';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', RAW_PORT);
+		fd1 := OPEN_SER_PORT.FD;
+	
+		OPEN_SER_PORT('/dev/ser8', 38400, 8, 1, 'none', RAW_PORT);
+		fd2 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := TRUE;		
+	FCU_throttle_info.Estop_angle := 0.0;	
+
+	FCU_throttle_info.default_lever_slope := -1.0;
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;
+	FCU_throttle_info.sm_datum.ki :=  120  ;
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+	
+	GOV_throttle_info.mode := RIG_MODE;		
+
+	GOV_throttle_info.Estop_enable := FALSE;		
+
+	GOV_throttle_info.default_lever_slope := -1.0;
+	GOV_throttle_info.default_lever_offset := 0.0;
+
+	GOV_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	GOV_throttle_info.default_actuator_offset := 0.0;
+
+	GOV_throttle_info.sm_datum.kp := 50    ;
+	GOV_throttle_info.sm_datum.ki :=  120  ;
+	GOV_throttle_info.sm_datum.kd := 10    ;
+	GOV_throttle_info.sm_datum.kl :=  1000;
+	GOV_throttle_info.sm_datum.ks := 10    ;
+	GOV_throttle_info.sm_datum.kv := 100  ;
+	GOV_throttle_info.sm_datum.ka := 10    ;
+	GOV_throttle_info.sm_datum.kg := 1      ;
+	GOV_throttle_info.sm_datum.max_acceleration := 20000;
+	GOV_throttle_info.sm_datum.max_velocity := 1000000;
+	GOV_throttle_info.sm_datum.max_amps := 1023;
+	GOV_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd2
+			, GOV_ADDRESS
+			, GOV_throttle_info.sm_datum.kp			
+			, GOV_throttle_info.sm_datum.ki			
+			, GOV_throttle_info.sm_datum.kd			
+			, GOV_throttle_info.sm_datum.kl			
+			, GOV_throttle_info.sm_datum.ks			
+			, GOV_throttle_info.sm_datum.kv			
+			, GOV_throttle_info.sm_datum.ka			
+			, GOV_throttle_info.sm_datum.kg			
+			, GOV_throttle_info.sm_datum.max_acceleration			
+			, GOV_throttle_info.sm_datum.max_velocity			
+			, GOV_throttle_info.sm_datum.max_amps			
+			, GOV_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+	rig_GOV_throttle(TRUE, 0.0, GOV_position, GOV_throttle_info);
+
+	FCU_rigged := FALSE;
+	FCU_calib_done := FALSE;
+
+	GOV_rigged := FALSE;
+	GOV_calib_done 	:= FALSE;
+
+
+ELSIF UUT_Info.Model = 'T55-L-712SSB' THEN 
+
+	FCU_required := TRUE;
+
+	GOV_required := TRUE;
+
+	FCU_ADDRESS := '1';
+
+	GOV_ADDRESS := '2';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', 0);
+		fd1 := OPEN_SER_PORT.FD;
+
+		OPEN_SER_PORT('/dev/ser8', 38400, 8, 1, 'none', 0);
+		fd2 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := FALSE;		
+
+	FCU_throttle_info.default_lever_slope := 1.0;
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;
+	FCU_throttle_info.sm_datum.ki :=  120  ;
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+
+	GOV_throttle_info.Estop_enable := FALSE;		
+
+	GOV_throttle_info.default_lever_slope := 1.0;
+	GOV_throttle_info.default_lever_offset := 0.0;
+
+	GOV_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	GOV_throttle_info.default_actuator_offset := 0.0;
+
+	GOV_throttle_info.sm_datum.kp := 50    ;
+	GOV_throttle_info.sm_datum.ki :=  120  ;
+	GOV_throttle_info.sm_datum.kd := 10    ;
+	GOV_throttle_info.sm_datum.kl :=  1000;
+	GOV_throttle_info.sm_datum.ks := 10    ;
+	GOV_throttle_info.sm_datum.kv := 100  ;
+	GOV_throttle_info.sm_datum.ka := 10    ;
+	GOV_throttle_info.sm_datum.kg := 1      ;
+	GOV_throttle_info.sm_datum.max_acceleration := 20000;
+	GOV_throttle_info.sm_datum.max_velocity := 1000000;
+	GOV_throttle_info.sm_datum.max_amps := 1023;
+	GOV_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd2
+			, GOV_ADDRESS
+			, GOV_throttle_info.sm_datum.kp			
+			, GOV_throttle_info.sm_datum.ki			
+			, GOV_throttle_info.sm_datum.kd			
+			, GOV_throttle_info.sm_datum.kl			
+			, GOV_throttle_info.sm_datum.ks			
+			, GOV_throttle_info.sm_datum.kv			
+			, GOV_throttle_info.sm_datum.ka			
+			, GOV_throttle_info.sm_datum.kg			
+			, GOV_throttle_info.sm_datum.max_acceleration			
+			, GOV_throttle_info.sm_datum.max_velocity			
+			, GOV_throttle_info.sm_datum.max_amps			
+			, GOV_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+	rig_GOV_throttle(TRUE, 0.0, GOV_position, GOV_throttle_info);
+
+	FCU_rigged := FALSE;
+	FCU_calib_done := FALSE;
+
+	GOV_rigged := FALSE;
+	GOV_calib_done 	:= FALSE;
+
+
+ELSIF UUT_Info.Model = 'T55-L-714A' THEN 
+
+	(* Nothing to do for this FADEC Engine *)
+
+	FCU_required := FALSE;
+
+	GOV_required := FALSE;
+
+
+ELSIF UUT_Info.Model = 'MAKILA 1A1' THEN 
+
+	FCU_required := TRUE;
+
+	GOV_required := FALSE;
+
+	FCU_ADDRESS := '1';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', 0);
+		fd1 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := FALSE;		
+
+	FCU_throttle_info.default_lever_slope := 1.0;
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := STEP_PER_DEGREE;
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;
+	FCU_throttle_info.sm_datum.ki :=  120  ;
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+		            		);	
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+	FCU_rigged := FALSE;
+	FCU_calib_done := FALSE;
+
+
+
+ELSIF (UUT_Info.Model = 'T56-A-14') OR (UUT_Info.Model = 'T56-A-15LFE') OR (UUT_Info.Model = 'T56-A-15GFE') THEN 
+
+	FCU_required := TRUE;
+
+	GOV_required := FALSE;
+
+	FCU_ADDRESS := '1';
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		OPEN_SER_PORT('/dev/ser7', 38400, 8, 1, 'none', 0);
+		fd1 := OPEN_SER_PORT.FD;
+	END_IF; 
+
+	FCU_throttle_info.mode := RIG_MODE;		
+
+	FCU_throttle_info.Estop_enable := TRUE;		
+	FCU_throttle_info.Estop_angle := 9.0;	(* TODO: L'angle sera capture au moment de faire le rigging. En theorie l<angle devrait etre 9 deg *)	
+		
+
+	FCU_throttle_info.default_lever_slope := -1.0; (* TODO quelle est la valeur ? PD1104011 *)
+	FCU_throttle_info.default_lever_offset := 0.0;
+
+	FCU_throttle_info.default_actuator_slope := 8.8888889;(*STEP_PER_DEGREE;*)
+	FCU_throttle_info.default_actuator_offset := 0.0;
+
+	FCU_throttle_info.sm_datum.kp := 50    ;(*50 /800*)
+	FCU_throttle_info.sm_datum.ki :=  120  ; (*120/225*)
+	FCU_throttle_info.sm_datum.kd := 10    ;
+	FCU_throttle_info.sm_datum.kl :=  1000;
+	FCU_throttle_info.sm_datum.ks := 10    ;
+	FCU_throttle_info.sm_datum.kv := 100  ;
+	FCU_throttle_info.sm_datum.ka := 10    ;
+	FCU_throttle_info.sm_datum.kg := 1      ;
+	FCU_throttle_info.sm_datum.max_acceleration := 20000;
+	FCU_throttle_info.sm_datum.max_velocity := 1000000;
+	FCU_throttle_info.sm_datum.max_amps := 1023;
+	FCU_throttle_info.sm_datum.max_error := 1000;
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		SET_SM_DATUM(	  fd1
+			, FCU_ADDRESS
+			, FCU_throttle_info.sm_datum.kp			
+			, FCU_throttle_info.sm_datum.ki			
+			, FCU_throttle_info.sm_datum.kd			
+			, FCU_throttle_info.sm_datum.kl			
+			, FCU_throttle_info.sm_datum.ks			
+			, FCU_throttle_info.sm_datum.kv			
+			, FCU_throttle_info.sm_datum.ka			
+			, FCU_throttle_info.sm_datum.kg			
+			, FCU_throttle_info.sm_datum.max_acceleration			
+			, FCU_throttle_info.sm_datum.max_velocity			
+			, FCU_throttle_info.sm_datum.max_amps			
+			, FCU_throttle_info.sm_datum.max_error			
+	            		);	
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);(* Reset *)
+
+
+	FCU_rigged 		:= FALSE;
+	FCU_calib_done 	:= FALSE;
+
+
+	
+(* TODO: GOV pour les autres moteurs comme ici bas*)
+	FCU_throttle_info.Min_Stop_Point.Enabled 			:= TRUE;
+	FCU_throttle_info.Min_Stop_Point.Capture_required 	:= TRUE;
+	FCU_throttle_info.Min_Stop_Point.Capture_done 		:= FALSE;
+
+	FCU_throttle_info.Idle_Point.Enabled 				:= TRUE;
+	FCU_throttle_info.Idle_Point.Capture_required 		:= TRUE;
+	FCU_throttle_info.Idle_Point.Capture_done 			:= FALSE;
+
+	FCU_throttle_info.Max_Stop_Point.Enabled 			:= TRUE;
+	FCU_throttle_info.Max_Stop_Point.Capture_required 	:= TRUE;
+	FCU_throttle_info.Max_Stop_Point.Capture_done 		:= FALSE;
+		
+
+
+	(* Used for Flight Simulator Mode on Texcel V100 *)
+
+	FCU_flightsim_required 	:=	TRUE; (* flight simulator for TEXCEL v100 is active *)
+
+	FCU_throttle_info.FlightSim_Min_Point.Enabled 			:= FCU_flightsim_required;
+	FCU_throttle_info.FlightSim_Min_Point.Capture_required 	:= FCU_flightsim_required;
+	FCU_throttle_info.FlightSim_Min_Point.Capture_done 		:= FALSE;
+	FCU_throttle_info.FlightSim_Min_Point.Position_degree	:= 0.0; (* 0 deg = 0 vdc *)
+	FCU_throttle_info.Vout_Min_Point.Enabled 				:= FALSE;
+	FCU_throttle_info.Vout_Min_Point.Capture_required 		:= FALSE;
+	FCU_throttle_info.Vout_Min_Point.Position_degree		:= FCU_throttle_info.FlightSim_Min_Point.Position_degree;
+	FCU_throttle_info.Vout_Min_Point.Position_vdc			:= 0.0; (* 0 deg = 0 vdc *)
+
+	FCU_throttle_info.FlightSim_Max_Point.Enabled 			:= FCU_flightsim_required;
+	FCU_throttle_info.FlightSim_Max_Point.Capture_required 	:= FCU_flightsim_required;
+	FCU_throttle_info.FlightSim_Max_Point.Capture_done 		:= FALSE;
+	FCU_throttle_info.FlightSim_Max_Point.Position_degree	:= 90.0; (* 90 deg = 9 vdc *)
+	FCU_throttle_info.Vout_Max_Point.Enabled 				:= TRUE;
+	FCU_throttle_info.Vout_Max_Point.Capture_required 		:= FALSE;
+	FCU_throttle_info.Vout_Max_Point.Position_degree		:= FCU_throttle_info.FlightSim_Max_Point.Position_degree; 
+	FCU_throttle_info.Vout_Max_Point.Position_vdc			:= 9.0;  (* 90 deg = 9 vdc *)
+
+ELSE
+
+	(* Nothing to do for DAS Calibration *)
+
+	FCU_required := FALSE;
+
+	GOV_required := FALSE;
+
+END_IF; 
+
+status := OPENED;
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,48 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Logic.Channels.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Release\KineticaRT.Logic.Channels.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Expressions.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Expressions.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\KineticaRT.Logic.Channels.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\KineticaRT.Logic.Channels.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Expressions.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\KineticaRT.Logic.Channels.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\KineticaRT.Logic.Channels.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Logic.Channels.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Logic.Expressions.dll
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Release\KineticaRT.Logic.Channels.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Release\KineticaRT.Logic.Channels.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Logic.Channels.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Release\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Channels.pdb
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Expressions.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Compact.xml
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\bin\Debug\KineticaRT.Logic.Expressions.pdb
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\KineticaRT.Logic.Channels.dll
+D:\KineticaRT\KineticaRT\Compact\Logic\Channels\obj\Debug\KineticaRT.Logic.Channels.pdb

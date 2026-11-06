@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Slider</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.Slider">
+            <summary>
+            KineticaRT Slider Control
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.SliderBase">
+            <summary>
+            Basic Features of a Slider Control
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.bmpBackground">
+            <summary>
+            Bitmap in which the basic slider gets drawn
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.offset">
+            <summary>
+            Offset used to keep Scale sensibly inside DisplayRectangle
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.propertyHdlr">
+            <summary>
+            Event handler for PropertyChanged events from child objects
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.searchHdlr">
+            <summary>
+            Event handler for ObjectSearch events from child objects
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.scale">
+            <summary>
+            Current value of the Scale property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.orientation">
+            <summary>
+            Current value of the Orientation property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.useSourceFormat">
+            <summary>
+            Currect value of the UseSourceFormat property
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderBase.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.#ctor">
+            <summary>
+            Initialises a new instance of the SliderBase class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.GetOffsetRatio(System.Drawing.Graphics)">
+            <summary>
+            Calculates an offset for how much of the control's area should be used for the Scale
+            based on font size (vertical scales only)
+            </summary>
+            <param name="g">Graphics object used for string measurement</param>
+            <returns></returns>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.ResetScale">
+            <summary>
+            Reset the Scale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.PositionToFraction(System.Int32,System.Int32)">
+            <summary>
+            Converts the given position into a fraction of the Slider's current range
+            </summary>
+            <param name="XPos">X position to convert</param>
+            <param name="YPos">Y position to convert</param>
+            <returns>Converted Fraction</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.SetFormat(KineticaRT.Controls.SliderNeedle)">
+            <summary>
+            Sets up the tool tip and scale range based on the given Needle's Source
+            </summary>
+            <param name="Needle">Needle whose Source information is used</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderBase.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderBase.Scale">
+            <summary>
+            Gets the control's Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderBase.Orientation">
+            <summary>
+            Gets or sets the Orientation of the Slider
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderBase.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Slider gets its ToolTip, Minimum and Maximum
+            from the Source of it's primary Needle
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Slider.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.#ctor">
+            <summary>
+            Initialises a new instance of the Slider class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.ResetNeedle">
+            <summary>
+            Reset the Needle to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.OnDragEnter(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragEnter event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Slider.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Slider.Needle">
+            <summary>
+            Gets or sets the control's Needle object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Slider.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Slider gets its ToolTip, Minimum and Maximum
+            from the Source of its Needle
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.SliderMultiNeedle">
+            <summary>
+            KineticaRT Slider Control with Multiple Needlde objects
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderMultiNeedle.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.#ctor">
+            <summary>
+            Initialises a new instance of the SliderMultiNeedle class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.ResetNeedles">
+            <summary>
+            Reset the Needle Collection to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.OnDragOver(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragOver event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            DragDrop event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderMultiNeedle.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderMultiNeedle.Needles">
+            <summary>
+            Gets or sets the Collection of Needle objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderMultiNeedle.UseSourceFormat">
+            <summary>
+            Gets or sets whether the Slider gets its ToolTip, Minimum and Maximum
+            from the Source of the first Needle in the collection
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.SliderNeedleStyles">
+            <summary>
+            Enumeration of possible Slider Needle Styles.
+            All are variable widths
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderNeedleStyles.Handle">
+            <summary>
+            Rectangular handle with central marker line
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderNeedleStyles.Arrow">
+            <summary>
+            Arrow that points Left or Down
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderNeedleStyles.ReverseArrow">
+            <summary>
+            Arrow that points Right or Up
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.SliderNeedleStyles.Line">
+            <summary>
+            Simple line
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.SliderNeedleCollection">
+            <summary>
+            Collection of SliderNeedle objects
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.#ctor">
+            <summary>
+            Initialises a new instance of the SliderNeedleCollection class containing a single needle
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.#ctor(KineticaRT.Controls.SliderNeedle[])">
+            <summary>
+            Initialises a new instance of the SliderMultiNeedle class containing the specified Needle objects
+            </summary>
+            <param name="needles">Array of SliderNeedle objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.AddNeedle">
+            <summary>
+            Adds a new SliderNeedle object to the collection
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.AddRange(KineticaRT.Controls.SliderNeedle[])">
+            <summary>
+            Adds the specified Needle objects to the collection
+            </summary>
+            <param name="newNeedles">Array of needles to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,KineticaRT.Controls.Scale,KineticaRT.Controls.ScaleOrientations,System.Double)">
+            <summary>
+            Draw all the needles in the collection
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+            <param name="Scale">Scale to which Needles are related</param>
+            <param name="Orientation">Whether to draw horizontally or vertically</param>
+            <param name="Offset">Offset defining how much of DrawRect is used</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.DrawFill(System.Drawing.Graphics,System.Drawing.Rectangle,KineticaRT.Controls.Scale,KineticaRT.Controls.ScaleOrientations,System.Double)">
+            <summary>
+            Draw all the needles' fills
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+            <param name="Scale">Scale to which Needles are related</param>
+            <param name="Orientation">Whether to draw horizontally or vertically</param>
+            <param name="Offset">Offset defining how much of DrawRect is used</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.CheckForCapture(System.Int32,System.Int32,KineticaRT.Controls.ScaleOrientations,System.Int32@)">
+            <summary>
+            Tests if a given position is close enough to a Needle's current position
+            to start a mouse drag
+            </summary>
+            <param name="XPos">X Position of point to check</param>
+            <param name="YPos">Y Position of point to check</param>
+            <param name="Orientation">Orientation (horizontal or vertical) of the parent control</param>
+            <param name="CaptureIndex">Index of Needle to capture, or -1 if none are close enough</param>
+            <returns>True if click is close enough to capture a Needle</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedleCollection.CalculatePosition(System.Drawing.Rectangle,KineticaRT.Controls.Scale,KineticaRT.Controls.ScaleOrientations,System.Boolean@)">
+            <summary>
+            Recalculates the position of each Needle
+            </summary>
+            <param name="DrawRect">Rectangle in which to position the Needles</param>
+            <param name="Scale">Scale object related to the Control</param>
+            <param name="Orientation">Orientation (horizontal or vertical) of the Slider</param>
+            <param name="DrawAll">(out) True if a full redraw (ie both needle and fill) will be required</param>
+            <returns>True if any needles have moved and hence need redrawing</returns>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderNeedleCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the SliderNeedle object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.SliderNeedle">
+            <summary>
+            Needle object designed for use with a Slider control
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedle.#ctor">
+            <summary>
+            Initialises a new instance of the SliderNeedle class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedle.CheckForCapture(System.Int32,System.Int32,KineticaRT.Controls.ScaleOrientations)">
+            <summary>
+            Tests if a given position is close enough
+            to the Needle's current position to start a mouse drag
+            </summary>
+            <param name="XPos">X Position of point to check</param>
+            <param name="YPos">Y Position of point to check</param>
+            <param name="Orientation">Orientation (horizontal or vertical) of the parent control</param>
+            <returns>True if click is close enough to capture the Needle</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedle.CalculatePosition(System.Drawing.Rectangle,KineticaRT.Controls.Scale,KineticaRT.Controls.ScaleOrientations)">
+            <summary>
+            Recalculates the position of the Needle
+            </summary>
+            <param name="DrawRect">Rectangle in which to position the Needles</param>
+            <param name="objScale">Scale object related to the Control</param>
+            <param name="Orientation">Orientation (horizontal or vertical) of the Parent Control</param>
+            <returns>True if needle has moved since last drawn</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedle.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,KineticaRT.Controls.Scale,KineticaRT.Controls.ScaleOrientations,System.Double)">
+            <summary>
+            Draw the needle
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+            <param name="objScale">Scale to which Needle is related</param>
+            <param name="Orientation">Whether to draw horizontally or vertically</param>
+            <param name="Offset">Offset defining how much of DrawRect is used</param>
+        </member>
+        <member name="M:KineticaRT.Controls.SliderNeedle.DrawFill(System.Drawing.Graphics,System.Drawing.Rectangle,KineticaRT.Controls.Scale,KineticaRT.Controls.ScaleOrientations,System.Double)">
+            <summary>
+            Draw the needle's Fill
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="DrawRect">Rectangle in which to draw</param>
+            <param name="objScale">Scale to which Needle is related</param>
+            <param name="Orientation">Whether to draw horizontally or vertically</param>
+            <param name="Offset">Offset defining how much of DrawRect is used</param>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderNeedle.Style">
+            <summary>
+            Gets or sets the style of the Needle
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderNeedle.Width">
+            <summary>
+            Gets or sets the width of the Needle in pixels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderNeedle.Start">
+            <summary>
+            Gets or sets the Start point of the Needle, as a proportion of the width of the parent control (0..1)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderNeedle.Finish">
+            <summary>
+            Gets or sets the FInish point of the Needle, as a proportion of the width of the parent control (0..1)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderNeedle.Centred">
+            <summary>
+            Gets or sets whether Fill starts from the minimum value, or the CentrePoint value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.SliderNeedle.CentrePoint">
+            <summary>
+            Gets or sets the value around which Centred Fill is drawn
+            </summary>
+        </member>
+    </members>
+</doc>

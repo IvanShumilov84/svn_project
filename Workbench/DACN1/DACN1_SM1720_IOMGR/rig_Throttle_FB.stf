@@ -1,0 +1,141 @@
+FUNCTION_BLOCK rig_Throttle_FB
+
+	IF (User_Rig.Clear_demand = TRUE) THEN 
+
+		local_reset := TRUE;
+
+	END_IF; 
+
+	IF (reset = TRUE) OR (local_reset = TRUE) THEN 
+
+		User_Rig.Engage_demand		:= FALSE;
+		User_Rig.Store_Min_Angle	:= FALSE;
+		User_Rig.Store_Max_Angle	:= FALSE;
+		User_Rig.Compute_demand		:= FALSE;
+		IF NOT local_reset THEN 			(* Si local_reset, remis a FALSE par KineticaRT pcq probleme retour bouton *)
+			User_Rig.Clear_demand	:= FALSE;
+		END_IF; 
+ 		User_Rig.Close_demand		:= FALSE;
+		lever_slope				:= 0.0;
+		lever_offset			:= 0.0;
+		actuator_slope			:= 0.0;
+		actuator_offset			:= 0.0;
+		Min_Pos_done			:= FALSE;
+		Max_Pos_done			:= FALSE;
+		Rigging_done			:= FALSE;
+		status				:= FALSE;
+		first_time_disengage		:= TRUE;
+		local_reset				:= FALSE;
+		compute_status			:= FALSE;
+		(*actuator_position_demand	:= 0;*)
+(*TEST*)   actuator_position_demand := actuator_position;
+
+	END_IF; 
+
+	IF (Rigging_done = FALSE) THEN 
+
+		IF (User_Rig.Engage_demand = TRUE) THEN 
+			
+			IF (first_time_disengage = TRUE) THEN 
+
+				lever_zero			:= lever_pcnt;
+				zero_actuator_position	:= actuator_position;
+				first_time_disengage	:= FALSE;
+
+			END_IF; 
+
+			relative_lever_pcnt := lever_pcnt - lever_zero; 
+
+			throttle_lever_angle(relative_lever_pcnt, throttle_info.default_lever_slope, throttle_info.default_lever_offset);
+
+			throttle_actuator_pos(throttle_lever_angle.value,throttle_info.default_actuator_slope,throttle_info.default_actuator_offset);
+
+			actuator_position_demand := zero_actuator_position + ANY_TO_DINT(throttle_actuator_pos.value);
+			
+		ELSE 	
+
+			first_time_disengage := TRUE;
+
+		END_IF; 
+
+		IF ( (User_Rig.Store_Min_Angle = TRUE) AND (Min_Pos_done = FALSE) )THEN 
+			(* Rig point Minimum *)
+			Min_Rig_Position			:= User_Rig.Min_Rig_Pos;			(* Position en degre du point minimum *)
+			Min_Lever_Pcnt				:= lever_pcnt; 						(* Position du levier en pourcentage*)
+			Actuator_Min_Position		:= ANY_TO_REAL(actuator_position);	(* Position du moteur en pas*)
+(* TEST			User_Rig.Store_Min_Angle	:= FALSE;	remis a FALSE par KineticaRT pcq probleme retour bouton *)
+			Min_Pos_done			:= TRUE;
+
+		END_IF; 
+
+		IF ( (User_Rig.Store_Max_Angle = TRUE)  AND (Min_Pos_done = TRUE) AND (Max_Pos_done = FALSE) ) THEN 
+			(* Rig point Maximum *)
+			Max_Rig_Position			:= User_Rig.Max_Rig_Pos;			(* Position en degre du point minimum *)
+			Max_Lever_Pcnt				:= lever_pcnt;						(* Position du levier en pourcentage*)
+			Actuator_Max_Position		:= ANY_TO_REAL(actuator_position);	(* Position du moteur en pas*)
+(* TEST			User_Rig.Store_Max_Angle	:= FALSE; 	remis a FALSE par KineticaRT pcq probleme retour bouton *)
+			Max_Pos_done			:= TRUE;
+
+		END_IF; 
+
+		IF ( (User_Rig.Compute_demand  = TRUE)  AND (Max_Pos_done = TRUE) AND (Compute_Status = FALSE) ) THEN 
+
+			compute_lever_coeffs( Max_Rig_Position, Min_Rig_Position, Max_Lever_Pcnt, Min_Lever_Pcnt);
+
+			lever_slope := compute_lever_coeffs.slope;
+			lever_offset := compute_lever_coeffs.offset;
+
+			compute_actuator_coeffs( Actuator_Max_Position, Actuator_Min_Position, Max_Rig_Position, Min_Rig_Position);
+
+			actuator_slope := compute_actuator_coeffs.slope;
+			actuator_offset := compute_actuator_coeffs.offset;
+
+(* TEST			User_Rig.Compute_demand	:= FALSE; 	remis a FALSE par KineticaRT pcq probleme retour bouton *)
+			Rigging_done		:= TRUE;
+			Compute_Status		:= TRUE;
+		END_IF; 	
+	
+
+	ELSIF  (Rigging_done = TRUE) THEN 	
+	
+		throttle_lever_angle(lever_pcnt,  compute_lever_coeffs.slope, compute_lever_coeffs.offset);
+		lever_angle_demand := throttle_lever_angle.value;
+		(* Transforme la position du levier de pourcentage a degre *)
+		(*lever_angle(lever_pcnt, throttle_info.lever_slope,  throttle_info.lever_offset);*)
+		(*lever_angle_demand := lever_angle.value;*)
+
+		throttle_actuator_pos(throttle_lever_angle.value,  compute_actuator_coeffs.slope, compute_actuator_coeffs.offset);
+
+		actuator_position_demand := ANY_TO_DINT(throttle_actuator_pos.value);	
+
+
+
+	
+	END_IF; 
+
+	IF (User_Rig.Close_demand = TRUE) THEN 
+
+		(*Compute_Status		:= FALSE;*)
+		status			:= TRUE;
+		(*User_Rig.Close_demand	:= FALSE;*)
+
+	END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

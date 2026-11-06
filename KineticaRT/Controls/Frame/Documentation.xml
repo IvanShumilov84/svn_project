@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Frame</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.ControlCopyBase">
+            <summary>
+            Base Class for copying and pasting controls
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.ControlCopyBase.AddCopies(KineticaRT.Controls.PanelBase)">
+            <summary>
+            Adds copies of controls to the specified panel
+            </summary>
+            <param name="Panel">Panel to which controls are added</param>
+        </member>
+        <member name="M:KineticaRT.Controls.ControlCopyBase.SetUniqueName(System.Windows.Forms.Control,KineticaRT.Controls.PanelBase)">
+            <summary>
+            Ensures the given control has a name that is unique within the given Panel's
+            Controls collection
+            </summary>
+            <param name="Ctrl">Control to rename</param>
+            <param name="Panel">Panel in which tocheck the name</param>
+        </member>
+        <member name="T:KineticaRT.Controls.EditForm">
+            <summary>
+            Frame Edit mode form
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.#ctor(KineticaRT.Controls.Frame)">
+            <summary>
+            Initialises a new Instance of the EditForm class
+            </summary>
+            <param name="parent">Frame for which this form acts as editor. Must be a valid Frame object</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paint Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnBackColorChanged(System.EventArgs)">
+            <summary>
+            Back Color Changed Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnMouseEnter(System.EventArgs)">
+            <summary>
+            Mouse Enter Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnMouseLeave(System.EventArgs)">
+            <summary>
+            Mouse Leave Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnActivated(System.EventArgs)">
+            <summary>
+            Activated Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Key Down event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.EditForm.OnClosed(System.EventArgs)">
+            <summary>
+            Closed event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="T:KineticaRT.Controls.Addable">
+            <summary>
+            Addable Class - information about objects that can be added to a Frame
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Addable.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialise an Addable
+            </summary>
+            <param name="Name">Friendly name of control</param>
+            <param name="Assembly">Name of Assembly in which the control is found</param>
+            <param name="Typename">Typename of control</param>
+        </member>
+        <member name="P:KineticaRT.Controls.Addable.Name">
+            <summary>
+            Friendly name of control
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Addable.Assembly">
+            <summary>
+            Name of Assembly in which the control is found
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Addable.Typename">
+            <summary>
+            Typename of control
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Grid">
+            <summary>
+            Information about a Grid
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Grid.#ctor">
+            <summary>
+            Creates a new instance of the Grid class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Grid.#ctor(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of the grid class with the given properties
+            </summary>
+            <param name="Enabled">Value of Enabled property</param>
+            <param name="Size">Value of Size property</param>
+            <param name="Spacing">Value of Spacing property</param>
+        </member>
+        <member name="E:KineticaRT.Controls.Grid.PropertyChanged">
+            <summary>
+            Property Changed Event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Grid.Size">
+            <summary>
+            Size of grid (pixels)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Grid.Spacing">
+            <summary>
+            Spacing of objects on grid (pixels)
+            - ie objects are (n * size) - spacing pixels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Grid.Enabled">
+            <summary>
+            Whether grid is enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Grid.Pixels">
+            <summary>
+            Number of pixels in one grid unit
+            - ie Size if grid enabled, else 1
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Grid.MinSize">
+            <summary>
+            Minimum number of pixels
+            - ie (Size - Spacing) or 0 if Spacing > Size
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Grid.GridTypeConverter">
+            <summary>
+            This type converter extends the basic TypeConverter to allow conversion to an
+            InstanceDescriptor, which allows the .NET Framework to generate source code for the object.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Grid.GridTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether a desired conversion is possible
+            </summary>
+            <param name="context">Context</param>
+            <param name="destinationType">Desired type</param>
+            <returns>True if conversion is possible</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Grid.GridTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Performs the actual conversion to an InstanceDescriptor.
+            Override to use other than the Empty Constructor
+            </summary>
+            <param name="context">Context</param>
+            <param name="culture">Culture Info</param>
+            <param name="value">Object to be converted</param>
+            <param name="destinationType">Type to convert to</param>
+            <returns>Converted object</returns>
+        </member>
+        <member name="T:KineticaRT.Controls.DllNameEditor">
+            <summary>
+            DLL selection dialog that allows selection of a dll that does not exist
+            </summary>
+            <remarks>If the parent is a Frame, the initial directory is the Frame's SystemDirectory</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.DllNameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits the specified object using the editor style provided by the GetEditStyle method
+            </summary>
+            <param name="context">An ITypeDescriptorContext that can be used to gain additional context information</param>
+            <param name="provider">A service provider object through which editing services may be obtained</param>
+            <param name="value">An instance of the value being edited</param>
+            <returns>The new value of the object. If the value of the object hasn't changed, this should return the same object it was passed</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.DllNameEditor.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
+            <summary>
+            Initializes the open file dialog when it is created.
+            </summary>
+            <param name="openFileDialog">The OpenFileDialog to use to select a file name</param>
+        </member>
+        <member name="T:KineticaRT.Controls.Frame">
+            <summary>
+            Frame: Container Control
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Frame.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.#ctor">
+            <summary>
+            Initialises a new instance of the Frame class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.BeginInit">
+            <summary>
+            Initialization is beginning
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.EndInit">
+            <summary>
+            Initialization is complete
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.ResetTitleLeftColor">
+            <summary>
+            Reset the Color to its default value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.ResetTitleRightColor">
+            <summary>
+            Reset the Color to its default value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.ResetTitleUnderlineColor">
+            <summary>
+            Reset the Color to its default value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            Called from OnPaint and the Control's event pool Update
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.DrawTitle(System.Drawing.Graphics)">
+            <summary>
+            Draws the title bar
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.Add(System.String)">
+            <summary>
+            Adds a control from the add list
+            </summary>
+            <param name="Name">Name in add list</param>
+            <returns>New Control (or null if failed</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.Add(System.Int32)">
+            <summary>
+            Adds a control from the add list by index
+            </summary>
+            <param name="Index">Zero-based index in add list</param>
+            <returns>New Control (or null if failed</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.OnRightToLeftChanged(System.EventArgs)">
+            <summary>
+            RightToLeft changed event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.OnFontChanged(System.EventArgs)">
+            <summary>
+            Font changed event
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.FindObject(System.String)">
+            <summary>
+            Returns the named object or null if it does not exist.
+            </summary>
+            <param name="objectName">Name of object to find</param>
+            <returns>Named object, or null if not found</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.OnChildObjectSearch(System.String)">
+            <summary>
+            Event handler for requests from the objects children to find another object for them by name.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Controls.Frame.GetAddList">
+            <summary>
+            Event generated to retrieve AddList from parent Frame
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.DemoMode">
+            <summary>
+            True if control is unlicenced
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.ContextMenu">
+            <summary>
+            Context Menu
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.Panel">
+            <summary>
+            Panel Property - where controls are held
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.Shape">
+            <summary>
+            Frame Shape: must be a rectangle
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.CornerRadius">
+            <summary>
+            Frame CornerRadius: Not used - must be 20
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.AddListFile">
+            <summary>
+            Name of file containing information about addable controls
+            </summary>
+            <remarks>If path is not specified, file is relative to path specified in SystemDirectory property</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.SystemDirectory">
+            <summary>
+            Path of System Directory, where panels and addlist files are sought
+            Defaults to Application Startup path
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.TitleEnabled">
+            <summary>
+            Title bar enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.TitleUnderlined">
+            <summary>
+            Title bar is underlined
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.TitleText">
+            <summary>
+            Text in Title bar
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.TitleLeftColor">
+            <summary>
+            Color at left of title bar
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.TitleRightColor">
+            <summary>
+            Color at right of title bar
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.TitleUnderlineColor">
+            <summary>
+            Color of title bar underline
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.HorizontalGrid">
+            <summary>
+            Horizontal Grid
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.VerticalGrid">
+            <summary>
+            Vertical Grid
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Frame.PanelName">
+            <summary>
+            Name of Panel DLL to load
+            </summary>
+            <remarks>Extensions other than '.dll' will be changed to '.dll'</remarks>
+            <remarks>If path is not specified, file is relative to path specified in SystemDirectory property</remarks>
+        </member>
+        <member name="T:KineticaRT.Controls.Frame.LicenseProvider">
+            <summary>
+            Implements a license provider for the class.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Frame.LicenseProvider.GetLicense(System.ComponentModel.LicenseContext,System.Type,System.Object,System.Boolean)">
+            <summary>
+            Gets a license for an instance or type of component, when given a context and whether the denial of a license throws an exception
+            </summary>
+            <param name="context">A LicenseContext that specifies where you can use the licensed object</param>
+            <param name="type">A Type that represents the component requesting the license</param>
+            <param name="instance">An object that is requesting the license</param>
+            <param name="allowExceptions">true if a LicenseException should be thrown when the component cannot be granted a license; otherwise, false</param>
+            <returns>A valid License</returns>
+        </member>
+        <member name="T:KineticaRT.Controls.Frame.GetAddListEventHandler">
+            <summary>
+            Handler for GetAddList event
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.PanelBase">
+            <summary>
+            Panel - part of the Frame
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.PanelBase.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.#ctor">
+            <summary>
+            Initialises a new instance of the PanelBase class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the PanelBase class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.InitializePanel">
+            <summary>
+            Initialize the panel.
+            </summary>
+            <remarks>This should be overriden in the derived classes to initialise the properties and create the child controls.</remarks>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.GetUniqueName(System.String)">
+            <summary>
+            Returns a name that does not currently exist in the Controls collection.
+            Returns BaseName if that does not exist, else a numeric increment of BaseName
+            </summary>
+            <param name="BaseName">Name to test and increment if required</param>
+            <returns>Name that does not currently exist in the Controls Collection</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.FindControl(System.String)">
+            <summary>
+            Finds the control with the specified name
+            </summary>
+            <param name="CtrlName">Name of control to find</param>
+            <returns>Named Control or null if not found</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.OnControlAdded(System.Windows.Forms.ControlEventArgs)">
+            <summary>
+            ControlAdded Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.OnControlRemoved(System.Windows.Forms.ControlEventArgs)">
+            <summary>
+            ControlRemoved Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.OnObjectSearch(System.String)">
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.Save(System.String)">
+            <summary>
+            Saves the current properties, child controls etc to a code source file.
+            </summary>
+            <remarks>Normally called from "Save" on the panel's context menu.</remarks>
+            <remarks>Throws an ArgumentException if PanelName is an empty string</remarks>
+            <param name="PanelName">Name (and path) of file to save to</param>
+        </member>
+        <member name="M:KineticaRT.Controls.PanelBase.CreateDllFromSource(System.String,System.String,System.String[])">
+            <summary>
+            Creates a dll in the named file from the named source file
+            </summary>
+            <param name="SourceFilename">Source file</param>
+            <param name="DllFilename">File where dll is created</param>
+            <param name="References">Array of assembly names to reference in the dll</param>
+            <returns>True if succeeded</returns>
+        </member>
+        <member name="E:KineticaRT.Controls.PanelBase.GetAddList">
+            <summary>
+            Event generated to retrieve AddList
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Controls.PanelBase.ObjectSearch">
+            <summary>
+            Event for requests to find an object by name.
+            </summary>
+        </member>
+    </members>
+</doc>

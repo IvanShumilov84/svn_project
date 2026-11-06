@@ -1,0 +1,12 @@
+///////////////////////////////////////////////////////////////////////////
+ CKRT_Frame
+
+Bits not done:
+
+Frame menu 'Save' (without entering edit mode)
+Registry 'is editable?' check
+
+Rename
+Check names still unique on un-deleting objects
+Deleting old undos should clear info - if required
+name tooltips???

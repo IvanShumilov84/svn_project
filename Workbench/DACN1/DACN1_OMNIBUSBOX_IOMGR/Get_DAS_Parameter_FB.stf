@@ -1,0 +1,45 @@
+FUNCTION_BLOCK GET_DAS_PARAMETER_FB
+(************************************************************************************************************************************************
+	Name :		Get_DAS_Parameter_FB									
+														
+	Description :	Get the specified DAS parameter Value.
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/02/28	Danny Lepage	First Release
+
+************************************************************************************************************************************************)
+
+realValue := 0.0;
+intValue  := 0;
+
+IF (parameterName = '%PRESSURE_ALTITUDE%') THEN
+
+	realValue	:= CRUNCHER_PAltitude;
+
+ELSIF (parameterName = '%TEST_CELL_TEMPERATURE%') THEN
+
+	realValue	:= CRUNCHER_TCell_DegC;
+
+ELSIF (parameterName = '%TOTAL_PRESSURE%') THEN
+
+	realValue	:= CRUNCHER_PTotal;
+
+ELSE
+	(*
+	 * Unknown Parameter
+	 *)
+	err_code := 1;
+END_IF;
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

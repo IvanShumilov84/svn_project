@@ -1,0 +1,374 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Enabled>true</Enabled>
+<AlternateNames xsi:type="xsd:anyType" xsi:null="1"/>
+<AFDX_STATUS href="#ref-5"/>
+<FACILITY_CONTROLLER_STATUS href="#ref-6"/>
+<GALIL_CONTROLLER_STATUS href="#ref-7"/>
+<LOAD_BANK_CONTROLLER_STATUS href="#ref-8"/>
+<Messages href="#ref-9"/>
+<NIDAQ_STATUS href="#ref-10"/>
+<OMNIBUSBOX_STATUS href="#ref-11"/>
+<POWERDNA_STATUS href="#ref-12"/>
+<SCANIVALVE_PRESSURE_STATUS href="#ref-13"/>
+<SCANIVALVE_TEMP_STATUS href="#ref-14"/>
+<SERIAL_ARINC_STATUS href="#ref-15"/>
+<SERIAL_STATUS href="#ref-16"/>
+<SM1720_STATUS href="#ref-17"/>
+<Test_Mgr_In_AFDX_IOMgr_Status href="#ref-18"/>
+<Test_Mgr_In_Facility_Controller_Status href="#ref-19"/>
+<Test_Mgr_In_Galil_Controller_Status href="#ref-20"/>
+<Test_Mgr_In_Load_Bank_Controller_Status href="#ref-21"/>
+<Test_Mgr_In_NIDAQ_Status href="#ref-22"/>
+<Test_Mgr_In_Omnibusbox_Status href="#ref-23"/>
+<Test_Mgr_In_PowerDNA_Status href="#ref-24"/>
+<Test_Mgr_In_Scanivalve_Pressure_Status href="#ref-25"/>
+<Test_Mgr_In_Scanivalve_Temp_Status href="#ref-26"/>
+<Test_Mgr_In_Serial_Arinc_Status href="#ref-27"/>
+<Test_Mgr_In_Serial_Status href="#ref-28"/>
+<Test_Mgr_In_SM1720_Status href="#ref-29"/>
+<Test_Mgr_In_Texcel_V100_Status href="#ref-30"/>
+<Test_Mgr_In_Texcel_VX100_Status href="#ref-31"/>
+<Test_Mgr_In_UUT_Controller_Status href="#ref-32"/>
+<Test_Mgr_In_UUT_Cruncher_Status href="#ref-33"/>
+<TEXCEL_V100_STATUS href="#ref-34"/>
+<TEXCEL_VX100_STATUS href="#ref-35"/>
+<UUT_CONTROLLER_STATUS href="#ref-36"/>
+<UUT_CRUNCHER_STATUS href="#ref-37"/>
+</a1:ChannelCollection>
+<a3:Expression id="ref-5" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-38">AFDX_STATUS</Name>
+<Description id="ref-39">AFDX</Description>
+<ToolTip id="ref-40"></ToolTip>
+<Text id="ref-41">If(Test_Mgr_In_AFDX_IOMgr_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_AFDX_IOMgr_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_AFDX_IOMgr_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-6" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-42">FACILITY_CONTROLLER_STATUS</Name>
+<Description id="ref-43">Facility Controller</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-44">If(Test_Mgr_In_Facility_Controller_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Facility_Controller_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Facility_Controller_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Facility_Controller_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Facility_Controller_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Facility_Controller_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Facility_Controller_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Facility_Controller_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Facility_Controller_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Facility_Controller_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Facility_Controller_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Facility_Controller_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Facility_Controller_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Facility_Controller_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Facility_Controller_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Facility_Controller_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-7" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-45">GALIL_CONTROLLER_STATUS</Name>
+<Description id="ref-46">Galil Controller</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-47">If(Test_Mgr_In_Galil_Controller_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Galil_Controller_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Galil_Controller_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Galil_Controller_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Galil_Controller_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Galil_Controller_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Galil_Controller_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Galil_Controller_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Galil_Controller_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Galil_Controller_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Galil_Controller_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Galil_Controller_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Galil_Controller_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Galil_Controller_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Galil_Controller_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Galil_Controller_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-8" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-48">LOAD_BANK_CONTROLLER_STATUS</Name>
+<Description id="ref-49">Load Bank Controller</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-50">If(Test_Mgr_In_Load_Bank_Controller_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Load_Bank_Controller_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Load_Bank_Controller_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a4:VariableChannel id="ref-9" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Channels/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-51">Messages</Name>
+<Description href="#ref-40"/>
+<ToolTip href="#ref-40"/>
+<Value href="#ref-52"/>
+</a4:VariableChannel>
+<a3:Expression id="ref-10" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-53">NIDAQ_STATUS</Name>
+<Description id="ref-54">NIDAQ</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-55">If(Test_Mgr_In_NIDAQ_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_NIDAQ_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_NIDAQ_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_NIDAQ_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_NIDAQ_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_NIDAQ_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_NIDAQ_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_NIDAQ_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_NIDAQ_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_NIDAQ_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_NIDAQ_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_NIDAQ_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_NIDAQ_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_NIDAQ_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_NIDAQ_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_NIDAQ_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-11" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-56">OMNIBUSBOX_STATUS</Name>
+<Description id="ref-57">Omnibus Box</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-58">If(Test_Mgr_In_Omnibusbox_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Omnibusbox_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Omnibusbox_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Omnibusbox_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Omnibusbox_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Omnibusbox_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Omnibusbox_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Omnibusbox_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Omnibusbox_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Omnibusbox_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Omnibusbox_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Omnibusbox_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Omnibusbox_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Omnibusbox_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Omnibusbox_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Omnibusbox_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-12" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-59">POWERDNA_STATUS</Name>
+<Description id="ref-60">PowerDNA</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-61">If(Test_Mgr_In_PowerDNA_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_PowerDNA_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_PowerDNA_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_PowerDNA_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_PowerDNA_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_PowerDNA_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_PowerDNA_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_PowerDNA_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_PowerDNA_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_PowerDNA_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_PowerDNA_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_PowerDNA_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_PowerDNA_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_PowerDNA_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_PowerDNA_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_PowerDNA_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-13" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-62">SCANIVALVE_PRESSURE_STATUS</Name>
+<Description id="ref-63">Scanivalve Pressure</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-64">If(Test_Mgr_In_Scanivalve_Pressure_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Scanivalve_Pressure_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Scanivalve_Pressure_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-14" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-65">SCANIVALVE_TEMP_STATUS</Name>
+<Description id="ref-66">Scanivalve Temperature</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-67">If(Test_Mgr_In_Scanivalve_Temp_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Scanivalve_Temp_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Scanivalve_Temp_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-15" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-68">SERIAL_ARINC_STATUS</Name>
+<Description id="ref-69">Serial Arinc</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-70">If(Test_Mgr_In_Serial_Arinc_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Serial_Arinc_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Serial_Arinc_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Serial_Arinc_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-16" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-71">SERIAL_STATUS</Name>
+<Description id="ref-72">Serial</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-73">If(Test_Mgr_In_Serial_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Serial_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Serial_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Serial_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Serial_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Serial_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Serial_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Serial_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Serial_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Serial_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Serial_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Serial_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Serial_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Serial_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Serial_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Serial_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-17" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-74">SM1720_STATUS</Name>
+<Description id="ref-75">Smart Motor Controller</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-76">If(Test_Mgr_In_SM1720_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_SM1720_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_SM1720_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_SM1720_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_SM1720_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_SM1720_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_SM1720_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_SM1720_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_SM1720_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_SM1720_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_SM1720_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_SM1720_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_SM1720_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_SM1720_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_SM1720_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_SM1720_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a5:Item id="ref-18" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-77">Test_Mgr_In_AFDX_IOMgr_Status</Name>
+<Description id="ref-78">AFDX Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-79">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-80">Group_Fast</Group>
+<ItemID id="ref-81">dacn1.dacn1_user_interface.tm_in_dacn1_afdx_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-19" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-82">Test_Mgr_In_Facility_Controller_Status</Name>
+<Description id="ref-83">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-84">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-85">Group_Fast</Group>
+<ItemID id="ref-86">dacn1.dacn1_user_interface.tm_in_dacn1_facility_controller.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-20" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-87">Test_Mgr_In_Galil_Controller_Status</Name>
+<Description id="ref-88">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-89">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-90">Group_Fast</Group>
+<ItemID id="ref-91">dacn1.dacn1_user_interface.tm_in_dacn1_galil_controller_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-21" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-92">Test_Mgr_In_Load_Bank_Controller_Status</Name>
+<Description id="ref-93">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-94">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-95">Group_Fast</Group>
+<ItemID id="ref-96">dacn1.dacn1_user_interface.tm_in_dacn1_load_bank_controller.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-22" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-97">Test_Mgr_In_NIDAQ_Status</Name>
+<Description id="ref-98">NIDAQ Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-99">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-100">Group_Fast</Group>
+<ItemID id="ref-101">dacn1.dacn1_user_interface.tm_in_dacn1_nidaq_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-23" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-102">Test_Mgr_In_Omnibusbox_Status</Name>
+<Description id="ref-103">Omnibus Box Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-104">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-105">Group_Fast</Group>
+<ItemID id="ref-106">dacn1.dacn1_user_interface.tm_in_dacn1_omnibusbox_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-24" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-107">Test_Mgr_In_PowerDNA_Status</Name>
+<Description id="ref-108">PowerDNA Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-109">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-110">Group_Fast</Group>
+<ItemID id="ref-111">dacn1.dacn1_user_interface.tm_in_dacn1_powerdna_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-25" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-112">Test_Mgr_In_Scanivalve_Pressure_Status</Name>
+<Description id="ref-113">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-114">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-115">Group_Fast</Group>
+<ItemID id="ref-116">dacn1.dacn1_user_interface.tm_in_dacn1_scanivalve_pressure_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-26" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-117">Test_Mgr_In_Scanivalve_Temp_Status</Name>
+<Description id="ref-118">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-119">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-120">Group_Fast</Group>
+<ItemID id="ref-121">dacn1.dacn1_user_interface.tm_in_dacn1_scanivalve_temp_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-27" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-122">Test_Mgr_In_Serial_Arinc_Status</Name>
+<Description id="ref-123">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-124">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-125">Group_Fast</Group>
+<ItemID id="ref-126">dacn1.dacn1_user_interface.tm_in_dacn1_serial_arinc_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-28" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-127">Test_Mgr_In_Serial_Status</Name>
+<Description id="ref-128">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-129">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-130">Group_Fast</Group>
+<ItemID id="ref-131">dacn1.dacn1_user_interface.tm_in_dacn1_serial_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-29" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-132">Test_Mgr_In_SM1720_Status</Name>
+<Description id="ref-133">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-134">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-135">Group_Fast</Group>
+<ItemID id="ref-136">dacn1.dacn1_user_interface.tm_in_dacn1_sm1720_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-30" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-137">Test_Mgr_In_Texcel_V100_Status</Name>
+<Description id="ref-138">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-139">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-140">Group_Fast</Group>
+<ItemID id="ref-141">dacn1.dacn1_user_interface.tm_in_dacn1_texcel_v100_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-31" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-142">Test_Mgr_In_Texcel_VX100_Status</Name>
+<Description id="ref-143">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-144">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-145">Group_Fast</Group>
+<ItemID id="ref-146">dacn1.dacn1_user_interface.tm_in_dacn1_texcel_vx100_iomgr.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-32" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-147">Test_Mgr_In_UUT_Controller_Status</Name>
+<Description id="ref-148">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-149">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-150">Group_Fast</Group>
+<ItemID id="ref-151">dacn1.dacn1_user_interface.tm_in_dacn1_uut_controller.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a5:Item id="ref-33" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-152">Test_Mgr_In_UUT_Cruncher_Status</Name>
+<Description id="ref-153">Serial Status</Description>
+<ToolTip href="#ref-40"/>
+<Units href="#ref-40"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-154">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-155">Group_Fast</Group>
+<ItemID id="ref-156">dacn1.dacn1_user_interface.tm_in_dacn1_uut_cruncher.status</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a5:Item>
+<a3:Expression id="ref-34" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-157">TEXCEL_V100_STATUS</Name>
+<Description id="ref-158">Texcel V100</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-159">If(Test_Mgr_In_Texcel_V100_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Texcel_V100_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Texcel_V100_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Texcel_V100_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Texcel_V100_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Texcel_V100_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Texcel_V100_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Texcel_V100_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Texcel_V100_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Texcel_V100_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Texcel_V100_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Texcel_V100_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Texcel_V100_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Texcel_V100_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Texcel_V100_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Texcel_V100_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-35" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-160">TEXCEL_VX100_STATUS</Name>
+<Description id="ref-161">Texcel VX100</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-162">If(Test_Mgr_In_Texcel_VX100_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_Texcel_VX100_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_Texcel_VX100_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_Texcel_VX100_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-36" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-163">UUT_CONTROLLER_STATUS</Name>
+<Description id="ref-164">UUT Controller</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-165">If(Test_Mgr_In_UUT_Controller_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_UUT_Controller_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_UUT_Controller_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_UUT_Controller_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_UUT_Controller_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_UUT_Controller_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_UUT_Controller_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_UUT_Controller_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_UUT_Controller_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_UUT_Controller_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_UUT_Controller_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_UUT_Controller_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_UUT_Controller_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_UUT_Controller_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_UUT_Controller_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_UUT_Controller_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a3:Expression id="ref-37" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-166">UUT_CRUNCHER_STATUS</Name>
+<Description id="ref-167">UUT Cruncher</Description>
+<ToolTip href="#ref-40"/>
+<Text id="ref-168">If(Test_Mgr_In_UUT_Cruncher_Status = -1, &#34;ERROR ON OPENING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = -2, &#34;ERROR ON LOADING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = -3, &#34;ERROR ON INITIALIZING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = -4, &#34;ERROR ON RUNNING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = -5, &#34;ERROR ON CLOSING&#34;,  If(Test_Mgr_In_UUT_Cruncher_Status = 0, &#34;NOT CONNECTED&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 1, &#34;OPENING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 2, &#34;OPENED&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 3, &#34;LOADING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 4, &#34;LOADED&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 5, &#34;INITIALIZING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 6, &#34;INITIALIZED&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 7, &#34;RUNNING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 8, &#34;CLOSING&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = 9, &#34;CLOSED&#34;, If(Test_Mgr_In_UUT_Cruncher_Status = -999, &#34;IDLING&#34;))))))))))))))))</Text>
+</a3:Expression>
+<a6:Message id="ref-52" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Message/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<text id="ref-169">Ready to Load (RTL) is now ready to load</text>
+<textColor>Black</textColor>
+<source id="ref-170">READY_TO_LOAD_IND</source>
+<priority>Debug</priority>
+<timestamp>2012-07-19T14:28:13.5531821-04:00</timestamp>
+</a6:Message>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

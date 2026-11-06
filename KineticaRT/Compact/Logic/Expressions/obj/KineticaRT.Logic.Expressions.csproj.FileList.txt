@@ -1,0 +1,7 @@
+bin\Debug\KineticaRT.Logic.Expressions.dll
+bin\Debug\KineticaRT.Logic.Expressions.pdb
+bin\Debug\KineticaRT.dll
+bin\Debug\KineticaRT.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\KineticaRT.Logic.Expressions.dll
+obj\Debug\KineticaRT.Logic.Expressions.pdb

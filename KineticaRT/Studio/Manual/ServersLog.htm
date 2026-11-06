@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>KineticaRT Logging</title>
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR" />
+		<meta content="FrontPage.Editor.Document" name="ProgId" />
+		<meta content="Microsoft Visual Studio .NET 7.1" name="Originator" />
+		<link href="Manual.css" rel="Stylesheet" />
+	</head>
+	<body>
+		<h2>KineticaRT Logging</h2>
+		<h3>Features</h3>
+		<p>The KineticaRT Logging components provide logging of data from KineticaRT 
+			channels and replay of the data via the same KineticaRT channels.</p>
+		
+		<h3>Logger Component</h3>
+		<p>This component writes data to and reads data from KineticaRT log files</p>
+		
+		<h4>FileName Property</h4>
+		<p>This gives the file name and optional path of the file to be recorded.</p>
+		
+		<h4>ChannelNames Property</h4>
+		<p>This gives a list of names of channels to be recorded.</p>
+		
+		<h4>TriggerChannel Property</h4>
+		<p>The name of the channel used to trigger recording.</p>
+		
+		<h4>PreTriggerTime Property</h4>
+		<p>Length in seconds of the period before the trigger event from which data should be included in the recording.</p>
+		<p>Note that this should not be set at the time of the trigger event since in this case the data may not have been collected and so cannot be logged to file.</p>
+		
+		<h4>PostTriggerTime Property</h4>
+		<p>Length in seconds of the period after the trigger event has been cleared from which data should be included in the recording.</p>
+		<p>If the trigger is cleared imediately then this can be regarded as the recording time.</p>
+		<p>This may be set to +infinity.</p>
+
+		<h4>FileFormat Property</h4>
+		<p>This can be set to "Xml" or "Csv" which will log the data in XML format and CSV format respectively.  CSV format is suitable for loading directly into Microsoft Excel and other applications.  The XML format can also be read by Excel but would need a macro written to extract the data required into the layout required.</p>
+		<p>Note that the XML spreadsheet format as used by Excel 2003 and later is not currently supported.</p>
+
+		<h4>Record Property</h4>
+		<p>This can be set directly or set by a trigger event.</p>
+		<p>On being set, the Logger will start writing data to the log file starting at the current time minus the PreTrigger time, data will continue to be written until this property is cleared plus the PostTrigger time.</p>
+		<p>The channels recorded in the log will be those listed in the ChannelNames Property.</p>
+		
+		<h4>Play Property</h4>
+		<p></p>
+		
+		PlayChannelNames Property???
+		TriggerPeriods Property???
+		
+		<h3>File Formats</h3>
+		<p></p>
+		
+		<h3></h3>
+		<p></p>
+		
+		<h3>Performance</h3>
+		<p>Since neither Windows nor .Net provide "Real Time" deterministic performance, 
+		the accurate timing of samples during recording is impossible to guarantee and 
+		will depend on processor/disk usage by other components and applications as 
+		well as hardware performance.</p>
+		<p>The maximum logging rate is 100Hz but it should be expected that some samples 
+		will be delayed slightly or even missed at this rate.&nbsp; In a typical system 
+		20Hz can be achieved fairly reliably&nbsp;although there is still the 
+		possiblity of interruptions due to other applications or by user interaction.</p>
+		<p></p>
+			<div class="footer">
+				KineticaRT Studio User Manual Version 1.2.1.0<br />
+				Copyright <A href="http:\\www.kineticart.co.uk">KineticaRT Ltd</A> 2006. All 
+				rights reserved.
+			</div>
+	</body>
+</html>

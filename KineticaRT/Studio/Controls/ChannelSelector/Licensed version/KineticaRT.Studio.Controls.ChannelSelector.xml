@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Studio.Controls.ChannelSelector</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Studio.Controls.ChannelSelectorForm">
+            <summary>
+            Summary description for ChannelSelectorForm.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Studio.Controls.ChannelSelectorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelectorForm.#ctor">
+            <summary>
+            Creates a new instance of the ChannelSelectorForm class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelectorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelectorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelectorForm.SetServer(KineticaRT.ChannelCollection)">
+            <summary>
+            Defines the Collection from which available channels are determined
+            </summary>
+            <param name="server">Collection containing available channels</param>
+            <returns>True if successfully set, false if failed (eg if form showing)</returns>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelectorForm.SetServer(System.String,KineticaRT.ChannelCollection)">
+            <summary>
+            Defines the Collection from which available channels are determined
+            </summary>
+            <param name="server">Collection containing available channels.</param>
+            <param name="path">String containing the path to the channels.</param>
+            <returns>True if successfully set, false if failed (eg if form showing)</returns>
+        </member>
+        <member name="T:KineticaRT.Studio.Controls.ChannelSelector">
+            <summary>
+            Button control which brings up a dialog allowing current channels to be selected
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Studio.Controls.ChannelSelector.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.#ctor">
+            <summary>
+            Creates a new instance of the ChannelSelector class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.SetServer(KineticaRT.ChannelCollection)">
+            <summary>
+            Defines the Collection from which available channels are determined
+            </summary>
+            <param name="Server">Collection containing available channels</param>
+            <returns>True if successfully set, false if failed (eg if form showing)</returns>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.OnClick(System.EventArgs)">
+            <summary>
+            Click Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.OnPropertyChanged(System.String)">
+            <summary>
+            The named property has changed: generate the PropertyChanged event
+            </summary>
+            <param name="propertyName">Name of property that has changed</param>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.OnObjectSearch(System.String)">
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+            <summary>
+            Fires an ObjectSearch event for the named object
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.FindObject(System.String)">
+            <summary>
+            Looks for the named object
+            </summary>
+            <param name="objectName">Name of Object to find</param>
+            <returns>Always returns null</returns>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.SearchObject(System.String)">
+            <summary>
+            Returns the named sibling object or null if it does not exist.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Controls.ChannelSelector.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Controls.ChannelSelector.Channels">
+            <summary>
+            Gets or sets the name of the Collection from which available channels are determined
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Studio.Controls.ChannelSelector.PropertyChanged">
+            <summary>
+            Standard Event generated whenever a property (including the Value) is changed
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Studio.Controls.ChannelSelector.ObjectSearch">
+            <summary>
+            Event for requests to find an object by name.
+            </summary>
+        </member>
+    </members>
+</doc>

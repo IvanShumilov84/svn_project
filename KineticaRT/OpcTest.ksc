@@ -1,0 +1,180 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Client href="#ref-5"/>
+<Group href="#ref-6"/>
+<Item href="#ref-7"/>
+<Item1 href="#ref-8"/>
+<NumericExpression href="#ref-9"/>
+<NumericThresholdItem href="#ref-10"/>
+<SecondDM110_1Feedback href="#ref-11"/>
+<SecondDM110-1Feedback1 href="#ref-12"/>
+<SecondOPTO22_Group href="#ref-13"/>
+<zSecondDM110-1Feedback2 href="#ref-14"/>
+<zSecondDM110-1Feedback3 href="#ref-15"/>
+</a1:ChannelCollection>
+<a2:Client id="ref-5" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-16">Client</Name>
+<Server id="ref-17">Matrikon.OPC.Simulation.1</Server>
+<Machine xsi:type="xsd:anyType" xsi:null="1"/>
+</a2:Client>
+<a2:Group id="ref-6" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-18">Group</Name>
+<Client id="ref-19">Client</Client>
+<UpdateRate>0.1</UpdateRate>
+<DeadBand>0</DeadBand>
+</a2:Group>
+<a2:Item id="ref-7" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-20">Item</Name>
+<Description id="ref-21">Int4</Description>
+<ToolTip id="ref-22">Saw-toothed Waves.Int4</ToolTip>
+<Units id="ref-23"></Units>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-24">N</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-25">Group</Group>
+<ItemID href="#ref-22"/>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a2:Item>
+<a2:Item id="ref-8" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-26">Item1</Name>
+<Description id="ref-27">Int2</Description>
+<ToolTip id="ref-28">Bucket Brigade.Int2</ToolTip>
+<Units href="#ref-23"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-29">X</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-30">Group</Group>
+<ItemID href="#ref-28"/>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a2:Item>
+<a3:NumericExpression id="ref-9" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Logic.Expressions/KineticaRT.Logic.Expressions%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-31">NumericExpression</Name>
+<Description href="#ref-23"/>
+<ToolTip href="#ref-23"/>
+<Text id="ref-32">1000.0 / Item </Text>
+<Units href="#ref-23"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-33">G</Format>
+<DecimalDigits>2</DecimalDigits>
+</a3:NumericExpression>
+<a2:NumericThresholdItem id="ref-10" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-35">NumericThresholdItem</Name>
+<Description href="#ref-23"/>
+<ToolTip href="#ref-23"/>
+<Units href="#ref-23"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-36">N</Format>
+<DecimalDigits>2</DecimalDigits>
+<LowLow>-INF</LowLow>
+<Low>-INF</Low>
+<Normal>0</Normal>
+<High>INF</High>
+<HighHigh>INF</HighHigh>
+<LowLowColor xsi:type="a5:Color" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<value>0</value>
+<knownColor>102</knownColor>
+<state>1</state>
+<name xsi:null="1"/>
+</LowLowColor>
+<LowColor xsi:type="a5:Color" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<value>0</value>
+<knownColor>132</knownColor>
+<state>1</state>
+<name xsi:null="1"/>
+</LowColor>
+<HighColor xsi:type="a5:Color" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<value>0</value>
+<knownColor>122</knownColor>
+<state>1</state>
+<name xsi:null="1"/>
+</HighColor>
+<HighHighColor xsi:type="a5:Color" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<value>0</value>
+<knownColor>145</knownColor>
+<state>1</state>
+<name xsi:null="1"/>
+</HighHighColor>
+<NormalColor xsi:type="a5:Color" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<value>0</value>
+<knownColor>0</knownColor>
+<state>0</state>
+<name xsi:null="1"/>
+</NormalColor>
+<Group href="#ref-23"/>
+<ItemID href="#ref-23"/>
+<ItemID_LowLow href="#ref-23"/>
+<ItemID_Low href="#ref-23"/>
+<ItemID_High href="#ref-23"/>
+<ItemID_HighHigh href="#ref-23"/>
+</a2:NumericThresholdItem>
+<a2:Item id="ref-11" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-37">SecondDM110_1Feedback</Name>
+<Description id="ref-38">DM110-1 Low Limit</Description>
+<ToolTip href="#ref-23"/>
+<Units href="#ref-23"/>
+<Min>0</Min>
+<Max>3</Max>
+<Format id="ref-39">F</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-40">SecondOPTO22_Group</Group>
+<ItemID id="ref-41">[MMIO|ip|tcp:192.168.0.20:2001]COUNTS[32]</ItemID>
+<Scale>0.0013799931846914147</Scale>
+<Offset>-2.41</Offset>
+</a2:Item>
+<a2:Item id="ref-12" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-42">SecondDM110-1Feedback1</Name>
+<Description id="ref-43">DM110-1 Low Limit</Description>
+<ToolTip href="#ref-23"/>
+<Units href="#ref-23"/>
+<Min>0</Min>
+<Max>3</Max>
+<Format id="ref-44">F</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-45">SecondOPTO22_Group</Group>
+<ItemID id="ref-46">[MMIO|ip|tcp:192.168.0.20:2001]COUNTS[32]</ItemID>
+<Scale>0.0013799931846914147</Scale>
+<Offset>-2.41</Offset>
+</a2:Item>
+<a2:Group id="ref-13" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-47">SecondOPTO22_Group</Name>
+<Client id="ref-48">OPTO22_Client</Client>
+<UpdateRate>0.11</UpdateRate>
+<DeadBand>0</DeadBand>
+</a2:Group>
+<a2:Item id="ref-14" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-49">zSecondDM110-1Feedback2</Name>
+<Description id="ref-50">DM110-1 Low Limit</Description>
+<ToolTip href="#ref-23"/>
+<Units href="#ref-23"/>
+<Min>0</Min>
+<Max>3</Max>
+<Format id="ref-51">F</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-52">SecondOPTO22_Group</Group>
+<ItemID id="ref-53">[MMIO|ip|tcp:192.168.0.20:2001]COUNTS[32]</ItemID>
+<Scale>0.0013799931846914147</Scale>
+<Offset>-2.41</Offset>
+</a2:Item>
+<a2:Item id="ref-15" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-54">zSecondDM110-1Feedback3</Name>
+<Description id="ref-55">DM110-1 Low Limit</Description>
+<ToolTip href="#ref-23"/>
+<Units href="#ref-23"/>
+<Min>0</Min>
+<Max>3</Max>
+<Format id="ref-56">F</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-57">SecondOPTO22_Group</Group>
+<ItemID id="ref-58">[MMIO|ip|tcp:192.168.0.20:2001]COUNTS[32]</ItemID>
+<Scale>0.0013799931846914147</Scale>
+<Offset>-2.41</Offset>
+</a2:Item>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

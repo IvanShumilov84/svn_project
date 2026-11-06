@@ -1,0 +1,688 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Controls.Trend</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Controls.CursorEndStyles">
+            <summary>
+            Enumeration of possible cursor End Styles
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.CursorEndStyles.None">
+            <summary>
+            No end caps are drawn
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.CursorEndStyles.Line">
+            <summary>
+            End caps are lines perpendicular to the cursor
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.CursorEndStyles.Triangle">
+            <summary>
+            End caps are triangular
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.CursorEndStyles.Diamond">
+            <summary>
+            End caps are diamonds
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.CursorCollection">
+            <summary>
+            Collection of Cursor objects designed for use with a Trend
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.#ctor">
+            <summary>
+            Initialises a new instance of the CursorCollection class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.#ctor(KineticaRT.Controls.Cursor[])">
+            <summary>
+            Initialises a new instance of the CursorCollection class containing the specified Cursor objects
+            </summary>
+            <param name="cursors">Array of Cursor objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.AddCursor(System.Drawing.Color)">
+            <summary>
+            Adds a new Cursor object of the specified color
+            </summary>
+            <param name="LineColor">Color of the new Cursor line</param>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.AddRange(KineticaRT.Controls.Cursor[])">
+            <summary>
+            Adds an array of Cursor objects to the collection
+            </summary>
+            <param name="newCursors">Array of Cursors to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.CursorVisible">
+            <summary>
+            Determines if any Cursors are visible
+            </summary>
+            <returns>True if at least one Cursor is Visible, else false</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.Draw(System.Drawing.Graphics,System.Boolean,System.Int32,KineticaRT.Controls.TraceCollection,System.Int64,System.Drawing.Brush)">
+            <summary>
+            Draws all the Cursors in the collection
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="FullRedraw">Whether to do a complete redraw</param>
+            <param name="ScrollRectRight">Right hand side of area in which to draw</param>
+            <param name="Traces">TraceCollection object from which linked Traces can be found</param>
+            <param name="ValueIndex">Index into Trace data array</param>
+            <param name="BackBrush">Brush for control's background</param>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.Recalculate(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>
+            Recalculates the positions of the cursors
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="ScrollRect">Rectangle in which it is valid to draw</param>
+            <param name="TrendRange">Milliseconds displayed by the Trend</param>
+            <param name="TimePerPixel">Time (ms) for to scroll by one pixel</param>
+            <returns>Region representing the ScrollRect minus the Cursor lines</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.PointInCursorRect(System.Int32,System.Int32)">
+            <summary>
+            Determines if the given point is in any of the Cursors' regions
+            </summary>
+            <param name="X">X position of point to check</param>
+            <param name="Y">Y position of point to check</param>
+            <returns>Zero-based index of cursor at given position, or -1 if none</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.CombineTextRegions(System.Drawing.Region)">
+            <summary>
+            Combines the given region with the text region of each Cursor,
+            to create the region containing all the bits that need updating
+            every time the Control scrolls
+            </summary>
+            <param name="ScrollRegion">Region with which to combine the Text regions</param>
+            <returns>Combined region</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.CursorCollection.MoveCursor(System.Int32,System.Drawing.Graphics,System.Int32,System.Drawing.Rectangle,System.Int32,System.Int32,System.Drawing.Region@)">
+            <summary>
+            Moves the Cursor at the given index, and recalculates the scroll region
+            </summary>
+            <param name="CursorIndex">Zero-based index of Cursor to move</param>
+            <param name="g">Graphics object used for recalculation</param>
+            <param name="XPos">X position to move the cursor to</param>
+            <param name="ScrollRect">Rectangle within which te cursor can be moved</param>
+            <param name="TimePerPixel">Time (ms) to scroll by one pixel</param>
+            <param name="TrendRange">Milliseconds displayed by the Trend</param>
+            <param name="OldCursorRgn">(out) Original cursor region, before it was moved</param>
+            <returns>New ScrollRegion, which excludes all the Cursor Lines</returns>
+        </member>
+        <member name="P:KineticaRT.Controls.CursorCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the Cursor object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Cursor">
+            <summary>
+            Cursor object designed for use on a Trend. 
+            It tracks the value of a Trace at a defined point in time.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.#ctor">
+            <summary>
+            Initialises a new instance of the Cursor class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.#ctor(System.Drawing.Color)">
+            <summary>
+            Initialises a new instance of the Cursor class with the specified Color
+            </summary>
+            <param name="clr">Cursor Color</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.ResetCursorColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.Draw(System.Drawing.Graphics,System.Boolean,System.Int32,KineticaRT.Controls.TraceCollection,System.Int64,System.Drawing.Brush)">
+            <summary>
+            Draws the Cursor
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="FullRedraw">Whether to do a complete redraw</param>
+            <param name="ScrollRectRight">Right hand side of area in which to draw</param>
+            <param name="Traces">TraceCollection object from which the linked Trace can be found</param>
+            <param name="ValueIndex">Index into Trace data array</param>
+            <param name="BackBrush">Brush for control's background</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.Recalculate(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>
+            Recalculates the positions of the cursor
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="ScrollRect">Rectangle in which it is valid to draw</param>
+            <param name="TrendRange">Milliseconds displayed by the Trend</param>
+            <param name="TimePerPixel">Time (ms) to scroll by one pixel</param>
+            <returns>Region covered by the Cursor line</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.GetLineRegion">
+            <summary>
+            Returns the region covered by the Cursor Line
+            </summary>
+            <returns>Region covered by the Cursor Line</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.PointInCursor(System.Int32,System.Int32)">
+            <summary>
+            Determines if the given point is on or near the Cursor's line
+            </summary>
+            <param name="X">X position of point to check</param>
+            <param name="Y">Y position of point to check</param>
+            <returns>True if point is on the Cursor</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.Move(System.Drawing.Graphics,System.Int32,System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>
+            Moves the cursor to the given position
+            </summary>
+            <param name="g">Graphics object used for recalculation</param>
+            <param name="XPos">X position to move the cursor to</param>
+            <param name="ScrollRect">Rectangle within which te cursor can be moved</param>
+            <param name="TimePerPixel">Time (ms) to scroll by one pixel</param>
+            <param name="TrendRange">Milliseconds displayed by the Trend</param>
+            <returns>Original cursor region, before it was moved</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Cursor.GetTextRect">
+            <summary>
+            Returns the Rectangle in which the Cursor text is drawn
+            </summary>
+            <returns>Rectangle in which the Cursor text is drawn</returns>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.CursorColor">
+            <summary>
+            Gets or sets the color of the Cursor
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.Visible">
+            <summary>
+            Gets or sets whether the Cursor is Visible
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.InitialPosition">
+            <summary>
+            Gets or sets the initial Position of the cursor in seconds
+            </summary>
+            <remarks>
+            Position is defined as 'number of seconds ago'.
+            '0' is the current time, and hence is at the right hand side of the Trend.
+            As the value increases the cursor is placed further to the left.
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.EndStyle">
+            <summary>
+            Gets or sets the style of the ends of the Cursor
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.NumberVisible">
+            <summary>
+            Gets or sets whether the numeric value of the associated Trace is displayed
+            </summary>
+            <remarks>The value, if displayed, will be the value that the Trace was at the point in time that the Cursor is marking.</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.Moveable">
+            <summary>
+            Gets or sets whether the Cursor can be dragged to a new position.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.TraceIndex">
+            <summary>
+            Gets or sets the zero-based index of the Trace which this cursor tracks.
+            </summary>
+            <remarks>Specify -1 to not track any Trace</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Cursor.Width">
+            <summary>
+            Gets or sets the width of the Cursor in pixels
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.TraceRangeSources">
+            <summary>
+            Enumeration of possible sources of Minimum and Maximum values for a Trace
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TraceRangeSources.Self">
+            <summary>
+            The Trace's own Minimum and Maximum properties are used
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TraceRangeSources.Source">
+            <summary>
+            If the Trace's Source is an INumericChannel then its
+            Minimum and Maximum are used, otherwise the Trace's own values are used
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TraceRangeSources.LeftScale">
+            <summary>
+            The range of the parent Control's LeftScale is used.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.TraceRangeSources.RightScale">
+            <summary>
+            The range of the parent Control's RightScale is used.
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.TraceCollection">
+            <summary>
+            Collection of Trace objects, desined for use with a Trend
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.#ctor">
+            <summary>
+            Initialises a new instance of the TraceCollection class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.#ctor(System.Boolean)">
+            <summary>
+            Initialises a new instance of the TraceCollection class, optionally adding a single Trace object
+            </summary>
+            <param name="AddATrace">If True, the collection initialises containing a single Trace, else it contains no Traces</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.#ctor(KineticaRT.Controls.Trace[])">
+            <summary>
+            Initialises a new instance of the TraceCollection class containing the specified trace objects
+            </summary>
+            <param name="traces">Array of Trace objects to add to collection</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.AddTrace(System.Drawing.Color)">
+            <summary>
+            Adds a new Trace of the specified color
+            </summary>
+            <param name="LineColor">Color of new Trace</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.AddRange(KineticaRT.Controls.Trace[])">
+            <summary>
+            Adds an array of Trace objects to the collection
+            </summary>
+            <param name="newTraces">Array of Traces to add</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.Draw(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Draw all the Traces in the collection
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="Offset">Offset from start of data array</param>
+            <param name="StartPoint">X position of where to start drawing</param>
+            <param name="NoOfPoints">How many pixels to draw (horizontally)</param>
+            <param name="RectRight">Rightmost pixel it is valid to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.ResetData(System.Int32,System.Int32)">
+            <summary>
+            Resets the array of data held by each trace
+            </summary>
+            <param name="NoOfPixels">Number of pixels currently visible</param>
+            <param name="RectBottom">Bottom of current scrolling area</param>
+        </member>
+        <member name="M:KineticaRT.Controls.TraceCollection.UpdateValues(System.Int64,System.Int32,System.Double,System.Int64,System.Int32,KineticaRT.Controls.Scale,KineticaRT.Controls.Scale)">
+            <summary>
+            Updates the data array held by the Traces because of scrolling
+            </summary>
+            <param name="ValueIndex">Index into Data array</param>
+            <param name="yPtOffset">Offset for converting values to y-positions</param>
+            <param name="yPtScale">Scale for converting values to y-positions</param>
+            <param name="ScrollAmount">How far the Trend has scrolled since the last update</param>
+            <param name="NoOfPixels">Total number of pixels in visible region</param>
+            <param name="LeftScale">Left hand Scale object</param>
+            <param name="RightScale">Right hand Scale object</param>
+        </member>
+        <member name="P:KineticaRT.Controls.TraceCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the Trace object currently at the given index position
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Trace">
+            <summary>
+            Trace object designed for use on a Trend.
+            Displays the Value of a source channel over a time period.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.#ctor">
+            <summary>
+            Initialises a new instance of the Trace class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.#ctor(System.Drawing.Color,KineticaRT.Controls.TraceRangeSources)">
+            <summary>
+            Initialises a new instance of the Trace class with the specified Color and range source
+            </summary>
+            <param name="LineColor">Color of the Trace line</param>
+            <param name="RangeSource">Where the Trace gets it minimum and maximum values</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.#ctor(System.Drawing.Color)">
+            <summary>
+            Initialises a new instance of the Trace class with the specified Color
+            </summary>
+            <param name="LineColor">Color of the Trace line</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.ResetLineColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.Draw(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Draw the Trace
+            </summary>
+            <param name="g">Graphics object with which to draw</param>
+            <param name="Offset">Offset from start of data array</param>
+            <param name="StartPoint">X position of where to start drawing</param>
+            <param name="NoOfPoints">How many pixels can be drawn (horizontally)</param>
+            <param name="RectRight">Rightmost pixel to draw</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.ResetData(System.Int32,System.Int32)">
+            <summary>
+            Resets the array of data held by each trace
+            </summary>
+            <param name="NoOfPixels">Number of pixels currently visible</param>
+            <param name="RectBottom">Bottom of current scrolling area</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.UpdateValues(System.Int64,System.Int32,System.Double,System.Int64,System.Int32,KineticaRT.Controls.Scale,KineticaRT.Controls.Scale)">
+            <summary>
+            Updates the data array held by the Trace because of scrolling
+            </summary>
+            <param name="ValueIndex">Index into Data array</param>
+            <param name="yPtOffset">Offset for converting values to y-positions</param>
+            <param name="yPtScale">Scale for converting values to y-positions</param>
+            <param name="ScrollAmount">How far the Trend has scrolled since the last update</param>
+            <param name="NoOfPixels">Total number of pixels in visible region</param>
+            <param name="LeftScale">Left hand Scale object</param>
+            <param name="RightScale">Right hand Scale object</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.GetPastValue(System.Int64)">
+            <summary>
+            Returns the value of the Trace at the given index into its data array
+            </summary>
+            <param name="Offset">Index into data array</param>
+            <returns>Value corresponding to given index</returns>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.SetValueFromFraction(System.Double,KineticaRT.Controls.Scale,KineticaRT.Controls.Scale)">
+            <summary>
+            Sets a new value into the trace because of a user Drag
+            </summary>
+            <param name="Fraction">Fraction to convert to value</param>
+            <param name="LeftScale">Left hand Scale object</param>
+            <param name="RightScale">Right hand Scale object</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trace.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.LineColor">
+            <summary>
+            Gets or sets the color of the Trace line
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.Visible">
+            <summary>
+            Gets or sets whether the Trace is visible
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.Value">
+            <summary>
+            Gets or sets the current Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.SourceChannel">
+            <summary>
+            Gets or sets the object that is the Source of the Trace's Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.DestinationChannel">
+            <summary>
+            Gets or sets the object that is the Destination for the Trace's Value
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.Source">
+            <summary>
+            Gets or sets the name of the object to be the Source
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.Destination">
+            <summary>
+            Gets or sets the name of the object to be the Destination
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.Maximum">
+            <summary>
+            Gets or sets the Maximum value that will be visible on the display
+            </summary>
+            <remarks>Whether this value is used depends on the RangeSource property</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.Minimum">
+            <summary>
+            Gets or sets the Minimum value that will be visible on the display
+            </summary>
+            <remarks>Whether this value is used depends on the RangeSource property</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.Width">
+            <summary>
+            Gets or sets the width of the Trace line in pixels
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.DefaultValue">
+            <summary>
+            Gets or sets the Default Value
+            </summary>
+            <remarks>This is the value to which the Trace reverts after a mouse drag if AutoReturn is true</remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.AutoReturn">
+            <summary>
+            Gets or sets whether the Trace reverts to its DefaultValue after dragging
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trace.RangeSource">
+            <summary>
+            Gets or sets the source of the Minimum and Maximum values displayed by the Trace
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Controls.Trend">
+            <summary>
+            KineticaRT Trend graph Control. 
+            Displays the values of a number of Traces over a scrolling time period.
+            </summary>
+        </member>
+        <member name="F:KineticaRT.Controls.Trend.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.#ctor">
+            <summary>
+            Initialises a new instance of the Trend class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.ResetGridColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.ResetGridMarkColor">
+            <summary>
+            Reset the Color to its default Value
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.ResetLeftScale">
+            <summary>
+            Reset the LeftScale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.ResetRightScale">
+            <summary>
+            Reset the RightScale to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.ResetTraces">
+            <summary>
+            Reset the Trace Collection to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.ResetCursors">
+            <summary>
+            Reset the Cursor Collection to its default settings
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.Repaint(System.Boolean,System.Drawing.Graphics)">
+            <summary>
+            Method that does all the drawing.
+            </summary>
+            <param name="FullRedraw">True if everything needs to be redrawn; false if only parts need redrawing</param>
+            <param name="g">Graphics objects with which the drawing is done</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.SetFormat">
+            <summary>
+            Sets up the tool tip and scale ranges based on trace Sources
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Down Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Move Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse Up Event
+            </summary>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handles PropertyChanged events from sub-objects
+            </summary>
+            <param name="sender">Object that generated the event</param>
+            <param name="e">Event Data</param>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Controls.Trend.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.BorderStyle">
+            <summary>
+            Gets or Sets the style of the Control's Border
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.BorderWidth">
+            <summary>
+            Gets or Sets the width of the Control's Border
+            </summary>
+            <remarks>
+            Values between 0 and 0.5 represent a proportion of the width of the Control.
+            Values greater than or equal to 1 represent the number of pixels
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.ScaleWidthIsPercent">
+            <summary>
+            Gets or sets whether the ScaleWidth property refers to pixels or a percentage of the control's total width
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.ScaleWidth">
+            <summary>
+            Gets or sets the width of Scale objects (in pixels or percent depending on the value of ScaleWidthIsPercent)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.GridLineEvery">
+            <summary>
+            Gets or sets the number of Seconds between grid lines
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.GridMarkEvery">
+            <summary>
+            Gets or sets the number of Seconds between grid marks
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.GridMarksEnabled">
+            <summary>
+            Gets or sets whether Grid Marks are enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.GridEnabled">
+            <summary>
+            Gets or sets whether the Grid is enabled
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.Range">
+            <summary>
+            Gets or sets the number of seconds visible on the Trend
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.BaselinePosition">
+            <summary>
+            Gets or sets the position of the baseline as proportion of the Trend (0..1)
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.Freeze">
+            <summary>
+            Gets or sets whether the display is frozen or scrolling
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.GridColor">
+            <summary>
+            Gets or sets the color of the Grid
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.GridMarkColor">
+            <summary>
+            Gets or sets the color of the Grid Marks
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.LeftScale">
+            <summary>
+            Gets the Left hand Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.RightScale">
+            <summary>
+            Gets the Right hand Scale object
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.Traces">
+            <summary>
+            Gets or sets the Collection of Trace objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.Cursors">
+            <summary>
+            Gets or sets the Collection of Cursor objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Controls.Trend.EnabledTrace">
+            <summary>
+            Gets or sets the index of the Trace that can be updated by dragging
+            </summary>
+            <remarks>The index is zero-based. Specify -1 to disable user input. Mouse dragging must be done in one of the Scale regions</remarks>
+        </member>
+    </members>
+</doc>

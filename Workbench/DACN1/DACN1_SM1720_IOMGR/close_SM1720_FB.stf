@@ -1,0 +1,59 @@
+FUNCTION_BLOCK close_SM1720_FB
+err_code := OK;
+status := CLOSING;
+
+
+
+IF (FCU_required = TRUE) THEN
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		CLOSE_SER_PORT(fd1);
+
+		err_code := CLOSE_SER_PORT.ERR_CODE;
+	END_IF; 
+
+	rig_FCU_throttle(TRUE, 0.0, FCU_position, FCU_throttle_info);
+
+END_IF; 
+
+IF (GOV_required = TRUE) THEN
+
+	IF (In_SM1720_IOMgr.mode = RUN_FOR_TRUE) THEN
+		CLOSE_SER_PORT(fd2);
+
+		err_code := CLOSE_SER_PORT.ERR_CODE;
+	END_IF; 
+
+	rig_GOV_throttle(TRUE, 0.0, GOV_position, GOV_throttle_info);
+
+END_IF; 
+
+
+
+Out_SM1720_IOMgr.previous_index := 0;
+
+err_code := OK;
+
+IF ( (err_code = OK) AND (status = CLOSING) ) THEN 
+
+	status := CLOSED;
+
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

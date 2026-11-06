@@ -1,0 +1,87 @@
+PROGRAM MAIN
+(************************************************************************************************************************************************
+	Name :		MAIN									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	        				First Release
+
+************************************************************************************************************************************************)	
+
+	IF (First_Time_Trough = TRUE) THEN 
+		First_Time_Trough			:= FALSE;
+		Out_User_Interface.status		:= IDLING;
+		TM_In_Test_Mgr.command			:= IDLE;
+	END_IF; 
+
+(***** This part need to be running for interlock in idle/Stop mode ******)
+
+IF (In_Test_Mgr_InterLock = TRUE) THEN
+	TM_In_Test_Mgr.command	:= IDLE;
+END_IF ;
+
+IF (In_Test_Mgr_Command_Close = TRUE) THEN
+	TM_In_Test_Mgr.command := CLOSE;
+END_IF;
+(*************************************************************************)
+
+	CASE  In_User_Interface.command OF
+	OPEN:
+		IF ((Out_User_Interface.status = CLOSED) OR (Out_User_Interface.status = IDLING)) THEN  
+			open_User_Interface();
+	
+			Out_User_Interface.status		:= open_User_Interface.status;	
+			Out_User_Interface.err_code		:= open_User_Interface.err_code;	
+			Out_User_Interface.previous_index 	:= In_User_Interface.current_index;
+		END_IF; 
+
+	LOAD:
+		IF ((Out_User_Interface.status = OPENED) OR (Out_User_Interface.status = LOADING)) THEN 
+			load_User_Interface();
+
+			Out_User_Interface.status	:= load_User_Interface.status;	
+			Out_User_Interface.err_code	:= load_User_Interface.err_code;	
+		END_IF; 
+
+	INITIALIZE:
+		IF (Out_User_Interface.status = LOADED) THEN 
+			initialize_User_Interface();
+
+			Out_User_Interface.status	:= initialize_User_Interface.status;	
+			Out_User_Interface.err_code	:= initialize_User_Interface.err_code;	
+		END_IF; 
+
+	RUN:
+		IF  ((Out_User_Interface.status =  INITIALIZED)  OR (Out_User_Interface.status = RUNNING)) THEN 
+			run_User_Interface();
+
+			Out_User_Interface.status	:= run_User_Interface.status;	
+			Out_User_Interface.err_code	:= run_User_Interface.err_code;	
+		END_IF; 
+	 
+	CLOSE:
+		IF  (Out_User_Interface.status <> CLOSED) THEN 
+			close_User_Interface();
+
+			Out_User_Interface.status	:= close_User_Interface.status;	
+			Out_User_Interface.err_code	:= close_User_Interface.err_code;	
+		END_IF; 
+
+	IDLE:
+		Out_User_Interface.status := IDLING;	
+	END_CASE; 
+
+
+
+
+
+
+
+
+END_PROGRAM

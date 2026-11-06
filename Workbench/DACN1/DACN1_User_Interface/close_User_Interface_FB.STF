@@ -1,0 +1,27 @@
+FUNCTION_BLOCK CLOSE_USER_INTERFACE_FB
+(************************************************************************************************************************************************
+	Name :		close_User_Interface_FB									
+														
+	Description :	   
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         					First Release
+
+************************************************************************************************************************************************)	
+
+	status := CLOSING;
+	err_code := OK;
+	
+	IF ((err_code = OK) AND (status = CLOSING)) THEN 
+		status := CLOSED;
+	END_IF; 
+
+
+
+
+END_FUNCTION_BLOCK

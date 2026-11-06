@@ -1,0 +1,268 @@
+FUNCTION_BLOCK open_Test_Session_FB
+(************************************************************************************************************************************************
+	Name :		open_Test_Session_FB									
+														
+	Description :	CELDAS200 							      
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2002/08/19		S.Lepage	Put in comment the Torquetronics and CCAS not used in Greece 
+
+************************************************************************************************************************************************)	
+
+
+	status := OPENING;
+
+	XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+	hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+	IF hCfgSettings <> 0 THEN
+
+
+		Out_DACN1_NIDAQ_IOMgr.disabled					:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.NIDAQ_DISABLED', 'true');
+		Out_DACN1_Serial_IOMgr.disabled					:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.SERIAL_DISABLED', 'true');
+		Out_DACN1_Serial_Arinc_IOMgr.disabled 			:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.SERIAL_ARINC_DISABLED', 'true');
+		Out_DACN1_Omnibusbox_IOMgr.disabled 			:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.OMNIBUSBOX_DISABLED', 'true');
+		Out_DACN1_PowerDNA_IOMgr.disabled 				:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.POWERDNA_DISABLED', 'true');
+		Out_DACN1_UUT_Controller.disabled 				:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.UUT_CONTROLLER_DISABLED', 'true');
+		Out_DACN1_User_Interface.disabled 				:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.USER_INTERFACE_DISABLED', 'true');
+		Out_DACN1_Scanivalve_Temperature_IOMgr.disabled	:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.SCANNIVALVE_TEMPERATURE_DISABLED', 'true');
+		Out_DACN1_Scanivalve_Pressure_IOMgr.disabled 	:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.SCANNIVALVE_PRESSURE_DISABLED', 'true');
+		Out_DACN1_SM1720_IOMgr.disabled 				:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.SM1720_DISABLED', 'true');
+		Out_DACN1_Galil_Controller.disabled 			:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.GALIL_CONTROLLER_DISABLED', 'true');
+		Out_DACN1_Texcel_V100_IOMgr.disabled			:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.TEXCEL_V100_DISABLED', 'true');
+		Out_DACN1_Texcel_VX100_IOMgr.disabled			:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.TEXCEL_VX100_DISABLED', 'true');
+		Out_DACN1_AFDX_IOMgr.disabled 					:= ReadOneBooleanConfigItemST('ConfigurationSettings.RESSOURCE.AFDX_DISABLED', 'true');
+
+
+		XMLCFGSETTINGS_CLOSE(hCfgSettings);
+		hCfgSettings := 0;
+
+	END_IF;
+
+
+	(* Analog / Digital Card *)
+	IF ((Out_DACN1_NIDAQ_IOMgr.disabled 				<> TRUE) AND (Out_DACN1_NIDAQ_IOMgr.command 				<> OPEN)) THEN 
+		In_DACN1_NIDAQ_IOMgr.err_code					:= OK;
+		Out_DACN1_NIDAQ_IOMgr 							:= In_Test_Mgr; 
+		Out_DACN1_NIDAQ_IOMgr.command 					:= OPEN;
+	END_IF;
+
+	(* Serial communication *)
+	IF ((Out_DACN1_Serial_IOMgr.disabled 				<> TRUE) AND (Out_DACN1_Serial_IOMgr.command 				<> OPEN)) THEN 
+		In_DACN1_Serial_IOMgr.err_code 					:= OK;
+		Out_DACN1_Serial_IOMGR 							:= In_Test_Mgr; 
+		Out_DACN1_Serial_IOMgr.command 					:= OPEN;
+	END_IF; 
+	IF ((Out_DACN1_Serial_Arinc_IOMgr.disabled 			<> TRUE) AND (Out_DACN1_Serial_Arinc_IOMgr.command 			<> OPEN)) THEN 
+		In_DACN1_Serial_Arinc_IOMgr.err_code 			:= OK;
+		Out_DACN1_Serial_Arinc_IOMgr 					:= In_Test_Mgr;
+		Out_DACN1_Serial_Arinc_IOMgr.command 			:= OPEN;
+	END_IF; 
+
+	(* Arinc Communication *)
+	IF ((Out_DACN1_Omnibusbox_IOMgr.disabled 			<> TRUE) AND (Out_DACN1_Omnibusbox_IOMgr.command			<> OPEN)) THEN 
+		In_DACN1_Omnibusbox_IOMgr.err_code				:= OK;
+		Out_DACN1_Omnibusbox_IOMgr 						:= In_Test_Mgr; 
+		Out_DACN1_Omnibusbox_IOMgr.command 				:= OPEN;
+	END_IF; 
+
+	(* Temperature Device *)
+	IF ((Out_DACN1_PowerDNA_IOMgr.disabled 				<> TRUE) AND (Out_DACN1_PowerDNA_IOMgr.command				<> OPEN)) THEN 
+		In_DACN1_PowerDNA_IOMgr.err_code				:= OK;
+		Out_DACN1_PowerDNA_IOMgr						:= In_Test_Mgr; 
+		Out_DACN1_PowerDNA_IOMgr.command 				:= OPEN;
+	END_IF; 
+	IF ((Out_DACN1_Scanivalve_Temperature_IOMgr.disabled 		<> TRUE) AND (Out_DACN1_Scanivalve_Temperature_IOMgr.command		<> OPEN)) THEN 
+		In_DACN1_Scanivalve_Temperature_IOMgr.err_code			:= OK;
+		Out_DACN1_Scanivalve_Temperature_IOMgr					:= In_Test_Mgr; 
+		Out_DACN1_Scanivalve_Temperature_IOMgr.command 		:= OPEN;
+	END_IF; 
+
+	(* Pressure Device *)
+	IF ((Out_DACN1_Scanivalve_Pressure_IOMgr.disabled 	<> TRUE) AND (Out_DACN1_Scanivalve_Pressure_IOMgr.command	<> OPEN)) THEN 
+		In_DACN1_Scanivalve_Pressure_IOMgr.err_code		:= OK;
+		Out_DACN1_Scanivalve_Pressure_IOMgr				:= In_Test_Mgr; 
+		Out_DACN1_Scanivalve_Pressure_IOMgr.command 	:= OPEN;
+	END_IF; 
+
+	(* Throttle *)
+	IF ((Out_DACN1_SM1720_IOMgr.disabled 				<> TRUE) AND (Out_DACN1_SM1720_IOMgr.command				<> OPEN)) THEN 
+		In_DACN1_SM1720_IOMgr.err_code					:= OK;
+		Out_DACN1_SM1720_IOMgr 							:= In_Test_Mgr; 
+		Out_DACN1_SM1720_IOMgr.command 					:= OPEN;
+	END_IF; 
+	IF ((Out_DACN1_Galil_Controller.disabled 			<> TRUE) AND (Out_DACN1_Galil_Controller.command			<> OPEN)) THEN 
+		In_DACN1_Galil_Controller.err_code				:= OK;
+		Out_DACN1_Galil_Controller 						:= In_Test_Mgr; 
+		Out_DACN1_Galil_Controller.command 				:= OPEN;
+	END_IF; 
+
+	(* Dyno *)
+	IF ((Out_DACN1_Texcel_V100_IOMgr.disabled			<> TRUE) AND (Out_DACN1_Texcel_V100_IOMgr.command 			<> OPEN)) THEN 
+		In_DACN1_Texcel_V100_IOMgr.err_code 			:= OK;
+		Out_DACN1_Texcel_V100_IOMgr 					:= In_Test_Mgr; 
+		Out_DACN1_Texcel_V100_IOMgr.command 			:= OPEN;
+	END_IF;
+	IF ((Out_DACN1_Texcel_VX100_IOMgr.disabled			<> TRUE) AND (Out_DACN1_Texcel_VX100_IOMgr.command 			<> OPEN)) THEN 
+		In_DACN1_Texcel_VX100_IOMgr.err_code 			:= OK;
+		Out_DACN1_Texcel_VX100_IOMgr 					:= In_Test_Mgr; 
+		Out_DACN1_Texcel_VX100_IOMgr.command 			:= OPEN;
+	END_IF;
+
+	(* Engine Cruncher / Controller *)
+	IF ((Out_DACN1_UUT_Controller.disabled 				<> TRUE) AND (Out_DACN1_UUT_Controller.command 				<> OPEN)) THEN 
+		In_DACN1_UUT_Controller.err_code				:= OK;
+		Out_DACN1_UUT_Controller 						:= In_Test_Mgr;
+		Out_DACN1_UUT_Controller.command 				:= OPEN;
+	END_IF; 
+	
+	(* HMI Bridge *)	
+	IF ((Out_DACN1_User_Interface.disabled 				<> TRUE) AND (Out_DACN1_User_Interface.command 				<> OPEN)) THEN 
+		In_DACN1_User_Interface.err_code 				:= OK;
+		Out_DACN1_User_Interface 						:= In_Test_Mgr; 
+		Out_DACN1_User_Interface.command 				:= OPEN;
+	END_IF;
+
+	(* AFDX *)	
+	IF ((Out_DACN1_AFDX_IOMgr.disabled 					<> TRUE) AND (Out_DACN1_AFDX_IOMgr.command 					<> OPEN)) THEN 
+		In_DACN1_AFDX_IOMGr.err_code 					:= OK;
+		Out_DACN1_AFDX_IOMgr	 						:= In_Test_Mgr; 
+		Out_DACN1_AFDX_IOMGr.command 					:= OPEN;
+	END_IF;
+
+
+	
+
+
+	IF (		((Out_DACN1_NIDAQ_IOMgr.disabled 				= TRUE) OR (In_DACN1_NIDAQ_IOMgr.status					= OPENED))
+			AND	((Out_DACN1_Serial_IOMgr.disabled 				= TRUE) OR (In_DACN1_Serial_IOMgr.status				= OPENED))
+			AND	((Out_DACN1_Serial_Arinc_IOMgr.disabled 		= TRUE) OR (In_DACN1_Serial_Arinc_IOMgr.status			= OPENED))
+			AND	((Out_DACN1_Omnibusbox_IOMgr.disabled 			= TRUE) OR (In_DACN1_Omnibusbox_IOMgr.status  			= OPENED))
+			AND	((Out_DACN1_PowerDNA_IOMgr.disabled 			= TRUE) OR (In_DACN1_PowerDNA_IOMgr.status  			= OPENED))
+			AND	((Out_DACN1_Scanivalve_Temperature_IOMgr.disabled = TRUE) OR (In_DACN1_Scanivalve_Temperature_IOMgr.status= OPENED))
+			AND	((Out_DACN1_Scanivalve_Pressure_IOMgr.disabled	= TRUE)	OR (In_DACN1_Scanivalve_Pressure_IOMgr.status	= OPENED))
+			AND	((Out_DACN1_SM1720_IOMgr.disabled 				= TRUE) OR (In_DACN1_SM1720_IOMgr.status  				= OPENED))
+			AND	((Out_DACN1_Galil_Controller.disabled 			= TRUE) OR (In_DACN1_Galil_Controller.status 			= OPENED))
+			AND	((Out_DACN1_Texcel_V100_IOMgr.disabled 			= TRUE)	OR (In_DACN1_Texcel_V100_IOMgr.status			= OPENED))
+			AND	((Out_DACN1_Texcel_VX100_IOMgr.disabled 		= TRUE)	OR (In_DACN1_Texcel_VX100_IOMgr.status			= OPENED))
+			AND	((Out_DACN1_UUT_Controller.disabled 			= TRUE)	OR (In_DACN1_UUT_Controller.status				= OPENED))
+			AND	((Out_DACN1_User_Interface.disabled 			= TRUE)	OR (In_DACN1_User_Interface.status				= OPENED))
+			AND	((Out_DACN1_AFDX_IOMGr.disabled 				= TRUE)	OR (In_DACN1_AFDX_IOMgr.status					= OPENED))
+
+
+	    )  THEN 
+
+		status 	:= OPENED;
+
+	END_IF; 
+
+
+	IF (		(In_DACN1_NIDAQ_IOMgr.err_code					<> OK)
+			OR	(In_DACN1_Serial_IOMgr.err_code					<> OK)
+			OR	(In_DACN1_Serial_Arinc_IOMgr.err_code			<> OK)
+			OR	(In_DACN1_Omnibusbox_IOMgr.err_code				<> OK)
+			OR	(In_DACN1_PowerDNA_IOMgr.err_code				<> OK)
+			OR	(In_DACN1_Scanivalve_Temperature_IOMgr.err_code	<> OK)
+			OR	(In_DACN1_Scanivalve_Pressure_IOMgr.err_code	<> OK)
+			OR	(In_DACN1_SM1720_IOMgr.err_code					<> OK)
+			OR	(In_DACN1_Galil_Controller.err_code				<> OK)
+			OR	(In_DACN1_Texcel_V100_IOMgr.err_code			<> OK)
+			OR	(In_DACN1_Texcel_VX100_IOMgr.err_code			<> OK)
+			OR 	(In_DACN1_UUT_Controller.err_code				<> OK) 
+			OR 	(In_DACN1_User_Interface.err_code				<> OK)
+			OR 	(In_DACN1_AFDX_IOMGr.err_code					<> OK)
+
+
+	    )  THEN 
+
+		status 		:= ERROR_ON_OPENING;
+		err_code 	:= ERROR_ON_OPENING;	
+	ELSE 
+		err_code 	:= OK;
+	END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="VitalLinkDevelopment">
+</Property><Property Name="Solution File" Value="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\VitalLinkDevelopment.sln">
+</Property><Property Name="Date" Value="19 July 2006">
+</Property><Property Name="Time" Value="12:10:49">
+</Property><Property Name="Log Number" Value="4">
+</Property></Properties><Event ErrorLevel="0" Project="KineticaRT.Logic.Logger" Source="Logic\Logger\KineticaRT.Logic.Logger.csproj" Description="Project file successfully backed up as E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Backup\KineticaRT.Logic.Logger.csproj">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Logger" Source="Logic\Logger\KineticaRT.Logic.Logger.csproj.user" Description="Project user file successfully backed up as E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Backup\KineticaRT.Logic.Logger.csproj.user">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Logger" Source="Logic\Logger\AssemblyInfo.cs" Description="File successfully backed up as E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Logger" Source="Logic\Logger\Logger.cs" Description="File successfully backed up as E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Backup\Logger.cs">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Logger" Source="Logic\Logger\KineticaRT.Logic.Logger.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Logger" Source="Logic\Logger\KineticaRT.Logic.Logger.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Logger" Source="Logic\Logger\KineticaRT.Logic.Logger.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

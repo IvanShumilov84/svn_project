@@ -1,0 +1,103 @@
+<Translations>
+   <Object OldProgID="KRTLib_Channels.KRT_NumericVariable" NewType="KineticaRT.Logic.Channels.NumericVariable, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_NumericConstant" NewType="KineticaRT.Logic.Channels.NumericConstant, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_NumericExpression" NewType="KineticaRT.Logic.Channels.NumericExpression, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+      <Property OldName="Expression" NewName="Text"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_NumericLink" NewType="KineticaRT.Logic.Channels.NumericLink, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_TextVariable" NewType="KineticaRT.Logic.Channels.TextVariable, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_TextConstant" NewType="KineticaRT.Logic.Channels.TextConstant, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_TextLink" NewType="KineticaRT.Logic.Channels.TextLink, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_TextExpression" NewType="KineticaRT.Logic.Channels.TextExpression, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="Expression" NewName="Text"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_BooleanVariable" NewType="KineticaRT.Logic.Channels.BooleanVariable, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="TrueDescription" NewName="TrueText"/>
+      <Property OldName="FalseDescription" NewName="FalseText"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_BooleanConstant" NewType="KineticaRT.Logic.Channels.BooleanConstant, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="TrueDescription" NewName="TrueText"/>
+      <Property OldName="FalseDescription" NewName="FalseText"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_BooleanLink" NewType="KineticaRT.Logic.Channels.BooleanLink, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="TrueDescription" NewName="TrueText"/>
+      <Property OldName="FalseDescription" NewName="FalseText"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_BooleanExpression" NewType="KineticaRT.Logic.Channels.BooleanExpression, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="Expression" NewName="Text"/>
+      <Property OldName="TrueDescription" NewName="TrueText"/>
+      <Property OldName="FalseDescription" NewName="FalseText"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_MatrixVariable" NewType="KineticaRT.Logic.Channels.NumericVariable, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_MatrixConstant" NewType="KineticaRT.Logic.Channels.NumericConstant, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_MatrixExpression" NewType="KineticaRT.Logic.Channels.NumericExpression, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+      <Property OldName="Expression" NewName="Text"/>
+   </Object>
+   <Object OldProgID="KRTLib_Channels.KRT_MatrixLink" NewType="KineticaRT.Logic.Channels.NumericLink, KineticaRT.Logic.Channels">
+      <Property OldName="LongDescription" NewName="Description"/>
+      <Property OldName="ShortDescription" NewName="ToolTip"/>
+      <Property OldName="DecimalPlaces" NewName="DecimalDigits"/>
+      <Property OldName="Value" NewName="Value"/>
+   </Object>
+   <Object OldProgID="KRTLib_Message.KRT_MsgRecorder" NewType="KineticaRT.Logic.Message.Recorder, KineticaRT.Logic.Message">
+      <Property OldName="MsgServer" NewName="Source"/>
+      <Property OldName="Source" NewName="SourceText"/>
+   </Object>
+   <Object OldProgID="KRTLib_Message.KRT_MsgServer" NewType="KineticaRT.Channels.InfoChannel, KineticaRT">
+   </Object>
+
+	<Object OldProgID="KRTLib_Logic.KRT_ChildrenCollection" NewType="KineticaRT.ObjectCollection, KineticaRT">
+	</Object>
+</Translations>

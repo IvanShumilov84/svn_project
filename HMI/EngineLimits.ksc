@@ -1,0 +1,488 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Enabled>true</Enabled>
+<AlternateNames xsi:type="xsd:anyType" xsi:null="1"/>
+<Test_Mgr_UUT_TripPoints_F1 href="#ref-4"/>
+<Test_Mgr_UUT_TripPoints_F2 href="#ref-5"/>
+<Test_Mgr_UUT_TripPoints_F3 href="#ref-6"/>
+<Test_Mgr_UUT_TripPoints_F4 href="#ref-7"/>
+<Test_Mgr_UUT_TripPoints_I1 href="#ref-8"/>
+<Test_Mgr_UUT_TripPoints_I2 href="#ref-9"/>
+<Test_Mgr_UUT_TripPoints_I3 href="#ref-10"/>
+<Test_Mgr_UUT_TripPoints_I4 href="#ref-11"/>
+<Test_Mgr_UUT_TripPoints_N1 href="#ref-12"/>
+<Test_Mgr_UUT_TripPoints_N2 href="#ref-13"/>
+<Test_Mgr_UUT_TripPoints_N3 href="#ref-14"/>
+<Test_Mgr_UUT_TripPoints_N4 href="#ref-15"/>
+<Test_Mgr_UUT_TripPoints_P1 href="#ref-16"/>
+<Test_Mgr_UUT_TripPoints_P2 href="#ref-17"/>
+<Test_Mgr_UUT_TripPoints_P3 href="#ref-18"/>
+<Test_Mgr_UUT_TripPoints_P4 href="#ref-19"/>
+<Test_Mgr_UUT_TripPoints_Q1 href="#ref-20"/>
+<Test_Mgr_UUT_TripPoints_Q2 href="#ref-21"/>
+<Test_Mgr_UUT_TripPoints_Q3 href="#ref-22"/>
+<Test_Mgr_UUT_TripPoints_Q4 href="#ref-23"/>
+<Test_Mgr_UUT_TripPoints_T1 href="#ref-24"/>
+<Test_Mgr_UUT_TripPoints_T2 href="#ref-25"/>
+<Test_Mgr_UUT_TripPoints_T3 href="#ref-26"/>
+<Test_Mgr_UUT_TripPoints_T4 href="#ref-27"/>
+<Test_Mgr_UUT_TripPoints_V1 href="#ref-28"/>
+<Test_Mgr_UUT_TripPoints_V2 href="#ref-29"/>
+<Test_Mgr_UUT_TripPoints_V3 href="#ref-30"/>
+<Test_Mgr_UUT_TripPoints_V4 href="#ref-31"/>
+<Test_Mgr_UUT_TripPoints_VIB1 href="#ref-32"/>
+<Test_Mgr_UUT_TripPoints_VIB2 href="#ref-33"/>
+<Test_Mgr_UUT_TripPoints_VIB3 href="#ref-34"/>
+<Test_Mgr_UUT_TripPoints_VIB4 href="#ref-35"/>
+</a1:ChannelCollection>
+<a3:Item id="ref-4" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-36">Test_Mgr_UUT_TripPoints_F1</Name>
+<Description id="ref-37">Test_Mgr_UUT_TripPoints_F1</Description>
+<ToolTip id="ref-38"></ToolTip>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-39">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-40">Group_Fast</Group>
+<ItemID id="ref-41">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.f1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-5" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-42">Test_Mgr_UUT_TripPoints_F2</Name>
+<Description id="ref-43">Test_Mgr_UUT_TripPoints_F2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-44">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-45">Group_Fast</Group>
+<ItemID id="ref-46">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.f2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-6" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-47">Test_Mgr_UUT_TripPoints_F3</Name>
+<Description id="ref-48">Test_Mgr_UUT_TripPoints_F3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-49">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-50">Group_Fast</Group>
+<ItemID id="ref-51">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.f3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-7" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-52">Test_Mgr_UUT_TripPoints_F4</Name>
+<Description id="ref-53">Test_Mgr_UUT_TripPoints_F4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-54">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-55">Group_Fast</Group>
+<ItemID id="ref-56">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.f4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-8" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-57">Test_Mgr_UUT_TripPoints_I1</Name>
+<Description id="ref-58">Test_Mgr_UUT_TripPoints_I1</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-59">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-60">Group_Fast</Group>
+<ItemID id="ref-61">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.I1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-9" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-62">Test_Mgr_UUT_TripPoints_I2</Name>
+<Description id="ref-63">Test_Mgr_UUT_TripPoints_I2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-64">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-65">Group_Fast</Group>
+<ItemID id="ref-66">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.I2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-10" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-67">Test_Mgr_UUT_TripPoints_I3</Name>
+<Description id="ref-68">Test_Mgr_UUT_TripPoints_I3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-69">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-70">Group_Fast</Group>
+<ItemID id="ref-71">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.I3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-11" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-72">Test_Mgr_UUT_TripPoints_I4</Name>
+<Description id="ref-73">Test_Mgr_UUT_TripPoints_I4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-74">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-75">Group_Fast</Group>
+<ItemID id="ref-76">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.I4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-12" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-77">Test_Mgr_UUT_TripPoints_N1</Name>
+<Description id="ref-78">Test_Mgr_UUT_TripPoints_N1</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-79">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-80">Group_Fast</Group>
+<ItemID id="ref-81">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.n1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-13" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-82">Test_Mgr_UUT_TripPoints_N2</Name>
+<Description id="ref-83">Test_Mgr_UUT_TripPoints_N2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-84">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-85">Group_Fast</Group>
+<ItemID id="ref-86">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.n2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-14" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-87">Test_Mgr_UUT_TripPoints_N3</Name>
+<Description id="ref-88">Test_Mgr_UUT_TripPoints_N3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-89">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-90">Group_Fast</Group>
+<ItemID id="ref-91">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.n3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-15" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-92">Test_Mgr_UUT_TripPoints_N4</Name>
+<Description id="ref-93">Test_Mgr_UUT_TripPoints_N4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-94">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-95">Group_Fast</Group>
+<ItemID id="ref-96">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.n4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-16" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-97">Test_Mgr_UUT_TripPoints_P1</Name>
+<Description id="ref-98">Test_Mgr_UUT_TripPoints_P1</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-99">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-100">Group_Fast</Group>
+<ItemID id="ref-101">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.p1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-17" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-102">Test_Mgr_UUT_TripPoints_P2</Name>
+<Description id="ref-103">Test_Mgr_UUT_TripPoints_P2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-104">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-105">Group_Fast</Group>
+<ItemID id="ref-106">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.p2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-18" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-107">Test_Mgr_UUT_TripPoints_P3</Name>
+<Description id="ref-108">Test_Mgr_UUT_TripPoints_P3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-109">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-110">Group_Fast</Group>
+<ItemID id="ref-111">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.p3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-19" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-112">Test_Mgr_UUT_TripPoints_P4</Name>
+<Description id="ref-113">Test_Mgr_UUT_TripPoints_P4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-114">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-115">Group_Fast</Group>
+<ItemID id="ref-116">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.p4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-20" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-117">Test_Mgr_UUT_TripPoints_Q1</Name>
+<Description id="ref-118">Test_Mgr_UUT_TripPoints_Q1</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-119">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-120">Group_Fast</Group>
+<ItemID id="ref-121">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.q1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-21" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-122">Test_Mgr_UUT_TripPoints_Q2</Name>
+<Description id="ref-123">Test_Mgr_UUT_TripPoints_Q2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-124">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-125">Group_Fast</Group>
+<ItemID id="ref-126">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.q2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-22" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-127">Test_Mgr_UUT_TripPoints_Q3</Name>
+<Description id="ref-128">Test_Mgr_UUT_TripPoints_Q3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-129">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-130">Group_Fast</Group>
+<ItemID id="ref-131">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.q3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-23" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-132">Test_Mgr_UUT_TripPoints_Q4</Name>
+<Description id="ref-133">Test_Mgr_UUT_TripPoints_Q4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-134">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-135">Group_Fast</Group>
+<ItemID id="ref-136">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.q4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-24" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-137">Test_Mgr_UUT_TripPoints_T1</Name>
+<Description id="ref-138">Test_Mgr_UUT_TripPoints_T1</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-139">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-140">Group_Fast</Group>
+<ItemID id="ref-141">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.t1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-25" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-142">Test_Mgr_UUT_TripPoints_T2</Name>
+<Description id="ref-143">Test_Mgr_UUT_TripPoints_T2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-144">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-145">Group_Fast</Group>
+<ItemID id="ref-146">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.t2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-26" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-147">Test_Mgr_UUT_TripPoints_T3</Name>
+<Description id="ref-148">Test_Mgr_UUT_TripPoints_T3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-149">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-150">Group_Fast</Group>
+<ItemID id="ref-151">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.t3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-27" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-152">Test_Mgr_UUT_TripPoints_T4</Name>
+<Description id="ref-153">Test_Mgr_UUT_TripPoints_T4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-154">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-155">Group_Fast</Group>
+<ItemID id="ref-156">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.t4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-28" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-157">Test_Mgr_UUT_TripPoints_V1</Name>
+<Description id="ref-158">Test_Mgr_UUT_TripPoints_V1</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-159">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-160">Group_Fast</Group>
+<ItemID id="ref-161">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.v1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-29" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-162">Test_Mgr_UUT_TripPoints_V2</Name>
+<Description id="ref-163">Test_Mgr_UUT_TripPoints_V2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-164">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-165">Group_Fast</Group>
+<ItemID id="ref-166">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.v2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-30" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-167">Test_Mgr_UUT_TripPoints_V3</Name>
+<Description id="ref-168">Test_Mgr_UUT_TripPoints_V3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-169">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-170">Group_Fast</Group>
+<ItemID id="ref-171">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.v3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-31" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-172">Test_Mgr_UUT_TripPoints_V4</Name>
+<Description id="ref-173">Test_Mgr_UUT_TripPoints_V4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-174">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-175">Group_Fast</Group>
+<ItemID id="ref-176">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.v4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-32" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-177">Test_Mgr_UUT_TripPoints_VIB1</Name>
+<Description id="ref-178">Test_Mgr_UUT_TripPoints_VIB1</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-179">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-180">Group_Fast</Group>
+<ItemID id="ref-181">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.vib1</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-33" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-182">Test_Mgr_UUT_TripPoints_VIB2</Name>
+<Description id="ref-183">Test_Mgr_UUT_TripPoints_VIB2</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-184">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-185">Group_Fast</Group>
+<ItemID id="ref-186">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.vib2</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-34" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-187">Test_Mgr_UUT_TripPoints_VIB3</Name>
+<Description id="ref-188">Test_Mgr_UUT_TripPoints_VIB3</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-189">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-190">Group_Fast</Group>
+<ItemID id="ref-191">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.vib3</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+<a3:Item id="ref-35" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-192">Test_Mgr_UUT_TripPoints_VIB4</Name>
+<Description id="ref-193">Test_Mgr_UUT_TripPoints_VIB4</Description>
+<ToolTip href="#ref-38"/>
+<Units href="#ref-38"/>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-194">G</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-195">Group_Fast</Group>
+<ItemID id="ref-196">dacn1.dacn1_user_interface.tm_uut_info.uut_trippoints.vib4</ItemID>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a3:Item>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

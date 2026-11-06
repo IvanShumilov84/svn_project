@@ -1,0 +1,26 @@
+HKCR
+{
+	KineticaRTOPC.Group.1 = s 'Group Class'
+	{
+		CLSID = s '{C68958AC-AE95-4DCF-8DAF-EF0DF29B3E11}'
+	}
+	KineticaRTOPC.Group = s 'Group Class'
+	{
+		CLSID = s '{C68958AC-AE95-4DCF-8DAF-EF0DF29B3E11}'
+		CurVer = s 'KineticaRTOPC.Group.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C68958AC-AE95-4DCF-8DAF-EF0DF29B3E11} = s 'Group Class'
+		{
+			ProgID = s 'KineticaRTOPC.Group.1'
+			VersionIndependentProgID = s 'KineticaRTOPC.Group'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{B80EAF9C-0979-4063-A7DD-D264402B2125}'
+		}
+	}
+}

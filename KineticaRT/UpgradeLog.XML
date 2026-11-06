@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="KineticaRT Release + Studio Setup">
+</Property><Property Name="Solution File" Value="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln">
+</Property><Property Name="Date" Value="21 December 2005">
+</Property><Property Name="Time" Value="19:23">
+</Property></Properties><Event ErrorLevel="0" Project="KineticaRT" Source="KineticaRT.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT" Source="KineticaRT.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls" Source="Controls\KineticaRT.Controls.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls" Source="Controls\KineticaRT.Controls.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Dial" Source="Controls\Dial\KineticaRT.Controls.Dial.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Dial" Source="Controls\Dial\KineticaRT.Controls.Dial.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Channels" Source="Logic\Channels\KineticaRT.Logic.Channels.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Channels" Source="Logic\Channels\KineticaRT.Logic.Channels.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Display" Source="Controls\Display\KineticaRT.Controls.Display.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Display" Source="Controls\Display\KineticaRT.Controls.Display.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Slider" Source="Controls\Slider\KineticaRT.Controls.Slider.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Slider" Source="Controls\Slider\KineticaRT.Controls.Slider.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Trend" Source="Controls\Trend\KineticaRT.Controls.Trend.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Trend" Source="Controls\Trend\KineticaRT.Controls.Trend.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.Simulate" Source="Servers\Simulate\KineticaRT.Servers.Simulate.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Servers.Simulate" Source="Servers\Simulate\KineticaRT.Servers.Simulate.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Expressions" Source="Logic\Expressions\KineticaRT.Logic.Expressions.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Expressions" Source="Logic\Expressions\KineticaRT.Logic.Expressions.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Filters" Source="Logic\Filters\KineticaRT.Logic.Filters.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Filters" Source="Logic\Filters\KineticaRT.Logic.Filters.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.OpcClient" Source="Servers\OpcClient\KineticaRT.Servers.OpcClient.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Servers.OpcClient" Source="Servers\OpcClient\KineticaRT.Servers.OpcClient.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Message" Source="Logic\Message\KineticaRT.Logic.Message.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Message" Source="Logic\Message\KineticaRT.Logic.Message.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.BarGraph" Source="Controls\BarGraph\KineticaRT.Controls.BarGraph.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.BarGraph" Source="Controls\BarGraph\KineticaRT.Controls.BarGraph.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Button" Source="Controls\Button\KineticaRT.Controls.Button.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Button" Source="Controls\Button\KineticaRT.Controls.Button.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Picture" Source="Controls\Picture\KineticaRT.Controls.Picture.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Picture" Source="Controls\Picture\KineticaRT.Controls.Picture.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Explorer" Source="Controls\Explorer\KineticaRT.Controls.Explorer.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Explorer" Source="Controls\Explorer\KineticaRT.Controls.Explorer.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Frame" Source="Controls\Frame\KineticaRT.Controls.Frame.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Frame" Source="Controls\Frame\KineticaRT.Controls.Frame.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Indicator" Source="Controls\Indicator\KineticaRT.Controls.Indicator.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Indicator" Source="Controls\Indicator\KineticaRT.Controls.Indicator.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Knob" Source="Controls\Knob\KineticaRT.Controls.Knob.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Knob" Source="Controls\Knob\KineticaRT.Controls.Knob.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.XYGraph" Source="Controls\XYGraph\KineticaRT.Controls.XYGraph.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.XYGraph" Source="Controls\XYGraph\KineticaRT.Controls.XYGraph.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Tab" Source="Controls\Tab\KineticaRT.Controls.Tab.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Tab" Source="Controls\Tab\KineticaRT.Controls.Tab.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Sequence" Source="Sequence\KineticaRT.Sequence.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Sequence" Source="Sequence\KineticaRT.Sequence.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {07E2F52F-A6EA-4E7A-A7EE-7B76F3265ED5} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {61E34556-6D10-4609-A55C-68D3726BFCDA} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {CC6D82A1-898E-4322-AB48-4285127D2B7A} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {280E7492-2B16-4A1F-9A2E-74AD1B13EC62} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {74E79D6B-08E1-49C9-8858-A10D97C03B83} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {6EA64186-1C0F-4D6F-9AFA-0BE5431F95CA} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {9EDE5B2A-7A6F-4A5B-A952-790E3D9DD0F1} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="1" Project="E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Studio\KineticaRT.Studio.csproj" Source="Studio\KineticaRT.Studio.csproj" Description="MSB2014: The project-to-project reference with GUID {2A3BCE0F-D27E-4A97-B9B6-1D8C8BA189C0} cannot be converted because it is not listed in the file 'E:\Documents and Settings\Nigel.KINETICART.000\My Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln'.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio" Source="Studio\KineticaRT.Studio.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio" Source="Studio\KineticaRT.Studio.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.SetPointLinear" Source="Studio\Controls\SetPointLinear\KineticaRT.Studio.Controls.SetPointLinear.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.SetPointLinear" Source="Studio\Controls\SetPointLinear\KineticaRT.Studio.Controls.SetPointLinear.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls" Source="Studio\Controls\KineticaRT.Studio.Controls.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls" Source="Studio\Controls\KineticaRT.Studio.Controls.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.BarGraph" Source="Studio\Controls\BarGraph\KineticaRT.Studio.Controls.BarGraph.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.BarGraph" Source="Studio\Controls\BarGraph\KineticaRT.Studio.Controls.BarGraph.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Button" Source="Studio\Controls\Button\KineticaRT.Studio.Controls.Button.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.Button" Source="Studio\Controls\Button\KineticaRT.Studio.Controls.Button.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.ChannelSelector" Source="Studio\Controls\ChannelSelector\KineticaRT.Studio.Controls.ChannelSelector.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.ChannelSelector" Source="Studio\Controls\ChannelSelector\KineticaRT.Studio.Controls.ChannelSelector.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Checkbox" Source="Studio\Controls\Checkbox\KineticaRT.Studio.Controls.Checkbox.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.Checkbox" Source="Studio\Controls\Checkbox\KineticaRT.Studio.Controls.Checkbox.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Dial" Source="Studio\Controls\Dial\KineticaRT.Studio.Controls.Dial.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.Dial" Source="Studio\Controls\Dial\KineticaRT.Studio.Controls.Dial.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Display" Source="Studio\Controls\Display\KineticaRT.Studio.Controls.Display.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.Display" Source="Studio\Controls\Display\KineticaRT.Studio.Controls.Display.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.ErrorLinear" Source="Studio\Controls\ErrorLinear\KineticaRT.Studio.Controls.ErrorLinear.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.ErrorLinear" Source="Studio\Controls\ErrorLinear\KineticaRT.Studio.Controls.ErrorLinear.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.LampIndicator" Source="Studio\Controls\LampIndicator\KineticaRT.Studio.Controls.LampIndicator.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.LampIndicator" Source="Studio\Controls\LampIndicator\KineticaRT.Studio.Controls.LampIndicator.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Linear" Source="Studio\Controls\Linear\KineticaRT.Studio.Controls.Linear.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.Linear" Source="Studio\Controls\Linear\KineticaRT.Studio.Controls.Linear.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.RadioButton" Source="Studio\Controls\RadioButton\KineticaRT.Studio.Controls.RadioButton.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.RadioButton" Source="Studio\Controls\RadioButton\KineticaRT.Studio.Controls.RadioButton.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.SetPointDial" Source="Studio\Controls\SetPointDial\KineticaRT.Studio.Controls.SetPointDial.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Controls.SetPointDial" Source="Studio\Controls\SetPointDial\KineticaRT.Studio.Controls.SetPointDial.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="OPCExample" Source="Examples\OPCExample\OPCExample.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="OPCExample" Source="Examples\OPCExample\OPCExample.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Application" Source="Studio\Application\KineticaRT.Studio.Application.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Studio.Application" Source="Studio\Application\KineticaRT.Studio.Application.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.Logger" Source="Servers\Logger\KineticaRT.Servers.Logger.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Servers.Logger" Source="Servers\Logger\KineticaRT.Servers.Logger.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="KineticaRT Release + Studio Setup.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="KineticaRT Release + Studio Setup.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT" Source="KineticaRT.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls" Source="Controls\KineticaRT.Controls.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Dial" Source="Controls\Dial\KineticaRT.Controls.Dial.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Channels" Source="Logic\Channels\KineticaRT.Logic.Channels.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Display" Source="Controls\Display\KineticaRT.Controls.Display.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Slider" Source="Controls\Slider\KineticaRT.Controls.Slider.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Trend" Source="Controls\Trend\KineticaRT.Controls.Trend.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.Simulate" Source="Servers\Simulate\KineticaRT.Servers.Simulate.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Expressions" Source="Logic\Expressions\KineticaRT.Logic.Expressions.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Filters" Source="Logic\Filters\KineticaRT.Logic.Filters.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.OpcClient" Source="Servers\OpcClient\KineticaRT.Servers.OpcClient.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Message" Source="Logic\Message\KineticaRT.Logic.Message.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.BarGraph" Source="Controls\BarGraph\KineticaRT.Controls.BarGraph.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Button" Source="Controls\Button\KineticaRT.Controls.Button.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Picture" Source="Controls\Picture\KineticaRT.Controls.Picture.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Explorer" Source="Controls\Explorer\KineticaRT.Controls.Explorer.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Frame" Source="Controls\Frame\KineticaRT.Controls.Frame.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Indicator" Source="Controls\Indicator\KineticaRT.Controls.Indicator.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Knob" Source="Controls\Knob\KineticaRT.Controls.Knob.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.XYGraph" Source="Controls\XYGraph\KineticaRT.Controls.XYGraph.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Tab" Source="Controls\Tab\KineticaRT.Controls.Tab.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Sequence" Source="Sequence\KineticaRT.Sequence.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio" Source="Studio\KineticaRT.Studio.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.SetPointLinear" Source="Studio\Controls\SetPointLinear\KineticaRT.Studio.Controls.SetPointLinear.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls" Source="Studio\Controls\KineticaRT.Studio.Controls.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.BarGraph" Source="Studio\Controls\BarGraph\KineticaRT.Studio.Controls.BarGraph.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Button" Source="Studio\Controls\Button\KineticaRT.Studio.Controls.Button.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.ChannelSelector" Source="Studio\Controls\ChannelSelector\KineticaRT.Studio.Controls.ChannelSelector.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Checkbox" Source="Studio\Controls\Checkbox\KineticaRT.Studio.Controls.Checkbox.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Dial" Source="Studio\Controls\Dial\KineticaRT.Studio.Controls.Dial.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Display" Source="Studio\Controls\Display\KineticaRT.Studio.Controls.Display.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.ErrorLinear" Source="Studio\Controls\ErrorLinear\KineticaRT.Studio.Controls.ErrorLinear.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.LampIndicator" Source="Studio\Controls\LampIndicator\KineticaRT.Studio.Controls.LampIndicator.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.Linear" Source="Studio\Controls\Linear\KineticaRT.Studio.Controls.Linear.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.RadioButton" Source="Studio\Controls\RadioButton\KineticaRT.Studio.Controls.RadioButton.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Controls.SetPointDial" Source="Studio\Controls\SetPointDial\KineticaRT.Studio.Controls.SetPointDial.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.XYGraph.Setup.vdproj" Source="Controls\XYGraph\Setup\KineticaRT.Controls.XYGraph.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.XYGraph.Setup.vdproj" Source="Controls\XYGraph\Setup\KineticaRT.Controls.XYGraph.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Slider.Setup.vdproj" Source="Controls\Slider\Setup\KineticaRT.Controls.Slider.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Slider.Setup.vdproj" Source="Controls\Slider\Setup\KineticaRT.Controls.Slider.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="OPCExample" Source="Examples\OPCExample\OPCExample.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.OpcClient.Setup.vdproj" Source="Servers\OpcClient\Setup\KineticaRT.Servers.OpcClient.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Servers.OpcClient.Setup.vdproj" Source="Servers\OpcClient\Setup\KineticaRT.Servers.OpcClient.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Message.Setup.vdproj" Source="Logic\Message\Setup\KineticaRT.Logic.Message.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Message.Setup.vdproj" Source="Logic\Message\Setup\KineticaRT.Logic.Message.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Filters.Setup.vdproj" Source="Logic\Filters\Setup\KineticaRT.Logic.Filters.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Filters.Setup.vdproj" Source="Logic\Filters\Setup\KineticaRT.Logic.Filters.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Expressions.Setup.vdproj" Source="Logic\Expressions\Setup\KineticaRT.Logic.Expressions.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Expressions.Setup.vdproj" Source="Logic\Expressions\Setup\KineticaRT.Logic.Expressions.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Indicator.Setup.vdproj" Source="Controls\Indicator\Setup\KineticaRT.Controls.Indicator.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Indicator.Setup.vdproj" Source="Controls\Indicator\Setup\KineticaRT.Controls.Indicator.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Frame.Setup.vdproj" Source="Controls\Frame\Setup\KineticaRT.Controls.Frame.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Frame.Setup.vdproj" Source="Controls\Frame\Setup\KineticaRT.Controls.Frame.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Display.Setup.vdproj" Source="Controls\Display\Setup\KineticaRT.Controls.Display.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Display.Setup.vdproj" Source="Controls\Display\Setup\KineticaRT.Controls.Display.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Dial.Setup.vdproj" Source="Controls\Dial\Setup\KineticaRT.Controls.Dial.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Dial.Setup.vdproj" Source="Controls\Dial\Setup\KineticaRT.Controls.Dial.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Logic.Channels.Setup.vdproj" Source="Logic\Channels\Setup\KineticaRT.Logic.Channels.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Logic.Channels.Setup.vdproj" Source="Logic\Channels\Setup\KineticaRT.Logic.Channels.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Trend.Setup.vdproj" Source="Controls\Trend\Setup\KineticaRT.Controls.Trend.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Trend.Setup.vdproj" Source="Controls\Trend\Setup\KineticaRT.Controls.Trend.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Knob.Setup.vdproj" Source="Controls\Knob\Setup\KineticaRT.Controls.Knob.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Knob.Setup.vdproj" Source="Controls\Knob\Setup\KineticaRT.Controls.Knob.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Controls.Button.Setup.vdproj" Source="Controls\Button\Setup\KineticaRT.Controls.Button.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Controls.Button.Setup.vdproj" Source="Controls\Button\Setup\KineticaRT.Controls.Button.Setup.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Studio.Application" Source="Studio\Application\KineticaRT.Studio.Application.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.Logger" Source="Servers\Logger\KineticaRT.Servers.Logger.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

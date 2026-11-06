@@ -1,0 +1,119 @@
+FUNCTION_BLOCK select_model_setup_FB
+
+IF reset_all = TRUE THEN 
+
+	NOW1();
+
+	delay_data := NOW1.sec ;
+	delay_strobe := NOW1.sec;
+
+	trig_strobe := FALSE;
+	status := FALSE;
+
+	bit0 := TRUE  ;
+	bit1 := FALSE  ;
+	bit2 := FALSE  ;
+
+	bit_strobe := FALSE ;
+
+ELSE 
+
+(*
+	-PW123			001
+	-PT6A68			010
+	-PT6T			110
+	T53				110
+	T55-L-712SSB	110
+	T55-L-714A		101
+	MAKILA			100
+	-T56			101  
+	
+*)
+
+	IF (UUT_Info.Model = 'PW123AF') THEN
+		bit0 := TRUE  ;
+		bit1 := FALSE ;
+		bit2 := FALSE  ;	
+
+	ELSIF ((UUT_Info.Model = 'PT6A-68') OR (UUT_Info.Model = 'PT6A-41') OR (UUT_Info.Model = 'PT6A-42')) THEN
+		bit0 := FALSE  ;
+		bit1 := TRUE ;
+		bit2 := FALSE  ;	
+
+	ELSIF (UUT_Info.Model = 'PT6T-3B') OR (UUT_Info.Model = 'PT6T-6_SIKOR') OR (UUT_Info.Model = 'PT6T-6_BELL') OR (UUT_Info.Model = 'PT6T-6B') THEN
+		bit0 := TRUE  ;
+		bit1 := TRUE ;
+		bit2 := FALSE  ;	
+
+	ELSIF (UUT_Info.Model = 'T53-L-13B') THEN 
+		bit0 := FALSE  ;
+		bit1 := TRUE ;
+		bit2 := TRUE  ;	
+
+	ELSIF UUT_Info.Model = 'T55-L-712SSB' THEN 
+		bit0 := TRUE  ;
+		bit1 := FALSE  ;
+		bit2 := TRUE  ;	
+
+	ELSIF UUT_Info.Model = 'T55-L-714A' THEN 
+		bit0 := TRUE  ;
+		bit1 := FALSE  ;
+		bit2 := TRUE  ;	
+
+	ELSIF UUT_Info.Model = 'MAKILA 1A1' THEN 
+		bit0 := FALSE  ;
+		bit1 := FALSE  ;
+		bit2 := TRUE  ;	
+
+	ELSIF	(UUT_Info.Model = 'T56-A-14') OR (UUT_Info.Model = 'T56-A-15LFE') OR (UUT_Info.Model = 'T56-A-15GFE') THEN
+		bit0 := FALSE;
+		bit1 := FALSE;
+		bit2 := TRUE;	
+
+	ELSE 		
+		bit0 := TRUE  ;
+		bit1 := FALSE  ;
+		bit2 := FALSE  ;	 
+	END_IF; 
+
+	NOW1();
+
+	eTimer := NOW1.sec;
+	
+	IF ((eTimer - delay_data)  > 1) THEN 
+
+		IF trig_strobe = FALSE THEN 
+
+			bit_strobe := TRUE  ;
+
+			trig_strobe := TRUE;
+
+			NOW1();
+
+			delay_strobe := NOW1.sec;
+
+		END_IF; 
+
+		NOW1();
+
+		eTimer := NOW1.sec;
+		
+		IF ((eTimer - delay_strobe) > 2) THEN	
+
+			bit_strobe := FALSE  ;
+			status := TRUE;
+
+		END_IF; 
+
+	END_IF; 
+
+END_IF; 
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

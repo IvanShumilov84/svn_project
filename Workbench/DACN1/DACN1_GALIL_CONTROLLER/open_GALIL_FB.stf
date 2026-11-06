@@ -1,0 +1,64 @@
+FUNCTION_BLOCK open_GALIL_FB
+(************************************************************************************************************************************************
+	Name :		open_GALIL_FB									
+														
+	Description :	Open GALIL ethernet connection
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0
+
+************************************************************************************************************************************************)	
+
+	status 	:= OPENING;
+	err_code 	:= OK;
+
+	(* Log message every 15 minutes. 900 000 ms *)
+	IF  (mod_rest = 0) THEN
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: OPENING');
+	END_IF;
+
+	mod_rest := MOD( ( __SYSVA_CYCLECNT * ANY_TO_DINT(__SYSVA_TCYCYCTIME) ), 900000 ) ;
+
+	First_Time_Close  := TRUE;
+
+	IF ( UUT_Info.Model <> 'DAS CALIBRATION' ) THEN
+			
+		IF In_Galil_Controller.mode = RUN_FOR_TRUE THEN
+
+			CONNECT_CONTROLLER_GALIL('192.168.1.215');
+			err_code := CONNECT_CONTROLLER_GALIL.ERR_CODE;
+			ihdmc := ANY_TO_DINT( CONNECT_CONTROLLER_GALIL.IHDMC );
+
+			Rig_Throttle( TRUE );
+
+		END_IF;
+
+	END_IF;
+
+
+	IF (err_code <> OK) THEN 
+		status := ERROR_ON_OPENING;
+
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: ERROR ON OPENING');
+	
+	ELSE
+		status := OPENED;
+
+		dummy 		:= LOG_MSG('ErrLog', 'DACN1_GALIL_CONTROLLER: OPENED');
+
+		mod_rest := 0;
+
+	END_IF; 
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

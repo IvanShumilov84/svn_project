@@ -1,0 +1,438 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE>Frame User Guide</TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<style> body {width=10}
+	td {FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; COLOR:#000066}
+	P {margin-bottom:6;margin-top:0}
+	.bluebodytext {FONT-SIZE: 11px; COLOR: #000066; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+	</style>
+	</HEAD>
+	<BODY>
+		<P><STRONG>Properties</STRONG>:</P>
+		<P><U>AddListFile</U>: This is the name of an xml file (format below) which defines 
+			which controls and components can be added to a frame during editing. It also 
+			defines a list of referenced dlls in which these objects are found. If a full 
+			path is not specified, the <U>SystemDirectory</U> property is prepended to the 
+			filename.</P>
+		<P>&nbsp;</P>
+		<P>AddListFile Format:</P>
+		<P>The root node is &lt;Addables&gt;. S-nodes must be &lt;Add&gt;, 
+			&lt;Component&gt; or &lt;Reference&gt; - other types are ignored.</P>
+		<P>&lt;Add&gt; Nodes define controls that can be added to the Frame, either in edit 
+			mode via the right-click menu or by using the Frame's Add method. Each 
+			&lt;Add&gt; node must have a Name attribute, which defines the 'friendly' name 
+			of the control, and a Type attribute, which is the 'Assembly Qualified Type' of 
+			the control. In all cases the type will be a string of the form '<EM>typename</EM>,
+			<EM>assembly</EM>', but in some cases the Version, Culture and PublicKeyToken 
+			may also be required.</P>
+		<P>&lt;Component&gt; nodes define components that can be added to the Frame, either 
+			in edit mode via the right-click menu, or&nbsp;by using the Frame's 
+			AddComponent method. Each &lt;Component&gt; node must have Name and Type 
+			attributes in the same way as an &lt;Add&gt; node.</P>
+		<P>&lt;Reference&gt; nodes are used when saving Panels (see below). Each 
+			&lt;Reference&gt; node must have an Assembly attribute, which defines the name 
+			of a dll containing an assembly.</P>
+		<P>&nbsp;</P>
+		<P>Example:</P>
+		<P>&lt;Addables&gt;</P>
+		<P>&nbsp;&nbsp; &lt;Add Name="Frame" Type="KineticaRT.Controls.Frame, 
+			KineticaRT.Controls.Frame"/&gt;</P>
+		<P>&nbsp;&nbsp; &lt;Component Name="Sound" Type= "KineticaRT.Logic.Message.Sound, 
+			KineticaRT.Logic.Message"/&gt;</P>
+		<P>&nbsp;&nbsp; &lt;Reference Assembly= "KineticaRT.Logic.Message.dll"/&gt;</P>
+		<P>&lt;/Addables&gt;</P>
+		<P>&nbsp;</P>
+		<P><U>SystemDirectory</U>: This is a path to a directory. This is the directory in 
+			which the <U>AddListFile</U> and <U>PanelName</U>&nbsp;dll are sought 
+			if&nbsp;they do not specify a&nbsp;full path.</P>
+		<P>&nbsp;</P>
+		<P><U>PanelName</U>: This is the name of a dll file containing the current Panel 
+			object. Extensions other than '.dll' will be changed to '.dll'. If a full path 
+			is not specified, the file is relative to the path specified in the <U>SystemDirectory</U>
+			property. If the specified file exists it will be loaded, and current controls 
+			will be unloaded. If the file does not exist the current controls will remain 
+			unchanged. When the Frame is saved, current controls will be saved to the file 
+			specified here. Note that save will not be available if no PanelName is 
+			specified.</P>
+		<P>&nbsp;</P>
+		<P><STRONG>Loading and Saving</STRONG>:</P>
+		<P>Saving is usually done via the edit mode right-click menu, although it can be 
+			done by calling the Frame's 'SavePanel' method. If no PanelName has been 
+			specified, saving is not possible.</P>
+		<P>A save will create a .dll file containing a Panel object with all the current 
+			controls and components in it. At the same time a corresponding .cs file will 
+			be generated which contains the source code for the dll. At load-time, if a 
+			.dll file of the relevent name cannot be found, but there is a .cs file of the 
+			same name, then the dll will be re-created from the source code. Hence changes 
+			can be made to a dll by hacking the source code, but this may easily cause the 
+			dll not to load so it is not to be recommended.</P>
+		<P>As soon as a PanelName property is specified, the file is loaded if possible. 
+			Hence care should be taken in specifying names as any changes to a Panel will 
+			be lost when a new Panel is loaded. To load something, change it and save it to 
+			a different name, make sure that the name chosen to save to does not exist or 
+			the changes will be lost.</P>
+		<P>&nbsp;</P>
+		<P><U>Use of Referenced Assemblies list</U>:</P>
+		<P>When a Panel is saved, the list of assemblies defined in the AddList file 
+			(henceforth called the reference list) is used by the compiler when it is 
+			creating the dll. It looks for these referenced assemblies in the application 
+			directory, and the save will fail if any assemblies in the reference list are 
+			not found, or if any assemblies are required that are not in the reference 
+			list. The latter occurs if for example the Panel contains a Dial, but the Dial 
+			assembly is not in the reference list. In most cases the reference list should 
+			cover all the assemblies required to create any addable control or component in 
+			the AddList file.</P>
+		<P>If a panel dll must be reconstructed from the .cs source file, the current 
+			reference list is used by the compiler, as it no longer has access to the one 
+			that was used when the dll was originally created. This may cause some errors 
+			if the current reference list is&nbsp;different to&nbsp;the original one.</P>
+		<P><STRONG></STRONG>&nbsp;</P>
+		<P><STRONG>Edit Mode</STRONG>:</P>
+		<P>Edit mode is a means of editing controls and their properties whilst a system is 
+			running.</P>
+		<P>Edit mode is entered by right-clicking on the Frame and selecting 'Enter Edit 
+			mode'.</P>
+		<P>In edit mode, most actions are done via the right-click menu, which has 
+			different options depending on whether the click was over a control or over the 
+			frame itself.</P>
+		<P>A table of control-selection appears below, but in brief: Clicking on a control 
+			will select it (grab-handles appear). Shift or control&nbsp;+ click adds 
+			another control to those currently selected. With a control selected its 
+			properties can be viewed (right-click 'Properties' or Ctrl+Enter) and modified, 
+			or it can be moved or resized by dragging. With multiple controls selected andy 
+			common properties can be modified, or the alignment, layout and size of the 
+			controls can be adjusted together.</P>
+		<P>&nbsp;</P>
+		<P>The following table describes click actions in conjunction with keys.</P>
+		<P>
+			<TABLE id="Table3" cellSpacing="0" cellPadding="0" border="1">
+				<TR>
+					<TD vAlign="top" width="83"></TD>
+					<TD vAlign="top" width="76">
+						<P>No Keys</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Ctrl</P>
+					</TD>
+					<TD vAlign="top" width="94">
+						<P>Shift</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Alt</P>
+					</TD>
+					<TD vAlign="top" width="113">
+						<P>Ctrl + Shift</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Ctrl + Alt</P>
+					</TD>
+					<TD vAlign="top" width="123">
+						<P>(Ctrl +) Shift + Alt</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Left click on control</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select the control</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>If not selected, add it to the selections (as the primary control), else 
+							unselect it</P>
+					</TD>
+					<TD vAlign="top" width="94">
+						<P>If not selected, add it to the selections. Make it the primary selection.</P>
+					</TD>
+					<TD vAlign="top" width="76"></TD>
+					<TD vAlign="top" width="113"></TD>
+					<TD vAlign="top" width="76"></TD>
+					<TD vAlign="top" width="123"></TD>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Left click on background</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Clear selections</P>
+					</TD>
+					<TD vAlign="top" width="104"></TD>
+					<TD vAlign="top" width="94"></TD>
+					<TD vAlign="top" width="76">
+						<P>Clear selections</P>
+					</TD>
+					<TD vAlign="top" width="113"></TD>
+					<TD vAlign="top" width="76"></TD>
+					<TD vAlign="top" width="123"></TD>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Right click on control</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select the control. Pop up menu</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>If not selected, add it to the selections. Make it the primary selection. Pop up 
+							menu</P>
+					</TD>
+					<TD vAlign="top" width="94">
+						<P>If not selected, add it to the selections. Make it the primary selection. Pop up 
+							menu</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select the control. Show properties dialog.</P>
+					</TD>
+					<TD vAlign="top" width="113"></TD>
+					<TD vAlign="top" width="76"></TD>
+					<TD vAlign="top" width="123"></TD>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Right click on background</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Clear selections. Pop up menu</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Leave selections. Pop up menu</P>
+					</TD>
+					<TD vAlign="top" width="94">
+						<P>Leave selections. Pop up menu</P>
+					</TD>
+					<TD vAlign="top" width="76"></TD>
+					<TD vAlign="top" width="113">
+						<P>Leave selections. Pop up menu</P>
+					</TD>
+					<TD vAlign="top" width="76"></TD>
+					<TD vAlign="top" width="123"></TD>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Left rubber band</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select fully surrounded objects</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Select fully surrounded objects</P>
+					</TD>
+					<TD vAlign="top" width="94">
+						<P>Add fully surrounded objects to selections.</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select fully surrounded objects</P>
+					</TD>
+					<TD vAlign="top" width="113">
+						<P>Add fully surrounded objects to selections.</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select fully surrounded objects</P>
+					</TD>
+					<TD vAlign="top" width="123">
+						<P>Add fully surrounded objects to selections.</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Right rubber band</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select touched objects</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Select touched objects</P>
+					</TD>
+					<TD vAlign="top" width="94">
+						<P>Add touched objects to selections.</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select touched objects</P>
+					</TD>
+					<TD vAlign="top" width="113">
+						<P>Add touched objects to selections.</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Select touched objects</P>
+					</TD>
+					<TD vAlign="top" width="123">
+						<P>Add touched objects to selections.</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</P>
+		<P>&nbsp;
+		</P>
+		<P>The following table shows the effect on selected controls of the arrow keys in 
+			combination with other keys:</P>
+		<P>
+			<TABLE id="Table2" cellSpacing="0" cellPadding="0" border="1">
+				<TR>
+					<td></td>
+					<TD vAlign="top" width="76">
+						<P>No Keys
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Ctrl (no effect if single control selected)
+						</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Shift
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Alt (relative to primary control)
+						</P>
+					</TD>
+					<TD vAlign="top" width="95">
+						<P>Combinations
+						</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Left arrow
+						</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Move left
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Align lefts to primary control
+						</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Decrease width
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Select previous control in z-order
+						</P>
+					</TD>
+					<TD vAlign="top" width="95">
+						<P>No effect
+						</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Right arrow
+						</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Move right
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Align rights to primary control
+						</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Increase width
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Select next control in z-order
+						</P>
+					</TD>
+					<TD vAlign="top" width="95">
+						<P>No effect
+						</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Up arrow
+						</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Move up
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Align tops to primary control
+						</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Decrease height
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Select previous control in z-order
+						</P>
+					</TD>
+					<TD vAlign="top" width="95">
+						<P>No effect
+						</P>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" width="83">
+						<P>Down arrow
+						</P>
+					</TD>
+					<TD vAlign="top" width="76">
+						<P>Move down
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Align bottoms to primary control
+						</P>
+					</TD>
+					<TD vAlign="top" width="104">
+						<P>Increase height
+						</P>
+					</TD>
+					<TD vAlign="top" width="198">
+						<P>Select next control in z-order
+						</P>
+					</TD>
+					<TD vAlign="top" width="95">
+						<P>No effect
+						</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</P>
+		<P>&nbsp;</P>
+		<P><U>Undo:</U> Undo undoes up to 10 resizing, moving, delete or add operations. It 
+			will not undo changes to control properties.</P>
+		<P>&nbsp;</P>
+		<P><STRONG>Components</STRONG>:</P>
+		<P>When a component is added, there is no visible evidence of it. To edit the 
+			properties of a component, bring up the frame's properties (right click on the 
+			frame's background), expand the 'Panel' property and double click on 
+			'Components'. Properties of available components can now be altered. Note 
+			that&nbsp;because components do not in general have a Name property it is not 
+			possible to find them using the standard ObjectSearch,&nbsp;but they may be 
+			accessed&nbsp;by index in the Components collection if required.</P>
+		<P>&nbsp;</P>
+		<P><STRONG>Frame v Panel</STRONG>:</P>
+		<P>The Frame holds a Panel object, and it is within this Panel that other controls 
+			and components are actually contained. It is usually unnecessary to distinguish 
+			between the two, as a Frame always contains a single Panel object.. Note that 
+			the Frame's Panel object is replaced when a new Panel is loaded.</P>
+		<P>&nbsp;</P>
+		<P><STRONG>Connecting objects</STRONG>:</P>
+		<P>A top level Frame must have a delegate connected to its ObjectSearch event if 
+			channel names are going to be converted into their corresponding channels. In 
+			other words, if a&nbsp;Knob on the Frame has its source connected to 
+			'myChannel', then it will ask its parent container (the Frame) to find the 
+			object called 'myChannel', and the Frame will pass on this request. If the 
+			Frame's ObjectSearch event is not handled, the object will never be found, and 
+			the Knob will not display its value. Note that a Frame automatically connects 
+			to the ObjectSearch events of all its children, including sub-frames, so only 
+			top-level frames must have explicit handlers.</P>
+		<P>&nbsp;</P>
+		<P><STRONG>Sub-Frames</STRONG>:</P>
+		<P>A sub-frame is a Frame contained within a Frame. As already mentioned, 
+			sub-frames are automatically connected to their parents to get ObjectSearches 
+			fulfilled.</P>
+		<P>If no AddListFile is specified in a sub-frame, it inherits that of it's Parent.</P>
+		<P>If&nbsp;no PanelName is specified in a sub-frame, then when the parent 
+			Frame&nbsp;is saved, the controls and components in the sub-frame are also 
+			saved. Conversely, if a sub-frame does have a PanelName specified, then it must 
+			be saved explicitly - it will NOT be saved automatically when its parent is 
+			saved.</P>
+	</BODY>
+</HTML>

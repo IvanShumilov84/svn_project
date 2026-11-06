@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="KineticaRT Release + Studio Setup">
+</Property><Property Name="Solution File" Value="S:\Users\Nigel\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\KineticaRT Release + Studio Setup.sln">
+</Property><Property Name="Date" Value="25 October 2007">
+</Property><Property Name="Time" Value="15:47:08">
+</Property><Property Name="Log Number" Value="5">
+</Property></Properties><Event ErrorLevel="0" Project="KineticaRT.Servers.Simulate.Setup.vdproj" Source="Servers\Simulate\Setup\KineticaRT.Servers.Simulate.Setup.vdproj" Description="Project file successfully backed up as S:\Users\Nigel\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Backup\KineticaRT.Servers.Simulate.Setup.vdproj">
+</Event><Event ErrorLevel="0" Project="KineticaRT.Servers.Simulate.Setup.vdproj" Source="Servers\Simulate\Setup\KineticaRT.Servers.Simulate.Setup.vdproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="KineticaRT.Servers.Simulate.Setup.vdproj" Source="Servers\Simulate\Setup\KineticaRT.Servers.Simulate.Setup.vdproj" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,142 @@
+FUNCTION_BLOCK load_PowerDNA_FB
+(************************************************************************************************************************************************
+	Name :		load_PowerDNA_FB									
+														
+	Description :	Load proper CSV file for the powerdna
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2009/02/12		J.Hamelin	First Release
+	
+
+************************************************************************************************************************************************)	
+
+	status 		:= LOADING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_PowerDNA_TEMPERATURE_IOMGR: LOADING');
+	err_code 	:= OK;
+
+	FOR i:= 1 TO number_of_powerdnas DO(*NUMBER_OF_POWERDNAS DO*)
+
+		PowerDNA_Structure[i].status := LOADING;
+
+	END_FOR;
+
+	(* Default CSV file... can be overriden when having multiple strong back (FAN Cell)*)
+	PowerDNA_Structure[1].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_1.csv';
+	PowerDNA_Structure[2].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_2.csv';
+	PowerDNA_Structure[3].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_3.csv';
+	PowerDNA_Structure[4].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_4.csv';
+	CSV_Filename := '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_1.csv'; (* Default Value *)
+		
+	IF(In_PowerDNA_IOMgr.mode = RUN_FOR_TRUE)THEN
+	
+		FOR i := 1 TO number_of_powerdnas DO(*NUMBER_OF_POWERDNAS DO*)
+
+			POWERDNA_GETNAME(PowerDNA_Structure[i].handle);
+
+			PowerDNA_Structure[i].IOMname := POWERDNA_GETNAME.BUFFER;
+
+			(* Certanes Fan Cell ont des StrongBack permettant de switcher le hardware rapidement  (2 PDNA)
+			Alors il peut exister 2 CSV different pour les meme IO.  La facon de savoir lequel csv il faut utiliser
+			est deduit en interrogeant le PDNA et son IOMName 
+			ATTENTION CETTE FONCTIONNALITE SE REPERCUTE AUSSI DANS LA SEQUENCE DE CALIBRATION *)
+	
+			CASE 	ANY_TO_INT (PowerDNA_Structure[i].IOMname) OF
+
+				1: PowerDNA_Structure[i].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_1.csv';
+				2: PowerDNA_Structure[i].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_2.csv';
+				3: PowerDNA_Structure[i].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_3.csv';
+				4: PowerDNA_Structure[i].filename	:= '/usr/v2000/app/DACN1_Real_PowerDNA_CSV_4.csv';
+		
+			END_CASE;         
+		
+			CSV_Filename := PowerDNA_Structure[1].filename;
+
+			PowerDNA_Structure[i].err_code 	:= PowerDNA_GETNAME.ERR_CODE;
+
+			IF (PowerDNA_Structure[i].err_code <> OK) THEN
+
+				POWERDNA_CLOSE(PowerDNA_Structure[i].handle); 
+ 				IF (POWERDNA_CLOSE.ERR_CODE <> 0) THEN
+
+					err_code := POWERDNA_CLOSE.ERR_CODE ;
+
+				END_IF;
+
+
+				PowerDNA_Structure[i].handle 	:= -1;
+				PowerDNA_Structure[i].err_code 	:= OK; (* Continue anyway ... maybe the default IP is not correct (192.168.2.225 so try in the FB initialize to read IP from CSV file *)
+
+			END_IF;
+
+		END_FOR;
+
+	END_IF;
+
+
+	IF (err_code <> OK) THEN 
+
+		status	:= ERROR_ON_LOADING;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_PowerDNA_TEMPERATURE_IOMGR: ERROR_ON_LOADING');
+
+	ELSE 
+
+		status 	:= LOADED;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_PowerDNA_TEMPERATURE_IOMGR: LOADED');
+
+		FOR i:= 1 TO 4 DO
+
+			PowerDNA_Structure[i].status := LOADED;
+
+		END_FOR;
+
+	END_IF; 	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,5 @@
+ColOrderArray=0,8,2,3,7,1,6,4,5
+ColWidthArray=219,60,60,60,60,60,60,60,60
+17;1;7087;TM_UUT_Info;DACN1_User_Interface;DACN1
+17;1;7080;TM_in_test_mgr;DACN1_User_Interface;DACN1
+17;1;7079;TM_out_test_mgr;DACN1_User_Interface;DACN1

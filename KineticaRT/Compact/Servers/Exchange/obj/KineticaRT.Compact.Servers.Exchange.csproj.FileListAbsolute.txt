@@ -1,0 +1,45 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.Servers.Exchange.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.Servers.Exchange.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\KineticaRT.Compact.Servers.Exchange.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\KineticaRT.Compact.Servers.Exchange.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.Servers.Exchange.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.Servers.Exchange.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\KineticaRT.Compact.Servers.Exchange.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\KineticaRT.Compact.Servers.Exchange.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.Servers.Exchange.dll
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.Servers.Exchange.pdb
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.xml
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\KineticaRT.Compact.Servers.Exchange.dll
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\KineticaRT.Compact.Servers.Exchange.pdb
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.Servers.Exchange.dll
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.Servers.Exchange.pdb
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.dll
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.pdb
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\KineticaRT.Compact.Servers.Exchange.dll
+C:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\KineticaRT.Compact.Servers.Exchange.pdb
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\KineticaRT.Compact.Servers.Exchange.dll
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\KineticaRT.Compact.Servers.Exchange.pdb
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.Servers.Exchange.dll
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.Servers.Exchange.pdb
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Release\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.Servers.Exchange.dll
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.Servers.Exchange.pdb
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.dll
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.pdb
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\bin\Debug\KineticaRT.Compact.xml
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\KineticaRT.Compact.Servers.Exchange.dll
+D:\KineticaRT\KineticaRT\Compact\Servers\Exchange\obj\Debug\KineticaRT.Compact.Servers.Exchange.pdb

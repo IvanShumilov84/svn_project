@@ -1,0 +1,114 @@
+FUNCTION_BLOCK LOAD_UART_FB
+(************************************************************************************************************************************************
+	Name :		load_UART_FB									
+														
+	Description :	Load the UART Subsystem of the OmniBusBox system.
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/03/04	Danny Lepage	First Release
+
+************************************************************************************************************************************************)
+
+err_code := 0;
+
+OPEN_UART_DATA('/usr/v2000/app/DACN1_UART_OMNIBUSBOX_CSV.csv');
+
+hdle_uart_data := OPEN_UART_DATA.HANDLE;
+err_code := OPEN_UART_DATA.ERR_CODE;
+
+UARTCHACounter  := 0;
+UARTCHBCounter  := 0;
+
+IF (err_code = OK) THEN
+
+	READ_UART_DATA( hdle_uart_data );
+
+	WHILE (READ_UART_DATA.ERR_CODE = 11) DO
+
+		IF (READ_UART_DATA.model = UUT_Info.Model) THEN
+
+			cardNumber    := READ_UART_DATA.cardNumber;
+			coreNumber    := READ_UART_DATA.coreNumber;
+			channelNumber := READ_UART_DATA.portNumber;
+			
+			IF (boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore = 0) THEN
+				CELBTI_COREOPEN(boxDescriptor[ANY_TO_DINT(cardNumber+1)].hCard, coreNumber);
+
+				IF (CELBTI_COREOPEN.ERR_CODE <> OK) THEN
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore := 0;
+					err_code := CELBTI_COREOPEN.ERR_CODE;
+
+					EXIT;
+				ELSE
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore := CELBTI_COREOPEN.hCore;
+				END_IF;
+			END_IF;
+
+			IF (boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].channel[ANY_TO_DINT(channelNumber+1)].isChannelUsed <> TRUE) THEN
+				(*
+				 * Ballard Box seem to have is Polarity inverted. Easier to change in software than  changing the harness cables !
+				CELBTI_UARTPortConfig(boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore, channelNumber, UUT_Info.Model, CELBTI_PORTCFG422_DEFAULT);
+				 *)
+				CELBTI_UARTPortConfig(boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore, channelNumber, UUT_Info.Model, CELBTI_PORTCFG422_BUSPOLARITYINVERTED);
+
+				IF (CELBTI_UARTPortConfig.ERR_CODE = OK) THEN
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].channel[ANY_TO_DINT(channelNumber+1)].isChannelUsed := TRUE;
+					boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].channel[ANY_TO_DINT(channelNumber+1)].channelType := CELBTI_ChTypeUART;
+				ELSE
+					err_code := CELBTI_UARTPortConfig.ERR_CODE;
+					EXIT;
+				END_IF;
+			END_IF;
+
+			currentHCore		:= boxDescriptor[ANY_TO_DINT(cardNumber+1)].core[ANY_TO_DINT(coreNumber+1)].hCore;
+			currentParameter	:= READ_UART_DATA.parameter;
+			currentAddress		:= READ_UART_DATA.address;
+			currentDataType		:= READ_UART_DATA.dataType;
+			currentUnits		:= READ_UART_DATA.units;
+			currentArincChannel	:= READ_UART_DATA.arincChannel;
+			currentSlope		:= READ_UART_DATA.slope;
+			currentOffset		:= READ_UART_DATA.offset;
+				
+			CELBTI_UartRegisterMsg(currentHCore, channelNumber, currentAddress, currentDataType, currentSlope, currentOffset);
+			IF (CELBTI_UartRegisterMsg.ERR_CODE <> OK) THEN
+				err_code := CELBTI_UartRegisterMsg.ERR_CODE;
+
+				EXIT;
+			ELSE
+				CASE (currentArincChannel) OF
+				ARINC_CHA:
+					UARTCHACounter				:= UARTCHACounter + 1;
+					UART_CHA[UARTCHACounter].hMsg		:= CELBTI_UartRegisterMsg.hMsg;
+					UART_CHA[UARTCHACounter].dataType	:= currentDataType;
+					Record_Parameter_Index(currentParameter, UARTCHACounter);
+				ARINC_CHB:
+					UARTCHBCounter				:= UARTCHBCounter + 1;
+					UART_CHB[UARTCHBCounter].hMsg		:= CELBTI_UartRegisterMsg.hMsg;
+					UART_CHB[UARTCHBCounter].dataType	:= currentDataType;
+					Record_Parameter_Index(currentParameter, UARTCHBCounter);
+				END_CASE;
+			END_IF;
+		END_IF;
+
+		READ_UART_DATA( hdle_uart_data );
+
+	END_WHILE;
+
+	CLOSE_UART_DATA( hdle_uart_data );
+END_IF;
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

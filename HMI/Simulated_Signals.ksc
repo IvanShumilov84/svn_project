@@ -1,0 +1,66 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<SAWTOOTH_SIGNAL  href="#ref-7"/>
+<SINE_WAVE_SIGNAL  href="#ref-8"/>
+<NOISE_SIGNAL  href="#ref-9"/>
+<TRIANGLE_WAVE_SIGNAL  href="#ref-39"/>
+</a1:ChannelCollection>
+<a2:SawToothWave id="ref-7" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.Simulate/KineticaRT.Servers.Simulate%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-20">SAWTOOTH_SIGNAL</Name>
+<Description id="ref-21">Simulate_SawToothWave</Description>
+<ToolTip id="ref-22">Sim SawToothWave</ToolTip>
+<Units id="ref-23"></Units>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-24">N</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-25">Group</Group>
+<ItemID href="#ref-21"/>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a2:SawToothWave>
+<a2:SineWave id="ref-8" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.Simulate/KineticaRT.Servers.Simulate%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-26">SINE_WAVE_SIGNAL</Name>
+<Description id="ref-27">Simulate_SineWave</Description>
+<ToolTip id="ref-28">Sim SineWave</ToolTip>
+<Units id="ref-29"></Units>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-30">N</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-31">Group</Group>
+<ItemID href="#ref-27"/>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a2:SineWave>
+<a2:Noise id="ref-9" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.Simulate/KineticaRT.Servers.Simulate%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-33">NOISE_SIGNAL</Name>
+<Description id="ref-34">Simulate_Noise</Description>
+<ToolTip id="ref-35">Sim Noise</ToolTip>
+<Units id="ref-36"></Units>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-37">N</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-38">Group</Group>
+<ItemID href="#ref-34"/>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a2:Noise>
+<a2:TriangleWave id="ref-39" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.Simulate/KineticaRT.Servers.Simulate%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-40">TRIANGLE_WAVE_SIGNAL</Name>
+<Description id="ref-41">Simulate_Noise</Description>
+<ToolTip id="ref-42">Sim Noise</ToolTip>
+<Units id="ref-43"></Units>
+<Min>0</Min>
+<Max>100</Max>
+<Format id="ref-44">N</Format>
+<DecimalDigits>2</DecimalDigits>
+<Group id="ref-45">Group</Group>
+<ItemID href="#ref-41"/>
+<Scale>1</Scale>
+<Offset>0</Offset>
+</a2:TriangleWave>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

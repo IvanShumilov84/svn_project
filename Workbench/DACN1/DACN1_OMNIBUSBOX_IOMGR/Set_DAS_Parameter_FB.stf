@@ -1,0 +1,39 @@
+FUNCTION_BLOCK Set_DAS_Parameter_FB
+(************************************************************************************************************************************************
+	Name :		Set_DAS_Parameter_FB									
+														
+	Description :	Set the specified DAS parameter Value.
+
+	Dependacy : 	
+
+					HYSTORY
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2005/03/01	Danny Lepage	First Release
+
+************************************************************************************************************************************************)
+
+(*
+ * Set ARINC Parameters
+ *)
+
+
+(*
+ * Set UART Parameters
+ *)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

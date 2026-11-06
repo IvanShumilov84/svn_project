@@ -1,0 +1,258 @@
+FUNCTION_BLOCK load_Serial_FB
+(************************************************************************************************************************************************
+    Name :        load_Serial_IOMgr_FB                                    
+                                                        
+    Description :    Load all parameters of IO for the Distributed system                                      
+
+    Dependacy :     
+                    HYSTORY
+
+    Rev        Date        Name        Description
+                (YYYY/MM/DD)
+
+    1.0             2001/05/12        M.Morisset    First Release
+    2.0             2001/11/05        P.Dextraze    Add INIT_RDATA CALL 
+    2.1             2003/05/22        N. Sangiovanni    Modification Archiving
+    3.0             2004/12/01        N. Sangiovanni    Adapt for CELDAS200 Generation
+    4.0         2007/11/01        N. Sangiovanni    Change Readings of module 9B serie 5000
+
+************************************************************************************************************************************************)    
+
+    status        := LOADING;
+    dummy         := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: LOADING');
+    err_code      := OK;
+
+
+
+
+	(*********************)
+    (* bool file reading *)
+	(*********************)
+
+    READ_BOOL_DATA ( hdle_bool_data ) ;
+
+    WHILE READ_BOOL_DATA.errcode = 6 DO
+
+        IF (READ_BOOL_DATA.deviceid <> 'SPARE') THEN 
+    
+            FV_counter := FV_counter + 1;
+
+            FV_EXTRACT(READ_BOOL_DATA.name);
+
+            current_type       := FV_EXTRACT.FV_TYPE;
+            current_type_index := FV_EXTRACT.FV_INDEX;
+
+            BUILD_REQUEST(   READ_BOOL_DATA.deviceid, READ_BOOL_DATA.channel, READ_BOOL_DATA.bit , current_type);    
+
+            current_request := BUILD_REQUEST.REQUEST;
+
+            GET_PORT_NUMBER ( READ_BOOL_DATA.fieldequipmentid );
+         
+            current_port_number := GET_PORT_NUMBER.PORT_NUMBER;
+
+            (* CODE ADDED TO SUPPORT H1770 FOR NEW DIN/DOUTS *)
+			IF (current_type = FV_DIN AND READ_BOOL_DATA.deviceid = 'SCM9B-H1770') THEN
+
+                current_type := FV_DIN64;
+
+            ELSIF (current_type = FV_DOUT AND READ_BOOL_DATA.deviceid = 'SCM9B-H1770') THEN
+
+                current_type := FV_DOUT64;
+
+            END_IF;
+         
+
+            CASE (current_type) OF   
+				
+				(* ADDED NEW DIN64/DOUT64 *)
+            	FV_DIN, FV_DOUT, FV_DIN64, FV_DOUT64:
+        
+                	current_FV_index := 0;
+
+	                FOR i := 1 TO ser_ports[current_port_number].nb_channels BY 1 DO
+
+    	                IF (FV[ser_ports[current_port_number].FV_index[i]].request = current_request) THEN 
+                    
+        	                current_FV_index := ser_ports[current_port_number].FV_index[i] ;
+
+            	        END_IF; 
+
+                	END_FOR;
+
+	                IF (current_FV_index = 0) THEN 
+                
+    	                current_FV                   := current_FV + 1;
+        	            current_FV_index             := current_FV;
+            	        FV[current_FV_index].FV_type := current_type;
+                	    FV[current_FV_index].request := current_request;
+
+	                    ser_ports[current_port_number].nb_channels := ser_ports[current_port_number].nb_channels + 1;
+    	                ser_ports[current_port_number].FV_index[ser_ports[current_port_number].nb_channels] := current_FV_index;
+    	                ser_ports[current_port_number].deviceid[ser_ports[current_port_number].nb_channels] := READ_BOOL_DATA.deviceid;
+                
+        	        END_IF; 
+        
+            	    FV[current_FV_index].FV_type_index[ READ_BOOL_DATA.bit ] := current_type_index;
+
+	            ELSE
+    	            (* Nothing to do no real in bool table *)
+
+            END_CASE; 
+			
+			(* next code keeped  in case we want to put bool in rdata *)
+			(*CASE (current_type) OF 
+
+				FV_DIN:
+
+				FV_DOUT:
+
+				FV_VOUT, FV_IOUT:
+	
+				ELSE
+					INIT_RDATA(rdata_base, In_rdata_user);
+					FV[current_FV_index].data_handle := INIT_RDATA.DATA_HANDLE;
+					err_code := INIT_RDATA.ERR_CODE;
+			END_CASE; *)
+
+        END_IF; 
+
+        READ_BOOL_DATA ( hdle_bool_data ) ;
+
+    END_WHILE;
+
+
+
+	(*********************)
+    (* real file reading *)
+	(*********************)
+
+    READ_REAL_DATA ( hdle_real_data ) ;
+
+    WHILE READ_REAL_DATA.errcode = 104 DO 
+        IF (READ_REAL_DATA.deviceid <> 'SPARE') THEN 
+
+            FV_counter := FV_counter + 1;
+
+            FV_EXTRACT(READ_REAL_DATA.name);
+            current_type       := FV_EXTRACT.FV_TYPE;
+            current_type_index := FV_EXTRACT.FV_INDEX;
+
+
+            IF (READ_REAL_DATA.deviceid = 'SCM9B-1412') OR (READ_REAL_DATA.deviceid = 'SCM9B-1432') THEN
+
+				(* Certains device ne sont pas compatibles en lecture de block de 4: bug avec librairie fb_build_serial_request *)
+				BUILD_REQUEST_OLD(   READ_REAL_DATA.deviceid
+					, READ_REAL_DATA.base_address
+					, current_type
+					, 0 );
+
+				current_request := BUILD_REQUEST_OLD.REQUEST;
+
+			ELSE
+
+				BUILD_REQUEST(   READ_REAL_DATA.deviceid
+						, READ_REAL_DATA.base_address
+						, READ_REAL_DATA.physical_channel
+						, current_type );
+
+				current_request := BUILD_REQUEST.REQUEST;
+
+			END_IF;		
+
+			IF (current_type = FV_IOUT) THEN
+				IF (READ_REAL_DATA.deviceid = 'SCM9B-4252') THEN
+					IOUT_MinValue[current_type_index] := 0.0;
+				ELSE
+					IOUT_MinValue[current_type_index] := 4.0;
+				END_IF;
+			END_IF;
+            
+
+            GET_PORT_NUMBER ( READ_REAL_DATA.fieldequipmentid );
+            current_port_number := GET_PORT_NUMBER.PORT_NUMBER;     
+    
+    
+            CASE (current_type) OF   
+
+          		FV_DIN, FV_DOUT:
+                
+                (* Nothing  to do no bool in real table *)
+
+	            ELSE
+
+    	            current_FV_index := 0;
+
+        	        IF( current_type = FV_T ) THEN (* To allow 2 different channel to point to the same physical channel for calibration ex.: Vls27 and Vls29 *)
+
+						FOR i := 1 TO ser_ports[current_port_number].nb_channels BY 1 DO
+
+            		        IF (FV[ser_ports[current_port_number].FV_index[i]].request = current_request) THEN 
+                    
+        	        	        current_FV_index := ser_ports[current_port_number].FV_index[i] ;
+
+    	                	END_IF; 
+
+		                END_FOR;
+
+    	            END_IF; 
+
+
+        	        IF (current_FV_index = 0) THEN 
+                
+            	        current_FV                     := current_FV + 1;
+                	    current_FV_index               := current_FV;
+                    	FV[current_FV_index].FV_type   := current_type;
+	                    FV[current_FV_index].request   := current_request;
+    	                FV[current_FV_index].nb_errors := 0;
+        	            ser_ports[current_port_number].nb_channels := ser_ports[current_port_number].nb_channels + 1;
+            	        ser_ports[current_port_number].FV_index[ser_ports[current_port_number].nb_channels] := current_FV_index;
+    	                ser_ports[current_port_number].deviceid[ser_ports[current_port_number].nb_channels] := READ_REAL_DATA.deviceid;
+                
+                	END_IF; 
+        
+	                FV[current_FV_index].FV_type_index[ READ_REAL_DATA.physical_channel ] := current_type_index;
+
+            END_CASE; 
+    
+          
+
+			CASE (current_type) OF
+
+            	FV_DIN:
+    
+	            FV_DOUT:
+
+    	        FV_VOUT, FV_IOUT:
+    
+        	    ELSE
+
+            	    In_rdata_user := READ_REAL_DATA.st_record;
+                	INIT_RDATA(rdata_base, In_rdata_user);
+	                FV[current_FV_index].data_handle[ READ_REAL_DATA.physical_channel ] := INIT_RDATA.data_handle;
+    	            err_code := INIT_RDATA.ERR_CODE;
+
+            END_CASE; 
+
+
+        END_IF; 
+
+        READ_REAL_DATA ( hdle_real_data ) ;
+    
+    END_WHILE; 
+
+
+    IF (err_code <> OK) THEN 
+
+        status := ERROR_ON_LOADING;
+        dummy  := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: ERROR ON LOADING');
+
+    ELSE 
+        IF FV_counter > 0 THEN 
+ 
+            status     := LOADED;
+            dummy      := LOG_MSG('ErrLog', 'DACN1_SERIAL_IOMGR: LOADED');
+            FV_counter := 0 ;
+
+        END_IF; 
+    END_IF;     
+END_FUNCTION_BLOCK

@@ -1,0 +1,2116 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ChannelCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/KineticaRT/KineticaRT%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Enabled>true</Enabled>
+<AlternateNames xsi:type="xsd:anyType" xsi:null="1"/>
+<DACN1_SERIAL_IOMGR_ERR_MESSAGE href="#ref-5"/>
+<Light1 href="#ref-6"/>
+<Light10 href="#ref-7"/>
+<Light100 href="#ref-8"/>
+<Light101 href="#ref-9"/>
+<Light102 href="#ref-10"/>
+<Light103 href="#ref-11"/>
+<Light104 href="#ref-12"/>
+<Light105 href="#ref-13"/>
+<Light106 href="#ref-14"/>
+<Light107 href="#ref-15"/>
+<Light108 href="#ref-16"/>
+<Light109 href="#ref-17"/>
+<Light11 href="#ref-18"/>
+<Light110 href="#ref-19"/>
+<Light111 href="#ref-20"/>
+<Light112 href="#ref-21"/>
+<Light113 href="#ref-22"/>
+<Light114 href="#ref-23"/>
+<Light115 href="#ref-24"/>
+<Light116 href="#ref-25"/>
+<Light117 href="#ref-26"/>
+<Light118 href="#ref-27"/>
+<Light119 href="#ref-28"/>
+<Light12 href="#ref-29"/>
+<Light120 href="#ref-30"/>
+<Light121 href="#ref-31"/>
+<Light122 href="#ref-32"/>
+<Light123 href="#ref-33"/>
+<Light124 href="#ref-34"/>
+<Light125 href="#ref-35"/>
+<Light126 href="#ref-36"/>
+<Light127 href="#ref-37"/>
+<Light128 href="#ref-38"/>
+<Light129 href="#ref-39"/>
+<Light13 href="#ref-40"/>
+<Light130 href="#ref-41"/>
+<Light131 href="#ref-42"/>
+<Light132 href="#ref-43"/>
+<Light133 href="#ref-44"/>
+<Light134 href="#ref-45"/>
+<Light135 href="#ref-46"/>
+<Light136 href="#ref-47"/>
+<Light137 href="#ref-48"/>
+<Light138 href="#ref-49"/>
+<Light139 href="#ref-50"/>
+<Light14 href="#ref-51"/>
+<Light140 href="#ref-52"/>
+<Light141 href="#ref-53"/>
+<Light142 href="#ref-54"/>
+<Light143 href="#ref-55"/>
+<Light144 href="#ref-56"/>
+<Light145 href="#ref-57"/>
+<Light146 href="#ref-58"/>
+<Light147 href="#ref-59"/>
+<Light148 href="#ref-60"/>
+<Light149 href="#ref-61"/>
+<Light15 href="#ref-62"/>
+<Light150 href="#ref-63"/>
+<Light16 href="#ref-64"/>
+<Light17 href="#ref-65"/>
+<Light18 href="#ref-66"/>
+<Light19 href="#ref-67"/>
+<Light2 href="#ref-68"/>
+<Light20 href="#ref-69"/>
+<Light21 href="#ref-70"/>
+<Light22 href="#ref-71"/>
+<Light23 href="#ref-72"/>
+<Light24 href="#ref-73"/>
+<Light25 href="#ref-74"/>
+<Light26 href="#ref-75"/>
+<Light27 href="#ref-76"/>
+<Light28 href="#ref-77"/>
+<Light29 href="#ref-78"/>
+<Light3 href="#ref-79"/>
+<Light30 href="#ref-80"/>
+<Light31 href="#ref-81"/>
+<Light32 href="#ref-82"/>
+<Light33 href="#ref-83"/>
+<Light34 href="#ref-84"/>
+<Light35 href="#ref-85"/>
+<Light36 href="#ref-86"/>
+<Light37 href="#ref-87"/>
+<Light38 href="#ref-88"/>
+<Light39 href="#ref-89"/>
+<Light4 href="#ref-90"/>
+<Light40 href="#ref-91"/>
+<Light41 href="#ref-92"/>
+<Light42 href="#ref-93"/>
+<Light43 href="#ref-94"/>
+<Light44 href="#ref-95"/>
+<Light45 href="#ref-96"/>
+<Light46 href="#ref-97"/>
+<Light47 href="#ref-98"/>
+<Light48 href="#ref-99"/>
+<Light49 href="#ref-100"/>
+<Light5 href="#ref-101"/>
+<Light50 href="#ref-102"/>
+<Light51 href="#ref-103"/>
+<Light52 href="#ref-104"/>
+<Light53 href="#ref-105"/>
+<Light54 href="#ref-106"/>
+<Light55 href="#ref-107"/>
+<Light56 href="#ref-108"/>
+<Light57 href="#ref-109"/>
+<Light58 href="#ref-110"/>
+<Light59 href="#ref-111"/>
+<Light6 href="#ref-112"/>
+<Light60 href="#ref-113"/>
+<Light61 href="#ref-114"/>
+<Light62 href="#ref-115"/>
+<Light63 href="#ref-116"/>
+<Light64 href="#ref-117"/>
+<Light65 href="#ref-118"/>
+<Light66 href="#ref-119"/>
+<Light67 href="#ref-120"/>
+<Light68 href="#ref-121"/>
+<Light69 href="#ref-122"/>
+<Light7 href="#ref-123"/>
+<Light70 href="#ref-124"/>
+<Light71 href="#ref-125"/>
+<Light72 href="#ref-126"/>
+<Light73 href="#ref-127"/>
+<Light74 href="#ref-128"/>
+<Light75 href="#ref-129"/>
+<Light76 href="#ref-130"/>
+<Light77 href="#ref-131"/>
+<Light78 href="#ref-132"/>
+<Light79 href="#ref-133"/>
+<Light8 href="#ref-134"/>
+<Light80 href="#ref-135"/>
+<Light81 href="#ref-136"/>
+<Light82 href="#ref-137"/>
+<Light83 href="#ref-138"/>
+<Light84 href="#ref-139"/>
+<Light85 href="#ref-140"/>
+<Light86 href="#ref-141"/>
+<Light87 href="#ref-142"/>
+<Light88 href="#ref-143"/>
+<Light89 href="#ref-144"/>
+<Light9 href="#ref-145"/>
+<Light90 href="#ref-146"/>
+<Light91 href="#ref-147"/>
+<Light92 href="#ref-148"/>
+<Light93 href="#ref-149"/>
+<Light94 href="#ref-150"/>
+<Light95 href="#ref-151"/>
+<Light96 href="#ref-152"/>
+<Light97 href="#ref-153"/>
+<Light98 href="#ref-154"/>
+<Light99 href="#ref-155"/>
+</a1:ChannelCollection>
+<a3:TextItem id="ref-5" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/KineticaRT.Servers.OpcClient/KineticaRT.Servers.OpcClient%2C%20Version%3D1.2.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D2e0c8c468356d1c8">
+<Name id="ref-156">DACN1_SERIAL_IOMGR_ERR_MESSAGE</Name>
+<Description id="ref-157">SERIAL DEVICE ERROR</Description>
+<ToolTip id="ref-158"></ToolTip>
+<Group id="ref-159">Group_Fast</Group>
+<ItemID id="ref-160">dacn1.dacn1_user_interface.DACN1_SERIAL_IOMGR_ERR_MESSAGE</ItemID>
+</a3:TextItem>
+<a4:BooleanLink id="ref-6" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-161">Light1</Name>
+<Description id="ref-162">DIN1</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-163">True</TrueText>
+<FalseText id="ref-164">False</FalseText>
+<Source href="#ref-162"/>
+<Destination href="#ref-158"/>
+<Logger id="ref-165">ARCHIVE</Logger>
+<EventLogger id="ref-166">EVENT_ARCHIVE</EventLogger>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-7" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-167">Light10</Name>
+<Description id="ref-168">DIN10</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-169">True</TrueText>
+<FalseText id="ref-170">False</FalseText>
+<Source href="#ref-168"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-8" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-171">Light100</Name>
+<Description id="ref-172">DIN100</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-173">True</TrueText>
+<FalseText id="ref-174">False</FalseText>
+<Source href="#ref-172"/>
+<Destination href="#ref-158"/>
+<Logger id="ref-175">ARCHIVE</Logger>
+<EventLogger id="ref-176">EVENT_ARCHIVE</EventLogger>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-9" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-177">Light101</Name>
+<Description id="ref-178">DIN101</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-179">True</TrueText>
+<FalseText id="ref-180">False</FalseText>
+<Source href="#ref-178"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-10" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-181">Light102</Name>
+<Description id="ref-182">DIN102</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-183">True</TrueText>
+<FalseText id="ref-184">False</FalseText>
+<Source href="#ref-182"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-11" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-185">Light103</Name>
+<Description id="ref-186">DIN103</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-187">True</TrueText>
+<FalseText id="ref-188">False</FalseText>
+<Source href="#ref-186"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-12" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-189">Light104</Name>
+<Description id="ref-190">DIN104</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-191">True</TrueText>
+<FalseText id="ref-192">False</FalseText>
+<Source href="#ref-190"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-13" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-193">Light105</Name>
+<Description id="ref-194">DIN105</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-195">True</TrueText>
+<FalseText id="ref-196">False</FalseText>
+<Source href="#ref-194"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-14" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-197">Light106</Name>
+<Description id="ref-198">DIN106</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-199">True</TrueText>
+<FalseText id="ref-200">False</FalseText>
+<Source href="#ref-198"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-15" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-201">Light107</Name>
+<Description id="ref-202">DIN107</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-203">True</TrueText>
+<FalseText id="ref-204">False</FalseText>
+<Source href="#ref-202"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-16" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-205">Light108</Name>
+<Description id="ref-206">DIN108</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-207">True</TrueText>
+<FalseText id="ref-208">False</FalseText>
+<Source href="#ref-206"/>
+<Destination href="#ref-158"/>
+<Logger id="ref-209">ARCHIVE</Logger>
+<EventLogger id="ref-210">EVENT_ARCHIVE</EventLogger>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-17" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-211">Light109</Name>
+<Description id="ref-212">DIN109</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-213">True</TrueText>
+<FalseText id="ref-214">False</FalseText>
+<Source href="#ref-212"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-18" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-215">Light11</Name>
+<Description id="ref-216">DIN11</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-217">True</TrueText>
+<FalseText id="ref-218">False</FalseText>
+<Source href="#ref-216"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-19" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-219">Light110</Name>
+<Description id="ref-220">DIN110</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-221">True</TrueText>
+<FalseText id="ref-222">False</FalseText>
+<Source href="#ref-220"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-20" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-223">Light111</Name>
+<Description id="ref-224">DIN111</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-225">True</TrueText>
+<FalseText id="ref-226">False</FalseText>
+<Source href="#ref-224"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-21" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-227">Light112</Name>
+<Description id="ref-228">DIN112</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-229">True</TrueText>
+<FalseText id="ref-230">False</FalseText>
+<Source href="#ref-228"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-22" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-231">Light113</Name>
+<Description id="ref-232">DIN113</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-233">True</TrueText>
+<FalseText id="ref-234">False</FalseText>
+<Source href="#ref-232"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-23" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-235">Light114</Name>
+<Description id="ref-236">DIN114</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-237">True</TrueText>
+<FalseText id="ref-238">False</FalseText>
+<Source href="#ref-236"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-24" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-239">Light115</Name>
+<Description id="ref-240">DIN115</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-241">True</TrueText>
+<FalseText id="ref-242">False</FalseText>
+<Source href="#ref-240"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-25" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-243">Light116</Name>
+<Description id="ref-244">DIN116</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-245">True</TrueText>
+<FalseText id="ref-246">False</FalseText>
+<Source href="#ref-244"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-26" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-247">Light117</Name>
+<Description id="ref-248">DIN117</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-249">True</TrueText>
+<FalseText id="ref-250">False</FalseText>
+<Source href="#ref-248"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-27" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-251">Light118</Name>
+<Description id="ref-252">DIN118</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-253">True</TrueText>
+<FalseText id="ref-254">False</FalseText>
+<Source href="#ref-252"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-28" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-255">Light119</Name>
+<Description id="ref-256">DIN119</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-257">True</TrueText>
+<FalseText id="ref-258">False</FalseText>
+<Source href="#ref-256"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-29" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-259">Light12</Name>
+<Description id="ref-260">DIN12</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-261">True</TrueText>
+<FalseText id="ref-262">False</FalseText>
+<Source href="#ref-260"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-30" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-263">Light120</Name>
+<Description id="ref-264">DIN120</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-265">True</TrueText>
+<FalseText id="ref-266">False</FalseText>
+<Source href="#ref-264"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-31" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-267">Light121</Name>
+<Description id="ref-268">DIN121</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-269">True</TrueText>
+<FalseText id="ref-270">False</FalseText>
+<Source href="#ref-268"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-32" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-271">Light122</Name>
+<Description id="ref-272">DIN122</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-273">True</TrueText>
+<FalseText id="ref-274">False</FalseText>
+<Source href="#ref-272"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-33" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-275">Light123</Name>
+<Description id="ref-276">DIN123</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-277">True</TrueText>
+<FalseText id="ref-278">False</FalseText>
+<Source href="#ref-276"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-34" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-279">Light124</Name>
+<Description id="ref-280">DIN124</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-281">True</TrueText>
+<FalseText id="ref-282">False</FalseText>
+<Source href="#ref-280"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-35" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-283">Light125</Name>
+<Description id="ref-284">DIN125</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-285">True</TrueText>
+<FalseText id="ref-286">False</FalseText>
+<Source href="#ref-284"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-36" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-287">Light126</Name>
+<Description id="ref-288">DIN126</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-289">True</TrueText>
+<FalseText id="ref-290">False</FalseText>
+<Source href="#ref-288"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-37" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-291">Light127</Name>
+<Description id="ref-292">DIN127</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-293">True</TrueText>
+<FalseText id="ref-294">False</FalseText>
+<Source href="#ref-292"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-38" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-295">Light128</Name>
+<Description id="ref-296">DIN128</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-297">True</TrueText>
+<FalseText id="ref-298">False</FalseText>
+<Source href="#ref-296"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-39" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-299">Light129</Name>
+<Description id="ref-300">DIN129</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-301">True</TrueText>
+<FalseText id="ref-302">False</FalseText>
+<Source href="#ref-300"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-40" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-303">Light13</Name>
+<Description id="ref-304">DIN13</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-305">True</TrueText>
+<FalseText id="ref-306">False</FalseText>
+<Source href="#ref-304"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-41" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-307">Light130</Name>
+<Description id="ref-308">DIN130</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-309">True</TrueText>
+<FalseText id="ref-310">False</FalseText>
+<Source href="#ref-308"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-42" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-311">Light131</Name>
+<Description id="ref-312">DIN131</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-313">True</TrueText>
+<FalseText id="ref-314">False</FalseText>
+<Source href="#ref-312"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-43" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-315">Light132</Name>
+<Description id="ref-316">DIN132</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-317">True</TrueText>
+<FalseText id="ref-318">False</FalseText>
+<Source href="#ref-316"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-44" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-319">Light133</Name>
+<Description id="ref-320">DIN133</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-321">True</TrueText>
+<FalseText id="ref-322">False</FalseText>
+<Source href="#ref-320"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-45" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-323">Light134</Name>
+<Description id="ref-324">DIN134</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-325">True</TrueText>
+<FalseText id="ref-326">False</FalseText>
+<Source href="#ref-324"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-46" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-327">Light135</Name>
+<Description id="ref-328">DIN135</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-329">True</TrueText>
+<FalseText id="ref-330">False</FalseText>
+<Source href="#ref-328"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-47" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-331">Light136</Name>
+<Description id="ref-332">DIN136</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-333">True</TrueText>
+<FalseText id="ref-334">False</FalseText>
+<Source href="#ref-332"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-48" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-335">Light137</Name>
+<Description id="ref-336">DIN137</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-337">True</TrueText>
+<FalseText id="ref-338">False</FalseText>
+<Source href="#ref-336"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-49" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-339">Light138</Name>
+<Description id="ref-340">DIN138</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-341">True</TrueText>
+<FalseText id="ref-342">False</FalseText>
+<Source href="#ref-340"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-50" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-343">Light139</Name>
+<Description id="ref-344">DIN139</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-345">True</TrueText>
+<FalseText id="ref-346">False</FalseText>
+<Source href="#ref-344"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-51" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-347">Light14</Name>
+<Description id="ref-348">DIN14</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-349">True</TrueText>
+<FalseText id="ref-350">False</FalseText>
+<Source href="#ref-348"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-52" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-351">Light140</Name>
+<Description id="ref-352">DIN140</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-353">True</TrueText>
+<FalseText id="ref-354">False</FalseText>
+<Source href="#ref-352"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-209"/>
+<EventLogger href="#ref-210"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-53" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-355">Light141</Name>
+<Description id="ref-356">DIN141</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-357">True</TrueText>
+<FalseText id="ref-358">False</FalseText>
+<Source href="#ref-356"/>
+<Destination href="#ref-158"/>
+<Logger id="ref-359">ARCHIVE</Logger>
+<EventLogger id="ref-360">EVENT_ARCHIVE</EventLogger>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-54" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-361">Light142</Name>
+<Description id="ref-362">DIN142</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-363">True</TrueText>
+<FalseText id="ref-364">False</FalseText>
+<Source href="#ref-362"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-55" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-365">Light143</Name>
+<Description id="ref-366">DIN143</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-367">True</TrueText>
+<FalseText id="ref-368">False</FalseText>
+<Source href="#ref-366"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-56" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-369">Light144</Name>
+<Description id="ref-370">DIN144</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-371">True</TrueText>
+<FalseText id="ref-372">False</FalseText>
+<Source href="#ref-370"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-57" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-373">Light145</Name>
+<Description id="ref-374">DIN145</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-375">True</TrueText>
+<FalseText id="ref-376">False</FalseText>
+<Source href="#ref-374"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-58" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-377">Light146</Name>
+<Description id="ref-378">DIN146</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-379">True</TrueText>
+<FalseText id="ref-380">False</FalseText>
+<Source href="#ref-378"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-59" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-381">Light147</Name>
+<Description id="ref-382">DIN147</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-383">True</TrueText>
+<FalseText id="ref-384">False</FalseText>
+<Source href="#ref-382"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-60" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-385">Light148</Name>
+<Description id="ref-386">DIN148</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-387">True</TrueText>
+<FalseText id="ref-388">False</FalseText>
+<Source href="#ref-386"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-61" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-389">Light149</Name>
+<Description id="ref-390">DIN149</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-391">True</TrueText>
+<FalseText id="ref-392">False</FalseText>
+<Source href="#ref-390"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-62" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-393">Light15</Name>
+<Description id="ref-394">DIN15</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-395">True</TrueText>
+<FalseText id="ref-396">False</FalseText>
+<Source href="#ref-394"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-63" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-397">Light150</Name>
+<Description id="ref-398">DIN150</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-399">True</TrueText>
+<FalseText id="ref-400">False</FalseText>
+<Source href="#ref-398"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-359"/>
+<EventLogger href="#ref-360"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-64" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-401">Light16</Name>
+<Description id="ref-402">DIN16</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-403">True</TrueText>
+<FalseText id="ref-404">False</FalseText>
+<Source href="#ref-402"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-65" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-405">Light17</Name>
+<Description id="ref-406">DIN17</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-407">True</TrueText>
+<FalseText id="ref-408">False</FalseText>
+<Source href="#ref-406"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-66" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-409">Light18</Name>
+<Description id="ref-410">DIN18</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-411">True</TrueText>
+<FalseText id="ref-412">False</FalseText>
+<Source href="#ref-410"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-67" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-413">Light19</Name>
+<Description id="ref-414">DIN19</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-415">True</TrueText>
+<FalseText id="ref-416">False</FalseText>
+<Source href="#ref-414"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-68" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-417">Light2</Name>
+<Description id="ref-418">DIN2</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-419">True</TrueText>
+<FalseText id="ref-420">False</FalseText>
+<Source href="#ref-418"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-69" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-421">Light20</Name>
+<Description id="ref-422">DIN20</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-423">True</TrueText>
+<FalseText id="ref-424">False</FalseText>
+<Source href="#ref-422"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-70" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-425">Light21</Name>
+<Description id="ref-426">DIN21</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-427">True</TrueText>
+<FalseText id="ref-428">False</FalseText>
+<Source href="#ref-426"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-71" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-429">Light22</Name>
+<Description id="ref-430">DIN22</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-431">True</TrueText>
+<FalseText id="ref-432">False</FalseText>
+<Source href="#ref-430"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-72" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-433">Light23</Name>
+<Description id="ref-434">DIN23</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-435">True</TrueText>
+<FalseText id="ref-436">False</FalseText>
+<Source href="#ref-434"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-73" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-437">Light24</Name>
+<Description id="ref-438">DIN24</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-439">True</TrueText>
+<FalseText id="ref-440">False</FalseText>
+<Source href="#ref-438"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-74" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-441">Light25</Name>
+<Description id="ref-442">DIN25</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-443">True</TrueText>
+<FalseText id="ref-444">False</FalseText>
+<Source href="#ref-442"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-75" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-445">Light26</Name>
+<Description id="ref-446">DIN26</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-447">True</TrueText>
+<FalseText id="ref-448">False</FalseText>
+<Source href="#ref-446"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-76" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-449">Light27</Name>
+<Description id="ref-450">DIN27</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-451">True</TrueText>
+<FalseText id="ref-452">False</FalseText>
+<Source href="#ref-450"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-77" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-453">Light28</Name>
+<Description id="ref-454">DIN28</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-455">True</TrueText>
+<FalseText id="ref-456">False</FalseText>
+<Source href="#ref-454"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-78" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-457">Light29</Name>
+<Description id="ref-458">DIN29</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-459">True</TrueText>
+<FalseText id="ref-460">False</FalseText>
+<Source href="#ref-458"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-79" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-461">Light3</Name>
+<Description id="ref-462">DIN3</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-463">True</TrueText>
+<FalseText id="ref-464">False</FalseText>
+<Source href="#ref-462"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-80" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-465">Light30</Name>
+<Description id="ref-466">DIN30</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-467">True</TrueText>
+<FalseText id="ref-468">False</FalseText>
+<Source href="#ref-466"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-81" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-469">Light31</Name>
+<Description id="ref-470">DIN31</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-471">True</TrueText>
+<FalseText id="ref-472">False</FalseText>
+<Source href="#ref-470"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-82" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-473">Light32</Name>
+<Description id="ref-474">DIN32</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-475">True</TrueText>
+<FalseText id="ref-476">False</FalseText>
+<Source href="#ref-474"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-83" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-477">Light33</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-478">True</TrueText>
+<FalseText id="ref-479">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-84" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-480">Light34</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-481">True</TrueText>
+<FalseText id="ref-482">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-85" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-483">Light35</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-484">True</TrueText>
+<FalseText id="ref-485">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-86" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-486">Light36</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-487">True</TrueText>
+<FalseText id="ref-488">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-87" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-489">Light37</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-490">True</TrueText>
+<FalseText id="ref-491">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-88" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-492">Light38</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-493">True</TrueText>
+<FalseText id="ref-494">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-89" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-495">Light39</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-496">True</TrueText>
+<FalseText id="ref-497">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-90" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-498">Light4</Name>
+<Description id="ref-499">DIN4</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-500">True</TrueText>
+<FalseText id="ref-501">False</FalseText>
+<Source href="#ref-499"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-91" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-502">Light40</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-503">True</TrueText>
+<FalseText id="ref-504">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-92" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-505">Light41</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-506">True</TrueText>
+<FalseText id="ref-507">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-93" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-508">Light42</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-509">True</TrueText>
+<FalseText id="ref-510">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-94" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-511">Light43</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-512">True</TrueText>
+<FalseText id="ref-513">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-95" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-514">Light44</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-515">True</TrueText>
+<FalseText id="ref-516">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-96" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-517">Light45</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-518">True</TrueText>
+<FalseText id="ref-519">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-97" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-520">Light46</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-521">True</TrueText>
+<FalseText id="ref-522">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-98" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-523">Light47</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-524">True</TrueText>
+<FalseText id="ref-525">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-99" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-526">Light48</Name>
+<Description href="#ref-158"/>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-527">True</TrueText>
+<FalseText id="ref-528">False</FalseText>
+<Source href="#ref-158"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-100" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-529">Light49</Name>
+<Description id="ref-530">DIN49</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-531">True</TrueText>
+<FalseText id="ref-532">False</FalseText>
+<Source href="#ref-530"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-101" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-533">Light5</Name>
+<Description id="ref-534">DIN5</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-535">True</TrueText>
+<FalseText id="ref-536">False</FalseText>
+<Source href="#ref-534"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-102" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-537">Light50</Name>
+<Description id="ref-538">DIN50</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-539">True</TrueText>
+<FalseText id="ref-540">False</FalseText>
+<Source href="#ref-538"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-103" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-541">Light51</Name>
+<Description id="ref-542">DIN51</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-543">True</TrueText>
+<FalseText id="ref-544">False</FalseText>
+<Source href="#ref-542"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-104" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-545">Light52</Name>
+<Description id="ref-546">DIN52</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-547">True</TrueText>
+<FalseText id="ref-548">False</FalseText>
+<Source href="#ref-546"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-105" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-549">Light53</Name>
+<Description id="ref-550">DIN53</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-551">True</TrueText>
+<FalseText id="ref-552">False</FalseText>
+<Source href="#ref-550"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-106" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-553">Light54</Name>
+<Description id="ref-554">DIN54</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-555">True</TrueText>
+<FalseText id="ref-556">False</FalseText>
+<Source href="#ref-554"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-107" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-557">Light55</Name>
+<Description id="ref-558">DIN55</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-559">True</TrueText>
+<FalseText id="ref-560">False</FalseText>
+<Source href="#ref-558"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-108" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-561">Light56</Name>
+<Description id="ref-562">DIN56</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-563">True</TrueText>
+<FalseText id="ref-564">False</FalseText>
+<Source href="#ref-562"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-109" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-565">Light57</Name>
+<Description id="ref-566">DIN57</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-567">True</TrueText>
+<FalseText id="ref-568">False</FalseText>
+<Source href="#ref-566"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-110" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-569">Light58</Name>
+<Description id="ref-570">DIN58</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-571">True</TrueText>
+<FalseText id="ref-572">False</FalseText>
+<Source href="#ref-570"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-111" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-573">Light59</Name>
+<Description id="ref-574">DIN59</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-575">True</TrueText>
+<FalseText id="ref-576">False</FalseText>
+<Source href="#ref-574"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-112" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-577">Light6</Name>
+<Description id="ref-578">DIN6</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-579">True</TrueText>
+<FalseText id="ref-580">False</FalseText>
+<Source href="#ref-578"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-113" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-581">Light60</Name>
+<Description id="ref-582">DIN60</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-583">True</TrueText>
+<FalseText id="ref-584">False</FalseText>
+<Source href="#ref-582"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-114" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-585">Light61</Name>
+<Description id="ref-586">DIN61</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-587">True</TrueText>
+<FalseText id="ref-588">False</FalseText>
+<Source href="#ref-586"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-115" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-589">Light62</Name>
+<Description id="ref-590">DIN62</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-591">True</TrueText>
+<FalseText id="ref-592">False</FalseText>
+<Source href="#ref-590"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-116" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-593">Light63</Name>
+<Description id="ref-594">DIN63</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-595">True</TrueText>
+<FalseText id="ref-596">False</FalseText>
+<Source href="#ref-594"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-117" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-597">Light64</Name>
+<Description id="ref-598">DIN64</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-599">True</TrueText>
+<FalseText id="ref-600">False</FalseText>
+<Source href="#ref-598"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-118" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-601">Light65</Name>
+<Description id="ref-602">DIN65</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-603">True</TrueText>
+<FalseText id="ref-604">False</FalseText>
+<Source href="#ref-602"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-119" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-605">Light66</Name>
+<Description id="ref-606">DIN66</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-607">True</TrueText>
+<FalseText id="ref-608">False</FalseText>
+<Source href="#ref-606"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-120" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-609">Light67</Name>
+<Description id="ref-610">DIN67</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-611">True</TrueText>
+<FalseText id="ref-612">False</FalseText>
+<Source href="#ref-610"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-121" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-613">Light68</Name>
+<Description id="ref-614">DIN68</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-615">True</TrueText>
+<FalseText id="ref-616">False</FalseText>
+<Source href="#ref-614"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-122" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-617">Light69</Name>
+<Description id="ref-618">DIN69</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-619">True</TrueText>
+<FalseText id="ref-620">False</FalseText>
+<Source href="#ref-618"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-123" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-621">Light7</Name>
+<Description id="ref-622">DIN7</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-623">True</TrueText>
+<FalseText id="ref-624">False</FalseText>
+<Source href="#ref-622"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-124" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-625">Light70</Name>
+<Description id="ref-626">DIN70</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-627">True</TrueText>
+<FalseText id="ref-628">False</FalseText>
+<Source href="#ref-626"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-125" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-629">Light71</Name>
+<Description id="ref-630">DIN71</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-631">True</TrueText>
+<FalseText id="ref-632">False</FalseText>
+<Source href="#ref-630"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-126" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-633">Light72</Name>
+<Description id="ref-634">DIN72</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-635">True</TrueText>
+<FalseText id="ref-636">False</FalseText>
+<Source href="#ref-634"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-127" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-637">Light73</Name>
+<Description id="ref-638">DIN73</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-639">True</TrueText>
+<FalseText id="ref-640">False</FalseText>
+<Source href="#ref-638"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-128" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-641">Light74</Name>
+<Description id="ref-642">DIN74</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-643">True</TrueText>
+<FalseText id="ref-644">False</FalseText>
+<Source href="#ref-642"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-129" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-645">Light75</Name>
+<Description id="ref-646">DIN75</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-647">True</TrueText>
+<FalseText id="ref-648">False</FalseText>
+<Source href="#ref-646"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-130" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-649">Light76</Name>
+<Description id="ref-650">DIN76</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-651">True</TrueText>
+<FalseText id="ref-652">False</FalseText>
+<Source href="#ref-650"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-131" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-653">Light77</Name>
+<Description id="ref-654">DIN77</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-655">True</TrueText>
+<FalseText id="ref-656">False</FalseText>
+<Source href="#ref-654"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-132" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-657">Light78</Name>
+<Description id="ref-658">DIN78</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-659">True</TrueText>
+<FalseText id="ref-660">False</FalseText>
+<Source href="#ref-658"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-133" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-661">Light79</Name>
+<Description id="ref-662">DIN79</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-663">True</TrueText>
+<FalseText id="ref-664">False</FalseText>
+<Source href="#ref-662"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-134" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-665">Light8</Name>
+<Description id="ref-666">DIN8</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-667">True</TrueText>
+<FalseText id="ref-668">False</FalseText>
+<Source href="#ref-666"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-135" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-669">Light80</Name>
+<Description id="ref-670">DIN80</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-671">True</TrueText>
+<FalseText id="ref-672">False</FalseText>
+<Source href="#ref-670"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-136" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-673">Light81</Name>
+<Description id="ref-674">DIN81</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-675">True</TrueText>
+<FalseText id="ref-676">False</FalseText>
+<Source href="#ref-674"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-137" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-677">Light82</Name>
+<Description id="ref-678">DIN82</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-679">True</TrueText>
+<FalseText id="ref-680">False</FalseText>
+<Source href="#ref-678"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-138" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-681">Light83</Name>
+<Description id="ref-682">DIN83</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-683">True</TrueText>
+<FalseText id="ref-684">False</FalseText>
+<Source href="#ref-682"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-139" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-685">Light84</Name>
+<Description id="ref-686">DIN84</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-687">True</TrueText>
+<FalseText id="ref-688">False</FalseText>
+<Source href="#ref-686"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-140" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-689">Light85</Name>
+<Description id="ref-690">DIN85</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-691">True</TrueText>
+<FalseText id="ref-692">False</FalseText>
+<Source href="#ref-690"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-141" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-693">Light86</Name>
+<Description id="ref-694">DIN86</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-695">True</TrueText>
+<FalseText id="ref-696">False</FalseText>
+<Source href="#ref-694"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-142" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-697">Light87</Name>
+<Description id="ref-698">DIN87</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-699">True</TrueText>
+<FalseText id="ref-700">False</FalseText>
+<Source href="#ref-698"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-143" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-701">Light88</Name>
+<Description id="ref-702">DIN88</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-703">True</TrueText>
+<FalseText id="ref-704">False</FalseText>
+<Source href="#ref-702"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-144" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-705">Light89</Name>
+<Description id="ref-706">DIN89</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-707">True</TrueText>
+<FalseText id="ref-708">False</FalseText>
+<Source href="#ref-706"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-145" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-709">Light9</Name>
+<Description id="ref-710">DIN9</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-711">True</TrueText>
+<FalseText id="ref-712">False</FalseText>
+<Source href="#ref-710"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-165"/>
+<EventLogger href="#ref-166"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-146" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-713">Light90</Name>
+<Description id="ref-714">DIN90</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-715">True</TrueText>
+<FalseText id="ref-716">False</FalseText>
+<Source href="#ref-714"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-147" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-717">Light91</Name>
+<Description id="ref-718">DIN91</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-719">True</TrueText>
+<FalseText id="ref-720">False</FalseText>
+<Source href="#ref-718"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-148" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-721">Light92</Name>
+<Description id="ref-722">DIN92</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-723">True</TrueText>
+<FalseText id="ref-724">False</FalseText>
+<Source href="#ref-722"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-149" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-725">Light93</Name>
+<Description id="ref-726">DIN93</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-727">True</TrueText>
+<FalseText id="ref-728">False</FalseText>
+<Source href="#ref-726"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-150" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-729">Light94</Name>
+<Description id="ref-730">DIN94</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-731">True</TrueText>
+<FalseText id="ref-732">False</FalseText>
+<Source href="#ref-730"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-151" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-733">Light95</Name>
+<Description id="ref-734">DIN95</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-735">True</TrueText>
+<FalseText id="ref-736">False</FalseText>
+<Source href="#ref-734"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-152" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-737">Light96</Name>
+<Description id="ref-738">DIN96</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-739">True</TrueText>
+<FalseText id="ref-740">False</FalseText>
+<Source href="#ref-738"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-153" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-741">Light97</Name>
+<Description id="ref-742">DIN97</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-743">True</TrueText>
+<FalseText id="ref-744">False</FalseText>
+<Source href="#ref-742"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-154" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-745">Light98</Name>
+<Description id="ref-746">DIN98</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-747">True</TrueText>
+<FalseText id="ref-748">False</FalseText>
+<Source href="#ref-746"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+<a4:BooleanLink id="ref-155" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/CEL.KineticaRT.Servers.Logger/CEL.KineticaRT.Servers.Logger%2C%20Version%3D2.0.4934.15765%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<Name id="ref-749">Light99</Name>
+<Description id="ref-750">DIN99</Description>
+<ToolTip href="#ref-158"/>
+<TrueText id="ref-751">True</TrueText>
+<FalseText id="ref-752">False</FalseText>
+<Source href="#ref-750"/>
+<Destination href="#ref-158"/>
+<Logger href="#ref-175"/>
+<EventLogger href="#ref-176"/>
+<Index>1</Index>
+<Enabled>false</Enabled>
+</a4:BooleanLink>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

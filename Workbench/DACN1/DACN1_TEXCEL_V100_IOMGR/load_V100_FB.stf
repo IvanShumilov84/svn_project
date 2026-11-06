@@ -1,0 +1,69 @@
+FUNCTION_BLOCK load_V100_FB
+status := LOADING;
+err_code 	:= OK;
+
+IF (First_Time_Set = TRUE) THEN
+
+	SET_V100_CHANNELS(fd, num_of_channels, channel_no);
+
+	IF SET_V100_CHANNELS.ERR_CODE = -1 THEN
+		Error_on_Open := TRUE ;
+	END_IF ; 
+
+	First_Time_Set := FALSE ;
+	
+END_IF;
+
+err_code := OK;
+
+IF (err_code <> OK) THEN 
+	status := ERROR_ON_LOADING;
+ELSE 
+	status := LOADED;
+END_IF; 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,84 @@
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\CFADS\Keyboard\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.Keyboard.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.dll
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.xml
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.Keyboard.resources
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.csproj.GenerateResource.Cache
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.XML
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.pdb
+C:\Users\Nigel.KINETICART\Documents\Visual Studio 2005\Projects\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.xml
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.xml
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.Keyboard.resources
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.xml
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.xml
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\ResolveAssemblyReference.cache
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.Keyboard.resources
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.csproj.GenerateResource.Cache
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.dll
+C:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.pdb
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.XML
+C:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.XML
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.xml
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.xml
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.Keyboard.resources
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Release\KineticaRT.Servers.Keyboard.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Controls.xml
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.xml
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\ResolveAssemblyReference.cache
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.Keyboard.resources
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.csproj.GenerateResource.Cache
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.dll
+D:\KineticaRT\KineticaRT\Servers\Keyboard\obj\Debug\KineticaRT.Servers.Keyboard.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Controls.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.pdb
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Release\KineticaRT.Servers.Keyboard.XML
+D:\KineticaRT\KineticaRT\Servers\Keyboard\bin\Debug\KineticaRT.Servers.Keyboard.XML

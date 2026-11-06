@@ -1,0 +1,8 @@
+bin\Debug\Compiler.exe
+bin\Debug\Compiler.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Compiler.Form1.resources
+obj\Debug\Compiler.Properties.Resources.resources
+obj\Debug\Compiler.csproj.GenerateResource.Cache
+obj\Debug\Compiler.exe
+obj\Debug\Compiler.pdb

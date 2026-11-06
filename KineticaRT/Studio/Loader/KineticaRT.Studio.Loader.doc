@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KineticaRT.Studio.Loader</name>
+    </assembly>
+    <members>
+        <member name="T:KineticaRT.Studio.DirectoryLoader">
+            <summary>
+            Loads objects from XML files in a specific directory
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.DirectoryLoader.#ctor(System.Int32)">
+            <summary>
+            Initialises a new instance of the DirectoryLoader class
+            </summary>
+            <param name="Index">Integer that uniquely identifies this object</param>
+        </member>
+        <member name="M:KineticaRT.Studio.DirectoryLoader.Load(KineticaRT.Collection,KineticaRT.Studio.Loader.Translation[],System.Xml.XmlElement)">
+            <summary>
+            Loads the directory
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Studio.DirectoryLoader.Progress">
+            <summary>
+            Progress event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.DirectoryLoader.DirectoryPath">
+            <summary>
+            Gets or sets the path of the Directory that this object loads
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.FileLoader">
+            <summary>
+            Loads objects from XML files in a specific directory
+            Only loads KineticaRT.Object types
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Initialises a new instance of the DirectoryLoader class
+            </summary>
+            <param name="Name">Name of file (no path)</param>
+            <param name="DirIndex">Integer that uniquely identifies the directory holding this</param>
+            <param name="Index">Integer that uniquely identifies this object within its directory</param>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.Load(KineticaRT.Collection,KineticaRT.Studio.Loader.Translation[],System.String)">
+            <summary>
+            Loads the file. Does not create the objects
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.CreateObjects(KineticaRT.Collection,KineticaRT.Studio.Loader.Translation[],System.Xml.XmlElement)">
+            <summary>
+            Actually creates the objects
+            </summary>
+            <param name="Collection">Collection in which to put the objects</param>
+            <param name="Translations">How to translate old-style objects</param>
+            <param name="PersistenceRoot">Root node of persistence file</param>
+        </member>
+        <member name="M:KineticaRT.Studio.FileLoader.Clear(KineticaRT.Collection)">
+            <summary>
+            Removes objects created by this file from Collection
+            </summary>
+            <param name="Collection">Collection containing objects</param>
+        </member>
+        <member name="E:KineticaRT.Studio.FileLoader.Progress">
+            <summary>
+            Progress event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.FileLoader.FileName">
+            <summary>
+            Gets the File name that this object loads (no path)
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.Loader">
+            <summary>
+            Loads objects from XML files
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.#ctor">
+            <summary>
+            Initialises a new instance of the Loader class
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.BeginInit">
+            <summary>
+            Initialization is beginning
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.EndInit">
+            <summary>
+            Initialization is complete
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.Connect">
+            <summary>
+            Connects this object to others.
+            </summary>
+        </member>
+        <member name="M:KineticaRT.Studio.Loader.Disconnect">
+            <summary>
+            Disconnects this object from others.
+            </summary>
+        </member>
+        <member name="E:KineticaRT.Studio.Loader.Progress">
+            <summary>
+            Progress event
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.BaseDirectory">
+            <summary>
+            Base Directory Path, to which all other Directories are appended
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.Directories">
+            <summary>
+            Array of Directories to load. Names or partial paths get appended to the BaseDirectory.
+            </summary>
+            <remarks>
+            Ensure Collection, TranslatorFile and PersistenceFile are set before this
+            property, as first time it is set loading is initiated automatically. Subsequently
+            the 'LoadAvailable' channel is set, and loading occurs when the 'LoadNow' channel
+            becomes true.
+            To replace a directory (eg Run2 instead of Run1) without causing
+            a complete reload, ensure that equivalent directories are in the same
+            order as for the original load.
+            When this property is set, the 'LoadAvailable' channel in the Collection
+            becomes true. Note that simply changing the value of one of the strings
+            without calling the property's 'set' method will not cause 'LoadAvailable'
+            to be updated
+            </remarks>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.Collection">
+            <summary>
+            Collection object in which to put loaded objects
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.TranslatorFile">
+            <summary>
+            Path and name of Translator file
+            </summary>
+        </member>
+        <member name="P:KineticaRT.Studio.Loader.PersistenceFile">
+            <summary>
+            Path and name of Persistence file
+            </summary>
+        </member>
+        <member name="T:KineticaRT.Studio.Loader.ProgressEventHandler">
+            <summary>
+            Handler for Progress event
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,13 @@
+'
+' Created by SharpDevelop.
+' User: NadiaS
+' Date: 11/24/2005
+' Time: 2:40 PM
+' 
+' To change this template use Tools | Options | Coding | Edit Standard Headers.
+'
+Imports System
+
+Public Class NewClass
+	
+End Class

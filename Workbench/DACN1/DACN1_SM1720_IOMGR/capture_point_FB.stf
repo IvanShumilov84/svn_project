@@ -1,0 +1,27 @@
+FUNCTION_BLOCK capture_point_FB
+
+	status := FALSE;
+
+			
+	IF (point.Store_Value) THEN	(* L'usager pese sur le bouton de capture *)
+			
+		(* Transforme la postion du levier de pourcentage en degre *)
+		lever_angle(lever_pcnt, throttle_info.lever_slope,  throttle_info.lever_offset);
+
+
+		(* Transforme la position (degre) du levier en count/pas de moteur *)
+		(*actuator_position(lever_angle.value, throttle_info.actuator_slope,  throttle_info.actuator_offset);*)
+
+
+		(* Retourne l'angle du throttle en degre *)
+		value_degree := lever_angle.value; 
+
+		(* retourne la nouvelle postion commande en count *)
+		(* value_in_count := ANY_TO_DINT(actuator_position.value);*)
+
+		status := TRUE;
+	END_IF;
+	
+
+
+END_FUNCTION_BLOCK

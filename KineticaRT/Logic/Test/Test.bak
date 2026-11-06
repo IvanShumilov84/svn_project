@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Test>
+  <TestProfile Name="DryMotorProcedure">
+    <Setpoints>
+      <Setpoint Name="O_PLA" />
+      <Setpoint Name="O_SECEN" />
+    </Setpoints>
+    <Step Name="0.1">
+      <Setpoint Name="O_PLA" Value ="0" />
+      <Setpoint Name="O_SECEN" Value ="0" />
+      <Action Name="WaitForAcknowledge" Message="OK to start?" Information="Initialising Test: DryMotorProcedure"/>
+      <Set Name="PLAIDLTMR" Value="0" />
+      <Set Name="I_SECEN" Value="0" />
+      <Set Name="I_PLA" Value="14" />
+    </Step>
+
+    <Step Name="0.2">
+      <Setpoint Name="O_PLA" Value ="16" />
+      <Setpoint Name="O_SECEN" Value ="1" />
+      <Set Name="UserInformationMessage" Value="DryMotorProcedure: Wait for I_PLA = 16 "/>
+      <Wait Name="I_PLA" Value="16" />
+      <Set Name="UserInformationMessage" Value="DryMotorProcedure: Wait for I_SECEN = 1"/>
+      <Wait Name="I_SECEN" Value="1" />
+      <Set Name="UserInformationMessage" Value="DryMotorProcedure: Wait for I_PLA = 16 And I_SECEN = 1"/>
+      <Wait Condition="I_PLA = 16 And I_SECEN = 1" />
+      <Set Name="UserInformationMessage" Value=""/>
+    </Step>
+    <Step Name="1">
+      <Action Name="WaitForAcknowledge" Message="Perform MCD VLV Leak Check, Press Acknowledge when complete..." Information="DryMotorProcedure"/>
+    </Step>
+    <Step Name="2">
+      <Set Name="UserInformationMessage" Value="DryMotorProcedure: Wait for PLAIDLTMR = 300"/>
+      <Wait Name="PLAIDLTMR" Value="300" />
+      <Set Name="UserInformationMessage" Value=""/>
+      <Action Name="Record S-S Data" />
+      <Action Name="VerifyInputs" />
+    </Step>
+    <Step Name="3">
+      <Setpoint Name="O_SECEN" Value ="0" />
+      <Action Name="ResetPLAIDLTMR" />
+      <Action Name="WaitForAcknowledge" Message="Confirm SEC light on, Press Acknowledge when complete..." Information="DryMotorProcedure"/>
+    </Step>
+    <Step Name="4">
+      <Set Name="UserInformationMessage" Value="DryMotorProcedure: Wait for PLAIDLTMR = 30"/>
+      <Wait Name="PLAIDLTMR" Value="30" />
+      <Set Name="UserInformationMessage" Value=""/>
+      <Action Name="Record S-S Data" />
+      <Set Name="UserInformationMessage" Value="DryMotorProcedure: Performing SEC idle leak check."/>
+    </Step>
+    <Step Name="Shutdown">
+      <Setpoint Name="O_PLA" Value ="0" />
+      <Setpoint Name="O_SECEN" Value ="0" />
+      <Set Name="UserInformationMessage" Value="DryMotorProcedure: Complete."/>
+    </Step>
+
+  </TestProfile>
+  <TestProfile>
+  </TestProfile>
+</Test>

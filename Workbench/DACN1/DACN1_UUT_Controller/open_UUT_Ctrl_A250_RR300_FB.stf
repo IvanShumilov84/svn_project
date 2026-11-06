@@ -1,0 +1,53 @@
+FUNCTION_BLOCK open_UUT_Ctrl_A250_RR300_FB
+(************************************************************************************************************************************************
+	Name :		open_UUT_Ctrl_A250_RR300_FB									
+														
+************************************************************************************************************************************************)	
+
+            Prefix_String := 'ConfigurationSettings.' + UUT_Info.Model + '.';
+		
+
+		(* SPEED *)
+
+		N1_INDEX 			:= ReadOneIntegerConfigItemST( Prefix_String + 'N1_INDEX', '0');
+		N1_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N1_BINDING_SOURCE', '0'));
+		N1_100_RPM 			:= ReadOneRealConfigItemST( Prefix_String + 'N1_100_RPM_CONSTANT', '0');
+		N1_100_FREQ 		:= ReadOneRealConfigItemST( Prefix_String + 'N1_100_FREQ_CONSTANT', '0');
+            N1_Speed_AT_GI_RPM      := ReadOneRealConfigItemST( Prefix_String + 'N1_SPEED_AT_GI_CONSTANT', '0');
+
+		N2_INDEX 			:= ReadOneIntegerConfigItemST( Prefix_String + 'N2_INDEX', '0');
+		N2_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( Prefix_String + 'N2_BINDING_SOURCE', '0'));
+		N2_100_RPM 			:= ReadOneRealConfigItemST( Prefix_String + 'N2_100_RPM_CONSTANT', '0');
+		N2_100_FREQ 		:= ReadOneRealConfigItemST( Prefix_String + 'N2_100_FREQ_CONSTANT', '0');
+
+
+		(* T_EGT *)
+		T_EGT_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.A250-RR300.T_EGT_PROBE_BINDING_SOURCE', '0'));
+		T_EGT_NUMBER_PROBE   := ReadOneIntegerConfigItemST( 'ConfigurationSettings.A250-RR300.T_EGT_NUMBER_PROBE', '0');
+
+		T_EGT_PROBE_INDEX[1] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.A250-RR300.T_EGT_PROBE_INDEX1', '0');
+		T_EGT_PROBE_INDEX[2] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.A250-RR300.T_EGT_PROBE_INDEX2', '0');
+		T_EGT_PROBE_INDEX[3] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.A250-RR300.T_EGT_PROBE_INDEX3', '0');
+		T_EGT_PROBE_INDEX[4] := ReadOneIntegerConfigItemST( 'ConfigurationSettings.A250-RR300.T_EGT_PROBE_INDEX4', '0');
+
+		(* TT5 *)
+		T_T5_PROBE_BINDING_SOURCE 	:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.A250-RR300.TT5_PROBE_BINDING_SOURCE', '0'));
+		T_T5_INDEX                    := ReadOneIntegerConfigItemST( 'ConfigurationSettings.A250-RR300.TT5_INDEX', '0');
+
+		(* VIB_DYNO *)
+		VIB_DYNO_BINDING_SOURCE		:= ConvertBindingSourceStringToDint(ReadOneStringConfigItemST( 'ConfigurationSettings.A250-RR300.VIB_DYNO_BINDING_SOURCE', '0'));
+		VIB_DYNO_INDEX			:= ReadOneIntegerConfigItemST( 'ConfigurationSettings.A250-RR300.VIB_DYNO_INDEX', '0');
+
+
+END_FUNCTION_BLOCK
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

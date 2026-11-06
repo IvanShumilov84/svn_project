@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Performance>
+  <Engine>
+    <Model>APS3200</Model>
+    <SN>1364</SN>
+    <TESTDATE>04/12/2002</TESTDATE>
+  </Engine>
+  <ChannelMap>
+    <Channel>
+      <Parameter>PENG_OIL</Parameter>
+      <Name>P_OIL_SENSOR</Name>
+      <FVName>P2</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T_GB_OIL</Parameter>
+      <Name>T_OIL_SENSOR</Name>
+      <FVName>T43</FVName>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[43].mean_value</ItemID>
+      <Units>DEGF</Units>
+    </Channel>
+    <Channel>
+      <Parameter>T_GENOIL</Parameter>
+      <Name>ARINC_OIL_T</Name>
+      <FVName>User_Int_A429IN_CHA_14</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[14].engunit</ItemID>
+      <Units>DEGC</Units>
+    </Channel>
+    <Channel>
+      <Parameter>RVD_ENG</Parameter>
+      <Name>VIB_TURBINE</Name>
+      <FVName>VIB4</FVName>
+      <Units>IN/SEC</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>RVD_GB</Parameter>
+      <Name>VIB_GEARBOX</Name>
+      <FVName>VIB5</FVName>
+      <Units>IN/SEC</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.vib[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>ENG_SPD1</Parameter>
+      <Name>NG</Name>
+      <FVName>F2</FVName>
+      <Units>HZ</Units>
+      <!-- 19720.0Hz @49300.0RPM -->
+      <Slope>2.5</Slope>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.f[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>IGV_POS</Parameter>
+      <Name>ARINC_IGV_POS</Name>
+      <FVName>User_Int_A429IN_CHA_5</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[5].engunit</ItemID>
+      <Units>DEG</Units>
+    </Channel>
+    <Channel>
+      <Parameter>P_BARO_A</Parameter>
+      <Name>P_BARO_A</Name>
+      <FVName>P9</FVName>
+      <Units>PSIA</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[9].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P_INLET</Parameter>
+      <Name>P_INLET_SENSOR</Name>
+      <FVName>P4</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_1</Parameter>
+      <Name>T_INLET1_SENSOR</Name>
+      <FVName>T1</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_2</Parameter>
+      <Name>T_INLET2_SENSOR</Name>
+      <FVName>T2</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[2].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_3</Parameter>
+      <Name>T_INLET3_SENSOR</Name>
+      <FVName>T3</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[3].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_4</Parameter>
+      <Name>T_INLET4_SENSOR</Name>
+      <FVName>T4</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[4].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_5</Parameter>
+      <Name>T_INLET5_SENSOR</Name>
+      <FVName>T5</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_6</Parameter>
+      <Name>T_INLET6_SENSOR</Name>
+      <FVName>T6</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[6].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_7</Parameter>
+      <Name>T_INLET7_SENSOR</Name>
+      <FVName>T7</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[7].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_8</Parameter>
+      <Name>T_INLET8_SENSOR</Name>
+      <FVName>T8</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[8].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_9</Parameter>
+      <Name>T_INLET9_SENSOR</Name>
+      <FVName>T9</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[9].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TIN_10</Parameter>
+      <Name>T_INLET10_SENSOR</Name>
+      <FVName>T10</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[10].mean_value</ItemID>
+    </Channel>
+    <Channel> 
+      <Parameter>T_AMB</Parameter>
+      <Name>T_CELL_SENSOR</Name>
+      <FVName>T48</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[48].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>LCIT</Parameter>
+      <Name>LCIT</Name>
+      <FVName>User_Int_A429IN_CHA_16</FVName>
+      <ItemID>dacn1.dacn1_omnibusbox_iomgr.a429in_cha[16].engunit</ItemID>
+      <Units>DEGC</Units>
+    </Channel>
+    <Channel>
+      <Parameter>P_EXDUCT</Parameter>
+      <Name>P_EXHAUST_SENSOR</Name>
+      <FVName>P7</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[7].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TEX_1</Parameter>
+      <Name>T_EGT1_SENSOR</Name>
+      <FVName>T13</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[13].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TEX_2</Parameter>
+      <Name>T_EGT2_SENSOR</Name>
+      <FVName>T14</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[14].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TEX_3</Parameter>
+      <Name>T_EGT3_SENSOR</Name>
+      <FVName>T15</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[15].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TEX_4</Parameter>
+      <Name>T_EGT4_SENSOR</Name>
+      <FVName>T16</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[16].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TEX_5</Parameter>
+      <Name>T_EGT5_SENSOR</Name>
+      <FVName>T17</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[17].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>TEX_6</Parameter>
+      <Name>T_EGT6_SENSOR</Name>
+      <FVName>T18</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[18].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>ETC_1</Parameter>
+      <Name>T_EGT_P1_SENSOR</Name>
+      <FVName>T41</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[41].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>ETC_2</Parameter>
+      <Name>T_EGT_P2_SENSOR</Name>
+      <FVName>T42</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[42].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PFUEL_IN</Parameter>
+      <Name>P_FUEL_SENSOR</Name>
+      <FVName>P13</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[13].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T_FUEL</Parameter>
+      <Name>T_FUEL_SENSOR</Name>
+      <FVName>T46</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[46].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>W_FUEL</Parameter>
+      <Name>W_FUEL_RAW</Name>
+      <FVName>OPC_FM_Fuel_Flow</FVName>
+      <Units>PPH</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.fm_mass_fuel_flow.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P_EXIT</Parameter>
+      <Name>P_BLEED_SENSOR</Name>
+      <FVName>P5</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[5].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T_EXIT</Parameter>
+      <Name>T_BLEED_SENSOR</Name>
+      <FVName>T44</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[44].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>T_BLEED</Parameter>
+      <Name>T_ORIFICE_SENSOR</Name>
+      <FVName>T45</FVName>
+      <Units>DEGF</Units>
+      <ItemID>dacn1.dacn1_powerdna_iomgr.t[45].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>P_BAIR_1</Parameter>
+      <Name>P_ORIFICE_SENSOR</Name>
+      <FVName>P24</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[24].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PBAIRDIF</Parameter>
+      <Name>P_ORIFICE_DELTA_SENSOR</Name>
+      <FVName>P20</FVName>
+      <Units>PSID</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[20].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>VOLT_1</Parameter>
+      <Name>LB_VOLTAGE_VAB</Name>
+      <FVName>OPC_VOLTAGE_VAB</FVName>
+      <Units>VAC</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_voltage_vab.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>VOLT_2</Parameter>
+      <Name>LB_VOLTAGE_VBC</Name>
+      <FVName>OPC_VOLTAGE_VBC</FVName>
+      <Units>VAC</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_voltage_vbc.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>VOLT_3</Parameter>
+      <Name>LB_VOLTAGE_VCA</Name>
+      <FVName>OPC_VOLTAGE_VCA</FVName>
+      <Units>VAC</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_voltage_vca.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>AMP_1</Parameter>
+      <Name>LB_CURRENT_A</Name>
+      <FVName>OPC_CURRENT_A</FVName>
+      <Units>AMPS</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_current_ia.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>AMP_2</Parameter>
+      <Name>LB_CURRENT_B</Name>
+      <FVName>OPC_CURRENT_B</FVName>
+      <Units>AMPS</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_current_ib.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>AMP_3</Parameter>
+      <Name>LB_CURRENT_C</Name>
+      <FVName>OPC_CURRENT_C</FVName>
+      <Units>AMPS</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_current_ic.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>WATTS</Parameter>
+      <Name>GENERATOR_POWER_KW</Name>
+      <FVName>OPC_POWER</FVName>
+      <Units>KW</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_power_tot.pv</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PCD</Parameter>
+      <Name>P_CD_SENSOR</Name>
+      <FVName>P1</FVName>
+      <Units>PSIG</Units>
+      <ItemID>dacn1.dacn1_nidaq_iomgr.p[1].mean_value</ItemID>
+    </Channel>
+    <Channel>
+      <Parameter>PM_FORMAT2</Parameter>
+      <Name>PM_FORMAT2</Name>
+      <FVName>OPC_PM_FORMAT2</FVName>
+      <Units>KW</Units>
+      <ItemID>dacn1.dacn1_UUT_Controller.pm_format2.pv</ItemID>
+    </Channel>
+  </ChannelMap>
+  <Conditions>
+<Condition>
+<NO>1</NO>
+<Description>LEAK CHK</Description>
+  <Parameters>
+<Parameter><Name>PENG_OIL</Name><Value>60.22</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_GB_OIL</Name><Value>160.78</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_GENOIL</Name><Value>163.40</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>RVD_ENG</Name><Value>0.20</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>RVD_GB</Name><Value>0.20</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>ENG_SPD1</Name><Value>49298.07</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>IGV_POS</Name><Value>82.00</Value><Units>DEG</Units></Parameter>
+<Parameter><Name>P_BARO_A</Name><Value>14.51</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P_INLET</Name><Value>-0.24</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TIN_1</Name><Value>71.07</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_2</Name><Value>70.90</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_3</Name><Value>70.61</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_4</Name><Value>70.93</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_5</Name><Value>71.16</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_6</Name><Value>72.52</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_7</Name><Value>72.28</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_8</Name><Value>72.22</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_9</Name><Value>71.95</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_10</Name><Value>71.52</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_AMB</Name><Value>73.29</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>LCIT</Name><Value>78.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_EXDUCT</Name><Value>-1.71</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEX_1</Name><Value>701.57</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_2</Name><Value>685.71</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_3</Name><Value>679.02</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_4</Name><Value>677.63</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_5</Name><Value>688.72</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_6</Name><Value>703.19</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_1</Name><Value>704.84</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_2</Name><Value>728.49</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PFUEL_IN</Name><Value>35.67</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_FUEL</Name><Value>67.62</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>W_FUEL</Name><Value>164.68</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>P_EXIT</Name><Value>0.0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_EXIT</Name><Value>0.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_BLEED</Name><Value>0.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_BAIR_1</Name><Value>0.0</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PBAIRDIF</Name><Value>0.0</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>VOLT_1</Name><Value>0</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_2</Name><Value>0</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_3</Name><Value>0</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>AMP_1</Name><Value>0</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_2</Name><Value>0</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_3</Name><Value>0</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>WATTS</Name><Value>0</Value><Units>KW</Units></Parameter>
+<Parameter><Name>PCD</Name><Value>84.23</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PM_FORMAT2</Name><Value>1024</Value><Units>KW</Units></Parameter>
+  </Parameters>
+</Condition>
+<Condition>
+<NO>2</NO>
+<Description>D/OIL CHK</Description>
+  <Parameters>
+<Parameter><Name>PENG_OIL</Name><Value>60.54</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_GB_OIL</Name><Value>166.02</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_GENOIL</Name><Value>174.20</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>RVD_ENG</Name><Value>0.25</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>RVD_GB</Name><Value>0.19</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>ENG_SPD1</Name><Value>49298.07</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>IGV_POS</Name><Value>82.00</Value><Units>DEG</Units></Parameter>
+<Parameter><Name>P_BARO_A</Name><Value>14.52</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P_INLET</Name><Value>-0.26</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TIN_1</Name><Value>69.69</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_2</Name><Value>69.52</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_3</Name><Value>70.11</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_4</Name><Value>69.99</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_5</Name><Value>71.09</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_6</Name><Value>72.01</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_7</Name><Value>71.78</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_8</Name><Value>71.72</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_9</Name><Value>71.01</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_10</Name><Value>70.77</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_AMB</Name><Value>72.35</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>LCIT</Name><Value>77.00</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_EXDUCT</Name><Value>-1.07</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEX_1</Name><Value>749.26</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_2</Name><Value>733.66</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_3</Name><Value>725.92</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_4</Name><Value>736.06</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_5</Name><Value>754.60</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_6</Name><Value>763.72</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_1</Name><Value>767.84</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_2</Name><Value>782.75</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PFUEL_IN</Name><Value>33.88</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_FUEL</Name><Value>66.89</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>W_FUEL</Name><Value>188.21</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>P_EXIT</Name><Value>0.0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_EXIT</Name><Value>0.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_BLEED</Name><Value>0.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_BAIR_1</Name><Value>0.0</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PBAIRDIF</Name><Value>0.0</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>VOLT_1</Name><Value>113130000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_2</Name><Value>113130000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_3</Name><Value>113130000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>AMP_1</Name><Value>156240000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_2</Name><Value>156240000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_3</Name><Value>156240000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>WATTS</Name><Value>5303000</Value><Units>KW</Units></Parameter>
+<Parameter><Name>PCD</Name><Value>86.28</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PM_FORMAT2</Name><Value>1024</Value><Units>KW</Units></Parameter>
+</Parameters>
+</Condition>
+<Condition>
+<NO>3</NO>
+<Description>CNTRL CHK</Description>
+  <Parameters>
+<Parameter><Name>PENG_OIL</Name><Value>61.09</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_GB_OIL</Name><Value>168.29</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_GENOIL</Name><Value>174.20</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>RVD_ENG</Name><Value>0.21</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>RVD_GB</Name><Value>0.15</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>ENG_SPD1</Name><Value>49298.07</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>IGV_POS</Name><Value>-4.88</Value><Units>DEG</Units></Parameter>
+<Parameter><Name>P_BARO_A</Name><Value>14.52</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P_INLET</Name><Value>-0.34</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TIN_1</Name><Value>72.68</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_2</Name><Value>71.21</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_3</Name><Value>71.79</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_4</Name><Value>71.45</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_5</Name><Value>71.68</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_6</Name><Value>74.14</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_7</Name><Value>72.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_8</Name><Value>75.59</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_9</Name><Value>72.47</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_10</Name><Value>72.65</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_AMB</Name><Value>74.25</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>LCIT</Name><Value>78.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_EXDUCT</Name><Value>-1.57</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEX_1</Name><Value>968.13</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_2</Name><Value>979.97</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_3</Name><Value>1003.52</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_4</Name><Value>1036.63</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_5</Name><Value>996.97</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_6</Name><Value>967.03</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_1</Name><Value>1051.64</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_2</Name><Value>989.26</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PFUEL_IN</Name><Value>22.57</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_FUEL</Name><Value>69.01</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>W_FUEL</Name><Value>279.01</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>P_EXIT</Name><Value>46.42</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_EXIT</Name><Value>418.53</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_BLEED</Name><Value>367.26</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_BAIR_1</Name><Value>54.63</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PBAIRDIF</Name><Value>158.87</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>VOLT_1</Name><Value>113230000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_2</Name><Value>113230000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_3</Name><Value>113230000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>AMP_1</Name><Value>135580000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_2</Name><Value>135580000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_3</Name><Value>135580000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>WATTS</Name><Value>4605000</Value><Units>KW</Units></Parameter>
+<Parameter><Name>PCD</Name><Value>91.63</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PM_FORMAT2</Name><Value>1024</Value><Units>KW</Units></Parameter>
+</Parameters>
+</Condition>
+<Condition>
+<NO>4</NO>
+<Description>ECS MODE</Description>
+  <Parameters>
+<Parameter><Name>PENG_OIL</Name><Value>60.97</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_GB_OIL</Name><Value>178.68</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_GENOIL</Name><Value>192.20</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>RVD_ENG</Name><Value>0.20</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>RVD_GB</Name><Value>0.13</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>ENG_SPD1</Name><Value>49298.07</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>IGV_POS</Name><Value>32.52</Value><Units>DEG</Units></Parameter>
+<Parameter><Name>P_BARO_A</Name><Value>14.52</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P_INLET</Name><Value>-0.31</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TIN_1</Name><Value>73.32</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_2</Name><Value>72.50</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_3</Name><Value>72.43</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_4</Name><Value>72.96</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_5</Name><Value>74.50</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_6</Name><Value>76.53</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_7</Name><Value>74.09</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_8</Name><Value>76.66</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_9</Name><Value>73.54</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_10</Name><Value>74.06</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_AMB</Name><Value>75.33</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>LCIT</Name><Value>78.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_EXDUCT</Name><Value>-2.46</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEX_1</Name><Value>928.05</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_2</Name><Value>930.81</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_3</Name><Value>957.67</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_4</Name><Value>985.82</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_5</Name><Value>965.16</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_6</Name><Value>938.31</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_1</Name><Value>1005.79</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_2</Name><Value>957.65</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PFUEL_IN</Name><Value>25.57</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_FUEL</Name><Value>68.77</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>W_FUEL</Name><Value>262.03</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>P_EXIT</Name><Value>35.28</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_EXIT</Name><Value>376.50</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_BLEED</Name><Value>347.24</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_BAIR_1</Name><Value>43.48</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PBAIRDIF</Name><Value>156.54</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>VOLT_1</Name><Value>113000000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_2</Name><Value>113000000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_3</Name><Value>113000000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>AMP_1</Name><Value>212640000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_2</Name><Value>212640000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_3</Name><Value>212640000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>WATTS</Name><Value>7209000</Value><Units>KW</Units></Parameter>
+<Parameter><Name>PCD</Name><Value>90.40</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PM_FORMAT2</Name><Value>1024</Value><Units>KW</Units></Parameter>
+</Parameters>
+</Condition>
+<Condition>
+<NO>5</NO>
+<Description>SHAFT LD</Description>
+  <Parameters>
+<Parameter><Name>PENG_OIL</Name><Value>60.43</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_GB_OIL</Name><Value>182.29</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_GENOIL</Name><Value>195.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>RVD_ENG</Name><Value>0.19</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>RVD_GB</Name><Value>0.11</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>ENG_SPD1</Name><Value>49291.78</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>IGV_POS</Name><Value>82.00</Value><Units>DEG</Units></Parameter>
+<Parameter><Name>P_BARO_A</Name><Value>14.52</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P_INLET</Name><Value>-0.22</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TIN_1</Name><Value>73.10</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_2</Name><Value>72.28</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_3</Name><Value>72.43</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_4</Name><Value>73.39</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_5</Name><Value>74.72</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_6</Name><Value>75.66</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_7</Name><Value>74.53</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_8</Name><Value>76.00</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_9</Name><Value>75.29</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_10</Name><Value>74.15</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_AMB</Name><Value>75.11</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>LCIT</Name><Value>78.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_EXDUCT</Name><Value>-1.36</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEX_1</Name><Value>792.96</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_2</Name><Value>780.38</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_3</Name><Value>770.43</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_4</Name><Value>789.81</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_5</Name><Value>806.60</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_6</Name><Value>812.62</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_1</Name><Value>830.85</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_2</Name><Value>827.49</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PFUEL_IN</Name><Value>32.93</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_FUEL</Name><Value>68.34</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>W_FUEL</Name><Value>203.39</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>P_EXIT</Name><Value>-0.09</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_EXIT</Name><Value>320.85</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_BLEED</Name><Value>325.92</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_BAIR_1</Name><Value>14.43</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PBAIRDIF</Name><Value>-0.37</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>VOLT_1</Name><Value>113010000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_2</Name><Value>113010000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_3</Name><Value>113010000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>AMP_1</Name><Value>251120000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_2</Name><Value>251120000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_3</Name><Value>251120000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>WATTS</Name><Value>8513000</Value><Units>KW</Units></Parameter>
+<Parameter><Name>PCD</Name><Value>89.90</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PM_FORMAT2</Name><Value>1024</Value><Units>KW</Units></Parameter>
+</Parameters>
+</Condition>
+<Condition>
+<NO>6</NO>
+<Description>NO LOAD</Description>
+  <Parameters>
+<Parameter><Name>PENG_OIL</Name><Value>60.38</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_GB_OIL</Name><Value>169.61</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_GENOIL</Name><Value>174.20</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>RVD_ENG</Name><Value>0.22</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>RVD_GB</Name><Value>0.15</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>ENG_SPD1</Name><Value>49291.78</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>IGV_POS</Name><Value>82.00</Value><Units>DEG</Units></Parameter>
+<Parameter><Name>P_BARO_A</Name><Value>14.53</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P_INLET</Name><Value>-0.24</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TIN_1</Name><Value>72.07</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_2</Name><Value>71.91</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_3</Name><Value>72.27</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_4</Name><Value>72.58</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_5</Name><Value>73.04</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_6</Name><Value>74.84</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_7</Name><Value>73.72</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_8</Name><Value>74.97</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_9</Name><Value>74.70</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_10</Name><Value>73.35</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_AMB</Name><Value>75.17</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>LCIT</Name><Value>78.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_EXDUCT</Name><Value>-1.46</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEX_1</Name><Value>704.84</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_2</Name><Value>690.66</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_3</Name><Value>683.96</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_4</Name><Value>681.32</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_5</Name><Value>692.20</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_6</Name><Value>704.99</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_1</Name><Value>707.27</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_2</Name><Value>733.22</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PFUEL_IN</Name><Value>35.98</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_FUEL</Name><Value>68.40</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>W_FUEL</Name><Value>164.78</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>P_EXIT</Name><Value>-0.06</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_EXIT</Name><Value>256.75</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_BLEED</Name><Value>302.20</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_BAIR_1</Name><Value>14.47</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PBAIRDIF</Name><Value>-0.37</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>VOLT_1</Name><Value>113890000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_2</Name><Value>113890000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_3</Name><Value>113890000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>AMP_1</Name><Value>80000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_2</Name><Value>80000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_3</Name><Value>80000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>WATTS</Name><Value>3000</Value><Units>KW</Units></Parameter>
+<Parameter><Name>PCD</Name><Value>83.84</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PM_FORMAT2</Name><Value>1024</Value><Units>KW</Units></Parameter>
+</Parameters>
+</Condition>
+<Condition>
+<NO>7</NO>
+<Description>LEAK CHK</Description>
+  <Parameters>
+<Parameter><Name>PENG_OIL</Name><Value>0.0</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_GB_OIL</Name><Value>0.0</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_GENOIL</Name><Value>163.40</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>RVD_ENG</Name><Value>0.24</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>RVD_GB</Name><Value>0.17</Value><Units>IN/SEC</Units></Parameter>
+<Parameter><Name>ENG_SPD1</Name><Value>49291.78</Value><Units>RPM</Units></Parameter>
+<Parameter><Name>IGV_POS</Name><Value>82.00</Value><Units>DEG</Units></Parameter>
+<Parameter><Name>P_BARO_A</Name><Value>14.53</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>P_INLET</Name><Value>-0.24</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TIN_1</Name><Value>71.13</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_2</Name><Value>70.97</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_3</Name><Value>70.89</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_4</Name><Value>71.21</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_5</Name><Value>71.66</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_6</Name><Value>72.58</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_7</Name><Value>72.34</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_8</Name><Value>72.72</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_9</Name><Value>72.45</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TIN_10</Name><Value>71.77</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_AMB</Name><Value>74.23</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>LCIT</Name><Value>78.80</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_EXDUCT</Name><Value>-1.61</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>TEX_1</Name><Value>703.72</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_2</Name><Value>688.91</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_3</Name><Value>681.59</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_4</Name><Value>679.36</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_5</Name><Value>690.67</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>TEX_6</Name><Value>704.93</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_1</Name><Value>708.26</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>ETC_2</Name><Value>731.69</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>PFUEL_IN</Name><Value>35.79</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_FUEL</Name><Value>69.43</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>W_FUEL</Name><Value>164.30</Value><Units>PPH</Units></Parameter>
+<Parameter><Name>P_EXIT</Name><Value>1.89</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>T_EXIT</Name><Value>113.71</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>T_BLEED</Name><Value>76.11</Value><Units>DEGF</Units></Parameter>
+<Parameter><Name>P_BAIR_1</Name><Value>16.41</Value><Units>PSIA</Units></Parameter>
+<Parameter><Name>PBAIRDIF</Name><Value>-0.31</Value><Units>INH2O</Units></Parameter>
+<Parameter><Name>VOLT_1</Name><Value>113870000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_2</Name><Value>113870000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>VOLT_3</Name><Value>113870000</Value><Units>VAC</Units></Parameter>
+<Parameter><Name>AMP_1</Name><Value>80000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_2</Name><Value>80000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>AMP_3</Name><Value>80000</Value><Units>AMPS</Units></Parameter>
+<Parameter><Name>WATTS</Name><Value>3000</Value><Units>KW</Units></Parameter>
+<Parameter><Name>PCD</Name><Value>83.91</Value><Units>PSIG</Units></Parameter>
+<Parameter><Name>PM_FORMAT2</Name><Value>1024</Value><Units>KW</Units></Parameter>
+</Parameters>
+</Condition>
+</Conditions>
+</Performance>

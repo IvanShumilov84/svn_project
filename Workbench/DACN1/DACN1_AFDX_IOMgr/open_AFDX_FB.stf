@@ -1,0 +1,167 @@
+FUNCTION_BLOCK open_AFDX_FB
+(************************************************************************************************************************************************
+        Name :                open_AFDX_FB                                                                        
+                                                                                                                
+        Description :        Open AFDX connection
+
+        Dependacy :         
+                                        HYSTORY
+
+        Rev                Date                Name                Description
+                        (YYYY/MM/DD)
+
+        1.0             2014/01/16             F.Tremblay         First Release
+        
+************************************************************************************************************************************************)        
+
+(*
+ * Use tab settings of 4 to keep code correctly indented. [Options->Tab setting]
+ * 
+ *)
+	status                  := OPENING;
+    err_code                := OK;
+    dummy                   := LOG_MSG('ErrLog','DACN1_AFDX_IOMGR: OPENING');
+    First_Time_Close        := TRUE;
+    (*ft rdata_base              := 0;*)
+
+
+
+	XMLError	:= False;
+
+	XMLCFGSETTINGS_OPEN('/usr/v2000/celdas.cfg');
+
+	hCfgSettings := XMLCFGSETTINGS_OPEN.HANDLE;
+
+	IF hCfgSettings <> 0 THEN
+
+		
+
+		XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + 'RESSOURCE.DACN1_AFDX_IOMGR.AFDX_VIRTUAL_LINK_CSV' , '/usr/v2000/app/DACN1_AFDX_VIRTUAL_LINK_CSV.csv');
+		CSV_FILE_AFDX_VIRTUAL_LINK := XMLCFGSETTINGS_GETSTRINGVALUE.VALUE;
+
+		XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + 'RESSOURCE.DACN1_AFDX_IOMGR.AFDX_PORT_CSV' , '/usr/v2000/app/DACN1_AFDX_PORT_CSV.csv');
+		CSV_FILE_AFDX_PORT:= XMLCFGSETTINGS_GETSTRINGVALUE.VALUE;
+
+		XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + 'RESSOURCE.DACN1_AFDX_IOMGR.AFDX_SIGNAL_CSV' , '/usr/v2000/app/DACN1_AFDX_SIGNAL_CSV.csv');
+		CSV_FILE_AFDX_SIGNAL:= XMLCFGSETTINGS_GETSTRINGVALUE.VALUE;
+
+		XMLCFGSETTINGS_GETSTRINGVALUE(hCfgSettings, 'ConfigurationSettings.' + 'RESSOURCE.DACN1_AFDX_IOMGR.IP_ADDRESS' , '192.168.2.230');
+		IP_ADDRESS:= XMLCFGSETTINGS_GETSTRINGVALUE.VALUE;
+
+		XMLCFGSETTINGS_CLOSE(hCfgSettings);
+		hCfgSettings := 0;
+
+	ELSE
+		err_code := ERROR_ON_OPENING;
+		dummy := LOG_MSG('ErrLog', 'DACN1_AFDX_IOMgr: ERROR cannot open file: /usr/v2000/celdas.cfg' );
+	END_IF;
+
+    (* Initialization of IPAddress of PowerDNA *)
+    (* The NUMBER_OF_POWERDNAS is 1 for this project, this is corresponding number 
+       of black communication box into the Temperature box *)
+
+
+	(* Certanes Fan Cell ont des StrongBack permettant de switcher le hardware rapidement  (2 PDNA)
+	Alors il peut exister 2 CSV different pour les m[eme IO.  La facon de savoir lequel csv il faut utiliser
+	est deduit en interrogeant le PDNA et son IONAme 			
+	ATTENTION CETTE FONCTIONNALITE SE REPERCUTE AUSSI DANS LA SEQUENCE DE CALIBRATION *)
+
+	PowerDNA_Structure.IPaddress := IP_ADDRESS;  (* From config file *)
+
+    (* Initialization of handle and status of PowerDNAs *)
+
+	PowerDNA_Structure.handle := 0;
+    PowerDNA_Structure.status := OPENING;
+   	PowerDNA_Structure.rate   := 30;
+	PowerDNA_Structure.number_of_layers := 0;
+	PowerDNA_Structure.hAfdxDev := 0;
+
+
+    (* Loads the socket libraries and initializes table structures *)        
+		
+	IF(In_AFDX_IOMgr.mode = RUN_FOR_TRUE)THEN
+        
+    	POWERDNA_INIT();
+
+        IF (POWERDNA_INIT.ERR_CODE = OK ) THEN        
+
+            (* Open Connection to PowerDNAs *)
+			
+			POWERDNA_OPEN(PowerDNA_Structure.IPaddress);
+
+            PowerDNA_Structure.handle   := POWERDNA_OPEN.HANDLE;  
+            PowerDNA_Structure.err_code := POWERDNA_OPEN.ERR_CODE;
+				
+            IF (PowerDNA_Structure.err_code <> OK) THEN
+
+
+				(* ATTENTION: En configuration 2 strongback: lors du switch des powerdna QNX garde dans sa table de mapping la MAC Address en cache 
+				   Utiliser la command QNX arp -an pour lister la table de mac addr. en cache et faire la commande arp -d *)
+
+				POWERDNA_CLOSE(PowerDNA_Structure.handle);
+ 
+				IF (POWERDNA_CLOSE.ERR_CODE <> 0) THEN
+
+					err_code := POWERDNA_CLOSE.ERR_CODE ;
+	
+				END_IF;
+
+                PowerDNA_Structure.handle := -1;
+				PowerDNA_Structure.number_of_layers := 0;
+
+			
+			ELSE 
+				POWERDNA_AFDXCREATE_DEVICE(ANY_TO_UDINT(PowerDNA_Structure.handle), 0);
+				IF (POWERDNA_AFDXCREATE_DEVICE.ERR_CODE = OK) THEN
+					PowerDNA_Structure.hAfdxDev := POWERDNA_AFDXCREATE_DEVICE.HAFDXDEV;
+				ELSE
+					PowerDNA_Structure.hAfdxDev := 0;
+				END_IF;
+        		err_code := POWERDNA_AFDXCREATE_DEVICE.ERR_CODE;                
+			END_IF; 
+	
+		END_IF;
+
+	END_IF;
+
+	(* RData Open IF no error_code *)
+
+    IF err_code = OK THEN
+
+    	(*OPEN_RDATA(150);
+
+        err_code   := OPEN_RDATA.ERR_CODE;
+                
+        IF err_code = OK THEN
+
+        	rdata_base := OPEN_RDATA.BASE_HANDLE;
+
+		END_IF;
+		*)
+
+	END_IF;
+
+
+    IF (err_code <> OK) THEN 
+
+    	status := ERROR_ON_OPENING;        
+        dummy  := LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: ERROR_ON_OPENING');
+
+	ELSE
+        status := OPENED;
+    	dummy  := LOG_MSG('ErrLog', 'DACN1_AFDX_IOMGR: OPENED');
+
+       
+        PowerDNA_Structure.status := OPENED;
+
+		
+	END_IF; 
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

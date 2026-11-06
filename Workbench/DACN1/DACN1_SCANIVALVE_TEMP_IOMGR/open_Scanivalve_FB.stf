@@ -1,0 +1,108 @@
+FUNCTION_BLOCK open_Scanivalve_FB
+(************************************************************************************************************************************************
+	Name :		open_Scanivalve_IOMgr_FB									
+														
+	Description :	Open ScaniValve connection
+
+	Dependacy : 	
+					HYSTORY
+
+	Rev		Date		Name		Description
+		        (YYYY/MM/DD)
+
+	1.0	         2001/05/12		M.Morisset	First Release
+	2.0	         2001/11/05		P.Dextraze	Add OPEN_RDATA CALL 
+	3.0	         2004/12/07		N. Sangiovanni	Adapt for CELDAS200 Generation
+
+************************************************************************************************************************************************)	
+
+	status 			:= OPENING;
+	err_code 		:= OK;
+	dummy			:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: OPENING');
+	First_Time_Close 	:= TRUE;
+	rdata_base		:= 0;
+
+
+(* Initialization of IPAddress of ScaniValves *)
+	Number_of_Scanivalve := 2;
+	
+	Scanivalve_Structure[1].Model		:= SCANIVALVE_DTS3250;
+	ScaniValve_Structure[1].IPAddress 	:= '192.168.1.230';
+	Scanivalve_Structure[1].Eng_Unit	:= 'F';
+	Scanivalve_Structure[1].Set_Speed	:= 100;
+
+
+	Scanivalve_Structure[2].Model		:= SCANIVALVE_DTS3250;
+	ScaniValve_Structure[2].IPAddress 	:= '192.168.1.231';
+	Scanivalve_Structure[2].Eng_Unit	:= 'F';
+	Scanivalve_Structure[2].Set_Speed	:= 100;
+
+
+(* Initialization of Sock and ScaniValve_Closed flag of Scanivalves *)
+	FOR i:= 1 TO Number_of_Scanivalve DO
+		ScaniValve_Structure[i].Sock := -1;
+		ScaniValve_Structure[i].Status := RUN;
+		ScaniValve_Structure[i].err_code := OK;
+	END_FOR;
+
+
+(* Open Connection to Scanivalves *)
+	IF In_Scanivalve_Temp_IOMgr.mode = RUN_FOR_TRUE THEN
+
+		FOR i := 1 TO Number_of_Scanivalve DO
+	
+			SCANIVALVE_OPEN(ScaniValve_Structure[i].IPAddress);
+
+			ScaniValve_Structure[i].Sock 		:= SCANIVALVE_OPEN.SOCK;
+			ScaniValve_Structure[i].err_code 	:= SCANIVALVE_OPEN.ERR_CODE;
+
+			IF (ScaniValve_Structure[i].err_code <> OK) THEN
+
+				ScaniValve_Structure[i].Sock 	:= -1;
+				i 				:= Number_of_Scanivalve ;
+				err_code 			:= ScaniValve_Structure[i].err_code;
+
+			END_IF;
+
+		END_FOR;
+
+	END_IF;
+
+
+(* RData Open IF no error_code *)
+	IF err_code = OK THEN
+		OPEN_RDATA(100);
+		err_code  	:=  OPEN_RDATA.ERR_CODE;
+		rdata_base  :=  OPEN_RDATA.BASE_HANDLE;
+	ELSE
+		rdata_base  := 0;
+	END_IF;
+
+
+	IF (err_code <> OK) THEN 
+		status	:= ERROR_ON_OPENING;	
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: ERROR_ON_OPENING');
+	ELSE
+		status 	:= OPENED;
+		dummy	:= LOG_MSG('ErrLog', 'DACN1_SCANIVALVE_TEMPERATURE_IOMGR: OPENED');
+	END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

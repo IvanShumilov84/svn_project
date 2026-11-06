@@ -1,0 +1,105 @@
+FUNCTION_BLOCK initialize_VX100_FB
+(*
+	Request the first scan and prepare the next scan
+*)
+
+status := INITIALIZING;
+
+(* Initialize the User selection for the first run *)
+
+IF (DYNO_MODE = 'SPEED') THEN
+
+	User_Speed_demand := DYNO_INITIAL_DEMAND;
+	User_Speed_Mode_ON := TRUE;
+	User_Speed_Ind	:= TRUE;
+	User_Pos_Mode_ON := FALSE;
+	User_Torque_Mode_ON := FALSE;
+	User_PowLaw_Mode_ON := FALSE;
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+
+ELSIF (DYNO_MODE = 'TORQUE') THEN
+
+	User_Speed_Mode_ON := FALSE;
+	User_Pos_Mode_ON := FALSE;
+	User_Torque_demand := DYNO_INITIAL_DEMAND;
+	User_Torque_Mode_ON := TRUE;
+	User_Torque_Ind	:= TRUE;
+	User_PowLaw_Mode_ON := FALSE; 
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+
+ELSIF (DYNO_MODE = 'POSITION') THEN
+
+	User_Speed_Mode_ON := FALSE;
+	User_Pos_demand := DYNO_INITIAL_DEMAND;
+	User_Pos_Mode_ON := TRUE;
+	User_Pos_Ind	:= TRUE;
+	User_Torque_Mode_ON := FALSE;
+	User_PowLaw_Mode_ON := FALSE; 
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+
+ELSIF (DYNO_MODE = 'POWER_LAW') THEN
+
+	User_Speed_Mode_ON := FALSE;
+	User_Pos_Mode_ON := FALSE;
+	User_Torque_Mode_ON := FALSE;
+	User_PowLaw_demand := DYNO_INITIAL_DEMAND;
+	User_PowLaw_Mode_ON := TRUE;
+	User_PowLaw_Ind	:= TRUE;
+	User_Pos_Beep_ON := FALSE;
+	User_Inlet_Valve_Manual := FALSE;
+	User_Inlet_Valve_Demand := 2.0;
+	User_Inlet_Preset := FALSE;
+
+END_IF;
+
+Dyno_Inlet_Vlv_Manual_Init := TRUE;
+
+(*wait_for_IOMgr(FALSE, t#10s);*)
+
+First_Time_Run := TRUE;
+
+err_code := OK;
+
+current_scan := 2;
+next_scan	 := 3;
+
+IF (err_code <> OK) THEN 
+	status	:= ERROR_ON_INITIALIZING;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR: ERROR ON INITIALIZING');
+ELSE 
+	status	:= INITIALIZED;
+	dummy		:= LOG_MSG('ErrLog', 'DACN1_TEXCEL_VX100_IOMGR: INITIALIZED');
+END_IF; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

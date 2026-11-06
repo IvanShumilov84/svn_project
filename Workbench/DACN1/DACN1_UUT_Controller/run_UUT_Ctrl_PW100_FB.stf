@@ -1,0 +1,328 @@
+FUNCTION_BLOCK run_UUT_Ctrl_PW100_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_PW100_FB									
+														
+	Description :	Routine for  UUT Controller PW100.
+    
+
+	Dependacy : 	
+
+					HISTORY
+	Rev			Date			Name			Description
+		     		(YYYY/MM/DD)
+
+	1.0	         	2015/09/ 		?.....		First Release
+	2.0	         	2015/09/23		A. Armand		Added : Handling Engine Models, NH and  NL for Project 14086
+	2.1	         	2015/11/27		A. Armand		Added : Overtemp point setting, according to engine state for Project 14086
+	
+************************************************************************************************************************************************)	
+
+	
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: RUNNING');*)
+	err_code 	:= OK;
+	
+	
+	(*33300 RPM at 18990 Hz (NH) *)
+	(*27700 RPM at 9233 Hz (NL) *)
+	(*20000 RPM at 2700/2720/2968 Hz (NPT) *)
+	
+
+	(* Limits are expressed in % *)
+
+	(* NH *)
+	CASE 	ANY_TO_DINT ( NH_BINDING_SOURCE ) OF
+
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			NH_HZ	:=DACN1_NIDAQ_IOMGR_F[ NH_INDEX ].Mean_Value; 		
+	ELSE
+		err_code := -2;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW100: NH_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;   
+      
+	NH_Speed_RPM	:= (NH_HZ * NH_100_RPM) / NH_100_FREQ;
+	NH_Speed_PCT	:= (NH_HZ / NH_100_FREQ ) * 100.0;
+
+
+	(* NL *)
+	CASE 	ANY_TO_DINT ( NL_BINDING_SOURCE ) OF
+
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			NL_HZ :=DACN1_NIDAQ_IOMGR_F[ NL_INDEX ].Mean_Value; 		
+	ELSE
+		err_code := -22;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW100: NPL_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;   
+      
+	NL_Speed_RPM	:= (NL_HZ * NL_100_RPM) / NL_100_FREQ;
+	NL_Speed_PCT	:= (NL_HZ / NL_100_FREQ ) * 100.0;
+
+
+
+	(* NPT *)
+	CASE 	ANY_TO_DINT ( NPT_BINDING_SOURCE ) OF
+
+		BINDING_DACN1_NIDAQ_IOMGR_F:
+			NPT_HZ :=DACN1_NIDAQ_IOMGR_F[ NPT_INDEX ].Mean_Value; 		
+	ELSE
+		err_code := -3;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW100: NPT_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+
+	END_CASE;   
+      
+	NPT_Speed_RPM	:= (NPT_HZ * NPT_100_RPM) / NPT_100_FREQ;
+	NPT_Speed_PCT	:= (NPT_HZ / NPT_100_FREQ ) * 100.0;
+
+
+
+
+
+	(* TExhaust corresponds physically to MGT (Measured Gas Temperature, UART parameter, converted from degre C to F *)
+	(* TExhaust		:= ((DACN1_OMNIBUSBOX_UART_CHA[MGT_Index].engUnit * 1.8) + 32.0); *)
+	
+	(* For PW100 TExhaust is from TEMP BOX not OMNIBUSBOX *)
+	TExhaust		:= DACN1_POWERDNA_IOMGR_T[T_T6_INDEX].Mean_Value;
+	Torque_Source	:= Dyno_Q;
+	DynoSpeed_Source	:= Dyno_Speed;
+
+
+	(* TT1, TT7 We need to calculate an average on QNX as Performance Computer manage *)
+	(* average with delete buttons and information must propagated to Critical Computer *)	
+
+
+	(* T INLET *)
+
+	TInlet_Avg 			:= 0.0;
+	TInlet_Avg_Nb_Of_Probe	:= 0.0;
+
+	CASE 	ANY_TO_DINT ( T_T1_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			
+			FOR i:= 1 TO T_T1_NUMBER_PROBE  BY 1 DO
+				IF (DACN1_POWERDNA_IOMGR_T[ T_T1_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+					IF (DACN1_POWERDNA_IOMGR_T[ T_T1_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_POWERDNA_IOMGR_T[ T_T1_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN (* Validate if the reading is OK *)
+
+						TInlet_Avg := TInlet_Avg  + (DACN1_POWERDNA_IOMGR_T[ T_T1_PROBE_INDEX[i] ].Mean_Value);
+						TInlet_Avg_Nb_Of_Probe := TInlet_Avg_Nb_Of_Probe + 1.0;
+
+					END_IF;
+				END_IF;
+			END_FOR;
+
+	ELSE
+		err_code := -4;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW100: T_T1_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE;         
+	IF (TInlet_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TInlet_Avg	:= TInlet_Avg / TInlet_Avg_Nb_Of_Probe;
+	END_IF;
+
+
+	(* T EXHAUST *)
+	TEgt_Avg 			:= 0.0;
+	TEgt_Spread_Max		:= 0.0;
+	TEgt_Spread_Min		:= 99999.9;
+	TEgt_Spread 		:= 0.0;
+	TEgt_Avg_Nb_Of_Probe	:= 0.0;
+
+	CASE 	ANY_TO_DINT ( T_T8_PROBE_BINDING_SOURCE ) OF
+		BINDING_DACN1_POWERDNA_IOMGR_T:
+			
+			FOR i:= 1 TO T_T8_NUMBER_PROBE  BY 1 DO
+
+				(* Prode is not out of service *)
+				IF (DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+
+					(* Validate if the reading is OK for Avg *)
+					IF (DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN 
+						TEgt_Avg := TEgt_Avg  + (DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Mean_Value);
+						TEgt_Avg_Nb_Of_Probe := TEgt_Avg_Nb_Of_Probe + 1.0;
+					END_IF;
+
+					(* Record spread extremum *)
+					IF(TEgt_Spread_Max < DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Mean_Value) THEN
+						TEgt_Spread_Max := DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Mean_Value;
+					END_IF;
+
+					IF(TEgt_Spread_Min > DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Mean_Value) THEN
+						TEgt_Spread_Min := DACN1_POWERDNA_IOMGR_T[ T_T8_PROBE_INDEX[i] ].Mean_Value;
+					END_IF;
+
+				END_IF;
+			END_FOR;
+
+		BINDING_DACN1_NIDAQ_IOMGR_VIN:
+			
+			FOR i:= 1 TO T_T8_NUMBER_PROBE  BY 1 DO
+
+				(* Prode is not out of service *)
+				IF (DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Out_Of_Service = FALSE ) THEN
+
+					(* Validate if the reading is OK for Avg *)
+					IF (DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Mean_Value < 3000.0 And 
+					    DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Mean_Value > -460.0) THEN
+						TEgt_Avg := TEgt_Avg  + (DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Mean_Value);
+						TEgt_Avg_Nb_Of_Probe := TEgt_Avg_Nb_Of_Probe + 1.0;
+					END_IF;
+
+					(* Record spread extremum *)
+					IF(TEgt_Spread_Max < DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Mean_Value) THEN
+						TEgt_Spread_Max := DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Mean_Value;
+					END_IF;
+
+					IF(TEgt_Spread_Min > DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Mean_Value) THEN
+						TEgt_Spread_Min := DACN1_NIDAQ_IOMGR_VIN[ T_T8_PROBE_INDEX[i] ].Mean_Value;
+					END_IF;
+				END_IF;
+			END_FOR;
+
+	ELSE
+		err_code := -7;
+		dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL_PW100: T_T8_PROBE_BINDING_SOURCE NOT SUPPORTED');
+		RETURN;
+	
+	END_CASE; 
+
+	IF (TEgt_Avg_Nb_Of_Probe > 0.0 ) THEN
+		TEgt_Avg	:= TEgt_Avg / TEgt_Avg_Nb_Of_Probe;
+	END_IF;
+
+	TEgt_Spread := TEgt_Spread_Max - TEgt_Spread_Min;
+
+	
+	(* Overtemp Limits Settings  according to Engine State *)
+	IF (NH_Speed_RPM < NH_SPEED_AT_GI) And (TRIM_UNTRIMMED_BTN = FALSE) THEN
+
+		UUT_Trip_T[1].Trip_Point	:=	T6_TRIP_START_UNTRIMMED;
+
+	ELSIF (NH_Speed_RPM < NH_SPEED_AT_GI) And (TRIM_UNTRIMMED_BTN = TRUE) THEN
+
+		UUT_Trip_T[1].Trip_Point	:=	T6_TRIP_START_TRIMMED;
+
+	ELSIF	(NH_Speed_RPM >= NH_SPEED_AT_GI) And (TRIM_UNTRIMMED_BTN = FALSE) THEN
+
+		UUT_Trip_T[1].Trip_Point	:=	T6_TRIP_SS_UNTRIMMED;
+
+	ELSIF	(NH_Speed_RPM >= NH_SPEED_AT_GI) And (TRIM_UNTRIMMED_BTN = TRUE) THEN
+
+		UUT_Trip_T[1].Trip_Point	:=	T6_TRIP_SS_TRIMMED;
+
+	END_IF;
+
+
+
+	(*UUT_Trip_T[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.T1;*)
+	UUT_Trip_T[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.T2;
+	UUT_Trip_T[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.T3;
+	UUT_Trip_T[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.T4;
+
+	UUT_Trip_F[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.F1;
+	UUT_Trip_F[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.F2;
+	UUT_Trip_F[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.F3;
+	UUT_Trip_F[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.F4;
+
+	UUT_Trip_N[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.N1;
+	UUT_Trip_N[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.N2;
+	UUT_Trip_N[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.N3;
+	UUT_Trip_N[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.N4;
+
+	UUT_Trip_P[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.P1;
+	UUT_Trip_P[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.P2;
+	UUT_Trip_P[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.P3;
+	UUT_Trip_P[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.P4;
+
+	UUT_Trip_Q[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q1;
+	UUT_Trip_Q[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q2;
+	UUT_Trip_Q[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q3;
+	UUT_Trip_Q[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.Q4;
+
+	UUT_Trip_V[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.V1;
+	UUT_Trip_V[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.V2;
+	UUT_Trip_V[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.V3;
+	UUT_Trip_V[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.V4;
+
+	UUT_Trip_VIB[1].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB1;
+	UUT_Trip_VIB[2].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB2;
+	UUT_Trip_VIB[3].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB3;
+	UUT_Trip_VIB[4].Trip_Point	:=	UUT_Info.UUT_TripPoints.VIB4;
+
+
+	UUT_Trip_T[1].Trip_Source	:=	TExhaust;
+(*	UUT_Trip_T[2].Trip_Source	:=	;*)
+(*	UUT_Trip_T[3].Trip_Source	:=	;*)
+(*	UUT_Trip_T[4].Trip_Source	:=	;*)
+
+
+(*	UUT_Trip_F[1].Trip_Source	:=	;*)
+(*	UUT_Trip_F[2].Trip_Source	:=	;*)
+(*	UUT_Trip_F[3].Trip_Source	:=	;*)
+(*	UUT_Trip_F[4].Trip_Source	:=	;*)
+
+	UUT_Trip_N[1].Trip_Source	:=	NH_Speed_RPM;
+	UUT_Trip_N[2].Trip_Source	:=	NL_Speed_RPM;
+	UUT_Trip_N[3].Trip_Source	:=	NPT_Speed_RPM;
+
+(*	UUT_Trip_N[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_P[1].Trip_Source	:=	;*)
+(*	UUT_Trip_P[2].Trip_Source	:=	;*)
+(*	UUT_Trip_P[3].Trip_Source	:=	;*)
+(*	UUT_Trip_P[4].Trip_Source	:=	;*)
+
+	UUT_Trip_Q[1].Trip_Source	:=	Torque_Source;
+(*	UUT_Trip_Q[2].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[3].Trip_Source	:=	;*)
+(*	UUT_Trip_Q[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_V[1].Trip_Source	:=	;*)
+(*	UUT_Trip_V[2].Trip_Source	:=	;*)
+(*	UUT_Trip_V[3].Trip_Source	:=	;*)
+(*	UUT_Trip_V[4].Trip_Source	:=	;*)
+
+(*	UUT_Trip_VIB[1].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[2].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[3].Trip_Source	:=	;*)
+(*	UUT_Trip_VIB[4].Trip_Source	:=	;*)
+
+
+EGT_Limit := UUT_Trip_T[1].Trip_Point;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK

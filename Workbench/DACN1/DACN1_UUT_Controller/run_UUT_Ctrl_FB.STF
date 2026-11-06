@@ -1,0 +1,756 @@
+FUNCTION_BLOCK run_UUT_Ctrl_FB
+(************************************************************************************************************************************************
+	Name :		run_UUT_Ctrl_FB									
+														
+	Description :	 							      
+
+	Dependacy : 	
+
+					HISTORY
+	Rev		Date			Name			Description
+		        (YYYY/MM/DD)
+
+	1.0	         						First Release
+	2.0	       2003/06/11		N. Sangiovanni	Group by engine family
+	2.1	       2003/07/11		N. Sangiovanni	Add P&WC Engines for Brazil project
+	3.0		 2006/08/02		N. Sangiovanni	Major Code reorganisation
+	4.0		 2013/03/18		S. Boyte		Creation de sous function car on a atteind la limite du 64K pour le POU
+	4.1		 2015/11/18		A. Armand		Variables renommées SG -> DENSITY
+	5.0		 2016/07/21 	Shahbaz H.		Handles the Return_To_Idle functionality
+	5.1		 2019/05/29		Martin B.		Add RE220 engines for S7 project
+
+************************************************************************************************************************************************)	
+
+	status 		:= RUNNING;
+	(*dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: RUNNING');*)
+	err_code 	:= OK;
+
+	(* Map and Validate User Inputs *)
+	IF PROJECT_NUMBER <> 17865 THEN
+		Reset_Trips_Demand := UUT_Info.Main_Reset;
+	ELSE
+		IF (UUT_Info.Main_Reset = TRUE) OR (SafetyRelayArmingDelayTimer.Redge = TRUE) THEN
+			SafetyRelayArmingDelayTimer(TRUE, t#3000ms);
+			LongResetTimer := TRUE;
+		END_IF;
+
+		IF (SafetyRelayArmingDelayTimer.Q = TRUE) THEN
+			SafetyRelayArmingDelayTimer(FALSE, t#3000ms);
+			LongResetTimer := FALSE;
+		END_IF;
+
+		Reset_Trips_Demand := LongResetTimer;
+	END_IF;
+
+
+	IF PROJECT_NUMBER = 17865 THEN
+		(* ENGINE STOP REARM WAITING TIMER *)
+		IF (UUT_Info.Main_Reset = TRUE) OR (EngineStopResetWaitingTimer.Redge = TRUE) THEN
+			EngineStopTimerIsCounting := TRUE;
+		END_IF;
+
+		(* EngineStopResetWaitingTimer will expire 1000 msec after the transition  *)
+		(* from high to low  (or 1500 msec from the low to high transition of the  *)
+		(* reset trip button. The 500 msec is to give enough time for the          *)
+		(* emergency stop safety relay to engage properly since the emergency      *)
+		(* stop safety releay is powering the engine stop safety relay             *) 
+
+		EngineStopResetWaitingTimer(EngineStopTimerIsCounting, t#1500ms);
+
+		IF ((EngineStopTimerIsCounting = TRUE) AND EngineStopResetWaitingTimer.Q = TRUE) THEN
+			EngineStopTimerIsCounting := FALSE;
+		END_IF;
+
+		IF (EngineStopTimerIsCounting = FALSE AND EngineStopResetWaitingTimer.Q = TRUE) THEN
+			(* At this point, 1500 msec has elapsed since the reset trip condition; *)
+			(* or 1000 msec since since the trailing edge of the reset trip         *)
+			(* condition. The engine stop safety relay can now be engaged since     *)
+			(* enough time was given for the emergency stop safety relay to engage  *)
+			EngineStopResetWaitingTimer(FALSE, t#1500ms);
+
+			EngineStopRelayActivated := TRUE;
+
+		END_IF;
+
+		IF (EngineStopRelayActivated = TRUE) OR (ResetEngineStopRelayTimer.Redge = TRUE) THEN
+			ResetEngineStopRelayTimer(TRUE, t#1000ms);
+
+			EngineStopRelayActivated := FALSE;
+			ENGINE_STOP_REARM_CMD := TRUE;
+		END_IF;
+
+
+		IF ((EngineStopRelayActivated = FALSE) AND (ResetEngineStopRelayTimer.Q = TRUE)) THEN
+			ResetEngineStopRelayTimer(FALSE, t#1000ms);
+
+			ENGINE_STOP_REARM_CMD := FALSE;
+		END_IF;
+
+
+		(*
+		                               ______
+							/      \
+		Reset Trip __________________/        \___________________
+
+		                               ______
+		                              /      \
+		Emergency Stop Reset ________/        \___________________ (DOUT40)
+
+							 ___________
+							/           \
+		Emergency Stop Settle Time __/             \______________
+
+									  ______
+									 /      \
+		Engine Stop Reset ________________________/        \______ (DOUT42)
+
+		*)
+
+
+	END_IF;
+
+
+
+	(* Validate if Feedback has gone to False : Triggers an E-STOP *)
+
+
+	(* E_STOP_DAS_IND ****************************)
+	IF PROJECT_NUMBER <> 17865 THEN
+		CASE 	ANY_TO_DINT ( E_STOP_DAS_IND_BINDING_SOURCE ) OF
+			BINDING_DACN1_SERIAL_IOMGR_DIN:
+				E_STOP_DAS_IND		:= NOT(DACN1_SERIAL_IOMGR_DIN[ E_STOP_DAS_IND_INDEX ]);  
+		ELSE
+			err_code := -1;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL: E_STOP_DAS_IND_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+		END_CASE;
+	ELSE
+		CASE 	ANY_TO_DINT ( E_STOP_DAS_IND_BINDING_SOURCE ) OF
+			BINDING_DACN1_SERIAL_IOMGR_DIN:
+				E_STOP_DAS_IND		:= NOT(DACN1_SERIAL_IOMGR_DIN[ E_STOP_DAS_IND_INDEX ]);  
+		ELSE
+			err_code := -1;
+			dummy    := LOG_MSG('ErrLog', 'DACN1_UUT_CTRL: E_STOP_DAS_IND_BINDING_SOURCE NOT SUPPORTED');
+			RETURN;
+
+		END_CASE;
+	END_IF;
+
+
+
+
+	(* Power Meter Calculation *)
+
+	LB_INFO[1].VOLTAGE_L1_N := ANY_TO_LREAL(PM1_VOLTAGE_VL1_N.Pv); 
+	LB_INFO[1].VOLTAGE_L2_N := ANY_TO_LREAL(PM1_VOLTAGE_VL2_N.Pv);  
+	LB_INFO[1].VOLTAGE_L3_N := ANY_TO_LREAL(PM1_VOLTAGE_VL3_N.Pv); 
+	
+	LB_INFO[1].CURRENT_L1 := ANY_TO_LREAL(PM1_CURRENT_IL1.Pv); 
+	LB_INFO[1].CURRENT_L2 := ANY_TO_LREAL(PM1_CURRENT_IL2.Pv); 
+	LB_INFO[1].CURRENT_L3 := ANY_TO_LREAL(PM1_CURRENT_IL3.Pv); 
+
+	LB_INFO[1].TOTAL_POWER := ANY_TO_LREAL(PM1_POWER_TOT.Pv); 
+
+	LB_INFO[1].FREQUENCY :=  ANY_TO_LREAL(PM1_FREQ.Pv);
+
+	LB_INFO[2].VOLTAGE_L1_N := ANY_TO_LREAL(PM2_VOLTAGE_VL1_N.Pv); 
+	LB_INFO[2].VOLTAGE_L2_N := ANY_TO_LREAL(PM2_VOLTAGE_VL2_N.Pv);  
+	LB_INFO[2].VOLTAGE_L3_N := ANY_TO_LREAL(PM2_VOLTAGE_VL3_N.Pv); 
+	
+	LB_INFO[2].CURRENT_L1 := ANY_TO_LREAL(PM2_CURRENT_IL1.Pv); 
+	LB_INFO[2].CURRENT_L2 := ANY_TO_LREAL(PM2_CURRENT_IL2.Pv); 
+	LB_INFO[2].CURRENT_L3 := ANY_TO_LREAL( PM2_CURRENT_IL3.Pv); 
+
+	LB_INFO[2].TOTAL_POWER := ANY_TO_LREAL(PM2_POWER_TOT.Pv); 
+
+	LB_INFO[2].FREQUENCY :=  ANY_TO_LREAL(PM2_FREQ.Pv);
+
+
+	(* Flowmeter calculations *)
+	FM_MASS_WF		:= ANY_TO_LREAL(FM_MASS_FUEL_FLOW.Pv);
+	FM_DENSITY_F	:= ANY_TO_LREAL(FM_DENSITY_FUEL.Pv);
+	FM_T_F		:= ANY_TO_LREAL(FM_T_FUEL.Pv);
+	FM_VOL_WF		:= ANY_TO_LREAL(FM_VOL_FUEL_FLOW.Pv);
+	FM_TOTAL_F		:= ANY_TO_LREAL(FM_TOTAL_FUEL.Pv);
+	FM_TOTAL_VOL_F	:= ANY_TO_LREAL(FM_TOTAL_VOL_FUEL.Pv);
+	FM_TOTAL_F_STATUS	:= (FM_TOTAL_FUEL.Quality.Value = 0);	(* Quality 0 = Good *)
+
+	(* Fuel Level calculations *)
+
+	FL_FUEL_LEVEL_INCHES			:= ANY_TO_LREAL(FL_FUEL_LEVEL.Pv);
+	FL_AVERAGE_TEMPERATURE_DEGF		:= ANY_TO_LREAL(FL_AVERAGE_TEMPERATURE.Pv);
+
+(* Set Engine Trip limits using values entered in Test Session  *)
+
+	IF UUT_Info.Family = 'A250-RR300' THEN
+
+		run_UUT_Ctrl_A250_RR300();
+		err_code := run_UUT_Ctrl_A250_RR300.err_code;
+
+	ELSIF	(UUT_Info.Family = 'APS500') THEN
+
+		run_UUT_Ctrl_APS500();
+		err_code := run_UUT_Ctrl_APS500.err_code;
+
+	ELSIF	(UUT_Info.Family = 'APS1000') THEN
+
+		run_UUT_Ctrl_APS1000();
+		err_code := run_UUT_Ctrl_APS1000.err_code;
+	
+	ELSIF	(UUT_Info.Model = 'APS2000') THEN
+
+		run_UUT_Ctrl_APS2000();
+		err_code := run_UUT_Ctrl_APS2000.err_code;
+	
+
+	ELSIF	(UUT_Info.Family = 'APS2X00') THEN
+
+		run_UUT_Ctrl_APS2X00();	
+		err_code := run_UUT_Ctrl_APS2X00.err_code;
+
+	ELSIF	(UUT_Info.Family = 'APS32X0') THEN
+
+		run_UUT_Ctrl_APS32X0();	
+		err_code := run_UUT_Ctrl_APS32X0.err_code;	
+
+	ELSIF	(UUT_Info.Model = 'APS5000A') THEN
+
+		run_UUT_Ctrl_APS5000A();	
+		err_code := run_UUT_Ctrl_APS5000A.err_code;
+
+	ELSIF (UUT_Info.Family = 'GTCP331-200') THEN
+
+		run_UUT_Ctrl_GTCP331_200();
+		err_code := run_UUT_Ctrl_GTCP331_200.err_code;
+	
+	ELSIF	(UUT_Info.Family = 'GTCP331-350') THEN
+
+		run_UUT_Ctrl_GTCP331_350();	
+		err_code := run_UUT_Ctrl_GTCP331_350.err_code;
+
+	ELSIF	(UUT_Info.Family = 'GTCP331-500') THEN
+
+		run_UUT_Ctrl_GTCP331_500();	
+		err_code := run_UUT_Ctrl_GTCP331_500.err_code;
+	
+	ELSIF	(UUT_Info.Family = 'GTCP85-98') THEN
+
+		run_UUT_Ctrl_GTCP85_98();
+		err_code := run_UUT_Ctrl_GTCP85_98.err_code;
+
+	ELSIF	(UUT_Info.Family = 'GTCP85-129') THEN
+
+		run_UUT_Ctrl_GTCP85_129();
+		err_code := run_UUT_Ctrl_GTCP85_129.err_code;
+
+	ELSIF (UUT_Info.Model = 'GTCP131-9A') THEN
+
+		run_UUT_Ctrl_GTCP131_9A();
+		err_code := run_UUT_Ctrl_GTCP131_9A.err_code;
+
+	ELSIF (UUT_Info.Model = 'GTCP131-9B') THEN
+
+		run_UUT_Ctrl_GTCP131_9B();
+		err_code := run_UUT_Ctrl_GTCP131_9B.err_code;
+
+	ELSIF (UUT_Info.Family = 'RE220') THEN
+
+		run_UUT_Ctrl_RE220();
+		err_code := run_UUT_Ctrl_RE220.err_code;
+
+	ELSIF	(UUT_Info.Family = 'PT6A') THEN
+
+		run_UUT_Ctrl_PT6A();
+		err_code := run_UUT_Ctrl_PT6A.err_code;
+
+	ELSIF	(UUT_Info.Family = 'PT6C') THEN
+
+		run_UUT_Ctrl_PT6C();
+		err_code := run_UUT_Ctrl_PT6C.err_code;
+
+	ELSIF	(UUT_Info.Family = 'PT6T') THEN
+
+		run_UUT_Ctrl_PT6T();
+		err_code := run_UUT_Ctrl_PT6T.err_code;
+
+	ELSIF	(UUT_Info.Family = 'PW100') THEN
+
+		run_UUT_Ctrl_PW100();
+		err_code := run_UUT_Ctrl_PW100.err_code;
+
+	ELSIF	(UUT_Info.Family = 'PW200') THEN
+
+		run_UUT_Ctrl_PW200();
+		err_code := run_UUT_Ctrl_PW200.err_code;
+
+	ELSIF	(UUT_Info.Family = 'PW210') THEN
+
+		run_UUT_Ctrl_PW210();
+		err_code := run_UUT_Ctrl_PW210.err_code;
+
+	ELSIF	(UUT_Info.Model = 'PW150A') THEN
+
+		run_UUT_Ctrl_PW150A();	
+		err_code := run_UUT_Ctrl_PW150A.err_code;
+
+	ELSIF	(UUT_Info.Model = 'PW901A') THEN
+
+		run_UUT_Ctrl_PW901A();	
+		err_code := run_UUT_Ctrl_PW901A.err_code;
+
+	ELSIF	(UUT_Info.Model = 'PW980A') THEN
+
+		run_UUT_Ctrl_PW980A();	
+		err_code := run_UUT_Ctrl_PW980A.err_code;
+
+	ELSIF (UUT_Info.Family = 'T53') THEN
+
+		run_UUT_Ctrl_T53();
+		err_code := run_UUT_Ctrl_T53.err_code;
+
+	ELSIF (UUT_Info.Family = 'T700') THEN
+
+		run_UUT_Ctrl_T700();
+		err_code := run_UUT_Ctrl_T700.err_code;
+
+	ELSIF (UUT_Info.Family = 'TSCP700') THEN
+
+		run_UUT_Ctrl_TSCP700();
+		err_code := run_UUT_Ctrl_TSCP700.err_code;
+
+	ELSIF (UUT_Info.Family = 'TPE331') THEN
+
+		run_UUT_Ctrl_TPE331();
+		err_code := run_UUT_Ctrl_TPE331.err_code;
+
+	END_IF;
+
+
+(* Process Engine Protection *)
+	
+(* Trip *)
+
+      (* Frequency *)
+	IF UUT_Trip_F[1].Trip_High Then
+		F1_Trip_Latch(		(UUT_Trip_F[1].Trip_Source 	> UUT_Trip_F[1].Trip_Point),	FALSE);
+	ELSE
+		F1_Trip_Latch(		(UUT_Trip_F[1].Trip_Source 	< UUT_Trip_F[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_F[2].Trip_High Then
+		F2_Trip_Latch(		(UUT_Trip_F[2].Trip_Source 	> UUT_Trip_F[2].Trip_Point),	FALSE);
+	ELSE
+		F2_Trip_Latch(		(UUT_Trip_F[2].Trip_Source 	< UUT_Trip_F[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_F[3].Trip_High Then
+		F3_Trip_Latch(		(UUT_Trip_F[3].Trip_Source 	> UUT_Trip_F[3].Trip_Point),	FALSE);
+	ELSE
+		F3_Trip_Latch(		(UUT_Trip_F[3].Trip_Source 	< UUT_Trip_F[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_F[4].Trip_High Then
+		F4_Trip_Latch(		(UUT_Trip_F[4].Trip_Source 	> UUT_Trip_F[4].Trip_Point),	FALSE);
+	ELSE
+		F4_Trip_Latch(		(UUT_Trip_F[4].Trip_Source 	< UUT_Trip_F[4].Trip_Point),	FALSE);
+	END_IF;
+
+      (* Speed *)
+	IF UUT_Trip_N[1].Trip_High Then
+		N1_Trip_Latch(		(UUT_Trip_N[1].Trip_Source 	> UUT_Trip_N[1].Trip_Point),	FALSE);
+	ELSE
+		N1_Trip_Latch(		(UUT_Trip_N[1].Trip_Source 	< UUT_Trip_N[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_N[2].Trip_High Then
+		N2_Trip_Latch(		(UUT_Trip_N[2].Trip_Source 	> UUT_Trip_N[2].Trip_Point),	FALSE);
+	ELSE
+		N2_Trip_Latch(		(UUT_Trip_N[2].Trip_Source 	< UUT_Trip_N[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_N[3].Trip_High Then
+		N3_Trip_Latch(		(UUT_Trip_N[3].Trip_Source 	> UUT_Trip_N[3].Trip_Point),	FALSE);
+	ELSE
+		N3_Trip_Latch(		(UUT_Trip_N[3].Trip_Source 	< UUT_Trip_N[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_N[4].Trip_High Then
+		N4_Trip_Latch(		(UUT_Trip_N[4].Trip_Source 	> UUT_Trip_N[4].Trip_Point),	FALSE);
+	ELSE
+		N4_Trip_Latch(		(UUT_Trip_N[4].Trip_Source 	< UUT_Trip_N[4].Trip_Point),	FALSE);
+	END_IF;
+
+      (* Pressure *)
+	IF UUT_Trip_P[1].Trip_High Then
+		P1_Trip_Latch(		(UUT_Trip_P[1].Trip_Source 	> UUT_Trip_P[1].Trip_Point),	FALSE);
+	ELSE
+		P1_Trip_Latch(		(UUT_Trip_P[1].Trip_Source 	< UUT_Trip_P[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_P[2].Trip_High Then
+		P2_Trip_Latch(		(UUT_Trip_P[2].Trip_Source 	> UUT_Trip_P[2].Trip_Point),	FALSE);
+	ELSE
+		P2_Trip_Latch(		(UUT_Trip_P[2].Trip_Source 	< UUT_Trip_P[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_P[3].Trip_High Then
+		P3_Trip_Latch(		(UUT_Trip_P[3].Trip_Source 	> UUT_Trip_P[3].Trip_Point),	FALSE);
+	ELSE
+		P3_Trip_Latch(		(UUT_Trip_P[3].Trip_Source 	< UUT_Trip_P[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_P[4].Trip_High Then
+		P4_Trip_Latch(		(UUT_Trip_P[4].Trip_Source 	> UUT_Trip_P[4].Trip_Point),	FALSE);
+	ELSE
+		P4_Trip_Latch(		(UUT_Trip_P[4].Trip_Source 	< UUT_Trip_P[4].Trip_Point),	FALSE);
+	END_IF;
+
+      (* Voltage *)
+	IF UUT_Trip_V[1].Trip_High Then
+		V1_Trip_Latch(		(UUT_Trip_V[1].Trip_Source 	> UUT_Trip_V[1].Trip_Point),	FALSE);
+	ELSE
+		V1_Trip_Latch(		(UUT_Trip_V[1].Trip_Source 	< UUT_Trip_V[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_V[2].Trip_High Then
+		V2_Trip_Latch(		(UUT_Trip_V[2].Trip_Source 	> UUT_Trip_V[2].Trip_Point),	FALSE);
+	ELSE
+		V2_Trip_Latch(		(UUT_Trip_V[2].Trip_Source 	< UUT_Trip_V[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_V[3].Trip_High Then
+		V3_Trip_Latch(		(UUT_Trip_V[3].Trip_Source 	> UUT_Trip_V[3].Trip_Point),	FALSE);
+	ELSE
+		V3_Trip_Latch(		(UUT_Trip_V[3].Trip_Source 	< UUT_Trip_V[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_V[4].Trip_High Then
+		V4_Trip_Latch(		(UUT_Trip_V[4].Trip_Source 	> UUT_Trip_V[4].Trip_Point),	FALSE);
+	ELSE
+		V4_Trip_Latch(		(UUT_Trip_V[4].Trip_Source 	< UUT_Trip_V[4].Trip_Point),	FALSE);
+	END_IF;
+      (* Current *)
+	IF UUT_Trip_I[1].Trip_High Then
+		I1_Trip_Latch(		(UUT_Trip_I[1].Trip_Source 	> UUT_Trip_I[1].Trip_Point),	FALSE);
+	ELSE
+		I1_Trip_Latch(		(UUT_Trip_I[1].Trip_Source 	< UUT_Trip_I[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_I[2].Trip_High Then
+		I2_Trip_Latch(		(UUT_Trip_I[2].Trip_Source 	> UUT_Trip_I[2].Trip_Point),	FALSE);
+	ELSE
+		I2_Trip_Latch(		(UUT_Trip_I[2].Trip_Source 	< UUT_Trip_I[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_I[3].Trip_High Then
+		I3_Trip_Latch(		(UUT_Trip_I[3].Trip_Source 	> UUT_Trip_I[3].Trip_Point),	FALSE);
+	ELSE
+		I3_Trip_Latch(		(UUT_Trip_I[3].Trip_Source 	< UUT_Trip_I[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_I[4].Trip_High Then
+		I4_Trip_Latch(		(UUT_Trip_I[4].Trip_Source 	> UUT_Trip_I[4].Trip_Point),	FALSE);
+	ELSE
+		I4_Trip_Latch(		(UUT_Trip_I[4].Trip_Source 	< UUT_Trip_I[4].Trip_Point),	FALSE);
+	END_IF;
+
+      (* Vibration *)
+	IF UUT_Trip_VIB[1].Trip_High Then
+		VIB1_Trip_Latch(		(UUT_Trip_VIB[1].Trip_Source 	> UUT_Trip_VIB[1].Trip_Point),	FALSE);
+	ELSE
+		VIB1_Trip_Latch(		(UUT_Trip_VIB[1].Trip_Source 	< UUT_Trip_VIB[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_VIB[2].Trip_High Then
+		VIB2_Trip_Latch(		(UUT_Trip_VIB[2].Trip_Source 	> UUT_Trip_VIB[2].Trip_Point),	FALSE);
+	ELSE
+		VIB2_Trip_Latch(		(UUT_Trip_VIB[2].Trip_Source 	< UUT_Trip_VIB[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_VIB[3].Trip_High Then
+		VIB3_Trip_Latch(		(UUT_Trip_VIB[3].Trip_Source 	> UUT_Trip_VIB[3].Trip_Point),	FALSE);
+	ELSE
+		VIB3_Trip_Latch(		(UUT_Trip_VIB[3].Trip_Source 	< UUT_Trip_VIB[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_VIB[4].Trip_High Then
+		VIB4_Trip_Latch(		(UUT_Trip_VIB[4].Trip_Source 	> UUT_Trip_VIB[4].Trip_Point),	FALSE);
+	ELSE
+		VIB4_Trip_Latch(		(UUT_Trip_VIB[4].Trip_Source 	< UUT_Trip_VIB[4].Trip_Point),	FALSE);
+	END_IF;
+
+      (* Temperature *)
+      (* Voltage *)
+	IF UUT_Trip_T[1].Trip_High Then
+		T1_Trip_Latch(		(UUT_Trip_T[1].Trip_Source 	> UUT_Trip_T[1].Trip_Point),	FALSE);
+	ELSE
+		T1_Trip_Latch(		(UUT_Trip_T[1].Trip_Source 	< UUT_Trip_T[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_T[2].Trip_High Then
+		T2_Trip_Latch(		(UUT_Trip_T[2].Trip_Source 	> UUT_Trip_T[2].Trip_Point),	FALSE);
+	ELSE
+		T2_Trip_Latch(		(UUT_Trip_T[2].Trip_Source 	< UUT_Trip_T[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_T[3].Trip_High Then
+		T3_Trip_Latch(		(UUT_Trip_T[3].Trip_Source 	> UUT_Trip_T[3].Trip_Point),	FALSE);
+	ELSE
+		T3_Trip_Latch(		(UUT_Trip_T[3].Trip_Source 	< UUT_Trip_T[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_T[4].Trip_High Then
+		T4_Trip_Latch(		(UUT_Trip_T[4].Trip_Source 	> UUT_Trip_T[4].Trip_Point),	FALSE);
+	ELSE
+		T4_Trip_Latch(		(UUT_Trip_T[4].Trip_Source 	< UUT_Trip_T[4].Trip_Point),	FALSE);
+	END_IF;
+
+      (* Torque *)
+	IF UUT_Trip_Q[1].Trip_High Then
+		Q1_Trip_Latch(		(UUT_Trip_Q[1].Trip_Source 	> UUT_Trip_Q[1].Trip_Point),	FALSE);
+	ELSE
+		Q1_Trip_Latch(		(UUT_Trip_Q[1].Trip_Source 	< UUT_Trip_Q[1].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_Q[2].Trip_High Then
+		Q2_Trip_Latch(		(UUT_Trip_Q[2].Trip_Source 	> UUT_Trip_Q[2].Trip_Point),	FALSE);
+	ELSE
+		Q2_Trip_Latch(		(UUT_Trip_Q[2].Trip_Source 	< UUT_Trip_Q[2].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_Q[3].Trip_High Then
+		Q3_Trip_Latch(		(UUT_Trip_Q[3].Trip_Source 	> UUT_Trip_Q[3].Trip_Point),	FALSE);
+	ELSE
+		Q3_Trip_Latch(		(UUT_Trip_Q[3].Trip_Source 	< UUT_Trip_Q[3].Trip_Point),	FALSE);
+	END_IF;
+
+	IF UUT_Trip_Q[4].Trip_High Then
+		Q4_Trip_Latch(		(UUT_Trip_Q[4].Trip_Source 	> UUT_Trip_Q[4].Trip_Point),	FALSE);
+	ELSE
+		Q4_Trip_Latch(		(UUT_Trip_Q[4].Trip_Source 	< UUT_Trip_Q[4].Trip_Point),	FALSE);
+	END_IF;
+
+	E_STOP_Trip_Latch( E_STOP_DAS_IND And NOT(Reset_Trips_Demand), FALSE);
+
+	(* EPS trip on overspeed/overtorque/ovewrtemp/etc only happens when RETURN_TO_IDLE_FUNCTION_ENABLED is set to FALSE in the configuration file *)
+	IF (
+		((RETURN_TO_IDLE_FUNCTION_ENABLED = FALSE) AND 
+			(	(F1_Trip_Latch.Q1 = TRUE)
+			OR 	(F2_Trip_Latch.Q1 = TRUE)
+			OR 	(F3_Trip_Latch.Q1 = TRUE)
+			OR 	(F4_Trip_Latch.Q1 = TRUE)
+			OR	(N1_Trip_Latch.Q1	= TRUE)
+			OR	(N2_Trip_Latch.Q1	= TRUE)
+			OR	(N3_Trip_Latch.Q1	= TRUE)
+			OR	(N4_Trip_Latch.Q1	= TRUE)
+			OR	(P1_Trip_Latch.Q1	= TRUE)
+			OR	(P2_Trip_Latch.Q1	= TRUE)
+			OR	(P3_Trip_Latch.Q1	= TRUE)
+			OR	(P4_Trip_Latch.Q1	= TRUE)
+			OR	(VIB1_Trip_Latch.Q1 = TRUE)
+			OR	(VIB2_Trip_Latch.Q1 = TRUE)
+			OR	(VIB3_Trip_Latch.Q1 = TRUE)
+			OR	(VIB4_Trip_Latch.Q1 = TRUE)
+			OR	(T1_Trip_Latch.Q1	= TRUE)
+			OR	(T2_Trip_Latch.Q1	= TRUE)
+			OR	(T3_Trip_Latch.Q1	= TRUE)
+			OR	(T4_Trip_Latch.Q1	= TRUE)
+			OR	(Q1_Trip_Latch.Q1	= TRUE)
+			OR	(Q2_Trip_Latch.Q1	= TRUE)
+			OR	(Q3_Trip_Latch.Q1	= TRUE)
+			OR	(Q4_Trip_Latch.Q1	= TRUE)
+			)
+		)
+		OR	(E_STOP_Trip_Latch.Q1 = TRUE))
+	THEN 
+		EPS_Trip_Latch(TRUE, FALSE);
+	ELSE
+		EPS_Trip_Latch(FALSE, FALSE);
+	END_IF; 
+
+	IF (
+			(I1_Trip_Latch.Q1	= TRUE)
+		OR	(I2_Trip_Latch.Q1	= TRUE)
+		OR	(I3_Trip_Latch.Q1	= TRUE)
+		OR	(I4_Trip_Latch.Q1	= TRUE)
+		OR	(V1_Trip_Latch.Q1	= TRUE)
+		OR	(V2_Trip_Latch.Q1	= TRUE)
+		OR	(V3_Trip_Latch.Q1	= TRUE)
+		OR	(V4_Trip_Latch.Q1	= TRUE))
+	THEN 
+		Gen_Trip_Latch(TRUE, FALSE); (* USED FOR GENERATOR TRIP *)
+	ELSE
+		Gen_Trip_Latch(FALSE, FALSE);
+	END_IF; 
+
+
+(* Reset Trips on ECS *)
+	IF (Reset_Trips_Demand = TRUE) THEN
+		F1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		F2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		F3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		F4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		N1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		N2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		N3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		N4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		P1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		P2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		P3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		P4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		V1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		V2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		V3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		V4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		I1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		I2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		I3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		I4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		VIB1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		VIB2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		VIB3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		VIB4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		T1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		T2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		T3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		T4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		Q1_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		Q2_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		Q3_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		Q4_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		E_STOP_Trip_Latch(	FALSE, Reset_Trips_Demand);
+		EPS_Trip_Latch(		FALSE, Reset_Trips_Demand);
+		Gen_Trip_Latch(		FALSE, Reset_Trips_Demand);
+	END_IF;
+
+
+(* Update Binding Variables *)
+	F_Trip[1]	:= F1_Trip_Latch.Q1;
+	F_Trip[2]	:= F2_Trip_Latch.Q1;
+	F_Trip[3]	:= F3_Trip_Latch.Q1;
+	F_Trip[4]	:= F4_Trip_Latch.Q1;	
+	N_Trip[1]	:= N1_Trip_Latch.Q1;
+	N_Trip[2]	:= N2_Trip_Latch.Q1;
+	N_Trip[3]	:= N3_Trip_Latch.Q1;
+	N_Trip[4]	:= N4_Trip_Latch.Q1;
+	P_Trip[1]	:= P1_Trip_Latch.Q1;
+	P_Trip[2]	:= P2_Trip_Latch.Q1;
+	P_Trip[3]	:= P3_Trip_Latch.Q1;
+	P_Trip[4]	:= P4_Trip_Latch.Q1;
+	V_Trip[1]	:= V1_Trip_Latch.Q1;
+	V_Trip[2]	:= V2_Trip_Latch.Q1;
+	V_Trip[3]	:= V3_Trip_Latch.Q1;
+	V_Trip[4]	:= V4_Trip_Latch.Q1;
+	I_Trip[1]	:= I1_Trip_Latch.Q1;
+	I_Trip[2]	:= I2_Trip_Latch.Q1;
+	I_Trip[3]	:= I3_Trip_Latch.Q1;
+	I_Trip[4]	:= I4_Trip_Latch.Q1;
+	VIB_Trip[1]	:= VIB1_Trip_Latch.Q1;
+	VIB_Trip[2]	:= VIB2_Trip_Latch.Q1;
+	VIB_Trip[3]	:= VIB3_Trip_Latch.Q1;
+	VIB_Trip[4]	:= VIB4_Trip_Latch.Q1;
+	T_Trip[1]	:= T1_Trip_Latch.Q1;
+	T_Trip[2]	:= T2_Trip_Latch.Q1;
+	T_Trip[3]	:= T3_Trip_Latch.Q1;
+	T_Trip[4]	:= T4_Trip_Latch.Q1;
+	Q_Trip[1]	:= Q1_Trip_Latch.Q1;
+	Q_Trip[2]	:= Q2_Trip_Latch.Q1;
+	Q_Trip[3]	:= Q3_Trip_Latch.Q1;
+	Q_Trip[4]	:= Q4_Trip_Latch.Q1;
+	E_STOP_Trip	:= E_STOP_Trip_Latch.Q1;
+	EPS_Trip	:= EPS_Trip_Latch.Q1;
+	Gen_Trip	:= Gen_Trip_Latch.Q1;
+
+
+
+	IF (err_code <> OK) Or (XMLError = True) THEN 
+		err_code 	:= ERROR_ON_RUNNING;
+		status	:= ERROR_ON_RUNNING;
+		dummy		:= LOG_MSG('ErrLog', 'DACN1_UUT_CONTROLLER: ERROR ON RUNNING');
+	END_IF;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END_FUNCTION_BLOCK
